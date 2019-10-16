@@ -83,7 +83,14 @@ Map.addMarkers = function() {
         {
             if (languageData[value.text+'.name'] == null)
             {
-                console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                console.error(`[LANG][${lang}]: Text not found: '${value.text}.name'`);
+                languageData[value.text+'.name'] = `${value.text}.name`;
+            }
+
+            if (languageData[value.text+'.desc'] == null)
+            {
+                console.error(`[LANG][${lang}]: Text not found: '${value.text}.desc'`);
+                languageData[value.text+'.desc'] = `${value.text}.desc`;
             }
 
             if (searchTerms.length > 0)
@@ -158,7 +165,7 @@ Map.removeItemFromMap = function(itemName)
 
 Map.addMarkerOnMap = function(value)
 {
-    var tempMarker = L.marker([value.x, value.y],
+    var tempMarker = L.marker([value.lat, value.lng],
         {
             icon: L.canvasIcon({
                 iconSize: [35,45],
@@ -202,7 +209,7 @@ Map.addMarkerOnMap = function(value)
 
 
 
-    tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']}</h1><p>  ${languageData[value.text + '_' + value.day + '.desc']} </p>`);
+    tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']}</h1><p>  ${languageData[value.text + '.desc']} </p>`);
 
     visibleMarkers[value.text] = tempMarker;
     markersLayer.addLayer(tempMarker);

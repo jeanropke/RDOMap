@@ -1,3 +1,8 @@
 [
-	{"text": "campfire_1", "icon": "campfires", "color": "#a23336", "x": "-52.078125", "y": "105.671875"}
+	{"text": "campfire_1", "icon": "campfires", "color": "#a23336", "lat": "-52.078125", "lng": "105.671875"},
+	{"text": "hideout_debug", "icon": "hideouts", "color": "#d63e2a", "lat": "-78", "lng": "104"},
+	{"text": "campfire_debug", "icon": "campfires", "color": "#a23336", "lat": "-78", "lng": "103"},
+	{"text": "plant_debug", "icon": "plants", "color": "#72b026", "lat": "-78", "lng": "102"}
+
 ]
+
