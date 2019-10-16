@@ -106,7 +106,6 @@ Map.addMarkers = function() {
     });
 
     markersLayer.addTo(map);
-    Menu.refreshItemsCounter();
     Menu.refreshMenu();
 
 };
@@ -159,7 +158,6 @@ Map.removeItemFromMap = function(itemName)
 
 Map.addMarkerOnMap = function(value)
 {
-    console.log('s');
     var tempMarker = L.marker([value.x, value.y],
         {
             icon: L.canvasIcon({
@@ -210,21 +208,6 @@ Map.addMarkerOnMap = function(value)
     markersLayer.addLayer(tempMarker);
 };
 
-
-Map.getToolIcon = function (type) {
-    switch(type)
-    {
-        case '0':
-            return '';
-            break;
-        case '1':
-            return '⛏';
-            break;
-        case '2':
-            return '🧲';
-            break;
-    }
-};
 
 Map.removeCollectedMarkers = function()
 {

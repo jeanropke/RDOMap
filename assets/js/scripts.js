@@ -7,7 +7,7 @@ var visibleMarkers = [];
 var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
-    'campfire'
+    'campfires'
 ];
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
