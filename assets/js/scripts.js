@@ -1,4 +1,3 @@
-var day;
 var map;
 var markers = [];
 var markersLayer = new L.LayerGroup();
@@ -8,37 +7,19 @@ var visibleMarkers = [];
 var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
-    'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
-    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
-    'fast-travel', 'treasure'
+    'campfire'
 ];
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var treasureData = [];
 
-var routesData = [];
-var polylines;
-
-var customRouteEnabled = false;
-var customRoute = [];
-var customRouteConnections = [];
-
 var showCoordinates = false;
 
-var toolType = '3'; //All type of tools
 var avaliableLanguages = ['de-de', 'es-es', 'en-us', 'fr-fr', 'it-it', 'pt-br', 'pl', 'ru', 'zh-s', 'zh-t'];
 var lang;
 var languageData = [];
 
-var nazarLocations = [];
-var nazarCurrentLocation = 7;
-var nazarCurrentDate = '14th October';
-
-var fastTravelData;
-
-var weeklySetData = [];
-var date;
 var nocache = 20;
 
 var wikiLanguage = [];
@@ -87,14 +68,6 @@ function init()
     Map.init();
 
     setMapBackground(Cookies.get('map-layer'));
-
-
-    setCurrentDayCycle();
-    Routes.loadRoutesData();
-    var pos = [-53.2978125, 68.7596875];
-    var offset = 1.15;
-    L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
-
 }
 
 function setMapBackground(mapName){
