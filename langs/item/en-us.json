@@ -92,5 +92,8 @@
 	{"key": "hideout_31.name", "value": "Gang hideout #31"},
 	{"key": "hideout_31.desc", "value": ""},
 	{"key": "hideout_32.name", "value": "Gang hideout #32"},
-	{"key": "hideout_32.desc", "value": ""}
+	{"key": "hideout_32.desc", "value": ""},
+	{"key": "plant_alaskan_ginseng_1.name", "value": "Alaskan Ginseng #1"},
+	{"key": "plant_alaskan_ginseng_1.desc", "value": ""}
+
 ]

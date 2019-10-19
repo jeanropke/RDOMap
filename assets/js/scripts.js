@@ -138,24 +138,12 @@ function setCurrentDayCycle()
 
 function changeCursor()
 {
-    if(showCoordinates || customRouteEnabled)
-        $('.leaflet-grab').css('cursor', 'pointer');
+    if(showCoordinates)
+        $('.leaflet-grab').css('cursor', 'pointer!important');
     else
         $('.leaflet-grab').css('cursor', 'grab');
 }
 
-$("#day").on("input", function()
-{
-    Cookies.remove('ignore-days')
-
-    day = $('#day').val();
-    Map.addMarkers();
-
-    if($("#routes").val() == 1)
-        Map.drawLines();
-
-
-});
 
 $("#search").on("input", function()
 {
@@ -171,61 +159,9 @@ $("#search").on("input", function()
     Map.addMarkers();
 });
 
-$("#routes").on("change", function()
-{
-    if($("#routes").val() == 0) {
-        if (polylines instanceof L.Polyline) {
-            map.removeLayer(polylines);
-        }
-    }
-    else {
-        Map.drawLines();
-    }
-});
-
-$("#tools").on("change", function()
-{
-    toolType = $("#tools").val();
-    Map.addMarkers();
-});
-
-$("#reset-markers").on("change", function()
-{
-    if($("#reset-markers").val() == 'clear')
-    {
-        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
-        disableMarkers = Cookies.get('removed-items').split(';');
-        $("#reset-markers").val('false');
-    }
-
-    resetMarkersDaily = $("#reset-markers").val() == 'true';
-    Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
-
-
-    Map.removeCollectedMarkers();
-});
-
-$("#custom-routes").on("change", function()
-{
-    var temp = $("#custom-routes").val();
-    customRouteEnabled = temp == '1';
-    if(temp == 'clear')
-    {
-        customRouteConnections = [];
-        map.removeLayer(customRoute);
-        customRouteEnabled = true;
-        $("#custom-routes").val('1');
-    }
-
-    changeCursor();
-
-
-});
-
 $('#show-coordinates').on('change', function()
 {
     showCoordinates = $('#show-coordinates').val() == '1';
-
     changeCursor();
 });
 
@@ -287,35 +223,4 @@ $('.menu-toggle').on('click', function()
     $('.counter-container').toggleClass('counter-menu-opened');
 
 });
-
-setInterval(function()
-{
-    var nextGMTMidnight = new Date();
-    nextGMTMidnight.setUTCHours(24);
-    nextGMTMidnight.setUTCMinutes(0);
-    nextGMTMidnight.setUTCSeconds(0);
-    var countdownDate = nextGMTMidnight - new Date();
-    if(countdownDate <= 0)
-    {
-        $('#countdown').text(`00:00:00`);
-    }
-    else
-    {
-        var hours = Math.floor((countdownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((countdownDate % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
-
-        $('#countdown').text(`${addZeroToNumber(hours)}:${addZeroToNumber(minutes)}:${addZeroToNumber(seconds)}`);
-    }
-
-
-
-}, 1000);
-
-function addZeroToNumber(number)
-{
-    if(number < 10)
-        number = '0'+number.toString();
-    return number;
-}
 

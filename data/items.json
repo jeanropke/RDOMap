@@ -46,9 +46,7 @@
 	{"text": "hideout_30", "icon": "hideouts", "lat": "-76.03125", "lng": "136.453125"},
 	{"text": "hideout_31", "icon": "hideouts", "lat": "-82.984375", "lng": "124.0625"},
 	{"text": "hideout_32", "icon": "hideouts", "lat": "-92.375", "lng": "140.6015625"},
-	{"text": "hideout_debug", "icon": "hideouts", "lat": "-78", "lng": "104"},
-	{"text": "campfire_debug", "icon": "campfires", "lat": "-78", "lng": "103"},
-	{"text": "plant_debug", "icon": "plants", "lat": "-78", "lng": "102"}
+	{"text": "plant_alaskan_ginseng_1", "icon": "plants", "lat": "-36.390625", "lng": "105.03125"}
 
 ]
 
