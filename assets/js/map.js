@@ -122,6 +122,34 @@ Map.addMarkers = function()
 
 };
 
+Map.populate = function (max = 10000)
+{
+
+    ciLayer.clearLayers();
+    ciMarkers = [];
+    for(var i = 0; i < max; i++) {
+        var icon = L.icon({
+            iconUrl: `assets/images/markers/random.png`,
+            iconSize: [42, 42],
+            iconAnchor: [42 / 2, 42],
+            popupAnchor: [0, -40]
+        });
+        var tempMarker = L.marker([Map.getRandom(-120.75, -15.25), Map.getRandom(-5.25, 187.5)],
+            {
+                icon: icon
+            });
+
+        tempMarker.bindPopup(`I'm marker ${i}`);
+        visibleMarkers['random'] = tempMarker;
+        ciMarkers.push(tempMarker);
+    }
+    ciLayer.addLayers(ciMarkers);
+};
+Map.getRandom = function (min, max)
+{
+    return Math.random() * (max - min) + min;
+};
+
 Map.addMarkerOnMap = function(value)
 {
     var icon = L.icon({
