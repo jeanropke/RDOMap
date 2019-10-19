@@ -23,6 +23,11 @@ Menu.refreshMenu = function ()
                 if(languageData[lang][item.sub_data] == null){
                     console.error(`[LANG][${lang}]: Text not found: '${item.sub_data}'`);
                 }
+
+                if(!subCategories.includes(item.sub_data)){
+                    console.log(`%c O seu animal, coloca a categoria '${item.sub_data}' em 'subCategories' ou o menu não vai funcionar`, 'background: #222; color: #bada55; font-size:20px');
+                }
+
                 $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.sub_data}">${languageData[lang][item.sub_data]}</p>`);
             }
         });

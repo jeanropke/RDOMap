@@ -14,13 +14,11 @@ var categories = [
     'campfires', 'plants', 'hideouts'
 ];
 var subCategories = [
-    'alaskan_ginseng', 'american_ginseng'
+    'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry'
 ];
 var enabledTypes = categories;
 
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
-
-var iconColors = [];
 
 var showCoordinates = false;
 
@@ -34,9 +32,6 @@ var nocache = 20;
 function init()
 {
     enabledTypes.splice.apply(enabledTypes, [2, 0].concat(subCategories));
-    iconColors['campfires'] = '#f49630';
-    iconColors['hideouts'] = '#cb0200';
-    iconColors['plants'] = '#72b026';
 
     if(typeof Cookies.get('map-layer') === 'undefined')
         Cookies.set('map-layer', 'Detailed', { expires: 999 });

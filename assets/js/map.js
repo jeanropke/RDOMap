@@ -256,7 +256,7 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    console.log(`{"text": "plant_alaskan_ginseng_", "icon": "plants", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    console.log(`{"text": "plant_black_berry_", "icon": "plants", "sub_data": "black_berry", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     //console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
 
     //testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
