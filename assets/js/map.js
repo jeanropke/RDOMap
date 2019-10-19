@@ -83,23 +83,23 @@ Map.addMarkers = function()
     {
         if(enabledTypes.includes(value.icon))
         {
-            if (languageData[value.text+'.name'] == null)
+            if (languageData[lang][value.text+'.name'] == null)
             {
                 console.error(`[LANG][${lang}]: Text not found: '${value.text}.name'`);
-                languageData[value.text+'.name'] = `${value.text}.name`;
+                languageData[lang][value.text+'.name'] = `${value.text}.name`;
             }
 
-            if (languageData[value.text+'.desc'] == null)
+            if (languageData[lang][value.text+'.desc'] == null)
             {
                 console.error(`[LANG][${lang}]: Text not found: '${value.text}.desc'`);
-                languageData[value.text+'.desc'] = `${value.text}.desc`;
+                languageData[lang][value.text+'.desc'] = `${value.text}.desc`;
             }
 
             if (searchTerms.length > 0)
             {
                 $.each(searchTerms, function (id, term)
                 {
-                    if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                    if (languageData[lang][value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                     {
                         if (visibleMarkers[value.text] !== null)
                         {
@@ -163,7 +163,7 @@ Map.addMarkerOnMap = function(value)
             icon: icon
         });
 
-    tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']}</h1><p>  ${languageData[value.text + '.desc']} </p>`);
+    tempMarker.bindPopup(`<h1> ${languageData[lang][value.text + '.name']}</h1><p>  ${languageData[lang][value.text + '.desc']} </p>`);
     visibleMarkers[value.text] = tempMarker;
     ciMarkers.push(tempMarker);
 

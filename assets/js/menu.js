@@ -14,7 +14,7 @@ Menu.refreshMenu = function ()
         {
             if(item.day == 1 && item.icon == value)
             {
-                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.text}">${languageData[item.text+'.name']}</p>`);
+                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.text}">${languageData[lang][item.text+'.name']}</p>`);
             }
         });
     });
