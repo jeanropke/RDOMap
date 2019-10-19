@@ -13,7 +13,9 @@ var visibleMarkers = [];
 var categories = [
     'campfires', 'plants', 'hideouts'
 ];
-var subCategories = ['alaskan_ginseng', 'american_ginseng'];
+var subCategories = [
+    'alaskan_ginseng', 'american_ginseng'
+];
 var enabledTypes = categories;
 
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
