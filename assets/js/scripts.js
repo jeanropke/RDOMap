@@ -4,6 +4,9 @@ var markersLayer = new L.LayerGroup();
 var ciLayer = L.canvasIconLayer({});
 var ciMarkers = [];
 
+var heatmapLayer;
+
+
 var searchTerms = [];
 var visibleMarkers = [];
 var resetMarkersDaily;
@@ -188,8 +191,21 @@ $('.menu-option.clickable').on('click', function ()
         enabledTypes.push(menu.data('type'));
     }
     Map.addMarkers();
-    if($("#routes").val() == 1)
-        Map.drawLines();
+});
+
+$('.menu-option.animal-clickable').on('click', function ()
+{
+    var menu = $(this);
+    menu.children('span').toggleClass('disabled');
+
+    if(menu.children('span').hasClass('disabled'))
+    {
+        Map.setHeatmap(menu.data('type'));
+    }
+    else
+    {
+        Map.setHeatmap(null);
+    }
 });
 
 $('.open-submenu').on('click', function(e) {

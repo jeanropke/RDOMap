@@ -4,7 +4,8 @@
 
 var Map = {
     minZoom: 2,
-    maxZoom: 7
+    maxZoom: 7,
+    heatmapData: []
 };
 
 Map.init = function ()
@@ -18,13 +19,34 @@ Map.init = function ()
     mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
     mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
 
+    var cfg = {
+        // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+        // if scaleRadius is false it will be the constant radius used in pixels
+        "radius": 2,
+        "maxOpacity": .8,
+        // scales the radius based on map zoom
+        "scaleRadius": true,
+        // if set to false the heatmap uses the global maximum for colorization
+        // if activated: uses the data maximum within the current map boundaries
+        //   (there will always be a red spot with useLocalExtremas true)
+        "useLocalExtrema": true,
+        // which field name in your data represents the latitude - default "lat"
+        latField: 'lat',
+        // which field name in your data represents the longitude - default "lng"
+        lngField: 'lng',
+        // which field name in your data represents the data value - default "value"
+        valueField: 'count'
+    };
+    heatmapLayer = new HeatmapOverlay(cfg);
+
+
     map = L.map('map', {
         preferCanvas: true,
         minZoom: Map.minZoom,
         maxZoom: Map.maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
-        layers: [mapLayers[Cookies.get('map-layer')]]
+        layers: [mapLayers[Cookies.get('map-layer')], heatmapLayer]
     }).setView([-70, 111.75], 3);
 
     var baseMaps = {
@@ -169,10 +191,6 @@ Map.addMarkerOnMap = function(value)
 
 };
 
-function getRandom(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
 Map.removeCollectedMarkers = function()
 {
     $.each(markers, function (key, value)
@@ -204,6 +222,15 @@ Map.debugMarker = function (lat, long)
     markersLayer.addLayer(marker);
 };
 
+Map.setHeatmap = function(value)
+{
+    if(value == null)
+        heatmapLayer.setData({max: 800, data: []});
+    else
+        heatmapLayer.setData({max: 800, data: Heatmap.data[value]});
+};
+
+var testData = { max: 800, data: [] };
 Map.addCoordsOnMap = function(coords)
 {
     // Show clicked coordinates (like google maps)
@@ -218,6 +245,10 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    console.log(`{"text": "campfire_", "icon": "campfires", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    //console.log(`{"text": "campfire_", "icon": "campfires", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
+
+    testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
+    heatmapLayer.setData(testData);
 };
 

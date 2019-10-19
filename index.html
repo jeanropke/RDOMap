@@ -11,7 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="assets/js/leaflet.canvas-markers.js"></script>
-    <script src="assets/js/leaflet.heat.js"></script>
+    <script src="assets/js/leaflet-heatmap.js"></script>
+    <script src="assets/js/heatmap.min.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css?nocache=22" />
 
 
@@ -43,6 +44,13 @@
             <span data-text="menu.hideouts">Gang Hideouts</span>
         </div>
         <div class="menu-hidden" data-type="hideouts"></div>
+    </div>
+    <h2 data-text="menu.animals">Animals</h2>
+    <div>
+        <div class="menu-option animal-clickable" data-type="loon">
+            <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_LOON_PACIFIC.png" />
+            <span data-text="menu.animal.loon">Loon</span>
+        </div>
     </div>
     <div class="search-container">
         <h2 data-text="menu.search">Search</h2>
@@ -93,6 +101,7 @@
 
 <div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
 <script      src="assets/js/map.js?nocache=23"></script>
+<script      src="assets/js/heatmap.js?nocache=23"></script>
 <script src="assets/js/language.js?nocache=23"></script>
 <script     src="assets/js/menu.js?nocache=23"></script>
 <script  src="assets/js/scripts.js?nocache=23"></script>
