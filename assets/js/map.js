@@ -241,7 +241,7 @@ Map.removeHeatmap = function ()
     heatmapLayer.setData({max: 800, data: []});
 };
 
-//var testData = { max: 800, data: [] };
+var testData = { max: 800, data: [] };
 Map.addCoordsOnMap = function(coords)
 {
     // Show clicked coordinates (like google maps)
@@ -256,10 +256,10 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    console.log(`{"text": "plant_black_berry_", "icon": "plants", "sub_data": "black_berry", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
-    //console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
+    //console.log(`{"text": "plant_black_berry_", "icon": "plants", "sub_data": "black_berry", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
 
-    //testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
-    //heatmapLayer.setData(testData);
+    testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
+    heatmapLayer.setData(testData);
 };
 
