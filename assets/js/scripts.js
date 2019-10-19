@@ -22,7 +22,7 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var showCoordinates = false;
 
-var avaliableLanguages = ['en-us'];
+var avaliableLanguages = ['en-us', 'pt-br'];
 var lang;
 var languageData = [];
 
@@ -47,9 +47,6 @@ function init()
     if(!avaliableLanguages.includes(Cookies.get('language')))
         Cookies.set('language', 'en-us');
 
-
-    var curDate = new Date();
-    date = `${curDate.getUTCFullYear()}-${curDate.getUTCMonth()+1}-${curDate.getUTCDate()}`;
 
     lang = Cookies.get('language');
     $("#language").val(lang);

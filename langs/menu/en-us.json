@@ -17,6 +17,7 @@
 	{"key": "menu.search_placeholder", "value": "Search items. Separated by ;"},
 	{"key": "menu.animals", "value": "Animals"},
 	{"key": "menu.animal.loon", "value": "Loon"},
+	{"key": "menu.animal.cougar", "value": "Cougar"},
 	{"key": "alaskan_ginseng", "value": "Alaskan Ginseng"},
 	{"key": "american_ginseng", "value": "American Ginseng"},
 	{"key": "bay_bolete", "value": "Bay Bolete"},

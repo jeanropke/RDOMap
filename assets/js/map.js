@@ -35,7 +35,8 @@ Map.init = function ()
         // which field name in your data represents the longitude - default "lng"
         lngField: 'lng',
         // which field name in your data represents the data value - default "value"
-        valueField: 'count'
+        valueField: 'count',
+        gradient: { 0.25: "rgb(125,125,125)", 0.55: "rgb(0,0,125)", 1.0: "rgb(255,42,32)" }
     };
     heatmapLayer = new HeatmapOverlay(cfg);
 
