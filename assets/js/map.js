@@ -101,20 +101,22 @@ Map.addMarkers = function()
                 {
                     if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                     {
-                        if (visibleMarkers[value.text] == null)
+                        if (visibleMarkers[value.text] !== null)
                         {
                             Map.addMarkerOnMap(value);
                         }
                     }
                 });
             }
-            else {
+            else
+            {
                 Map.addMarkerOnMap(value);
             }
         }
     });
 
-    ciLayer.addLayers(ciMarkers);
+    if(ciMarkers.length > 0)
+        ciLayer.addLayers(ciMarkers);
 
     Menu.refreshMenu();
 
