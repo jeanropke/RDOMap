@@ -196,8 +196,13 @@ $('.menu-option.clickable').on('click', function ()
 $('.menu-option.animal-clickable').on('click', function ()
 {
     var menu = $(this);
-    menu.children('span').toggleClass('disabled');
+    $('.menu-option.animal-clickable').each(function (key, value)
+    {
+        if(menu.data('type') != $(value).data('type'))
+            $(value).children('span').addClass('disabled');
+    });
 
+    menu.children('span').toggleClass('disabled');
     if(menu.children('span').hasClass('disabled'))
     {
         Map.removeHeatmap();
