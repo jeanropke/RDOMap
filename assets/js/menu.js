@@ -8,22 +8,24 @@ Menu.refreshMenu = function ()
 {
     $.each(categories, function (key, value)
     {
-        $(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
+        //$(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
 
         markers.filter(function(item)
         {
-            if(item.day == 1 && item.icon == value)
+            if(item.icon == value)
             {
-                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.text}">${languageData[lang][item.text+'.name']}</p>`);
+                if(item.sub_data == null)
+                    return;
+
+                if($(`.menu-hidden[data-type='plants']`).children(`p.collectible[data-type='${item.sub_data}']`).length > 0)
+                    return;
+
+                if(languageData[lang][item.sub_data] == null){
+                    console.error(`[LANG][${lang}]: Text not found: '${item.sub_data}'`);
+                }
+                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.sub_data}">${languageData[lang][item.sub_data]}</p>`);
             }
         });
-    });
-    $.each(disableMarkers, function (key, value)
-    {
-        if(value.length > 0)
-        {
-            $('[data-type=' + value + ']').addClass('disabled');
-        }
     });
 
 };

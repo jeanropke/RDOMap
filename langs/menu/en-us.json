@@ -14,5 +14,8 @@
 	{"key": "menu.issues", "value": "Issues"},
 	{"key": "menu.report_issues", "value": "Report issues here!"},
 	{"key": "menu.fast_travel", "value": "Fast Travel"},
-	{"key": "menu.search_placeholder", "value": "Search items. Separated by ;"}
+	{"key": "menu.search_placeholder", "value": "Search items. Separated by ;"},
+	{"key": "alaskan_ginseng", "value": "Alaskan Ginseng"},
+	{"key": "american_ginseng", "value": "American Ginseng"}
+
 ]

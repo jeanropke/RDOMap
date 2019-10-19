@@ -66,14 +66,6 @@ Map.init = function ()
        Map.addCoordsOnMap(e);
     });
 
-    map.on('popupopen', function()
-    {
-        $('.remove-button').click(function(e)
-        {
-            Map.removeItemFromMap($(event.target).data("item"));
-        });
-    });
-
     map.on('baselayerchange', function (e)
     {
         setMapBackground(e.name);
@@ -117,6 +109,10 @@ Map.addMarkers = function()
                 languageData[lang][value.text+'.desc'] = `${value.text}.desc`;
             }
 
+            if(value.sub_data != null) {
+                if(!enabledTypes.includes(value.sub_data))
+                    return;
+            }
             if (searchTerms.length > 0)
             {
                 $.each(searchTerms, function (id, term)
@@ -207,6 +203,19 @@ Map.removeCollectedMarkers = function()
             }
         }
     });
+};
+
+Map.removeItemFromMap = function(value) {
+    if(enabledTypes.includes(value)) {
+        enabledTypes = $.grep(enabledTypes, function(data) {
+            return data != value;
+        });
+    }
+    else {
+        enabledTypes.push(value);
+    }
+
+    Map.addMarkers();
 };
 
 Map.debugMarker = function (lat, long)

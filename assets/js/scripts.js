@@ -9,12 +9,13 @@ var heatmapLayer;
 
 var searchTerms = [];
 var visibleMarkers = [];
-var resetMarkersDaily;
-var disableMarkers = [];
+
 var categories = [
     'campfires', 'plants', 'hideouts'
 ];
+var subCategories = ['alaskan_ginseng', 'american_ginseng'];
 var enabledTypes = categories;
+
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var iconColors = [];
@@ -30,14 +31,10 @@ var nocache = 20;
 
 function init()
 {
-
+    enabledTypes.splice.apply(enabledTypes, [2, 0].concat(subCategories));
     iconColors['campfires'] = '#f49630';
     iconColors['hideouts'] = '#cb0200';
     iconColors['plants'] = '#72b026';
-
-
-    if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
 
     if(typeof Cookies.get('map-layer') === 'undefined')
         Cookies.set('map-layer', 'Detailed', { expires: 999 });
@@ -53,19 +50,12 @@ function init()
     if(!avaliableLanguages.includes(Cookies.get('language')))
         Cookies.set('language', 'en-us');
 
-    if(typeof Cookies.get('removed-markers-daily') === 'undefined')
-        Cookies.set('removed-markers-daily', 'true', 999);
-
-    resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
-    $("#reset-markers").val(resetMarkersDaily.toString());
 
     var curDate = new Date();
     date = `${curDate.getUTCFullYear()}-${curDate.getUTCMonth()+1}-${curDate.getUTCDate()}`;
 
     lang = Cookies.get('language');
     $("#language").val(lang);
-
-    disableMarkers = Cookies.get('removed-items').split(';');
 
     Language.load();
     Map.init();
@@ -224,8 +214,6 @@ $(document).on('click', '.collectible', function(){
 
     Map.removeItemFromMap(collectible.data('type'));
 
-    if($("#routes").val() == 1)
-        Map.drawLines();
 });
 
 $('.menu-toggle').on('click', function()
