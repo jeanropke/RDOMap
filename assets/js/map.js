@@ -6,7 +6,7 @@ var Map = {
     minZoom: 2,
     maxZoom: 7
 };
-var myRenderer = L.canvas({ padding: 0.5 });
+
 Map.init = function ()
 {
     var southWestTiles = L.latLng(-144, 0),
@@ -72,11 +72,13 @@ Map.loadMarkers = function()
         });
 };
 
-Map.addMarkers = function() {
+Map.addMarkers = function()
+{
+    ciLayer.addTo(map);
+    ciLayer.clearLayers();
 
-    markersLayer.clearLayers();
+    ciMarkers = [];
 
-    visibleMarkers = [];
     $.each(markers, function (key, value)
     {
         if(enabledTypes.includes(value.icon))
@@ -112,109 +114,34 @@ Map.addMarkers = function() {
         }
     });
 
-    markersLayer.addTo(map);
+    ciLayer.addLayers(ciMarkers);
+
     Menu.refreshMenu();
 
 };
 
-Map.removeItemFromMap = function(itemName)
-{
-    if(disableMarkers.includes(itemName.toString()))
-    {
-        disableMarkers = $.grep(disableMarkers, function(value) {
-            $.each(routesData, function(key, j){
-                if (disableMarkers.includes(value.key)){
-                    delete value.hidden;
-                }
-            });
-            return value != itemName.toString();
-
-        });
-
-        if(visibleMarkers[itemName] == null)
-            console.warn(`[INFO]: '${itemName}' type is disabled!`);
-        else
-            $(visibleMarkers[itemName]._icon).css('opacity', '1');
-
-        $('[data-type=' + itemName + ']').removeClass('disabled');
-
-    }
-    else
-    {
-        disableMarkers.push(itemName.toString());
-        $.each(routesData[day], function(b, value){
-            if (disableMarkers.includes(value.key)){
-                value.hidden = true;
-            }
-        });
-        if(visibleMarkers[itemName] == null)
-            console.warn(`[INFO]: '${itemName}' type is disabled!`);
-        else
-            $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
-        $('[data-type=' + itemName + ']').addClass('disabled');
-    }
-
-    Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
-
-    if($("#routes").val() == 1)
-        Map.drawLines();
-
-    Menu.refreshItemsCounter();
-};
-
-
 Map.addMarkerOnMap = function(value)
 {
+    var icon = L.icon({
+        iconUrl: `assets/images/markers/${value.icon}.png`,
+        iconSize:[42,42],
+        iconAnchor:[42/2,42],
+        popupAnchor:[0,-40]
+    });
     var tempMarker = L.marker([value.lat, value.lng],
         {
-            icon: L.canvasIcon({
-                iconSize: [35,45],
-                iconAnchor: [17,45],
-                popupAnchor:[1,-32],
-                shadowAnchor:[10,12],
-                shadowSize:[36,16],
-                fillStyle: 'rgba(255,0,0,1)',
-                drawIcon: function (icon, type) {
-                    if (type == 'icon')
-                    {
-                        var size = L.point(this.options.iconSize);
-                        var center = L.point(Math.floor(size.x / 2), Math.floor(size.y / 2));
-
-                        var base_image = new Image();
-                        base_image.src = './assets/images/icons/' + value.icon + '.png';
-
-                        var ctx = icon.getContext('2d');
-
-                        ctx.beginPath();
-                        base_image.onload = function() {
-                            ctx.drawImage(base_image, -5, 0, 43, 43);
-                        };
-
-                        ctx.arc(17, 17, 17, 3.141592653589793, 4.71238898038469);
-                        ctx.arc(17, 17, 17, 4.71238898038469,  6.283185307179586);
-                        ctx.moveTo(0, 17);
-                        ctx.lineTo(0, 19);
-                        ctx.lineTo(17, 45);
-                        ctx.lineTo(17*2, 19);
-                        ctx.lineTo(17*2, 17);
-                        ctx.fillStyle = value.color;
-                        ctx.fill();
-                        ctx.closePath();
-
-                    }
-                }
-            })
+            icon: icon
         });
 
-
-
-
     tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']}</h1><p>  ${languageData[value.text + '.desc']} </p>`);
-
     visibleMarkers[value.text] = tempMarker;
-    markersLayer.addLayer(tempMarker);
+    ciMarkers.push(tempMarker);
+
 };
 
+function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 Map.removeCollectedMarkers = function()
 {
@@ -261,6 +188,6 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
+    console.log(`{"text": "campfire_", "icon": "campfires", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
 };
 

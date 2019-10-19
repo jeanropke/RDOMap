@@ -1,6 +1,8 @@
 var map;
 var markers = [];
 var markersLayer = new L.LayerGroup();
+var ciLayer = L.canvasIconLayer({});
+var ciMarkers = [];
 
 var searchTerms = [];
 var visibleMarkers = [];
@@ -12,24 +14,23 @@ var categories = [
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
-var treasureData = [];
+var iconColors = [];
 
 var showCoordinates = false;
 
-var avaliableLanguages = ['de-de', 'es-es', 'en-us', 'fr-fr', 'it-it', 'pt-br', 'pl', 'ru', 'zh-s', 'zh-t'];
+var avaliableLanguages = ['en-us'];
 var lang;
 var languageData = [];
 
 var nocache = 20;
 
-var wikiLanguage = [];
 
 function init()
 {
 
-    wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
-    //wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(Portugues)';
-
+    iconColors['campfires'] = '#f49630';
+    iconColors['hideouts'] = '#cb0200';
+    iconColors['plants'] = '#72b026';
 
 
     if(typeof Cookies.get('removed-items') === 'undefined')
@@ -64,7 +65,6 @@ function init()
     disableMarkers = Cookies.get('removed-items').split(';');
 
     Language.load();
-
     Map.init();
 
     setMapBackground(Cookies.get('map-layer'));
