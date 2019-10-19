@@ -200,11 +200,11 @@ $('.menu-option.animal-clickable').on('click', function ()
 
     if(menu.children('span').hasClass('disabled'))
     {
-        Map.setHeatmap(menu.data('type'));
+        Map.removeHeatmap();
     }
     else
     {
-        Map.setHeatmap(null);
+        Map.setHeatmap(menu.data('type'));
     }
 });
 

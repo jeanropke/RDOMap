@@ -224,10 +224,12 @@ Map.debugMarker = function (lat, long)
 
 Map.setHeatmap = function(value)
 {
-    if(value == null)
-        heatmapLayer.setData({max: 800, data: []});
-    else
-        heatmapLayer.setData({max: 800, data: Heatmap.data[value]});
+    heatmapLayer.setData({max: 800, data: Heatmap.data[value]});
+};
+
+Map.removeHeatmap = function ()
+{
+    heatmapLayer.setData({max: 800, data: []});
 };
 
 var testData = { max: 800, data: [] };
