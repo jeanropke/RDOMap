@@ -46,7 +46,23 @@
 	{"text": "hideout_30", "icon": "hideouts", "lat": "-76.03125", "lng": "136.453125"},
 	{"text": "hideout_31", "icon": "hideouts", "lat": "-82.984375", "lng": "124.0625"},
 	{"text": "hideout_32", "icon": "hideouts", "lat": "-92.375", "lng": "140.6015625"},
-	{"text": "plant_alaskan_ginseng_1", "icon": "plants", "lat": "-36.390625", "lng": "105.03125"}
+	{"text": "plant_alaskan_ginseng_1", "icon": "plants", "lat": "-36.390625", "lng": "105.03125"},
+	{"text": "plant_alaskan_ginseng_2", "icon": "plants", "lat": "-49.96875", "lng": "73.75"},
+	{"text": "plant_alaskan_ginseng_3", "icon": "plants", "lat": "-49.5625", "lng": "79"},
+	{"text": "plant_alaskan_ginseng_4", "icon": "plants", "lat": "-51.234375", "lng": "81.453125"},
+	{"text": "plant_alaskan_ginseng_5", "icon": "plants", "lat": "-53.046875", "lng": "84.109375"},
+	{"text": "plant_alaskan_ginseng_6", "icon": "plants", "lat": "-52.4296875", "lng": "80.4296875"},
+	{"text": "plant_alaskan_ginseng_7", "icon": "plants", "lat": "-53.3984375", "lng": "80.171875"},
+	{"text": "plant_alaskan_ginseng_8", "icon": "plants", "lat": "-54.03125", "lng": "79.640625"},
+	{"text": "plant_alaskan_ginseng_9", "icon": "plants", "lat": "-55.234375", "lng": "78.96875"},
+	{"text": "plant_alaskan_ginseng_10", "icon": "plants", "lat": "-56.265625", "lng": "77.9609375"},
+	{"text": "plant_alaskan_ginseng_11", "icon": "plants", "lat": "-56.0859375", "lng": "79.109375"},
+	{"text": "plant_alaskan_ginseng_12", "icon": "plants", "lat": "-56.8046875", "lng": "80.921875"},
+	{"text": "plant_alaskan_ginseng_13", "icon": "plants", "lat": "-57.3671875", "lng": "81.4375"},
+	{"text": "plant_alaskan_ginseng_14", "icon": "plants", "lat": "-58.0703125", "lng": "83.5390625"},
+	{"text": "plant_alaskan_ginseng_15", "icon": "plants", "lat": "-58.2890625", "lng": "84.4140625"},
+	{"text": "plant_alaskan_ginseng_16", "icon": "plants", "lat": "-27.28125", "lng": "152.46875"},
+	{"text": "plant_alaskan_ginseng_17", "icon": "plants", "lat": "-33.03125", "lng": "153.03125"}
 
 ]
 
