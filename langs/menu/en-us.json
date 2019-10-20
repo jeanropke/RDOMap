@@ -21,5 +21,14 @@
 	{"key": "alaskan_ginseng", "value": "Alaskan Ginseng"},
 	{"key": "american_ginseng", "value": "American Ginseng"},
 	{"key": "bay_bolete", "value": "Bay Bolete"},
-	{"key": "black_berry", "value": "Black Berry"}
+	{"key": "black_berry", "value": "Black Berry"},
+	{"key": "black_currant", "value": "Black Currant"},
+	{"key": "burdock_root", "value": "Burdock Root"},
+	{"key": "chanterelle", "value": "Chanterelle"},
+	{"key": "common_bullbrush", "value": "Common Bullbrush"},
+	{"key": "creeping_thyme", "value": "Creeping Thyme"},
+	{"key": "desert_sage", "value": "Desert Sage"},
+	{"key": "english_mace", "value": "English Mace"},
+	{"key": "evergreen_huckleberry", "value": "Evergreen Buckleberry"},
+	{"key": "golden_currant", "value": "Golden Currant"}
 ]

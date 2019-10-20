@@ -146,13 +146,15 @@ Map.populate = function (max = 10000)
 
     ciLayer.clearLayers();
     ciMarkers = [];
+
+
+    var icon = L.icon({
+        iconUrl: `assets/images/markers/random.png`,
+        iconSize: [42, 42],
+        iconAnchor: [42 / 2, 42],
+        popupAnchor: [0, -40]
+    });
     for(var i = 0; i < max; i++) {
-        var icon = L.icon({
-            iconUrl: `assets/images/markers/random.png`,
-            iconSize: [42, 42],
-            iconAnchor: [42 / 2, 42],
-            popupAnchor: [0, -40]
-        });
         var tempMarker = L.marker([Map.getRandom(-120.75, -15.25), Map.getRandom(-5.25, 187.5)],
             {
                 icon: icon
@@ -162,6 +164,7 @@ Map.populate = function (max = 10000)
         visibleMarkers['random'] = tempMarker;
         ciMarkers.push(tempMarker);
     }
+
     ciLayer.addLayers(ciMarkers);
 };
 Map.getRandom = function (min, max)
@@ -221,15 +224,18 @@ Map.removeItemFromMap = function(value) {
 
 Map.debugMarker = function (lat, long)
 {
+    var icon = L.icon({
+        iconUrl: `assets/images/markers/random.png`,
+        iconSize:[42,42],
+        iconAnchor:[42/2,42],
+        popupAnchor:[0,-40]
+    });
     var marker = L.marker([lat, long], {
-    icon: L.AwesomeMarkers.icon({
-        iconUrl: './assets/images/icons/help.png',
-        markerColor: 'darkblue'
-    })
-});
+        icon: icon
+    });
 
     marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
-    markersLayer.addLayer(marker);
+    ciLayer.addLayer(marker);
 };
 
 Map.setHeatmap = function(value)
@@ -257,10 +263,10 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    //console.log(`{"text": "plant_black_berry_", "icon": "plants", "sub_data": "black_berry", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
-    console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
+    console.log(`{"text": "plant_golden_currant_", "icon": "plants", "sub_data": "golden_currant", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
 
-    testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
-    heatmapLayer.setData(testData);
+    //console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
+    //testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
+    //heatmapLayer.setData(testData);
 };
 

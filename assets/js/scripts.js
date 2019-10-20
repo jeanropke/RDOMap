@@ -14,7 +14,8 @@ var categories = [
     'campfires', 'plants', 'hideouts'
 ];
 var subCategories = [
-    'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry'
+    'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry', 'black_currant', 'burdock_root', 'chanterelle', 'common_bullbrush',
+    'creeping_thyme', 'english_mace', 'evergreen_huckleberry', 'golden_currant'
 ];
 var enabledTypes = categories;
 

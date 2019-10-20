@@ -3,8 +3,8 @@
 	{"key": "menu.campfires", "value": "Fogueiras"},
 	{"key": "menu.hideouts", "value": "Esconderijos"},
 	{"key": "menu.plants", "value": "Plantas"},
-	{"key": "menu.hide_all", "value": "Mostrar tudo"},
-	{"key": "menu.show_all", "value": "Esconder tudo"},
+	{"key": "menu.hide_all", "value": "Esconder tudo"},
+	{"key": "menu.show_all", "value": "Mostrar tudo"},
 	{"key": "menu.search", "value": "Pesquisar"},
 	{"key": "menu.settings", "value": "Configurações"},
 	{"key": "menu.language", "value": "Idima"},
@@ -21,5 +21,14 @@
 	{"key": "alaskan_ginseng", "value": "Ginseng do Alasca"},
 	{"key": "american_ginseng", "value": "Ginseng Americano"},
 	{"key": "bay_bolete", "value": "Boleto Baio"},
-	{"key": "black_berry", "value": "Framboesa"}
+	{"key": "black_berry", "value": "Framboesa"},
+	{"key": "black_currant", "value": "Cassis"},
+	{"key": "burdock_root", "value": "Bardana"},
+	{"key": "chanterelle", "value": "Cantarelo"},
+	{"key": "common_bullbrush", "value": "Taboa Comum"},
+	{"key": "creeping_thyme", "value": "Tomilho"},
+	{"key": "desert_sage", "value": "Sálvia do Deserto"},
+	{"key": "english_mace", "value": "Agerato"},
+	{"key": "evergreen_huckleberry", "value": "Huckleberry da Califórnia"},
+	{"key": "golden_currant", "value": "Cassis Dourado"}
 ]
