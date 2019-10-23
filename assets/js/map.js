@@ -86,13 +86,14 @@ Map.loadMarkers = function()
             Map.addMarkers();
         });
 };
-
+var finalText = '';
 Map.addMarkers = function()
 {
     ciLayer.addTo(map);
     ciLayer.clearLayers();
 
     ciMarkers = [];
+
 
     $.each(markers, function (key, value)
     {
@@ -102,6 +103,17 @@ Map.addMarkers = function()
             {
                 console.error(`[LANG][${lang}]: Text not found: '${value.text}.name'`);
                 languageData[lang][value.text+'.name'] = `${value.text}.name`;
+
+                var devName = value.text.replace('plant_', '');
+                var plantId = devName.split('_')[devName.split('_').length-1];
+                var categoryName = devName.replace('_' + plantId, '');
+                var langName = languageData[lang][categoryName];
+                finalText +=
+                `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
+                 {"key": "${value.text}.desc", "value": ""},
+                    `;
+                console.log()
+
             }
 
             if (languageData[lang][value.text+'.desc'] == null)
@@ -263,7 +275,7 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    console.log(`{"text": "plant_prairie_poppy_", "icon": "plants", "sub_data": "prairie_poppy", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    console.log(`{"text": "plant_yarrow_", "icon": "plants", "sub_data": "yarrow", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
 
     //console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
     //testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});

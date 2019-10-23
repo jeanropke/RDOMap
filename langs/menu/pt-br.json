@@ -36,5 +36,15 @@
 	{"key": "parasol_mushroom", "value": "Cogumelo Guarda-Sol"},
 	{"key": "oleander_sage", "value": "Sálvia Oleandro"},
 	{"key": "oregano", "value": "Orégano"},
-	{"key": "prairie_poppy", "value": "Papoula da Pradaria"}
+	{"key": "prairie_poppy", "value": "Papoula da Pradaria"},
+	{"key": "raspberry", "value": "Framboesa Vermelha"},
+	{"key": "rams_head", "value": "Maitake"},
+	{"key": "red_sage", "value": "Sálvia Vermelha"},
+	{"key": "indian_tobacco", "value": "Tabaco-Indiano"},
+	{"key": "vanilla_flower", "value": "Flor-de-Baunilha"},
+	{"key": "violet_snowdrop", "value": "Gotas-de-Leite Violetas"},
+	{"key": "wild_feverfew", "value": "Quinina Silvestre"},
+	{"key": "wild_mint", "value": "Menta-Silvestre"},
+	{"key": "wintergreen_berry", "value": "Gualtéria"},
+	{"key": "yarrow", "value": "Mil-Folhas"}
 ]
