@@ -15,7 +15,8 @@ var categories = [
 ];
 var subCategories = [
     'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry', 'black_currant', 'burdock_root', 'chanterelle', 'common_bullbrush',
-    'creeping_thyme', 'english_mace', 'evergreen_huckleberry', 'golden_currant'
+    'creeping_thyme', 'english_mace', 'evergreen_huckleberry', 'golden_currant', 'hummingbird_sage', 'milkweed', 'parasol_mushroom',
+    'oleander_sage', 'oregano', 'prairie_poppy'
 ];
 var enabledTypes = categories;
 
