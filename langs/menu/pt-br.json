@@ -30,5 +30,11 @@
 	{"key": "desert_sage", "value": "Sálvia do Deserto"},
 	{"key": "english_mace", "value": "Agerato"},
 	{"key": "evergreen_huckleberry", "value": "Huckleberry da Califórnia"},
-	{"key": "golden_currant", "value": "Cassis Dourado"}
+	{"key": "golden_currant", "value": "Cassis Dourado"},
+	{"key": "hummingbird_sage", "value": "Sálvia Beija-Flor"},
+	{"key": "milkweed", "value": "Asclepias"},
+	{"key": "parasol_mushroom", "value": "Cogumelo Guarda-Sol"},
+	{"key": "oleander_sage", "value": "Sálvia Oleandro"},
+	{"key": "oregano", "value": "Orégano"},
+	{"key": "prairie_poppy", "value": "Papoula da Pradaria"}
 ]
