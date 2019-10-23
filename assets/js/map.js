@@ -263,7 +263,7 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    console.log(`{"text": "plant_golden_currant_", "icon": "plants", "sub_data": "golden_currant", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    console.log(`{"text": "plant_prairie_poppy_", "icon": "plants", "sub_data": "prairie_poppy", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
 
     //console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
     //testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
