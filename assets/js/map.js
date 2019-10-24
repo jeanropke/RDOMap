@@ -275,7 +275,7 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    console.log(`{"text": "plant_yarrow_", "icon": "plants", "sub_data": "yarrow", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    console.log(`{"text": "plant_wild_carrot_", "icon": "plants", "sub_data": "wild_carrot", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
 
     //console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
     //testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});

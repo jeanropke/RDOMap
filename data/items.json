@@ -208,6 +208,7 @@
 	{"text": "plant_parasol_mushroom_6", "icon": "plants", "sub_data": "parasol_mushroom", "lat": "-51.3203125", "lng": "104.09375"},
 	{"text": "plant_parasol_mushroom_7", "icon": "plants", "sub_data": "parasol_mushroom", "lat": "-61.125", "lng": "122.671875"},
 	{"text": "plant_parasol_mushroom_8", "icon": "plants", "sub_data": "parasol_mushroom", "lat": "-56.546875", "lng": "138.1953125"},
+	{"text": "plant_parasol_mushroom_9", "icon": "plants", "sub_data": "parasol_mushroom", "lat": "-59.9453125", "lng": "109.328125"},
 	{"text": "plant_oleander_sage_1", "icon": "plants", "sub_data": "oleander_sage", "lat": "-89.1328125", "lng": "142.1015625"},
 	{"text": "plant_oleander_sage_2", "icon": "plants", "sub_data": "oleander_sage", "lat": "-87.2109375", "lng": "142.46875"},
 	{"text": "plant_oleander_sage_3", "icon": "plants", "sub_data": "oleander_sage", "lat": "-85.7265625", "lng": "143.078125"},
@@ -225,6 +226,8 @@
 	{"text": "plant_oregano_8", "icon": "plants", "sub_data": "oregano", "lat": "-64.234375", "lng": "132.2890625"},
 	{"text": "plant_oregano_9", "icon": "plants", "sub_data": "oregano", "lat": "-56.75", "lng": "138.28125"},
 	{"text": "plant_oregano_10", "icon": "plants", "sub_data": "oregano", "lat": "-56.234375", "lng": "138"},
+	{"text": "plant_oregano_11", "icon": "plants", "sub_data": "oregano", "lat": "-110.359375", "lng": "34.0703125"},
+	{"text": "plant_oregano_12", "icon": "plants", "sub_data": "oregano", "lat": "-87.4609375", "lng": "99.3125"},
 	{"text": "plant_prairie_poppy_1", "icon": "plants", "sub_data": "prairie_poppy", "lat": "-86.8359375", "lng": "88.515625"},
 	{"text": "plant_prairie_poppy_2", "icon": "plants", "sub_data": "prairie_poppy", "lat": "-88.25", "lng": "88.234375"},
 	{"text": "plant_prairie_poppy_3", "icon": "plants", "sub_data": "prairie_poppy", "lat": "-90.078125", "lng": "89.421875"},
@@ -359,6 +362,10 @@
 	{"text": "plant_yarrow_11", "icon": "plants", "sub_data": "yarrow", "lat": "-71.96875", "lng": "115.6015625"},
 	{"text": "plant_yarrow_12", "icon": "plants", "sub_data": "yarrow", "lat": "-75.8671875", "lng": "125.4453125"},
 	{"text": "plant_yarrow_13", "icon": "plants", "sub_data": "yarrow", "lat": "-74.2734375", "lng": "128.359375"},
+	{"text": "plant_yarrow_14", "icon": "plants", "sub_data": "yarrow", "lat": "-59.5234375", "lng": "109.515625"},
+	{"text": "plant_wild_carrot_1", "icon": "plants", "sub_data": "wild_carrot", "lat": "-63.9296875", "lng": "117.8359375"},
+	{"text": "plant_wild_carrot_2", "icon": "plants", "sub_data": "wild_carrot", "lat": "-110.5546875", "lng": "33.8125"},
+	{"text": "plant_wild_carrot_3", "icon": "plants", "sub_data": "wild_carrot", "lat": "-88.5", "lng": "99.203125"},	
 	{"text": "boats_1", "icon": "boats", "lat": "-81.28125", "lng": "119.9375"}
 ]
 

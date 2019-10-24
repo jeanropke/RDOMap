@@ -17,7 +17,8 @@ var subCategories = [
     'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry', 'black_currant', 'burdock_root', 'chanterelle',
     'common_bullbrush', 'creeping_thyme', 'english_mace', 'evergreen_huckleberry', 'golden_currant', 'hummingbird_sage',
     'milkweed', 'parasol_mushroom', 'oleander_sage', 'oregano', 'prairie_poppy', 'raspberry', 'rams_head', 'red_sage',
-    'indian_tobacco', 'vanilla_flower', 'violet_snowdrop', 'wild_feverfew', 'wild_mint', 'wintergreen_berry', 'yarrow'
+    'indian_tobacco', 'vanilla_flower', 'violet_snowdrop', 'wild_feverfew', 'wild_mint', 'wintergreen_berry', 'yarrow',
+    'wild_carrot'
 ];
 var enabledTypes = categories;
 

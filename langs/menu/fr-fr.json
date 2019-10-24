@@ -17,6 +17,7 @@
 	{"key": "menu.fast_travel", "value": "Voyage Rapide"},
 	{"key": "menu.search_placeholder", "value": "Recherche d'objet. Séparés par des ;"},
 	{"key": "menu.animals", "value": "Animaux"},
+	{"key": "menu.animal.armadillo", "value": "Armadillo"},
 	{"key": "menu.animal.loon", "value": "Plongeon"},
 	{"key": "menu.animal.cougar", "value": "Couguar"},
 	{"key": "alaskan_ginseng", "value": "Ginseng d'Alaska"},
@@ -44,9 +45,9 @@
     {"key": "indian_tobacco", "value": "Tabac Indien"},
     {"key": "vanilla_flower", "value": "Fleur de Vanille"},
     {"key": "violet_snowdrop", "value": "Perce-Neige Violet"},
-    {"key": "wild_feverfew", "value": "Camomille Sauvage"},
+	{"key": "wild_carrot", "value": "Carotte Sauvage"},
+	{"key": "wild_feverfew", "value": "Camomille Sauvage"},
     {"key": "wild_mint", "value": "Menthe Sauvage"},
     {"key": "wintergreen_berry", "value": "Baie de Gaulthérie Couchée"},
-    {"key": "yarrow", "value": "Millefeuille"}
-        
+    {"key": "yarrow", "value": "Millefeuille"}        
 ]
