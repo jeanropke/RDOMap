@@ -718,5 +718,7 @@
 	{"key": "plant_yarrow_12.name", "value": "Mil-Folhas #12"},
 	{"key": "plant_yarrow_12.desc", "value": ""},
 	{"key": "plant_yarrow_13.name", "value": "Mil-Folhas #13"},
-	{"key": "plant_yarrow_13.desc", "value": ""}
+	{"key": "plant_yarrow_13.desc", "value": ""},
+	{"key": "boats_1.name", "value": "Barcos #1"},
+    {"key": "boats_1.desc", "value": "Barcos aparecem nessa área."}
 ]
