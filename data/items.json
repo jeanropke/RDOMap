@@ -358,6 +358,7 @@
 	{"text": "plant_yarrow_10", "icon": "plants", "sub_data": "yarrow", "lat": "-71.25", "lng": "103.0078125"},
 	{"text": "plant_yarrow_11", "icon": "plants", "sub_data": "yarrow", "lat": "-71.96875", "lng": "115.6015625"},
 	{"text": "plant_yarrow_12", "icon": "plants", "sub_data": "yarrow", "lat": "-75.8671875", "lng": "125.4453125"},
-	{"text": "plant_yarrow_13", "icon": "plants", "sub_data": "yarrow", "lat": "-74.2734375", "lng": "128.359375"}
+	{"text": "plant_yarrow_13", "icon": "plants", "sub_data": "yarrow", "lat": "-74.2734375", "lng": "128.359375"},
+	{"text": "boats_1", "icon": "boats", "lat": "-81.28125", "lng": "119.9375"}
 ]
 

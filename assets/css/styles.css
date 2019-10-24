@@ -237,6 +237,17 @@ p {
     user-select: none;
 }
 
+.side-menu .menu-two-column {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+.side-menu .menu-two-column .menu-row {
+    width: 50%;
+}
+.side-menu .menu-two-column .icon {
+    margin-top: 10px;
+}
 .lat-lng-container {
     position: absolute;
     bottom: 0;

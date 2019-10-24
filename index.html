@@ -25,18 +25,22 @@
         <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
     <div>
+        <div class="menu-option clickable" data-type="boats">
+            <img class="icon" src="./assets/images/icons/boats.png" />
+            <span data-text="menu.boats">Boats</span>
+        </div>
+    </div>
+    <div>
         <div class="menu-option clickable" data-type="campfires">
             <img class="icon" src="./assets/images/icons/campfires.png" />
             <span data-text="menu.campfires">Campfires</span>
         </div>
-        <div class="menu-hidden" data-type="campfires"></div>
     </div>
     <div>
         <div class="menu-option clickable" data-type="hideouts">
             <img class="icon" src="./assets/images/icons/hideouts.png" />
             <span data-text="menu.hideouts">Gang Hideouts</span>
         </div>
-        <div class="menu-hidden" data-type="hideouts"></div>
     </div>
     <div>
         <div class="menu-option clickable" data-type="plants">
@@ -47,16 +51,18 @@
         <div class="menu-hidden" data-type="plants"></div>
     </div>
     <h2 data-text="menu.animals">Animals</h2>
-    <div>
-        <div class="menu-option animal-clickable" data-type="loon">
-            <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_LOON_PACIFIC.png" />
-            <span data-text="menu.animal.loon" class="disabled">Loon</span>
+    <div class="menu-two-column">
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="loon">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_LOON_PACIFIC.png" />
+                <span data-text="menu.animal.loon" class="disabled">Loon</span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="menu-option animal-clickable" data-type="cougar">
-            <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_COUGAR.png" />
-            <span data-text="menu.animal.cougar" class="disabled">Cougar</span>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="cougar">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_COUGAR.png" />
+                <span data-text="menu.animal.cougar" class="disabled">Cougar</span>
+            </div>
         </div>
     </div>
     <div class="search-container">

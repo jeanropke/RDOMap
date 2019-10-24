@@ -33,13 +33,3 @@ Language.setMenuLanguage = function ()
     ///Special cases:
     $('#search').attr("placeholder", languageData[lang]['menu.search_placeholder']);
 };
-
-Language.generateItemNames = function(internal_name, public_name, max)
-{
-    var finalstring = "";
-    for(var i = 1; i <= max; i++)
-    {
-        finalstring += `{"key": "${internal_name}_${i}.name", "value": "${public_name} #${i}"},\n{"key": "${internal_name}_${i}.desc", "value": ""},\n`;
-    }
-    console.log(finalstring);
-};

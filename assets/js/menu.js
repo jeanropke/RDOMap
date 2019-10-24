@@ -8,10 +8,13 @@ Menu.refreshMenu = function ()
 {
     $.each(categories, function (key, value)
     {
-        //$(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
-
         markers.filter(function(item)
         {
+
+            if(!categories.includes(item.icon)){
+                console.log(`%c O seu animal, coloca a categoria '${item.icon}' em 'categories' ou o menu não vai funcionar`, 'background: #222; color: #bada55; font-size:20px');
+            }
+
             if(item.icon == value)
             {
                 if(item.sub_data == null)
