@@ -719,6 +719,6 @@
 	{"key": "plant_yarrow_12.desc", "value": ""},
 	{"key": "plant_yarrow_13.name", "value": "Millefeuille #13"},
 	{"key": "plant_yarrow_13.desc", "value": ""},
-	{"key": "boats_1.name", "value": "Boats #1"},
-    {"key": "boats_1.desc", "value": "Boats spawn in this area."}
+	{"key": "boats_1.name", "value": "Bateau #1"},
+    {"key": "boats_1.desc", "value": "Des bateaux apparaissent dans zone."}
 ]
