@@ -3,27 +3,20 @@
 feel free to contribute
 
 english (en-en.json)
-  - jeanropke
-  - iliggalodin
-  - Rakmarok
-  - rbcunhadesign
-  - Tiax
-  - sporb
+  - jeanropke 
   
 german (de-de.json)
-  - flameango
-  - Rakmarok
-  
+  - no-one yet!
+    
 spanish (es-es.json)
-  - glaseca
-  
+  - no-one yet!
+    
 french (fr-fr.json)
   - Nopitch
-  - Gromino
   
 italian (it-it.json)
-  - Raffox97
-  
+- no-one yet!
+
 japanese (ja.json)
   - no-one yet!
   
@@ -35,14 +28,14 @@ polish (pl.json)
   
 brazilian (pt-br.json)
   - jeanropke
-  - Vitor-Borba72
+  - no-one yet!
   
 russian (ru.json)
-  - Overnoes
-  
+  - no-one yet!
+   
 chinese simplified (zh-s.json)
-  - yamazakitouma
-  
+  - no-one yet!
+   
 chinese traditional (zh-t.json)
-  - yamazakitouma
-  
+  - no-one yet!
+   
