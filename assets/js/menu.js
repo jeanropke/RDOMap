@@ -24,6 +24,7 @@ Menu.refreshMenu = function ()
 
             if(item.icon == value)
             {
+
                 if(item.sub_data == null)
                     return;
 
@@ -37,8 +38,7 @@ Menu.refreshMenu = function ()
                 if(!subCategories.includes(item.sub_data)){
                     console.log(`%c O seu animal, coloca a categoria '${item.sub_data}' em 'subCategories' ou o menu não vai funcionar`, 'background: #222; color: #bada55; font-size:20px');
                 }
-
-                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.sub_data}" data-text="${item.sub_data}">${languageData[lang][item.sub_data]} <span>${countPlantsType[item.sub_data]}</span></p>`);
+                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.sub_data}"><span data-text="${item.sub_data}">${languageData[lang][item.sub_data]}</span> <span class="item-count">${countPlantsType[item.sub_data]}</span></p>`);
             }
         });
     });

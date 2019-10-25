@@ -237,7 +237,7 @@ p {
     display: flex;
 }
 
-.side-menu .menu-hidden .collectible span {
+.side-menu .menu-hidden .collectible .item-count {
     margin: auto 0 auto auto;
     text-align: center;
     width: 19px;
