@@ -197,7 +197,6 @@ p {
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
     background: rgba(255, 255, 255, 0.1);
 }
-
 .side-menu .disabled {
     color: #6a6a6a;
     text-decoration: line-through;
@@ -235,8 +234,15 @@ p {
     padding: 5px 25px;
     cursor: pointer;
     user-select: none;
+    display: flex;
 }
 
+.side-menu .menu-hidden .collectible span {
+    margin: auto 0 auto auto;
+    text-align: center;
+    width: 19px;
+    font-size: 15px;
+}
 .side-menu .menu-two-column {
     display: flex;
     flex-flow: row wrap;

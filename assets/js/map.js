@@ -94,7 +94,7 @@ Map.addMarkers = function()
 
     ciMarkers = [];
 
-
+    finalText  = '';
     $.each(markers, function (key, value)
     {
         if(enabledTypes.includes(value.icon))
@@ -275,8 +275,11 @@ Map.addCoordsOnMap = function(coords)
         });
     }
 
-    if(debug == 'addMarker') {
-        console.log(`{"text": "plant_wild_carrot_", "icon": "plants", "sub_data": "wild_carrot", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+    if(debug == 'addMarker')
+    {
+        //console.log(`{"text": "plant_american_ginseng_", "icon": "plants", "sub_data": "american_ginseng", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        console.log(`{"text": "campfire_", "icon": "campfires", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+
     }
     if(debug == 'addHeatmap') {
         console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
