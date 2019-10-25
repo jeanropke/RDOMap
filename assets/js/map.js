@@ -188,9 +188,9 @@ Map.addMarkerOnMap = function(value)
 {
     var icon = L.icon({
         iconUrl: `assets/images/markers/${value.icon}.png`,
-        iconSize:[42,42],
-        iconAnchor:[42/2,42],
-        popupAnchor:[0,-40]
+        iconSize:[31.5,42],
+        iconAnchor:[31.5/2,42],
+        popupAnchor:[0,-38]
     });
     var tempMarker = L.marker([value.lat, value.lng],
         {
