@@ -32,6 +32,8 @@ var languageData = [];
 
 var nocache = 20;
 
+var debug = 'none'; //addMarker or addHeatmap
+
 
 function init()
 {
