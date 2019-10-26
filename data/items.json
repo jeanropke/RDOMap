@@ -22,6 +22,7 @@
 	{"text": "campfire_21", "icon": "campfires", "lat": "-78.8125", "lng": "127.8046875"},
 	{"text": "campfire_22", "icon": "campfires", "lat": "-94.265625", "lng": "128.5859375"},
 	{"text": "campfire_23", "icon": "campfires", "lat": "-80.4296875", "lng": "155.7421875"},
+	{"text": "campfire_24", "icon": "campfires", "lat": "-88.9453125", "lng": "97.8203125"},
 	{"text": "hideout_1", "icon": "hideouts", "lat": "-118.390625", "lng": "14.796875"},
 	{"text": "hideout_2", "icon": "hideouts", "lat": "-113.890625", "lng": "18.109375"},
 	{"text": "hideout_3", "icon": "hideouts", "lat": "-105.96875", "lng": "20.375"},

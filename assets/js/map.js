@@ -282,7 +282,7 @@ Map.addCoordsOnMap = function(coords)
 
     }
     if(debug == 'addHeatmap') {
-        console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1" },`);
+        console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1"},`);
         testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
         heatmapLayer.setData(testData);
     }
