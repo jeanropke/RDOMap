@@ -287,4 +287,3 @@ Map.addCoordsOnMap = function(coords)
         heatmapLayer.setData(testData);
     }
 };
-

@@ -13,6 +13,7 @@ var visibleMarkers = [];
 var categories = [
     'boats', 'campfires', 'plants', 'hideouts', 'defend_campsite'
 ];
+
 var subCategories = [
     'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry', 'black_currant', 'burdock_root', 'chanterelle',
     'common_bullbrush', 'creeping_thyme', 'desert_sage', 'english_mace', 'evergreen_huckleberry', 'golden_currant',
