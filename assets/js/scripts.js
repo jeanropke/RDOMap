@@ -15,10 +15,10 @@ var categories = [
 ];
 var subCategories = [
     'alaskan_ginseng', 'american_ginseng', 'bay_bolete', 'black_berry', 'black_currant', 'burdock_root', 'chanterelle',
-    'common_bullbrush', 'creeping_thyme', 'english_mace', 'evergreen_huckleberry', 'golden_currant', 'hummingbird_sage',
-    'milkweed', 'parasol_mushroom', 'oleander_sage', 'oregano', 'prairie_poppy', 'raspberry', 'rams_head', 'red_sage',
-    'indian_tobacco', 'vanilla_flower', 'violet_snowdrop', 'wild_feverfew', 'wild_mint', 'wintergreen_berry', 'yarrow',
-    'wild_carrot'
+    'common_bullbrush', 'creeping_thyme', 'desert_sage', 'english_mace', 'evergreen_huckleberry', 'golden_currant',
+    'hummingbird_sage', 'milkweed', 'parasol_mushroom', 'oleander_sage', 'oregano', 'prairie_poppy', 'raspberry',
+    'rams_head', 'red_sage', 'indian_tobacco', 'vanilla_flower', 'violet_snowdrop', 'wild_feverfew', 'wild_mint',
+    'wintergreen_berry', 'yarrow', 'wild_carrot'
 ];
 var enabledTypes = categories;
 
@@ -81,60 +81,13 @@ function setMapBackground(mapName){
 
     Cookies.set('map-layer', mapName, { expires: 999 });
 }
-function setCurrentDayCycle()
-{
-    //day1: 2 4 6
-    //day2: 0 3
-    //day3: 1 5
-
-    var weekDay = new Date().getUTCDay();
-    switch(weekDay)
-    {
-        case 2: //tuesday
-        case 4: //thursday
-        case 6: //saturday
-            day = 1;
-            break;
-
-        case 0: //sunday
-        case 3: //wednesday
-            day = 2;
-            break;
-
-        case 1: //monday
-        case 5: //friday
-            day = 3;
-            break;
-    }
-
-    $('#day').val(day);
-
-    //Cookie day not exists? create
-    if(typeof Cookies.get('date') === 'undefined')
-    {
-        Cookies.set('date', date, { expires: 2 });
-    }
-    //if exists, remove markers if the days arent the same
-    else
-    {
-        if(Cookies.get('date') != date.toString())
-        {
-            Cookies.set('date', date, { expires: 2 });
-            if(resetMarkersDaily)
-            {
-                Cookies.set('removed-items', '', {expires: 1});
-                disableMarkers = [];
-            }
-        }
-    }
-}
 
 function changeCursor()
 {
     if(showCoordinates)
-        $('.leaflet-grab').css('cursor', 'pointer!important');
+        $('#map').css('cursor', 'pointer');
     else
-        $('.leaflet-grab').css('cursor', 'grab');
+        $('#map').css('cursor', 'grab');
 }
 
 
@@ -228,8 +181,5 @@ $('.menu-toggle').on('click', function()
     {
         $('.menu-toggle').text('>');
     }
-    $('.timer-container').toggleClass('timer-menu-opened');
-    $('.counter-container').toggleClass('counter-menu-opened');
-
 });
 
