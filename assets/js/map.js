@@ -277,8 +277,8 @@ Map.addCoordsOnMap = function(coords)
 
     if(debug == 'addMarker')
     {
-        //console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
-        console.log(`{"text": "defend_campsite_", "icon": "defend_campsite", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        //console.log(`{"text": "campfire_", "icon": "campfires", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
 
     }
     if(debug == 'addHeatmap') {

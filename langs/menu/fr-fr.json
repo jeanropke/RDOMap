@@ -1,7 +1,6 @@
 [
 	{"key": "menu.markers", "value": "Balises"},
 	{"key": "menu.campfires", "value": "Feux de Camp"},
-	{"key": "menu.defend_campsite", "value": "Defend Campsites"},
 	{"key": "menu.hideouts", "value": "Camps de Bandits"},
 	{"key": "menu.plants", "value": "Plantes"},
 	{"key": "menu.boats", "value": "Bateaux"},

@@ -426,13 +426,6 @@
 	{"text": "plant_wild_carrot_3", "icon": "plants", "sub_data": "wild_carrot", "lat": "-88.5", "lng": "99.203125"},
 	{"text": "plant_wild_carrot_4", "icon": "plants", "sub_data": "wild_carrot", "lat": "-59.4453125", "lng": "128.7109375"},
 	{"text": "plant_wild_carrot_5", "icon": "plants", "sub_data": "wild_carrot", "lat": "-65.109375", "lng": "132.296875"},
-	{"text": "boats_1", "icon": "boats", "lat": "-81.28125", "lng": "119.9375"},
-	{"text": "defend_campsite_1", "icon": "defend_campsite", "lat": "-115.7578125", "lng": "23.0234375"},
-	{"text": "defend_campsite_2", "icon": "defend_campsite", "lat": "-110.71875", "lng": "19.296875"},
-	{"text": "defend_campsite_3", "icon": "defend_campsite", "lat": "-80.6953125", "lng": "89.0546875"},
-	{"text": "defend_campsite_4", "icon": "defend_campsite", "lat": "-77.6015625", "lng": "123.09375"},
-	{"text": "defend_campsite_5", "icon": "defend_campsite", "lat": "-69.40625", "lng": "146.546875"},
-	{"text": "defend_campsite_6", "icon": "defend_campsite", "lat": "-61.203125", "lng": "140.2734375"},
-	{"text": "defend_campsite_7", "icon": "defend_campsite", "lat": "-67.7265625", "lng": "119.5546875"}
+	{"text": "boats_1", "icon": "boats", "lat": "-81.28125", "lng": "119.9375"}	
 ]
 
