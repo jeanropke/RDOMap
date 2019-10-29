@@ -1,6 +1,7 @@
 [
 	{"key": "menu.markers", "value": "Markers"},
 	{"key": "menu.campfires", "value": "Campfires"},
+	{"key": "menu.defend_campsite", "value": "Defend Campsites"},
 	{"key": "menu.hideouts", "value": "Gang Hideouts"},
 	{"key": "menu.plants", "value": "Plants"},
 	{"key": "menu.boats", "value": "Boats"},
