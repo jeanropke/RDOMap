@@ -33,8 +33,8 @@ var languageData = [];
 
 var nocache = 20;
 
-var debug = 'none'; //addMarker or addHeatmap
-
+var debug = 'none'; //addMarker or addHeatmap or addPlant
+var heatmapCount = 10;
 
 function init()
 {

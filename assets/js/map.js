@@ -23,20 +23,23 @@ Map.init = function ()
         // radius should be small ONLY if scaleRadius is true (or small radius is intended)
         // if scaleRadius is false it will be the constant radius used in pixels
         "radius": 2,
-        "maxOpacity": .8,
+        "maxOpacity": .5,
+        minOpacity: .1,
         // scales the radius based on map zoom
         "scaleRadius": true,
         // if set to false the heatmap uses the global maximum for colorization
         // if activated: uses the data maximum within the current map boundaries
         //   (there will always be a red spot with useLocalExtremas true)
-        "useLocalExtrema": true,
+        "useLocalExtrema": false,
         // which field name in your data represents the latitude - default "lat"
         latField: 'lat',
         // which field name in your data represents the longitude - default "lng"
         lngField: 'lng',
         // which field name in your data represents the data value - default "value"
         valueField: 'count',
-        gradient: { 0.25: "rgb(125,125,125)", 0.55: "rgb(0,0,125)", 1.0: "rgb(255,42,32)" }
+        gradient: { 0.25: "rgb(125, 125, 125)", 0.55: "rgb(48, 25, 52)", 1.0: "rgb(255, 42, 32)" }
+
+
     };
     heatmapLayer = new HeatmapOverlay(cfg);
 
@@ -82,7 +85,7 @@ Map.loadMarkers = function()
     markers = [];
     $.getJSON(`data/items.json?nocache=${nocache}`)
         .done(function(data) {
-            markers = data;
+            markers = data.sort((a ,b) => (a.lat > b.lat) ? 1 : ((b.lat > a.lat) ? -1 : 0));
             Map.addMarkers();
         });
 };
@@ -252,15 +255,15 @@ Map.debugMarker = function (lat, long)
 
 Map.setHeatmap = function(value)
 {
-    heatmapLayer.setData({max: 800, data: Heatmap.data[value]});
+    heatmapLayer.setData({max: 10, data: Heatmap.data[value]});
 };
 
 Map.removeHeatmap = function ()
 {
-    heatmapLayer.setData({max: 800, data: []});
+    heatmapLayer.setData({max: 10, data: []});
 };
 
-var testData = { max: 800, data: [] };
+var testData = { max: 10, data: [] };
 Map.addCoordsOnMap = function(coords)
 {
     // Show clicked coordinates (like google maps)
@@ -277,13 +280,15 @@ Map.addCoordsOnMap = function(coords)
 
     if(debug == 'addMarker')
     {
-        //console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
         console.log(`{"text": "defend_campsite_", "icon": "defend_campsite", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
-
+    }
+    if(debug == 'addPlant')
+    {
+        console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
     if(debug == 'addHeatmap') {
-        console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "1"},`);
-        testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: 1});
+        console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "${heatmapCount}"},`);
+        testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: heatmapCount});
         heatmapLayer.setData(testData);
     }
 };
