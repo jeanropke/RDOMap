@@ -85,7 +85,7 @@ Map.loadMarkers = function()
     markers = [];
     $.getJSON(`data/items.json?nocache=${nocache}`)
         .done(function(data) {
-            markers = data.sort((a ,b) => (a.lat > b.lat) ? 1 : ((b.lat > a.lat) ? -1 : 0));
+            markers = data;
             Map.addMarkers();
         });
 };
@@ -96,7 +96,7 @@ Map.addMarkers = function()
     ciLayer.clearLayers();
 
     ciMarkers = [];
-
+    //markers = markers.sort((a ,b) => (a.lat > b.lat) ? 1 : ((b.lat > a.lat) ? -1 : 0));
     finalText  = '';
     $.each(markers, function (key, value)
     {
