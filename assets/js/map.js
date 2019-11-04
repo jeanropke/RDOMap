@@ -110,20 +110,14 @@ Map.addMarkers = function()
                 var devName = value.text.replace('plant_', '');
                 var plantId = devName.split('_')[devName.split('_').length-1];
                 var categoryName = devName.replace('_' + plantId, '');
-                var langName = languageData[lang][categoryName];
+                var langName = languageData[lang]['menu.plant.'+categoryName];
                 finalText +=
                 `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
-                 {"key": "${value.text}.desc", "value": ""},
-                    `;
+				`;
                 console.log()
 
             }
 
-            if (languageData[lang][value.text+'.desc'] == null)
-            {
-                console.error(`[LANG][${lang}]: Text not found: '${value.text}.desc'`);
-                languageData[lang][value.text+'.desc'] = `${value.text}.desc`;
-            }
 
             if(value.sub_data != null) {
                 if(!enabledTypes.includes(value.sub_data))
@@ -200,7 +194,7 @@ Map.addMarkerOnMap = function(value)
             icon: icon
         });
 
-    tempMarker.bindPopup(`<h1> ${languageData[lang][value.text + '.name']}</h1><p>  ${languageData[lang][value.text + '.desc']} </p>`);
+    tempMarker.bindPopup(`<h1> ${languageData[lang][value.text + '.name']}</h1>${value.count != null ? '<p> There is/are <b>'+value.count+'</b> '+languageData[lang]['menu.plant.'+value.sub_data]+' in this area</p>' : ''}`);
     visibleMarkers[value.text] = tempMarker;
     ciMarkers.push(tempMarker);
 
@@ -284,7 +278,7 @@ Map.addCoordsOnMap = function(coords)
     }
     if(debug == 'addPlant')
     {
-        console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "count": "", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
     if(debug == 'addHeatmap') {
         console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "${heatmapCount}"},`);
