@@ -122,17 +122,36 @@ $("#language").on("change", function()
 $('.menu-option.clickable').on('click', function ()
 {
     var menu = $(this);
-    menu.children('span').toggleClass('disabled');
 
-    if(menu.children('span').hasClass('disabled'))
+    if(menu.data('type') == 'plants')
     {
-        enabledTypes = $.grep(enabledTypes, function(value) {
-            return value != menu.data('type');
-        });
+        if(enabledTypes.some(r=> subCategories.includes(r)))
+        {
+            $.each(subCategories, function (key, value) {
+                $(`.collectible[data-type=${value}]`).addClass('disabled');
+                enabledTypes = $.grep(enabledTypes, function (plantCat) {
+                    return plantCat != value;
+                });
+            });
+        }
+        else {
+            $.each(subCategories, function (key, value) {
+                $(`.collectible[data-type=${value}]`).removeClass('disabled');
+                enabledTypes.splice.apply(enabledTypes, [2, 0].concat(subCategories));
+            });
+        }
     }
-    else
-    {
-        enabledTypes.push(menu.data('type'));
+    else {
+        menu.children('span').toggleClass('disabled');
+
+        if (menu.children('span').hasClass('disabled')) {
+            enabledTypes = $.grep(enabledTypes, function (value) {
+                return value != menu.data('type');
+            });
+        }
+        else {
+            enabledTypes.push(menu.data('type'));
+        }
     }
     Map.addMarkers();
 });
