@@ -191,9 +191,11 @@ p {
     padding: 0 5px;
     user-select: none;
     cursor: pointer;
-    line-height: 36px;
+    /*line-height: 36px;*/
 }
-
+.side-menu .menu-option span {
+    padding: 7px 5px;
+}
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
     background: rgba(255, 255, 255, 0.1);
 }
