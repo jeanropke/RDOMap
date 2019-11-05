@@ -43,6 +43,23 @@ Menu.refreshMenu = function ()
         });
     });
 
+
+    //Reorder plants menu alphabetically
+    Menu.reorderMenu('.menu-hidden[data-type=plants]');
+
+    //Reorder animals menu alphabetically
+    Menu.reorderMenu('.menu-two-column');
+
+};
+
+Menu.reorderMenu = function (menu) {
+    $(menu).children().sort(function(a, b) {
+        if (a.textContent < b.textContent) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }).appendTo(menu);
 };
 
 Menu.showAll = function() {
