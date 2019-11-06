@@ -86,6 +86,9 @@
 
       this._update();
     },
+    _onAnimZoom: function (ev) {
+     console.log('s');
+    },
     _update: function() {
       var bounds, zoom, scale;
       var generatedData = { max: this._max, min: this._min, data: [] };
@@ -116,9 +119,9 @@
 
 
         // we don't wanna render points that are not even on the map ;-)
-        if (!bounds.contains(latlng)) {
-          continue;
-        }
+        //if (!bounds.contains(latlng)) {
+        //  continue;
+        //}
         // local max is the maximum within current bounds
         localMax = Math.max(value, localMax);
         localMin = Math.min(value, localMin);
