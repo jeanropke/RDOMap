@@ -1,7 +1,7 @@
 var map;
 var markers = [];
 var markersLayer = new L.LayerGroup();
-var ciLayer = L.canvasIconLayer();
+var ciLayer = L.canvasIconLayer({zoomAnimation: true});
 var ciMarkers = [];
 
 var heatmapLayer;
