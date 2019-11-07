@@ -24,14 +24,13 @@ korean (ko.json)
   - no-one yet!
   
 polish (pl.json)
-  - githb123
+  - no-one yet!
   
 brazilian (pt-br.json)
   - jeanropke
-  - no-one yet!
   
 russian (ru.json)
-  - no-one yet!
+  - Overnoes
    
 chinese simplified (zh-s.json)
   - no-one yet!
