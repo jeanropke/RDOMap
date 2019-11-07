@@ -298,22 +298,19 @@ function layerFactory(L) {
 
             var size = this._map.getSize();
 
-            this._canvas.width = size.x;
-            this._canvas.height = size.y;
-
+            this._canvas.width = size.x;// * 10;
+            this._canvas.height = size.y;// * 10;
             this._redraw();
         },
 
         _redraw: function (clear) {
             var self = this;
-            if (clear)
+            if (clear) {
                 this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
+            }
 
             if (!this._map || !this._latlngMarkers)
                 return;
-
-            console.log('s');
-
 
             var tmp = [];
 
@@ -338,10 +335,10 @@ function layerFactory(L) {
 
             var mapBoxCoords = {
 
-                minX: mapBounds.getWest() - 64,
-                minY: mapBounds.getSouth() - 64,
-                maxX: mapBounds.getEast() + 64,
-                maxY: mapBounds.getNorth() + 64
+                minX: mapBounds.getWest() - 640,
+                minY: mapBounds.getSouth() - 640,
+                maxX: mapBounds.getEast() + 640,
+                maxY: mapBounds.getNorth() + 640
             };
 
             var foundMarkers = self._latlngMarkers.search(mapBoxCoords);
@@ -383,9 +380,8 @@ function layerFactory(L) {
             this._canvas = L.DomUtil.create('canvas', 'leaflet-canvas-icon-layer leaflet-layer');
 
             var size = this._map.getSize();
-            this._canvas.width = size.x;
-            this._canvas.height = size.y;
-
+            this._canvas.width = size.x;// * 10;
+            this._canvas.height = size.y;// * 10;
             this._context = this._canvas.getContext('2d');
 
             var animated = this._map.options.zoomAnimation && L.Browser.any3d;

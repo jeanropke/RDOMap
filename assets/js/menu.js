@@ -10,7 +10,14 @@ Menu.refreshMenu = function ()
     markers.forEach(function(item)
     {
         if(item.sub_data != null)
-        countPlantsType[item.sub_data] = (countPlantsType[item.sub_data] || 0)+1;
+        {
+            if(item.count == null) {
+                countPlantsType[item.sub_data] = (countPlantsType[item.sub_data] || 0) + 1;
+            }
+            else {
+                countPlantsType[item.sub_data] = (countPlantsType[item.sub_data] || 0) + parseInt(item.count);
+            }
+        }
     });
 
     $.each(categories, function (key, value)

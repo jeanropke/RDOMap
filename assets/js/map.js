@@ -85,7 +85,9 @@ Map.loadMarkers = function()
     markers = [];
     $.getJSON(`data/items.json?nocache=${nocache}`)
         .done(function(data) {
-            markers = data;
+            markers = data.sort(function (a, b) {
+                return b.lat - a.lat;
+            });
             Map.addMarkers();
         });
 };
@@ -114,8 +116,6 @@ Map.addMarkers = function()
                 finalText +=
                 `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
 				`;
-                console.log()
-
             }
 
 
@@ -147,7 +147,6 @@ Map.addMarkers = function()
         ciLayer.addLayers(ciMarkers);
 
     Menu.refreshMenu();
-
 };
 
 Map.populate = function (max = 10000)
