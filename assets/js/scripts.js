@@ -27,7 +27,7 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var showCoordinates = false;
 
-var avaliableLanguages = ['en-us', 'fr-fr', 'pt-br'];
+var avaliableLanguages = ['en-us', 'fr-fr', 'pt-br', 'ru'];
 var lang;
 var languageData = [];
 
