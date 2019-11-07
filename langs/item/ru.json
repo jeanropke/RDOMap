@@ -734,7 +734,7 @@
 	{"key": "plant_yarrow_14.name", "value": "Тысячелистник #14"},
 	{"key": "plant_yarrow_14.desc", "value": ""},
 	{"key": "boats_1.name", "value": "Лодка #1"},
-    {"key": "boats_1.desc", "value": "Boats spawn in this area."},
+    {"key": "boats_1.desc", "value": ""},
 	{"key": "campfire_16.name", "value": "Лагерный костер #16"},
 	{"key": "campfire_16.desc", "value": ""},
 	{"key": "campfire_17.name", "value": "Лагерный костер #17"},
