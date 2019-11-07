@@ -24,10 +24,16 @@
 </head>
 <body onload="init()">
 <div class="side-menu">
-    <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[<a href="https://openrdr.jeanropke.net/">OpenRDR</a>]</span></h2>
+    <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
     <div class="hide-show-container">
         <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
         <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="ambush">
+            <img class="icon" src="./assets/images/icons/ambush.png" />
+            <span data-text="menu.ambush">Ambush</span>
+        </div>
     </div>
     <div>
         <div class="menu-option clickable" data-type="boats">
@@ -48,6 +54,12 @@
         </div>
     </div>
     <div>
+        <div class="menu-option clickable" data-type="escort">
+            <img class="icon" src="./assets/images/icons/escort.png" />
+            <span data-text="menu.escort">Escort</span>
+        </div>
+    </div>
+    <div>
         <div class="menu-option clickable" data-type="hideouts">
             <img class="icon" src="./assets/images/icons/hideouts.png" />
             <span data-text="menu.hideouts">Gang Hideouts</span>
@@ -60,6 +72,12 @@
             <div class="open-submenu"></div>
         </div>
         <div class="menu-hidden" data-type="plants"></div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="rescue">
+            <img class="icon" src="./assets/images/icons/rescue.png" />
+            <span data-text="menu.rescue">Rescue</span>
+        </div>
     </div>
     <h2 data-text="menu.animals">Animals</h2>
     <div class="menu-two-column">

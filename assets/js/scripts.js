@@ -11,7 +11,7 @@ var searchTerms = [];
 var visibleMarkers = [];
 
 var categories = [
-    'boats', 'campfires', 'plants', 'hideouts', 'defend_campsite'
+    'ambush', 'boats', 'campfires', 'defend_campsite', 'escort', 'hideouts', 'plants', 'rescue'
 ];
 
 var subCategories = [

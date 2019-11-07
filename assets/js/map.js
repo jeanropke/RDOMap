@@ -277,7 +277,7 @@ Map.addCoordsOnMap = function(coords)
 
     if(debug == 'addMarker')
     {
-        console.log(`{"text": "defend_campsite_", "icon": "defend_campsite", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        console.log(`{"text": "ambush_", "icon": "ambush", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
     if(debug == 'addPlant')
     {
