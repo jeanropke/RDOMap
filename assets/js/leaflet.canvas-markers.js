@@ -410,7 +410,13 @@ function layerFactory(L) {
                 delete me._openToolTip;
             }
 
+
+
             var ret = this._markers.search({ minX: x, minY: y, maxX: x, maxY: y });
+
+            ret.sort(function (a, b) {
+                return b.minY - a.minY;
+            });
 
             if (ret && ret.length > 0) {
 
