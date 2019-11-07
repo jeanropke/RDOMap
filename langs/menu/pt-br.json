@@ -1,5 +1,6 @@
 [
-    {"key": "menu.ambush","value": "Emboscada"},
+    {"key": "map.plant.count", "value": "<b>{count}</b> {plant} nesse área"},
+	{"key": "menu.ambush","value": "Emboscada"},
     {"key": "menu.animal.alligator","value": "Jacaré"},
     {"key": "menu.animal.armadillo","value": "Tatuetê"},
     {"key": "menu.animal.badger","value": "Texugo"},

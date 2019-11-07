@@ -1,5 +1,6 @@
 [
-    {"key": "menu.ambush","value": "Ambush"},
+    {"key": "map.plant.count", "value": "<b>{count}</b> {plant} in this area"},
+	{"key": "menu.ambush","value": "Ambush"},
     {"key": "menu.animal.alligator","value": "Alligator"},
     {"key": "menu.animal.armadillo","value": "Armadillo"},
     {"key": "menu.animal.badger","value": "Badger"},

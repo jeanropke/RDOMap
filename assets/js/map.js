@@ -194,9 +194,11 @@ Map.addMarkerOnMap = function(value)
         });
 
     tempMarker.bindPopup(
-        `<h1> ${languageData[lang][value.text + '.name']}</h1>
+        `<h1 class="popup-title"> ${languageData[lang][value.text + '.name']}</h1>
+        <div class="popup-content">
         ${languageData[lang][value.text + '.desc'] != null ? '<p>'+languageData[lang][value.text + '.desc']+'</p>' : ''}
-        ${value.count != null ? '<p> There is/are <b>'+value.count+'</b> '+languageData[lang]['menu.plant.'+value.sub_data]+' in this area</p>' : ''}`
+        ${value.count != null ? '<p> '+ languageData[lang]['map.plant.count'].replace('{count}', value.count).replace('{plant}', languageData[lang]['menu.plant.'+value.sub_data]) +'</p>' : ''}
+        </div>`
     );
     visibleMarkers[value.text] = tempMarker;
     ciMarkers.push(tempMarker);
