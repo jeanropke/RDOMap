@@ -104,18 +104,22 @@ Map.addMarkers = function()
     {
         if(enabledTypes.includes(value.icon))
         {
+
             if (languageData[lang][value.text+'.name'] == null)
             {
-                console.error(`[LANG][${lang}]: Text not found: '${value.text}.name'`);
-                languageData[lang][value.text+'.name'] = `${value.text}.name`;
+                if(value.sub_data == null) {
 
-                var devName = value.text.replace('plant_', '');
-                var plantId = devName.split('_')[devName.split('_').length-1];
-                var categoryName = devName.replace('_' + plantId, '');
-                var langName = languageData[lang]['menu.plant.'+categoryName];
-                finalText +=
-                `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
+                    console.error(`[LANG][${lang}]: Text not found: '${value.text}.name'`);
+                    languageData[lang][value.text + '.name'] = `${value.text}.name`;
+
+                    var devName = value.text.replace('plant_', '');
+                    var plantId = devName.split('_')[devName.split('_').length - 1];
+                    var categoryName = devName.replace('_' + plantId, '');
+                    var langName = languageData[lang]['menu.plant.' + categoryName];
+                    finalText +=
+                        `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
 				`;
+                }
             }
 
 
@@ -127,7 +131,8 @@ Map.addMarkers = function()
             {
                 $.each(searchTerms, function (id, term)
                 {
-                    if (languageData[lang][value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                    var tempName = (value.sub_data == null) ? languageData[lang][value.text+'.name'] : languageData[lang]['menu.plant.'+value.sub_data];
+                    if (tempName.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                     {
                         if (visibleMarkers[value.text] !== null)
                         {
@@ -193,11 +198,13 @@ Map.addMarkerOnMap = function(value)
             icon: icon
         });
 
+    var popupTitle = (value.sub_data != null) ? languageData[lang]['menu.plant.'+value.sub_data] : languageData[lang][value.text + '.name'];
+    var popupContent = (value.sub_data != null && value.count != null) ? languageData[lang]['map.plant.count'].replace('{count}', value.count).replace('{plant}', languageData[lang]['menu.plant.'+value.sub_data]) : languageData[lang][value.text + '.desc'];
+    popupContent = (popupContent == null) ? '' : popupContent;
     tempMarker.bindPopup(
-        `<h1 class="popup-title"> ${languageData[lang][value.text + '.name']}</h1>
+        `<h1 class="popup-title">${popupTitle}</h1>
         <div class="popup-content">
-        ${languageData[lang][value.text + '.desc'] != null ? '<p>'+languageData[lang][value.text + '.desc']+'</p>' : ''}
-        ${value.count != null ? '<p> '+ languageData[lang]['map.plant.count'].replace('{count}', value.count).replace('{plant}', languageData[lang]['menu.plant.'+value.sub_data]) +'</p>' : ''}
+        ${popupContent}
         </div>`
     );
     visibleMarkers[value.text] = tempMarker;
