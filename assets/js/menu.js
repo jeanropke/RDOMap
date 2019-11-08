@@ -7,18 +7,23 @@ var Menu = {};
 Menu.refreshMenu = function ()
 {
     var countPlantsType = {};
+    var allPlantsCounter = 0;
     markers.forEach(function(item)
     {
         if(item.sub_data != null)
         {
             if(item.count == null) {
                 countPlantsType[item.sub_data] = (countPlantsType[item.sub_data] || 0) + 1;
+                allPlantsCounter++;
             }
             else {
                 countPlantsType[item.sub_data] = (countPlantsType[item.sub_data] || 0) + parseInt(item.count);
+                allPlantsCounter += parseInt(item.count);
             }
         }
     });
+
+    console.info(`${allPlantsCounter} plants added`);
 
     $.each(categories, function (key, value)
     {

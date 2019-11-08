@@ -11,10 +11,10 @@ Language.load = function(isChanged)
     ;
 
     Language.setMenuLanguage();
-    if(isChanged)
+    if(isChanged) {
         Map.addMarkers();
-
-    Menu.refreshMenu();
+        Menu.refreshMenu();
+    }
 
 };
 
