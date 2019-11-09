@@ -1,5 +1,5 @@
 [
-    {"key": "map.plant.count", "value": "<b>{count}</b> {plant} на этом месте"},
+    {"key": "map.plant.count", "value": "{plant} растет тут в кол-ве <b>{count}</b> шт."},
 	{"key": "menu.ambush","value": "Засады"},
     {"key": "menu.animal.alligator","value": "Аллигатор"},
     {"key": "menu.animal.armadillo","value": "Броненосец"},
