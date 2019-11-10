@@ -9,6 +9,7 @@ Menu.refreshMenu = function ()
     var countPlantsType = {};
     var precisePlants = 0;
     var notPrecisePlants = 0;
+
     markers.forEach(function(item)
     {
         if(item.sub_data != null)
@@ -41,12 +42,6 @@ Menu.refreshMenu = function ()
             {
                 if(item.sub_data == null)
                     return;
-
-
-                if(!item.text.includes(item.sub_data)){
-                    console.log(`%c '${item.text}' está na categoria '${item.sub_data}'`, 'background: #222; color: #bada55; font-size:20px');
-                }
-
 
                 if($(`.menu-hidden[data-type='plants']`).children(`p.collectible[data-type='${item.sub_data}']`).length > 0)
                     return;

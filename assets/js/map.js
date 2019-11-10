@@ -85,16 +85,38 @@ Map.init = function ()
 
 Map.loadMarkers = function()
 {
-    markers = [];
     $.getJSON(`data/items.json?nocache=${nocache}`)
-        .done(function(data) {
-            markers = data.sort(function (a, b) {
+        .done(function(data)
+        {
+            $.each(enabledTypes, function (eKey, eValue)
+            {
+                if(subCategories.includes(eValue))
+                {
+                    $.each(data['plants'][eValue], function(mKey, mValue)
+                    {
+                        markers.push({icon: 'plants', sub_data: eValue, lat: mValue.lat, lng: mValue.lng, count: mValue.count});
+                    });
+                }
+                else
+                {
+                    if(eValue == 'plants') return;
+
+                    $.each(data[eValue], function (mKey, mValue)
+                    {
+                        markers.push({ icon: eValue, lat: mValue.lat, lng: mValue.lng });
+                    });
+                }
+            });
+
+            markers = markers.sort(function (a, b) {
                 return b.lat - a.lat;
             });
+
             Map.addMarkers();
         });
 };
 var finalText = '';
+
 Map.addMarkers = function()
 {
     ciLayer.addTo(map);
@@ -103,12 +125,12 @@ Map.addMarkers = function()
     ciMarkers = [];
     //markers = markers.sort((a ,b) => (a.lat > b.lat) ? 1 : ((b.lat > a.lat) ? -1 : 0));
     finalText  = '';
+
     $.each(markers, function (key, value)
     {
         if(enabledTypes.includes(value.icon))
         {
-
-            if (languageData[lang][value.text+'.name'] == null)
+            /*if (languageData[lang][value.text+'.name'] == null)
             {
                 if(value.sub_data == null) {
 
@@ -123,7 +145,7 @@ Map.addMarkers = function()
                         `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
 				`;
                 }
-            }
+            }*/
 
 
             if(value.sub_data != null) {
@@ -134,7 +156,7 @@ Map.addMarkers = function()
             {
                 $.each(searchTerms, function (id, term)
                 {
-                    var tempName = (value.sub_data == null) ? languageData[lang][value.text+'.name'] : languageData[lang]['menu.plant.'+value.sub_data];
+                    var tempName = (value.sub_data == null) ? languageData[lang]['menu.'+value.icon] : languageData[lang]['menu.plant.'+value.sub_data];
                     if (tempName.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                     {
                         if (visibleMarkers[value.text] !== null)
@@ -196,13 +218,15 @@ Map.addMarkerOnMap = function(value)
         iconAnchor:[31.5/2,42],
         popupAnchor:[0,-38]
     });
+
     var tempMarker = L.marker([value.lat, value.lng],
         {
             icon: icon
         });
 
-    var popupTitle = (value.sub_data != null) ? languageData[lang]['menu.plant.'+value.sub_data] : languageData[lang][value.text + '.name'];
-    var popupContent = (value.sub_data != null && value.count != null) ? languageData[lang]['map.plant.count'].replace('{count}', value.count).replace('{plant}', languageData[lang]['menu.plant.'+value.sub_data]) : languageData[lang][value.text + '.desc'];
+
+    var popupTitle = (value.sub_data != null) ? languageData[lang]['menu.plant.'+value.sub_data] : languageData[lang]['menu.'+value.icon];
+    var popupContent = (value.count != null) ? languageData[lang]['map.plant.count'].replace('{count}', value.count).replace('{plant}', languageData[lang]['menu.plant.'+value.sub_data]) : '';
     popupContent = (popupContent == null) ? '' : popupContent;
     tempMarker.bindPopup(
         `<h1 class="popup-title">${popupTitle}</h1>
