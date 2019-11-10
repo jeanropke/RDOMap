@@ -9,6 +9,7 @@ Menu.refreshMenu = function ()
     var countPlantsType = {};
     var precisePlants = 0;
     var notPrecisePlants = 0;
+    var totalMarkersPlants = 0;
 
     markers.forEach(function(item)
     {
@@ -22,12 +23,13 @@ Menu.refreshMenu = function ()
                 countPlantsType[item.sub_data] = (countPlantsType[item.sub_data] || 0) + parseInt(item.count);
                 precisePlants += parseInt(item.count);
             }
+            totalMarkersPlants++;
         }
     });
 
-    console.info(`${precisePlants + notPrecisePlants} plants added`);
-    console.info(`${precisePlants} precise plants`);
-    console.info(`${notPrecisePlants} not precise plants`);
+    console.info(`${precisePlants + notPrecisePlants} plants added (${totalMarkersPlants} markers)`);
+    console.info(`${precisePlants} precise plants (${totalMarkersPlants - notPrecisePlants} markers)`);
+    console.info(`${notPrecisePlants} not precise plants (${notPrecisePlants} markers)`);
 
     $.each(categories, function (key, value)
     {
