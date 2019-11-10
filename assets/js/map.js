@@ -313,11 +313,11 @@ Map.addCoordsOnMap = function(coords)
 
     if(debug == 'addMarker')
     {
-        console.log(`{"text": "ambush_", "icon": "ambush", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
     if(debug == 'addPlant')
     {
-        console.log(`{"text": "plant_chanterelle_", "icon": "plants", "sub_data": "chanterelle", "count": "", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
+        console.log(`{"count": "", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
     if(debug == 'addHeatmap') {
         console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}", "count": "${heatmapCount}"},`);
