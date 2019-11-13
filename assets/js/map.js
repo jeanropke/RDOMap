@@ -130,24 +130,6 @@ Map.addMarkers = function()
     {
         if(enabledTypes.includes(value.icon))
         {
-            /*if (languageData[lang][value.text+'.name'] == null)
-            {
-                if(value.sub_data == null) {
-
-                    console.error(`[LANG][${lang}]: Text not found: '${value.text}.name'`);
-                    languageData[lang][value.text + '.name'] = `${value.text}.name`;
-
-                    var devName = value.text.replace('plant_', '');
-                    var plantId = devName.split('_')[devName.split('_').length - 1];
-                    var categoryName = devName.replace('_' + plantId, '');
-                    var langName = languageData[lang]['menu.plant.' + categoryName];
-                    finalText +=
-                        `{"key": "${value.text}.name", "value": "${langName} #${plantId}"},
-				`;
-                }
-            }*/
-
-
             if(value.sub_data != null) {
                 if(!enabledTypes.includes(value.sub_data))
                     return;
