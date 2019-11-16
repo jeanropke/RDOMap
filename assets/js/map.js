@@ -138,7 +138,7 @@ Map.addMarkers = function()
             {
                 $.each(searchTerms, function (id, term)
                 {
-                    var tempName = (value.sub_data == null) ? languageData[lang]['menu.'+value.icon] : languageData[lang]['menu.plant.'+value.sub_data];
+                    var tempName = (value.sub_data == null) ? Language.get('menu.'+value.icon) : Language.get('menu.plant.'+value.sub_data);
                     if (tempName.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                     {
                         if (visibleMarkers[value.text] !== null)
@@ -158,7 +158,8 @@ Map.addMarkers = function()
     if(ciMarkers.length > 0)
         ciLayer.addLayers(ciMarkers);
 
-    Menu.refreshMenu();
+    Menu.refreshMenu(firstLoad);
+    firstLoad = false;
 };
 
 Map.populate = function (max = 10000)
@@ -207,8 +208,8 @@ Map.addMarkerOnMap = function(value)
         });
 
 
-    var popupTitle = (value.sub_data != null) ? languageData[lang]['menu.plant.'+value.sub_data] : languageData[lang]['menu.'+value.icon];
-    var popupContent = (value.count != null) ? languageData[lang]['map.plant.count'].replace('{count}', value.count).replace('{plant}', languageData[lang]['menu.plant.'+value.sub_data]) : '';
+    var popupTitle = (value.sub_data != null) ? Language.get('menu.plant.'+value.sub_data) : Language.get('menu.'+value.icon);
+    var popupContent = (value.count != null) ? Language.get('map.plant.count').replace('{count}', value.count).replace('{plant}', Language.get('menu.plant.'+value.sub_data)) : '';
     popupContent = (popupContent == null) ? '' : popupContent;
     tempMarker.bindPopup(
         `<h1 class="popup-title">${popupTitle}</h1>
@@ -268,9 +269,9 @@ Map.debugMarker = function (lat, long)
     ciLayer.addLayer(marker);
 };
 
-Map.setHeatmap = function(value)
+Map.setHeatmap = function(value, category)
 {
-    heatmapLayer.setData({max: 10, data: Heatmap.data[value]});
+    heatmapLayer.setData({max: 10, data: Heatmap.data[category][value].data});
 };
 
 Map.removeHeatmap = function ()

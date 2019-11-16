@@ -29,12 +29,13 @@ var showCoordinates = false;
 
 var avaliableLanguages = ['en-us', 'fr-fr', 'pt-br', 'ru'];
 var lang;
-var languageData = [];
 
-var nocache = 21;
+var nocache = 27;
 
 var debug = 'none'; //addMarker or addHeatmap or addPlant
 var heatmapCount = 10;
+
+var firstLoad = true;
 
 function init()
 {
@@ -57,9 +58,6 @@ function init()
 
     lang = Cookies.get('language');
     $("#language").val(lang);
-
-    Language.load();
-    Map.init();
 
     setMapBackground(Cookies.get('map-layer'));
 }
@@ -156,8 +154,7 @@ $('.menu-option.clickable').on('click', function ()
     Map.addMarkers();
 });
 
-$('.menu-option.animal-clickable').on('click', function ()
-{
+$(document).on('click', '.menu-option.animal-clickable', function(){
     var menu = $(this);
     $('.menu-option.animal-clickable').each(function (key, value)
     {
@@ -172,8 +169,9 @@ $('.menu-option.animal-clickable').on('click', function ()
     }
     else
     {
-        Map.setHeatmap(menu.data('type'));
+        Map.setHeatmap(menu.data('type'), menu.parent().parent().data('type'));
     }
+
 });
 
 $('.open-submenu').on('click', function(e) {
@@ -203,3 +201,7 @@ $('.menu-toggle').on('click', function()
     }
 });
 
+window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", Map.init);
+window.addEventListener("DOMContentLoaded", Language.load);
+window.addEventListener("DOMContentLoaded", Heatmap.load);

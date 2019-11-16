@@ -4,8 +4,9 @@
 
 var Menu = {};
 
-Menu.refreshMenu = function ()
+Menu.refreshMenu = function (isFirstLoad = false)
 {
+    if(isFirstLoad) return;
     var countPlantsType = {};
     var precisePlants = 0;
     var notPrecisePlants = 0;
@@ -48,26 +49,23 @@ Menu.refreshMenu = function ()
                 if($(`.menu-hidden[data-type='plants']`).children(`p.collectible[data-type='${item.sub_data}']`).length > 0)
                     return;
 
-                if(languageData[lang]['menu.plant.'+item.sub_data] == null){
-                    console.error(`[LANG][${lang}]: Text not found: 'menu.plant.${item.sub_data}'`);
-                }
 
                 if(!subCategories.includes(item.sub_data)){
                     console.log(`%c O seu animal, coloca a categoria '${item.sub_data}' em 'subCategories' ou o menu não vai funcionar`, 'background: #222; color: #bada55; font-size:20px');
                 }
 
 
-                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.sub_data}"><span data-text="menu.plant.${item.sub_data}">${languageData[lang]['menu.plant.'+item.sub_data]}</span> <span class="item-count">${countPlantsType[item.sub_data]}</span></p>`);
+                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.sub_data}"><span data-text="menu.plant.${item.sub_data}">${Language.get('menu.plant.'+item.sub_data)}</span> <span class="item-count">${countPlantsType[item.sub_data]}</span></p>`);
             }
         });
     });
-
 
     //Reorder plants menu alphabetically
     Menu.reorderMenu('.menu-hidden[data-type=plants]');
 
     //Reorder animals menu alphabetically
-    Menu.reorderMenu('.menu-two-column');
+    Menu.reorderMenu('.animals');
+    Menu.reorderMenu('.birds');
 
 };
 
