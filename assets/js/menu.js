@@ -71,11 +71,7 @@ Menu.refreshMenu = function (isFirstLoad = false)
 
 Menu.reorderMenu = function (menu) {
     $(menu).children().sort(function(a, b) {
-        if (a.textContent < b.textContent) {
-            return -1;
-        } else {
-            return 1;
-        }
+        return a.textContent.localeCompare(b.textContent);
     }).appendTo(menu);
 };
 
