@@ -80,17 +80,18 @@ Menu.showAll = function() {
         $(value).children('span').removeClass("disabled")
     });
     enabledTypes = categories;
-    Map.addMarkers();
+    MapBase.addMarkers();
 };
 
 Menu.hideAll = function()
 {
     $.each (categoryButtons, function (key, value) {
+        if($(value).data('type') != 'plants')
         $(value).children('span').addClass("disabled")
     });
 
-    enabledTypes = [];
-    Map.addMarkers();
+    enabledTypes = ['plants'];
+    MapBase.addMarkers();
 };
 
 

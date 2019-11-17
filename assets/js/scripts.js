@@ -30,7 +30,7 @@ var showCoordinates = false;
 var avaliableLanguages = ['en-us', 'fr-fr', 'pt-br', 'ru'];
 var lang;
 
-var nocache = 27;
+var nocache = 28;
 
 var debug = 'none'; //addMarker or addHeatmap or addPlant
 var heatmapCount = 10;
@@ -101,7 +101,7 @@ $("#search").on("input", function()
                 searchTerms.push(value.trim());
         }
     });
-    Map.addMarkers();
+    MapBase.addMarkers();
 });
 
 $('#show-coordinates').on('change', function()
@@ -151,7 +151,7 @@ $('.menu-option.clickable').on('click', function ()
             enabledTypes.push(menu.data('type'));
         }
     }
-    Map.addMarkers();
+    MapBase.addMarkers();
 });
 
 $(document).on('click', '.menu-option.animal-clickable', function(){
@@ -165,11 +165,11 @@ $(document).on('click', '.menu-option.animal-clickable', function(){
     menu.children('span').toggleClass('disabled');
     if(menu.children('span').hasClass('disabled'))
     {
-        Map.removeHeatmap();
+        MapBase.removeHeatmap();
     }
     else
     {
-        Map.setHeatmap(menu.data('type'), menu.parent().parent().data('type'));
+        MapBase.setHeatmap(menu.data('type'), menu.parent().parent().data('type'));
     }
 
 });
@@ -183,7 +183,7 @@ $(document).on('click', '.collectible', function(){
     var collectible = $(this);
     collectible.toggleClass('disabled');
 
-    Map.removeItemFromMap(collectible.data('type'));
+    MapBase.removeItemFromMap(collectible.data('type'));
 
 });
 
@@ -202,6 +202,6 @@ $('.menu-toggle').on('click', function()
 });
 
 window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("DOMContentLoaded", Map.init);
+window.addEventListener("DOMContentLoaded", MapBase.init);
 window.addEventListener("DOMContentLoaded", Language.load);
 window.addEventListener("DOMContentLoaded", Heatmap.load);

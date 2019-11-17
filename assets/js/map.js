@@ -2,13 +2,13 @@
  * Created by Jean on 2019-10-09.
  */
 
-var Map = {
+var MapBase = {
     minZoom: 2,
     maxZoom: 7,
     heatmapData: []
 };
 
-Map.init = function ()
+MapBase.init = function ()
 {
     var southWestTiles = L.latLng(-144, 0),
         northEastTiles = L.latLng(0, 176),
@@ -46,8 +46,8 @@ Map.init = function ()
 
     map = L.map('map', {
         preferCanvas: true,
-        minZoom: Map.minZoom,
-        maxZoom: Map.maxZoom,
+        minZoom: MapBase.minZoom,
+        maxZoom: MapBase.maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
         layers: [mapLayers[Cookies.get('map-layer')], heatmapLayer]
@@ -67,7 +67,7 @@ Map.init = function ()
 
     map.on('click', function (e)
     {
-       Map.addCoordsOnMap(e);
+        MapBase.addCoordsOnMap(e);
     });
 
     map.on('baselayerchange', function (e)
@@ -80,10 +80,10 @@ Map.init = function ()
         bounds = L.latLngBounds(southWest, northEast);
     map.setMaxBounds(bounds);
 
-    Map.loadMarkers();
+    MapBase.loadMarkers();
 };
 
-Map.loadMarkers = function()
+MapBase.loadMarkers = function()
 {
     $.getJSON(`data/items.json?nocache=${nocache}`)
         .done(function(data)
@@ -112,12 +112,12 @@ Map.loadMarkers = function()
                 return b.lat - a.lat;
             });
 
-            Map.addMarkers();
+            MapBase.addMarkers();
         });
 };
 var finalText = '';
 
-Map.addMarkers = function()
+MapBase.addMarkers = function()
 {
     ciLayer.addTo(map);
     ciLayer.clearLayers();
@@ -143,14 +143,14 @@ Map.addMarkers = function()
                     {
                         if (visibleMarkers[value.text] !== null)
                         {
-                            Map.addMarkerOnMap(value);
+                            MapBase.addMarkerOnMap(value);
                         }
                     }
                 });
             }
             else
             {
-                Map.addMarkerOnMap(value);
+                MapBase.addMarkerOnMap(value);
             }
         }
     });
@@ -162,7 +162,7 @@ Map.addMarkers = function()
     firstLoad = false;
 };
 
-Map.populate = function (max = 10000)
+MapBase.populate = function (max = 10000)
 {
 
     ciLayer.clearLayers();
@@ -176,7 +176,7 @@ Map.populate = function (max = 10000)
         popupAnchor: [0, -40]
     });
     for(var i = 0; i < max; i++) {
-        var tempMarker = L.marker([Map.getRandom(-120.75, -15.25), Map.getRandom(-5.25, 187.5)],
+        var tempMarker = L.marker([MapBase.getRandom(-120.75, -15.25), MapBase.getRandom(-5.25, 187.5)],
             {
                 icon: icon
             });
@@ -188,12 +188,12 @@ Map.populate = function (max = 10000)
 
     ciLayer.addLayers(ciMarkers);
 };
-Map.getRandom = function (min, max)
+MapBase.getRandom = function (min, max)
 {
     return Math.random() * (max - min) + min;
 };
 
-Map.addMarkerOnMap = function(value)
+MapBase.addMarkerOnMap = function(value)
 {
     var icon = L.icon({
         iconUrl: `assets/images/markers/${value.icon}.png`,
@@ -222,7 +222,7 @@ Map.addMarkerOnMap = function(value)
 
 };
 
-Map.removeCollectedMarkers = function()
+MapBase.removeCollectedMarkers = function()
 {
     $.each(markers, function (key, value)
     {
@@ -240,7 +240,7 @@ Map.removeCollectedMarkers = function()
     });
 };
 
-Map.removeItemFromMap = function(value) {
+MapBase.removeItemFromMap = function(value) {
     if(enabledTypes.includes(value)) {
         enabledTypes = $.grep(enabledTypes, function(data) {
             return data != value;
@@ -250,10 +250,10 @@ Map.removeItemFromMap = function(value) {
         enabledTypes.push(value);
     }
 
-    Map.addMarkers();
+    MapBase.addMarkers();
 };
 
-Map.debugMarker = function (lat, long)
+MapBase.debugMarker = function (lat, long)
 {
     var icon = L.icon({
         iconUrl: `assets/images/markers/random.png`,
@@ -269,18 +269,18 @@ Map.debugMarker = function (lat, long)
     ciLayer.addLayer(marker);
 };
 
-Map.setHeatmap = function(value, category)
+MapBase.setHeatmap = function(value, category)
 {
     heatmapLayer.setData({max: 10, data: Heatmap.data[category][value].data});
 };
 
-Map.removeHeatmap = function ()
+MapBase.removeHeatmap = function ()
 {
     heatmapLayer.setData({max: 10, data: []});
 };
 
 var testData = { max: 10, data: [] };
-Map.addCoordsOnMap = function(coords)
+MapBase.addCoordsOnMap = function(coords)
 {
     // Show clicked coordinates (like google maps)
     if (showCoordinates)

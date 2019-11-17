@@ -12,7 +12,7 @@ Language.load = function()
 
     Language.setMenuLanguage();
 
-    Map.addMarkers();
+    MapBase.addMarkers();
 
 
 };
