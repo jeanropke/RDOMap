@@ -16,10 +16,39 @@
     <script>var module = {};</script>
     <script src="assets/js/leaflet.canvas-markers.js"></script>
     <script>module.exports(L);</script>
-    <link rel="stylesheet" href="assets/css/styles.css?nocache=28" />
+    <link rel="stylesheet" href="assets/css/styles.css?nocache=29" />
+
+    <!-- Debug -->
+    <!--
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script>
+    //"-32.6 / 33 / -17.7 / 2"
+      var offsetX = -32.6;
+      var offsetY = 33;
+      var posX = -17.7;
+      var posY = 2;
+
+
+      $(function()
+      {
+        $("#offsetX").slider({min: -100,  max: 100, step: .1, value: offsetX, slide: function( event, ui ) { offsetX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY); } });
+        $("#offsetY").slider({min: -100,  max: 100, step: .1, value: offsetY, slide: function( event, ui ) { offsetY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
+        $("#posX").slider({min: -500,  max: 500, step: .1, value: posX, slide: function( event, ui ) { posX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
+        $("#posY").slider({min: -500,  max: 500, step: .1, value: posY, slide: function( event, ui ) { posY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
+      });
+    </script>
+    -->
 </head>
 <body>
 <div class="side-menu">
+<!--
+  <div id="offsetX"></div>
+  <div id="offsetY"></div>
+  <div id="posX"></div>
+  <div id="posY"></div>
+-->
+
     <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
     <div class="hide-show-container">
         <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
@@ -91,10 +120,11 @@
         <div class="input-container">
             <label for="language" data-text="menu.language">Language</label>
             <select class="input-day" id="language">
-                <option value="en-us" selected>English</option>
-                <option value="fr-fr">Français</option>
-                <option value="pt-br">Português</option>
-                <option value="ru">Русский</option>
+              <option value="en-us" selected>English</option>
+              <option value="es-es">Español</option>
+              <option value="fr-fr">Français</option>
+              <option value="pt-br">Português</option>
+              <option value="ru">Русский</option>
             </select>
         </div>
         <div class="input-container">
@@ -131,11 +161,11 @@
 </div></div>
 
 <div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
-<script      src="assets/js/map.js?nocache=28"></script>
-<script  src="assets/js/heatmap.js?nocache=28"></script>
-<script src="assets/js/language.js?nocache=28"></script>
-<script     src="assets/js/menu.js?nocache=28"></script>
-<script  src="assets/js/scripts.js?nocache=28"></script>
+<script      src="assets/js/map.js?nocache=29"></script>
+<script  src="assets/js/heatmap.js?nocache=29"></script>
+<script src="assets/js/language.js?nocache=29"></script>
+<script     src="assets/js/menu.js?nocache=29"></script>
+<script  src="assets/js/scripts.js?nocache=29"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

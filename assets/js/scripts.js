@@ -27,10 +27,10 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var showCoordinates = false;
 
-var avaliableLanguages = ['en-us', 'fr-fr', 'pt-br', 'ru'];
+var avaliableLanguages = ['en-us', 'es-es', 'fr-fr', 'pt-br', 'ru'];
 var lang;
 
-var nocache = 28;
+var nocache = 29;
 
 var debug = 'none'; //addMarker or addHeatmap or addPlant
 var heatmapCount = 10;
