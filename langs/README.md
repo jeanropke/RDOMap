@@ -9,7 +9,7 @@ german (de-de.json)
   - no-one yet!
     
 spanish (es-es.json)
-  - no-one yet!
+  - BurakkuH0ku
     
 french (fr-fr.json)
   - Nopitch
