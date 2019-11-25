@@ -54,7 +54,7 @@
 
       if (!this._heatmap) {
         this._heatmap = h337.create(this.cfg);
-      } 
+      }
 
       // this resets the origin and redraws whenever
       // the zoom changed or the map has been moved
@@ -75,9 +75,9 @@
     },
     _draw: function() {
       if (!this._map) { return; }
-      
+
       var mapPane = this._map.getPanes().mapPane;
-      var point = mapPane._leaflet_pos;      
+      var point = mapPane._leaflet_pos;
 
       // reposition the layer
       this._el.style[HeatmapOverlay.CSS_TRANSFORM] = 'translate(' +
@@ -111,7 +111,7 @@
       var localMin = 0;
       var valueField = this.cfg.valueField;
       var len = this._data.length;
-    
+
       while (len--) {
         var entry = this._data[len];
         var value = entry[valueField];
@@ -155,12 +155,12 @@
       var latField = this.cfg.latField || 'lat';
       var lngField = this.cfg.lngField || 'lng';
       var valueField = this.cfg.valueField || 'value';
-    
+
       // transform data to latlngs
       var data = data.data;
       var len = data.length;
       var d = [];
-    
+
       while (len--) {
         var entry = data[len];
         var latlng = new L.LatLng(entry[latField], entry[lngField]);
@@ -172,7 +172,7 @@
         d.push(dataObj);
       }
       this._data = d;
-    
+
       this._draw();
     },
     // experimential... not ready.
@@ -189,7 +189,7 @@
         var entry = pointOrArray;
         var latlng = new L.LatLng(entry[latField], entry[lngField]);
         var dataObj = { latlng: latlng };
-        
+
         dataObj[valueField] = entry[valueField];
         this._max = Math.max(this._max, dataObj[valueField]);
         this._min = Math.min(this._min, dataObj[valueField]);
@@ -203,7 +203,7 @@
     },
     _resetOrigin: function () {
       this._origin = this._map.layerPointToLatLng(new L.Point(0, 0));
-      
+
       var size = this._map.getSize();
       if (this._width !== size.x || this._height !== size.y) {
         this._width  = size.x;
@@ -213,7 +213,7 @@
         this._el.style.height = this._height + 'px';
       }
       this._draw();
-    } 
+    }
   });
 
   HeatmapOverlay.CSS_TRANSFORM = (function() {
