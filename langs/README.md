@@ -33,7 +33,7 @@ russian (ru.json)
   - Overnoes
    
 chinese simplified (zh-s.json)
-  - no-one yet!
+  - ZTaer
    
 chinese traditional (zh-t.json)
   - no-one yet!
