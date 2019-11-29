@@ -17,8 +17,6 @@ Language.load = function()
 
 };
 
-console.log( Language.data );
-
 Language.get = function(value) {
     if(Language.data[lang][value])
         return Language.data[lang][value];
