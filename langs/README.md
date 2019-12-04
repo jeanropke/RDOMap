@@ -6,7 +6,7 @@ english (en-en.json)
   - jeanropke 
   
 german (de-de.json)
-  - no-one yet!
+  - kubikrubik21
     
 spanish (es-es.json)
   - BurakkuH0ku
