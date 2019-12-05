@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="./favicon.png"/>
+    <link rel="shortcut icon" href="./favicon.png" />
 
     <title>Red Dead Online - Interactive Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
@@ -40,143 +41,180 @@
     </script>
     -->
 </head>
+
 <body>
-<div class="side-menu">
-<!--
+    <div class="side-menu">
+        <!--
   <div id="offsetX"></div>
   <div id="offsetY"></div>
   <div id="posX"></div>
   <div id="posY"></div>
 -->
 
-    <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
-    <div class="hide-show-container">
-        <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
-        <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="ambush">
-            <img class="icon" src="./assets/images/icons/ambush.png" />
-            <span data-text="menu.ambush">Ambush</span>
+        <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
+        <div class="hide-show-container">
+            <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
+            <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
         </div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="boats">
-            <img class="icon" src="./assets/images/icons/boats.png" />
-            <span data-text="menu.boats">Boats</span>
+        <div>
+            <div class="menu-option clickable" data-type="ambush">
+                <img class="icon" src="./assets/images/icons/ambush.png" />
+                <span data-text="menu.ambush">Ambush</span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="campfires">
-            <img class="icon" src="./assets/images/icons/campfires.png" />
-            <span data-text="menu.campfires">Campfires</span>
+        <div>
+            <div class="menu-option clickable" data-type="boats">
+                <img class="icon" src="./assets/images/icons/boats.png" />
+                <span data-text="menu.boats">Boats</span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="defend_campsite">
-            <img class="icon" src="./assets/images/icons/defend_campsite.png" />
-            <span data-text="menu.defend_campsite">Defend Campsites</span>
+        <div>
+            <div class="menu-option clickable" data-type="campfires">
+                <img class="icon" src="./assets/images/icons/campfires.png" />
+                <span data-text="menu.campfires">Campfires</span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="escort">
-            <img class="icon" src="./assets/images/icons/escort.png" />
-            <span data-text="menu.escort">Escort</span>
+        <div>
+            <div class="menu-option clickable" data-type="defend_campsite">
+                <img class="icon" src="./assets/images/icons/defend_campsite.png" />
+                <span data-text="menu.defend_campsite">Defend Campsites</span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="hideouts">
-            <img class="icon" src="./assets/images/icons/hideouts.png" />
-            <span data-text="menu.hideouts">Gang Hideouts</span>
+        <div>
+            <div class="menu-option clickable" data-type="escort">
+                <img class="icon" src="./assets/images/icons/escort.png" />
+                <span data-text="menu.escort">Escort</span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="plants">
-            <img class="icon" src="./assets/images/icons/plants.png" />
-            <span data-text="menu.plants">Plants</span>
-            <div class="open-submenu"></div>
+        <div>
+            <div class="menu-option clickable" data-type="hideouts">
+                <img class="icon" src="./assets/images/icons/hideouts.png" />
+                <span data-text="menu.hideouts">Gang Hideouts</span>
+            </div>
         </div>
-        <div class="menu-hidden" data-type="plants"></div>
-    </div>
-    <div>
-        <div class="menu-option clickable" data-type="rescue">
-            <img class="icon" src="./assets/images/icons/rescue.png" />
-            <span data-text="menu.rescue">Rescue</span>
+        <div>
+            <div class="menu-option clickable" data-type="plants">
+                <img class="icon" src="./assets/images/icons/plants.png" />
+                <span data-text="menu.plants">Plants</span>
+                <div class="open-submenu"></div>
+            </div>
+            <div class="menu-hidden" data-type="plants"></div>
         </div>
+        <div>
+            <div class="menu-option clickable" data-type="rescue">
+                <img class="icon" src="./assets/images/icons/rescue.png" />
+                <span data-text="menu.rescue">Rescue</span>
+            </div>
+        </div>
+        <h2 data-text="menu.animals">Animals</h2>
+        <div class="menu-two-column animals" data-type="animals">
+        </div>
+        <h2 data-text="menu.birds">Birds</h2>
+        <div class="menu-two-column birds" data-type="birds">
+        </div>
+        <div class="search-container">
+            <h2 data-text="menu.search">Search</h2>
+            <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
+                autocomplete="off">
+        </div>
+
+        <div class="settings-container">
+            <h2 data-text="menu.settings">Settings</h2>
+            <div class="input-container">
+                <label for="language" data-text="menu.language">Language</label>
+                <select class="input-day" id="language">
+                    <option value="de-de">Deutsch</option>
+                    <option value="en-us" selected>English</option>
+                    <option value="es-es">Español</option>
+                    <option value="fr-fr">Français</option>
+                    <option value="pt-br">Português</option>
+                    <option value="ru">Русский</option>
+                    <option value="zh-s">简体中文</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+                <select class="input-day" id="show-coordinates">
+                    <option value="1" data-text="menu.yes">Yes</option>
+                    <option value="0" data-text="menu.no" selected>No</option>
+                </select>
+            </div>
+        </div>
+        <div class="issues-container">
+            <h2 data-text="menu.issues">Issues</h2>
+            <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDOMap/issues" target="_blank">Report
+                issues here!</a>
+        </div>
+        <div class="hide-show-container">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
+                <select class="input-day" name="currency_code">
+                    <option value="AUD">AUD $</option>
+                    <option value="BRL">BRL R$</option>
+                    <option value="CAD">CAD $</option>
+                    <option value="CHF">CHF Fr.</option>
+                    <option value="CZK">CZK Kč</option>
+                    <option value="DKK">DKK kr.</option>
+                    <option value="EUR">EUR €</option>
+                    <option value="GBP">GBP £</option>
+                    <option value="HKD">HKD $</option>
+                    <option value="HUF">HUF Ft</option>
+                    <option value="ILS">ILS ₪</option>
+                    <option value="JPY">JPY ‎¥‎</option>
+                    <option value="MXN">‎MXN $‎</option>
+                    <option value="MYR">MYR RM</option>
+                    <option value="NOK">NOK kr</option>
+                    <option value="NZD">NZD $</option>
+                    <option value="PHP">‎PHP ₱</option>
+                    <option value="PLN">PLN gr</option>
+                    <option value="RUB">RUB ₽</option>
+                    <option value="SEK">SEK kr</option>
+                    <option value="SGD">SGD $</option>
+                    <option value="THB">THB ฿</option>
+                    <option value="TWD">TWD $</option>
+                    <option value="USD" selected>USD $</option>
+                </select>
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
+                    name="submit" title="PayPal - The safer, easier way to pay online!"
+                    alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+        </div>
+
+
+        <br>
     </div>
-    <h2 data-text="menu.animals">Animals</h2>
-    <div class="menu-two-column animals" data-type="animals">
-    </div>
-    <h2 data-text="menu.birds">Birds</h2>
-    <div class="menu-two-column birds" data-type="birds">
-    </div>
-    <div class="search-container">
-        <h2 data-text="menu.search">Search</h2>
-        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
+    <div class="menu-toggle">></div>
+
+    <div id="map">
+        <div class="legend geometry top center hide">
+            <div class="wrapper">
+                <div class="content"></div>
+            </div>
+        </div>
     </div>
 
-    <div class="settings-container">
-        <h2 data-text="menu.settings">Settings</h2>
-        <div class="input-container">
-            <label for="language" data-text="menu.language">Language</label>
-            <select class="input-day" id="language">
-              <option value="en-us" selected>English</option>
-              <option value="es-es">Español</option>
-              <option value="fr-fr">Français</option>
-              <option value="pt-br">Português</option>
-              <option value="ru">Русский</option>
-            </select>
-        </div>
-        <div class="input-container">
-            <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-            <select class="input-day" id="show-coordinates">
-                <option value="1" data-text="menu.yes">Yes</option>
-                <option value="0" data-text="menu.no" selected>No</option>
-            </select>
-        </div>
+    <div class="lat-lng-container">
+        <p></p><button id="lat-lng-container-close-button">×</button>
     </div>
-    <div class="issues-container">
-        <h2 data-text="menu.issues">Issues</h2>
-        <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDOMap/issues" target="_blank">Report issues here!</a>
-    </div>
-    <div class="hide-show-container">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_donations" />
-            <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
-            <input type="hidden" name="currency_code" value="USD" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-    </div>
+    <script src="assets/js/map.js?nocache=29"></script>
+    <script src="assets/js/heatmap.js?nocache=29"></script>
+    <script src="assets/js/language.js?nocache=29"></script>
+    <script src="assets/js/menu.js?nocache=29"></script>
+    <script src="assets/js/scripts.js?nocache=29"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <br>
-</div>
-<div class="menu-toggle">></div>
-
-<div id="map"><div class="legend geometry top center hide">
-    <div class="wrapper">
-        <div class="content"></div>
-    </div>
-</div></div>
-
-<div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
-<script      src="assets/js/map.js?nocache=29"></script>
-<script  src="assets/js/heatmap.js?nocache=29"></script>
-<script src="assets/js/language.js?nocache=29"></script>
-<script     src="assets/js/menu.js?nocache=29"></script>
-<script  src="assets/js/scripts.js?nocache=29"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-39999584-5');
-</script>
+        gtag('config', 'UA-39999584-5');
+    </script>
 
 
 </body>
+
 </html>

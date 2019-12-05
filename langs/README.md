@@ -6,7 +6,7 @@ english (en-en.json)
   - jeanropke 
   
 german (de-de.json)
-  - no-one yet!
+  - kubikrubik21
     
 spanish (es-es.json)
   - BurakkuH0ku
@@ -33,7 +33,7 @@ russian (ru.json)
   - Overnoes
    
 chinese simplified (zh-s.json)
-  - no-one yet!
+  - <a href="https://github.com/ZTaer/SoseeRDOMap" > ZTaer </a>
    
 chinese traditional (zh-t.json)
   - no-one yet!

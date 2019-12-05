@@ -183,6 +183,7 @@ p {
     color: #eee;
     z-index: 999;
     padding-top: 10px;
+    word-break: break-word;
 }
 
 .menu-opened {
