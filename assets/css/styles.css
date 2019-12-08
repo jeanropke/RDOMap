@@ -251,8 +251,7 @@ p {
 .side-menu .menu-hidden .collectible .item-count {
     margin: auto 0 auto auto;
     text-align: center;
-    width: 19px;
-    font-size: 15px;
+    font-size: 14px;
 }
 .side-menu .menu-two-column {
     display: flex;
