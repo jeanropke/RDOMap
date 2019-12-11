@@ -5,7 +5,7 @@
 var Heatmap = {};
 
 Heatmap.load = function() {
-  $.getJSON(`data/heatmap.json?nocache=${nocache}`)
+  $.getJSON(`data/hm.data.json?nocache=${nocache}`)
     .done(function(data) {
       Heatmap.data = data;
       Heatmap.init();
