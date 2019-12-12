@@ -23,8 +23,8 @@ japanese (ja.json)
 korean (ko.json)
   - no-one yet!
   
-polish (pl.json)
-  - no-one yet!
+polish (pl-pl.json)
+  - chomik3109
   
 brazilian (pt-br.json)
   - jeanropke
