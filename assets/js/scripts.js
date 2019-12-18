@@ -27,7 +27,7 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var showCoordinates = false;
 
-var avaliableLanguages = ['de-de', 'en-us', 'es-es', 'fr-fr', 'pt-br', 'pl-pl', 'ru', 'zh-s'];
+var avaliableLanguages = ['de-de', 'en-us', 'es-es', 'fr-fr', 'ko', 'pt-br', 'pl-pl', 'ru', 'zh-s'];
 var lang;
 
 var nocache = 29;
