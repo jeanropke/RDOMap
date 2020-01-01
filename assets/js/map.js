@@ -8,16 +8,15 @@ var MapBase = {
     heatmapData: []
 };
 
-MapBase.init = function ()
-{
+MapBase.init = function () {
     var southWestTiles = L.latLng(-144, 0),
         northEastTiles = L.latLng(0, 176),
         boundsTiles = L.latLngBounds(southWestTiles, northEastTiles);
 
     var mapLayers = [];
     mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true, bounds: boundsTiles });
-    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
-    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
+    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles });
+    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles });
 
     var cfg = {
         // radius should be small ONLY if scaleRadius is true (or small radius is intended)
@@ -59,18 +58,16 @@ MapBase.init = function ()
     };
 
     L.control.zoom({
-        position:'bottomright'
+        position: 'bottomright'
     }).addTo(map);
 
     L.control.layers(baseMaps).addTo(map);
 
-    map.on('click', function (e)
-    {
+    map.on('click', function (e) {
         MapBase.addCoordsOnMap(e);
     });
 
-    map.on('baselayerchange', function (e)
-    {
+    map.on('baselayerchange', function (e) {
         setMapBackground(e.name);
     });
 
@@ -82,26 +79,53 @@ MapBase.init = function ()
     MapBase.loadMarkers();
 };
 
-MapBase.loadMarkers = function()
-{
+MapBase.addGoose = function (offsetX, posX, offsetY, posY) {
+    ciLayer.clearLayers();
+    //{"text": "earring_duchess_emerald","tool": "2","lat": "-1170.441","lng": "85.439"},
+    //MapBase.debugMarker(offsetX * 2431.102 + posX, 	offsetY * 1748.229 + posY);
+    //MapBase.debugMarker(offsetX * -5807.756 + posX, 	offsetY * -2853.925 + posY);
+    //MapBase.debugMarker(offsetX * 687.0368 + posX, 	offsetY * 1429.984 + posY);
+    //MapBase.debugMarker(offsetX * -1170.441 + posX, 	offsetY * 85.439 + posY);
+    //MapBase.debugMarker(offsetX * -2731.12 + posX, 	offsetY * -2522.983 + posY);
+    //MapBase.debugMarker(offsetX * 2258.174 + posX, 	offsetY * 740.849 + posY);
+    //MapBase.debugMarker(offsetX * -2258.174 + posX, 	offsetY * 740.849 + posY);
+
+    /*MapBase.debugMarker(offsetX * 2384.636+ posX, 	offsetY * 702.7831+ posY);
+    MapBase.debugMarker(offsetX * 1413.694 + posX, 	offsetY * -1774.543 + posY);
+    MapBase.debugMarker(offsetX * -2715.088 + posX, 	offsetY * 716.8932 + posY);
+    MapBase.debugMarker(offsetX * -4687.155 + posX, 	offsetY * -3742.616 + posY);
+    MapBase.debugMarker(offsetX * 2305.91 + posX, 	offsetY * 2000.815 + posY);
+    MapBase.debugMarker(offsetX * 2465.432 + posX, 	offsetY * -991.1915 + posY);*/
+    MapBase.gameToMap(1249.602, 1156.183, '0');
+    MapBase.gameToMap(2294.689, 2076.941, '1');
+    MapBase.gameToMap(2479.74, 2000.122, '2');
+    MapBase.gameToMap(1588.217, 2192.406, '3');
+    MapBase.gameToMap(-1188.505, 326.9177, '4');
+    MapBase.gameToMap(2063.751, -1761.572, '5');
+    MapBase.gameToMap(804.661, 831.088, '3');
+
+};
+MapBase.gameToMap = function (lat, lng, name) {
+    MapBase.debugMarker(offsetX * lat + posX, offsetY * lng + posY, name);
+};
+
+MapBase.convertCoords = function (lat, lng) {
+    console.log(`"lat": "${0.01554 * lng + -63.6}", "lng": "${0.01554 * lat + 111.35}"`);
+};
+
+MapBase.loadMarkers = function () {
     $.getJSON(`data/items.json?nocache=${nocache}`)
-        .done(function(data)
-        {
-            $.each(enabledTypes, function (eKey, eValue)
-            {
-                if(subCategories.includes(eValue))
-                {
-                    $.each(data['plants'][eValue], function(mKey, mValue)
-                    {
-                        markers.push({icon: 'plants', sub_data: eValue, lat: mValue.lat, lng: mValue.lng, count: mValue.count});
+        .done(function (data) {
+            $.each(enabledTypes, function (eKey, eValue) {
+                if (subCategories.includes(eValue)) {
+                    $.each(data['plants'][eValue], function (mKey, mValue) {
+                        markers.push({ icon: 'plants', sub_data: eValue, lat: mValue.lat, lng: mValue.lng, count: mValue.count });
                     });
                 }
-                else
-                {
-                    if(eValue == 'plants') return;
+                else {
+                    if (eValue == 'plants') return;
 
-                    $.each(data[eValue], function (mKey, mValue)
-                    {
+                    $.each(data[eValue], function (mKey, mValue) {
                         markers.push({ icon: eValue, lat: mValue.lat, lng: mValue.lng });
                     });
                 }
@@ -116,53 +140,44 @@ MapBase.loadMarkers = function()
 };
 var finalText = '';
 
-MapBase.addMarkers = function()
-{
+MapBase.addMarkers = function () {
     ciLayer.addTo(map);
     ciLayer.clearLayers();
 
     ciMarkers = [];
     //markers = markers.sort((a ,b) => (a.lat > b.lat) ? 1 : ((b.lat > a.lat) ? -1 : 0));
-    finalText  = '';
+    finalText = '';
 
-    $.each(markers, function (key, value)
-    {
-        if(enabledTypes.includes(value.icon))
-        {
-            if(value.sub_data != null) {
-                if(!enabledTypes.includes(value.sub_data))
+    $.each(markers, function (key, value) {
+        if (enabledTypes.includes(value.icon)) {
+            if (value.sub_data != null) {
+                if (!enabledTypes.includes(value.sub_data))
                     return;
             }
-            if (searchTerms.length > 0)
-            {
-                $.each(searchTerms, function (id, term)
-                {
-                    var tempName = (value.sub_data == null) ? Language.get('menu.'+value.icon) : Language.get('menu.plant.'+value.sub_data);
-                    if (tempName.toLowerCase().indexOf(term.toLowerCase()) !== -1)
-                    {
-                        if (visibleMarkers[value.text] !== null)
-                        {
+            if (searchTerms.length > 0) {
+                $.each(searchTerms, function (id, term) {
+                    var tempName = (value.sub_data == null) ? Language.get('menu.' + value.icon) : Language.get('menu.plant.' + value.sub_data);
+                    if (tempName.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+                        if (visibleMarkers[value.text] !== null) {
                             MapBase.addMarkerOnMap(value);
                         }
                     }
                 });
             }
-            else
-            {
+            else {
                 MapBase.addMarkerOnMap(value);
             }
         }
     });
 
-    if(ciMarkers.length > 0)
+    if (ciMarkers.length > 0)
         ciLayer.addLayers(ciMarkers);
 
     Menu.refreshMenu(firstLoad);
     firstLoad = false;
 };
 
-MapBase.populate = function (max = 10000)
-{
+MapBase.populate = function (max = 10000) {
 
     ciLayer.clearLayers();
     ciMarkers = [];
@@ -174,7 +189,7 @@ MapBase.populate = function (max = 10000)
         iconAnchor: [42 / 2, 42],
         popupAnchor: [0, -40]
     });
-    for(var i = 0; i < max; i++) {
+    for (var i = 0; i < max; i++) {
         var tempMarker = L.marker([MapBase.getRandom(-120.75, -15.25), MapBase.getRandom(-5.25, 187.5)],
             {
                 icon: icon
@@ -187,18 +202,16 @@ MapBase.populate = function (max = 10000)
 
     ciLayer.addLayers(ciMarkers);
 };
-MapBase.getRandom = function (min, max)
-{
+MapBase.getRandom = function (min, max) {
     return Math.random() * (max - min) + min;
 };
 
-MapBase.addMarkerOnMap = function(value)
-{
+MapBase.addMarkerOnMap = function (value) {
     var icon = L.icon({
         iconUrl: `assets/images/markers/${value.icon}.png`,
-        iconSize:[31.5,42],
-        iconAnchor:[31.5/2,42],
-        popupAnchor:[0,-38]
+        iconSize: [31.5, 42],
+        iconAnchor: [31.5 / 2, 42],
+        popupAnchor: [0, -38]
     });
 
     var tempMarker = L.marker([value.lat, value.lng],
@@ -207,8 +220,8 @@ MapBase.addMarkerOnMap = function(value)
         });
 
 
-    var popupTitle = (value.sub_data != null) ? Language.get('menu.plant.'+value.sub_data) : Language.get('menu.'+value.icon);
-    var popupContent = (value.count != null) ? Language.get('map.plant.count').replace('{count}', value.count).replace('{plant}', Language.get('menu.plant.'+value.sub_data)) : '';
+    var popupTitle = (value.sub_data != null) ? Language.get('menu.plant.' + value.sub_data) : Language.get('menu.' + value.icon);
+    var popupContent = (value.count != null) ? Language.get('map.plant.count').replace('{count}', value.count).replace('{plant}', Language.get('menu.plant.' + value.sub_data)) : '';
     popupContent = (popupContent == null) ? '' : popupContent;
     tempMarker.bindPopup(
         `<h1 class="popup-title">${popupTitle}</h1>
@@ -221,27 +234,22 @@ MapBase.addMarkerOnMap = function(value)
 
 };
 
-MapBase.removeCollectedMarkers = function()
-{
-    $.each(markers, function (key, value)
-    {
-        if(visibleMarkers[value.text] != null)
-        {
-            if (disableMarkers.includes(value.text.toString()))
-            {
+MapBase.removeCollectedMarkers = function () {
+    $.each(markers, function (key, value) {
+        if (visibleMarkers[value.text] != null) {
+            if (disableMarkers.includes(value.text.toString())) {
                 $(visibleMarkers[value.text]._icon).css('opacity', '.35');
             }
-            else
-            {
+            else {
                 $(visibleMarkers[value.text]._icon).css('opacity', '1');
             }
         }
     });
 };
 
-MapBase.removeItemFromMap = function(value) {
-    if(enabledTypes.includes(value)) {
-        enabledTypes = $.grep(enabledTypes, function(data) {
+MapBase.removeItemFromMap = function (value) {
+    if (enabledTypes.includes(value)) {
+        enabledTypes = $.grep(enabledTypes, function (data) {
             return data != value;
         });
     }
@@ -252,58 +260,51 @@ MapBase.removeItemFromMap = function(value) {
     MapBase.addMarkers();
 };
 
-MapBase.debugMarker = function (lat, long)
-{
+MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
     var icon = L.icon({
         iconUrl: `assets/images/markers/random.png`,
-        iconSize:[42,42],
-        iconAnchor:[42/2,42],
-        popupAnchor:[0,-40]
+        iconSize: [42, 42],
+        iconAnchor: [42 / 2, 42],
+        popupAnchor: [0, -40]
     });
-    var marker = L.marker([lat, long], {
+    var marker = L.marker([long, lat], {
         icon: icon
     });
 
-    marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
+    marker.bindPopup(`<h1>${name}</h1><p>  </p>`);
     ciLayer.addLayer(marker);
 };
 
-MapBase.setHeatmap = function(value, category)
-{
-    heatmapLayer.setData({min: 10, data: Heatmap.data[category][value].data});
+MapBase.setHeatmap = function (value, category) {
+    heatmapLayer.setData({ min: 10, data: Heatmap.data[category][value].data });
 };
 
-MapBase.removeHeatmap = function ()
-{
-    heatmapLayer.setData({min: 10, data: []});
+MapBase.removeHeatmap = function () {
+    heatmapLayer.setData({ min: 10, data: [] });
 };
 
 var testData = { max: 10, data: [] };
-MapBase.addCoordsOnMap = function(coords)
-{
+MapBase.addCoordsOnMap = function (coords) {
     // Show clicked coordinates (like google maps)
-    if (showCoordinates)
-    {
+    if (showCoordinates) {
         $('.lat-lng-container').css('display', 'block');
 
         $('.lat-lng-container p').html(`lat: ${coords.latlng.lat} <br> lng: ${coords.latlng.lng}`);
 
-        $('#lat-lng-container-close-button').click(function() {
+        $('#lat-lng-container-close-button').click(function () {
             $('.lat-lng-container').css('display', 'none');
         });
     }
 
-    if(debug == 'addMarker')
-    {
+    if (debug == 'addMarker') {
         console.log(`{"lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
-    if(debug == 'addPlant')
-    {
+    if (debug == 'addPlant') {
         console.log(`{"count": "", "lat": "${coords.latlng.lat}", "lng": "${coords.latlng.lng}"},`);
     }
-    if(debug == 'addHeatmap') {
+    if (debug == 'addHeatmap') {
         console.log(`{"lat":"${coords.latlng.lat}","lng":"${coords.latlng.lng}","count":"${heatmapCount}"},`);
-        testData.data.push({lat: coords.latlng.lat, lng: coords.latlng.lng, count: heatmapCount});
+        testData.data.push({ lat: coords.latlng.lat, lng: coords.latlng.lng, count: heatmapCount });
         heatmapLayer.setData(testData);
     }
 };
