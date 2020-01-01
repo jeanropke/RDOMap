@@ -54,6 +54,7 @@ var Menu = {
     //Reorder animals menu alphabetically
     Menu.reorderMenu('.animals');
     Menu.reorderMenu('.birds');
+    Menu.reorderMenu('.fish');
   },
 
 

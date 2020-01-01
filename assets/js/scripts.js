@@ -30,9 +30,9 @@ var showCoordinates = false;
 var avaliableLanguages = ['de-de', 'en-us', 'es-es', 'fr-fr', 'ko', 'pt-br', 'pl-pl', 'ru', 'zh-s'];
 var lang;
 
-var nocache = 29;
+var nocache = 30;
 
-var debug = 'none'; //addMarker or addHeatmap or addPlant
+var debug = 'none'; // none, addMarker, addHeatmap or addPlant
 var heatmapCount = 10;
 
 var firstLoad = true;
