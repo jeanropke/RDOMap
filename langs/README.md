@@ -15,7 +15,7 @@ french (fr-fr.json)
   - Nopitch
   
 italian (it-it.json)
-- no-one yet!
+  - Raffox97
 
 japanese (ja.json)
   - no-one yet!
