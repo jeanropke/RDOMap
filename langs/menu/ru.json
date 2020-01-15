@@ -91,7 +91,7 @@
   {"key": "menu.defend_campsite","value": "Оборона лагеря"},
   {"key": "menu.escort","value": "Сопровождение"},
   {"key": "menu.fast_travel","value": "Быстрое перемещение"},
-  {"key": "menu.hide_all","value": "Скрыть всё"},
+  {"key": "menu.hide_all","value": "Скрыть все"},
   {"key": "menu.hideouts","value": "Логово банды"},
   {"key": "menu.issues","value": "Обратная связь"},
   {"key": "menu.language","value": "Язык"},
@@ -133,7 +133,7 @@
   {"key": "menu.search","value": "Поиск"},
   {"key": "menu.search_placeholder","value": "Что желаете найти?"},
   {"key": "menu.settings","value": "Настройки"},
-  {"key": "menu.show_all","value": "Показать всё"},
+  {"key": "menu.show_all","value": "Показать все"},
   {"key": "menu.show_coords","value": "Показ. координаты"},
   {"key": "menu.yes","value": "Да"}
 ]
