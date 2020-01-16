@@ -62,6 +62,10 @@ function init()
     setMapBackground(Cookies.get('map-layer'));
 }
 
+function isLocalHost() {
+    return location.hostname === "localhost" || location.hostname === "127.0.0.1";
+ }
+ 
 function setMapBackground(mapName){
     switch(mapName) {
         default:

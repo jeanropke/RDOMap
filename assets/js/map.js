@@ -15,8 +15,8 @@ MapBase.init = function () {
 
     var mapLayers = [];
     mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true, bounds: boundsTiles });
-    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles });
-    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles });
+    mapLayers['Detailed'] = L.tileLayer((isLocalHost() ? 'assets/maps/' : 'https://jeanropke.b-cdn.net/') +'detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles });
+    mapLayers['Dark'] = L.tileLayer((isLocalHost() ? 'assets/maps/' : 'https://jeanropke.b-cdn.net/') +'darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles });
 
     var cfg = {
         // radius should be small ONLY if scaleRadius is true (or small radius is intended)
