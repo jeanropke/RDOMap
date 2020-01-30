@@ -36,7 +36,6 @@ var MapBase = {
     MapBase.map = L.map('map', {
       preferCanvas: true,
       attributionControl: false,
-      preferCanvas: true,
       minZoom: this.minZoom,
       maxZoom: this.maxZoom,
       zoomControl: false,
