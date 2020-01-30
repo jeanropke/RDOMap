@@ -221,7 +221,7 @@
   {"key":"menu.fish.steelhead_trout","value":"Steelhead Trout"},
 
   {"key":"map.plants","value":"Plants"},
-  {"key":"map.plants.desc","value":"{plant} in this area"},
+  {"key":"map.plants.desc","value":"You'll be able to find one or more {plant} in this area. Use Eagle Eye to more easily see the flowers."},
   {"key":"map.plants.alaskan_ginseng.name","value":"Alaskan Ginseng"},
   {"key":"map.plants.american_ginseng.name","value":"American Ginseng"},
   {"key":"map.plants.bay_bolete.name","value":"Bay Bolete"},
@@ -243,7 +243,7 @@
   {"key":"map.plants.parasol_mushroom.name","value":"Parasol Mushroom"},
   {"key":"map.plants.prairie_poppy.name","value":"Prairie Poppy"},
   {"key":"map.plants.rams_head.name","value":"Rams Head"},
-  {"key":"map.plants.red_raspberry.name","value":"Red red_raspberry"},
+  {"key":"map.plants.red_raspberry.name","value":"Red Raspberry"},
   {"key":"map.plants.red_sage.name","value":"Red Sage"},
   {"key":"map.plants.vanilla_flower.name","value":"Vanilla Flower"},
   {"key":"map.plants.violet_snowdrop.name","value":"Violet Snowdrop"},
