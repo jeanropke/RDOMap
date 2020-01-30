@@ -58,14 +58,13 @@ var Encounters = {
       case "fame_seeker":
       case "hostile_conversation":
         return "lightgray";
-      case "rival_collector":
-        return "red";
       case "tree_map":
       case "treasure_hunter":
       case "egg_encounter":
       case "grave_robber":
       case "dog_encounter":
       case "wounded_animal":
+      case "rival_collector":
       case "moonshiner_camp":
         return "purple";
       default:
