@@ -11,7 +11,8 @@ var categories = [
 
 var categoriesDisabledByDefault = [
   'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'fame_seeker', 'hostile_conversation', 'treasure'
+  'wounded_animal', 'fame_seeker', 'hostile_conversation', 'rival_collector',
+  'moonshiner_camp', 'treasure'
 ];
 
 var plants = [
