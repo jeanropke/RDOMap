@@ -125,6 +125,8 @@ Menu.showAll = function () {
   enabledCategories = categories;
 
   MapBase.addMarkers();
+  Treasures.addToMap();
+  Encounters.addToMap();
 };
 
 Menu.hideAll = function () {

@@ -2,9 +2,11 @@ var searchTerms = [];
 var uniqueSearchMarkers = [];
 
 var categories = [
-  'ambush', 'boats', 'trains', 'campfires', 'defend_campsite', 'escort', 'hideouts', 'plants',
-  'fast_travel', 'treasure', 'moonshiner_camp', 'people_in_need', 'rival_collector',
-  'runaway_wagon', 'hogtied_lawman', 'user_pins'
+  'ambush', 'boats', 'campfires', 'defend_campsite', 'dog_encounter', 'egg_encounter',
+  'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
+  'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants',
+  'rival_collector', 'runaway_wagon', 'trains', 'treasure', 'treasure_hunter',
+  'tree_map', 'user_pins', 'wounded_animal', 
 ];
 
 var categoriesDisabledByDefault = [
