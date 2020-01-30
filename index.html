@@ -2,224 +2,564 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="./favicon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="./favicon.png" />
+  <title>Red Dead Online - Collectors Map</title>
+  <meta name="description"
+    content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
+  <meta name="keywords"
+    content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
 
-    <title>Red Dead Online - Interactive Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="assets/js/heatmap.min.js"></script>
-    <script src="assets/js/leaflet-heatmap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="https://unpkg.com/rbush@2.0.2/rbush.js"></script>
-    <script>var module = {};</script>
-    <script src="assets/js/leaflet.canvas-markers.js"></script>
-    <script>module.exports(L);</script>
-    <link rel="stylesheet" href="assets/css/styles.css?nocache=29" />
+  <!-- Preconnects to improve performance -->
+  <link rel="preconnect" href="https://jeanropke.b-cdn.net">
 
-    <!-- Debug -->
-    <!--
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script>
-    //"-32.6 / 33 / -17.7 / 2"
-      var offsetX = -32.6;
-      var offsetY = 33;
-      var posX = -17.7;
-      var posY = 2;
+  <link rel="stylesheet" href="assets/css/leaflet.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1" />
 
-
-      $(function()
-      {
-        $("#offsetX").slider({min: -100,  max: 100, step: .1, value: offsetX, slide: function( event, ui ) { offsetX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY); } });
-        $("#offsetY").slider({min: -100,  max: 100, step: .1, value: offsetY, slide: function( event, ui ) { offsetY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
-        $("#posX").slider({min: -500,  max: 500, step: .1, value: posX, slide: function( event, ui ) { posX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
-        $("#posY").slider({min: -500,  max: 500, step: .1, value: posY, slide: function( event, ui ) { posY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
-      });
-    </script>
-    -->
+  <script>
+    var nocache = 1;
+  </script>
 </head>
 
 <body>
-    <div class="side-menu">
-        <!--
-  <div id="offsetX"></div>
-  <div id="offsetY"></div>
-  <div id="posX"></div>
-  <div id="posY"></div>
--->
+  <div class="side-menu">
+    <h2 id="main-header">
+      <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
+      <div id="main-header-center">
+        <span data-text="menu.rdo_map">RDO Map</span>
+      </div>
+      <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
+    </h2>
+    <!-- Coming back soon. -->
+    <!-- <div class="settings-container">
+      <div class="input-container">
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
+          autocomplete="off" data-help="search">
+        <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
+      </div>
+    </div> -->
+    <div class="links-container">
+      <a data-text="menu.hide_all" data-help="hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
+      <a data-text="menu.show_all" data-help="show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
+    </div>
 
-        <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
-        <div class="hide-show-container">
-            <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
-            <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
+    <div>
+      <div class="menu-option clickable" data-type="boats" data-help="item_category">
+        <img class="icon" src="./assets/images/icons/boats.png" />
+        <span data-text="menu.boats">Boats</span>
+      </div>
+    </div>
+    <div>
+      <div class="menu-option clickable" data-type="trains" data-help="item_category">
+        <img class="icon" src="./assets/images/icons/trains.png" />
+        <span data-text="menu.trains">Trains</span>
+      </div>
+    </div>
+    <div>
+      <div class="menu-option clickable" data-type="campfires" data-help="item_category">
+        <img class="icon" src="./assets/images/icons/campfires.png" />
+        <span data-text="menu.campfires">Campfires</span>
+      </div>
+    </div>
+    <div>
+      <div class="menu-option clickable" data-type="hideouts" data-help="item_category">
+        <img class="icon" src="./assets/images/icons/hideouts.png" />
+        <span data-text="menu.hideouts">Gang Hideouts</span>
+      </div>
+    </div>
+    <div>
+      <div class="menu-option clickable" data-type="plants" data-help="item_category">
+        <img class="icon" src="./assets/images/icons/plants.png" />
+        <span data-text="map.plants">Plants</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div class="menu-hidden two-column" data-type="plants">
+      </div>
+    </div>
+    <div>
+      <div class="menu-option submenu-only" data-help="item_category_submenu">
+        <img class="icon" src="./assets/images/icons/random_encounter.png">
+        <span data-text="menu.random_encounters">Random Encounters</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div id="random_encounters" class="menu-hidden two-column">
+        <div class="collectible-wrapper clickable" data-type="ambush" data-help="item">
+          <img src="./assets/images/icons/ambush.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.ambush">Ambush</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="ambush">
-                <img class="icon" src="./assets/images/icons/ambush.png" />
-                <span data-text="menu.ambush">Ambush</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="defend_campsite" data-help="item">
+          <img src="./assets/images/icons/defend_campsite.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.defend_campsite">Defend Campsite</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="boats">
-                <img class="icon" src="./assets/images/icons/boats.png" />
-                <span data-text="menu.boats">Boats</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="escort" data-help="item">
+          <img src="./assets/images/icons/escort.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.escort">Escort</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="campfires">
-                <img class="icon" src="./assets/images/icons/campfires.png" />
-                <span data-text="menu.campfires">Campfires</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="people_in_need" data-help="item">
+          <img src="./assets/images/icons/people_in_need.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.people_in_need">People in Need</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="defend_campsite">
-                <img class="icon" src="./assets/images/icons/defend_campsite.png" />
-                <span data-text="menu.defend_campsite">Defend Campsites</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="rival_collector" data-help="item">
+          <img src="./assets/images/icons/rival_collector.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.rival_collector">Rival Collector</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="escort">
-                <img class="icon" src="./assets/images/icons/escort.png" />
-                <span data-text="menu.escort">Escort</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="runaway_wagon" data-help="item">
+          <img src="./assets/images/icons/runaway_wagon.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.runaway_wagon">Runaway Wagon</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="hideouts">
-                <img class="icon" src="./assets/images/icons/hideouts.png" />
-                <span data-text="menu.hideouts">Gang Hideouts</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="hogtied_lawman" data-help="item">
+          <img src="./assets/images/icons/hogtied_lawman.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.hogtied_lawman">Hogtied Lawman</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="plants">
-                <img class="icon" src="./assets/images/icons/plants.png" />
-                <span data-text="menu.plants">Plants</span>
-                <div class="open-submenu"></div>
-            </div>
-            <div class="menu-hidden" data-type="plants"></div>
+        <div class="collectible-wrapper clickable" data-type="dog_encounter" data-help="item">
+          <img src="./assets/images/icons/dog_encounter.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.dog_encounter">Dog Encounter</p>
+          </span>
         </div>
-        <div>
-            <div class="menu-option clickable" data-type="rescue">
-                <img class="icon" src="./assets/images/icons/rescue.png" />
-                <span data-text="menu.rescue">Rescue</span>
-            </div>
+        <div class="collectible-wrapper clickable" data-type="egg_encounter" data-help="item">
+          <img src="./assets/images/icons/egg_encounter.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.egg_encounter">Egg Encounter</p>
+          </span>
         </div>
-        <h2 data-text="menu.animals">Animals</h2>
-        <div class="menu-two-column animals" data-type="animals">
+        <div class="collectible-wrapper clickable" data-type="fame_seeker" data-help="item">
+          <img src="./assets/images/icons/fame_seeker.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.fame_seeker">Fame Seeker</p>
+          </span>
         </div>
-        <h2 data-text="menu.birds">Birds</h2>
-        <div class="menu-two-column birds" data-type="birds">
+        <div class="collectible-wrapper clickable" data-type="grave_robber" data-help="item">
+          <img src="./assets/images/icons/grave_robber.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.grave_robber">Grave Robber</p>
+          </span>
         </div>
-        <h2 data-text="menu.fish">Fish</h2>
-        <div class="menu-two-column fish" data-type="fish">
+        <div class="collectible-wrapper clickable" data-type="moonshiner_camp" data-help="item">
+          <img src="./assets/images/icons/moonshiner_camp.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.moonshiner_camp">Moonshiner Camp</p>
+          </span>
         </div>
-        <div class="search-container">
-            <h2 data-text="menu.search">Search</h2>
-            <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
-                autocomplete="off">
+        <div class="collectible-wrapper clickable" data-type="treasure_hunter" data-help="item">
+          <img src="./assets/images/icons/treasure_hunter.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.treasure_hunter">Treasure Hunter</p>
+          </span>
         </div>
+        <div class="collectible-wrapper clickable" data-type="tree_map" data-help="item">
+          <img src="./assets/images/icons/tree_map.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.tree_map">Treasure Map</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="wounded_animal" data-help="item">
+          <img src="./assets/images/icons/wounded_animal.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.wounded_animal">Wounded Animal</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="hostile_conversation" data-help="item">
+          <img src="./assets/images/icons/hostile_conversation.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.hostile_conversation">Hostile Conversation</p>
+          </span>
+        </div>
+      </div>
+    </div>
 
-        <div class="settings-container">
-            <h2 data-text="menu.settings">Settings</h2>
-            <div class="input-container">
-                <label for="language" data-text="menu.language">Language</label>
-                <select class="input-day" id="language">
-                    <option value="de-de">Deutsch</option>
-                    <option value="en-us" selected>English</option>
-                    <option value="es-es">Español</option>
-                    <option value="fr-fr">Français</option>
-                    <option value="it-it">Italiano</option>
-                    <option value="pt-br">Português</option>
-                    <option value="pl-pl">Polski</option>
-                    <option value="ko">한국어</option>
-                    <option value="ru">Русский</option>
-                    <option value="zh-s">简体中文</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-                <select class="input-day" id="show-coordinates">
-                    <option value="1" data-text="menu.yes">Yes</option>
-                    <option value="0" data-text="menu.no" selected>No</option>
-                </select>
-            </div>
-        </div>
-        <div class="issues-container">
-            <h2 data-text="menu.issues">Issues</h2>
-            <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDOMap/issues" target="_blank">Report
-                issues here!</a>
-        </div>
-        <div class="hide-show-container">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                <input type="hidden" name="cmd" value="_donations" />
-                <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
-                <select class="input-day" name="currency_code">
-                    <option value="AUD">AUD $</option>
-                    <option value="BRL">BRL R$</option>
-                    <option value="CAD">CAD $</option>
-                    <option value="CHF">CHF Fr.</option>
-                    <option value="CZK">CZK Kč</option>
-                    <option value="DKK">DKK kr.</option>
-                    <option value="EUR">EUR €</option>
-                    <option value="GBP">GBP £</option>
-                    <option value="HKD">HKD $</option>
-                    <option value="HUF">HUF Ft</option>
-                    <option value="ILS">ILS ₪</option>
-                    <option value="JPY">JPY ‎¥‎</option>
-                    <option value="MXN">‎MXN $‎</option>
-                    <option value="MYR">MYR RM</option>
-                    <option value="NOK">NOK kr</option>
-                    <option value="NZD">NZD $</option>
-                    <option value="PHP">‎PHP ₱</option>
-                    <option value="PLN">PLN gr</option>
-                    <option value="RUB">RUB ₽</option>
-                    <option value="SEK">SEK kr</option>
-                    <option value="SGD">SGD $</option>
-                    <option value="THB">THB ฿</option>
-                    <option value="TWD">TWD $</option>
-                    <option value="USD" selected>USD $</option>
-                </select>
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
-                    name="submit" title="PayPal - The safer, easier way to pay online!"
-                    alt="Donate with PayPal button" />
-                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-            </form>
-        </div>
+    <h2 data-text="menu.heatmaps">Heatmaps</h2>
+    <div>
+      <div class="menu-option submenu-only" data-type="animals" data-help="item_category_submenu">
+        <img class="icon" src="./assets/images/icons/animals.png" />
+        <span data-text="menu.animals">Animals</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div class="menu-hidden two-column" data-type="animals">
+      </div>
+    </div>
+    <div>
+      <div class="menu-option submenu-only" data-type="birds" data-help="item_category_submenu">
+        <img class="icon" src="./assets/images/icons/birds.png" />
+        <span data-text="menu.birds">Birds</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div class="menu-hidden two-column" data-type="birds">
+      </div>
+    </div>
+    <div>
+      <div class="menu-option submenu-only" data-type="fish" data-help="item_category_submenu">
+        <img class="icon" src="./assets/images/icons/fish.png" />
+        <span data-text="menu.fish">Fish</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div class="menu-hidden two-column" data-type="fish">
+      </div>
+    </div>
 
+    <h2 data-text="menu.utils">Utilities</h2>
+    <div class="menu-option clickable" data-type="fast_travel" data-help="item_category">
+      <img class="icon" src="./assets/images/icons/fast_travel.png" />
+      <span data-text="menu.fast_travel">Fast Travel</span>
+    </div>
+    <div class="menu-option clickable" data-type="user_pins" data-help="item_category">
+      <img class="icon" src="./assets/images/icons/pins.png" />
+      <span data-text="menu.user_pins">User Pins</span>
+    </div>
+    <div>
+      <div class="menu-option clickable" data-type="treasure" data-help="item_category">
+        <img class="icon" src="./assets/images/icons/treasure.png" />
+        <span data-text="menu.treasures">Treasures</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div class="menu-hidden" data-type="treasure">
+        <div class="collection-value">
+          <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Treasures.showHideAll(true)">Hide all</a>
+          <a data-text="menu.show_all" href="javascript:void(0);" onclick="Treasures.showHideAll(false)">Show all</a>
+        </div>
+      </div>
+    </div>
 
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.settings">Settings</h2>
+      <span class="header-border"></span>
+    </div>
+    <div class="settings-container">
+      <div class="input-container" data-help="language">
+        <label for="language" data-text="menu.language">Language</label>
+        <select class="input-day wide-select-menu" id="language">
+          <option value="de-de">Deutsch</option>
+          <option value="en-us" selected>English</option>
+          <option value="es-es">Español</option>
+          <option value="fr-fr">Français</option>
+          <option value="it-it">Italiano</option>
+          <option value="hu-hu">Magyar nyelv</option>
+          <option value="pt-br">Português</option>
+          <option value="pl">Polski</option>
+          <option value="ru">Русский</option>
+          <option value="ar-ar">ٱلْعَرَبِيَّة</option>
+          <option value="ko">한국어</option>
+          <option value="th-th">ภาษาไทย</option>
+          <option value="zh-s">简体中文</option>
+          <option value="zh-t">繁体中文</option>
+        </select>
+      </div>
+      <div class="input-container" data-help="marker_opacity">
+        <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
+        <select class="input-day wide-select-menu" id="marker-opacity">
+          <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
+          <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
+          <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
+          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
+          <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
+        </select>
+      </div>
+      <div class="input-container clickable" data-help="clear_important_items" data-toggle="modal"
+        data-target="#clear-important-items-modal">
+        <label data-text="menu.clear_important_items">Clear important markers</label>
+        <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container" data-help="user_pins_place_mode">
+        <label for="pins-place-mode" data-text="menu.user_pins_place_mode">Create new pin on click</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="pins-place-mode" value="1" id="pins-place-mode" />
+          <label class="input-checkbox-label" for="pins-place-mode"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="user_pins_edit_mode">
+        <label for="pins-edit-mode" data-text="menu.user_pins_edit_mode">Enable pin editing</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="pins-edit-mode" value="1" id="pins-edit-mode" />
+          <label class="input-checkbox-label" for="pins-edit-mode"></label>
+        </div>
+      </div>
+      <div id="pins-place-new" class="input-container clickable" data-help="pins_place_new">
+        <label data-text="menu.user_pins_place_new">Create new pin now</label>
+        <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container" data-help="marker_cluster">
+        <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
+          <label class="input-checkbox-label" for="marker-cluster"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="enable_marker_shadows">
+        <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1"
+            id="enable-marker-shadows" />
+          <label class="input-checkbox-label" for="enable-marker-shadows"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="enable_dclick_zoom">
+        <label for="enable-dclick-zoom" data-text="menu.enable_dclick_zoom">Double-click to zoom in</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="enable-dclick-zoom" value="1" id="enable-dclick-zoom" />
+          <label class="input-checkbox-label" for="enable-dclick-zoom"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="show_help">
+        <label for="show-help" data-text="menu.show_help">Show help on hover</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-help" value="1" id="show-help" />
+          <label class="input-checkbox-label" for="show-help"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="show_coords">
+        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
+          <label class="input-checkbox-label" for="show-coordinates"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.import_export_title">Import/Export</h2>
+      <span class="header-border"></span>
+    </div>
+    <div class="settings-container">
+      <div class="input-container-noflex">
+        <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
+      </div>
+      <div class="input-container-noflex">
+        <p class="explain-text" data-text="menu.import_export_explanation">
+          This will import or export your settings. Importing settings will replace all current settings and reload the
+          page. This feature does not include pins.
+        </p>
+      </div>
+      <div class="input-container-noflex" data-help="cookie_import_file">
+        <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
+      </div>
+      <div class="input-container-noflex">
+        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.import_button" data-help="cookie_import">Import</button>
+        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.export_button" data-help="cookie_export">Export</button>
+      </div>
+      <div class="input-container-noflex">
+        <h4 data-text="menu.pins_import_export_title">User Pins</h4>
+      </div>
+      <div class="input-container-noflex">
+        <p class="explain-text" data-text="menu.pins_import_export_explanation">
+          This will import or export your pins. Importing pins will replace all current pins.
+        </p>
+      </div>
+      <div class="input-container-noflex" data-help="pins_import_file">
+        <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
+      </div>
+      <div class="input-container-noflex">
+        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
+        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+      </div>
+    </div>
+
+    <div id="debug-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title">Debug</h2>
+        <span class="header-border"></span>
+      </div>
+      <div class="settings-container">
+        <div class="input-container-noflex">
+          <p class="explain-text">
+            These settings will not be saved. These settings are for development purposes and should not be used by
+            regular users.
+          </p>
+        </div>
+        <div class="input-container">
+          <label for="show-all-markers">Show all markers</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-all-markers" value="1" id="show-all-markers" />
+            <label class="input-checkbox-label" for="show-all-markers"></label>
+          </div>
+        </div>
+        <div class="input-container">
+          <label for="enable-right-click">Give me back my right-click</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-right-click" value="1" id="enable-right-click" />
+            <label class="input-checkbox-label" for="enable-right-click"></label>
+          </div>
+        </div>
+        <div class="input-container-noflex">
+          <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day"
+            value="">
+          <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day"
+            value="">
+        </div>
+        <div class="input-container-noflex">
+          <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search"
+            autocomplete="off">
+        </div>
+        <div class="input-container-noflex">
+          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+            onclick="MapBase.submitDebugForm()">Place</button>
+        </div>
+        <div class="input-container-noflex">
+          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+            onclick="Language.getLanguageJson()">Generate langs</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.information_links">Links/Information</h2>
+      <span class="header-border"></span>
+    </div>
+    <div class="settings-container">
+      <a class="no-style" href="https://jeanropke.github.io/RDR2CollectorsMap/" target="_blank">
+        <div class="input-container clickable" data-help="collector_map">
+          <label data-text="menu.collector_map">Collectibles map</label>
+          <div class="input-action external"></div>
+        </div>
+      </a>
+      <a class="no-style" href="https://github.com/jeanropke/RDOMap/issues" target="_blank">
+        <div class="input-container clickable" data-help="report_issues">
+          <label data-text="menu.report_issues">Report issues here</label>
+          <div class="input-action external"></div>
+        </div>
+      </a>
+      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
+        <label data-text="menu.toggle_debug">Toggle debug features</label>
+        <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
+      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+        target="_blank">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
+        <select class="input-day" name="currency_code">
+          <option value="AUD">AUD $</option>
+          <option value="BRL">BRL R$</option>
+          <option value="CAD">CAD $</option>
+          <option value="CHF">CHF Fr.</option>
+          <option value="CZK">CZK Kč</option>
+          <option value="DKK">DKK kr.</option>
+          <option value="EUR">EUR €</option>
+          <option value="GBP">GBP £</option>
+          <option value="HKD">HKD $</option>
+          <option value="HUF">HUF Ft</option>
+          <option value="ILS">ILS ₪</option>
+          <option value="JPY">JPY ‎¥‎</option>
+          <option value="MXN">‎MXN $‎</option>
+          <option value="MYR">MYR RM</option>
+          <option value="NOK">NOK kr</option>
+          <option value="NZD">NZD $</option>
+          <option value="PHP">‎PHP ₱</option>
+          <option value="PLN">PLN gr</option>
+          <option value="RUB">RUB ₽</option>
+          <option value="SEK">SEK kr</option>
+          <option value="SGD">SGD $</option>
+          <option value="THB">THB ฿</option>
+          <option value="TWD">TWD $</option>
+          <option value="USD" selected>USD $</option>
+        </select>
         <br>
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit"
+          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+      </form>
     </div>
-    <div class="menu-toggle">></div>
 
-    <div id="map">
-        <div class="legend geometry top center hide">
-            <div class="wrapper">
-                <div class="content"></div>
-            </div>
+    <div id="help-container">
+      <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+    </div>
+  </div>
+  <div class="menu-toggle">></div>
+
+  <div class="clock-container">
+    <div id="time-in-game">--:-- --</div>
+    <div id="day-cycle"></div>
+  </div>
+  <div id="map">
+
+  </div>
+  <div class="lat-lng-container">
+    <p></p><button id="lat-lng-container-close-button">×</button>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog"
+    aria-labelledby="clear-important-items-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="clear-important-items-title" data-text="menu.modal_clear_important_items_title">
+            Clear important markers?
+          </h4>
         </div>
+        <div class="modal-body" data-text="menu.modal_clear_important_items_body">
+          This will clear the highlight from all markers marked as important. This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="lat-lng-container">
-        <p></p><button id="lat-lng-container-close-button">×</button>
-    </div>
-    <script src="assets/js/map.js?nocache=30"></script>
-    <script src="assets/js/hm.data.js?nocache=30"></script>
-    <script src="assets/js/language.js?nocache=30"></script>
-    <script src="assets/js/menu.js?nocache=30"></script>
-    <script src="assets/js/scripts.js?nocache=30"></script>
+  <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/lib/jquery.cookie.js"></script>
+  <script src="assets/js/lib/leaflet.js"></script>
+  <script src="assets/js/lib/heatmap.min.js"></script>
+  <script src="assets/js/lib/leaflet-heatmap.js"></script>
+  <script src="assets/js/lib/oms.min.js"></script>
+  <script src="https://unpkg.com/rbush@2.0.2/rbush.js"></script>
+  <script>var module = {};</script>
+  <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
+  <script>module.exports(L);</script>
+  <script src="assets/js/layers.js?nocache=1"></script>
+  <script src="assets/js/settings.js?nocache=1"></script>
+  <script src="assets/js/marker.js?nocache=1"></script>
+  <script src="assets/js/treasures.js?nocache=1"></script>
+  <script src="assets/js/encounters.js?nocache=1"></script>
+  <script src="assets/js/hm.js?nocache=1"></script>
+  <script src="assets/js/pins.js?nocache=1"></script>
+  <script src="assets/js/map.js?nocache=1"></script>
+  <script src="assets/js/language.js?nocache=1"></script>
+  <script src="assets/js/menu.js?nocache=1"></script>
+  <script src="assets/js/scripts.js?nocache=1"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-39999584-5');
-    </script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
+    gtag('config', 'UA-39999584-5');
+
+  </script>
 
 </body>
 
