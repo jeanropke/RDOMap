@@ -3,6 +3,10 @@
   
   {"key": "menu.hide_all","value": "Скрыть все"},
   {"key": "menu.show_all","value": "Показать все"},
+
+  {"key": "map.layers.default", "value": "Обычная"},
+  {"key": "map.layers.detailed", "value": "Детальная"},
+  {"key": "map.layers.dark", "value": "Темная"},
   
   {"key":"menu.boats","value":"Лодки"},
   {"key":"map.boats.name","value":"Лодка"},
