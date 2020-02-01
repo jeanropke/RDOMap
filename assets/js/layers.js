@@ -5,5 +5,7 @@ var Layers = {
   encountersLayer: new L.LayerGroup(),
   pinsLayer: new L.LayerGroup(),
   heatmapLayer: null,
-  oms: null
+  oms: null,
+
+  canvasLayer: L.canvasIconLayer({zoomAnimation: false}),
 };
