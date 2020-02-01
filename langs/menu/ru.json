@@ -230,8 +230,10 @@
 	{"key": "fasttravel.annesburg.name", 	   	"value": "Аннесберг"},
 	{"key": "fasttravel.saint_denis.name", 	    	"value": "Сен-Дени"},
 	{"key": "fasttravel.lagras.name", 	        "value": "Лаграс"},	
-	{"key": "menu.madam_nazar", 		        "value": "Мадам Назар"},	
-  
+	{"key": "menu.madam_nazar", 		        "value": "Мадам Назар"},
+	
+  {"key":"menu.user_pins","value":"Пользовательские метки"},
+
   {"key":"menu.treasures","value":"Карты сокровищ"},
   	{"key": "bards_crossing_treasure", 	        "value": "Бардс-Кроссинг"},
 	{"key": "benedict_treasure", 			"value": "Бенедикт-Пойнт"},
