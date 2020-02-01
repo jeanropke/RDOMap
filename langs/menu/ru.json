@@ -231,8 +231,6 @@
 	{"key": "fasttravel.saint_denis.name", 	    	"value": "Сен-Дени"},
 	{"key": "fasttravel.lagras.name", 	        "value": "Лаграс"},	
 	{"key": "menu.madam_nazar", 		        "value": "Мадам Назар"},	
- 
-  {"key":"menu.user_pins","value":"Пользовательские метки},
   
   {"key":"menu.treasures","value":"Карты сокровищ"},
   	{"key": "bards_crossing_treasure", 	        "value": "Бардс-Кроссинг"},
