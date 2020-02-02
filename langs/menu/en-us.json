@@ -92,7 +92,8 @@
 	{"key":"help.user_pins_edit_mode","value":"Toggles whether pins should be editable, movable and removable."},
 	{"key":"help.user_pins_export","value":"Exports your pins to a file."},
 	{"key":"help.user_pins_import","value":"Imports a pins file and displays all those pins on the map."},
-	{"key":"help.user_pins_place_mode","value":"Toggles whether a new pin should be created when you click somewhere on the map."},
+  {"key":"help.user_pins_place_mode","value":"Toggles whether a new pin should be created when you click somewhere on the map."},
+  {"key":"help.item_submit_new_herb","value":"Help out by submitting a new herb location. Opens a new tab with the Google Form for herb submissions."},
 
   {"key":"map.attribution_prefix","value":"Tiles provided by"},
   {"key":"map.copy_link","value":"Copy marker link"},

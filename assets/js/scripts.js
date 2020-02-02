@@ -266,7 +266,7 @@ $('#enable-right-click').on("change", function () {
 });
 
 //Disable menu category when click on input
-$('.menu-option.clickable input').on('click', function (e) {
+$('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
   e.stopPropagation();
 });
 
