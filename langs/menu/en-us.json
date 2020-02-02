@@ -314,7 +314,7 @@
   {"key":"map.egg_encounter.name","value":"Bird Egg Nest Encounter"},
   {"key":"map.dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Follow the dog to either an ambush or a metal box containing a collectible."},
   {"key":"map.escort.name","value":"Escort"},
-  {"key":"map.escort.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Defeat the enemies then escord the person to their destination for a reward."},
+  {"key":"map.escort.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Defeat the enemies then escort the person to their destination for a reward."},
   {"key":"map.fame_seeker.name","value":"Fame Seeker"},
   {"key":"map.fame_seeker.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Do the task the fame seeker asks of you to gain a reward."},
   {"key":"map.grave_robber.name","value":"Grave Robber Encounter"},

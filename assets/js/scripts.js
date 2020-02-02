@@ -4,7 +4,7 @@ var uniqueSearchMarkers = [];
 var categories = [
   'ambush', 'boats', 'campfires', 'defend_campsite', 'dog_encounter', 'egg_encounter',
   'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
-  'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants',
+  'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants', 'rescue',
   'rival_collector', 'runaway_wagon', 'trains', 'treasure', 'treasure_hunter',
   'tree_map', 'user_pins', 'wounded_animal', 
 ];
