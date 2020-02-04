@@ -54,6 +54,7 @@ var Encounters = {
       case "people_in_need":
       case "runaway_wagon":
       case "hogtied_lawman":
+      case "rescue":
         return "blue";
       case "fame_seeker":
       case "hostile_conversation":

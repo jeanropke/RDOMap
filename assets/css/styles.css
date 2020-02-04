@@ -218,6 +218,12 @@ input, textarea, select, .btn {
     margin: auto auto auto 2px;
 }
 
+.day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 0 auto 8px;
+}
+
 .timer-container, .clock-container {
     position: fixed;
     z-index: 1010;
@@ -229,14 +235,9 @@ input, textarea, select, .btn {
     min-width: 95px;
     height: 30px;
     transition: all 200ms ease-out;
-    padding-left: 8px;
+    padding: 0 8px;
     display: inline-flex;
-}
-
-#day-cycle {
-    width: 16px;
-    height: 16px;
-    margin: auto 4px;
+    line-height: 28px;
 }
 
 .counter-container {
@@ -721,6 +722,7 @@ a.wiki-page:visited {
     background-color: #333;
     color: #eee !important;
     border-radius: 50%;
+    text-decoration: none !important;
 }
 
 .marker-content-wrapper {

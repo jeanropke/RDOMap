@@ -4,7 +4,7 @@ var uniqueSearchMarkers = [];
 var categories = [
   'ambush', 'boats', 'campfires', 'defend_campsite', 'dog_encounter', 'egg_encounter',
   'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
-  'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants',
+  'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants', 'rescue',
   'rival_collector', 'runaway_wagon', 'trains', 'treasure', 'treasure_hunter',
   'tree_map', 'user_pins', 'wounded_animal', 
 ];
@@ -235,9 +235,9 @@ setInterval(function () {
   }
 
   if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
-    $('#day-cycle').css('background', 'url(assets/images/moon.png)');
+    $('.day-cycle').css('background', 'url(assets/images/moon.png)');
   } else {
-    $('#day-cycle').css('background', 'url(assets/images/sun.png)');
+    $('.day-cycle').css('background', 'url(assets/images/sun.png)');
   }
 }, 1000);
 
@@ -266,7 +266,7 @@ $('#enable-right-click').on("change", function () {
 });
 
 //Disable menu category when click on input
-$('.menu-option.clickable input').on('click', function (e) {
+$('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
   e.stopPropagation();
 });
 

@@ -16,10 +16,10 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=10" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=18" />
 
   <script>
-    var nocache = 10;
+    var nocache = 18;
   </script>
 </head>
 
@@ -73,10 +73,12 @@
       <div class="menu-option clickable" data-type="plants" data-help="item_category">
         <img class="icon" src="./assets/images/icons/plants.png" />
         <span data-text="map.plants">Plants</span>
-        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+        <div class="counter" style="margin: auto 0 auto auto;" data-help="item_submit_new_herb">
+          <a id="submit-new-herb" class="counter-button" href="https://forms.gle/1oQWp6UF9UBZGRu27" target="_blank">+</a>
+        </div>
+        <div class="open-submenu"></div>
       </div>
-      <div class="menu-hidden two-column" data-type="plants">
-      </div>
+      <div class="menu-hidden two-column" data-type="plants"></div>
     </div>
     <div>
       <div class="menu-option submenu-only" data-help="item_category_submenu">
@@ -97,36 +99,6 @@
             <p class="collectible" data-text="menu.defend_campsite">Defend Campsite</p>
           </span>
         </div>
-        <div class="collectible-wrapper clickable" data-type="escort" data-help="item">
-          <img src="./assets/images/icons/escort.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.escort">Escort</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="people_in_need" data-help="item">
-          <img src="./assets/images/icons/people_in_need.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.people_in_need">People in Need</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="rival_collector" data-help="item">
-          <img src="./assets/images/icons/rival_collector.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.rival_collector">Rival Collector</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="runaway_wagon" data-help="item">
-          <img src="./assets/images/icons/runaway_wagon.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.runaway_wagon">Runaway Wagon</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="hogtied_lawman" data-help="item">
-          <img src="./assets/images/icons/hogtied_lawman.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.hogtied_lawman">Hogtied Lawman</p>
-          </span>
-        </div>
         <div class="collectible-wrapper clickable" data-type="dog_encounter" data-help="item">
           <img src="./assets/images/icons/dog_encounter.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
@@ -137,6 +109,12 @@
           <img src="./assets/images/icons/egg_encounter.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
             <p class="collectible" data-text="menu.egg_encounter">Egg Encounter</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="escort" data-help="item">
+          <img src="./assets/images/icons/escort.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.escort">Escort</p>
           </span>
         </div>
         <div class="collectible-wrapper clickable" data-type="fame_seeker" data-help="item">
@@ -151,10 +129,46 @@
             <p class="collectible" data-text="menu.grave_robber">Grave Robber</p>
           </span>
         </div>
+        <div class="collectible-wrapper clickable" data-type="hogtied_lawman" data-help="item">
+          <img src="./assets/images/icons/hogtied_lawman.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.hogtied_lawman">Hogtied Lawman</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="hostile_conversation" data-help="item">
+          <img src="./assets/images/icons/hostile_conversation.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.hostile_conversation">Hostile Conversation</p>
+          </span>
+        </div>
         <div class="collectible-wrapper clickable" data-type="moonshiner_camp" data-help="item">
           <img src="./assets/images/icons/moonshiner_camp.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
             <p class="collectible" data-text="menu.moonshiner_camp">Moonshiner Camp</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="people_in_need" data-help="item">
+          <img src="./assets/images/icons/people_in_need.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.people_in_need">People in Need</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="rescue" data-help="item">
+          <img src="./assets/images/icons/rescue.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.rescue">Rescue</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="rival_collector" data-help="item">
+          <img src="./assets/images/icons/rival_collector.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.rival_collector">Rival Collector</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="runaway_wagon" data-help="item">
+          <img src="./assets/images/icons/runaway_wagon.png" class="collectible-icon random-encounter" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.runaway_wagon">Runaway Wagon</p>
           </span>
         </div>
         <div class="collectible-wrapper clickable" data-type="treasure_hunter" data-help="item">
@@ -166,19 +180,13 @@
         <div class="collectible-wrapper clickable" data-type="tree_map" data-help="item">
           <img src="./assets/images/icons/tree_map.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
-            <p class="collectible" data-text="menu.tree_map">Treasure Map</p>
+            <p class="collectible" data-text="menu.tree_map">Treasure Map on Tree</p>
           </span>
         </div>
         <div class="collectible-wrapper clickable" data-type="wounded_animal" data-help="item">
           <img src="./assets/images/icons/wounded_animal.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
             <p class="collectible" data-text="menu.wounded_animal">Wounded Animal</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="hostile_conversation" data-help="item">
-          <img src="./assets/images/icons/hostile_conversation.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.hostile_conversation">Hostile Conversation</p>
           </span>
         </div>
       </div>
@@ -431,7 +439,7 @@
       <span class="header-border"></span>
     </div>
     <div class="settings-container">
-      <a class="no-style" href="https://jeanropke.github.io/RDR2CollectorsMap/" target="_blank">
+      <a class="no-style" href="https://jeanropke.github.io/RDR2CollectorsMap/">
         <div class="input-container clickable" data-help="collector_map">
           <label data-text="menu.collector_map">Collectibles map</label>
           <div class="input-action external"></div>
@@ -493,7 +501,7 @@
 
   <div class="clock-container">
     <div id="time-in-game">--:-- --</div>
-    <div id="day-cycle"></div>
+    <div class="day-cycle"></div>
   </div>
   <div id="map">
 
@@ -535,17 +543,17 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=10"></script>
-  <script src="assets/js/settings.js?nocache=10"></script>
-  <script src="assets/js/marker.js?nocache=10"></script>
-  <script src="assets/js/treasures.js?nocache=10"></script>
-  <script src="assets/js/encounters.js?nocache=10"></script>
-  <script src="assets/js/hm.js?nocache=10"></script>
-  <script src="assets/js/pins.js?nocache=10"></script>
-  <script src="assets/js/map.js?nocache=10"></script>
-  <script src="assets/js/language.js?nocache=10"></script>
-  <script src="assets/js/menu.js?nocache=10"></script>
-  <script src="assets/js/scripts.js?nocache=10"></script>
+  <script src="assets/js/layers.js?nocache=18"></script>
+  <script src="assets/js/settings.js?nocache=18"></script>
+  <script src="assets/js/marker.js?nocache=18"></script>
+  <script src="assets/js/treasures.js?nocache=18"></script>
+  <script src="assets/js/encounters.js?nocache=18"></script>
+  <script src="assets/js/hm.js?nocache=18"></script>
+  <script src="assets/js/pins.js?nocache=18"></script>
+  <script src="assets/js/map.js?nocache=18"></script>
+  <script src="assets/js/language.js?nocache=18"></script>
+  <script src="assets/js/menu.js?nocache=18"></script>
+  <script src="assets/js/scripts.js?nocache=18"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
