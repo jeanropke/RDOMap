@@ -308,7 +308,11 @@
 	{"key": "alerts.file_not_valid", "value": "Выбранный вами файл недействителен. Пожалуйста, выберите другой файл."},
 	{"key": "alerts.file_not_found", "value": "Пожалуйста, выберите файл в поле над кнопкой загрузки, а затем повторите попытку."},
 	{"key": "alerts.feature_not_supported", "value": "Эта функция не поддерживается вашим браузером."},
-  
+  	
+	{"key": "map.user_pins.placeholder_title", "value": "Имя"},
+	{"key": "map.user_pins.default_title", "value": "Ваша метка"},
+	{"key": "map.user_pins.placeholder_desc", "value": "Описание"},
+	{"key": "map.user_pins.default_desc", "value": "Это ваша пользовательская метка. На ней можно изменить имя и описание. Не забудьте сохранить её."},
   	{"key": "map.user_pins.save", "value": "Сохранить"},
 	{"key": "map.user_pins.remove", "value": "Удалить"},
 	{"key": "map.user_pins.icon", "value": "Иконка метки"},
