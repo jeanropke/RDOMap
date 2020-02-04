@@ -218,6 +218,12 @@ input, textarea, select, .btn {
     margin: auto auto auto 2px;
 }
 
+.day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 4px;
+}
+
 .timer-container, .clock-container {
     position: fixed;
     z-index: 1010;
@@ -231,12 +237,6 @@ input, textarea, select, .btn {
     transition: all 200ms ease-out;
     padding-left: 8px;
     display: inline-flex;
-}
-
-#day-cycle {
-    width: 16px;
-    height: 16px;
-    margin: auto 4px;
 }
 
 .counter-container {

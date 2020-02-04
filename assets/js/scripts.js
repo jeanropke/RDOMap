@@ -235,9 +235,9 @@ setInterval(function () {
   }
 
   if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
-    $('#day-cycle').css('background', 'url(assets/images/moon.png)');
+    $('.day-cycle').css('background', 'url(assets/images/moon.png)');
   } else {
-    $('#day-cycle').css('background', 'url(assets/images/sun.png)');
+    $('.day-cycle').css('background', 'url(assets/images/sun.png)');
   }
 }, 1000);
 
