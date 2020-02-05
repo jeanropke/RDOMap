@@ -319,5 +319,25 @@
   {"key":"map.tree_map.name","value":"Treasure Map stuck on Tree"},
   {"key":"map.tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
   {"key":"map.wounded_animal.name","value":"Wounded Animal Encounter"},
-  {"key":"map.wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."}
+  {"key":"map.wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."},
+
+  {"key":"menu.fme.time.starts_in","value":"Starts in {time}."},
+  {"key":"menu.fme.time.about_a_minute","value":"about a minute"},
+  {"key":"menu.fme.time.minute","value":"{minutes} minute"},
+  {"key":"menu.fme.time.minutes","value":"{minutes} minutes"},
+
+  {"key":"menu.fme.cold_dead_hands","value":"Cold Dead Hands"},
+  {"key":"menu.fme.condor_egg","value":"Condor Egg"},
+  {"key":"menu.fme.day_of_reckoning","value":"Day of Reckoning"},
+  {"key":"menu.fme.dispatch_rider","value":"Dispatch Rider"},
+  {"key":"menu.fme.fishing_challenge","value":"Fishing Challenge"},
+  {"key":"menu.fme.fools_gold","value":"Fool's Gold"},
+  {"key":"menu.fme.king_of_the_castle","value":"King of the Castle"},
+  {"key":"menu.fme.manhunt","value":"Manhunt"},
+  {"key":"menu.fme.master_archer","value":"Master Archer"},
+  {"key":"menu.fme.railroad_baron","value":"Railroad Baron"},
+  {"key":"menu.fme.random","value":"Random Event"},
+  {"key":"menu.fme.salvage","value":"Salvage"},
+  {"key":"menu.fme.trade_route","value":"Trade Route"},
+  {"key":"menu.fme.wild_animal_kills","value":"Wild Animal Kills"}
 ]

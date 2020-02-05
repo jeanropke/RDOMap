@@ -16,10 +16,10 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=18" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=19" />
 
   <script>
-    var nocache = 18;
+    var nocache = 19;
   </script>
 </head>
 
@@ -503,9 +503,27 @@
     <div id="time-in-game">--:-- --</div>
     <div class="day-cycle"></div>
   </div>
-  <div id="map">
 
+  <div id="fme-container" style="display: none;">
+    <div class="fme-card">
+      <img class="fme-image" id="next-fr-event-image" />
+      <div class="fme-body">
+        <h3 class="fme-title" id="next-fr-event-name"></h3>
+        <p class="fme-text" id="next-fr-event-eta"></p class="fme-title">
+      </div>
+    </div>
+
+    <div class="fme-card">
+      <img class="fme-image" id="next-role-event-image" />
+      <div class="fme-body">
+        <h3 class="fme-title" id="next-role-event-name"></h3>
+        <p class="fme-text" id="next-role-event-eta"></p class="fme-title">
+      </div>
+    </div>
   </div>
+
+  <div id="map"></div>
+
   <div class="lat-lng-container">
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
@@ -543,17 +561,18 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=18"></script>
-  <script src="assets/js/settings.js?nocache=18"></script>
-  <script src="assets/js/marker.js?nocache=18"></script>
-  <script src="assets/js/treasures.js?nocache=18"></script>
-  <script src="assets/js/encounters.js?nocache=18"></script>
-  <script src="assets/js/hm.js?nocache=18"></script>
-  <script src="assets/js/pins.js?nocache=18"></script>
-  <script src="assets/js/map.js?nocache=18"></script>
-  <script src="assets/js/language.js?nocache=18"></script>
-  <script src="assets/js/menu.js?nocache=18"></script>
-  <script src="assets/js/scripts.js?nocache=18"></script>
+  <script src="assets/js/layers.js?nocache=19"></script>
+  <script src="assets/js/settings.js?nocache=19"></script>
+  <script src="assets/js/marker.js?nocache=19"></script>
+  <script src="assets/js/treasures.js?nocache=19"></script>
+  <script src="assets/js/encounters.js?nocache=19"></script>
+  <script src="assets/js/hm.js?nocache=19"></script>
+  <script src="assets/js/pins.js?nocache=19"></script>
+  <script src="assets/js/map.js?nocache=19"></script>
+  <script src="assets/js/language.js?nocache=19"></script>
+  <script src="assets/js/menu.js?nocache=19"></script>
+  <script src="assets/js/scripts.js?nocache=19"></script>
+  <script src="assets/js/fme.js?nocache=19"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

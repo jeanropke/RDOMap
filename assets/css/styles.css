@@ -548,7 +548,8 @@ input, textarea, select, .btn {
     margin-right: 10px;
     margin-top: 1px;
 }
-.side-menu .menu-hidden .collectible-icon.random-encounter, .side-menu .menu-hidden .animal-icon.random-encounter {    
+
+.side-menu .menu-hidden .collectible-icon.random-encounter, .side-menu .menu-hidden .animal-icon.random-encounter {
     width: 32px;
     height: auto;
     margin-top: 5px;
@@ -1041,4 +1042,43 @@ a.no-style:visited {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+}
+
+#fme-container {
+    position: absolute;
+    left: 5px;
+    bottom: 25px;
+    z-index: 990;
+    user-select: none;
+}
+
+#fme-container .fme-card {
+    display: flex;
+    align-items: center;
+    background-image: url(../../assets/images/fme_background.png);
+    background-size: 100% 100%;
+    padding: 25px;
+    width: 400px;
+    color: #fff;
+}
+
+#fme-container .fme-card .fme-image {
+    margin-right: 12px;
+}
+
+#fme-container .fme-card .fme-body {
+    flex-grow: 1;
+}
+
+#fme-container .fme-card .fme-body .fme-title {
+    font-family: RDRLino, serif;
+    color: #7b66af;
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+}
+
+#fme-container .fme-card .fme-body .fme-text {
+    margin: 0;
+    text-align: left;
 }

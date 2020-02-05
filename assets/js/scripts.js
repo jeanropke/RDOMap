@@ -653,4 +653,5 @@ $(function () {
   Encounters.load();
   Heatmap.load();
   MapBase.loadMarkers();
+  FME.init();
 });
