@@ -129,9 +129,9 @@ var FME = {
    */
   updateVisiblity: function () {
     if (FME.display != 0)
-      $('#fme-container').show();
+      $('.fme-container').show();
     else
-      $('#fme-container').hide();
+      $('.fme-container').hide();
 
     if (FME.display == 1 || FME.display == 3)
       $('#next-fr-event').show();

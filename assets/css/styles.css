@@ -1052,15 +1052,20 @@ a.no-style:visited {
     left: 9px;
 }
 
-#fme-container {
+.fme-container {
     position: absolute;
     left: 5px;
     bottom: 25px;
     z-index: 990;
     user-select: none;
+    transition: all 200ms ease-out;
 }
 
-#fme-container .fme-card {
+.fme-container.fme-menu-opened {
+    left: 385px;
+}
+
+.fme-container .fme-card {
     display: flex;
     align-items: center;
     background-image: url(../../assets/images/fme_background.png);
@@ -1070,15 +1075,15 @@ a.no-style:visited {
     color: #fff;
 }
 
-#fme-container .fme-card .fme-image {
+.fme-container .fme-card .fme-image {
     margin-right: 12px;
 }
 
-#fme-container .fme-card .fme-body {
+.fme-container .fme-card .fme-body {
     flex-grow: 1;
 }
 
-#fme-container .fme-card .fme-body .fme-title {
+.fme-container .fme-card .fme-body .fme-title {
     font-family: RDRLino, serif;
     color: #7b66af;
     margin: 0;
@@ -1086,7 +1091,7 @@ a.no-style:visited {
     font-size: 20px;
 }
 
-#fme-container .fme-card .fme-body .fme-text {
+.fme-container .fme-card .fme-body .fme-text {
     margin: 0;
     text-align: left;
 }

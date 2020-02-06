@@ -451,6 +451,7 @@ $('.menu-toggle').on('click', function () {
   $('.timer-container').toggleClass('timer-menu-opened');
   $('.counter-container').toggleClass('counter-menu-opened');
   $('.clock-container').toggleClass('timer-menu-opened');
+  $('.fme-container').toggleClass('fme-menu-opened');
 });
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {
