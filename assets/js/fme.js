@@ -10,22 +10,29 @@
  */
 
 var FME = {
+  // What FME to display.
+  // 0: None
+  // 1: General only
+  // 2: Role only
+  // 3: Both
+  display: !isNaN(parseInt($.cookie('fme-display'))) ? parseInt($.cookie('fme-display')) : 3,
+
   eventsJson: null,
 
   // Frequency in minutes
   eventFrequency: {
-    freeRoam: 45,
-    role: 90
+    events: 45,
+    roles: 90
   },
 
   // Select DOM elements
   elements: {
-    freeRoam: {
+    events: {
       nextEventImage: document.getElementById('next-fr-event-image'),
       nextEventName: document.getElementById('next-fr-event-name'),
       nextEventEta: document.getElementById('next-fr-event-eta')
     },
-    role: {
+    roles: {
       nextEventImage: document.getElementById('next-role-event-image'),
       nextEventName: document.getElementById('next-role-event-name'),
       nextEventEta: document.getElementById('next-role-event-eta')
@@ -35,7 +42,7 @@ var FME = {
   /**
    * Update the list of event times
    * @param {Array} schedule List of event times
-   * @param {string} key Property key (either freeRoam/role)
+   * @param {string} key Property key (either events/roles)
    */
   updateList: function (schedule, key) {
     var el = FME.elements[key];
@@ -112,8 +119,29 @@ var FME = {
    * Update both lists
    */
   update: function () {
-    FME.updateList(FME.eventsJson.events, 'freeRoam');
-    FME.updateList(FME.eventsJson.roles, 'role');
+    FME.updateList(FME.eventsJson.events, 'events');
+    FME.updateList(FME.eventsJson.roles, 'roles');
+    FME.updateVisiblity();
+  },
+
+  /**
+   * Update the visibility of the events based on FME.display.
+   */
+  updateVisiblity: function () {
+    if (FME.display != 0)
+      $('#fme-container').show();
+    else
+      $('#fme-container').hide();
+
+    if (FME.display == 1 || FME.display == 3)
+      $('#next-fr-event').show();
+    else
+      $('#next-fr-event').hide();
+
+    if (FME.display == 2 || FME.display == 3)
+      $('#next-role-event').show();
+    else
+      $('#next-role-event').hide();
   },
 
   /**
@@ -129,10 +157,6 @@ var FME = {
 
         // Update event list every 10 seconds
         window.setInterval(FME.update, 10000);
-
-        // Wonder how this works? :-)
-        if ($.cookie('right-click') != null)
-          $('#fme-container').show();
 
         console.info('%c[FME] Loaded!', 'color: #bada55; background: #242424');
       });

@@ -321,10 +321,16 @@
   {"key":"map.wounded_animal.name","value":"Wounded Animal Encounter"},
   {"key":"map.wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."},
 
+  {"key":"menu.fme_display","value":"Freemode events display"},
+  {"key":"menu.fme_display.0","value":"None"},
+  {"key":"menu.fme_display.1","value":"General events only"},
+  {"key":"menu.fme_display.2","value":"Role events only"},
+  {"key":"menu.fme_display.3","value":"Both"},
   {"key":"menu.fme.time.starts_in","value":"Starts in {time}."},
   {"key":"menu.fme.time.about_a_minute","value":"about a minute"},
   {"key":"menu.fme.time.minute","value":"{minutes} minute"},
   {"key":"menu.fme.time.minutes","value":"{minutes} minutes"},
+  {"key":"help.fme_display","value":"Allows you to choose whether to display the next general events, role events, both, or none and when exactly they'll start."},
 
   {"key":"menu.fme.cold_dead_hands","value":"Cold Dead Hands"},
   {"key":"menu.fme.condor_egg","value":"Condor Egg"},

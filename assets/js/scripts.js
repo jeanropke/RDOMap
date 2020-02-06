@@ -113,6 +113,11 @@ function init() {
     $.cookie('marker-opacity', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('fme-display') === 'undefined') {
+    FME.display = 3;
+    $.cookie('fme-display', '3', { expires: 999 });
+  }
+
   MapBase.init();
 
   Language.setMenuLanguage();
@@ -124,6 +129,7 @@ function init() {
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
+  $('#fme-display').val(FME.display);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
@@ -324,6 +330,14 @@ $("#marker-opacity").on("change", function () {
   Settings.markerOpacity = parsed ? parsed : 1;
   $.cookie('marker-opacity', Settings.markerOpacity, { expires: 999 });
   MapBase.addMarkers();
+});
+
+// Toggle visibility of FME cards.
+$("#fme-display").on("change", function () {
+  var parsed = parseInt($("#fme-display").val());
+  FME.display = !isNaN(parsed) ? parsed : 3;
+  $.cookie('fme-display', FME.display, { expires: 999 });
+  FME.update();
 });
 
 //Disable & enable collection category

@@ -16,10 +16,10 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=19" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=21" />
 
   <script>
-    var nocache = 19;
+    var nocache = 21;
   </script>
 </head>
 
@@ -275,8 +275,17 @@
           <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
           <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
           <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
-          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
+          <option value="0.8" data-text="menu.marker_opacity.80">80%</option>
           <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
+        </select>
+      </div>
+      <div class="input-container" data-help="fme_display">
+        <label for="fme-display" data-text="menu.fme_display">Freemode events display</label>
+        <select class="input-day wide-select-menu" id="fme-display">
+          <option value="0" data-text="menu.fme_display.0">None</option>
+          <option value="1" data-text="menu.fme_display.1">General events only</option>
+          <option value="2" data-text="menu.fme_display.2">Role events only</option>
+          <option value="3" data-text="menu.fme_display.3" selected>Both</option>
         </select>
       </div>
       <div class="input-container clickable" data-help="clear_important_items" data-toggle="modal"
@@ -505,7 +514,7 @@
   </div>
 
   <div id="fme-container" style="display: none;">
-    <div class="fme-card">
+    <div id="next-fr-event" class="fme-card">
       <img class="fme-image" id="next-fr-event-image" />
       <div class="fme-body">
         <h3 class="fme-title" id="next-fr-event-name"></h3>
@@ -513,7 +522,7 @@
       </div>
     </div>
 
-    <div class="fme-card">
+    <div id="next-role-event" class="fme-card">
       <img class="fme-image" id="next-role-event-image" />
       <div class="fme-body">
         <h3 class="fme-title" id="next-role-event-name"></h3>
@@ -561,18 +570,18 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=19"></script>
-  <script src="assets/js/settings.js?nocache=19"></script>
-  <script src="assets/js/marker.js?nocache=19"></script>
-  <script src="assets/js/treasures.js?nocache=19"></script>
-  <script src="assets/js/encounters.js?nocache=19"></script>
-  <script src="assets/js/hm.js?nocache=19"></script>
-  <script src="assets/js/pins.js?nocache=19"></script>
-  <script src="assets/js/map.js?nocache=19"></script>
-  <script src="assets/js/language.js?nocache=19"></script>
-  <script src="assets/js/menu.js?nocache=19"></script>
-  <script src="assets/js/scripts.js?nocache=19"></script>
-  <script src="assets/js/fme.js?nocache=19"></script>
+  <script src="assets/js/layers.js?nocache=21"></script>
+  <script src="assets/js/settings.js?nocache=21"></script>
+  <script src="assets/js/marker.js?nocache=21"></script>
+  <script src="assets/js/treasures.js?nocache=21"></script>
+  <script src="assets/js/encounters.js?nocache=21"></script>
+  <script src="assets/js/hm.js?nocache=21"></script>
+  <script src="assets/js/pins.js?nocache=21"></script>
+  <script src="assets/js/map.js?nocache=21"></script>
+  <script src="assets/js/language.js?nocache=21"></script>
+  <script src="assets/js/menu.js?nocache=21"></script>
+  <script src="assets/js/scripts.js?nocache=21"></script>
+  <script src="assets/js/fme.js?nocache=21"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
