@@ -16,10 +16,10 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=21" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=22" />
 
   <script>
-    var nocache = 21;
+    var nocache = 22;
   </script>
 </head>
 
@@ -460,10 +460,6 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
-        <label data-text="menu.toggle_debug">Toggle debug features</label>
-        <div class="input-action"></div>
-      </div>
       <hr class="menu-divider">
       <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
         target="_blank">
@@ -500,6 +496,15 @@
           title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
+      <hr class="menu-divider">
+      <div class="input-container clickable text-danger" data-help="delete_all_settings" data-toggle="modal" data-target="#delete_all_settings-modal">
+        <label data-text="menu.delete_all_settings">Reset all settings</label>
+        <div class="input-action"></div>
+      </div>
+      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
+        <label data-text="menu.toggle_debug">Toggle debug features</label>
+        <div class="input-action"></div>
+      </div>
     </div>
 
     <div id="help-container">
@@ -559,6 +564,24 @@
     </div>
   </div>
 
+  <div class="modal fade" id="delete_all_settings-modal" tabindex="-1" role="dialog" aria-labelledby="delete_all_settings-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="delete_all_settings-title" data-text="menu.modal_delete_all_settings_title">Reset all settings?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_delete_all_settings_body">
+          This will reset all settings to their default values and reload the page.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -570,18 +593,18 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=21"></script>
-  <script src="assets/js/settings.js?nocache=21"></script>
-  <script src="assets/js/marker.js?nocache=21"></script>
-  <script src="assets/js/treasures.js?nocache=21"></script>
-  <script src="assets/js/encounters.js?nocache=21"></script>
-  <script src="assets/js/hm.js?nocache=21"></script>
-  <script src="assets/js/pins.js?nocache=21"></script>
-  <script src="assets/js/map.js?nocache=21"></script>
-  <script src="assets/js/language.js?nocache=21"></script>
-  <script src="assets/js/menu.js?nocache=21"></script>
-  <script src="assets/js/scripts.js?nocache=21"></script>
-  <script src="assets/js/fme.js?nocache=21"></script>
+  <script src="assets/js/layers.js?nocache=22"></script>
+  <script src="assets/js/settings.js?nocache=22"></script>
+  <script src="assets/js/marker.js?nocache=22"></script>
+  <script src="assets/js/treasures.js?nocache=22"></script>
+  <script src="assets/js/encounters.js?nocache=22"></script>
+  <script src="assets/js/hm.js?nocache=22"></script>
+  <script src="assets/js/pins.js?nocache=22"></script>
+  <script src="assets/js/map.js?nocache=22"></script>
+  <script src="assets/js/language.js?nocache=22"></script>
+  <script src="assets/js/menu.js?nocache=22"></script>
+  <script src="assets/js/scripts.js?nocache=22"></script>
+  <script src="assets/js/fme.js?nocache=22"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
