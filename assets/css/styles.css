@@ -568,9 +568,8 @@ input, textarea, select, .btn {
     text-overflow: ellipsis;
 }
 
-	
-.side-menu .menu-hidden .collectible, .side-menu .menu-hidden .animal, .input-container label {	
-    line-height: 24px;	
+.side-menu .menu-hidden .collectible, .side-menu .menu-hidden .animal, .input-container label {
+    line-height: 24px;
 }
 
 .same-cycle-warning-menu {
@@ -842,8 +841,8 @@ a.no-style:visited {
     color: white !important;
 }
 
-.text-danger {	
-    color: #f95050 !important	
+.text-danger {
+    color: #f95050 !important
 }
 
 /* Bootstrap modal styling */
@@ -928,10 +927,7 @@ a.no-style:visited {
 }
 
 @media (max-width: 1024px) {
-    .timer-menu-opened {
-        display: none;
-    }
-    .counter-menu-opened {
+    .timer-menu-opened, .counter-menu-opened, .fme-menu-opened {
         display: none;
     }
 }
