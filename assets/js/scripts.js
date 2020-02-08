@@ -66,7 +66,7 @@ function init() {
   if (typeof $.cookie('disabled-plants') !== 'undefined')
     plantsDisabledByDefault = $.cookie('disabled-plants').split(',');
 
-  enabledPlants = enabledPlants.filter(function (item) {
+  enabledPlants = plants.filter(function (item) {
     return plantsDisabledByDefault.indexOf(item) === -1;
   });
 
