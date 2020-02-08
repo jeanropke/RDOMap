@@ -928,7 +928,7 @@ a.no-style:visited {
 
 @media (max-width: 1024px) {
     .timer-menu-opened, .counter-menu-opened, .fme-menu-opened {
-        display: none;
+        display: none !important;
     }
 }
 
