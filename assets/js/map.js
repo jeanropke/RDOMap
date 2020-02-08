@@ -110,7 +110,9 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
-    console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
+    if (Settings.isDebugEnabled)
+      console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
+
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (_key, marker) {
         if (Array.isArray(marker)) {

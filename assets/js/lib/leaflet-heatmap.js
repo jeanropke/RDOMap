@@ -86,9 +86,7 @@
 
       this._update();
     },
-    _onAnimZoom: function (ev) {
-      //  console.log('s');
-    },
+    _onAnimZoom: function (ev) { },
     _update: function () {
       var bounds, zoom, scale;
       var generatedData = { max: this._max, min: this._min, data: [] };

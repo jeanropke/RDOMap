@@ -133,6 +133,7 @@ function init() {
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
+  $("#enable-debug").prop('checked', $.cookie('debug') != null);
 
   if (Settings.showHelp) {
     $("#help-container").show();
@@ -261,6 +262,17 @@ $('#enable-right-click').on("change", function () {
     $.cookie('right-click', '1', { expires: 999 });
   } else {
     $.removeCookie('right-click');
+  }
+});
+
+// :-)
+$('#enable-debug').on("change", function () {
+  if ($("#enable-debug").prop('checked')) {
+    Settings.isDebugEnabled = true;
+    $.cookie('debug', '1', { expires: 999 });
+  } else {
+    Settings.isDebugEnabled = false;
+    $.removeCookie('debug');
   }
 });
 
