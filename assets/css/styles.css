@@ -396,9 +396,9 @@ input, textarea, select, .btn {
 .input-day {
     background: #383838;
     border: none;
-    padding: 5px 10px;
+    padding: 4px 10px;
     color: #f0f0f0;
-    font-size: 14px;
+    font-size: 13px;
     height: 100%;
     border-radius: 3px;
     margin-left: 6px;
@@ -532,7 +532,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .menu-hidden .collectible-wrapper, .side-menu .menu-hidden .animal-wrapper {
-    padding: 5px 12px;
+    padding: 6px 12px;
     cursor: pointer;
     user-select: none;
 }
@@ -544,21 +544,19 @@ input, textarea, select, .btn {
 
 .side-menu .menu-hidden .collectible-icon, .side-menu .menu-hidden .animal-icon {
     float: left;
-    height: 30px;
+    height: 28px;
     margin-right: 10px;
-    margin-top: 1px;
 }
 
 .side-menu .menu-hidden .collectible-icon.random-encounter, .side-menu .menu-hidden .animal-icon.random-encounter {
     width: 32px;
     height: auto;
-    margin-top: 5px;
-    margin-right: 3px;
+    margin-top: 1px;
+    margin-right: 6px;
     margin-bottom: -3px;
 }
 
 .side-menu .menu-hidden .collectible-text, .side-menu .menu-hidden .animal-text {
-    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     font-size: 15px;
@@ -568,6 +566,11 @@ input, textarea, select, .btn {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+	
+.side-menu .menu-hidden .collectible, .side-menu .menu-hidden .animal, .input-container label {	
+    line-height: 24px;	
 }
 
 .same-cycle-warning-menu {
@@ -705,6 +708,7 @@ a.wiki-page:visited {
     line-height: 12px;
     white-space: nowrap;
     margin-left: 6px;
+    padding: 3px 0;
 }
 
 .counter-number {
@@ -836,6 +840,10 @@ a.no-style:visited {
 
 .leaflet-dark-mode .leaflet-control-attribution a {
     color: white !important;
+}
+
+.text-danger {	
+    color: #f95050 !important	
 }
 
 /* Bootstrap modal styling */
@@ -1044,15 +1052,20 @@ a.no-style:visited {
     left: 9px;
 }
 
-#fme-container {
+.fme-container {
     position: absolute;
     left: 5px;
     bottom: 25px;
     z-index: 990;
     user-select: none;
+    transition: all 200ms ease-out;
 }
 
-#fme-container .fme-card {
+.fme-container.fme-menu-opened {
+    left: 385px;
+}
+
+.fme-container .fme-card {
     display: flex;
     align-items: center;
     background-image: url(../../assets/images/fme_background.png);
@@ -1062,15 +1075,15 @@ a.no-style:visited {
     color: #fff;
 }
 
-#fme-container .fme-card .fme-image {
+.fme-container .fme-card .fme-image {
     margin-right: 12px;
 }
 
-#fme-container .fme-card .fme-body {
+.fme-container .fme-card .fme-body {
     flex-grow: 1;
 }
 
-#fme-container .fme-card .fme-body .fme-title {
+.fme-container .fme-card .fme-body .fme-title {
     font-family: RDRLino, serif;
     color: #7b66af;
     margin: 0;
@@ -1078,7 +1091,7 @@ a.no-style:visited {
     font-size: 20px;
 }
 
-#fme-container .fme-card .fme-body .fme-text {
+.fme-container .fme-card .fme-body .fme-text {
     margin: 0;
     text-align: left;
 }

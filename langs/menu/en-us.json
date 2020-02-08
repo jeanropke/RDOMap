@@ -94,6 +94,8 @@
   {"key":"help.user_pins_export","value":"Exports your pins to a file."},
   {"key":"help.user_pins_import","value":"Imports a pins file and displays all those pins on the map."},
   {"key":"help.user_pins_place_mode","value":"Toggles whether a new pin should be created when you click somewhere on the map."},
+	{"key":"help.delete_all_settings","value":"Resets all settings, user pins, and inventory items to their default values."},
+  {"key":"help.fme_display","value":"Allows you to choose whether to display the next general events, role events, both, or none and when exactly they'll start."},
 
   {"key":"map.attribution_prefix","value":"Tiles provided by"},
   {"key":"map.copy_link","value":"Copy marker link"},
@@ -321,6 +323,11 @@
   {"key":"map.wounded_animal.name","value":"Wounded Animal Encounter"},
   {"key":"map.wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."},
 
+  {"key":"menu.fme_display","value":"Freemode events display"},
+  {"key":"menu.fme_display.0","value":"None"},
+  {"key":"menu.fme_display.1","value":"General events only"},
+  {"key":"menu.fme_display.2","value":"Role events only"},
+  {"key":"menu.fme_display.3","value":"Both"},
   {"key":"menu.fme.time.starts_in","value":"Starts in {time}."},
   {"key":"menu.fme.time.about_a_minute","value":"about a minute"},
   {"key":"menu.fme.time.minute","value":"{minutes} minute"},
@@ -339,5 +346,9 @@
   {"key":"menu.fme.random","value":"Random Event"},
   {"key":"menu.fme.salvage","value":"Salvage"},
   {"key":"menu.fme.trade_route","value":"Trade Route"},
-  {"key":"menu.fme.wild_animal_kills","value":"Wild Animal Kills"}
+  {"key":"menu.fme.wild_animal_kills","value":"Wild Animal Kills"},
+
+  {"key":"menu.delete_all_settings", "value":"Reset all settings"},
+	{"key":"menu.modal_delete_all_settings_title", "value":"Reset all settings?"},
+	{"key":"menu.modal_delete_all_settings_body", "value":"This will reset all settings, pins, and inventory items to their default values and reload the page."}
 ]

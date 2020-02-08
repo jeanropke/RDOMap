@@ -5,21 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="./favicon.png" />
-  <title>Red Dead Online - Collectors Map</title>
+  <title>Red Dead Online - RDO Map</title>
   <meta name="description"
-    content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
+    content="Red Dead Online RDO Map. Find any useful items, locations or event around the map of RDO.">
   <meta name="keywords"
-    content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
+    content="Red Dead Online, RDO Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
 
   <!-- Preconnects to improve performance -->
   <link rel="preconnect" href="https://jeanropke.b-cdn.net">
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=19" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=23" />
 
   <script>
-    var nocache = 19;
+    var nocache = 23;
   </script>
 </head>
 
@@ -275,8 +275,17 @@
           <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
           <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
           <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
-          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
+          <option value="0.8" data-text="menu.marker_opacity.80">80%</option>
           <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
+        </select>
+      </div>
+      <div class="input-container" data-help="fme_display">
+        <label for="fme-display" data-text="menu.fme_display">Freemode events display</label>
+        <select class="input-day wide-select-menu" id="fme-display">
+          <option value="0" data-text="menu.fme_display.0">None</option>
+          <option value="1" data-text="menu.fme_display.1">General events only</option>
+          <option value="2" data-text="menu.fme_display.2">Role events only</option>
+          <option value="3" data-text="menu.fme_display.3" selected>Both</option>
         </select>
       </div>
       <div class="input-container clickable" data-help="clear_important_items" data-toggle="modal"
@@ -451,10 +460,6 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
-        <label data-text="menu.toggle_debug">Toggle debug features</label>
-        <div class="input-action"></div>
-      </div>
       <hr class="menu-divider">
       <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
         target="_blank">
@@ -491,6 +496,15 @@
           title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
+      <hr class="menu-divider">
+      <div class="input-container clickable text-danger" data-help="delete_all_settings" data-toggle="modal" data-target="#delete_all_settings-modal">
+        <label data-text="menu.delete_all_settings">Reset all settings</label>
+        <div class="input-action"></div>
+      </div>
+      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
+        <label data-text="menu.toggle_debug">Toggle debug features</label>
+        <div class="input-action"></div>
+      </div>
     </div>
 
     <div id="help-container">
@@ -504,20 +518,20 @@
     <div class="day-cycle"></div>
   </div>
 
-  <div id="fme-container" style="display: none;">
-    <div class="fme-card">
+  <div class="fme-container" style="display: none;">
+    <div id="next-fr-event" class="fme-card">
       <img class="fme-image" id="next-fr-event-image" />
       <div class="fme-body">
         <h3 class="fme-title" id="next-fr-event-name"></h3>
-        <p class="fme-text" id="next-fr-event-eta"></p class="fme-title">
+        <p class="fme-text" id="next-fr-event-eta"></p>
       </div>
     </div>
 
-    <div class="fme-card">
+    <div id="next-role-event" class="fme-card">
       <img class="fme-image" id="next-role-event-image" />
       <div class="fme-body">
         <h3 class="fme-title" id="next-role-event-name"></h3>
-        <p class="fme-text" id="next-role-event-eta"></p class="fme-title">
+        <p class="fme-text" id="next-role-event-eta"></p>
       </div>
     </div>
   </div>
@@ -550,6 +564,24 @@
     </div>
   </div>
 
+  <div class="modal fade" id="delete_all_settings-modal" tabindex="-1" role="dialog" aria-labelledby="delete_all_settings-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="delete_all_settings-title" data-text="menu.modal_delete_all_settings_title">Reset all settings?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_delete_all_settings_body">
+          This will reset all settings to their default values and reload the page.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -561,18 +593,18 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=19"></script>
-  <script src="assets/js/settings.js?nocache=19"></script>
-  <script src="assets/js/marker.js?nocache=19"></script>
-  <script src="assets/js/treasures.js?nocache=19"></script>
-  <script src="assets/js/encounters.js?nocache=19"></script>
-  <script src="assets/js/hm.js?nocache=19"></script>
-  <script src="assets/js/pins.js?nocache=19"></script>
-  <script src="assets/js/map.js?nocache=19"></script>
-  <script src="assets/js/language.js?nocache=19"></script>
-  <script src="assets/js/menu.js?nocache=19"></script>
-  <script src="assets/js/scripts.js?nocache=19"></script>
-  <script src="assets/js/fme.js?nocache=19"></script>
+  <script src="assets/js/layers.js?nocache=23"></script>
+  <script src="assets/js/settings.js?nocache=23"></script>
+  <script src="assets/js/marker.js?nocache=23"></script>
+  <script src="assets/js/treasures.js?nocache=23"></script>
+  <script src="assets/js/encounters.js?nocache=23"></script>
+  <script src="assets/js/hm.js?nocache=23"></script>
+  <script src="assets/js/pins.js?nocache=23"></script>
+  <script src="assets/js/map.js?nocache=23"></script>
+  <script src="assets/js/language.js?nocache=23"></script>
+  <script src="assets/js/menu.js?nocache=23"></script>
+  <script src="assets/js/scripts.js?nocache=23"></script>
+  <script src="assets/js/fme.js?nocache=23"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

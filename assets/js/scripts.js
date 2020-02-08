@@ -113,6 +113,11 @@ function init() {
     $.cookie('marker-opacity', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('fme-display') === 'undefined') {
+    FME.display = 3;
+    $.cookie('fme-display', '3', { expires: 999 });
+  }
+
   MapBase.init();
 
   Language.setMenuLanguage();
@@ -124,6 +129,7 @@ function init() {
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
+  $('#fme-display').val(FME.display);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
@@ -326,6 +332,14 @@ $("#marker-opacity").on("change", function () {
   MapBase.addMarkers();
 });
 
+// Toggle visibility of FME cards.
+$("#fme-display").on("change", function () {
+  var parsed = parseInt($("#fme-display").val());
+  FME.display = !isNaN(parsed) ? parsed : 3;
+  $.cookie('fme-display', FME.display, { expires: 999 });
+  FME.update();
+});
+
 //Disable & enable collection category
 $('.clickable').on('click', function () {
   var menu = $(this);
@@ -437,6 +451,7 @@ $('.menu-toggle').on('click', function () {
   $('.timer-container').toggleClass('timer-menu-opened');
   $('.counter-container').toggleClass('counter-menu-opened');
   $('.clock-container').toggleClass('timer-menu-opened');
+  $('.fme-container').toggleClass('fme-menu-opened');
 });
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {
@@ -640,6 +655,20 @@ $('*').on('contextmenu', function (event) {
   if ($.cookie('right-click') != null)
     return;
   event.preventDefault();
+});
+
+// reset all settings & cookies
+$('#delete-all-settings').on('click', function () {
+  var cookies = $.cookie();
+  for (var cookie in cookies) {
+    $.removeCookie(cookie);
+  }
+
+  $.each(localStorage, function (key) {
+    localStorage.removeItem(key);
+  });
+
+  location.reload(true);
 });
 
 /**
