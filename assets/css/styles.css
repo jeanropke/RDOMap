@@ -687,14 +687,6 @@ a.wiki-page:visited {
     font-size: 14px;
 }
 
-.donate-form {
-    text-align: center;
-}
-
-.donate-form .input-day {
-    margin-bottom: 8px;
-}
-
 .no-margin-top {
     margin-top: 0 !important;
 }
@@ -1047,6 +1039,24 @@ a.no-style:visited {
     bottom: -2px;
     left: 9px;
 }
+
+/* Donate form */
+
+.donate-form {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(../images/menu_donate.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.donate-form .input-day {
+    margin: auto 0 auto auto;
+}
+
+/* Freemode Events */
 
 .fme-container {
     position: absolute;
