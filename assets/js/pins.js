@@ -12,7 +12,7 @@ var Pins = {
         var pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
         if (pinAtPositionExists) return;
 
-        var icon = icon == null ? 'pin' : icon;
+        icon = icon == null ? 'pin' : icon;
         var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var marker = L.marker([lat, lng], {
             id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
@@ -79,7 +79,7 @@ var Pins = {
             pinnedItems += `${pin._latlng.lat}:${pin._latlng.lng}:${pin.options.id}:${pin.options.name}:${pin.options.desc}:${pin.options.icon_name};`;
         });
 
-        localStorage.setItem("pinned-items", pinnedItems)
+        localStorage.setItem("pinned-items", pinnedItems);
         console.log("Saved all pins!");
 
         this.loadAllPins();
@@ -103,7 +103,7 @@ var Pins = {
 
     removeAllPins: function () {
         MapBase.map.closePopup();
-        this.pinsList.forEach(pin => { this.removePin(pin.options.id, false) });
+        this.pinsList.forEach(pin => { this.removePin(pin.options.id, false); });
     },
 
     updatePopup: function (marker) {
@@ -136,7 +136,7 @@ var Pins = {
 
     updateAllPopups: function () {
         MapBase.map.closePopup();
-        this.pinsList.forEach(pin => { this.updatePopup(pin) });
+        this.pinsList.forEach(pin => { this.updatePopup(pin); });
     },
 
     exportPins: function () {
@@ -195,4 +195,4 @@ var Pins = {
 
         return chunks;
     }
-}
+};

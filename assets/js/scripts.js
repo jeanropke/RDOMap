@@ -6,7 +6,7 @@ var categories = [
   'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
   'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants', 'rescue',
   'rival_collector', 'runaway_wagon', 'trains', 'treasure', 'treasure_hunter',
-  'tree_map', 'user_pins', 'wounded_animal', 
+  'tree_map', 'user_pins', 'wounded_animal',
 ];
 
 var categoriesDisabledByDefault = [
@@ -33,17 +33,10 @@ var fastTravelData;
 
 var date;
 
-var wikiLanguage = [];
-
 var debugMarkersArray = [];
 var tempCollectedMarkers = "";
 
 function init() {
-  wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
-  wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
-  wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
-  wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
-
   //sometimes, cookies are saved in the wrong order
   var cookiesList = [];
   $.each($.cookie(), function (key, value) {
@@ -206,7 +199,7 @@ function setClipboardText(text) {
   document.body.appendChild(el);
   el.select();
   document.execCommand('copy');
-  document.body.removeChild(el)
+  document.body.removeChild(el);
 }
 
 // Simple download function
@@ -282,7 +275,7 @@ $("#search").on("input", function () {
 });
 
 $("#copy-search-link").on("click", function () {
-  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`)
+  setClipboardText(`http://jeanropke.github.io/RDOMap/?search=${$('#search').val()}`);
 });
 
 //Change & save markers reset daily or manually
@@ -299,7 +292,7 @@ $("#clear-markers").on("click", function () {
 
   Menu.refreshMenu();
   MapBase.addMarkers();
-})
+});
 
 //When map-alert is clicked
 $('.map-alert').on('click', function () {
@@ -499,7 +492,7 @@ $('#pins-edit-mode').on("change", function () {
 
 $('#pins-place-new').on("click", function () {
   Pins.addPinToCenter();
-})
+});
 
 $('#pins-export').on("click", function () {
   try {
@@ -521,7 +514,7 @@ $('#pins-import').on('click', function () {
 
     file.text().then(function (text) {
       Pins.importPins(text);
-    })
+    });
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -578,11 +571,11 @@ $('#cookie-import').on('click', function () {
       // Remove all current settings.
       $.each($.cookie(), function (key, value) {
         $.removeCookie(key);
-      })
+      });
 
       $.each(localStorage, function (key, value) {
         localStorage.removeItem(key);
-      })
+      });
 
       // Import all the settings from the file.
       if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
@@ -601,7 +594,7 @@ $('#cookie-import').on('click', function () {
 
       // Do this for now, maybe look into refreshing the menu completely (from init) later.
       location.reload();
-    })
+    });
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));

@@ -161,4 +161,4 @@ var FME = {
         console.info('%c[FME] Loaded!', 'color: #bada55; background: #242424');
       });
   }
-}
+};

@@ -22,11 +22,6 @@ var Language = {
     },
 
     setMenuLanguage: function () {
-        if (wikiLanguage[Settings.language] != null)
-            $('.wiki-page').attr('href', wikiLanguage[Settings.language]);
-        else
-            $('.wiki-page').attr('href', wikiLanguage['en-us']);
-
         $.each($('[data-text]'), function (key, value) {
             var temp = $(value);
             var string = Language.get(temp.data('text'));
