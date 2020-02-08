@@ -26,7 +26,7 @@ var plants = [
 var plantsDisabledByDefault = plants;
 
 var enabledCategories = categories;
-var enabledPlants = [];
+var enabledPlants = plants;
 var categoryButtons = $(".clickable[data-type]");
 
 var fastTravelData;
@@ -66,7 +66,7 @@ function init() {
   if (typeof $.cookie('disabled-plants') !== 'undefined')
     plantsDisabledByDefault = $.cookie('disabled-plants').split(',');
 
-  enabledPlants = plants.filter(function (item) {
+  enabledPlants = enabledPlants.filter(function (item) {
     return plantsDisabledByDefault.indexOf(item) === -1;
   });
 
