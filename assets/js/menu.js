@@ -21,6 +21,22 @@ var Menu = {
 
       $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
     });
+  },
+
+  showHideAllPlants: function (isToHide) {
+    if (isToHide) {
+      enabledPlants = [];
+      plantsDisabledByDefault = plants;
+
+      $('[data-type="plants"] .collectible-wrapper').addClass('disabled');
+    } else {
+      enabledPlants = plants;
+      plantsDisabledByDefault = [];
+      $('[data-type="plants"] .collectible-wrapper').removeClass('disabled');
+    }
+
+    $.cookie('disabled-plants', plantsDisabledByDefault.join(','), { expires: 999 });
+    MapBase.addMarkers();
   }
 };
 
@@ -147,7 +163,7 @@ Menu.hideAll = function () {
 Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
   $('#debug-marker-lat').val(lat);
   $('#debug-marker-lng').val(lng);
-}
+};
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {

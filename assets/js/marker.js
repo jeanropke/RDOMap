@@ -12,4 +12,4 @@ var Marker = function (text, lat, lng, category, subdata, count) {
   this.isVisible = enabledCategories.includes(category);
   this.isCollected = false;
   this.canCollect = !this.isCollected;
-}
+};

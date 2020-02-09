@@ -35,8 +35,8 @@ var Heatmap = {
   initLayer: function () {
     Layers.heatmapLayer = new HeatmapOverlay({
       radius: 1.5,
-      maxOpacity: .5,
-      minOpacity: .1,
+      maxOpacity: 0.5,
+      minOpacity: 0.1,
       scaleRadius: true,
       useLocalExtrema: false,
       latField: 'lat',
@@ -59,4 +59,4 @@ var Heatmap = {
 
     Layers.heatmapLayer.setData({ min: 10, data: [] });
   }
-}
+};

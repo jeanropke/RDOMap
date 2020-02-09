@@ -6,7 +6,7 @@ var categories = [
   'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
   'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants', 'rescue',
   'rival_collector', 'runaway_wagon', 'trains', 'treasure', 'treasure_hunter',
-  'tree_map', 'user_pins', 'wounded_animal', 
+  'tree_map', 'user_pins', 'wounded_animal',
 ];
 
 var categoriesDisabledByDefault = [
@@ -26,24 +26,17 @@ var plants = [
 var plantsDisabledByDefault = plants;
 
 var enabledCategories = categories;
-var enabledPlants = [];
+var enabledPlants = plants;
 var categoryButtons = $(".clickable[data-type]");
 
 var fastTravelData;
 
 var date;
 
-var wikiLanguage = [];
-
 var debugMarkersArray = [];
 var tempCollectedMarkers = "";
 
 function init() {
-  wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
-  wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
-  wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
-  wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
-
   //sometimes, cookies are saved in the wrong order
   var cookiesList = [];
   $.each($.cookie(), function (key, value) {
@@ -113,6 +106,11 @@ function init() {
     $.cookie('marker-opacity', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('fme-display') === 'undefined') {
+    FME.display = 3;
+    $.cookie('fme-display', '3', { expires: 999 });
+  }
+
   MapBase.init();
 
   Language.setMenuLanguage();
@@ -124,16 +122,19 @@ function init() {
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
+  $('#fme-display').val(FME.display);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
+  $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
+  $("#enable-debug").prop('checked', $.cookie('debug') != null);
 
   if (Settings.showHelp) {
     $("#help-container").show();
@@ -200,7 +201,7 @@ function setClipboardText(text) {
   document.body.appendChild(el);
   el.select();
   document.execCommand('copy');
-  document.body.removeChild(el)
+  document.body.removeChild(el);
 }
 
 // Simple download function
@@ -265,6 +266,17 @@ $('#enable-right-click').on("change", function () {
   }
 });
 
+// :-)
+$('#enable-debug').on("change", function () {
+  if ($("#enable-debug").prop('checked')) {
+    Settings.isDebugEnabled = true;
+    $.cookie('debug', '1', { expires: 999 });
+  } else {
+    Settings.isDebugEnabled = false;
+    $.removeCookie('debug');
+  }
+});
+
 //Disable menu category when click on input
 $('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
   e.stopPropagation();
@@ -276,7 +288,7 @@ $("#search").on("input", function () {
 });
 
 $("#copy-search-link").on("click", function () {
-  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`)
+  setClipboardText(`http://jeanropke.github.io/RDOMap/?search=${$('#search').val()}`);
 });
 
 //Change & save markers reset daily or manually
@@ -293,7 +305,7 @@ $("#clear-markers").on("click", function () {
 
   Menu.refreshMenu();
   MapBase.addMarkers();
-})
+});
 
 //When map-alert is clicked
 $('.map-alert').on('click', function () {
@@ -324,6 +336,14 @@ $("#marker-opacity").on("change", function () {
   Settings.markerOpacity = parsed ? parsed : 1;
   $.cookie('marker-opacity', Settings.markerOpacity, { expires: 999 });
   MapBase.addMarkers();
+});
+
+// Toggle visibility of FME cards.
+$("#fme-display").on("change", function () {
+  var parsed = parseInt($("#fme-display").val());
+  FME.display = !isNaN(parsed) ? parsed : 3;
+  $.cookie('fme-display', FME.display, { expires: 999 });
+  FME.update();
 });
 
 //Disable & enable collection category
@@ -437,6 +457,7 @@ $('.menu-toggle').on('click', function () {
   $('.timer-container').toggleClass('timer-menu-opened');
   $('.counter-container').toggleClass('counter-menu-opened');
   $('.clock-container').toggleClass('timer-menu-opened');
+  $('.fme-container').toggleClass('fme-menu-opened');
 });
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {
@@ -445,6 +466,11 @@ $('#marker-cluster').on("change", function () {
 
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
+});
+
+$('#enable-marker-popups-hover').on("change", function () {
+  Settings.isPopupsHoverEnabled = $("#enable-marker-popups-hover").prop('checked');
+  $.cookie('enable-marker-popups-hover', Settings.isPopupsHoverEnabled ? '1' : '0', { expires: 999 });
 });
 
 $('#enable-marker-shadows').on("change", function () {
@@ -484,7 +510,7 @@ $('#pins-edit-mode').on("change", function () {
 
 $('#pins-place-new').on("click", function () {
   Pins.addPinToCenter();
-})
+});
 
 $('#pins-export').on("click", function () {
   try {
@@ -506,7 +532,7 @@ $('#pins-import').on('click', function () {
 
     file.text().then(function (text) {
       Pins.importPins(text);
-    })
+    });
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -563,11 +589,11 @@ $('#cookie-import').on('click', function () {
       // Remove all current settings.
       $.each($.cookie(), function (key, value) {
         $.removeCookie(key);
-      })
+      });
 
       $.each(localStorage, function (key, value) {
         localStorage.removeItem(key);
-      })
+      });
 
       // Import all the settings from the file.
       if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
@@ -586,7 +612,7 @@ $('#cookie-import').on('click', function () {
 
       // Do this for now, maybe look into refreshing the menu completely (from init) later.
       location.reload();
-    })
+    });
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -642,6 +668,20 @@ $('*').on('contextmenu', function (event) {
   event.preventDefault();
 });
 
+// reset all settings & cookies
+$('#delete-all-settings').on('click', function () {
+  var cookies = $.cookie();
+  for (var cookie in cookies) {
+    $.removeCookie(cookie);
+  }
+
+  $.each(localStorage, function (key) {
+    localStorage.removeItem(key);
+  });
+
+  location.reload(true);
+});
+
 /**
  * Event listeners
  */
@@ -653,4 +693,5 @@ $(function () {
   Encounters.load();
   Heatmap.load();
   MapBase.loadMarkers();
+  FME.init();
 });

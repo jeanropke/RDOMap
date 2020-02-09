@@ -17,6 +17,25 @@ var Encounters = {
     Encounters.addToMap();
   },
 
+  updateMarkerContent: function (marker) {
+    var popupContent = marker.description;
+
+    // TODO: Fix later. :-)
+    // var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDOMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
+    // var importantItem = ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>`;
+    // var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(importantItem);
+    var linksElement = $('<p>');
+    var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
+
+    return `<h1>${marker.title}</h1>
+        <span class="marker-content-wrapper">
+        <p>${popupContent}</p>
+        </span>
+        ${linksElement.prop('outerHTML')}
+        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
+        `;
+  },
+
   addToMap: function () {
     Layers.encountersLayer.clearLayers();
     $.each(Encounters.markers, function (key, marker) {
@@ -27,7 +46,7 @@ var Encounters = {
         icon: L.divIcon({
           iconSize: [35, 45],
           iconAnchor: [17, 42],
-          popupAnchor: [1, -32],
+          popupAnchor: [0, -28],
           shadowAnchor: [10, 12],
           html: `
             <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
@@ -37,7 +56,7 @@ var Encounters = {
         })
       });
 
-      tempMarker.bindPopup(`<h1>${marker.title}</h1><p>${marker.description}</p>`, { minWidth: 300, maxWidth: 400 });
+      tempMarker.bindPopup(Encounters.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
       Layers.encountersLayer.addLayer(tempMarker);
     });
     Layers.encountersLayer.addTo(MapBase.map);
@@ -72,4 +91,4 @@ var Encounters = {
         return "lightred";
     }
   }
-}
+};
