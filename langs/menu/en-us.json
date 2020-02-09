@@ -350,5 +350,8 @@
 
   {"key":"menu.delete_all_settings", "value":"Reset all settings"},
 	{"key":"menu.modal_delete_all_settings_title", "value":"Reset all settings?"},
-	{"key":"menu.modal_delete_all_settings_body", "value":"This will reset all settings, pins, and inventory items to their default values and reload the page."}
+  {"key":"menu.modal_delete_all_settings_body", "value":"This will reset all settings, pins, and inventory items to their default values and reload the page."},
+  
+  {"key": "menu.enable_marker_popups_hover", "value": "Open marker popups on hover"},
+	{"key": "help.enable_marker_popups_hover", "value": "Toggles whether the popups should open when you hover over a marker or when you click a marker. Doesn't work well on touchscreens."}
 ]
