@@ -497,8 +497,9 @@ var MapBase = {
   },
 
   addShops: function () {
-    if (Settings.isDebugEnabled) {
+    if (enabledCategories.includes('shops')) {
       $.each(MapBase.shopData, function (category, categoryValue) {
+        if (!enabledShops.includes(category)) return;
         $.each(categoryValue, function (key, value) {
           var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
           var marker = L.marker([value.lat, value.lng], {
@@ -515,10 +516,10 @@ var MapBase = {
             })
           });
 
-          marker.bindPopup(`<h1>${Language.get(`map.shop_${category}.name`)}</h1><p>${Language.get(`map.shop_${category}.desc`)} ${Language.get(`map.shop_${value.text}.desc`)}</p>`);
+          marker.bindPopup(`<h1>${Language.get(`map.shops.${category}.name`)}</h1><p>${Language.get(`map.shops.${value.text}.desc`)} ${Language.get(`map.shops.${category}.desc`)}</p>`);
 
           Layers.itemMarkersLayer.addLayer(marker);
-        })
+        });
       });
     }
   },
