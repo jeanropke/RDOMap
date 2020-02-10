@@ -29,8 +29,6 @@ var enabledCategories = categories;
 var enabledPlants = plants;
 var categoryButtons = $(".clickable[data-type]");
 
-var fastTravelData;
-
 var date;
 
 var debugMarkersArray = [];
@@ -689,6 +687,7 @@ $('#delete-all-settings').on('click', function () {
 $(function () {
   init();
   MapBase.loadFastTravels();
+  MapBase.loadShops();
   Treasures.load();
   Encounters.load();
   Heatmap.load();
