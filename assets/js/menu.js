@@ -23,6 +23,21 @@ var Menu = {
     });
   },
 
+  refreshShops: function () {
+    $('.menu-hidden[data-type=shop]').children('.collectible-wrapper').remove();
+
+    Object.keys(MapBase.shopData).forEach(function (element) {
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.shops.${element}.name`));
+      var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
+
+      if (!enabledShops.includes(element))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=shops]').append(collectibleElement.append(collectibleImage).append(collectibleTextElement));
+    });
+  },
+
   showHideAllPlants: function (isToHide) {
     if (isToHide) {
       enabledPlants = [];
@@ -36,6 +51,22 @@ var Menu = {
     }
 
     $.cookie('disabled-plants', plantsDisabledByDefault.join(','), { expires: 999 });
+    MapBase.addMarkers();
+  },
+
+  showHideAllShops: function (isToHide) {
+    if (isToHide) {
+      enabledShops = [];
+      shopsDisabledByDefault = shops;
+
+      $('[data-type="shops"] .collectible-wrapper').addClass('disabled');
+    } else {
+      enabledShops = shops;
+      shopsDisabledByDefault = [];
+      $('[data-type="shops"] .collectible-wrapper').removeClass('disabled');
+    }
+
+    $.cookie('disabled-shops', shopsDisabledByDefault.join(','), { expires: 999 });
     MapBase.addMarkers();
   }
 };
@@ -109,6 +140,7 @@ Menu.refreshMenu = function () {
   });
 
   Menu.refreshTreasures();
+  Menu.refreshShops();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
@@ -127,6 +159,7 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=birds]');
   Menu.reorderMenu('.menu-hidden[data-type=fish]');
   Menu.reorderMenu('.menu-hidden[data-type=plants]');
+  Menu.reorderMenu('.menu-hidden[data-type=shops]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
 
   MapBase.loadImportantItems();

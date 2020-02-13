@@ -5,8 +5,8 @@ var categories = [
   'ambush', 'boats', 'campfires', 'defend_campsite', 'dog_encounter', 'egg_encounter',
   'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
   'hostile_conversation', 'moonshiner_camp', 'people_in_need', 'plants', 'rescue',
-  'rival_collector', 'runaway_wagon', 'trains', 'treasure', 'treasure_hunter',
-  'tree_map', 'user_pins', 'wounded_animal',
+  'rival_collector', 'runaway_wagon', 'shops', 'trains', 'treasure',
+  'treasure_hunter', 'tree_map', 'user_pins', 'wounded_animal',
 ];
 
 var categoriesDisabledByDefault = [
@@ -23,13 +23,18 @@ var plants = [
   'violet_snowdrop', 'wild_carrots', 'wild_feverfew', 'wild_mint', 'wintergreen_berry', 'yarrow'
 ];
 
+var shops = [
+  'barber', 'butcher', 'doctor', 'fence', 'general_store', 'gunsmith', 'honor', 'photo_studio',
+  'post_office', 'saloon', 'stable', 'tackle', 'tailor'
+];
+
 var plantsDisabledByDefault = plants;
+var shopsDisabledByDefault = [];
 
 var enabledCategories = categories;
 var enabledPlants = plants;
+var enabledShops = shops;
 var categoryButtons = $(".clickable[data-type]");
-
-var fastTravelData;
 
 var date;
 
@@ -68,6 +73,13 @@ function init() {
 
   enabledPlants = enabledPlants.filter(function (item) {
     return plantsDisabledByDefault.indexOf(item) === -1;
+  });
+
+  if (typeof $.cookie('disabled-shops') !== 'undefined')
+    shopsDisabledByDefault = $.cookie('disabled-shops').split(',');
+
+  enabledShops = enabledShops.filter(function (item) {
+    return shopsDisabledByDefault.indexOf(item) === -1;
   });
 
   if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
@@ -413,13 +425,13 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var menu = $(this);
   var collectible = menu.data('type');
   var category = menu.parent().data('type');
-
+  
   if (typeof collectible === 'undefined') return;
 
-  if (category == 'plants') {
-    $('[data-type=' + collectible + ']').toggleClass('disabled');
-    var isDisabled = menu.hasClass('disabled');
+  $('[data-type=' + collectible + ']').toggleClass('disabled');
+  var isDisabled = $('[data-type=' + collectible + ']').hasClass('disabled');
 
+  if (category == 'plants') {
     if (isDisabled) {
       enabledPlants = $.grep(enabledPlants, function (value) {
         return value != collectible;
@@ -435,6 +447,24 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
     }
 
     $.cookie('disabled-plants', plantsDisabledByDefault.join(','), { expires: 999 });
+
+    MapBase.addMarkers();
+  } else if (category == 'shops') {
+    if (isDisabled) {
+      enabledShops = $.grep(enabledShops, function (value) {
+        return value != collectible;
+      });
+
+      shopsDisabledByDefault.push(collectible);
+    } else {
+      enabledShops.push(collectible);
+
+      shopsDisabledByDefault = $.grep(shopsDisabledByDefault, function (value) {
+        return value != collectible;
+      });
+    }
+
+    $.cookie('disabled-shops', shopsDisabledByDefault.join(','), { expires: 999 });
 
     MapBase.addMarkers();
   } else {
@@ -689,6 +719,7 @@ $('#delete-all-settings').on('click', function () {
 $(function () {
   init();
   MapBase.loadFastTravels();
+  MapBase.loadShops();
   Treasures.load();
   Encounters.load();
   Heatmap.load();

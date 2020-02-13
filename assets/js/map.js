@@ -9,6 +9,8 @@ var MapBase = {
   markers: [],
   itemsMarkedAsImportant: [],
   isDarkMode: false,
+  fastTravelData: null,
+  shopData: null,
 
   init: function () {
 
@@ -280,6 +282,7 @@ var MapBase = {
     Layers.pinsLayer.addTo(MapBase.map);
 
     MapBase.addFastTravelMarker();
+    MapBase.addShops();
 
     Treasures.addToMap();
     Encounters.addToMap();
@@ -455,14 +458,14 @@ var MapBase = {
   loadFastTravels: function () {
     $.getJSON('data/fasttravels.json?nocache=' + nocache)
       .done(function (data) {
-        fastTravelData = data;
+        MapBase.fastTravelData = data;
       });
     console.info('%c[Fast travels] Loaded!', 'color: #bada55; background: #242424');
   },
 
   addFastTravelMarker: function () {
     if (enabledCategories.includes('fast_travel')) {
-      $.each(fastTravelData, function (key, value) {
+      $.each(MapBase.fastTravelData, function (key, value) {
         var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var marker = L.marker([value.x, value.y], {
           icon: L.divIcon({
@@ -481,6 +484,42 @@ var MapBase = {
         marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1>`);
 
         Layers.itemMarkersLayer.addLayer(marker);
+      });
+    }
+  },
+
+  loadShops: function () {
+    $.getJSON('data/shops.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.shopData = data;
+      });
+    console.info('%c[Shops] Loaded!', 'color: #bada55; background: #242424');
+  },
+
+  addShops: function () {
+    if (enabledCategories.includes('shops')) {
+      $.each(MapBase.shopData, function (category, categoryValue) {
+        if (!enabledShops.includes(category)) return;
+        $.each(categoryValue, function (key, value) {
+          var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+          var marker = L.marker([value.lat, value.lng], {
+            icon: L.divIcon({
+              iconSize: [35, 45],
+              iconAnchor: [17, 42],
+              popupAnchor: [0, -28],
+              shadowAnchor: [10, 12],
+              html: `
+                <img class="icon" src="./assets/images/icons/${category}.png" alt="Icon">
+                <img class="background" src="./assets/images/icons/marker_black.png" alt="Background">
+                ${shadow}
+              `
+            })
+          });
+
+          marker.bindPopup(`<h1>${Language.get(`map.shops.${category}.name`)}</h1><p>${Language.get(`map.shops.${value.text}.desc`)} ${Language.get(`map.shops.${category}.desc`)}</p>`);
+
+          Layers.itemMarkersLayer.addLayer(marker);
+        });
       });
     }
   },

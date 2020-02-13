@@ -1,0 +1,93 @@
+{
+    "barber": [
+        { "text": "barber_01", "lat": "-84.8196", "lng": "98.6503" },
+        { "text": "barber_02", "lat": "-50.95", "lng": "106.5362" },
+        { "text": "barber_03", "lat": "-81.9285", "lng": "152.5339" }
+    ],
+    "butcher": [
+        { "text": "butcher_01", "lat": "-109.3442", "lng": "25.79" },
+        { "text": "butcher_02", "lat": "-83.5314", "lng": "99.5969" },
+        { "text": "butcher_03", "lat": "-69.6925", "lng": "84.0772" },
+        { "text": "butcher_04", "lat": "-51.6894", "lng": "106.0308" },
+        { "text": "butcher_05", "lat": "-83.441", "lng": "131.426" },
+        { "text": "butcher_06", "lat": "-84.2616", "lng": "155.0486" }
+    ],
+    "doctor": [
+        { "text": "doctor_01", "lat": "-51.1211", "lng": "106.821" },
+        { "text": "doctor_02", "lat": "-82.7154", "lng": "153.5236" }
+    ],
+    "fence": [
+        { "text": "fence_01", "lat": "-59.3542", "lng": "133.2863" },
+        { "text": "fence_02", "lat": "-81.3251", "lng": "131.7676" },
+        { "text": "fence_03", "lat": "-82.2575", "lng": "155.6696" },
+        { "text": "fence_04", "lat": "-54.8665", "lng": "158.2502" },
+        { "text": "fence_05", "lat": "-99.5598", "lng": "89.531" }
+    ],
+    "general_store": [
+        { "text": "general_store_01", "lat": "-109.2139", "lng": "26.1287" },
+        { "text": "general_store_02", "lat": "-104.315", "lng": "54.0631" },
+        { "text": "general_store_03", "lat": "-84.1167", "lng": "99.1147" },
+        { "text": "general_store_04", "lat": "-69.626", "lng": "83.5092" },
+        { "text": "general_store_05", "lat": "-57.4749", "lng": "91.0682" },
+        { "text": "general_store_06", "lat": "-51.1263", "lng": "106.2615" },
+        { "text": "general_store_07", "lat": "-83.6863", "lng": "131.9278" },
+        { "text": "general_store_08", "lat": "-84.1642", "lng": "155.0198" }
+    ],
+    "gunsmith": [
+        { "text": "gunsmith_01", "lat": "-109.6144", "lng": "25.8059" },
+        { "text": "gunsmith_02", "lat": "-51.5104", "lng": "106.9162" },
+        { "text": "gunsmith_03", "lat": "-84.1139", "lng": "131.8344" },
+        { "text": "gunsmith_04", "lat": "-83.5742", "lng": "153.4734" },
+        { "text": "gunsmith_05", "lat": "-43.1113", "lng": "157.0283" }
+    ],
+    "honor": [
+        { "text": "honor_01", "lat": "-106.7032", "lng": "54.7921" },
+        { "text": "honor_02", "lat": "-42.9919", "lng": "152.0362" },
+        { "text": "honor_03", "lat": "-73.0132", "lng": "91.8992" }
+    ],
+    "photo_studio": [
+        { "text": "photo_studio_01", "lat": "-84.9214", "lng": "98.6629" },
+        { "text": "photo_studio_02", "lat": "-80.9786", "lng": "153.7244" }
+    ],
+    "post_office": [
+        { "text": "post_office_01", "lat": "-117.4277", "lng": "30.1398" },
+        { "text": "post_office_02", "lat": "-103.9531", "lng": "53.3281" },
+        { "text": "post_office_03", "lat": "-84.1964", "lng": "97.7095" },
+        { "text": "post_office_04", "lat": "-69.5769", "lng": "83.9161" },
+        { "text": "post_office_05", "lat": "-72.5625", "lng": "94.3057" },
+        { "text": "post_office_06", "lat": "-57.3957", "lng": "91.1011" },
+        { "text": "post_office_07", "lat": "-53.8525", "lng": "108.5269" },
+        { "text": "post_office_08", "lat": "-56.7534", "lng": "134.91" },
+        { "text": "post_office_09", "lat": "-83.6996", "lng": "130.3285" },
+        { "text": "post_office_10", "lat": "-85.3013", "lng": "153.9515" },
+        { "text": "post_office_11", "lat": "-54.7544", "lng": "157.6362" },
+        { "text": "post_office_12", "lat": "-43.6947", "lng": "156.8097" }
+    ],
+    "saloon": [
+        { "text": "saloon_01", "lat": "-108.8125", "lng": "25.6328" },
+        { "text": "saloon_02", "lat": "-103.8516", "lng": "53.8594" },
+        { "text": "saloon_03", "lat": "-84.125", "lng": "98.5391" },
+        { "text": "saloon_04", "lat": "-51.0781", "lng": "106.4688" },
+        { "text": "saloon_05", "lat": "-51.6641", "lng": "107.5625" },
+        { "text": "saloon_06", "lat": "-84.9531", "lng": "132.1797" },
+        { "text": "saloon_07", "lat": "-82.6016", "lng": "152.2031" },
+        { "text": "saloon_08", "lat": "-81.7422", "lng": "154.6328" },
+        { "text": "saloon_09", "lat": "-55.4063", "lng": "157.0547" }
+    ],
+    "stable": [
+        { "text": "stable_01", "lat": "-110.8495", "lng": "25.6087" },
+        { "text": "stable_02", "lat": "-84.8035", "lng": "97.8134" },
+        { "text": "stable_03", "lat": "-72.3194", "lng": "83.0455" },
+        { "text": "stable_04", "lat": "-51.3905", "lng": "105.5562" },
+        { "text": "stable_05", "lat": "-66.5982", "lng": "130.0545" },
+        { "text": "stable_06", "lat": "-86.0986", "lng": "150.2175" },
+        { "text": "stable_07", "lat": "-51.2346", "lng": "157.3421" }
+    ],
+    "tackle": [
+        { "text": "tackle_01", "lat": "-73.1991", "lng": "144.8365" }
+    ],
+    "tailor": [
+        { "text": "tailor_01", "lat": "-83.6759", "lng": "99.4626" },
+        { "text": "tailor_02", "lat": "-81.7114", "lng": "150.945" }
+    ]
+}
