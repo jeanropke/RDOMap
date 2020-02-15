@@ -6,20 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="./favicon.png" />
   <title>Red Dead Online - RDO Map</title>
-  <meta name="description"
-    content="Red Dead Online RDO Map. Find any useful items, locations or event around the map of RDO.">
-  <meta name="keywords"
-    content="Red Dead Online, RDO Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
+  <meta name="description" content="Red Dead Online RDO Map. Find any useful items, locations or event around the map of RDO.">
+  <meta name="keywords" content="Red Dead Online, RDO Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
 
   <!-- Preconnects to improve performance -->
   <link rel="preconnect" href="https://jeanropke.b-cdn.net">
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=29" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=30" />
 
   <script>
-    var nocache = 29;
+    var nocache = 30;
   </script>
 </head>
 
@@ -306,8 +304,7 @@
           <option value="3" data-text="menu.fme_display.3" selected>Both</option>
         </select>
       </div>
-      <div class="input-container clickable" data-help="clear_important_items" data-toggle="modal"
-        data-target="#clear-important-items-modal">
+      <div class="input-container clickable" data-help="clear_important_items" data-toggle="modal" data-target="#clear-important-items-modal">
         <label data-text="menu.clear_important_items">Clear important markers</label>
         <div class="input-action"></div>
       </div>
@@ -341,16 +338,14 @@
       <div class="input-container" data-help="enable_marker_popups_hover">
         <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on hover</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
-            id="enable-marker-popups-hover" />
+          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1" id="enable-marker-popups-hover" />
           <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
         </div>
       </div>
       <div class="input-container" data-help="enable_marker_shadows">
         <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1"
-            id="enable-marker-shadows" />
+          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1" id="enable-marker-shadows" />
           <label class="input-checkbox-label" for="enable-marker-shadows"></label>
         </div>
       </div>
@@ -396,10 +391,8 @@
         <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.import_button" data-help="cookie_import">Import</button>
-        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.export_button" data-help="cookie_export">Export</button>
+        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_button" data-help="cookie_import">Import</button>
+        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_button" data-help="cookie_export">Export</button>
       </div>
       <div class="input-container-noflex">
         <h4 data-text="menu.pins_import_export_title">User Pins</h4>
@@ -413,10 +406,8 @@
         <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
-        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
+        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
       </div>
     </div>
 
@@ -455,22 +446,17 @@
           </div>
         </div>
         <div class="input-container-noflex">
-          <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day"
-            value="">
-          <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day"
-            value="">
+          <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day" value="">
+          <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day" value="">
         </div>
         <div class="input-container-noflex">
-          <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search"
-            autocomplete="off">
+          <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search" autocomplete="off">
         </div>
         <div class="input-container-noflex">
-          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
-            onclick="MapBase.submitDebugForm()">Place</button>
+          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu" onclick="MapBase.submitDebugForm()">Place</button>
         </div>
         <div class="input-container-noflex">
-          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
-            onclick="Language.getLanguageJson()">Generate langs</button>
+          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu" onclick="Language.getLanguageJson()">Generate langs</button>
         </div>
       </div>
     </div>
@@ -493,8 +479,7 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
-        target="_blank">
+      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
         <input type="hidden" name="lc" value="en_US" />
@@ -574,8 +559,7 @@
   </div>
 
   <!-- Modals -->
-  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog"
-    aria-labelledby="clear-important-items-title">
+  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog" aria-labelledby="clear-important-items-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -588,8 +572,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal"
-            data-text="menu.yes">Yes</button>
+          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
@@ -606,8 +589,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
-            data-text="menu.yes">Yes</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
@@ -624,18 +606,18 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=29"></script>
-  <script src="assets/js/settings.js?nocache=29"></script>
-  <script src="assets/js/marker.js?nocache=29"></script>
-  <script src="assets/js/treasures.js?nocache=29"></script>
-  <script src="assets/js/encounters.js?nocache=29"></script>
-  <script src="assets/js/hm.js?nocache=29"></script>
-  <script src="assets/js/pins.js?nocache=29"></script>
-  <script src="assets/js/map.js?nocache=29"></script>
-  <script src="assets/js/language.js?nocache=29"></script>
-  <script src="assets/js/menu.js?nocache=29"></script>
-  <script src="assets/js/scripts.js?nocache=29"></script>
-  <script src="assets/js/fme.js?nocache=29"></script>
+  <script src="assets/js/layers.js?nocache=30"></script>
+  <script src="assets/js/settings.js?nocache=30"></script>
+  <script src="assets/js/marker.js?nocache=30"></script>
+  <script src="assets/js/treasures.js?nocache=30"></script>
+  <script src="assets/js/encounters.js?nocache=30"></script>
+  <script src="assets/js/hm.js?nocache=30"></script>
+  <script src="assets/js/pins.js?nocache=30"></script>
+  <script src="assets/js/map.js?nocache=30"></script>
+  <script src="assets/js/language.js?nocache=30"></script>
+  <script src="assets/js/menu.js?nocache=30"></script>
+  <script src="assets/js/scripts.js?nocache=30"></script>
+  <script src="assets/js/fme.js?nocache=30"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
