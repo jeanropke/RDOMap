@@ -95,11 +95,9 @@ Menu.refreshMenu = function () {
     var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
     var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
-    collectibleElement.on('contextmenu', function (event) {
-      if ($.cookie('right-click') != null)
-        return;
-
-      event.preventDefault();
+    collectibleElement.on('contextmenu', function (e) {
+      if ($.cookie('right-click') == null)
+        e.preventDefault();
     });
 
     var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
