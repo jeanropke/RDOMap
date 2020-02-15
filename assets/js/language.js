@@ -62,7 +62,7 @@ var Language = {
             try {
                 // Menu language strings.
                 $.ajax({
-                    url: `/rdo/langs/menu/${language}.json`,
+                    url: `./langs/menu/${language}.json`,
                     dataType: 'json',
                     async: false,
                     success: function (json) {
