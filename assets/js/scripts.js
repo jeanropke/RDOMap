@@ -187,8 +187,10 @@ function setMapBackground(mapIndex) {
 function changeCursor() {
   if (Settings.isCoordsEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');
-  else
+  else {
     $('.leaflet-grab').css('cursor', 'grab');
+    $('.lat-lng-container').css('display', 'none');
+  }
 }
 function addZeroToNumber(number) {
   if (number < 10)
@@ -208,7 +210,7 @@ function getParameterByName(name, url) {
 
 //Copy text to clipboard
 function setClipboardText(text) {
-  const el = document.createElement('textarea');
+  var el = document.createElement('textarea');
   el.value = text;
   document.body.appendChild(el);
   el.select();
@@ -425,7 +427,7 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var menu = $(this);
   var collectible = menu.data('type');
   var category = menu.parent().data('type');
-  
+
   if (typeof collectible === 'undefined') return;
 
   $('[data-type=' + collectible + ']').toggleClass('disabled');
