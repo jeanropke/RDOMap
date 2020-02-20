@@ -190,12 +190,6 @@ Menu.hideAll = function () {
   Heatmap.removeHeatmap(true);
 };
 
-// Auto fill debug markers inputs, when "show coordinates on click" is enabled
-Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
-  $('#debug-marker-lat').val(lat);
-  $('#debug-marker-lng').val(lng);
-};
-
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
   var tempArray = MapBase.itemsMarkedAsImportant;

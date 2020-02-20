@@ -9,6 +9,8 @@ var Pins = {
   },
 
   addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
+    if (lat === null || lat === undefined || lng === null || lng === undefined) return;
+    
     var pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
     if (pinAtPositionExists) return;
 
@@ -21,15 +23,14 @@ var Pins = {
       icon_name: icon,
       draggable: Settings.isPinsEditingEnabled,
       icon: L.divIcon({
-        iconSize: [35, 45],
-        iconAnchor: [17, 42],
-        popupAnchor: [0, -28],
-        shadowAnchor: [10, 12],
+        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+        popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         html: `
-                    <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
-                    <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-                    ${shadow}
-                `
+          <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
+          <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+          ${shadow}
+        `
       })
     });
 
@@ -80,9 +81,7 @@ var Pins = {
     });
 
     localStorage.setItem("pinned-items", pinnedItems);
-
-    if (Settings.isDebugEnabled)
-      console.log("Saved all pins!");
+    console.log("Saved all pins!");
 
     this.loadAllPins();
   },
@@ -133,7 +132,7 @@ var Pins = {
     var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})" data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>` : '';
     var markerContent = markerTitle + markerDesc + markerDivider + markerIconLabel + markerIconSelect + markerSaveButton + markerRemoveButton;
 
-    marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 400 });
+    marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
   },
 
   updateAllPopups: function () {

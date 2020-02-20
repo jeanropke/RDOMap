@@ -213,15 +213,8 @@ input, textarea, select, .btn {
 
 #countdown, #item-counter, #time-in-game {
     font-size: 16px;
-    line-height: 1.7;
     user-select: none;
-    margin: auto auto auto 2px;
-}
-
-.day-cycle {
-    width: 16px;
-    height: 16px;
-    margin: auto 0 auto 8px;
+    margin: auto 8px auto 0;
 }
 
 .timer-container, .clock-container {
@@ -232,12 +225,19 @@ input, textarea, select, .btn {
     color: #eee;
     left: 40px;
     top: 5px;
-    min-width: 95px;
+    min-width: 50px;
     height: 30px;
     transition: all 200ms ease-out;
     padding: 0 8px;
     display: inline-flex;
+    cursor: pointer;
     line-height: 28px;
+}
+
+.day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 0 auto auto;
 }
 
 .counter-container {
@@ -393,7 +393,7 @@ input, textarea, select, .btn {
     border: 1px solid #999;
 }
 
-.input-day {
+.input-text {
     background: #383838;
     border: none;
     padding: 4px 10px;
@@ -404,12 +404,16 @@ input, textarea, select, .btn {
     margin-left: 6px;
 }
 
-.input-container-noflex .input-day {
+.input-container-noflex .input-text {
     margin-left: 0;
 }
 
-.input-day:disabled {
+.input-text:disabled {
     cursor: not-allowed;
+}
+
+.input-text.input-cycle.random {
+    margin-right: 42px;
 }
 
 .issues-container a {
@@ -459,6 +463,7 @@ input, textarea, select, .btn {
 
 .side-menu .menu-option {
     display: flex;
+    justify-content: space-between;
     align-items: start;
     padding: 0 5px;
     user-select: none;
@@ -474,6 +479,9 @@ input, textarea, select, .btn {
 
 .side-menu .disabled {
     opacity: .5;
+}
+
+.side-menu .disabled .menu-option-text, .side-menu .disabled .collectible-text {
     text-decoration: line-through;
 }
 
@@ -492,7 +500,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .open-submenu {
-    min-width: 38px;
+    min-width: 32px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0;
@@ -691,10 +699,6 @@ a.wiki-page:visited {
     margin-top: 0 !important;
 }
 
-#debug-marker-lat, #debug-marker-lng {
-    width: calc(50% - 4px);
-}
-
 .counter {
     line-height: 12px;
     white-space: nowrap;
@@ -718,7 +722,26 @@ a.wiki-page:visited {
     background-color: #333;
     color: #eee !important;
     border-radius: 50%;
-    text-decoration: none !important;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.cycle-changer {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+}
+
+#cycle-changer-container {
+    margin: 10px 0;
+}
+
+#cycle-changer-container .cycle-data {
+    text-align: center;
+    min-width: 100px;
+    margin: 0 6px;
 }
 
 .marker-content-wrapper {
@@ -737,6 +760,11 @@ a.wiki-page:visited {
 
 .marker-warning-wrapper .warning-icon {
     margin-right: 5px;
+}
+
+.disable-cycle-changer-arrow {
+    cursor: default !important;
+    opacity: .3;
 }
 
 /* Custom checkbox styling */
@@ -805,6 +833,15 @@ a.wiki-page:visited {
     cursor: pointer;
 }
 
+.input-selection-arrow {
+    cursor: pointer;
+}
+
+.input-selection-arrow img {
+    height: 16px;
+    width: auto;
+}
+
 a.no-style {
     color: #fff;
     text-decoration: none;
@@ -824,6 +861,10 @@ a.no-style:visited {
     color: #333;
 }
 
+.leaflet-control-attribution a {
+    color: #333 !important;
+}
+
 .leaflet-dark-mode .leaflet-control-attribution {
     background: #333;
     color: white;
@@ -835,6 +876,10 @@ a.no-style:visited {
 
 .text-danger {
     color: #f95050 !important
+}
+
+.hidden {
+    display: none !important;
 }
 
 /* Bootstrap modal styling */
@@ -922,19 +967,19 @@ a.no-style:visited {
     .timer-menu-opened, .counter-menu-opened, .fme-menu-opened {
         display: none !important;
     }
-}
+    }
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 380px;
-        left: -380px;
+        width: 390px;
+        left: -390px;
         top: 0;
     }
     .menu-opened {
         left: 0;
     }
     .timer-menu-opened {
-        left: 385px;
+        left: 395px;
     }
     .counter-menu-opened {
         left: 410px;
@@ -1052,7 +1097,7 @@ a.no-style:visited {
     padding: 10px;
 }
 
-.donate-form .input-day {
+.donate-form .input-text {
     margin: auto 0 auto auto;
 }
 

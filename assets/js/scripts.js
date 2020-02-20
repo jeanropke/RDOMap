@@ -82,48 +82,74 @@ function init() {
     return shopsDisabledByDefault.indexOf(item) === -1;
   });
 
-  if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
+  if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 0, { expires: 999 });
 
   if (!Language.availableLanguages.includes(Settings.language))
     Settings.language = 'en-us';
 
-  if (typeof $.cookie('remove-markers-daily') === 'undefined') {
+  if ($.cookie('remove-markers-daily') === undefined) {
     Settings.resetMarkersDaily = true;
     $.cookie('remove-markers-daily', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('marker-cluster') === 'undefined') {
+  if ($.cookie('marker-cluster') === undefined) {
     Settings.markerCluster = true;
     $.cookie('marker-cluster', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('enable-marker-shadows') === 'undefined') {
+  if ($.cookie('enable-marker-shadows') === undefined) {
     Settings.isShadowsEnabled = true;
     $.cookie('enable-marker-shadows', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('enable-dclick-zoom') === 'undefined') {
+  if ($.cookie('enable-dclick-zoom') === undefined) {
     Settings.isDoubleClickZoomEnabled = true;
     $.cookie('enable-dclick-zoom', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('show-help') === 'undefined') {
+  if ($.cookie('show-help') === undefined) {
     Settings.showHelp = true;
     $.cookie('show-help', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('marker-opacity') === 'undefined') {
+  if ($.cookie('marker-opacity') === undefined) {
     Settings.markerOpacity = 1;
     $.cookie('marker-opacity', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('fme-display') === 'undefined') {
+  if ($.cookie('marker-size') === undefined) {
+    Settings.markerSize = 1;
+    $.cookie('marker-size', '1', { expires: 999 });
+  }
+
+  if ($.cookie('overlay-opacity') === undefined) {
+    Settings.overlayOpacity = 0.5;
+    $.cookie('overlay-opacity', '0.5', { expires: 999 });
+  }
+
+  if ($.cookie('fme-display') === undefined) {
     FME.display = 3;
     $.cookie('fme-display', '3', { expires: 999 });
   }
 
+  if ($.cookie('cycle-input-enabled') === undefined) {
+    Settings.isCycleInputEnabled = 1;
+    $.cookie('cycle-input-enabled', '1', { expires: 999 });
+  }
+
+  if ($.cookie('clock-or-timer') === undefined) {
+    Settings.displayClockHideTimer = false;
+    $.cookie('clock-or-timer', 'false', { expires: 999 });
+  }
+
+  if ($.cookie('timestamps-24') === undefined) {
+    Settings.display24HoursTimestamps = false;
+    $.cookie('timestamps-24', 'false', { expires: 999 });
+  }
+
   MapBase.init();
+  MapBase.setOverlays(Settings.overlayOpacity);
 
   Language.setMenuLanguage();
 
@@ -135,6 +161,8 @@ function init() {
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#fme-display').val(FME.display);
+  $('#marker-size').val(Settings.markerSize);
+  $('#overlay-opacity').val(Settings.overlayOpacity);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
@@ -145,14 +173,19 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
+  $('#timestamps-24').prop("checked", Settings.display24HoursTimestamps);
+  $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
+  $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
+  $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
 
-  if (Settings.showHelp) {
-    $("#help-container").show();
-  } else {
-    $("#help-container").hide();
-  }
+  $("#help-container").toggle(Settings.showHelp);
+
+  $('.timer-container').toggleClass('hidden', Settings.displayClockHideTimer);
+  $('.clock-container').toggleClass('hidden', !(Settings.displayClockHideTimer));
+  $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
+  $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
 
   Pins.addToMap();
   changeCursor();
@@ -180,7 +213,7 @@ function setMapBackground(mapIndex) {
       MapBase.isDarkMode = true;
       break;
   }
-
+  MapBase.setOverlays();
   $.cookie('map-layer', mapIndex, { expires: 999 });
 }
 
@@ -192,6 +225,7 @@ function changeCursor() {
     $('.lat-lng-container').css('display', 'none');
   }
 }
+
 function addZeroToNumber(number) {
   if (number < 10)
     number = '0' + number;
@@ -235,7 +269,7 @@ function downloadAsFile(filename, text) {
 setInterval(function () {
 
   // Clock in game created by Michal__d
-  var display_24 = false,
+  var display_24 = Settings.display24HoursTimestamps,
     newDate = new Date(),
     startTime = newDate.valueOf(),
     factor = 30,
@@ -335,6 +369,11 @@ $('#show-coordinates').on('change', function () {
   changeCursor();
 });
 
+$('#timestamps-24').on('change', function () {
+  Settings.display24HoursTimestamps = $("#timestamps-24").prop('checked');
+  $.cookie('timestamps-24', Settings.display24HoursTimestamps ? '1' : '0', { expires: 999 });
+});
+
 //Change & save language option
 $("#language").on("change", function () {
   Settings.language = $("#language").val();
@@ -344,12 +383,35 @@ $("#language").on("change", function () {
   Menu.refreshMenu();
 });
 
-//Change & save opacity
+//Change & save overlay opacity
 $("#marker-opacity").on("change", function () {
   var parsed = parseFloat($("#marker-opacity").val());
   Settings.markerOpacity = parsed ? parsed : 1;
   $.cookie('marker-opacity', Settings.markerOpacity, { expires: 999 });
   MapBase.addMarkers();
+});
+
+$("#overlay-opacity").on("change", function () {
+  var parsed = parseFloat($("#overlay-opacity").val());
+  Settings.overlayOpacity = parsed ? parsed : 0.5;
+  $.cookie('overlay-opacity', Settings.overlayOpacity, { expires: 999 });
+  MapBase.setOverlays(parsed);
+});
+
+//Change & save marker size
+$("#marker-size").on("change", function () {
+  var parsed = parseFloat($("#marker-size").val());
+  Settings.markerSize = parsed ? parsed : 1;
+  $.cookie('marker-size', Settings.markerSize, { expires: 999 });
+  MapBase.addMarkers();
+  Treasures.set();
+});
+
+//Enable cycle input
+$("#enable-cycle-input").on("change", function () {
+  Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
+  $.cookie('cycle-input-enabled', Settings.isCycleInputEnabled ? '1' : '0', { expires: 999 });
+  $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
 });
 
 // Toggle visibility of FME cards.
@@ -361,9 +423,11 @@ $("#fme-display").on("change", function () {
 });
 
 //Disable & enable collection category
-$('.clickable').on('click', function () {
+$('.clickable').on('click', function (e) {
+  e.stopPropagation();
+
   var menu = $(this);
-  if (typeof menu.data('type') === 'undefined') return;
+  if (menu.data('type') === undefined) return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
   var isDisabled = menu.hasClass('disabled');
@@ -394,6 +458,8 @@ $('.clickable').on('click', function () {
 
 //Disable & enable collection category
 $(document).on('click', '.animal-wrapper[data-type]', function (e) {
+  e.stopPropagation();
+
   var menu = $(this);
 
   $('.menu-hidden .animal-wrapper').each(function (key, value) {
@@ -556,15 +622,31 @@ $('#pins-export').on("click", function () {
 $('#pins-import').on('click', function () {
   try {
     var file = $('#pins-import-file').prop('files')[0];
+    var fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
       return;
     }
 
-    file.text().then(function (text) {
-      Pins.importPins(text);
-    });
+    try {
+      file.text().then((text) => {
+        Pins.importPins(text);
+      });
+    } catch (error) {
+      fallback = true;
+    }
+
+    if (fallback) {
+      var reader = new FileReader();
+
+      reader.addEventListener('loadend', (e) => {
+        var text = e.srcElement.result;
+        Pins.importPins(text);
+      });
+
+      reader.readAsText(file);
+    }
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -601,50 +683,71 @@ $('#cookie-export').on("click", function () {
 
 $('#cookie-import').on('click', function () {
   try {
+    var settings = null;
     var file = $('#cookie-import-file').prop('files')[0];
+    var fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
       return;
     }
 
-    file.text().then(function (res) {
-      var settings = null;
+    try {
+      file.text().then((text) => {
+        try {
+          settings = JSON.parse(text);
+        } catch (error) {
+          alert(Language.get('alerts.file_not_valid'));
+          return;
+        }
+      });
+    } catch (error) {
+      fallback = true;
+    }
 
-      try {
-        settings = JSON.parse(res);
-      } catch (error) {
-        alert(Language.get('alerts.file_not_valid'));
-        return;
-      }
+    if (fallback) {
+      var reader = new FileReader();
 
-      // Remove all current settings.
-      $.each($.cookie(), function (key, value) {
-        $.removeCookie(key);
+      reader.addEventListener('loadend', (e) => {
+        var text = e.srcElement.result;
+
+        try {
+          settings = JSON.parse(text);
+        } catch (error) {
+          alert(Language.get('alerts.file_not_valid'));
+          return;
+        }
       });
 
-      $.each(localStorage, function (key, value) {
-        localStorage.removeItem(key);
-      });
+      reader.readAsText(file);
+    }
 
-      // Import all the settings from the file.
-      if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
-        $.each(settings, function (key, value) {
-          $.cookie(key, value, { expires: 999 });
-        });
-      }
+    // Remove all current settings.
+    $.each($.cookie(), function (key, value) {
+      $.removeCookie(key);
+    });
 
-      $.each(settings.cookies, function (key, value) {
+    $.each(localStorage, function (key, value) {
+      localStorage.removeItem(key);
+    });
+
+    // Import all the settings from the file.
+    if (settings.cookies === undefined && settings.local === undefined) {
+      $.each(settings, function (key, value) {
         $.cookie(key, value, { expires: 999 });
       });
+    }
 
-      $.each(settings.local, function (key, value) {
-        localStorage.setItem(key, value);
-      });
-
-      // Do this for now, maybe look into refreshing the menu completely (from init) later.
-      location.reload();
+    $.each(settings.cookies, function (key, value) {
+      $.cookie(key, value, { expires: 999 });
     });
+
+    $.each(settings.local, function (key, value) {
+      localStorage.setItem(key, value);
+    });
+
+    // Do this for now, maybe look into refreshing the menu completely (from init) later.
+    location.reload();
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -654,22 +757,22 @@ $('#cookie-import').on('click', function () {
 /**
  * Tutorial logic
  */
+var defaultHelpTimeout;
 $('[data-help]').hover(function (e) {
   var attr = $(this).attr('data-help');
+  clearTimeout(defaultHelpTimeout);
   $('#help-container p').attr('data-text', `help.${attr}`).text(Language.get(`help.${attr}`));
 }, function () {
-  $('#help-container p').attr('data-text', `help.default`).text(Language.get(`help.default`));
+  defaultHelpTimeout = setTimeout(function () {
+    $('#help-container p').attr('data-text', `help.default`).text(Language.get(`help.default`));
+  }, 100);
 });
 
 $('#show-help').on("change", function () {
   Settings.showHelp = $("#show-help").prop('checked');
-  $.cookie('show-help', Settings.isHelpEnabled ? '1' : '0', { expires: 999 });
+  $.cookie('show-help', Settings.showHelp ? '1' : '0', { expires: 999 });
 
-  if (Settings.showHelp) {
-    $("#help-container").show();
-  } else {
-    $("#help-container").hide();
-  }
+  $("#help-container").toggle(Settings.showHelp);
 });
 
 /**
