@@ -816,6 +816,9 @@ $('#delete-all-settings').on('click', function () {
   location.reload(true);
 });
 
+/**
+ * Modals
+ */
 $('#open-clear-important-items-modal').on('click', function () {
   $('#clear-important-items-modal').modal();
 });
