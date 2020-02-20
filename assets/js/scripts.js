@@ -816,6 +816,14 @@ $('#delete-all-settings').on('click', function () {
   location.reload(true);
 });
 
+$('#open-clear-important-items-modal').on('click', function () {
+  $('#clear-important-items-modal').modal();
+});
+
+$('#open-delete-all-settings-modal').on('click', function () {
+  $('#delete-all-settings-modal').modal();
+});
+
 /**
  * Event listeners
  */
