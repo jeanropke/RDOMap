@@ -56,7 +56,7 @@
 		{"text": "pikes_basin", "time": ["2", "4"], "lat": "-100.1640", "lng": "69.1048"},
 		{"text": "quakers_cove", "time": ["3"], "lat": "-93.3179", "lng": "93.0961"},
 		{"text": "radleys_pasture", "time": ["4"], "lat": "-82.984375", "lng": "124.0625"},
-		{"text": "repentance", "time": ["3"], "lat": "-116.234375", "lng": "38.4765625"},
+		{"text": "repentance", "time": ["2", "3"], "lat": "-116.234375", "lng": "38.4765625"},
 		{"text": "sea_of_coronado", "time": ["2"], "lat": "-119.2847", "lng": "13.9824"},
 		{"text": "shady_belle", "time": ["1", "4"], "lat": "-92.375", "lng": "140.6015625"},
 		{"text": "six_point_cabin", "time": ["3", "4"], "lat": "-44.734375", "lng": "110.1875"},
