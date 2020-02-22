@@ -2,18 +2,18 @@ var searchTerms = [];
 var uniqueSearchMarkers = [];
 
 var categories = [
-  'ambush', 'boats', 'campfires', 'defend_campsite', 'dog_encounter', 'egg_encounter',
-  'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts', 'hogtied_lawman',
-  'hostile_conversation', 'moonshiner_camp', 'nazar', 'people_in_need', 'plants',
-  'rescue', 'rival_collector', 'runaway_wagon', 'shops', 'trains', 'treasure',
+  'ambush', 'boats', 'campfires', 'defend_campsite', 'dailies', 'dog_encounter',
+  'egg_encounter', 'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts',
+  'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp', 'nazar', 'people_in_need',
+  'plants', 'rescue', 'rival_collector', 'runaway_wagon', 'shops', 'trains', 'treasure',
   'treasure_hunter', 'tree_map', 'user_pins', 'wounded_animal',
 ];
 
 var categoriesDisabledByDefault = [
-  'ambush', 'dog_encounter', 'egg_encounter', 'escort', 'fame_seeker', 'grave_robber',
-  'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp', 'people_in_need',
-  'rescue', 'rival_collector', 'runaway_wagon', 'treasure_hunter', 'treasure',
-  'tree_map', 'wounded_animal',
+  'ambush', 'dailies', 'dog_encounter', 'egg_encounter', 'escort', 'fame_seeker',
+  'grave_robber', 'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp',
+  'people_in_need', 'rescue', 'rival_collector', 'runaway_wagon', 'treasure_hunter',
+  'treasure', 'tree_map', 'wounded_animal',
 ];
 
 var plants = [
@@ -36,9 +36,16 @@ var shopsDisabledByDefault = [
   'stable', 'tackle', 'tailor'
 ];
 
+var dailies = [
+  'visits'
+];
+
+var dailiesDisabledByDefault = [];
+
 var enabledCategories = categories;
 var enabledPlants = plants;
 var enabledShops = shops;
+var enabledDailies = dailies;
 var categoryButtons = $(".clickable[data-type]");
 
 var date;
@@ -85,6 +92,13 @@ function init() {
 
   enabledShops = enabledShops.filter(function (item) {
     return shopsDisabledByDefault.indexOf(item) === -1;
+  });
+
+  if (typeof $.cookie('disabled-dailies') !== 'undefined')
+    dailiesDisabledByDefault = $.cookie('disabled-dailies').split(',');
+
+  enabledDailies = enabledDailies.filter(function (item) {
+    return dailiesDisabledByDefault.indexOf(item) === -1;
   });
 
   if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
@@ -576,6 +590,24 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
     $.cookie('disabled-shops', shopsDisabledByDefault.join(','), { expires: 999 });
 
     MapBase.addMarkers();
+  } else if (category == 'dailies') {
+    if (isDisabled) {
+      enabledDailies = $.grep(enabledDailies, function (value) {
+        return value != collectible;
+      });
+
+      dailiesDisabledByDefault.push(collectible);
+    } else {
+      enabledDailies.push(collectible);
+
+      dailiesDisabledByDefault = $.grep(dailiesDisabledByDefault, function (value) {
+        return value != collectible;
+      });
+    }
+
+    $.cookie('disabled-dailies', dailiesDisabledByDefault.join(','), { expires: 999 });
+
+    MapBase.addMarkers();
   } else {
     MapBase.removeItemFromMap(collectible, collectible, category, true);
   }
@@ -883,6 +915,7 @@ $(function () {
   init();
   MapBase.loadFastTravels();
   MapBase.loadShops();
+  MapBase.loadDailies();
   MadamNazar.loadMadamNazar();
   Treasures.load();
   Encounters.load();
