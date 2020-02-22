@@ -581,6 +581,8 @@ var MapBase = {
     debugMarkersArray.push(tempArray);
   },
 
+  testData: { max: 10, data: [] },
+  heatmapCount: 10,
   addCoordsOnMap: function (coords) {
     // Show clicked coordinates (like google maps)
     if (Settings.isCoordsEnabled) {
@@ -591,6 +593,12 @@ var MapBase = {
       $('#lat-lng-container-close-button').click(function () {
         $('.lat-lng-container').css('display', 'none');
       });
+    }
+
+    if (Settings.isDebugEnabled) {
+      console.log(`{"lat":"${coords.latlng.lat.toFixed(4)}","lng":"${coords.latlng.lng.toFixed(4)}","count":"${MapBase.heatmapCount}"},`);
+      MapBase.testData.data.push({ lat: coords.latlng.lat.toFixed(4), lng: coords.latlng.lng.toFixed(4), count: MapBase.heatmapCount });
+      Layers.heatmapLayer.setData(MapBase.testData);
     }
 
     if (Settings.isPinsPlacingEnabled)
