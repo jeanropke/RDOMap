@@ -187,11 +187,6 @@ function init() {
 
   $("#help-container").toggle(Settings.showHelp);
 
-  $('.timer-container').toggleClass('hidden', Settings.displayClockHideTimer);
-  $('.clock-container').toggleClass('hidden', !(Settings.displayClockHideTimer));
-  $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
-  $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
-
   Pins.addToMap();
   changeCursor();
 }
