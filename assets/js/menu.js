@@ -13,7 +13,7 @@ var Menu = {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
     Treasures.data.filter(function (item) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', item.text);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
 
       if (!Treasures.enabledTreasures.includes(item.text))
@@ -27,7 +27,7 @@ var Menu = {
     $('.menu-hidden[data-type=shop]').children('.collectible-wrapper').remove();
 
     Object.keys(MapBase.shopData).forEach(function (element) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', element);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.shops.${element}.name`));
       var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
 
@@ -42,7 +42,7 @@ var Menu = {
     $('.menu-hidden[data-type=Dailies]').children('.collectible-wrapper').remove();
 
     Object.keys(MapBase.dailyData).forEach(function (element) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', element);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.dailies.${element}.name`));
       var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
 
