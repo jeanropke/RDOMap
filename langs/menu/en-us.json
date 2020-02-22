@@ -115,6 +115,11 @@
   {"key":"map.user_pins.remove","value":"Remove"},
   {"key":"map.user_pins.save","value":"Save"},
 
+  {"key": "alerts.file_not_valid", "value": "The file you selected was not valid. Please select a different file."},
+  {"key": "alerts.file_not_found", "value": "Please select a file in the field above the import button, then try again."},
+  {"key": "alerts.feature_not_supported", "value": "This feature is not supported by your browser."},
+  {"key": "alerts.nothing_to_export", "value": "There was nothing to export."},
+
   {"key":"menu.animals","value":"Animals"},
   {"key":"menu.animals.alligator","value":"Alligator"},
   {"key":"menu.animals.armadillo","value":"Armadillo"},

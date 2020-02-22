@@ -144,6 +144,11 @@ var Pins = {
     var text = localStorage.getItem("pinned-items");
     var filename = 'pinned-items.txt';
 
+    if (!text || !text.includes(':') || !text.includes(';')) {
+      alert(Language.get('alerts.nothing_to_export'));
+      return;
+    }
+    
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
