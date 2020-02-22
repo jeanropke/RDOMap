@@ -45,7 +45,7 @@
 		{"text": "fort_riggs", "time": ["1", "4"], "lat": "-77.90625", "lng": "86.90625"},
 		{"text": "gaptooth_breach", "time": ["2", "4"], "lat": "-114.1165", "lng": "18.2402"},
 		{"text": "grizzlies_mining", "time": ["2", "4"], "lat": "-46.0625", "lng": "89.71875"},
-		{"text": "hanging_dog_ranch", "time": [], "lat": "-52.546875", "lng": "77.421875"},
+		{"text": "hanging_dog_ranch", "time": ["4"], "lat": "-52.546875", "lng": "77.421875"},
 		{"text": "jorges_gap", "time": ["4"], "lat": "-106.796875", "lng": "50.375"},
 		{"text": "kamassa_river", "time": ["3", "4"], "lat": "-62.9938", "lng": "151.0838"},
 		{"text": "lakay", "time": ["4"], "lat": "-75.640625", "lng": "146.296875"},
