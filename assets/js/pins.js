@@ -144,7 +144,7 @@ var Pins = {
     var text = localStorage.getItem("pinned-items");
     var filename = 'pinned-items.txt';
 
-    if (!text || !text.includes(':') || !text.includes(';')) {
+    if (text === null || !text.includes(':') || !text.includes(';')) {
       alert(Language.get('alerts.nothing_to_export'));
       return;
     }
