@@ -194,11 +194,11 @@ var MapBase = {
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (_key, marker) {
         if (Array.isArray(marker)) {
-          $.each(marker, function (_, submarkers) {
-            MapBase.markers.push(new Marker(_key, submarkers.lat, submarkers.lng, _category, _key, submarkers.count));
+          $.each(marker, function (_, submarker) {
+            MapBase.markers.push(new Marker(marker.text || _key, submarker.lat, submarker.lng, _category, _key));
           });
         } else {
-          MapBase.markers.push(new Marker(_category, marker.lat, marker.lng, _category));
+          MapBase.markers.push(new Marker(marker.text || _category, marker.lat, marker.lng, _category, null, marker.time));
         }
       });
     });
@@ -287,7 +287,7 @@ var MapBase = {
       marker.isVisible = false;
 
       if (marker.subdata != null)
-          if (categoriesDisabledByDefault.includes(marker.subdata))
+        if (categoriesDisabledByDefault.includes(marker.subdata))
           return;
 
       MapBase.addMarkerOnMap(marker, opacity);
@@ -404,7 +404,9 @@ var MapBase = {
           <img class="background" src="${background}" alt="Background">
           ${shadow}
         `,
-        marker: marker.text
+        marker: marker.text,
+        category: marker.category,
+        time: marker.time
       })
     });
 

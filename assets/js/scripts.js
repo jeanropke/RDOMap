@@ -287,6 +287,44 @@ function clockTick() {
   } else {
     $('.day-cycle').css('background', 'url(assets/images/sun.png)');
   }
+
+  if (!enabledCategories.includes('hideouts')) return;
+
+  $('[data-category*="hideouts"]').each(function () {
+    var time = $(this).data('time') + '';
+    if (time === null || time == '') return;
+
+    var hour = correctTime.getHours();
+    if (hour >= 5 && hour < 8) {
+      // 1) 05 - 08: Sunrise
+      if (time.indexOf("1") >= 0) {
+        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+      } else {
+        $(this).css('filter', 'none');
+      }
+    } else if (hour >= 8 && hour < 17) {
+      // 2) 08 - 17: Day
+      if (time.indexOf("2") >= 0) {
+        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+      } else {
+        $(this).css('filter', 'none');
+      }
+    } else if (hour >= 17 && hour < 20) {
+      // 3) 17 - 20: Sunset
+      if (time.indexOf("3") >= 0) {
+        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+      } else {
+        $(this).css('filter', 'none');
+      }
+    } else if (hour >= 20 && hour < 5) {
+      // 4) 20 - 05: Night
+      if (time.indexOf("4") >= 0) {
+        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+      } else {
+        $(this).css('filter', 'none');
+      }
+    }
+  });
 }
 
 setInterval(clockTick, 1000);
@@ -783,8 +821,15 @@ $('#show-help').on("change", function () {
 L.DivIcon.DataMarkup = L.DivIcon.extend({
   _setIconStyles: function (img, name) {
     L.DivIcon.prototype._setIconStyles.call(this, img, name);
+
     if (this.options.marker)
       img.dataset.marker = this.options.marker;
+
+    if (this.options.category)
+      img.dataset.category = this.options.category;
+
+    if (this.options.time)
+      img.dataset.time = this.options.time;
   }
 });
 
