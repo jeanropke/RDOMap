@@ -17,8 +17,10 @@ var Language = {
             return Language.data[Settings.language][value];
         else if (Language.data['en-us'][value])
             return Language.data['en-us'][value];
-        else
+        else if (Settings.isDebugEnabled)
             return value;
+        else
+            return '';
     },
 
     setMenuLanguage: function () {
