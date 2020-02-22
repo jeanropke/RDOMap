@@ -266,8 +266,7 @@ function downloadAsFile(filename, text) {
   document.body.removeChild(element);
 }
 
-setInterval(function () {
-
+function clockTick() {
   // Clock in game created by Michal__d
   var display_24 = Settings.display24HoursTimestamps,
     newDate = new Date(),
@@ -288,7 +287,9 @@ setInterval(function () {
   } else {
     $('.day-cycle').css('background', 'url(assets/images/sun.png)');
   }
-}, 1000);
+}
+
+setInterval(clockTick, 1000);
 
 /**
  * jQuery triggers
@@ -372,6 +373,7 @@ $('#show-coordinates').on('change', function () {
 $('#timestamps-24').on('change', function () {
   Settings.display24HoursTimestamps = $("#timestamps-24").prop('checked');
   $.cookie('timestamps-24', Settings.display24HoursTimestamps ? '1' : '0', { expires: 999 });
+  clockTick();
 });
 
 //Change & save language option
