@@ -316,7 +316,7 @@ function clockTick() {
       } else {
         $(this).css('filter', 'none');
       }
-    } else if (hour >= 20 && hour < 5) {
+    } else if (hour >= 20 || hour < 5) {
       // 4) 20 - 05: Night
       if (time.indexOf("4") >= 0) {
         $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
