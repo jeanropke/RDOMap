@@ -33,10 +33,10 @@
 	],
 	"hideouts": [
 		{"text": "bacchus_station", "time": ["1", "2"], "lat": "-37.8125", "lng": "120.265625"},
-		{"text": "bear_claw", "time": [], "lat": "-93.5", "lng": "79.5"},
-		{"text": "beaver_hollow", "time": [], "lat": "-42.5590", "lng": "147.7431"},
+		{"text": "bear_claw", "time": ["4"], "lat": "-93.5", "lng": "79.5"},
+		{"text": "beaver_hollow", "time": ["2"], "lat": "-42.5590", "lng": "147.7431"},
 		{"text": "cholla_springs", "time": ["1", "4"], "lat": "-97.8194", "lng": "42.8563"},
-		{"text": "colter", "time": [], "lat": "-25.96875", "lng": "90.5"},
+		{"text": "colter", "time": ["2"], "lat": "-25.96875", "lng": "90.5"},
 		{"text": "cueva_seca", "time": ["3", "4"], "lat": "-106.5613", "lng": "20.4015"},
 		{"text": "cumberland_falls", "time": ["4"], "lat": "-57.15625", "lng": "95.25"},
 		{"text": "ewing_basin", "time": ["4"], "lat": "-42.6875", "lng": "81.875"},
