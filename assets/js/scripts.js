@@ -10,9 +10,10 @@ var categories = [
 ];
 
 var categoriesDisabledByDefault = [
-  'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'fame_seeker', 'hostile_conversation', 'rival_collector',
-  'moonshiner_camp', 'treasure'
+  'ambush', 'dog_encounter', 'egg_encounter', 'escort', 'fame_seeker', 'grave_robber',
+  'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp', 'people_in_need',
+  'rescue', 'rival_collector', 'runaway_wagon', 'treasure_hunter', 'treasure',
+  'tree_map', 'wounded_animal',
 ];
 
 var plants = [
@@ -23,13 +24,17 @@ var plants = [
   'violet_snowdrop', 'wild_carrots', 'wild_feverfew', 'wild_mint', 'wintergreen_berry', 'yarrow'
 ];
 
+var plantsDisabledByDefault = plants;
+
 var shops = [
   'barber', 'butcher', 'doctor', 'fence', 'general_store', 'gunsmith', 'honor', 'photo_studio',
   'post_office', 'saloon', 'stable', 'tackle', 'tailor'
 ];
 
-var plantsDisabledByDefault = plants;
-var shopsDisabledByDefault = [];
+var shopsDisabledByDefault = [
+  'barber', 'butcher', 'doctor', 'fence', 'general_store', 'gunsmith', 'honor', 'photo_studio',
+  'stable', 'tackle', 'tailor'
+];
 
 var enabledCategories = categories;
 var enabledPlants = plants;
