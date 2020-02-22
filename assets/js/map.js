@@ -358,6 +358,24 @@ var MapBase = {
   updateMarkerContent: function (marker) {
     var popupContent = marker.description;
 
+    if (marker.category == 'hideouts') {
+      var time = marker.time + '';
+      var timeString = '';
+
+      if (time.indexOf("1") >= 0)
+        timeString += Language.get('map.hideouts.desc.sunrise') + ', ';
+      if (time.indexOf("2") >= 0)
+        timeString += Language.get('map.hideouts.desc.day') + ', ';
+      if (time.indexOf("3") >= 0)
+        timeString += Language.get('map.hideouts.desc.sunset') + ', ';
+      if (time.indexOf("4") >= 0)
+        timeString += Language.get('map.hideouts.desc.night') + ', ';
+
+      timeString = timeString.substring(0, timeString.length - 2);
+
+      popupContent = Language.get(`map.hideouts.desc`).replace('{times}', timeString);
+    }
+
     // TODO: Fix later. :-)
     // var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDOMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
     // var importantItem = ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>`;
