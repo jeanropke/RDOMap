@@ -289,7 +289,7 @@
   
   {"key":"fasttravel.tumbleweed.name","value":"Тамблвид"},
   {"key":"fasttravel.armadillo.name","value":"Армадилло"},
-  {"key":"fasttravel.macfarlanes.name","value":"Ранчо Макфаралейн"},
+  {"key":"fasttravel.macfarlanes.name","value":"Ранчо Макфарллейн"},
   {"key":"fasttravel.manzanita.name","value":"Пост Манзанита"},
   {"key":"fasttravel.blackwater.name","value":"Блэкуотер"},
   {"key":"fasttravel.strawberry.name","value":"Строуберри"},
@@ -445,12 +445,12 @@
   {"key":"map.dailies.visits.mount_hagen_peak.name","value":"Вершина горы Хаген"},
   {"key":"map.dailies.visits.cotorra_springs.name","value":"Которра-Спрингз"},
   {"key":"map.dailies.visits.bolger_glade.name","value":"Болджер Глейд"},
-  {"key":"map.dailies.visits.owanjila_dam.name","value":"Owanjila Dam"},
+  {"key":"map.dailies.visits.owanjila_dam.name","value":"Ованжильская платина"},
   {"key":"map.dailies.visits.fort_mercer.name","value":"Форт Мерсер"},
   {"key":"map.dailies.visits.lagras.name","value":"Лаграс"},
   {"key":"map.dailies.visits.colter.name","value":"Колтер"},
-  {"key":"map.dailies.visits.brandywine_drop.name","value":"Brandywine Drop"},
+  {"key":"map.dailies.visits.brandywine_drop.name","value":"Брендвандийский водопад"},
   {"key":"map.dailies.visits.fort_wallace.name","value":"Форт Уолес"},
   {"key":"map.dailies.visits.van_horn.name","value":"Ван Хорн"},
-  {"key":"map.dailies.visits.macfarlanes_ranch.name","value":"Ранчо Макфаралейн"}
+  {"key":"map.dailies.visits.macfarlanes_ranch.name","value":"Ранчо Макфарллейн"}
 ]
