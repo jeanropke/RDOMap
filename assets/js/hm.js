@@ -29,6 +29,8 @@ var Heatmap = {
 
         $(`.menu-hidden[data-type=${heatmapKey}]`).append(animalElement.append(animalImage).append(animalTextWrapperElement.append(animalTextElement)));
       });
+      Menu.reorderMenu(`.menu-hidden[data-type=${heatmapKey}]`);
+
     });
   },
 
