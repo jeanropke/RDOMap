@@ -13,7 +13,7 @@ var Menu = {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
     Treasures.data.filter(function (item) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', item.text);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
 
       if (!Treasures.enabledTreasures.includes(item.text))
@@ -27,7 +27,7 @@ var Menu = {
     $('.menu-hidden[data-type=shop]').children('.collectible-wrapper').remove();
 
     Object.keys(MapBase.shopData).forEach(function (element) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', element);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.shops.${element}.name`));
       var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
 
@@ -35,6 +35,21 @@ var Menu = {
         collectibleElement.addClass('disabled');
 
       $('.menu-hidden[data-type=shops]').append(collectibleElement.append(collectibleImage).append(collectibleTextElement));
+    });
+  },
+
+  refreshDailies: function () {
+    $('.menu-hidden[data-type=Dailies]').children('.collectible-wrapper').remove();
+
+    Object.keys(MapBase.dailyData).forEach(function (element) {
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.dailies.${element}.name`));
+      var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
+
+      if (!enabledDailies.includes(element))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=dailies]').append(collectibleElement.append(collectibleImage).append(collectibleTextElement));
     });
   },
 
@@ -95,11 +110,9 @@ Menu.refreshMenu = function () {
     var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
     var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
-    collectibleElement.on('contextmenu', function (event) {
-      if ($.cookie('right-click') != null)
-        return;
-
-      event.preventDefault();
+    collectibleElement.on('contextmenu', function (e) {
+      if ($.cookie('right-click') == null)
+        e.preventDefault();
     });
 
     var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
@@ -141,6 +154,7 @@ Menu.refreshMenu = function () {
 
   Menu.refreshTreasures();
   Menu.refreshShops();
+  Menu.refreshDailies();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
@@ -190,12 +204,6 @@ Menu.hideAll = function () {
   Treasures.addToMap();
   Encounters.addToMap();
   Heatmap.removeHeatmap(true);
-};
-
-// Auto fill debug markers inputs, when "show coordinates on click" is enabled
-Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
-  $('#debug-marker-lat').val(lat);
-  $('#debug-marker-lng').val(lng);
 };
 
 // Remove highlight from all important items
