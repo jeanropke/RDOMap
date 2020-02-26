@@ -8,7 +8,7 @@ var MapBase = {
   map: null,
   overlays: [],
   markers: [],
-  itemsMarkedAsImportant: [],
+  importantItems: [],
   isDarkMode: false,
   fastTravelData: null,
   shopData: null,
@@ -482,24 +482,24 @@ var MapBase = {
     $(`[data-marker*=${text}]`).toggleClass('highlight-items');
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
-      MapBase.itemsMarkedAsImportant.push(text);
+      MapBase.importantItems.push(text);
     else
-      MapBase.itemsMarkedAsImportant.splice(MapBase.itemsMarkedAsImportant.indexOf(text), 1);
+      MapBase.importantItems.splice(MapBase.importantItems.indexOf(text), 1);
 
     $.each(localStorage, function (key) {
       localStorage.removeItem('importantItems');
     });
 
-    localStorage.setItem('importantItems', JSON.stringify(MapBase.itemsMarkedAsImportant));
+    localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
   },
 
   loadImportantItems() {
     if (localStorage.importantItems === undefined)
       localStorage.importantItems = "[]";
 
-    MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
+    MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
 
-    $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
+    $.each(MapBase.importantItems, function (key, value) {
       $(`[data-marker*=${value}]`).addClass('highlight-items');
       $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
     });
