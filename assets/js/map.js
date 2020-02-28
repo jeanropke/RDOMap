@@ -157,6 +157,8 @@ var MapBase = {
 
     MapBase.loadOverlays();
 
+    // Enable this and disable the above to see cool stuff.
+    // MapBase.loadOverlaysBeta();
   },
 
   loadOverlays: function () {
@@ -176,6 +178,37 @@ var MapBase = {
     $.each(MapBase.overlays, function (key, value) {
       var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, { opacity: opacity }));
+    });
+
+    Layers.overlaysLayer.addTo(MapBase.map);
+  },
+
+  loadOverlaysBeta: function () {
+    $.getJSON('data/overlays_beta.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.overlays = data;
+        MapBase.setOverlaysBeta(Settings.overlayOpacity);
+        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+      });
+  },
+
+  setOverlaysBeta: function (opacity = 0.5) {
+    Layers.overlaysLayer.clearLayers();
+
+    if (opacity == 0) return;
+
+    $.each(MapBase.overlaysBeta, function (key, value) {
+      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/game/${value.name}.png?nocache=${nocache}`;
+
+      var x = (value.width / 2);
+      var y = (value.height / 2);
+      var scaleX = 0.00076;
+      var scaleY = scaleX;
+
+      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
+        [(value.lat + (y * scaleY)), (value.lng - (x * scaleX))],
+        [(value.lat - (y * scaleY)), (value.lng + (x * scaleX))]
+      ], { opacity: opacity }));
     });
 
     Layers.overlaysLayer.addTo(MapBase.map);
