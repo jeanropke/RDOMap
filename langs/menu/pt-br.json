@@ -343,7 +343,7 @@
   {"key": "map.ambush.name", "value": "Emboscada"},
   {"key": "map.ambush.desc", "value": "É um Encontro Aleatório. Passar por  essa área pode iniciar uma emboscada na forma de um tiroteio ou uma pessoa pedindo ajuda antes de pedir reforço."},
   {"key": "map.boats.name", "value": "Barco"},
-  {"key": "map.boats.desc", "value": "Esse local geralmente tem um barco."},
+  {"key": "map.boats.desc", "value": "Nesse local geralmente tem um barco."},
   {"key": "map.campfires.name", "value": "Fogueira"},
   {"key": "map.campfires.desc", "value": "Esse local tem uma fogueira na qual você pode cozinhar ou criar itens."},
   {"key": "map.defend_campsite.name", "value": "Defender acampamento"},
