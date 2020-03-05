@@ -651,9 +651,8 @@ var MapBase = {
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker') {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([lat, long], {
-      opacity: Settings.markerOpacity,
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
@@ -665,12 +664,9 @@ var MapBase = {
         `
       })
     });
-    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-    marker.bindPopup(`<h1>${customMarkerName}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300, maxWidth: 400 });
+
+    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
     Layers.itemMarkersLayer.addLayer(marker);
-    var tempArray = [];
-    tempArray.push(lat || 0, long || 0, customMarkerName);
-    debugMarkersArray.push(tempArray);
   },
 
   testData: { max: 10, data: [] },
