@@ -8,7 +8,7 @@ var MapBase = {
   map: null,
   overlays: [],
   markers: [],
-  itemsMarkedAsImportant: [],
+  importantItems: [],
   isDarkMode: false,
   fastTravelData: null,
   shopData: null,
@@ -157,6 +157,8 @@ var MapBase = {
 
     MapBase.loadOverlays();
 
+    // Enable this and disable the above to see cool stuff.
+    // MapBase.loadOverlaysBeta();
   },
 
   loadOverlays: function () {
@@ -176,6 +178,37 @@ var MapBase = {
     $.each(MapBase.overlays, function (key, value) {
       var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, { opacity: opacity }));
+    });
+
+    Layers.overlaysLayer.addTo(MapBase.map);
+  },
+
+  loadOverlaysBeta: function () {
+    $.getJSON('data/overlays_beta.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.overlays = data;
+        MapBase.setOverlaysBeta(Settings.overlayOpacity);
+        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+      });
+  },
+
+  setOverlaysBeta: function (opacity = 0.5) {
+    Layers.overlaysLayer.clearLayers();
+
+    if (opacity == 0) return;
+
+    $.each(MapBase.overlaysBeta, function (key, value) {
+      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/game/${value.name}.png?nocache=${nocache}`;
+
+      var x = (value.width / 2);
+      var y = (value.height / 2);
+      var scaleX = 0.00076;
+      var scaleY = scaleX;
+
+      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
+        [(value.lat + (y * scaleY)), (value.lng - (x * scaleX))],
+        [(value.lat - (y * scaleY)), (value.lng + (x * scaleX))]
+      ], { opacity: opacity }));
     });
 
     Layers.overlaysLayer.addTo(MapBase.map);
@@ -482,24 +515,24 @@ var MapBase = {
     $(`[data-marker*=${text}]`).toggleClass('highlight-items');
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
-      MapBase.itemsMarkedAsImportant.push(text);
+      MapBase.importantItems.push(text);
     else
-      MapBase.itemsMarkedAsImportant.splice(MapBase.itemsMarkedAsImportant.indexOf(text), 1);
+      MapBase.importantItems.splice(MapBase.importantItems.indexOf(text), 1);
 
     $.each(localStorage, function (key) {
       localStorage.removeItem('importantItems');
     });
 
-    localStorage.setItem('importantItems', JSON.stringify(MapBase.itemsMarkedAsImportant));
+    localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
   },
 
   loadImportantItems() {
     if (localStorage.importantItems === undefined)
       localStorage.importantItems = "[]";
 
-    MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
+    MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
 
-    $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
+    $.each(MapBase.importantItems, function (key, value) {
       $(`[data-marker*=${value}]`).addClass('highlight-items');
       $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
     });
@@ -618,9 +651,8 @@ var MapBase = {
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker') {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([lat, long], {
-      opacity: Settings.markerOpacity,
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
@@ -632,12 +664,9 @@ var MapBase = {
         `
       })
     });
-    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-    marker.bindPopup(`<h1>${customMarkerName}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300, maxWidth: 400 });
+
+    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
     Layers.itemMarkersLayer.addLayer(marker);
-    var tempArray = [];
-    tempArray.push(lat || 0, long || 0, customMarkerName);
-    debugMarkersArray.push(tempArray);
   },
 
   testData: { max: 10, data: [] },

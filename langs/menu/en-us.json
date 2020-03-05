@@ -42,6 +42,7 @@
   {"key":"menu.random_encounters","value":"Random Encounters"},
   {"key":"menu.rdo_map","value":"RDO Map"},
   {"key":"menu.report_issues","value":"Report issues here"},
+  {"key":"menu.rescue","value":"Rescue"},
   {"key":"menu.rival_collector","value":"Rival Collector"},
   {"key":"menu.runaway_wagon","value":"Runaway Wagon"},
   {"key":"menu.search_placeholder","value":"Search items. Separated by ;"},
