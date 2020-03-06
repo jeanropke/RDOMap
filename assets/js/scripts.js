@@ -5,15 +5,15 @@ var categories = [
   'ambush', 'boats', 'campfires', 'defend_campsite', 'dailies', 'dog_encounter',
   'egg_encounter', 'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts',
   'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp', 'nazar', 'people_in_need',
-  'plants', 'rescue', 'rival_collector', 'runaway_wagon', 'shops', 'trains', 'treasure',
-  'treasure_hunter', 'tree_map', 'user_pins', 'wounded_animal',
+  'plants', 'rescue', 'rival_collector', 'runaway_wagon', 'shops', 'sightseeing',
+  'trains', 'treasure', 'treasure_hunter', 'tree_map', 'user_pins', 'wounded_animal',
 ];
 
 var categoriesDisabledByDefault = [
   'ambush', 'dailies', 'dog_encounter', 'egg_encounter', 'escort', 'fame_seeker',
   'grave_robber', 'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp',
-  'people_in_need', 'rescue', 'rival_collector', 'runaway_wagon', 'treasure_hunter',
-  'treasure', 'tree_map', 'wounded_animal',
+  'people_in_need', 'rescue', 'rival_collector', 'runaway_wagon', 'sightseeing',
+  'treasure_hunter', 'treasure', 'tree_map', 'wounded_animal',
 ];
 
 var plants = [
