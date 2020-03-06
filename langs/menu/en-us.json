@@ -228,7 +228,7 @@
   {"key":"menu.fish.steelhead_trout","value":"Steelhead Trout"},
 
   {"key":"map.plants","value":"Plants"},
-  {"key":"map.plants.desc","value":"You'll be able to find one or more {plant} in this area. Use Eagle Eye to more easily see the flowers."},
+  {"key":"map.plants.desc","value":"Use Eagle Eye to more easily see the {plant} plant."},
   {"key":"map.plants.alaskan_ginseng.name","value":"Alaskan Ginseng"},
   {"key":"map.plants.american_ginseng.name","value":"American Ginseng"},
   {"key":"map.plants.bay_bolete.name","value":"Bay Bolete"},
