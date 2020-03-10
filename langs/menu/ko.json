@@ -200,7 +200,7 @@
   {"key":"menu.fish.steelhead_trout","value":"무지개 송어"},
 
   {"key":"map.plants","value":"식물"},
-  {"key":"map.plants.desc","value":"You'll be able to find one or more {plant} in this area. Use Eagle Eye to more easily see the flowers."},
+  {"key":"map.plants.desc","value":"Use Eagle Eye to more easily see the {plant} plant."},
   {"key":"map.plants.alaskan_ginseng.name","value":"알래스카 인삼"},
   {"key":"map.plants.american_ginseng.name","value":"아메리카 인삼"},
   {"key":"map.plants.bay_bolete.name","value":"갈색 그물 버섯"},
