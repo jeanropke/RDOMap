@@ -386,6 +386,8 @@
   {"key":"map.tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
   {"key":"map.wounded_animal.name","value":"Wounded Animal Encounter"},
   {"key":"map.wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."},
+  {"key":"map.sightseeing.name","value":"Sightseeing Location"},
+  {"key":"map.sightseeing.desc","value":"Whether you're into action or not, everyone needs a little rest sometimes. Visit this location for an awesome view and the option to sit on a ledge and enjoy the scenery."},
 
   {"key":"menu.fme_display","value":"Freemode events display"},
   {"key":"menu.fme_display.0","value":"None"},
