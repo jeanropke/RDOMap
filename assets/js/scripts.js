@@ -13,7 +13,7 @@ var categoriesDisabledByDefault = [
   'ambush', 'dailies', 'dog_encounter', 'egg_encounter', 'escort', 'fame_seeker',
   'grave_robber', 'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp',
   'people_in_need', 'rescue', 'rival_collector', 'runaway_wagon', 'sightseeing',
-  'treasure_hunter', 'treasure', 'tree_map', 'wounded_animal',
+  'treasure_hunter', 'tree_map', 'wounded_animal',
 ];
 
 var plants = [
