@@ -79,6 +79,7 @@
   {"key":"menu.overlay_opacity.50","value":"50%"},
   {"key":"menu.overlay_opacity.75","value":"75%"},
   {"key":"menu.overlay_opacity.100","value":"Nieprzezroczyste"},
+  {"key":"menu.read_trader-guide","value": "Przewodnik handlowca"},
 
   {"key":"help.clear_important_items","value":"Usuwa podświetlenie ze wszystkich znaczników oznaczonych jako ważne."},
   {"key":"help.collector_map","value":"Otwiera nową kartę z drugą mapą Jeana, w której można przeglądać znaczniki związane z rolą Kolekcjonera."},
@@ -115,6 +116,7 @@
   {"key":"help.timestamps_24","value":"Wybierz, czy zegar ma być wyświetlany w formacie 12-godzinnym, czy 24-godzinnym."},
   {"key":"help.marker_size","value":"Pozwala zmienić rozmiar znaczników na mapie."},
   {"key":"help.overlay_opacity","value":"Umożliwia zmianę krycia różnych nakładek, które pojawiają się w miejscach, gdzie znajdują się jaskinie, budynki itp."},
+  {"key":"help.read_trader-guide", "value":"Otwiera nową kartę z przewodnikiem handlowca, w którym można znaleźć wszystkie informacje na temat mięsa i zwierząt."},
 
   {"key":"map.attribution_prefix","value":"Części mapy dostarczoner przez:"},
   {"key":"map.copy_link","value":"Skopiuj link znacznika"},
