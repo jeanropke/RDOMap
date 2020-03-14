@@ -389,7 +389,7 @@
   {"key":"map.wounded_animal.name","value":"Wounded Animal Encounter"},
   {"key":"map.wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."},
   {"key":"map.sightseeing.name","value":"Sightseeing Location"},
-  {"key":"map.sightseeing.desc","value":"Whether you're into action or not, everyone needs a little rest sometimes. Visit this location for an awesome view and the option to sit on a ledge and enjoy the scenery."},
+  {"key":"map.sightseeing.desc","value":"Whether you're into action or not, everyone needs a little rest sometimes. Visit this location for an awesome view and the option to sit on a ledge or bench and enjoy the scenery."},
 
   {"key":"menu.fme_display","value":"Freemode events display"},
   {"key":"menu.fme_display.0","value":"None"},
@@ -451,5 +451,5 @@
   {"key":"map.shops.tackle.name","value":"Bait Store"},
   {"key":"map.shops.tackle.desc","value":"A Lagras entrepreneur has set up a one-stop fishing store in this small lakeside shack, offering an impressive range of equipment, bait and tackle."},
   {"key":"map.shops.tailor.name","value":"Tailor"},
-  {"key":"map.shops.tailor.desc","value":"Visit the Tailor's store for new clothing and accessories. The tailor can supply individual pieces or full outfits for men and women."},
+  {"key":"map.shops.tailor.desc","value":"Visit the Tailor's store for new clothing and accessories. The tailor can supply individual pieces or full outfits for men and women."}
 ]
