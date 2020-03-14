@@ -393,7 +393,7 @@
   {"key": "menu.fme_display.2", "value": "Eventos de profissão"},
   {"key": "menu.fme_display.3", "value": "Ambos"},
   {"key": "menu.fme.time.starts_in", "value": "Começa em {time}."},
-  {"key": "menu.fme.time.about_a_minute", "value": "menos de um minuto"},
+  {"key":"menu.fme.time.less_than_a_minute","value":"less than a minute"},
   {"key": "menu.fme.time.minute", "value": "{minutes} minuto"},
   {"key": "menu.fme.time.minutes", "value": "{minutes} minutos"},
 

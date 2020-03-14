@@ -386,7 +386,7 @@
   {"key":"menu.fme_display.2","value":"Ролевое"},
   {"key":"menu.fme_display.3","value":"Все события"},
   {"key":"menu.fme.time.starts_in","value":"Начнется через {time}."},
-  {"key":"menu.fme.time.about_a_minute","value":"несколько секунд"},
+  {"key":"menu.fme.time.less_than_a_minute","value":"less than a minute"},
   {"key":"menu.fme.time.minute","value":"{minutes} мин"},
   {"key":"menu.fme.time.minutes","value":"{minutes} мин"},
   

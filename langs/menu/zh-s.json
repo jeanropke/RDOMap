@@ -329,7 +329,7 @@
   {"key":"menu.fme_display.2","value":"仅角色事件"},
   {"key":"menu.fme_display.3","value":"全部显示"},
   {"key":"menu.fme.time.starts_in","value":"开始于 {time}."},
-  {"key":"menu.fme.time.about_a_minute","value":"大约一分钟"},
+  {"key":"menu.fme.time.less_than_a_minute","value":"less than a minute"},
   {"key":"menu.fme.time.minute","value":"{minutes} 分钟"},
   {"key":"menu.fme.time.minutes","value":"{minutes} 分钟"},
 

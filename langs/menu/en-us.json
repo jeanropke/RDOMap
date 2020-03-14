@@ -397,7 +397,7 @@
   {"key":"menu.fme_display.2","value":"Role events only"},
   {"key":"menu.fme_display.3","value":"Both"},
   {"key":"menu.fme.time.starts_in","value":"Starts in {time}."},
-  {"key":"menu.fme.time.about_a_minute","value":"about a minute"},
+  {"key":"menu.fme.time.less_than_a_minute","value":"less than a minute"},
   {"key":"menu.fme.time.minute","value":"{minutes} minute"},
   {"key":"menu.fme.time.minutes","value":"{minutes} minutes"},
 

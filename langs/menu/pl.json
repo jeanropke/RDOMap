@@ -397,7 +397,7 @@
   {"key":"menu.fme_display.2","value":"Tylko wydarzenia ról"},
   {"key":"menu.fme_display.3","value":"Oba"},
   {"key":"menu.fme.time.starts_in","value":"Początek za: {time}."},
-  {"key":"menu.fme.time.about_a_minute","value":"około minuty"},
+  {"key":"menu.fme.time.less_than_a_minute","value":"less than a minute"},
   {"key":"menu.fme.time.minute","value":"{minutes} minut"},
   {"key":"menu.fme.time.minutes","value":"{minutes} minut"},
 
