@@ -483,7 +483,7 @@ var MapBase = {
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: opacity,
       icon: new L.divIcon({
-        iconUrl: `assets/images/markers/plants.png`,
+        iconUrl: `assets/images/markers/${marker.text}.png`,
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize]
