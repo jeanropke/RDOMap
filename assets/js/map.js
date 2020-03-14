@@ -345,7 +345,6 @@ var MapBase = {
 
     MapBase.addFastTravelMarker();
     MapBase.addShops();
-    MapBase.addDailies();
 
     Treasures.addToMap();
     Encounters.addToMap();
@@ -607,43 +606,6 @@ var MapBase = {
       });
     }
   },
-
-  loadDailies: function () {
-    $.getJSON('data/dailies.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.dailyData = data;
-      });
-    console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
-  },
-
-  addDailies: function () {
-    if (enabledCategories.includes('dailies')) {
-      $.each(MapBase.dailyData, function (category, categoryValue) {
-        if (!enabledDailies.includes(category)) return;
-        $.each(categoryValue, function (key, value) {
-          var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-          var marker = L.marker([value.lat, value.lng], {
-            opacity: Settings.markerOpacity,
-            icon: L.divIcon({
-              iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-              iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-              popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
-              html: `
-                <img class="icon" src="./assets/images/icons/${category}.png" alt="Icon">
-                <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
-                ${shadow}
-              `
-            })
-          });
-
-          marker.bindPopup(`<h1>${Language.get(`map.dailies.${category}.${value.text}.name`)}</h1><p>${Language.get(`map.dailies.${category}.desc`)}</p>`);
-
-          Layers.itemMarkersLayer.addLayer(marker);
-        });
-      });
-    }
-  },
-
 
   submitDebugForm: function () {
     var lat = $('input[name=debug-marker-lat]').val();

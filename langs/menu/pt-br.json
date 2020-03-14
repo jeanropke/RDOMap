@@ -448,19 +448,4 @@
   {"key": "map.shops.tackle.desc", "value": "Uma mente empreendedora de Lagras montou uma loja de artigos de pesca nesta pequena cabana à beira do lago, oferecendo uma variedade impressionante de iscas e equipamentos."},
   {"key": "map.shops.tailor.name", "value": "Alfaiate"},
   {"key": "map.shops.tailor.desc", "value": "Visite o alfaiate na histórica Praça Harris de Saint Denis para adquirir roupas e acessórios novos. O alfaiate pode fornecer peças individuais ou trajes completos para homens e mulheres."},
-
-  {"key": "map.dailies", "value": "Ajuda em Diários"},
-  {"key": "map.dailies.visits.name", "value": "Visitar local"},
-  {"key": "map.dailies.visits.desc", "value": "Visite esse local para completar o desáfio diário correspondente."},
-  {"key": "map.dailies.visits.mount_hagen_peak.name", "value": "Pico do Monte Hagen"},
-  {"key": "map.dailies.visits.cotorra_springs.name", "value": "Fonte Cotorra"},
-  {"key": "map.dailies.visits.bolger_glade.name", "value": "Pântano Bolger"},
-  {"key": "map.dailies.visits.owanjila_dam.name", "value": "Represa Owanjila"},
-  {"key": "map.dailies.visits.fort_mercer.name", "value": "Forte Mercer"},
-  {"key": "map.dailies.visits.lagras.name", "value": "Lagras"},
-  {"key": "map.dailies.visits.colter.name", "value": "Colter"},
-  {"key": "map.dailies.visits.brandywine_drop.name", "value": "Penhasco Brandywine"},
-  {"key": "map.dailies.visits.fort_wallace.name", "value": "Forte Wallace"},
-  {"key": "map.dailies.visits.van_horn.name", "value": "Van Horn"},
-  {"key": "map.dailies.visits.macfarlanes_ranch.name", "value": "Rancho MacFarlane"}
  ]

@@ -438,19 +438,4 @@
   {"key":"map.shops.tackle.desc","value":"Предприниматель из Лаграса предлагает вам широкий ассортимент наживок и снастей."},
   {"key":"map.shops.tailor.name","value":"Портной"},
   {"key":"map.shops.tailor.desc","value":"Тут вы сможете сделать своему персонажу очередной безвкусный \"look\" из портков и тряпок для Инсты и Реддита."},
-
-  {"key":"map.dailies","value":"Метки для ежедневных испытании"},
-  {"key":"map.dailies.visits.name","value":"Посещение мест"},
-  {"key":"map.dailies.visits.desc","value":"Посетите это место, чтобы завершить нужное ежедневное испытание."},
-  {"key":"map.dailies.visits.mount_hagen_peak.name","value":"Вершина горы Хаген"},
-  {"key":"map.dailies.visits.cotorra_springs.name","value":"Которра-Спрингз"},
-  {"key":"map.dailies.visits.bolger_glade.name","value":"Болджер Глейд"},
-  {"key":"map.dailies.visits.owanjila_dam.name","value":"Ованжильская платина"},
-  {"key":"map.dailies.visits.fort_mercer.name","value":"Форт Мерсер"},
-  {"key":"map.dailies.visits.lagras.name","value":"Лаграс"},
-  {"key":"map.dailies.visits.colter.name","value":"Колтер"},
-  {"key":"map.dailies.visits.brandywine_drop.name","value":"Брендвандийский водопад"},
-  {"key":"map.dailies.visits.fort_wallace.name","value":"Форт Уолес"},
-  {"key":"map.dailies.visits.van_horn.name","value":"Ван Хорн"},
-  {"key":"map.dailies.visits.macfarlanes_ranch.name","value":"Ранчо Макфарлейн"}
 ]

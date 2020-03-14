@@ -452,19 +452,4 @@
   {"key":"map.shops.tackle.desc","value":"A Lagras entrepreneur has set up a one-stop fishing store in this small lakeside shack, offering an impressive range of equipment, bait and tackle."},
   {"key":"map.shops.tailor.name","value":"Krawiec"},
   {"key":"map.shops.tailor.desc","value":"Visit the Tailor's store for new clothing and accessories. The tailor can supply individual pieces or full outfits for men and women."},
-
-  {"key":"map.dailies","value":"Ułatwienia w zadaniach dziennych"},
-  {"key":"map.dailies.visits.name","value":"Odwiedź lokację"},
-  {"key":"map.dailies.visits.desc","value":"Visit this location to complete the corresponding daily challenge."},
-  {"key":"map.dailies.visits.mount_hagen_peak.name","value":"Peak of Mount Hagen"},
-  {"key":"map.dailies.visits.cotorra_springs.name","value":"Cotorra Springs"},
-  {"key":"map.dailies.visits.bolger_glade.name","value":"Bolger Glade"},
-  {"key":"map.dailies.visits.owanjila_dam.name","value":"Owanjila Dam"},
-  {"key":"map.dailies.visits.fort_mercer.name","value":"Fort Mercer"},
-  {"key":"map.dailies.visits.lagras.name","value":"Lagras"},
-  {"key":"map.dailies.visits.colter.name","value":"Colter"},
-  {"key":"map.dailies.visits.brandywine_drop.name","value":"Brandywine Drop"},
-  {"key":"map.dailies.visits.fort_wallace.name","value":"Fort Wallace"},
-  {"key":"map.dailies.visits.van_horn.name","value":"Van Horn"},
-  {"key":"map.dailies.visits.macfarlanes_ranch.name","value":"Macfarlane's Ranch"}
 ]
