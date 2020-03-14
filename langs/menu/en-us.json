@@ -80,6 +80,7 @@
   {"key":"menu.overlay_opacity.75","value":"75%"},
   {"key":"menu.overlay_opacity.100","value":"Opaque"},
   {"key":"menu.read_trader-guide","value": "Read Trader guide"},
+  {"key":"menu.sightseeing","value":"Sightseeing"},
 
   {"key":"help.clear_important_items","value":"Clears the highlight from all markers marked as important."},
   {"key":"help.collector_map","value":"Opens a new tab with the other map by Jean, where you can browse markers related to the Collector role."},
@@ -451,5 +452,19 @@
   {"key":"map.shops.tackle.name","value":"Bait Store"},
   {"key":"map.shops.tackle.desc","value":"A Lagras entrepreneur has set up a one-stop fishing store in this small lakeside shack, offering an impressive range of equipment, bait and tackle."},
   {"key":"map.shops.tailor.name","value":"Tailor"},
-  {"key":"map.shops.tailor.desc","value":"Visit the Tailor's store for new clothing and accessories. The tailor can supply individual pieces or full outfits for men and women."}
+  {"key":"map.shops.tailor.desc","value":"Visit the Tailor's store for new clothing and accessories. The tailor can supply individual pieces or full outfits for men and women."},
+
+  {"key":"map.daily_locations.name","value":"Daily challenge locations"},
+  {"key":"map.daily_locations.desc","value":"Visit this location to complete the corresponding daily challenge."},
+  {"key":"map.daily_locations.mount_hagen_peak.name","value":"Peak of Mount Hagen"},
+  {"key":"map.daily_locations.cotorra_springs.name","value":"Cotorra Springs"},
+  {"key":"map.daily_locations.bolger_glade.name","value":"Bolger Glade"},
+  {"key":"map.daily_locations.owanjila_dam.name","value":"Owanjila Dam"},
+  {"key":"map.daily_locations.fort_mercer.name","value":"Fort Mercer"},
+  {"key":"map.daily_locations.lagras.name","value":"Lagras"},
+  {"key":"map.daily_locations.colter.name","value":"Colter"},
+  {"key":"map.daily_locations.brandywine_drop.name","value":"Brandywine Drop"},
+  {"key":"map.daily_locations.fort_wallace.name","value":"Fort Wallace"},
+  {"key":"map.daily_locations.van_horn.name","value":"Van Horn"},
+  {"key":"map.daily_locations.macfarlanes_ranch.name","value":"Macfarlane's Ranch"}
 ]

@@ -117,6 +117,19 @@
 		{ "lat": "-61.2422", "lng": "117.3125" },
 		{ "lat": "-118.25", "lng": "14.4688" }
 	],
+	"daily_locations": [
+        { "text": "mount_hagen_peak", "lat": "-43.5625", "lng": "86.125" },
+        { "text": "cotorra_springs", "lat": "-35.2031", "lng": "114.2109" },
+        { "text": "bolger_glade", "lat": "-91.4063", "lng": "134.8281" },
+        { "text": "owanjila_dam", "lat": "-71.0156", "lng": "75.3203" },
+        { "text": "fort_mercer", "lat": "-116.6797", "lng": "46.2656" },
+        { "text": "lagras", "lat": "-73.1484", "lng": "144.1641" },
+        { "text": "colter", "lat": "-26.2344", "lng": "90.2656" },
+        { "text": "brandywine_drop", "lat": "-31.8438", "lng": "153.1094" },
+        { "text": "fort_wallace", "lat": "-40.8281", "lng": "116.8594" },
+        { "text": "van_horn", "lat": "-55.5469", "lng": "157.2422" },
+        { "text": "macfarlanes_ranch", "lat": "-100.9297", "lng": "74.6172" }
+    ],
 	"plants": {
 		"alaskan_ginseng": [
 			{ "lat": "-48.2218", "lng": "111.1274" },

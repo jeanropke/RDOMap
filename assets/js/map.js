@@ -384,6 +384,7 @@ var MapBase = {
         return "darkblue";
       case "plants":
         return "green";
+      case "daily_locations":
       case "sightseeing":
         return "lightgray";
       default:

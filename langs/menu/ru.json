@@ -437,5 +437,19 @@
   {"key":"map.shops.tackle.name","value":"Рыболовный магазин"},
   {"key":"map.shops.tackle.desc","value":"Предприниматель из Лаграса предлагает вам широкий ассортимент наживок и снастей."},
   {"key":"map.shops.tailor.name","value":"Портной"},
-  {"key":"map.shops.tailor.desc","value":"Тут вы сможете сделать своему персонажу очередной безвкусный \"look\" из портков и тряпок для Инсты и Реддита."}
+  {"key":"map.shops.tailor.desc","value":"Тут вы сможете сделать своему персонажу очередной безвкусный \"look\" из портков и тряпок для Инсты и Реддита."},
+
+  {"key":"map.daily_locations.name","value":"Daily challenge locations"},
+  {"key":"map.daily_locations.desc","value":"Посетите это место, чтобы завершить нужное ежедневное испытание."},
+  {"key":"map.daily_locations.mount_hagen_peak.name","value":"Вершина горы Хаген"},
+  {"key":"map.daily_locations.cotorra_springs.name","value":"Которра-Спрингз"},
+  {"key":"map.daily_locations.bolger_glade.name","value":"Болджер Глейд"},
+  {"key":"map.daily_locations.owanjila_dam.name","value":"Ованжильская платина"},
+  {"key":"map.daily_locations.fort_mercer.name","value":"Форт Мерсер"},
+  {"key":"map.daily_locations.lagras.name","value":"Лаграс"},
+  {"key":"map.daily_locations.colter.name","value":"Колтер"},
+  {"key":"map.daily_locations.brandywine_drop.name","value":"Брендвандийский водопад"},
+  {"key":"map.daily_locations.fort_wallace.name","value":"Форт Уолес"},
+  {"key":"map.daily_locations.van_horn.name","value":"Ван Хорн"},
+  {"key":"map.daily_locations.macfarlanes_ranch.name","value":"Ранчо Макфарлейн"}
 ]
