@@ -109,7 +109,7 @@ var FME = {
       return t === 1 ? '' : 's';
     }
     if (t < 60) {
-      return Language.get('menu.fme.time.about_a_minute');
+      return Language.get('menu.fme.time.less_than_a_minute');
     }
     t = Math.round(t / 60); // convert to minutes
     return Language.get('menu.fme.time.minute' + s(t)).replace('{minutes}', t);

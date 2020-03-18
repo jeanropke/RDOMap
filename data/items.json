@@ -34,7 +34,7 @@
 		{"lat": "-61.0781", "lng": "113.5859"}
 	],
 	"hideouts": [
-		{"text": "bacchus_station", "time": ["1", "2"], "lat": "-37.8125", "lng": "120.265625"},
+		{"text": "bacchus_station", "time": ["1", "2", "4"], "lat": "-37.8125", "lng": "120.265625"},
 		{"text": "bear_claw", "time": ["4"], "lat": "-93.5", "lng": "79.5"},
 		{"text": "beaver_hollow", "time": ["2"], "lat": "-42.5590", "lng": "147.7431"},
 		{"text": "cholla_springs", "time": ["1", "4"], "lat": "-97.8194", "lng": "42.8563"},
@@ -52,18 +52,18 @@
 		{"text": "kamassa_river", "time": ["3", "4"], "lat": "-62.9938", "lng": "151.0838"},
 		{"text": "lakay", "time": ["4"], "lat": "-75.640625", "lng": "146.296875"},
 		{"text": "limpany", "time": ["1"], "lat": "-65.75", "lng": "105.90625"},
-		{"text": "manteca_falls", "time": ["3"], "lat": "-106.2294", "lng": "85.5661"},
-		{"text": "mossy_flats", "time": ["2"], "lat": "-59.125", "lng": "149.40625"},
+		{"text": "manteca_falls", "time": ["2", "3"], "lat": "-106.2294", "lng": "85.5661"},
+		{"text": "mossy_flats", "time": ["2", "4"], "lat": "-59.125", "lng": "149.40625"},
 		{"text": "old_bacchus_place", "time": ["2"], "lat": "-105.078125", "lng": "89.15625"},
 		{"text": "pikes_basin", "time": ["2", "4"], "lat": "-100.1640", "lng": "69.1048"},
 		{"text": "quakers_cove", "time": ["3"], "lat": "-93.3179", "lng": "93.0961"},
 		{"text": "radleys_pasture", "time": ["4"], "lat": "-82.984375", "lng": "124.0625"},
-		{"text": "repentance", "time": ["2", "3"], "lat": "-116.234375", "lng": "38.4765625"},
+		{"text": "repentance", "time": ["2", "3", "4"], "lat": "-116.234375", "lng": "38.4765625"},
 		{"text": "sea_of_coronado", "time": ["2"], "lat": "-119.2847", "lng": "13.9824"},
 		{"text": "shady_belle", "time": ["1", "4"], "lat": "-92.375", "lng": "140.6015625"},
 		{"text": "six_point_cabin", "time": ["3", "4"], "lat": "-44.734375", "lng": "110.1875"},
 		{"text": "solomons_folly", "time": ["4"], "lat": "-120.4375", "lng": "27.296875"},
-		{"text": "the_loft", "time": ["4"], "lat": "-33.375", "lng": "141.34375"},
+		{"text": "the_loft", "time": ["2", "3", "4"], "lat": "-33.375", "lng": "141.34375"},
 		{"text": "twin_rocks", "time": ["2"], "lat": "-96.734375", "lng": "49.625"},
 		{"text": "west_bayou", "time": ["1", "2"], "lat": "-76.03125", "lng": "136.453125"},
 		{"text": "willards_rest", "time": ["3", "4"], "lat": "-29.65625", "lng": "157.6875"}
@@ -117,6 +117,19 @@
 		{ "lat": "-61.2422", "lng": "117.3125" },
 		{ "lat": "-118.25", "lng": "14.4688" }
 	],
+	"daily_locations": [
+        { "text": "mount_hagen_peak", "lat": "-43.5625", "lng": "86.125" },
+        { "text": "cotorra_springs", "lat": "-35.2031", "lng": "114.2109" },
+        { "text": "bolger_glade", "lat": "-91.4063", "lng": "134.8281" },
+        { "text": "owanjila_dam", "lat": "-71.0156", "lng": "75.3203" },
+        { "text": "fort_mercer", "lat": "-116.6797", "lng": "46.2656" },
+        { "text": "lagras", "lat": "-73.1484", "lng": "144.1641" },
+        { "text": "colter", "lat": "-26.2344", "lng": "90.2656" },
+        { "text": "brandywine_drop", "lat": "-31.8438", "lng": "153.1094" },
+        { "text": "fort_wallace", "lat": "-40.8281", "lng": "116.8594" },
+        { "text": "van_horn", "lat": "-55.5469", "lng": "157.2422" },
+        { "text": "macfarlanes_ranch", "lat": "-100.9297", "lng": "74.6172" }
+    ],
 	"plants": {
 		"alaskan_ginseng": [
 			{ "lat": "-48.2218", "lng": "111.1274" },

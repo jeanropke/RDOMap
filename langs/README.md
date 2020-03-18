@@ -1,6 +1,6 @@
 # Localisation contributors
 
-feel free to contribute
+Feel free to contribute! You can contribute by translating on our [Crowdin project](https://crowdin.com/project/rdr2rdomap).
 
 english (en-en.json)
   - jeanropke
@@ -50,7 +50,10 @@ russian (ru.json)
   - Asya
   - Klinorin
   - Kiddamned
-  
+
+swedish (sv-se.json)
+  - Anvnamnet
+
 chinese simplified (zh-s.json)
   - yamazakitouma
   - qiexia

@@ -38,21 +38,6 @@ var Menu = {
     });
   },
 
-  refreshDailies: function () {
-    $('.menu-hidden[data-type=Dailies]').children('.collectible-wrapper').remove();
-
-    Object.keys(MapBase.dailyData).forEach(function (element) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
-      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.dailies.${element}.name`));
-      var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
-
-      if (!enabledDailies.includes(element))
-        collectibleElement.addClass('disabled');
-
-      $('.menu-hidden[data-type=dailies]').append(collectibleElement.append(collectibleImage).append(collectibleTextElement));
-    });
-  },
-
   showHideAllPlants: function (isToHide) {
     if (isToHide) {
       enabledPlants = [];
@@ -154,7 +139,6 @@ Menu.refreshMenu = function () {
 
   Menu.refreshTreasures();
   Menu.refreshShops();
-  Menu.refreshDailies();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {

@@ -23,10 +23,10 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=54" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1370" />
 
   <script>
-    var nocache = 54;
+    var nocache = 1370;
   </script>
 </head>
 
@@ -85,6 +85,14 @@
       </div>
     </div>
     <div>
+      <div class="menu-option clickable" data-type="daily_locations" data-help="item_category">
+        <span>
+          <img class="icon" src="./assets/images/icons/daily_locations.png" />
+          <span data-text="map.daily_locations.name">Daily challenge locations</span>
+        </span>
+      </div>
+    </div>
+    <div>
       <div class="menu-option clickable" data-type="plants" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/plants.png" />
@@ -113,16 +121,6 @@
           <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showHideAllShops(false)">Show all</a>
         </div>
       </div>
-    </div>
-    <div>
-      <div class="menu-option clickable" data-type="dailies" data-help="item_category">
-        <span>
-          <img class="icon" src="./assets/images/icons/dailies.png" />
-          <span data-text="map.dailies">Dailies</span>
-        </span>
-        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
-      </div>
-      <div class="menu-hidden two-column" data-type="dailies"></div>
     </div>
     <div>
       <div class="menu-option submenu-only" data-help="item_category_submenu">
@@ -322,6 +320,10 @@
       <span class="header-border"></span>
     </div>
     <div class="settings-container">
+      <p class="explain-text">
+        Translations are made by the community for the community. <a href="https://crowdin.com/project/rdr2rdomap" target="_blank" rel="noopener noreferrer">Help us by translating on Crowdin</a>.
+      </p>
+      <hr class="menu-divider">
       <div class="input-container" data-help="language">
         <label for="language" data-text="menu.language">Language</label>
         <select class="input-text wide-select-menu" id="language">
@@ -334,11 +336,12 @@
           <option value="pt-br">Português</option>
           <option value="pl">Polski</option>
           <option value="ru">Русский</option>
+          <option value="sv-se">Svenska</option>
           <option value="ar-ar">ٱلْعَرَبِيَّة</option>
           <option value="ko">한국어</option>
           <option value="th-th">ภาษาไทย</option>
-          <option value="zh-s">简体中文</option>
-          <option value="zh-t">繁体中文</option>
+          <option value="zh-hans">简体中文</option>
+          <option value="zh-hant">繁体中文</option>
         </select>
       </div>
       <div class="input-container" data-help="marker_size">
@@ -688,19 +691,20 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=54"></script>
-  <script src="assets/js/settings.js?nocache=54"></script>
-  <script src="assets/js/nazar.js?nocache=54"></script>
-  <script src="assets/js/marker.js?nocache=54"></script>
-  <script src="assets/js/treasures.js?nocache=54"></script>
-  <script src="assets/js/encounters.js?nocache=54"></script>
-  <script src="assets/js/hm.js?nocache=54"></script>
-  <script src="assets/js/pins.js?nocache=54"></script>
-  <script src="assets/js/map.js?nocache=54"></script>
-  <script src="assets/js/language.js?nocache=54"></script>
-  <script src="assets/js/menu.js?nocache=54"></script>
-  <script src="assets/js/scripts.js?nocache=54"></script>
-  <script src="assets/js/fme.js?nocache=54"></script>
+  <script src="assets/js/layers.js?nocache=1370"></script>
+  <script src="assets/js/settings.js?nocache=1370"></script>
+  <script src="assets/js/nazar.js?nocache=1370"></script>
+  <script src="assets/js/marker.js?nocache=1370"></script>
+  <script src="assets/js/treasures.js?nocache=1370"></script>
+  <script src="assets/js/encounters.js?nocache=1370"></script>
+  <script src="assets/js/hm.js?nocache=1370"></script>
+  <script src="assets/js/pins.js?nocache=1370"></script>
+  <script src="assets/js/map.js?nocache=1370"></script>
+  <script src="assets/js/language.js?nocache=1370"></script>
+  <script src="assets/js/language.data.min.js?nocache=1370"></script>
+  <script src="assets/js/menu.js?nocache=1370"></script>
+  <script src="assets/js/scripts.js?nocache=1370"></script>
+  <script src="assets/js/fme.js?nocache=1370"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
@@ -717,7 +721,7 @@
   </script>
 
   <!-- Temporary anonymous metric collection. -->
-  <script>var data = $.cookie(); var url = 'https://script.google.com/macros/s/AKfycbwK8MXqw6QnR03-M3shhobskU5yFEQ-rOI3YD53QZATB4nR1NU/exec'; $(document).ready(function () { if ($.cookie('did-form-1') !== undefined) return; $.cookie('did-form-1', 1, { expires: 999 }); $.ajax({ url: url, method: "GET", dataType: "json", data: data }) })</script>
+  <!-- <script>var data = $.cookie(); var url = 'https://script.google.com/macros/s/AKfycbwK8MXqw6QnR03-M3shhobskU5yFEQ-rOI3YD53QZATB4nR1NU/exec'; $(document).ready(function () { if ($.cookie('did-form-1') !== undefined) return; $.cookie('did-form-1', 1, { expires: 999 }); $.ajax({ url: url, method: "GET", dataType: "json", data: data }) })</script> -->
 </body>
 
 </html>
