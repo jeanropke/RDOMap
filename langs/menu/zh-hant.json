@@ -78,7 +78,7 @@
   "menu.overlay_opacity.25": "",
   "menu.overlay_opacity.50": "",
   "menu.overlay_opacity.75": "",
-  "menu.overlay_opacity.100": "",
+  "menu.overlay_opacity.100": "透明度",
   "menu.read_trader-guide": "",
   "menu.sightseeing": "",
   "help.clear_important_items": "",
