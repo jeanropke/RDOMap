@@ -3,16 +3,16 @@
  */
 
 var Language = {
-    availableLanguages: ['en-US', 'af-ZA', 'ar-SA', 'ca-ES', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fi-FI', 'fr-FR', 'he-IL', 'hu-HU', 'it-IT', 'ja-JP', 'ko-KR', 'no-NO', 'pl-PL', 'pt-BR', 'pt-PT', 'ro-RO', 'ru-RU', 'sr-SP', 'sv-SE', 'th-TH', 'tr-TR', 'uk-UA', 'vi-VN', 'zh-CN', 'zh-TW'],
+    availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
 
     get: function (value) {
         if (Settings.language == null)
-            Settings.language = 'en-US';
+            Settings.language = 'en';
 
         if (Language.data[Settings.language] !== undefined && Language.data[Settings.language][value])
             return Language.data[Settings.language][value];
-        else if (Language.data['en-US'][value])
-            return Language.data['en-US'][value];
+        else if (Language.data['en'][value])
+            return Language.data['en'][value];
         else if (Settings.isDebugEnabled)
             return value;
         else
@@ -73,14 +73,14 @@ var Language = {
             try {
                 // Menu language strings.
                 $.ajax({
-                    url: `./langs/menu/${language}.json`,
+                    url: `./langs/menu/${language.replace('-', '_')}.json`,
                     dataType: 'json',
                     async: false,
                     success: function (json) {
                         var result = {};
 
                         for (var propName in json) {
-                            if (json[propName] !== "" && ($.isEmptyObject(object['en-US']) || object['en-US'][propName] !== json[propName])) {
+                            if (json[propName] !== "" && ($.isEmptyObject(object['en']) || object['en'][propName] !== json[propName])) {
                                 result[propName] = json[propName];
                             }
                         }

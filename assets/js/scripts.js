@@ -91,7 +91,7 @@ function init() {
     $.cookie('map-layer', 0, { expires: 999 });
 
   if (!Language.availableLanguages.includes(Settings.language)) {
-    Settings.language = 'en-US';
+    Settings.language = 'en';
     $.cookie('language', Settings.language, { expires: 999 });
     $('#language').val(Settings.language);
   }
