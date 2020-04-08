@@ -6,7 +6,7 @@
 
 Savvy with a language that the language doesn't have yet? See something that isn't quite translated correctly? Feel free to contribute to the translation of any language by heading over to the [Crowdin project page](https://crowdin.com/project/rdr2rdomap) for the map.
 
-Also see our other map for general Red Dead Online content, such as animals and random encounters:
+Also see our other map for Red Dead Online collector content, for all of the collector role's item locations:
 - https://jeanropke.github.io/RDR2CollectorsMap
 - https://github.com/jeanropke/RDR2CollectorsMap
 
