@@ -90,8 +90,11 @@ function init() {
   if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 0, { expires: 999 });
 
-  if (!Language.availableLanguages.includes(Settings.language))
-    Settings.language = 'en-us';
+  if (!Language.availableLanguages.includes(Settings.language)) {
+    Settings.language = 'en-US';
+    $.cookie('language', Settings.language, { expires: 999 });
+    $('#language').val(Settings.language);
+  }
 
   if ($.cookie('remove-markers-daily') === undefined) {
     Settings.resetMarkersDaily = true;

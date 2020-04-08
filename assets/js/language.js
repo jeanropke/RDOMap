@@ -3,16 +3,16 @@
  */
 
 var Language = {
-    availableLanguages: ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'sv-se', 'th-th', 'zh-hans', 'zh-hant'],
+    availableLanguages: ['en-US', 'af-ZA', 'ar-SA', 'ca-ES', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fi-FI', 'fr-FR', 'he-IL', 'hu-HU', 'it-IT', 'ja-JP', 'ko-KR', 'no-NO', 'pl-PL', 'pt-BR', 'pt-PT', 'ro-RO', 'ru-RU', 'sr-SP', 'sv-SE', 'th-TH', 'tr-TR', 'uk-UA', 'vi-VN', 'zh-CN', 'zh-TW'],
 
     get: function (value) {
         if (Settings.language == null)
-            Settings.language = 'en-us';
+            Settings.language = 'en-US';
 
-        if (Language.data[Settings.language][value])
+        if (Language.data[Settings.language] !== undefined && Language.data[Settings.language][value])
             return Language.data[Settings.language][value];
-        else if (Language.data['en-us'][value])
-            return Language.data['en-us'][value];
+        else if (Language.data['en-US'][value])
+            return Language.data['en-US'][value];
         else if (Settings.isDebugEnabled)
             return value;
         else
@@ -20,6 +20,19 @@ var Language = {
     },
 
     setMenuLanguage: function () {
+        var hasUntranslated = false;
+
+        Language.availableLanguages.forEach(language => {
+            if (Language.data[language] === undefined || Language.data[language] === null || $.isEmptyObject(Language.data[language])) {
+                hasUntranslated = true;
+                $(`#language option[value="${language}"]`).attr('disabled', 'disabled').insertAfter($("#language option:last"));
+            }
+        });
+
+        if (hasUntranslated) {
+            $('<option>').text('-- Untranslated languages --').attr('disabled', 'disabled').insertAfter($("#language option:enabled:last"));
+        }
+
         $.each($('[data-text]'), function (key, value) {
             var temp = $(value);
             var string = Language.get(temp.data('text'));
@@ -64,7 +77,17 @@ var Language = {
                     dataType: 'json',
                     async: false,
                     success: function (json) {
-                        object[language] = json;
+                        var result = {};
+
+                        for (var propName in json) {
+                            if (json[propName] !== "" && ($.isEmptyObject(object['en-US']) || object['en-US'][propName] !== json[propName])) {
+                                result[propName] = json[propName];
+                            }
+                        }
+
+                        if (!$.isEmptyObject(result)) {
+                            object[language] = result;
+                        }
                     }
                 });
             } catch (error) {
