@@ -159,6 +159,7 @@ function init() {
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
 
+  Language.init();
   Language.setMenuLanguage();
 
   setMapBackground($.cookie('map-layer'));
