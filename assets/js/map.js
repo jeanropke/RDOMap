@@ -186,7 +186,7 @@ var MapBase = {
   loadOverlaysBeta: function () {
     $.getJSON('data/overlays_beta.json?nocache=' + nocache)
       .done(function (data) {
-        MapBase.overlays = data;
+        MapBase.overlaysBeta = data;
         MapBase.setOverlaysBeta(Settings.overlayOpacity);
         console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
       });
@@ -206,8 +206,8 @@ var MapBase = {
       var scaleY = scaleX;
 
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
-        [(value.lat + (y * scaleY)), (value.lng - (x * scaleX))],
-        [(value.lat - (y * scaleY)), (value.lng + (x * scaleX))]
+        [(parseFloat(value.lat) + (y * scaleY)), (parseFloat(value.lng) - (x * scaleX))],
+        [(parseFloat(value.lat) - (y * scaleY)), (parseFloat(value.lng) + (x * scaleX))]
       ], { opacity: opacity }));
     });
 
