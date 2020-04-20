@@ -10,7 +10,7 @@ var Pins = {
 
   addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
     if (lat === null || lat === undefined || lng === null || lng === undefined) return;
-    
+
     var pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
     if (pinAtPositionExists) return;
 
@@ -144,7 +144,7 @@ var Pins = {
     var text = localStorage.getItem("pinned-items");
     var filename = 'pinned-items.txt';
 
-    if (text === null || !text.includesOneOf(':', ';')) {
+    if (text === null || !text.includes(':') || !text.includes(';')) {
       alert(Language.get('alerts.nothing_to_export'));
       return;
     }
@@ -162,7 +162,7 @@ var Pins = {
   },
 
   importPins: function (text) {
-    if (!text.includesOneOf(':', ';')) {
+    if (!text.includes(':') || !text.includes(';')) {
       alert(Language.get('alerts.file_not_valid'));
     }
 
