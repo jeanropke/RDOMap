@@ -159,10 +159,6 @@ function init() {
     $.cookie('cycle-input-enabled', '1', { expires: 999 });
   }
 
-  if ($.cookie('clock-or-timer') === undefined) {
-    Settings.displayClockHideTimer = false;
-    $.cookie('clock-or-timer', 'false', { expires: 999 });
-  }
 
   if ($.cookie('timestamps-24') === undefined) {
     Settings.display24HoursTimestamps = false;

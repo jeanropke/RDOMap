@@ -1,6 +1,5 @@
 var Settings = {
   display24HoursTimestamps: $.cookie('timestamps-24') == '1',
-  displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
   isCoordsEnabled: $.cookie('coords-enabled') == '1',
   isCycleChangerEnabled: $.cookie('cycle-changer-enabled') == '1',
   isCycleInputEnabled: $.cookie('cycle-input-enabled') == '1',
