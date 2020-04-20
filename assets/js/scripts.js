@@ -703,6 +703,7 @@ $('#cookie-export').on("click", function () {
     delete cookies['_ga'];
     delete storage['randid'];
     delete storage['pinned-items'];
+    delete settings['routes.customRoute'];
 
     var settings = {
       'cookies': cookies,
