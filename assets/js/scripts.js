@@ -154,12 +154,6 @@ function init() {
     $.cookie('fme-display', '3', { expires: 999 });
   }
 
-  if ($.cookie('cycle-input-enabled') === undefined) {
-    Settings.isCycleInputEnabled = 1;
-    $.cookie('cycle-input-enabled', '1', { expires: 999 });
-  }
-
-
   if ($.cookie('timestamps-24') === undefined) {
     Settings.display24HoursTimestamps = false;
     $.cookie('timestamps-24', 'false', { expires: 999 });
@@ -193,7 +187,6 @@ function init() {
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $('#timestamps-24').prop("checked", Settings.display24HoursTimestamps);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
-  $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
   $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
@@ -451,13 +444,6 @@ $("#marker-size").on("change", function () {
   $.cookie('marker-size', Settings.markerSize, { expires: 999 });
   MapBase.addMarkers();
   Treasures.set();
-});
-
-//Enable cycle input
-$("#enable-cycle-input").on("change", function () {
-  Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
-  $.cookie('cycle-input-enabled', Settings.isCycleInputEnabled ? '1' : '0', { expires: 999 });
-  $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
 });
 
 // Toggle visibility of FME cards.

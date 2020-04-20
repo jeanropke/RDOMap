@@ -2,7 +2,6 @@ var Settings = {
   display24HoursTimestamps: $.cookie('timestamps-24') == '1',
   isCoordsEnabled: $.cookie('coords-enabled') == '1',
   isCycleChangerEnabled: $.cookie('cycle-changer-enabled') == '1',
-  isCycleInputEnabled: $.cookie('cycle-input-enabled') == '1',
   isDebugEnabled: $.cookie('debug') == '1',
   isDoubleClickZoomEnabled: $.cookie('enable-dclick-zoom') == '1',
   isMenuOpened: $.cookie('menu-opened') == '1',
