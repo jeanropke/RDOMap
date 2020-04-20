@@ -150,7 +150,9 @@ var MapBase = {
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
 
-    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, { keepSpiderfied: true });
+    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, {
+      keepSpiderfied: true
+    });
     Layers.oms.addListener('spiderfy', function (markers) {
       MapBase.map.closePopup();
     });
@@ -177,7 +179,9 @@ var MapBase = {
 
     $.each(MapBase.overlays, function (key, value) {
       var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
-      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, { opacity: opacity }));
+      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, {
+        opacity: opacity
+      }));
     });
 
     Layers.overlaysLayer.addTo(MapBase.map);
@@ -208,7 +212,9 @@ var MapBase = {
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
         [(parseFloat(value.lat) + (y * scaleY)), (parseFloat(value.lng) - (x * scaleX))],
         [(parseFloat(value.lat) - (y * scaleY)), (parseFloat(value.lng) + (x * scaleX))]
-      ], { opacity: opacity }));
+      ], {
+        opacity: opacity
+      }));
     });
 
     Layers.overlaysLayer.addTo(MapBase.map);
@@ -313,8 +319,8 @@ var MapBase = {
 
     var opacity = Settings.markerOpacity;
 
-    var baseMarkers = MapBase.markers.filter(_m => { return enabledCategories.includes(_m.category) && _m.category != 'plants'; });
-    var plantMarkers = MapBase.markers.filter(_m => { return enabledCategories.includes('plants') && enabledPlants.includes(_m.subdata) && _m.category == 'plants'; });
+    var baseMarkers = MapBase.markers.filter(_m => enabledCategories.includes(_m.category) && _m.category != 'plants');
+    var plantMarkers = MapBase.markers.filter(_m => enabledCategories.includes('plants') && enabledPlants.includes(_m.subdata) && _m.category == 'plants');
 
     $.each(baseMarkers, function (key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
@@ -464,7 +470,10 @@ var MapBase = {
 
     marker.isVisible = true;
     tempMarker.id = marker.text;
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
+    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {
+      minWidth: 300,
+      maxWidth: 400
+    });
 
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
@@ -487,7 +496,10 @@ var MapBase = {
 
     marker.isVisible = true;
     tempMarker.id = marker.text;
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
+    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {
+      minWidth: 300,
+      maxWidth: 400
+    });
 
     return tempMarker;
   },
@@ -496,7 +508,11 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
   },
 
-  game2Map: function ({ x, y, z }) {
+  game2Map: function ({
+    x,
+    y,
+    z
+  }) {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
@@ -590,11 +606,16 @@ var MapBase = {
       })
     });
 
-    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
+    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, {
+      minWidth: 300
+    });
     Layers.itemMarkersLayer.addLayer(marker);
   },
 
-  testData: { max: 10, data: [] },
+  testData: {
+    max: 10,
+    data: []
+  },
   heatmapCount: 10,
   addCoordsOnMap: function (coords) {
     // Show clicked coordinates (like google maps)
@@ -610,7 +631,11 @@ var MapBase = {
 
     if (Settings.isDebugEnabled) {
       console.log(`{"lat":"${coords.latlng.lat.toFixed(4)}","lng":"${coords.latlng.lng.toFixed(4)}","count":"${MapBase.heatmapCount}"},`);
-      MapBase.testData.data.push({ lat: coords.latlng.lat.toFixed(4), lng: coords.latlng.lng.toFixed(4), count: MapBase.heatmapCount });
+      MapBase.testData.data.push({
+        lat: coords.latlng.lat.toFixed(4),
+        lng: coords.latlng.lng.toFixed(4),
+        count: MapBase.heatmapCount
+      });
       Layers.heatmapLayer.setData(MapBase.testData);
     }
 
