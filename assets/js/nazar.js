@@ -26,7 +26,9 @@ var MadamNazar = {
       $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
         .done(function (nazar) {
           MadamNazar.currentLocation = nazar.nazar_id - 1;
-          MadamNazar.currentDate = MapBase.formatDate(nazar.date);
+          MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
+            day: "2-digit", month: "long", year: "numeric"
+          });
           MadamNazar.addMadamNazar();
           console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
         });
