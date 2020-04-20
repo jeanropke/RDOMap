@@ -352,8 +352,6 @@ var MapBase = {
 
     if (refreshMenu)
       Menu.refreshMenu();
-
-    MapBase.loadImportantItems();
   },
 
   removeItemFromMap: function (text, subdata, category) {
@@ -415,7 +413,6 @@ var MapBase = {
 
     // TODO: Fix later. :-)
     // var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDOMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
-    // var importantItem = ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>`;
     // var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(importantItem);
     var linksElement = $('<p>');
     var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
@@ -472,8 +469,6 @@ var MapBase = {
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
-
-    MapBase.loadImportantItems();
   },
 
   createCanvasMarker: function (marker, opacity = 1) {
@@ -503,41 +498,6 @@ var MapBase = {
 
   game2Map: function ({ x, y, z }) {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
-  },
-
-  highlightImportantItem(text, category) {
-    if (category === 'american_flowers' || category === 'bird_eggs')
-      text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
-
-    $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
-
-    if (text === 'eagle') // prevent from highlight eagle coins and eggs together
-      text = 'egg_eagle';
-
-    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
-
-    if ($(`[data-marker*=${text}].highlight-items`).length)
-      MapBase.importantItems.push(text);
-    else
-      MapBase.importantItems.splice(MapBase.importantItems.indexOf(text), 1);
-
-    $.each(localStorage, function (key) {
-      localStorage.removeItem('importantItems');
-    });
-
-    localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
-  },
-
-  loadImportantItems() {
-    if (localStorage.importantItems === undefined)
-      localStorage.importantItems = "[]";
-
-    MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
-
-    $.each(MapBase.importantItems, function (key, value) {
-      $(`[data-marker*=${value}]`).addClass('highlight-items');
-      $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
-    });
   },
 
   loadFastTravels: function () {

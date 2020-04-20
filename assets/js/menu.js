@@ -159,8 +159,6 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=plants]');
   Menu.reorderMenu('.menu-hidden[data-type=shops]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
-
-  MapBase.loadImportantItems();
 };
 
 Menu.showAll = function () {
