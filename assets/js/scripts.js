@@ -291,7 +291,7 @@ function clockTick() {
     var time = $(this).data('time') + '';
     if (time === null || time == '') return;
 
-    var hour = correctTime.getHours();
+    var hour = gameTime.getHours();
     if (hour >= 5 && hour < 8) {
       // 1) 05 - 08: Sunrise
       if (time.indexOf("1") >= 0) {
