@@ -150,8 +150,8 @@ function init() {
   }
 
   if ($.cookie('fme-display') === undefined) {
-    FME.display = 0;
-    $.cookie('fme-display', '0', { expires: 999 });   //! Need to change that to 3 after the events will be fixed
+    FME.display = 3;
+    $.cookie('fme-display', '3', { expires: 999 });
   }
 
   if ($.cookie('timestamps-24') === undefined) {
