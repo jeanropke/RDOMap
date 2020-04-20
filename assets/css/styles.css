@@ -230,7 +230,6 @@ input, textarea, select, .btn {
     transition: all 200ms ease-out;
     padding: 0 8px;
     display: inline-flex;
-    cursor: pointer;
     line-height: 28px;
 }
 
