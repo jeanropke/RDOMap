@@ -1,3 +1,16 @@
+Object.defineProperty(String.prototype, 'includesOneOf', {
+  value: function (...elements) {
+    var include = false;
+    for (var str of elements) {
+      if (this.includes(str)) {
+        include = true;
+        break;
+      }
+    }
+    return include;
+  }
+});
+
 var searchTerms = [];
 var uniqueSearchMarkers = [];
 
