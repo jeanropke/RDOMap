@@ -266,7 +266,7 @@ function clockTick() {
   const nightTime = gameHour >= 22 || gameHour < 5;
   const clockFormat = {
     timeZone: 'UTC',
-    hour: '2-digit',
+    hour: 'numeric',
     minute: '2-digit',
     hour12: !Settings.display24HoursTimestamps
   };
