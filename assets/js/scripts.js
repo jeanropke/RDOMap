@@ -1,3 +1,7 @@
+Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
+  value: function () { return this.toISOString().split('T')[0]; },
+});
+
 var searchTerms = [];
 var uniqueSearchMarkers = [];
 
@@ -685,16 +689,21 @@ $('#cookie-export').on("click", function () {
     delete cookies['_ga'];
     delete storage['randid'];
     delete storage['pinned-items'];
-    delete storage['routes.customRoute'];
 
+    // delete collectors map settings:
+    delete storage['routes.customRoute'];
+    delete storage['importantItems'];
+    delete storage['inventory'];
+    
     var settings = {
       'cookies': cookies,
       'local': storage
     };
 
     var settingsJson = JSON.stringify(settings, null, 4);
+    var exportDate = new Date().toISOUTCDateString();
 
-    downloadAsFile("collectible-map-settings.json", settingsJson);
+    downloadAsFile(`RDO-map-settings-(${exportDate}).json`, settingsJson);
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
