@@ -689,12 +689,8 @@ $('#cookie-export').on("click", function () {
     delete cookies['_ga'];
     delete storage['randid'];
     delete storage['pinned-items'];
-
-    // delete collectors map settings:
     delete storage['routes.customRoute'];
-    delete storage['importantItems'];
-    delete storage['inventory'];
-    
+
     var settings = {
       'cookies': cookies,
       'local': storage
