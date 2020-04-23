@@ -1,3 +1,16 @@
+Object.defineProperty(String.prototype, 'includesOneOf', {
+  value: function (...elements) {
+    var include = false;
+    for (var str of elements) {
+      if (this.includes(str)) {
+        include = true;
+        break;
+      }
+    }
+    return include;
+  }
+});
+
 Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
   value: function () { return this.toISOString().split('T')[0]; },
 });
@@ -685,11 +698,21 @@ $('#cookie-export').on("click", function () {
     var cookies = $.cookie();
     var storage = localStorage;
 
-    // Remove irrelevant properties.
+    // Remove irrelevant properties (permanently from localStorage):
     delete cookies['_ga'];
     delete storage['randid'];
+
+
+    // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
+    storage = $.extend(true, {}, localStorage);
     delete storage['pinned-items'];
     delete storage['routes.customRoute'];
+
+    for (var key in storage) {
+      if (storage.hasOwnProperty(key) && key.includesOneOf('collected.', 'routes.', 'inventory', 'shown.')) {
+        delete storage[key];
+      }
+    }
 
     var settings = {
       'cookies': cookies,
@@ -706,6 +729,18 @@ $('#cookie-export').on("click", function () {
   }
 });
 
+function setSettings(settings) {
+  $.each(settings.cookies, function (key, value) {
+    $.cookie(key, value, { expires: 999 });
+  });
+
+  $.each(settings.local, function (key, value) {
+    localStorage.setItem(key, value);
+  });
+
+  location.reload();
+}
+
 $('#cookie-import').on('click', function () {
   try {
     var settings = null;
@@ -721,12 +756,14 @@ $('#cookie-import').on('click', function () {
       file.text().then((text) => {
         try {
           settings = JSON.parse(text);
+          setSettings(settings);
         } catch (error) {
           alert(Language.get('alerts.file_not_valid'));
           return;
         }
       });
-    } catch (error) {
+    }
+    catch (error) {
       fallback = true;
     }
 
@@ -738,7 +775,9 @@ $('#cookie-import').on('click', function () {
 
         try {
           settings = JSON.parse(text);
-        } catch (error) {
+          setSettings(settings);
+        }
+        catch (error) {
           alert(Language.get('alerts.file_not_valid'));
           return;
         }
@@ -746,34 +785,8 @@ $('#cookie-import').on('click', function () {
 
       reader.readAsText(file);
     }
-
-    // Remove all current settings.
-    $.each($.cookie(), function (key, value) {
-      $.removeCookie(key);
-    });
-
-    $.each(localStorage, function (key, value) {
-      localStorage.removeItem(key);
-    });
-
-    // Import all the settings from the file.
-    if (settings.cookies === undefined && settings.local === undefined) {
-      $.each(settings, function (key, value) {
-        $.cookie(key, value, { expires: 999 });
-      });
-    }
-
-    $.each(settings.cookies, function (key, value) {
-      $.cookie(key, value, { expires: 999 });
-    });
-
-    $.each(settings.local, function (key, value) {
-      localStorage.setItem(key, value);
-    });
-
-    // Do this for now, maybe look into refreshing the menu completely (from init) later.
-    location.reload();
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
   }
