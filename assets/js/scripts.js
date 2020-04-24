@@ -701,6 +701,7 @@ $('#cookie-export').on("click", function () {
     // Remove irrelevant properties (permanently from localStorage):
     delete cookies['_ga'];
     delete storage['randid'];
+    delete storage['inventory'];
 
     // TODO: Need to more differentiate settings form RDO and Collectors map, to don't add hundreds of settings to this list (add prefix or sth)
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
@@ -711,7 +712,7 @@ $('#cookie-export').on("click", function () {
     delete storage['enabled-categories'];
 
     for (var key in storage) {
-      if (storage.hasOwnProperty(key) && key.includesOneOf('collected.', 'routes.', 'inventory', 'shown.')) {
+      if (storage.hasOwnProperty(key) && key.includesOneOf('collected.', 'routes.', 'shown.', 'amount.')) {
         delete storage[key];
       }
     }
