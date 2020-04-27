@@ -227,7 +227,7 @@
 		{ "text": "defend_campsite", "x": "-55.4375", "y": "71.5" },
 		{ "text": "defend_campsite", "x": "-37.296875", "y": "83.828125" },
 		{ "text": "defend_campsite", "x": "-36.8125", "y": "149.796875" },
-		{ "text": "defend_campsite", "x": "-56.796875", "y": "111.984375" }
+		{ "text": "defend_campsite", "x": "-57.3984", "y": "113.0234" }
 	],
 	"escort": [
 		{ "text": "escort", "x": "-100.234375", "y": "27.515625" },
