@@ -176,7 +176,8 @@
 		{ "text": "rival_collector", "x": "-105.3509", "y": "45.7861" },
 		{ "text": "rival_collector", "x": "-114.4133", "y": "43.4270" },
 		{ "text": "rival_collector", "x": "-118.8938", "y": "26.5986" },
-		{ "text": "rival_collector", "x": "-104.7303", "y": "21.3326" }
+		{ "text": "rival_collector", "x": "-104.7303", "y": "21.3326" },
+		{ "text": "rival_collector", "x": "-88.4531", "y": "93.5938" }
 	],
 	"runaway_wagon": [
 		{ "text": "runaway_wagon", "x": "-57.6413", "y": "126.1746" },
