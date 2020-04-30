@@ -18,28 +18,24 @@ var MapBase = {
 
   init: function () {
 
-    const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
     //Please, do not use the GitHub map tiles. Thanks
-    const mapLayers = {
-      'map.layers.default':
-        L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
-          noWrap: true,
-          bounds: mapBoundary,
-          attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
-        }),
-      'map.layers.detailed':
-        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
-          noWrap: true,
-          bounds: mapBoundary,
-          attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
-        }),
-      'map.layers.dark':
-        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
-          noWrap: true,
-          bounds: mapBoundary,
-          attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
-        }),
-    };
+    var mapLayers = [
+      L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
+      }),
+      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
+      }),
+      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
+      })
+    ];
 
     Heatmap.initLayer();
 
@@ -112,7 +108,13 @@ var MapBase = {
       position: 'bottomright'
     }).addTo(MapBase.map);
 
-    L.control.layers(mapLayers).addTo(MapBase.map);
+    var baseMapsLayers = {
+      'map.layers.default': mapLayers[0],
+      'map.layers.detailed': mapLayers[1],
+      'map.layers.dark': mapLayers[2]
+    };
+
+    L.control.layers(baseMapsLayers).addTo(MapBase.map);
 
     MapBase.map.on('baselayerchange', function (e) {
       var mapIndex;
