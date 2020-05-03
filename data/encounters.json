@@ -233,13 +233,6 @@
 		{ "text": "escort_western_homestead", "x": "-115.4192", "y": "54.6036" }
 	],
 	"rescue": [
-		{ "text": "rescue_01", "x": "-82.7368", "y": "77.3041" },
-		{ "text": "rescue_02", "x": "-79.9731", "y": "88.5642" },
-		{ "text": "rescue_03", "x": "-59.2645", "y": "94.4643" },
-		{ "text": "rescue_06", "x": "-57.3795", "y": "151.4498" },
-		{ "text": "rescue_07", "x": "-59.3310", "y": "146.7719" },
-		{ "text": "rescue_15", "x": "-66.0838", "y": "78.4554" },
-		{ "text": "rescue_16", "x": "-64.7526", "y": "90.8550" },
 		{ "text": "rescue_bayou_gators", "x": "-71.0247", "y": "146.5628" },
 		{ "text": "rescue_colter_bandits", "x": "-26.8274", "y": "90.5397" },
 		{ "text": "rescue_grizzlies_prisoner_rescue", "x": "-42.8963", "y": "123.6636" },
@@ -276,7 +269,17 @@
 		{ "text": "ambush_west_hennigans", "x": "-103.7356", "y": "66.9510" }
 	],
 	"ambush_rescue": [
+		{ "text": "DON'T MOVE THESE TO RESCUE OR AMBUSH", "x": "0", "y": "0" },
+		{ "text": "THESE ARE 50/50 CHANCE OF EITHER OR THEY ARE INCORRECT LOCATIONS, TBC", "x": "0", "y": "0" },
+		{ "text": "UNFINISHED, NEEDS FURTHER CONFIRMATION BEFORE IMPLEMENTING INTO MAP", "x": "0", "y": "0" },
 		{ "text": "ambush_10", "x": "-39.9475", "y": "93.0606" },
-		{ "text": "ambush_22", "x": "-38.2969", "y": "146.6250" }
+		{ "text": "ambush_22", "x": "-38.2969", "y": "146.6250" },
+		{ "text": "rescue_01", "x": "-82.7368", "y": "77.3041" },
+		{ "text": "rescue_02", "x": "-79.9731", "y": "88.5642" },
+		{ "text": "rescue_03", "x": "-59.2645", "y": "94.4643" },
+		{ "text": "rescue_06", "x": "-57.3795", "y": "151.4498" },
+		{ "text": "rescue_07", "x": "-59.3310", "y": "146.7719" },
+		{ "text": "rescue_15", "x": "-66.0838", "y": "78.4554" },
+		{ "text": "rescue_16", "x": "-64.7526", "y": "90.8550" }
 	]
 }
