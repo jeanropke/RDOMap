@@ -1,0 +1,2467 @@
+[
+  {
+    "x": "2279",
+    "y": "-374.1",
+    "name": "MODEL_CONFIG_HEARTLANDS (0x7C1FCD5E), 0x76CCDD8B (0xEEFDFFA3), 0x806B80C9 (0x5975C34F), 0x806B80C9 (0x1E05C879), 0x806B80C9 (0x7C35C06D), 0x806B80C9 (0xE01B972B), "
+  },
+  {
+    "x": "2281.9854",
+    "y": "-378.874",
+    "name": "MUSIC_PLAYER_CAMPSITE_DEFEND (0xC0F9D21B), 0x5A111290 (0xEEFDFFA3), 0x91AA2346 (0xC7D895E3), 0x91AA2346 (0x1E05C879), 0x91AA2346 (0x7C35C06D), 0x91AA2346 (0x5975C34F), "
+  },
+  {
+    "x": "2272.298",
+    "y": "-377.2085",
+    "name": "CAMPSITE_DEFEND_HEARTLANDS_WAGON_CIRCLE (ID), 0xEC34C511 (0xEEFDFFA3), 0xA400C7F3 (0x7C35C06D), 0xA400C7F3 (0xC7D895E3), 0xA400C7F3 (0x1E05C879), "
+  },
+  {
+    "x": "2275.1658",
+    "y": "-367.776",
+    "name": "CAMPSITE_DEFEND_GRIZZLIES_WAGON_CIRCLE (ID), 0x8ADAF7E9 (0xEEFDFFA3), 0xB803EFF9 (0x7C35C06D), "
+  },
+  {
+    "x": "2264.4514",
+    "y": "-362.2196",
+    "name": "MODEL_CONFIG_GRIZZLIES (0x7C1FCD5E), 0xBF05AB2F (0xEEFDFFA3), "
+  },
+  {
+    "x": "2278.1367",
+    "y": "-364.891",
+    "name": "CAMPSITE_DEFEND_TWO_ROCKS_WAGON_CIRCLE (ID), 0x75DDBC25 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2278.133",
+    "y": "-357.1217",
+    "name": "MODEL_CONFIG_BIG_VALLEY (0x7C1FCD5E), 0x2F3E7F5F (0xEEFDFFA3), "
+  },
+  {
+    "x": "2284.008",
+    "y": "-366.8445",
+    "name": "CAMPSITE_DEFEND_GREAT_PLAINS_WAGON_CIRCLE (ID), 0xE1EFBDEC (0xEEFDFFA3), "
+  },
+  {
+    "x": "2288.128",
+    "y": "-358.4123",
+    "name": "MODEL_CONFIG_GREAT_PLAINS (0x7C1FCD5E), 0x71597D0C (0xEEFDFFA3), "
+  },
+  {
+    "x": "2289.3262",
+    "y": "-371.8387",
+    "name": "CAMPSITE_DEFEND_ROANOKE_RIVERSIDE_WAGON_CIRCLE (ID), 0x754EF45D (0xEEFDFFA3), "
+  },
+  {
+    "x": "2293.9758",
+    "y": "-367.5092",
+    "name": "MODEL_CONFIG_ROANOKE (0x7C1FCD5E), 0x3CBFC716 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2288.6328",
+    "y": "-379.8256",
+    "name": "CAMPSITE_DEFEND_CHOLLA_SPRINGS_WAGON_CIRCLE (ID), 0x49C49F89 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2295.6895",
+    "y": "-386.5289",
+    "name": "MODEL_CONFIG_NEW_AUSTIN (0x7C1FCD5E), 0xC04C7F62 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2277.609",
+    "y": "-381.6714",
+    "name": "CAMPSITE_DEFEND_GAPTOOTH_RIDGE_WAGON_CIRCLE (ID), 0xB21AE31F (0xEEFDFFA3), "
+  },
+  {
+    "x": "2273.225",
+    "y": "-393.2403",
+    "name": "CAMPSITE_DEFEND_GAPTOOTH_BREACH_WAGON_CIRCLE (ID), 0x3FE5C727 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2270.6963",
+    "y": "-373.6859",
+    "name": "CAMPSITE_DEFEND_RIO_BRAVO_WAGON_CIRCLE (ID), 0x850B18F2 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2254.184",
+    "y": "-378.2222",
+    "name": "CAMPSITE_DEFEND_LITTLE_CREEK_WAGON_CIRCLE (ID), 0x82EEBCB2 (0xBEFD3C36), "
+  },
+  {
+    "x": "4.5",
+    "y": "-4.3",
+    "name": "CAMPSITE_DEFEND_RADLEYS_PASTURE_WAGON_CIRCLE (ID), 0xDA4C68D5 (0x42EA33CB), "
+  },
+  {
+    "x": "2216.9805",
+    "y": "-355.5783",
+    "name": "MODEL_CONFIG_SCARLETT_MEADOWS (0x7C1FCD5E), 0x440AD483 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2214.071",
+    "y": "-348.5405",
+    "name": "CAMPSITE_DEFEND_HENNIGANS_STEAD_WAGON_CIRCLE (ID), 0xBAE2EEE0 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2215.8452",
+    "y": "-346.1391",
+    "name": "CAMPSITE_DEFEND_TALL_TREES_WAGON_CIRCLE (ID), 0x135067FC (SPAWN_POSITION), "
+  },
+  {
+    "x": "2217.306",
+    "y": "-343.7901",
+    "name": "MODEL_CONFIG_TALL_TREES (0x7C1FCD5E), 0x9B7D19B7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2219.9436",
+    "y": "-347.5853",
+    "name": "CAMPSITE_DEFEND_NEW_HANOVER_WAGON_CIRCLE (ID), 0x7DDD6795 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2275.7817",
+    "y": "-375.7525",
+    "name": "CAMPSITE_DEFEND_BLUEWATER_MARSH_WAGON_CIRCLE (ID), 0xB0748C3D (SPAWN_POSITION), "
+  },
+  {
+    "x": "2275.5842",
+    "y": "-369.4376",
+    "name": "MODEL_CONFIG_BAYOU (0x7C1FCD5E), 0xA19EEF7A (SPAWN_POSITION), "
+  },
+  {
+    "x": "2283.384",
+    "y": "-375.8723",
+    "name": "STANDARD (CONFIG), 0x48F3AA67 (SPAWN_POSITION), STANDARD (ID), "
+  },
+  {
+    "x": "2283.9626",
+    "y": "-374.4952",
+    "name": "MISSION_END (ID), 0x41BC47C3 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2273.6182",
+    "y": "-367.8322",
+    "name": "COMPLETED (0xE2B28D77), 0x2AEF3DC9 (SPAWN_POSITION), COMPLETED (ID), "
+  },
+  {
+    "x": "1882.2",
+    "y": "125.4",
+    "name": "LAST_SHOT_PAN_DOWN_BEHIND_ACTOR (CONFIG), 0x2055477E (SPAWN_POSITION), "
+  },
+  {
+    "x": "1882.3507",
+    "y": "120.2698",
+    "name": "LOCAL_PLAYER (0xF6AFF99F), 0x543A4C3B (0xEEFDFFA3), "
+  },
+  {
+    "x": "1882.3807",
+    "y": "130.6987",
+    "name": "HOLD_ON_SHOT (CONFIG), 0xAC6FF120 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1872.772",
+    "y": "123.2493",
+    "name": "PLAY_SCENARIO_IN_PLACE (ACTION), 0xA702367F (0xEEFDFFA3), "
+  },
+  {
+    "x": "1869.4012",
+    "y": "122.3877",
+    "name": "WORLD_HUMAN_SMOKE (0x3C6212F2), 0x7B9F8659 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1878.4078",
+    "y": "125.1075",
+    "name": "CAMPER (ID), 0x5D6E2B0B (0xEEFDFFA3), "
+  },
+  {
+    "x": "1875.3518",
+    "y": "112.0218",
+    "name": "WORLD_HUMAN_CROUCH_INSPECT (0x3C6212F2), WORLD_HUMAN_CROUCH_INSPECT (0x5129B6FC), 0x1E1E09E9 (0xEEFDFFA3), WORLD_HUMAN_CROUCH_INSPECT (CLEANUP_SCENARIO), "
+  },
+  {
+    "x": "1878.3578",
+    "y": "129.5133",
+    "name": "CAMPER_01 (ID), 0x487A7DED (0xEEFDFFA3), "
+  },
+  {
+    "x": "1873.3684",
+    "y": "135.3377",
+    "name": "PLAY_DYNAMIC_FREE_ROAM_INTRO (ACTION), 0xC5360A4C (0xEEFDFFA3), "
+  },
+  {
+    "x": "1888.2112",
+    "y": "130.2555",
+    "name": "PLAYER_0 (ID), 0xE2D5D428 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1888.7201",
+    "y": "143.6772",
+    "name": "WORLD_ANIMAL_HORSE_GRAZING (0x24610EF4), 0x4C3DCF84 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1884.6576",
+    "y": "128.3784",
+    "name": "PLAYER_0_HORSE (ID), 0x520EACD6 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1897.2747",
+    "y": "133.1807",
+    "name": "PLAYER_1 (ID), 0x71A7ED05 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1889.6064",
+    "y": "124.6965",
+    "name": "PLAYER_1_HORSE (ID), 0xE8756219 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1898.2167",
+    "y": "119.5281",
+    "name": "PLAYER_2 (ID), 0xD37F8A9F (0xEEFDFFA3), "
+  },
+  {
+    "x": "1890.7797",
+    "y": "116.4514",
+    "name": "PLAYER_2_HORSE (ID), 0xBF732572 (0xEEFDFFA3), "
+  },
+  {
+    "x": "1890.4341",
+    "y": "109.6948",
+    "name": "PLAYER_3 (ID), 0x5CBBE221 (0xEEFDFFA3), "
+  },
+  {
+    "x": "15.1",
+    "y": "12.4",
+    "name": "PLAYER_3_HORSE (ID), 0x5DBC4937 (0xBEFD3C36), "
+  },
+  {
+    "x": "5.04",
+    "y": "6.48",
+    "name": "PLAYER_4 (ID), 0x12ADFE3E (0x42EA33CB), "
+  },
+  {
+    "x": "1841.284",
+    "y": "78.1359",
+    "name": "PLAYER_4_HORSE (ID), 0xD28F99C7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1813.3994",
+    "y": "134.0775",
+    "name": "PLAYER_5 (ID), 0x6A63AC14 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1914.397",
+    "y": "205.658",
+    "name": "PLAYER_5_HORSE (ID), 0xC02443FD (SPAWN_POSITION), "
+  },
+  {
+    "x": "1816.1477",
+    "y": "111.1446",
+    "name": "PLAYER_6 (ID), 0x1F96F7B8 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1812.3107",
+    "y": "129.479",
+    "name": "PLAYER_6_HORSE (ID), 0xC7443A89 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1884.768",
+    "y": "130.2041",
+    "name": "CAM_NEAR25MM (0xD04D554D), 0x83BD45D1 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1885.697",
+    "y": "124.7356",
+    "name": "FADE_OUT (0xF66A4EBF), 0x6005951C (SPAWN_POSITION), "
+  },
+  {
+    "x": "1879.1083",
+    "y": "122.5178",
+    "name": "MISSION_CENTER (0xA4678354), 0x7AD449A0 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1889.9542",
+    "y": "125.1069",
+    "name": "USE_WORLD_SCENARIO_NEAR_MISSION_CENTER (ACTION), 0xFE89AD7A (SPAWN_POSITION), "
+  },
+  {
+    "x": "1875.1573",
+    "y": "126.1914",
+    "name": "WALK_TO_MISSION_CENTER_AND_PLAY_EXHAUSTED_FIDGET (ACTION), 0x95E90158 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2138.7273",
+    "y": "-1151.8308",
+    "name": "OBJECTIVE (0x1C04038C), 0xB3B02D18 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2134.9924",
+    "y": "-1149.2523",
+    "name": "WS_MP_CAMP_DEFEND_BLUEWATER_MARSH (ID), 0x3915704B (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2138.1895",
+    "y": "-1150.8761",
+    "name": "CAMPSITE_MEDIUM (0x8C18419D), 0x54EBA2C0 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2133.7688",
+    "y": "-1148.3208",
+    "name": "AMBUSHER_MOUNTED_BANDIT_REVOLVER_AND_TORCH_NO_LOS (CONFIG), 0x6E3E5018 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2127.687",
+    "y": "-1139.4298",
+    "name": "PED (0xF5D3F1EC), 0x1BB8F373 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2129.8608",
+    "y": "-1149.0334",
+    "name": "VOL_GUARD_0 (LINKED_VOLUME), VOL_GUARD_0 (ID), 0xFB530FB7 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2137.9568",
+    "y": "-1138.7914",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_BLUEWATER_MARSH_WAGON_CIRCLE_01 (0x7BC2D902), 0x368B1BCB (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2148.361",
+    "y": "-1155.5532",
+    "name": "CAMPSITE_EASY (0x8C18419D), 0x61297B26 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2156.6404",
+    "y": "-1163.2906",
+    "name": "AMBUSHER_MOUNTED_BANDIT_REPEATER_NO_LOS (CONFIG), 0x02A9E25A (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2148.8074",
+    "y": "-1148.0355",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_BLUEWATER_MARSH_WAGON_CIRCLE_02 (0x7BC2D902), 0xB5AB7D8B (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2153.109",
+    "y": "-1147.5647",
+    "name": "CAMPSITE_HARD (0x8C18419D), 0x994A748A (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2142.3438",
+    "y": "-1139.5369",
+    "name": "AMBUSHER_BANDIT_REPEATER_NO_LOS (CONFIG), 0xE19068CA (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2142.0144",
+    "y": "-1135.1796",
+    "name": "FRIENDLY (0xEF1966ED), 0x35852BA1 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2137.154",
+    "y": "-1152.7843",
+    "name": "DEAD_LOWER_CLASS_TRAVELLER_FEMALE (CONFIG), 0x20F52BCF (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2147.5627",
+    "y": "-1134.354",
+    "name": "MP_A_F_M_UNICORPSE_01 (0x7BA579E4), 0x89F6CC4D (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2139.696",
+    "y": "-1150.5265",
+    "name": "MP_GENERIC_BAYOUNWA_MC_FR_01 (OUTFIT), 0x1AD572AA (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2146.2803",
+    "y": "-1119.7787",
+    "name": "DEAD_LOWER_CLASS_TRAVELLER_MALE (CONFIG), 0xD0C838A8 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2.16",
+    "y": "5.76",
+    "name": "MP_A_M_M_UNICORPSE_01 (0x7BA579E4), 0x522768F6 (0xBEFD3C36), "
+  },
+  {
+    "x": "-2134.2673",
+    "y": "-1205.5938",
+    "name": "MP_GENERIC_BAYOUNWA_MC_FR_02 (OUTFIT), 0x32881A03 (0x42EA33CB), "
+  },
+  {
+    "x": "-2130.4463",
+    "y": "-1215.927",
+    "name": "MP_GENERIC_BAYOUNWA_MC_FR_03 (OUTFIT), 0xF1308607 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2136.9407",
+    "y": "-1210.4343",
+    "name": "ACCURACY_0_SLOW (0x8C18419D), 0xEFDC1F0D (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2125.8323",
+    "y": "-1219.7047",
+    "name": "MISSION_GIVER_CAMPSITE_DEFEND_COMBAT_DEFEND_MALE (CONFIG), 0x609512B9 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2129.022",
+    "y": "-1209.9988",
+    "name": "ENEMY_TEAM_1 (0xEF1966ED), 0xD5EA541D (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2126.304",
+    "y": "-1215.2186",
+    "name": "VOL_GUARD_1 (LINKED_VOLUME), VOL_GUARD_1 (ID), 0xFA14A79D (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2134.4268",
+    "y": "-1155.3245",
+    "name": "MP_CAMPDEF_BLUEWATER_MALES_01 (0x7BA579E4), 0x19796004 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2144.3765",
+    "y": "-1151.5968",
+    "name": "DEFEND_AREA (0x1293F682), 0x9297E666 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2138.7854",
+    "y": "-1148.5883",
+    "name": "MP_CAMPDEF_BLUEWATER_VIP_01 (OUTFIT), 0xBFAE7BEB (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2138.8667",
+    "y": "-1154.5737",
+    "name": "MISSION_GIVER_CAMPSITE_DEFEND_COMBAT_DEFEND_FEMALE (CONFIG), 0x897E8D27 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2134.97",
+    "y": "-1150.9652",
+    "name": "VOL_GUARD_2 (LINKED_VOLUME), VOL_GUARD_2 (ID), 0xEAB85124 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2559.8142",
+    "y": "-2865.077",
+    "name": "MP_CAMPDEF_BLUEWATER_FEMALES_01 (0x7BA579E4), 0x11C4009C (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2565.8154",
+    "y": "-2868.3364",
+    "name": "MP_CAMPDEF_BLUEWATER_VIP_02 (OUTFIT), 0x930E5F77 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2557.76",
+    "y": "-2862.8894",
+    "name": "0851_A_F_M_CIV_POOR_BLACK_AVOID_01 (VOICE), 0xD34C0B59 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2557.3992",
+    "y": "-2867.391",
+    "name": "SICK_BASTARD (0xF1238CA4), 0x483DDDB3 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2553.1553",
+    "y": "-2880.0713",
+    "name": "KILLED (ID), 0xAEC51000 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2560.2373",
+    "y": "-2870.5854",
+    "name": "DIALOGUE (TYPE), 0x08198823 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2569.9116",
+    "y": "-2874.4475",
+    "name": "GANG_INTERACT_HELP_ATTACK_NEUTRAL (0xF1238CA4), 0x2DADB596 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2568.2095",
+    "y": "-2866.2727",
+    "name": "CALLOUT_FAR (ID), 0x6F6B41F4 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2573.6235",
+    "y": "-2860.8943",
+    "name": "GENERIC_CURSE_HIGH (0xF1238CA4), 0x04AE5ECF (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2560.4917",
+    "y": "-2863.176",
+    "name": "ACCEPTED (ID), 0xA7660956 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2563.303",
+    "y": "-2852.021",
+    "name": "PLAYER_WITHIN_DIST_TO_CENTER (ROLE), 0xAC91283A (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2560.754",
+    "y": "-2859.1555",
+    "name": "SWITCH (0xE5C5EAB3), 0xE4A8BEC9 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2553.9148",
+    "y": "-2851.0818",
+    "name": "CALLOUT_CLOSE (ID), 0xFE991325 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2554.5474",
+    "y": "-2861.9993",
+    "name": "MISSION_ACCEPTED (ROLE), 0xECD531C9 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2543.7021",
+    "y": "-2869.8274",
+    "name": "PRIMARY (0xE798E305), 0xBDDEDD97 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2559.8923",
+    "y": "-2876.8523",
+    "name": "LAST_OBJECTIVE_TURNED_IN (ROLE), 0x3D3E173F (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2552.1128",
+    "y": "-2881.4976",
+    "name": "TRIGGER_ONCE (0xE5C5EAB3), 0xEE48F931 (0xEEFDFFA3), "
+  },
+  {
+    "x": "7.3",
+    "y": "2.5",
+    "name": "NUMBER_OF_OBJECTIVES_REMAINING (ROLE), 0x84A2444E (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2651.6794",
+    "y": "-2819.617",
+    "name": "ANY_OBJECTIVE_PLAY_DIALOGUE_LINE (ACTION), 0xB808D92D (0xBEFD3C36), "
+  },
+  {
+    "x": "-2508.807",
+    "y": "-2841.554",
+    "name": "WON_FIGHT (0xF1238CA4), 0xD46644DD (0x42EA33CB), "
+  },
+  {
+    "x": "-2547.1682",
+    "y": "-2936.2449",
+    "name": "CLEAR_ALL_PEDS (0x7CAE4BF3), 0x0B4B1948 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2518.1885",
+    "y": "-2841.1675",
+    "name": "OBJECTIVE_AREA_NO_COMPASS (ROLE), 0xA2AF9BA6 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2583.9753",
+    "y": "-2934.2798",
+    "name": "VOL_BLIP_ENEMIES (ID), 0xAFF7DC7E (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2509.3994",
+    "y": "-2845.331",
+    "name": "BLIP_ENEMIES (ROLE), 0x9F87E1F4 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2560.1677",
+    "y": "-2859.2466",
+    "name": "VOL_PREVENT_SHUTDOWN (ID), 0xE7AE2100 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2562.973",
+    "y": "-2864.9136",
+    "name": "PREVENT_SHUTDOWN (ROLE), 0x7345AB6E (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2555.8682",
+    "y": "-2862.653",
+    "name": "VOL_AGGRO (ID), 0xEF18AA59 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2558.09",
+    "y": "-2869.2634",
+    "name": "AGGRO (ROLE), 0x96588795 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2554.5518",
+    "y": "-2862.4194",
+    "name": "BLUEWATER_MARSH_WAGON_CIRCLE_AGGRO (ID), 0xE03B6A0E (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2568.0686",
+    "y": "-2863.1943",
+    "name": "BLUEWATER_MARSH_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0x7D402F47 (SPAWN_POSITION), "
+  },
+  {
+    "x": "753.2673",
+    "y": "-919.9525",
+    "name": "BLUEWATER_MARSH_WAGON_CIRCLE_BIG (ID), 0x73D194D7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "753.379",
+    "y": "-913.4565",
+    "name": "BLUEWATER_MARSH_WAGON_CIRCLE_GUARD_2 (ID), 0xA8500021 (SPAWN_POSITION), "
+  },
+  {
+    "x": "750.7557",
+    "y": "-923.2022",
+    "name": "BLUEWATER_MARSH_WAGON_CIRCLE_GUARD_1 (ID), 0x004C5E71 (SPAWN_POSITION), "
+  },
+  {
+    "x": "754.3284",
+    "y": "-910.6721",
+    "name": "BLUEWATER_MARSH_WAGON_CIRCLE (ID), 0x8D430ACE (0xEEFDFFA3), "
+  },
+  {
+    "x": "761.1942",
+    "y": "-904.8688",
+    "name": "DEFEND_VS_NONE_ALL_OR_NOTHING_NO_HUD_NO_SHARD (CONFIG), 0x2C55DE3A (0xEEFDFFA3), "
+  },
+  {
+    "x": "751.8647",
+    "y": "-910.3962",
+    "name": "LAST_SHOT_PAN_DOWN_INFRONT_ACTOR (0x137E9F2B), 0x71D7DE3C (0xEEFDFFA3), "
+  },
+  {
+    "x": "748.9528",
+    "y": "-902.6255",
+    "name": "WS_MP_CAMP_DEFEND_NEW_HANOVER (ID), 0xF80BE799 (0xEEFDFFA3), "
+  },
+  {
+    "x": "745.9725",
+    "y": "-910.6731",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_NEW_HANOVER_WAGON_CIRCLE_01 (0x7BC2D902), 0x725580C3 (0xEEFDFFA3), "
+  },
+  {
+    "x": "738.3511",
+    "y": "-910.764",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_NEW_HANOVER_WAGON_CIRCLE_02 (0x7BC2D902), 0x804EBDAF (0xEEFDFFA3), "
+  },
+  {
+    "x": "756.7911",
+    "y": "-922.2512",
+    "name": "MP_GENERIC_HEARTLANDS_MC_FR_01 (OUTFIT), 0x805C6647 (0xEEFDFFA3), "
+  },
+  {
+    "x": "764.3952",
+    "y": "-926.7054",
+    "name": "MP_GENERIC_HEARTLANDS_MC_FR_02 (OUTFIT), 0xF6007437 (0xEEFDFFA3), "
+  },
+  {
+    "x": "753.3417",
+    "y": "-932.8979",
+    "name": "MP_GENERIC_HEARTLANDS_MC_FR_03 (OUTFIT), 0x80EB692B (0xEEFDFFA3), "
+  },
+  {
+    "x": "765.0921",
+    "y": "-928.5978",
+    "name": "MP_CAMPDEF_EASTNEWHANOVER_MALES_01 (0x7BA579E4), 0x22CDA524 (0xEEFDFFA3), "
+  },
+  {
+    "x": "746.6863",
+    "y": "-925.1821",
+    "name": "MP_CAMPDEF_EASTNEWHANOVER_VIP_01 (OUTFIT), 0x3E4E3B60 (0xEEFDFFA3), "
+  },
+  {
+    "x": "736.3657",
+    "y": "-929.4685",
+    "name": "MP_CAMPDEF_EASTNEWHANOVER_FEMALES_01 (0x7BA579E4), 0x12CF4364 (0xEEFDFFA3), "
+  },
+  {
+    "x": "743.9915",
+    "y": "-919.4283",
+    "name": "MP_CAMPDEF_EASTNEWHANOVER_VIP_02 (OUTFIT), 0x25B4B085 (0xEEFDFFA3), "
+  },
+  {
+    "x": "739.9455",
+    "y": "-916.9145",
+    "name": "1050_A_F_M_FEMALEROUGHTRAVELLERS_01_WHITE_03 (VOICE), 0x8BB3FC9A (0xEEFDFFA3), "
+  },
+  {
+    "x": "3.1",
+    "y": "1.2",
+    "name": "DISMISSIVE_REACT (0xF1238CA4), 0xC9A25785 (0xEEFDFFA3), "
+  },
+  {
+    "x": "735.1848",
+    "y": "-993.2145",
+    "name": "NEW_HANOVER_WAGON_CIRCLE_AGGRO (ID), 0xE417D972 (0xEEFDFFA3), "
+  },
+  {
+    "x": "695.6683",
+    "y": "-904.1215",
+    "name": "NEW_HANOVER_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0x8BCD25C8 (0xBEFD3C36), "
+  },
+  {
+    "x": "737.3492",
+    "y": "-993.3177",
+    "name": "NEW_HANOVER_WAGON_CIRCLE_BIG (ID), 0x8C3B1C15 (0x42EA33CB), "
+  },
+  {
+    "x": "744.0717",
+    "y": "-990.8329",
+    "name": "NEW_HANOVER_WAGON_CIRCLE_GUARD_2 (ID), 0x21987B22 (SPAWN_POSITION), "
+  },
+  {
+    "x": "738.6236",
+    "y": "-993.9852",
+    "name": "NEW_HANOVER_WAGON_CIRCLE_GUARD_1 (ID), 0x8FD94A82 (SPAWN_POSITION), "
+  },
+  {
+    "x": "697.0782",
+    "y": "-880.9771",
+    "name": "NEW_HANOVER_WAGON_CIRCLE (ID), 0xEEDFBED6 (SPAWN_POSITION), "
+  },
+  {
+    "x": "745.2026",
+    "y": "-992.7939",
+    "name": "WS_MP_CAMP_DEFEND_TALL_TREES (ID), 0x61FDF36B (SPAWN_POSITION), "
+  },
+  {
+    "x": "745.4852",
+    "y": "-994.2947",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_TALL_TREES_WAGON_CIRCLE_01 (0x7BC2D902), 0x73BCB34A (SPAWN_POSITION), "
+  },
+  {
+    "x": "756.9441",
+    "y": "-917.9437",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_TALL_TREES_WAGON_CIRCLE_02 (0x7BC2D902), 0x2C0B36B5 (SPAWN_POSITION), "
+  },
+  {
+    "x": "750.5007",
+    "y": "-916.6278",
+    "name": "AMBUSHER_BANDIT_REVOLVER_NO_LOS (CONFIG), 0x0ABE8532 (SPAWN_POSITION), "
+  },
+  {
+    "x": "750.9136",
+    "y": "-925.7611",
+    "name": "MP_GENERIC_TALLTREES_MC_FR_01 (OUTFIT), 0x6331D79E (SPAWN_POSITION), "
+  },
+  {
+    "x": "756.0845",
+    "y": "-924.4893",
+    "name": "MP_GENERIC_TALLTREES_MC_FR_02 (OUTFIT), 0x8C92ECD6 (SPAWN_POSITION), "
+  },
+  {
+    "x": "746.5909",
+    "y": "-915.7841",
+    "name": "MP_GENERIC_TALLTREES_MC_FR_03 (OUTFIT), 0x80172305 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2549.3",
+    "y": "557.4",
+    "name": "MP_CAMPDEF_TALLTREES_MALES_01 (0x7BA579E4), 0x956EB73F (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2544.0396",
+    "y": "555.8489",
+    "name": "MP_CAMPDEF_TALLTREES_VIP_01 (OUTFIT), 0x35678B23 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2548.9375",
+    "y": "559.1088",
+    "name": "MP_CAMPDEF_TALLTREES_FEMALES_01 (0x7BA579E4), 0xC2A7FB1F (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2546.2378",
+    "y": "562.5755",
+    "name": "MP_CAMPDEF_TALLTREES_VIP_02 (OUTFIT), 0xC43BE593 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2539.2527",
+    "y": "568.2469",
+    "name": "1049_A_F_M_FEMALEROUGHTRAVELLERS_01_WHITE_02 (VOICE), 0xDDCC191E (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2548.1072",
+    "y": "555.0398",
+    "name": "TALL_TREES_WAGON_CIRCLE_AGGRO (ID), 0x1AF9DC0B (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2540.1567",
+    "y": "551.7325",
+    "name": "TALL_TREES_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0x92431FE8 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2547.1626",
+    "y": "544.2939",
+    "name": "TALL_TREES_WAGON_CIRCLE_BIG (ID), 0xC8EBC539 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2545.471",
+    "y": "541.6304",
+    "name": "TALL_TREES_WAGON_CIRCLE_GUARD_2 (ID), 0xE03B8923 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2553.2483",
+    "y": "549.4033",
+    "name": "TALL_TREES_WAGON_CIRCLE_GUARD_1 (ID), 0x17886545 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2559.5256",
+    "y": "542.8656",
+    "name": "TALL_TREES_WAGON_CIRCLE (ID), 0xF59875A9 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2560.8777",
+    "y": "552.6068",
+    "name": "WS_MP_CAMP_DEFEND_HENNIGANS_STEAD (ID), 0x45123921 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2563.514",
+    "y": "557.7728",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_HENNIGANS_STEAD_WAGON_CIRCLE_01 (0x7BC2D902), 0x0400EFF7 (0xEEFDFFA3), "
+  },
+  {
+    "x": "2554.5745",
+    "y": "564.4704",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_HENNIGANS_STEAD_WAGON_CIRCLE_02 (0x7BC2D902), 0x994B8960 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2556.4712",
+    "y": "570.761",
+    "name": "MP_GENERIC_NEWAUSTIN_MC_FR_02 (OUTFIT), 0xE9BA5FF8 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2546.2354",
+    "y": "570.3257",
+    "name": "MP_GENERIC_NEWAUSTIN_MC_FR_04 (OUTFIT), 0x0D887C01 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2548.2573",
+    "y": "574.8129",
+    "name": "MP_GENERIC_NEWAUSTIN_MC_FR_05 (OUTFIT), 0xDFB45CA5 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2.3",
+    "y": "4.7",
+    "name": "MP_GENERIC_NEWAUSTIN_MC_FR_06 (OUTFIT), 0xB904BE5E (0xEEFDFFA3), "
+  },
+  {
+    "x": "12.24",
+    "y": "25.92",
+    "name": "MP_CAMPDEF_HENNIGANS_MALES_01 (0x7BA579E4), 0x1F51F449 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2513.8115",
+    "y": "529.5071",
+    "name": "MP_CAMPDEF_HENNIGANS_VIP_01 (OUTFIT), 0x057E620C (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2487.4504",
+    "y": "541.5226",
+    "name": "MP_CAMPDEF_HENNIGANS_FEMALES_01 (0x7BA579E4), 0x21D692E5 (0xBEFD3C36), "
+  },
+  {
+    "x": "-2572.9763",
+    "y": "630.2842",
+    "name": "MP_CAMPDEF_HENNIGANS_VIP_02 (OUTFIT), 0x04C49345 (0x42EA33CB), "
+  },
+  {
+    "x": "-2488.1206",
+    "y": "525.8556",
+    "name": "1048_A_F_M_FEMALEROUGHTRAVELLERS_01_WHITE_01 (VOICE), 0xCFC4153C (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2493.646",
+    "y": "525.4455",
+    "name": "HENNIGANS_STEAD_WAGON_CIRCLE_AGGRO (ID), 0x37E8FFCF (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2487.941",
+    "y": "538.2598",
+    "name": "HENNIGANS_STEAD_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0x01D0D144 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2547.548",
+    "y": "559.6924",
+    "name": "HENNIGANS_STEAD_WAGON_CIRCLE_BIG (ID), 0x56C6F596 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2548.356",
+    "y": "554.9624",
+    "name": "HENNIGANS_STEAD_WAGON_CIRCLE_GUARD_2 (ID), 0x685DB56D (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2544.8",
+    "y": "553.1066",
+    "name": "HENNIGANS_STEAD_WAGON_CIRCLE_GUARD_1 (ID), 0x523D0C2B (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2544.8845",
+    "y": "563.3326",
+    "name": "HENNIGANS_STEAD_WAGON_CIRCLE (ID), 0x28C393CB (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2550.4321",
+    "y": "562.3659",
+    "name": "WS_MP_CAMP_DEFEND_RADLEYS_PASTURE (ID), 0x3D06B62A (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3881.9807",
+    "y": "-3489.2651",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_RADLEYS_PASTURE_WAGON_CIRCLE_01 (0x7BC2D902), 0x8BE8E725 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3884.9517",
+    "y": "-3487.847",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_RADLEYS_PASTURE_WAGON_CIRCLE_02 (0x7BC2D902), 0xF0089651 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3879",
+    "y": "-3491.3274",
+    "name": "AMBUSHER_BANDIT_SHOTGUN_NO_LOS (CONFIG), 0x97493EB6 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3880.5916",
+    "y": "-3483.4934",
+    "name": "MP_GENERIC_SCARLETTMDWS_MC_FR_01 (OUTFIT), 0xEF804BE7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3893.5215",
+    "y": "-3475.0618",
+    "name": "MP_GENERIC_SCARLETTMDWS_MC_FR_02 (OUTFIT), 0xFFC2F5F2 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3875.813",
+    "y": "-3484.313",
+    "name": "MP_GENERIC_SCARLETTMDWS_MC_FR_03 (OUTFIT), 0x5D4AB05F (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3871.6162",
+    "y": "-3474.8342",
+    "name": "MP_CAMPDEF_RADLEYSPASTURE_MALES_01 (0x7BA579E4), 0xE7B7F945 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3871.9697",
+    "y": "-3485.07",
+    "name": "MP_CAMPDEF_RADLEYSPASTURE_VIP_01 (OUTFIT), 0x7BD369AA (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3865.3584",
+    "y": "-3479.9792",
+    "name": "MP_CAMPDEF_RADLEYSPASTURE_FEMALES_01 (0x7BA579E4), 0x06DD3E35 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3870.811",
+    "y": "-3488.8074",
+    "name": "MP_CAMPDEF_RADLEYSPASTURE_VIP_02 (OUTFIT), 0xE65DA99A (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3860.9578",
+    "y": "-3495.169",
+    "name": "RADLEYS_PASTURE_WAGON_CIRCLE_AGGRO (ID), 0x93E8FB5F (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3881.0059",
+    "y": "-3500.0974",
+    "name": "RADLEYS_PASTURE_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0x09F3F723 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3880.19",
+    "y": "-3504.6445",
+    "name": "RADLEYS_PASTURE_WAGON_CIRCLE_BIG (ID), 0xC5A86C76 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3891.8032",
+    "y": "-3488.6345",
+    "name": "RADLEYS_PASTURE_WAGON_CIRCLE_GUARD_2 (ID), 0x0C5C76A6 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3898.0793",
+    "y": "-3489.0415",
+    "name": "RADLEYS_PASTURE_WAGON_CIRCLE_GUARD_1 (ID), 0x52247E0E (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3878.2998",
+    "y": "-3488.3716",
+    "name": "RADLEYS_PASTURE_WAGON_CIRCLE (ID), 0xAC5B5288 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3877.766",
+    "y": "-3470.1343",
+    "name": "CAM_NEAR35MM (0xD04D554D), 0x33E481BF (0xEEFDFFA3), "
+  },
+  {
+    "x": "-8.1",
+    "y": "4.4",
+    "name": "WS_MP_CAMP_DEFEND_LITTLE_CREEK (ID), 0x9CA88F5B (0xEEFDFFA3), "
+  },
+  {
+    "x": "16.56",
+    "y": "22.32",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_LITTLE_CREEK_WAGON_CIRCLE_01 (0x7BC2D902), 0xC872BCC8 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3865.7356",
+    "y": "-3528.867",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_LITTLE_CREEK_WAGON_CIRCLE_02 (0x7BC2D902), 0x9E42FBED (0xEEFDFFA3), "
+  },
+  {
+    "x": "-3850.0122",
+    "y": "-3466.1953",
+    "name": "MP_GENERIC_BIGVALLEY_MC_FR_01 (OUTFIT), 0xD330C1AA (0xBEFD3C36), "
+  },
+  {
+    "x": "-3916.556",
+    "y": "-3460.97",
+    "name": "MP_GENERIC_BIGVALLEY_MC_FR_02 (OUTFIT), 0x15F44887 (0x42EA33CB), "
+  },
+  {
+    "x": "-3900.6082",
+    "y": "-3446.5771",
+    "name": "MP_GENERIC_BIGVALLEY_MC_FR_03 (OUTFIT), 0xDC5A43D9 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3910.316",
+    "y": "-3453.8687",
+    "name": "MP_CAMPDEF_LITTLECREEK_MALES_01 (0x7BA579E4), 0xC2192A81 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3838.4746",
+    "y": "-3496.842",
+    "name": "MP_CAMPDEF_LITTLECREEK_VIP_01 (OUTFIT), 0xD7DFDDCB (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3902.0186",
+    "y": "-3448.5527",
+    "name": "MP_CAMPDEF_LITTLECREEK_FEMALES_01 (0x7BA579E4), 0x61B24DD8 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3880.4458",
+    "y": "-3483.5305",
+    "name": "MP_CAMPDEF_LITTLECREEK_VIP_02 (OUTFIT), 0xFC694FF7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3872.6982",
+    "y": "-3482.4644",
+    "name": "LITTLE_CREEK_WAGON_CIRCLE_AGGRO (ID), 0xD97E1AED (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3880.1848",
+    "y": "-3495.6155",
+    "name": "LITTLE_CREEK_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0xA1CA0106 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3885.2385",
+    "y": "-3495.4526",
+    "name": "LITTLE_CREEK_WAGON_CIRCLE_BIG (ID), 0x0A945CDC (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3883.969",
+    "y": "-3493.267",
+    "name": "LITTLE_CREEK_WAGON_CIRCLE_GUARD_2 (ID), 0x48F73D14 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3875.5962",
+    "y": "-3490.6252",
+    "name": "LITTLE_CREEK_WAGON_CIRCLE_GUARD_1 (ID), 0x10E4B6C8 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3876.7363",
+    "y": "-3487.705",
+    "name": "LITTLE_CREEK_WAGON_CIRCLE (ID), 0x8015C0E5 (0x770101E4), "
+  },
+  {
+    "x": "-5910.382",
+    "y": "-3033.591",
+    "name": "WS_MP_CAMP_DEFEND_RIO_BRAVO (ID), 0x2B74B90D (SPAWN_POSITION), "
+  },
+  {
+    "x": "-5908.2812",
+    "y": "-3035.7505",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_RIO_BRAVO_WAGON_CIRCLE_01 (0x7BC2D902), 0xA31FAC50 (0x770101E4), "
+  },
+  {
+    "x": "-5907.0474",
+    "y": "-3030.7195",
+    "name": "NET_FETCH_CAMPSITE_DEFEND_RIO_BRAVO_WAGON_CIRCLE_02 (0x7BC2D902), 0x87C69AF4 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-5911.16",
+    "y": "-3030.8477",
+    "name": "MP_GENERIC_NEWAUSTIN_MC_FR_01 (OUTFIT), 0xAD7009D7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-5918.5537",
+    "y": "-3037.4211",
+    "name": "MP_GENERIC_NEWAUSTIN_MC_FR_03 (OUTFIT), 0x1AA7F6C6 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5906.6294",
+    "y": "-3030.2983",
+    "name": "WORLD_HUMAN_DEPRESSED_SIT_GROUND (CLEANUP_SCENARIO), 0xD59DA18C (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5920.2876",
+    "y": "-3024.3616",
+    "name": "MP_CAMPDEF_RIOBRAVO_MALES_01 (0x7BA579E4), 0x1C03C6F1 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5909.396",
+    "y": "-3026.3135",
+    "name": "MP_CAMPDEF_RIOBRAVO_VIP_01 (OUTFIT), 0xA4DD2C36 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5897.583",
+    "y": "-3021.3809",
+    "name": "MP_CAMPDEF_RIOBRAVO_FEMALES_01 (0x7BA579E4), 0xE3BDDC0A (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5908.1533",
+    "y": "-3031.9219",
+    "name": "MP_CAMPDEF_RIOBRAVO_VIP_02 (OUTFIT), 0x87C47FB4 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5910.5317",
+    "y": "-3042.4507",
+    "name": "RIO_BRAVO_WAGON_CIRCLE_AGGRO (ID), 0xEF94BE1C (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5905.494",
+    "y": "-3034.1719",
+    "name": "RIO_BRAVO_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), 0xE8ACB928 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5898.4287",
+    "y": "-3040.7317",
+    "name": "RIO_BRAVO_WAGON_CIRCLE_BIG (ID), 0xFDB478F0 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5902.0405",
+    "y": "-3040.0164",
+    "name": "RIO_BRAVO_WAGON_CIRCLE_GUARD_2 (ID), 0x54B78EBC (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5904.3247",
+    "y": "-3043.9585",
+    "name": "RIO_BRAVO_WAGON_CIRCLE_GUARD_1 (ID), 0xDD99D59C (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5910.638",
+    "y": "-3034.4717",
+    "name": "RIO_BRAVO_WAGON_CIRCLE (ID), 0xBF3AB0BD (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5908.4077",
+    "y": "-3049.5906",
+    "name": "0xA1F5FF61 (0xEEFDFFA3), WS_MP_CAMP_DEFEND_GAPTOOTH_BREACH (ID), "
+  },
+  {
+    "x": "9.5",
+    "y": "-4.1",
+    "name": "0xEB015D90 (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_GAPTOOTH_BREACH_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "12.24",
+    "y": "-5.04",
+    "name": "0x77D47C96 (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_GAPTOOTH_BREACH_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "-5957.0737",
+    "y": "-3103.048",
+    "name": "0x9C50A717 (0xEEFDFFA3), MP_CAMPDEF_GAPTOOTHBREACH_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-5896.4053",
+    "y": "-2951.0618",
+    "name": "0x5A5EF45B (0xBEFD3C36), MP_CAMPDEF_GAPTOOTHBREACH_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "-5951.754",
+    "y": "-3108.7693",
+    "name": "0xB4FACAEC (0x42EA33CB), MP_CAMPDEF_GAPTOOTHBREACH_FEMALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-5825.5195",
+    "y": "-2991.739",
+    "name": "0xF83AC3D2 (SPAWN_POSITION), MP_CAMPDEF_GAPTOOTHBREACH_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-5961.3955",
+    "y": "-3101.2542",
+    "name": "0x4AA6FE5D (SPAWN_POSITION), GAPTOOTH_BREACH_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "-5844.537",
+    "y": "-2954.7144",
+    "name": "0xE0340104 (SPAWN_POSITION), GAPTOOTH_BREACH_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-5949.1978",
+    "y": "-3108.4175",
+    "name": "0x4773BEEA (SPAWN_POSITION), GAPTOOTH_BREACH_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "-5913.3022",
+    "y": "-3032.7117",
+    "name": "0x74C2D007 (SPAWN_POSITION), GAPTOOTH_BREACH_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "-5908.1064",
+    "y": "-3030.3936",
+    "name": "0x8C9AB276 (SPAWN_POSITION), GAPTOOTH_BREACH_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "-5905.4644",
+    "y": "-3031.002",
+    "name": "0xB27C2EDF (SPAWN_POSITION), GAPTOOTH_BREACH_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "-5909.7466",
+    "y": "-3037.3264",
+    "name": "0x178B4665 (SPAWN_POSITION), WS_MP_CAMP_DEFEND_GAPTOOTH_RIDGE (ID), "
+  },
+  {
+    "x": "-5912.767",
+    "y": "-3029.1423",
+    "name": "0xEB913FE4 (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_GAPTOOTH_RIDGE_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "-5693.3",
+    "y": "-3357.9",
+    "name": "0xCB5164AE (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_GAPTOOTH_RIDGE_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "-5690.128",
+    "y": "-3364.488",
+    "name": "0x1059CFC3 (SPAWN_POSITION), MP_CAMPDEF_GAPTOOTHRIDGE_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-5693.7065",
+    "y": "-3355.101",
+    "name": "0x27DEA02A (SPAWN_POSITION), MP_CAMPDEF_GAPTOOTHRIDGE_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "-5697.0493",
+    "y": "-3352.3528",
+    "name": "0x87552083 (SPAWN_POSITION), MP_CAMPDEF_GAPTOOTHRIDGE_FEMALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-5703.4478",
+    "y": "-3350.6072",
+    "name": "0x2CC752DC (0xEEFDFFA3), MP_CAMPDEF_GAPTOOTHRIDGE_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-5688",
+    "y": "-3348.5479",
+    "name": "0x80D45AE4 (0xEEFDFFA3), GAPTOOTH_RIDGE_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "-5683.6797",
+    "y": "-3344.5317",
+    "name": "0xC0287F6C (0xEEFDFFA3), GAPTOOTH_RIDGE_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-5686.047",
+    "y": "-3353.166",
+    "name": "0x7B143FA6 (0xEEFDFFA3), GAPTOOTH_RIDGE_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "-5674.951",
+    "y": "-3352.556",
+    "name": "0x113264A6 (0xEEFDFFA3), GAPTOOTH_RIDGE_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "-5686.601",
+    "y": "-3360.9724",
+    "name": "0xF89C43E6 (0xEEFDFFA3), GAPTOOTH_RIDGE_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "-5675.2573",
+    "y": "-3363.3992",
+    "name": "0x58B89656 (0xEEFDFFA3), GAPTOOTH_RIDGE_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "-5683.929",
+    "y": "-3369.6504",
+    "name": "0x4F21DB00 (0xEEFDFFA3), CAMPER_02 (ID), "
+  },
+  {
+    "x": "-5684.1143",
+    "y": "-3375.6704",
+    "name": "0x32C5F0BC (0xEEFDFFA3), WS_MP_CAMP_DEFEND_CHOLLA_SPRINGS (ID), "
+  },
+  {
+    "x": "-5693.5044",
+    "y": "-3367.807",
+    "name": "0xA8A032A7 (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_CHOLLA_SPRINGS_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "-5701.0547",
+    "y": "-3371.6404",
+    "name": "0x037DCEED (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_CHOLLA_SPRINGS_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "-5699.7646",
+    "y": "-3360.9172",
+    "name": "0x32790F3B (0xEEFDFFA3), MP_CAMPDEF_CHOLLASPRINGS_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-5705.406",
+    "y": "-3363.161",
+    "name": "0x35E4F1FD (0xEEFDFFA3), MP_CAMPDEF_CHOLLASPRINGS_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "13.3",
+    "y": "2.7",
+    "name": "0x31F52FC5 (0xEEFDFFA3), VOL_GUARD_3 (LINKED_VOLUME), VOL_GUARD_3 (ID), "
+  },
+  {
+    "x": "-5683.5073",
+    "y": "-3298.0884",
+    "name": "0x2BBC627F (0xEEFDFFA3), MP_CAMPDEF_CHOLLASPRINGS_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-5743.531",
+    "y": "-3308.9673",
+    "name": "0x97375A28 (0xEEFDFFA3), MP_CAMPDEF_CHOLLASPRINGS_FEMALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-5754.421",
+    "y": "-3378.2314",
+    "name": "0x15B3D521 (0xBEFD3C36), MP_CAMPDEF_CHOLLASPRINGS_VIP_03 (OUTFIT), "
+  },
+  {
+    "x": "-5738.6025",
+    "y": "-3303.178",
+    "name": "0xE396134B (0x42EA33CB), CHOLLA_SPRINGS_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "-5719.986",
+    "y": "-3290.3188",
+    "name": "0xAEAC7749 (SPAWN_POSITION), CHOLLA_SPRINGS_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-5745.2383",
+    "y": "-3313.7517",
+    "name": "0x6833626E (SPAWN_POSITION), CHOLLA_SPRINGS_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "-5691.919",
+    "y": "-3357.6353",
+    "name": "0x9F945C1A (SPAWN_POSITION), CHOLLA_SPRINGS_WAGON_CIRCLE_GUARD_3 (ID), "
+  },
+  {
+    "x": "-5686.277",
+    "y": "-3355.5613",
+    "name": "0x889EA44E (SPAWN_POSITION), CHOLLA_SPRINGS_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "-5687.745",
+    "y": "-3364.3025",
+    "name": "0xED154449 (SPAWN_POSITION), CHOLLA_SPRINGS_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "-5683.4614",
+    "y": "-3363.4998",
+    "name": "0xF0B83F8D (SPAWN_POSITION), CHOLLA_SPRINGS_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "-5691.9624",
+    "y": "-3350.8015",
+    "name": "0x474262CE (SPAWN_POSITION), WORLD_ANIMAL_HORSE_DRINK_GROUND (0x24610EF4), "
+  },
+  {
+    "x": "-3585.909",
+    "y": "-2228.175",
+    "name": "0x7D1FCF0A (SPAWN_POSITION), WS_MP_CAMP_DEFEND_ROANOKE_CIRCLE (ID), "
+  },
+  {
+    "x": "-3577.9976",
+    "y": "-2229.2512",
+    "name": "0x5A4B73D3 (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_ROANOKE_RIVER_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "-3584.1797",
+    "y": "-2226.933",
+    "name": "0xDCDEC46D (0x770101E4), 0xDCDEC46D (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_ROANOKE_RIVER_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "-3593.255",
+    "y": "-2228.907",
+    "name": "0xF068B20D (0x770101E4), 0xF068B20D (SPAWN_POSITION), MP_GENERIC_ROANOKENORTH_MC_FR_03 (OUTFIT), "
+  },
+  {
+    "x": "-3581.9255",
+    "y": "-2232.488",
+    "name": "0xE2E337B6 (SPAWN_POSITION), MP_GENERIC_ROANOKENORTH_MC_FR_01 (OUTFIT), "
+  },
+  {
+    "x": "-3574.219",
+    "y": "-2233.496",
+    "name": "0x75AC550F (0xEEFDFFA3), MP_GENERIC_ROANOKENORTH_MC_FR_02 (OUTFIT), "
+  },
+  {
+    "x": "-3582.9038",
+    "y": "-2228.5623",
+    "name": "0x45B44935 (0xEEFDFFA3), MP_CAMPDEF_ROANOKE_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-3586.304",
+    "y": "-2231.027",
+    "name": "0x3A7B2A8B (0xEEFDFFA3), MP_CAMPDEF_ROANOKE_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "-3587.8862",
+    "y": "-2234.9949",
+    "name": "0x881A6D4D (0xEEFDFFA3), MP_CAMPDEF_ROANOKE_FEMALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-3594.8882",
+    "y": "-2231.8264",
+    "name": "0x9FA0512E (0xEEFDFFA3), MP_CAMPDEF_ROANOKE_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-3578.4668",
+    "y": "-2226.9197",
+    "name": "0xD0BF9E0B (0xEEFDFFA3), ROANOKE_RIVER_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "-3577.7837",
+    "y": "-2216.467",
+    "name": "0x4C951975 (0xEEFDFFA3), ROANOKE_RIVER_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-3583.9353",
+    "y": "-2224.577",
+    "name": "0x147DD8A7 (0xEEFDFFA3), ROANOKE_RIVER_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "-3592.3398",
+    "y": "-2215.3892",
+    "name": "0xB09CB498 (0xEEFDFFA3), ROANOKE_RIVER_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "-3598.536",
+    "y": "-2222.952",
+    "name": "0xE8B41E3E (0xEEFDFFA3), ROANOKE_RIVER_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "-3597.3196",
+    "y": "-2218.5232",
+    "name": "0xBEFFDC1E (0xEEFDFFA3), ROANOKE_RIVER_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "-3578.9556",
+    "y": "-2221.7456",
+    "name": "0x5B6073FF (0xEEFDFFA3), WS_MP_CAMP_DEFEND_GREAT_PLAINS_CIRCLE (ID), "
+  },
+  {
+    "x": "-3573.0293",
+    "y": "-2218.152",
+    "name": "0x143B98DC (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_GREAT_PLAINS_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "-10.5",
+    "y": "-1.2",
+    "name": "0x1EAD28B2 (0xEEFDFFA3), AMBUSHER_MOUNTED_BANDIT_REVOLVER_NO_LOS (CONFIG), "
+  },
+  {
+    "x": "-0.72",
+    "y": "-2.88",
+    "name": "0xE18471E4 (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_GREAT_PLAINS_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "-3596.2517",
+    "y": "-2138.6787",
+    "name": "0xD3D67F52 (0xEEFDFFA3), MP_GENERIC_GREATPLAINS_MC_FR_01 (OUTFIT), "
+  },
+  {
+    "x": "-3621.0159",
+    "y": "-2276.4973",
+    "name": "0x8727BA44 (0xEEFDFFA3), MP_GENERIC_GREATPLAINS_MC_FR_02 (OUTFIT), "
+  },
+  {
+    "x": "-3594.0347",
+    "y": "-2148.6099",
+    "name": "0xD3FEFBC4 (0xBEFD3C36), MP_GENERIC_GREATPLAINS_MC_FR_03 (OUTFIT), "
+  },
+  {
+    "x": "-3597.9639",
+    "y": "-2148.2744",
+    "name": "0xE1033DE4 (0x42EA33CB), MP_CAMPDEF_GREATPLAINS_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-3663.3938",
+    "y": "-2169.8335",
+    "name": "0xA5FB24C0 (SPAWN_POSITION), MP_CAMPDEF_GREATPLAINS_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "-3600.3064",
+    "y": "-2141.6511",
+    "name": "0xB54486E0 (SPAWN_POSITION), MP_CAMPDEF_GREATPLAINS_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-3588.6436",
+    "y": "-2148.8345",
+    "name": "0xB3D880CF (SPAWN_POSITION), GREAT_PLAINS_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "-3585.9092",
+    "y": "-2229.8582",
+    "name": "0x487D3C73 (SPAWN_POSITION), GREAT_PLAINS_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-3583.657",
+    "y": "-2223.9146",
+    "name": "0x130E5C39 (SPAWN_POSITION), GREAT_PLAINS_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "-3579.5693",
+    "y": "-2224.0583",
+    "name": "0xBEB43A9D (SPAWN_POSITION), GREAT_PLAINS_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "-3584.14",
+    "y": "-2220.3677",
+    "name": "0x2E9BA795 (SPAWN_POSITION), GREAT_PLAINS_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "-3575.5752",
+    "y": "-2227.6501",
+    "name": "0xEE4B091B (SPAWN_POSITION), GREAT_PLAINS_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "-3592.9543",
+    "y": "-2228.4504",
+    "name": "0x48DA99E2 (SPAWN_POSITION), WS_MP_CAMP_DEFEND_TWO_ROCKS (ID), "
+  },
+  {
+    "x": "2471.8254",
+    "y": "1754.7765",
+    "name": "0xAE7ED91C (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_TWO_ROCKS_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "2466.9827",
+    "y": "1761.2119",
+    "name": "0xAD86D976 (SPAWN_POSITION), AMBUSHER_BANDIT_REPEATER_MOUNTED_NO_LOS (CONFIG), "
+  },
+  {
+    "x": "2470.93",
+    "y": "1755.1554",
+    "name": "0x57A9D8B7 (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_TWO_ROCKS_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "2464.1875",
+    "y": "1741.863",
+    "name": "0x197A193F (SPAWN_POSITION), MP_CAMPDEF_TWOROCKS_FEMALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "2455.6274",
+    "y": "1738.9636",
+    "name": "0x3B5A253C (SPAWN_POSITION), MP_CAMPDEF_TWOROCKS_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "2468.7756",
+    "y": "1770.2577",
+    "name": "0x9F87FA7A (0xEEFDFFA3), MP_CAMPDEF_TWOROCKS_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "2460.396",
+    "y": "1778.6437",
+    "name": "0xD856CA38 (0xEEFDFFA3), TWO_ROCKS_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "2482.7305",
+    "y": "1761.2708",
+    "name": "0x4DED3EAD (0xEEFDFFA3), TWO_ROCKS_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "2491.5173",
+    "y": "1772.0898",
+    "name": "0x788364FD (0xEEFDFFA3), TWO_ROCKS_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "2480.062",
+    "y": "1748.7694",
+    "name": "0x15D76F4B (0xEEFDFFA3), TWO_ROCKS_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "2493.1895",
+    "y": "1747.0326",
+    "name": "0xE369C951 (0xEEFDFFA3), TWO_ROCKS_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "2472.6873",
+    "y": "1739.0326",
+    "name": "0x2F7DB8E0 (0xEEFDFFA3), TWO_ROCKS_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "2475.8718",
+    "y": "1736.663",
+    "name": "0xB99B694E (0xEEFDFFA3), WS_MP_CAMP_DEFEND_GRIZZLIES_CIRCLE (ID), "
+  },
+  {
+    "x": "2458.7292",
+    "y": "1749.0739",
+    "name": "0xF3F5E6A1 (0xEEFDFFA3), NET_FETCH_CAMPSITE_DEFEND_GRIZZLIES_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "2457.9976",
+    "y": "1733.4504",
+    "name": "0x7525CB9F (0xEEFDFFA3), MP_GENERIC_AMBARINO_MC_FR_01 (OUTFIT), "
+  },
+  {
+    "x": "2463.4932",
+    "y": "1738.458",
+    "name": "0xCCFD60F3 (0xEEFDFFA3), MP_GENERIC_AMBARINO_MC_FR_02 (OUTFIT), "
+  },
+  {
+    "x": "2453.0608",
+    "y": "1751.1378",
+    "name": "0x759D871B (0xEEFDFFA3), MP_CAMPDEF_GRIZZLIES_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-12.7",
+    "y": "-19.6",
+    "name": "0xBCF11335 (0xEEFDFFA3), MP_CAMPDEF_GRIZZLIES_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "2431.6125",
+    "y": "1659.0759",
+    "name": "0x51B06826 (0xEEFDFFA3), MP_CAMPDEF_GRIZZLIES_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "2519.4626",
+    "y": "1719.2012",
+    "name": "0x54F187EF (0xEEFDFFA3), GRIZZLIES_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "2618.072",
+    "y": "1839.3547",
+    "name": "0x2EF2E331 (0xEEFDFFA3), GRIZZLIES_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "2580.991",
+    "y": "1793.5334",
+    "name": "0x0E976178 (0xBEFD3C36), GRIZZLIES_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "2449.738",
+    "y": "1656.5762",
+    "name": "0xDA63C0A0 (0x42EA33CB), GRIZZLIES_WAGON_CIRCLE_DEFEND_2 (ID), "
+  },
+  {
+    "x": "2488.3433",
+    "y": "1790.7229",
+    "name": "0x00806B41 (SPAWN_POSITION), GRIZZLIES_WAGON_CIRCLE_ENEMY (ID), "
+  },
+  {
+    "x": "2466.4946",
+    "y": "1740.7858",
+    "name": "0x38246753 (SPAWN_POSITION), GRIZZLIES_WAGON_CIRCLE_DEFEND_1 (ID), "
+  },
+  {
+    "x": "2474.7815",
+    "y": "1759.7715",
+    "name": "0x889BE06A (SPAWN_POSITION), GRIZZLIES_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "2467.234",
+    "y": "1760.9071",
+    "name": "0xFB5EB199 (SPAWN_POSITION), WS_MP_CAMP_DEFEND_HEARTLANDS_CIRCLE (ID), "
+  },
+  {
+    "x": "2472.4922",
+    "y": "1749.7035",
+    "name": "0xAC742BC4 (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_WAGON_CIRCLE_02 (0x7BC2D902), "
+  },
+  {
+    "x": "2470.5303",
+    "y": "1746.7101",
+    "name": "0x4EF67A9E (SPAWN_POSITION), NET_FETCH_CAMPSITE_DEFEND_WAGON_CIRCLE_01 (0x7BC2D902), "
+  },
+  {
+    "x": "2477.425",
+    "y": "1755.736",
+    "name": "0x07B8564F (SPAWN_POSITION), MP_CAMPDEF_HEARTLANDS2_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-1400.4293",
+    "y": "-1080.1256",
+    "name": "0xE3D48832 (SPAWN_POSITION), MP_CAMPDEF_HEARTLANDS2_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "-1394.5682",
+    "y": "-1078.7537",
+    "name": "0xE20F4612 (SPAWN_POSITION), MP_CAMPDEF_HEARTLANDS2_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-1400.1766",
+    "y": "-1079.7646",
+    "name": "0xBEAB748A (SPAWN_POSITION), MP_CAMPDEF_HEARTLANDS2_FEMALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-1403.9899",
+    "y": "-1090.667",
+    "name": "0xEA7021D7 (SPAWN_POSITION), MP_CAMPDEF_HEARTLANDS2_VIP_03 (OUTFIT), "
+  },
+  {
+    "x": "-1385.6987",
+    "y": "-1090.9424",
+    "name": "0x33F18FE0 (SPAWN_POSITION), HEARTLANDS_WAGON_CIRCLE_AGGRO (ID), "
+  },
+  {
+    "x": "-1409.4387",
+    "y": "-1087.234",
+    "name": "0x2328BCA1 (SPAWN_POSITION), HEARTLANDS_WAGON_CIRCLE_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-1399.5669",
+    "y": "-1097.4429",
+    "name": "0x50A53811 (0xEEFDFFA3), HEARTLANDS_WAGON_CIRCLE_BIG (ID), "
+  },
+  {
+    "x": "-1412.5988",
+    "y": "-1076.0784",
+    "name": "0x898462FD (0xEEFDFFA3), HEARTLANDS_WAGON_CIRCLE_GUARD_3 (ID), "
+  },
+  {
+    "x": "-1414.6862",
+    "y": "-1096.4834",
+    "name": "0x0A686BCB (0xEEFDFFA3), HEARTLANDS_WAGON_CIRCLE_GUARD_2 (ID), "
+  },
+  {
+    "x": "-1408.596",
+    "y": "-1070.8738",
+    "name": "0xADFEB65F (0xEEFDFFA3), HEARTLANDS_WAGON_CIRCLE_GUARD_1 (ID), "
+  },
+  {
+    "x": "-1421.947",
+    "y": "-1080.8344",
+    "name": "0xFB492F72 (0xEEFDFFA3), HEARTLANDS_WAGON_CIRCLE (ID), "
+  },
+  {
+    "x": "-1398.3506",
+    "y": "-1067.1239",
+    "name": "0xA3EECB54 (0xEEFDFFA3), WS_MP_CAMP_DEFEND_HEARTLANDS_HILLTOP (ID), "
+  },
+  {
+    "x": "-1411.856",
+    "y": "-1062.3369",
+    "name": "0xD01A0C01 (0xEEFDFFA3), AMBIENT_CRATE_17 (CONFIG), "
+  },
+  {
+    "x": "-1389.2643",
+    "y": "-1072.5823",
+    "name": "0x75C3F821 (0xEEFDFFA3), CRATE_CANVAS_01 (CONFIG), "
+  },
+  {
+    "x": "-1394.5226",
+    "y": "-1059.0098",
+    "name": "0x84862D6F (0xEEFDFFA3), AMBIENT_COVER_BOX_04X (CONFIG), "
+  },
+  {
+    "x": "-1385.7515",
+    "y": "-1082.4464",
+    "name": "0xBA17EB36 (0xEEFDFFA3), AMBIENT_WAGON_WRECKED_01 (CONFIG), "
+  },
+  {
+    "x": "-1380.2744",
+    "y": "-1078.0789",
+    "name": "0x8B50AB64 (0xEEFDFFA3), AMBIENT_LUGGAGE_NO_SNAP (CONFIG), "
+  },
+  {
+    "x": "-7.9",
+    "y": "1.5",
+    "name": "0x97AEE139 (0xEEFDFFA3), AMBUSHER_BANDIT_REVOLVER_COVER (CONFIG), "
+  },
+  {
+    "x": "0.72",
+    "y": "2.88",
+    "name": "0xBDECE1DB (0xEEFDFFA3), AMBUSHER_BANDIT_REPEATER_COVER (CONFIG), "
+  },
+  {
+    "x": "-1398.2815",
+    "y": "-1025.3137",
+    "name": "0xEA902A7F (0xEEFDFFA3), MP_CAMPDEF_HEARTLANDS1_MALES_01 (0x7BA579E4), "
+  },
+  {
+    "x": "-1427.6533",
+    "y": "-1039.1135",
+    "name": "0x843262D7 (0xEEFDFFA3), MP_CAMPDEF_HEARTLANDS1_VIP_01 (OUTFIT), "
+  },
+  {
+    "x": "-1461.9791",
+    "y": "-1047.9691",
+    "name": "0x044C8038 (0xEEFDFFA3), VOL_GUARD_4 (LINKED_VOLUME), VOL_GUARD_4 (ID), "
+  },
+  {
+    "x": "-1364.2201",
+    "y": "-1031.5565",
+    "name": "0xE8167270 (0xBEFD3C36), MP_CAMPDEF_HEARTLANDS1_VIP_02 (OUTFIT), "
+  },
+  {
+    "x": "-1460.06",
+    "y": "-1047.4678",
+    "name": "0xDB788127 (0x42EA33CB), HEARTLANDS_W_HILLTOP_AGGRO (ID), "
+  },
+  {
+    "x": "-1392.8456",
+    "y": "-1023.1157",
+    "name": "0x60E73CE0 (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_PREVENT_SHUTDOWN (ID), "
+  },
+  {
+    "x": "-1372.1355",
+    "y": "-1026.9468",
+    "name": "0x314C2787 (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_LARGE (ID), "
+  },
+  {
+    "x": "-1401.8663",
+    "y": "-1082.5411",
+    "name": "0xEA2A10E3 (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_GUARD_2 (ID), "
+  },
+  {
+    "x": "-1395.6981",
+    "y": "-1084.5",
+    "name": "0x9276977E (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_OBJECTIVE (ID), "
+  },
+  {
+    "x": "-1399.2264",
+    "y": "-1073.4818",
+    "name": "0x5172D926 (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_ENEMY (ID), "
+  },
+  {
+    "x": "-1402.3484",
+    "y": "-1086.6315",
+    "name": "0x49CA1D82 (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_GUARD_1 (ID), "
+  },
+  {
+    "x": "-1397.4443",
+    "y": "-1074.0688",
+    "name": "0x15EC8801 (SPAWN_POSITION), HEARTLANDS_W_HILLTOP_SMALL_CIRCLE (ID), "
+  },
+  {
+    "x": "-1813.9242",
+    "y": "-869.528",
+    "name": "0xBBF304BB (SPAWN_POSITION), SHARD_TEAM_PRIMARY_INTRO (ID), "
+  },
+  {
+    "x": "-1809.4797",
+    "y": "-863.4966",
+    "name": "0xE7AAD1AD (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_SHARD_DESC_PRIMARY (0xEC4B42F9), "
+  },
+  {
+    "x": "-1812.4938",
+    "y": "-870.3822",
+    "name": "0x8BD4C6F0 (SPAWN_POSITION), SHARD_TEAM_PRIMARY_INTRO_PLURAL (ID), "
+  },
+  {
+    "x": "-1814.4451",
+    "y": "-878.4633",
+    "name": "0x358C87E9 (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_SHARD_DESC_PRIMARY_PLURAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-1804.8562",
+    "y": "-881.7657",
+    "name": "0xFEC77092 (SPAWN_POSITION), SHARD_TEAM_PRIMARY_PASS (ID), "
+  },
+  {
+    "x": "-1817.1792",
+    "y": "-873.1865",
+    "name": "0x22D1CA72 (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_SHARD_PRIMARY_PASS (0xEC4B42F9), "
+  },
+  {
+    "x": "-1812.7449",
+    "y": "-882.9429",
+    "name": "0x2E9A7541 (0xEEFDFFA3), SHARD_TEAM_PRIMARY_PASS_PLURAL (ID), "
+  },
+  {
+    "x": "-1819.0145",
+    "y": "-869.3023",
+    "name": "0x80F6F3A3 (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_SHARD_PRIMARY_PASS_PLURAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-1819.7084",
+    "y": "-881.2773",
+    "name": "0x861CAC88 (0xEEFDFFA3), SHARD_TEAM_PRIMARY_PASS_PARTIAL (ID), "
+  },
+  {
+    "x": "-1820.1881",
+    "y": "-866.4856",
+    "name": "0x8FC4D6CD (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_SHARD_PRIMARY_PASS_PARTIAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-1823.4785",
+    "y": "-876.4045",
+    "name": "0xED7483DA (0xEEFDFFA3), SHARD_DESTROYED (ID), "
+  },
+  {
+    "x": "-1817.8591",
+    "y": "-864.058",
+    "name": "0x69E5CF31 (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_SHARD_OVER (0xEC4B42F9), "
+  },
+  {
+    "x": "-1824.9785",
+    "y": "-866.8775",
+    "name": "0x6A7DF5FC (0xEEFDFFA3), SHARD_DESTROYED_PLURAL (ID), "
+  },
+  {
+    "x": "-1806.9503",
+    "y": "-861.8668",
+    "name": "0xCE38378F (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_SHARD_OVER_PLURAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-1799.4928",
+    "y": "-863.0062",
+    "name": "0x943B04A4 (0xEEFDFFA3), SHARD_OUTSIDE_CLEANUP_RADIUS (ID), "
+  },
+  {
+    "x": "-1805.1974",
+    "y": "-864.9047",
+    "name": "0x9BB13E64 (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_SHARD_OUTSIDE_CLEANUP_RADIUS (0xEC4B42F9), "
+  },
+  {
+    "x": "-1794.2806",
+    "y": "-869.0905",
+    "name": "0xECE06164 (0xEEFDFFA3), SHARD_OUTSIDE_CLEANUP_RADIUS_PLURAL (ID), "
+  },
+  {
+    "x": "4.7",
+    "y": "7.1",
+    "name": "0x36239D2C (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_SHARD_OUTSIDE_CLEANUP_RADIUS_PLURAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-2.88",
+    "y": "6.48",
+    "name": "0x68D2568E (0xEEFDFFA3), SHARD_POSSE_ABANDONED (ID), "
+  },
+  {
+    "x": "-1755.6613",
+    "y": "-867.5616",
+    "name": "0x97B2C152 (0xEEFDFFA3), FETCH_SHARD_POSSE_ABANDONED (0xEC4B42F9), "
+  },
+  {
+    "x": "-1755.9075",
+    "y": "-851.4905",
+    "name": "0x7CD1CAD8 (0xEEFDFFA3), SHARD_YOUR_POSSE_ABANDONED (ID), "
+  },
+  {
+    "x": "-1833.2006",
+    "y": "-916.1215",
+    "name": "0xA785306E (0xEEFDFFA3), FETCH_SHARD_YOUR_POSSE_ABANDONED (0xEC4B42F9), "
+  },
+  {
+    "x": "-1831.7386",
+    "y": "-921.0234",
+    "name": "0xB9171A85 (0xBEFD3C36), SHARD_YOU_ABANDONED (ID), "
+  },
+  {
+    "x": "-1768.5315",
+    "y": "-853.1897",
+    "name": "0x292453CE (0x42EA33CB), FETCH_SHARD_YOU_ABANDONED (0xEC4B42F9), "
+  },
+  {
+    "x": "-1840.2103",
+    "y": "-831.3677",
+    "name": "0x57C057E8 (SPAWN_POSITION), HELP_TEAM_PRIMARY (ID), "
+  },
+  {
+    "x": "-1795.8201",
+    "y": "-871.1029",
+    "name": "0x41CB3E85 (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_HELP_INTRO (0xEC4B42F9), "
+  },
+  {
+    "x": "-1793.2969",
+    "y": "-862.9397",
+    "name": "0x71589923 (SPAWN_POSITION), HELP_TEAM_PRIMARY_PLURAL (ID), "
+  },
+  {
+    "x": "-1813.6132",
+    "y": "-872.5966",
+    "name": "0xDE3FDC57 (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_HELP_INTRO_PLURAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-1808.2406",
+    "y": "-867.3336",
+    "name": "0xFDE10AED (SPAWN_POSITION), HELP_DYNAMIC_NEARBY (ID), "
+  },
+  {
+    "x": "-1817.298",
+    "y": "-862.5927",
+    "name": "0x873C99C8 (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_HELP_DYNAMIC_NEARBY (0xEC4B42F9), "
+  },
+  {
+    "x": "-1813.7449",
+    "y": "-862.303",
+    "name": "0xFA820BB5 (SPAWN_POSITION), HELP_REMOTE_PLAYER_STARTED_MISSION (ID), "
+  },
+  {
+    "x": "-1812.0603",
+    "y": "-869.96",
+    "name": "0x2782DA54 (SPAWN_POSITION), FETCH_HELP_DYNAMIC_REMOTE_PLAYER_STARTED_MISSION (0xEC4B42F9), "
+  },
+  {
+    "x": "-1755.888",
+    "y": "1690.7273",
+    "name": "0x52167B05 (SPAWN_POSITION), OBJ_PROTECT (ID), "
+  },
+  {
+    "x": "-1758.475",
+    "y": "1691.6825",
+    "name": "0xAD11EF76 (SPAWN_POSITION), FETCH_OBJ_CAMPSITE_DEFEND_PROTECT (0xEC4B42F9), "
+  },
+  {
+    "x": "-1758.0875",
+    "y": "1689.8624",
+    "name": "0xB8F2E5F4 (SPAWN_POSITION), OBJ_PROTECT_PLURAL (ID), "
+  },
+  {
+    "x": "-1743.7023",
+    "y": "1691.6094",
+    "name": "0xB92DDB0C (SPAWN_POSITION), FETCH_OBJ_CAMPSITE_DEFEND_PROTECT_PLURAL (0xEC4B42F9), "
+  },
+  {
+    "x": "-1748.4712",
+    "y": "1690.986",
+    "name": "0xC7215BFC (SPAWN_POSITION), SCORETIMER_OBJECTIVE_DESTROYED (ID), "
+  },
+  {
+    "x": "-1744.6846",
+    "y": "1685.3124",
+    "name": "0x4E97ACE9 (SPAWN_POSITION), FETCH_CAMPSITE_DEFEND_TICKER_DESTROY (0xEC4B42F9), "
+  },
+  {
+    "x": "-1752.0597",
+    "y": "1678.8394",
+    "name": "0xDBC34453 (0xEEFDFFA3), SCORETIMER_OBJECTIVE_DESTROYED_YOU (ID), "
+  },
+  {
+    "x": "-1750.3822",
+    "y": "1676.033",
+    "name": "0x3DEBAE2A (0xEEFDFFA3), FETCH_CAMPSITE_DEFEND_TICKER_DESTROY_YOU (0xEC4B42F9), "
+  },
+  {
+    "x": "-1756.4392",
+    "y": "1680.981",
+    "name": "0xC7E35EAA (0xEEFDFFA3), CTX_OBJECTIVE_SECONDARY (ID), "
+  },
+  {
+    "x": "-1757.8893",
+    "y": "1672.58",
+    "name": "0xB9B99E84 (0xEEFDFFA3), FETCH_CTX_SECONDARY_CAMPSITE_DEFEND (0xEC4B42F9), "
+  },
+  {
+    "x": "-1764.8453",
+    "y": "1684.6722",
+    "name": "0xC0CB042C (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1764.3821",
+    "y": "1673.495",
+    "name": "0x6E2C3DC2 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1768.5958",
+    "y": "1687.0104",
+    "name": "0x3D5DDDBE (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1756.883",
+    "y": "1702.1859",
+    "name": "0xE7115D59 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1748.9496",
+    "y": "1698.0706",
+    "name": "0x016A1C44 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1764.441",
+    "y": "1706.1615",
+    "name": "0xC73EFD61 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1768.9907",
+    "y": "1701.3335",
+    "name": "0x601F11D3 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2.8",
+    "y": "-2.5",
+    "name": "0x24458EC2 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-5.04",
+    "y": "5.04",
+    "name": "0x8E407879 (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1785.6976",
+    "y": "1729.4777",
+    "name": "0x3FB6000C (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1783.4432",
+    "y": "1727.1705",
+    "name": "0x813BC36D (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1807.6338",
+    "y": "1724.8547",
+    "name": "0xC382ECEC (0xEEFDFFA3), "
+  },
+  {
+    "x": "-1768.447",
+    "y": "1702.99",
+    "name": "0xBE534456 (0xBEFD3C36), "
+  },
+  {
+    "x": "-1783.223",
+    "y": "1702.0051",
+    "name": "0xDD17BB36 (0x42EA33CB), "
+  },
+  {
+    "x": "-1759.6799",
+    "y": "1697.3992",
+    "name": "0x2CB1B3EE (SPAWN_POSITION), "
+  },
+  {
+    "x": "-1752.825",
+    "y": "1691.4769",
+    "name": "0x4067D3E6 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-1753.2727",
+    "y": "1694.0708",
+    "name": "0x4E85BFBF (SPAWN_POSITION), "
+  },
+  {
+    "x": "-1759.603",
+    "y": "1685.5872",
+    "name": "0x6B7EE4DF (SPAWN_POSITION), "
+  },
+  {
+    "x": "507.4434",
+    "y": "-245.3252",
+    "name": "0x413CD8D4 (SPAWN_POSITION), "
+  },
+  {
+    "x": "509.1973",
+    "y": "-245.5144",
+    "name": "0x6008E7A7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "500.2221",
+    "y": "-253.4515",
+    "name": "0xF0B77DB7 (SPAWN_POSITION), "
+  },
+  {
+    "x": "502.1175",
+    "y": "-246.3185",
+    "name": "0x70931BBD (SPAWN_POSITION), "
+  },
+  {
+    "x": "492.2177",
+    "y": "-241.7283",
+    "name": "0x539B3201 (SPAWN_POSITION), "
+  },
+  {
+    "x": "495.2177",
+    "y": "-238.7283",
+    "name": "0xDCEDCED3 (SPAWN_POSITION), "
+  },
+  {
+    "x": "503.5211",
+    "y": "-230.7252",
+    "name": "0x497156AD (0xEEFDFFA3), "
+  },
+  {
+    "x": "506.5211",
+    "y": "-233.7252",
+    "name": "0x2402DE7B (0xEEFDFFA3), "
+  },
+  {
+    "x": "512.1398",
+    "y": "-235.4745",
+    "name": "0x1CE8D0E3 (0xEEFDFFA3), "
+  },
+  {
+    "x": "515.1398",
+    "y": "-238.4745",
+    "name": "0x60A5A170 (0xEEFDFFA3), "
+  },
+  {
+    "x": "517.1573",
+    "y": "-256.3329",
+    "name": "0x4B7A8A97 (0xEEFDFFA3), "
+  },
+  {
+    "x": "520.1573",
+    "y": "-259.3329",
+    "name": "0x72350BCC (0xEEFDFFA3), "
+  },
+  {
+    "x": "507.8332",
+    "y": "-261.5804",
+    "name": "0x50DE18C4 (0xEEFDFFA3), "
+  },
+  {
+    "x": "510.8332",
+    "y": "-264.5804",
+    "name": "0x9A4DE4D3 (0xEEFDFFA3), "
+  },
+  {
+    "x": "500.0966",
+    "y": "-263.393",
+    "name": "0x2E9E82A0 (0xEEFDFFA3), "
+  },
+  {
+    "x": "503.0966",
+    "y": "-266.393",
+    "name": "0x9DC8D969 (0xEEFDFFA3), "
+  },
+  {
+    "x": "491.9532",
+    "y": "-255.1308",
+    "name": "0x22078547 (0xEEFDFFA3), "
+  },
+  {
+    "x": "494.9532",
+    "y": "-258.1308",
+    "name": "0xF0E3957E (0xEEFDFFA3), "
+  },
+  {
+    "x": "-8.9",
+    "y": "-13.5",
+    "name": "0x734335FB (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2.88",
+    "y": "5.04",
+    "name": "0x9C4A8B45 (0xEEFDFFA3), "
+  },
+  {
+    "x": "486.6312",
+    "y": "-174.4975",
+    "name": "0x013B73D2 (0xEEFDFFA3), "
+  },
+  {
+    "x": "415.4657",
+    "y": "-265.9314",
+    "name": "0xE1E412A9 (0xEEFDFFA3), "
+  },
+  {
+    "x": "492.6725",
+    "y": "-175.9956",
+    "name": "0xD8BC0860 (0xEEFDFFA3), "
+  },
+  {
+    "x": "579.0853",
+    "y": "-206.6677",
+    "name": "0x11B633DE (0xBEFD3C36), "
+  },
+  {
+    "x": "482.6601",
+    "y": "-173.7064",
+    "name": "0xF49088FB (0x42EA33CB), "
+  },
+  {
+    "x": "504.5976",
+    "y": "-273.0124",
+    "name": "0x71DAB140 (SPAWN_POSITION), "
+  },
+  {
+    "x": "482.6098",
+    "y": "-240.8183",
+    "name": "0xCB32409B (SPAWN_POSITION), "
+  },
+  {
+    "x": "504.5687",
+    "y": "-254.1261",
+    "name": "0x0993CA35 (SPAWN_POSITION), "
+  },
+  {
+    "x": "504.2628",
+    "y": "-240.1193",
+    "name": "0xDDFD0E90 (SPAWN_POSITION), "
+  },
+  {
+    "x": "499.5403",
+    "y": "-239.5438",
+    "name": "0xB48CDA57 (SPAWN_POSITION), "
+  },
+  {
+    "x": "509.262",
+    "y": "-241.2376",
+    "name": "0xBE0428DC (SPAWN_POSITION), "
+  },
+  {
+    "x": "497.5613",
+    "y": "-243.7237",
+    "name": "0x58984ADB (SPAWN_POSITION), "
+  },
+  {
+    "x": "124.0871",
+    "y": "413.0535",
+    "name": "0xE8E8278C (SPAWN_POSITION), "
+  },
+  {
+    "x": "124.0467",
+    "y": "414.2755",
+    "name": "0x4A43E8A5 (SPAWN_POSITION), "
+  },
+  {
+    "x": "121.1614",
+    "y": "413.2939",
+    "name": "0xD6F98305 (SPAWN_POSITION), "
+  },
+  {
+    "x": "128.0903",
+    "y": "377.6056",
+    "name": "0xF737A439 (SPAWN_POSITION), "
+  },
+  {
+    "x": "127.6478",
+    "y": "392.8396",
+    "name": "0x29B4A557 (SPAWN_POSITION), "
+  },
+  {
+    "x": "134.1873",
+    "y": "383.4392",
+    "name": "0x6770867F (SPAWN_POSITION), "
+  },
+  {
+    "x": "133.5198",
+    "y": "396.1437",
+    "name": "0x2F8045A5 (0xEEFDFFA3), "
+  },
+  {
+    "x": "134.7748",
+    "y": "416.9441",
+    "name": "0x71A2B4DE (0xEEFDFFA3), "
+  },
+  {
+    "x": "130.4952",
+    "y": "402.9336",
+    "name": "0x6A6788B8 (0xEEFDFFA3), "
+  },
+  {
+    "x": "84.9983",
+    "y": "390.6372",
+    "name": "0x4A1DFFED (0xEEFDFFA3), "
+  },
+  {
+    "x": "125.007",
+    "y": "402.5443",
+    "name": "0xD95EB3DE (0xEEFDFFA3), "
+  },
+  {
+    "x": "95.2689",
+    "y": "407.4466",
+    "name": "0x3BB6DCBF (0xEEFDFFA3), "
+  },
+  {
+    "x": "116.8969",
+    "y": "400.8092",
+    "name": "0x883B4B73 (0xEEFDFFA3), "
+  },
+  {
+    "x": "121.4456",
+    "y": "420.7469",
+    "name": "0xFBA13AA0 (0xEEFDFFA3), "
+  },
+  {
+    "x": "114.9098",
+    "y": "406.8663",
+    "name": "0x2CE38DE5 (0xEEFDFFA3), "
+  },
+  {
+    "x": "116.7825",
+    "y": "418.7704",
+    "name": "0xF70059D5 (0xEEFDFFA3), "
+  },
+  {
+    "x": "106.116",
+    "y": "410.2363",
+    "name": "0x6D31CDA5 (0xEEFDFFA3), "
+  },
+  {
+    "x": "3.1",
+    "y": "7.1",
+    "name": "0xA4EA31AF (0xEEFDFFA3), "
+  },
+  {
+    "x": "-2.88",
+    "y": "22.32",
+    "name": "0xFE0914BE (0xEEFDFFA3), "
+  },
+  {
+    "x": "127.56",
+    "y": "407.081",
+    "name": "0xD8DD4D99 (0xEEFDFFA3), "
+  },
+  {
+    "x": "123.0297",
+    "y": "407.8631",
+    "name": "0xC6570F37 (0xEEFDFFA3), "
+  },
+  {
+    "x": "129.4017",
+    "y": "410.6479",
+    "name": "0x59496AB6 (0xEEFDFFA3), "
+  },
+  {
+    "x": "136.508",
+    "y": "400.586",
+    "name": "0x857AFCE5 (0xBEFD3C36), "
+  },
+  {
+    "x": "350",
+    "y": "2",
+    "name": "0x46C24713 (0x42EA33CB), "
+  },
+  {
+    "x": "131.116",
+    "y": "397.702",
+    "name": "0xB54E5C77 (SPAWN_POSITION), "
+  },
+  {
+    "x": "3",
+    "y": "353",
+    "name": "0xF25D397F (0x100B5E15), "
+  },
+  {
+    "x": "179.5887",
+    "y": "417.227",
+    "name": "0x2A70BA88 (SPAWN_POSITION), "
+  },
+  {
+    "x": "172.1091",
+    "y": "428.5527",
+    "name": "0x62E27FB6 (0x100B5E15), "
+  },
+  {
+    "x": "173.0062",
+    "y": "426.9209",
+    "name": "0xFA1C9335 (SPAWN_POSITION), "
+  },
+  {
+    "x": "173.7719",
+    "y": "372.8343",
+    "name": "0x7C331065 (0x100B5E15), "
+  },
+  {
+    "x": "138.95139",
+    "y": "401.49695",
+    "name": "0x6F4EB33D (SPAWN_POSITION), "
+  },
+  {
+    "x": "114.4132",
+    "y": "392.6592",
+    "name": "0x10BA1E5F (0x100B5E15), "
+  },
+  {
+    "x": "140.95139",
+    "y": "401.49695",
+    "name": "0xE4F09B2B (SPAWN_POSITION), "
+  },
+  {
+    "x": "116.4132",
+    "y": "392.6592",
+    "name": "0x946A09A1 (0x100B5E15), "
+  },
+  {
+    "x": "122.3139",
+    "y": "408.8556",
+    "name": "0x468EE776 (SPAWN_POSITION), "
+  },
+  {
+    "x": "127.799",
+    "y": "411.9861",
+    "name": "0x1CAA576D (SPAWN_POSITION), "
+  },
+  {
+    "x": "128.6549",
+    "y": "411.1023",
+    "name": "0xF0EFBB65 (SPAWN_POSITION), "
+  }
+]

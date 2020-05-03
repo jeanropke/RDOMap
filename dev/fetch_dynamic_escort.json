@@ -1,0 +1,247 @@
+[
+  {
+    "x": "2952.1848",
+    "y": "529.415",
+    "name": "DYNAMIC_ESCORT_DOVERHILL (ID), 0x806B80C9 (AGGRO_GROUP), 0xB35EDA4F (0x770101E4), "
+  },
+  {
+    "x": "2536.174",
+    "y": "773.7694",
+    "name": "MODEL_CONFIG_ROANOKE (0x7C1FCD5E), 0x2F336B2B (SPAWN_POSITION), "
+  },
+  {
+    "x": "2952.3706",
+    "y": "526.6",
+    "name": "DEWSHAU (0x64D3F225), 0x4A7FFB56 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-5398.14",
+    "y": "-2343.198",
+    "name": "DYNAMIC_ESCORT_WESTERN_HOMESTEAD (ID), 0x06A52620 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-5398.33",
+    "y": "-2343.32",
+    "name": "MODEL_CONFIG_HEARTLANDS (0x7C1FCD5E), 0x1B69B8DD (0x100B5E15), "
+  },
+  {
+    "x": "-2",
+    "y": "-6",
+    "name": "DECURAU (0x64D3F225), 0x7734B98E (0x770101E4), "
+  },
+  {
+    "x": "-6047.69",
+    "y": "-3259.24",
+    "name": "DYNAMIC_ESCORT_CENTRAL_UNION_RAILROAD (ID), 0xC59CB576 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-5399.49",
+    "y": "-2342.78",
+    "name": "DEBWMAU (0x64D3F225), 0x74082CB0 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3736.886",
+    "y": "-3132.627",
+    "name": "DYNAMIC_ESCORT_BLUEWATER_MARSH (ID), 0x0562F0E8 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3740.268",
+    "y": "-3131.157",
+    "name": "DESMPAU (0x64D3F225), 0x4B4F7614 (SPAWN_POSITION), 0xD973FB9D (0x316996C8), 0xD973FB9D (0x6C7C9D92), "
+  },
+  {
+    "x": "-3751.597",
+    "y": "-3128.812",
+    "name": "DYNAMIC_ESCORT_PLEASANCE (ID), 0xCF161204 (SPAWN_POSITION), 0xBEB5C621 (0x316996C8), "
+  },
+  {
+    "x": "-3748.087",
+    "y": "-3129.032",
+    "name": "MODEL_CONFIG_SCARLETT_MEADOWS (0x7C1FCD5E), 0x7401B0B6 (0x316996C8), 0xB2CCFFF1 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3756.934",
+    "y": "-3129.565",
+    "name": "DEBWOAU (0x64D3F225), 0x757E1762 (SPAWN_POSITION), 0x659D13ED (0x316996C8), "
+  },
+  {
+    "x": "-3657.124",
+    "y": "-3345.65",
+    "name": "DYNAMIC_ESCORT_BRAITHWAITE (ID), 0x1FD18857 (0xCC16AB34), 0xA01776E7 (0x770101E4), "
+  },
+  {
+    "x": "-5518.19",
+    "y": "-2908.29",
+    "name": "DEHRTAU (0x64D3F225), 0x8394C10A (SPAWN_POSITION), 0x85C25437 (0x316996C8), 0x85C25437 (0xCC16AB34), "
+  },
+  {
+    "x": "-3652.477",
+    "y": "-3338.869",
+    "name": "DYNAMIC_ESCORT_HEARTLANDS (ID), 0x55EF172E (SPAWN_POSITION), 0x42ACCE0D (0xCC16AB34), "
+  },
+  {
+    "x": "-3449.086",
+    "y": "-2253.392",
+    "name": "DEBRLAU (0x64D3F225), 0x87642886 (0x770101E4), 0x30492946 (0x316996C8), "
+  },
+  {
+    "x": "-4205.33",
+    "y": "-3459.97",
+    "name": "DYNAMIC_ESCORT_BARROW_LAGOON (ID), 0xDF2C870A (0xCC16AB34), 0x5DB84C12 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-3450.414",
+    "y": "-2252.478",
+    "name": "MODEL_CONFIG_GRIZZLIES (0x7C1FCD5E), 0x9202652F (0x770101E4), "
+  },
+  {
+    "x": "-3701.43",
+    "y": "-2592.6",
+    "name": "DEBGVAU (0x64D3F225), 0x9CBA8117 (0xCC16AB34), 0xDF154E73 (SPAWN_POSITION), 0x9CBA8117 (0x316996C8), "
+  },
+  {
+    "x": "-1521.3",
+    "y": "-2637.955",
+    "name": "DYNAMIC_ESCORT_BIG_VALLEY (ID), 0xF0B5E494 (SPAWN_POSITION), "
+  },
+  {
+    "x": "-2500.656",
+    "y": "-1360.0724",
+    "name": "MODEL_CONFIG_BIG_VALLEY (0x7C1FCD5E), 0x474D87FC (0x770101E4), 0xC0A348E8 (0xCC16AB34), "
+  },
+  {
+    "x": "-2349.6367",
+    "y": "-2386.0984",
+    "name": "DEBVGAU (0x64D3F225), 0x33263616 (SPAWN_POSITION), 0xB265AC6D (0x316996C8), "
+  },
+  {
+    "x": "-2497.89",
+    "y": "-1359.71",
+    "name": "DYNAMIC_ESCORT_BIG_VALLEY_GRAVES (ID), 0xBA4F1A36 (0x770101E4), "
+  },
+  {
+    "x": "-1387.65",
+    "y": "-2315.8",
+    "name": "DEGRPAU (0x64D3F225), 0x459052D0 (0x4B061377), 0x459052D0 (0x316996C8), 0x4EFEDF69 (SPAWN_POSITION), 0x459052D0 (0xCC16AB34), "
+  },
+  {
+    "x": "-1313.45",
+    "y": "-1445.605",
+    "name": "DYNAMIC_ESCORT_GREAT_PLAINS (ID), 0x99B6D16B (SPAWN_POSITION), "
+  },
+  {
+    "x": "-1596.1069",
+    "y": "-978.48",
+    "name": "MODEL_CONFIG_TALL_TREES (0x7C1FCD5E), 0xBDF1572C (0x770101E4), "
+  },
+  {
+    "x": "-756.76",
+    "y": "-1295.6",
+    "name": "DEARBAU (0x64D3F225), 0xD9AC0A84 (SPAWN_POSITION), 0x9311EDD2 (0xCC16AB34), "
+  },
+  {
+    "x": "-1596.226",
+    "y": "-975.606",
+    "name": "DYNAMIC_ESCORT_AURORA_BASIN (ID), 0xF87F347B (0x770101E4), "
+  },
+  {
+    "x": "-1801.7",
+    "y": "-427.2",
+    "name": "DEHENAU (0x64D3F225), 0xC4A54FCC (0xCC16AB34), 0x28C72BCC (SPAWN_POSITION), "
+  },
+  {
+    "x": "-1746.172",
+    "y": "552.16",
+    "name": "DYNAMIC_ESCORT_HENNIGAN_STEAD (ID), 0x765693D3 (0x770101E4), "
+  },
+  {
+    "x": "-423.5121",
+    "y": "1736.9125",
+    "name": "MODEL_CONFIG_NEW_AUSTIN (0x7C1FCD5E), 0xD995CC0E (SPAWN_POSITION), "
+  },
+  {
+    "x": "-1174.573",
+    "y": "1523.999",
+    "name": "DEHGRAU (0x64D3F225), 0x657B19A0 (0x770101E4), "
+  },
+  {
+    "x": "-312.5",
+    "y": "780.3",
+    "name": "DYNAMIC_ESCORT_HANGING_ROCK (ID), 0x85D42CBF (SPAWN_POSITION), "
+  },
+  {
+    "x": "19.736",
+    "y": "-187.177",
+    "name": "DERLCAU (0x64D3F225), 0xC1D42B43 (0x770101E4), "
+  },
+  {
+    "x": "2742",
+    "y": "-1391.8",
+    "name": "DYNAMIC_ESCORT_RILEY_CHARGE (ID), 0x80965DA3 (SPAWN_POSITION), "
+  },
+  {
+    "x": "988.06",
+    "y": "-2036.136",
+    "name": "DESSTAU (0x64D3F225), 0xFAE2120E (SPAWN_POSITION), "
+  },
+  {
+    "x": "1701.278",
+    "y": "-442.848",
+    "name": "DYNAMIC_ESCORT_SILENT_STEAD (ID), 0xB4D75F70 (0x770101E4), "
+  },
+  {
+    "x": "1011.07",
+    "y": "-1763.91",
+    "name": "DEVANAU (0x64D3F225), 0x53681FE5 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1699.56",
+    "y": "-444.45",
+    "name": "DYNAMIC_ESCORT_VAN_HORN (ID), 0xA0B7D5A0 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2681.8308",
+    "y": "-51.551",
+    "name": "STANDARD (CONFIG), 0x50D26D79 (0x770101E4), STANDARD (ID), "
+  },
+  {
+    "x": "2007.2722",
+    "y": "702.7861",
+    "name": "AMBIENT_FAKE_ENEMY_MALE (CONFIG), 0xEFE9926C (SPAWN_POSITION), "
+  },
+  {
+    "x": "2679.847",
+    "y": "-52.691",
+    "name": "PED (0xF5D3F1EC), 0x3A5B0376 (0x770101E4), "
+  },
+  {
+    "x": "2117.21",
+    "y": "-595.6",
+    "name": "WORLD_HUMAN_LEAN_WALL_DRINKING (0x5129B6FC), 0xC7737DDC (SPAWN_POSITION), "
+  },
+  {
+    "x": "2210.544",
+    "y": "817.345",
+    "name": "MISSION_GIVER_LOWER_CLASS_STATIC_STRANGER_MALE (CONFIG), 0x21FAD5BD (0x770101E4), "
+  },
+  {
+    "x": "1456.03",
+    "y": "315.8",
+    "name": "WORLD_HUMAN_DRINKING_DRUNK (0x5129B6FC), 0x9F85F861 (SPAWN_POSITION), "
+  },
+  {
+    "x": "1530.045",
+    "y": "1553.577",
+    "name": "VERY_DRUNK (0xE691240F), 0x2980CF13 (0x770101E4), "
+  },
+  {
+    "x": "2968.6",
+    "y": "1347.92",
+    "name": "MP_DE_U_M_M_VANHORN_01 (0x7BA579E4), 0x6C0D8E20 (SPAWN_POSITION), "
+  },
+  {
+    "x": "2474.86",
+    "y": "2220.558",
+    "name": "FOLLOW_PLAYER (0x1293F682), "
+  }
+]
