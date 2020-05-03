@@ -31,9 +31,9 @@ var Encounters = {
     var linksElement = $('<p>');
     var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
-    return `<h1>${marker.title}</h1>
+    return `<h1>${Language.get(`map.${marker.category}.name`)}</h1>
         <span class="marker-content-wrapper">
-        <p>${popupContent}</p>
+        <p>${Language.get(`map.${marker.category}.desc`)}</p>
         </span>
         ${linksElement.prop('outerHTML')}
         ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
@@ -95,13 +95,12 @@ var Encounters = {
         return "orange";
       case "ambush":
         return "red";
-      case "people_in_need":
       case "runaway_wagon":
       case "hogtied_lawman":
       case "rescue":
         return "blue";
       case "fame_seeker":
-      case "hostile_conversation":
+      case "duel":
         return "lightgray";
       case "tree_map":
       case "treasure_hunter":

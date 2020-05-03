@@ -21,15 +21,15 @@ var uniqueSearchMarkers = [];
 var categories = [
   'ambush', 'boats', 'campfires', 'daily_locations', 'defend_campsite', 'dog_encounter',
   'egg_encounter', 'escort', 'fame_seeker', 'fast_travel', 'grave_robber', 'hideouts',
-  'hogtied_lawman', 'hostile_conversation', 'moonshiner_camp', 'nazar', 'people_in_need',
+  'hogtied_lawman', 'duel', 'moonshiner_camp', 'nazar',
   'plants', 'rescue', 'rival_collector', 'runaway_wagon', 'shops', 'sightseeing',
   'trains', 'treasure', 'treasure_hunter', 'tree_map', 'user_pins', 'wounded_animal',
 ];
 
 var categoriesDisabledByDefault = [
   'ambush', 'daily_locations', 'dog_encounter', 'egg_encounter', 'escort',
-  'fame_seeker', 'grave_robber', 'hogtied_lawman', 'hostile_conversation',
-  'moonshiner_camp', 'people_in_need', 'rescue', 'rival_collector', 'runaway_wagon',
+  'fame_seeker', 'grave_robber', 'hogtied_lawman', 'duel',
+  'moonshiner_camp', 'rescue', 'rival_collector', 'runaway_wagon',
   'sightseeing', 'treasure_hunter', 'tree_map', 'wounded_animal',
 ];
 

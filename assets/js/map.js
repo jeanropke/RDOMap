@@ -3,8 +3,8 @@
  */
 
 var MapBase = {
-  minZoom: 2,
-  maxZoom: 7,
+  minZoom: Settings.isDebugEnabled ? 0 : 2,
+  maxZoom: Settings.isDebugEnabled ? 10 : 7,
   map: null,
   overlays: [],
   markers: [],
@@ -505,7 +505,7 @@ var MapBase = {
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
-    MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
+    MapBase.debugMarker((0.01552 * lng + -63.6).toFixed(4), (0.01552 * lat + 111.29).toFixed(4), name);
   },
 
   game2Map: function ({
@@ -513,7 +513,7 @@ var MapBase = {
     y,
     z
   }) {
-    MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
+    MapBase.debugMarker((0.01552 * y + -63.6).toFixed(4), (0.01552 * x + 111.29).toFixed(4), z);
   },
 
   loadFastTravels: function () {
@@ -629,7 +629,7 @@ var MapBase = {
       });
     }
 
-    if (Settings.isDebugEnabled) {
+    if (false && Settings.isDebugEnabled) {
       console.log(`{"lat":"${coords.latlng.lat.toFixed(4)}","lng":"${coords.latlng.lng.toFixed(4)}","count":"${MapBase.heatmapCount}"},`);
       MapBase.testData.data.push({
         lat: coords.latlng.lat.toFixed(4),
