@@ -109,8 +109,12 @@ var Encounters = {
       case "dog_encounter":
       case "wounded_animal":
       case "rival_collector":
-      case "moonshiner_camp":
         return "purple";
+      case "moonshiner_camp":
+      case "moonshiner_destroy":
+      case "moonshiner_roadblock":
+      case "moonshiner_sabotage":
+        return "darkpurple";
       default:
         return "lightred";
     }
