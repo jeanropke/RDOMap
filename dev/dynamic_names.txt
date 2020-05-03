@@ -32,6 +32,24 @@ escort_riley_charge
 escort_silent_stead
 escort_van_horn
 
+    { "text": "escort_aurora_basin", "x": "-84.7027", "y": "72.5227" },
+    { "text": "escort_barrow_lagoon", "x": "-39.9475", "y": "93.0606" },
+    { "text": "escort_big_valley_graves", "x": "-78.7860", "y": "86.5184" },
+    { "text": "escort_big_valley", "x": "-55.0305", "y": "84.1894" },
+    { "text": "escort_bluewater_marsh", "x": "-64.4178", "y": "152.8812" },
+    { "text": "escort_braithwaite", "x": "-95.2008", "y": "126.6247" },
+    { "text": "escort_central_union_railroad", "x": "-50.9148", "y": "145.5976" },
+    { "text": "escort_doverhill", "x": "-29.1369", "y": "149.6998" },
+    { "text": "escort_great_plains", "x": "-86.0358", "y": "90.9053" },
+    { "text": "escort_hanging_rock", "x": "-98.5726", "y": "57.7602" },
+    { "text": "escort_heartlands", "x": "-66.5050", "y": "111.5963" },
+    { "text": "escort_hennigan_stead", "x": "-104.5411", "y": "87.6794" },
+    { "text": "escort_pleasance", "x": "-70.4979", "y": "137.6672" },
+    { "text": "escort_riley_charge", "x": "-112.1708", "y": "52.9824" },
+    { "text": "escort_silent_stead", "x": "-99.9683", "y": "27.5079" },
+    { "text": "escort_van_horn", "x": "-55.4272", "y": "157.1108" },
+    { "text": "escort_western_homestead", "x": "-115.4192", "y": "54.6036" }
+
 rescue_bayou_gators
 rescue_canoe_escape
 rescue_colter_bandits
@@ -92,3 +110,11 @@ ambush_escort_rileys_charge
 ambush_escort_silent_stead
 ambush_escort_vanhorn_saloon
 ambush_escort_western_homestead
+
+"ambush_rescue": [
+    { "text": "DON'T MOVE THESE TO RESCUE OR AMBUSH", "x": "0", "y": "0" },
+    { "text": "THESE ARE 50/50 CHANCE OF EITHER OR THEY ARE INCORRECT LOCATIONS, TBC", "x": "0", "y": "0" },
+    { "text": "UNFINISHED, NEEDS FURTHER CONFIRMATION BEFORE IMPLEMENTING INTO MAP", "x": "0", "y": "0" },
+    { "text": "ambush_10", "x": "-39.9475", "y": "93.0606" },
+    { "text": "ambush_22", "x": "-38.2969", "y": "146.6250" }
+]
