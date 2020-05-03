@@ -29,6 +29,7 @@ These are the people that provided the locations of the different items on the m
 
 - Animal heatmaps by Jean and [Senexis](https://github.com/Senexis).
 - Random encounter locations by [Senexis](https://github.com/Senexis), and the Discord community.
+- Moonshiner Bootlegger mission locations by [Senexis](https://github.com/Senexis).
 - Plant positions by [Senexis](https://github.com/Senexis) and [EverettLawson](https://github.com/EverettLawson).
 - Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 - Shop locations by [Senexis](https://github.com/Senexis).
