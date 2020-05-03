@@ -29,7 +29,7 @@ var Encounters = {
     // var importantItem = ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>`;
     // var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(importantItem);
     var linksElement = $('<p>');
-    var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
+    var debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
     return `<h1>${Language.get(`map.${marker.category}.name`)}</h1>
         <span class="marker-content-wrapper">
