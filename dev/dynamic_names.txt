@@ -1,120 +1,23 @@
-defend_campsite_bluewater_marsh
-defend_campsite_cholla_springs
-defend_campsite_gaptooth_breach
-defend_campsite_gaptooth_ridge
-defend_campsite_great_plains
-defend_campsite_grizzlies
-defend_campsite_heartlands
-defend_campsite_hennigans_stead
-defend_campsite_little_creek
-defend_campsite_new_hanover
-defend_campsite_radleys_pasture
-defend_campsite_rio_bravo
-defend_campsite_roanoke_river
-defend_campsite_tall_trees
-defend_campsite_two_rocks
+// Quick but very dirt way to format the data properly.
+  <script>
+    var ambush = [];
+    var result = {};
+    ambush.forEach((key, value) => {
+      var string1 = "";
+      key.Descriptors.forEach((keyD1, valueD1) => {
+        if (keyD1.Type != "ID") return;
+        string1 = keyD1.Name;
+      });
 
-escort_doverhill
-escort_western_homestead
-escort_central_union_railroad
-escort_bluewater_marsh
-escort_pleasance
-escort_braithwaite
-escort_heartlands
-escort_barrow_lagoon
-escort_big_valley
-escort_big_valley_graves
-escort_great_plains
-escort_aurora_basin
-escort_hennigan_stead
-escort_hanging_rock
-escort_riley_charge
-escort_silent_stead
-escort_van_horn
+      key.Children.forEach((keyC1, valueC1) => {
+        if (keyC1.Name != "MISSION_GIVERS") return;
+        
+        keyC1.Children[0].Descriptors.forEach((keyC2, valueC2) => {
+          if (keyC2.Type != "SPAWN_POSITION") return;
 
-    { "text": "escort_aurora_basin", "x": "-84.7027", "y": "72.5227" },
-    { "text": "escort_barrow_lagoon", "x": "-39.9475", "y": "93.0606" },
-    { "text": "escort_big_valley_graves", "x": "-78.7860", "y": "86.5184" },
-    { "text": "escort_big_valley", "x": "-55.0305", "y": "84.1894" },
-    { "text": "escort_bluewater_marsh", "x": "-64.4178", "y": "152.8812" },
-    { "text": "escort_braithwaite", "x": "-95.2008", "y": "126.6247" },
-    { "text": "escort_central_union_railroad", "x": "-50.9148", "y": "145.5976" },
-    { "text": "escort_doverhill", "x": "-29.1369", "y": "149.6998" },
-    { "text": "escort_great_plains", "x": "-86.0358", "y": "90.9053" },
-    { "text": "escort_hanging_rock", "x": "-98.5726", "y": "57.7602" },
-    { "text": "escort_heartlands", "x": "-66.5050", "y": "111.5963" },
-    { "text": "escort_hennigan_stead", "x": "-104.5411", "y": "87.6794" },
-    { "text": "escort_pleasance", "x": "-70.4979", "y": "137.6672" },
-    { "text": "escort_riley_charge", "x": "-112.1708", "y": "52.9824" },
-    { "text": "escort_silent_stead", "x": "-99.9683", "y": "27.5079" },
-    { "text": "escort_van_horn", "x": "-55.4272", "y": "157.1108" },
-    { "text": "escort_western_homestead", "x": "-115.4192", "y": "54.6036" }
-
-rescue_bayou_gators
-rescue_canoe_escape
-rescue_colter_bandits
-rescue_highway_robbery
-rescue_pikes_basin
-rescue_plague_town
-rescue_roanoke_standoff
-rescue_saint_denis_graveyard
-rescue_saint_denis_mugging
-rescue_quakers_cove
-rescue_tracking_big_valley_cave
-rescue_tracking_cliff_edge
-rescue_tracking_missing_fisherman
-rescue_tracking_mistaken_bounties
-rescue_tracking_bluewater_kidnap
-rescue_grizzlies_prisoner_rescue
-rescue_mining_town
-rescue_west_heartlands_bridge
-
-ambush_bards_crossing
-ambush_baygall_edge
-ambush_beaver_hollow
-ambush_calibans_seat
-ambush_east_twin_stacks
-ambush_fort_riggs
-ambush_granite_pass
-ambush_kamassa_river
-ambush_lower_montana_river
-ambush_martha_swain
-ambush_ne_tall_trees
-ambush_north_hanging_rock
-ambush_ocreagh_run
-ambush_painted_sky
-ambush_pikes_basin
-ambush_pronghorn_ranch
-ambush_south_lenora_view
-ambush_stillwater
-ambush_sw_heartlands
-ambush_tall_trees
-ambush_west_cumberland
-ambush_west_hennigans
-
-// Could be either an ambush or an export.
-ambush_escort_aurora_basin
-ambush_escort_barrow_lagoon
-ambush_escort_big_valley
-ambush_escort_big_valley_graves
-ambush_escort_bluewater_marsh
-ambush_escort_braithwaite
-ambush_escort_central_union
-ambush_escort_doverhill
-ambush_escort_great_plains
-ambush_escort_hanging_rock
-ambush_escort_heartlands
-ambush_escort_hennigans_stead
-ambush_escort_pleasance
-ambush_escort_rileys_charge
-ambush_escort_silent_stead
-ambush_escort_vanhorn_saloon
-ambush_escort_western_homestead
-
-"ambush_rescue": [
-    { "text": "DON'T MOVE THESE TO RESCUE OR AMBUSH", "x": "0", "y": "0" },
-    { "text": "THESE ARE 50/50 CHANCE OF EITHER OR THEY ARE INCORRECT LOCATIONS, TBC", "x": "0", "y": "0" },
-    { "text": "UNFINISHED, NEEDS FURTHER CONFIRMATION BEFORE IMPLEMENTING INTO MAP", "x": "0", "y": "0" },
-    { "text": "ambush_10", "x": "-39.9475", "y": "93.0606" },
-    { "text": "ambush_22", "x": "-38.2969", "y": "146.6250" }
-]
+          result[string1] = { x: (0.01552 * keyC2.Coordinate.Y + -63.6).toFixed(4).toString(), y: (0.01552 * keyC2.Coordinate.X + 111.29).toFixed(4).toString()};
+        });
+      });
+    });
+    console.log(JSON.stringify(result, null, 4));
+  </script>
