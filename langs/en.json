@@ -351,7 +351,7 @@
     "map.egg_encounter.name": "Bird Egg Nest Encounter",
     "map.dog_encounter.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Follow the dog to either an ambush or a metal box containing a collectible.",
     "map.escort.name": "Escort",
-    "map.escort.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Defeat the enemies then escort the person to their destination for a reward.",
+    "map.escort.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill any enemies, then escort the person to their destination to gain a reward. All escorts have a chance of becoming an Ambush when accepted. ",
     "map.fame_seeker.name": "Fame Seeker",
     "map.fame_seeker.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Do the task the fame seeker asks of you to gain a reward.",
     "map.grave_robber.name": "Grave Robber Encounter",
