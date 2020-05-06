@@ -14,7 +14,7 @@ var Encounters = {
   set: function (data) {
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (key, marker) {
-        Encounters.markers.push(new Marker(marker.text, marker.x, marker.y, _category));
+        Encounters.markers.push(new Marker(marker.text, marker.x, marker.y, _category, marker.type));
       });
     });
 
@@ -30,8 +30,13 @@ var Encounters = {
     // var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(importantItem);
     var linksElement = $('<p>');
     var debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
+    var title = Language.get(`map.${marker.category}.name`);
 
-    return `<h1>${Language.get(`map.${marker.category}.name`)}</h1>
+    if (marker.category == 'rescue') {
+      title = Language.get(`map.${marker.category}.${marker.subdata}.name`);
+    }
+
+    return `<h1>${title}</h1>
         <span class="marker-content-wrapper">
         <p>${Language.get(`map.${marker.category}.desc`)}</p>
         </span>
@@ -61,6 +66,10 @@ var Encounters = {
         var marker = Encounters.markers[i];
 
         if (!enabledCategories.includes(marker.category)) return;
+        var overlay = '';
+
+        if (marker.category == 'rescue' && marker.subdata == 'mission_giver')
+          overlay = `<img class="overlay" src="assets/images/icons/overlay_giver.png" alt="Mission giver">`;
 
         var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var tempMarker = L.marker([marker.lat, marker.lng], {
@@ -70,8 +79,9 @@ var Encounters = {
             iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
             popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
             html: `
+              ${overlay}
               <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
-            <img class="background" src="./assets/images/icons/marker_${Encounters.getIconColor(marker.category)}.png" alt="Background">
+              <img class="background" src="./assets/images/icons/marker_${Encounters.getIconColor(marker.category)}.png" alt="Background">
               ${shadow}
             `
           })
