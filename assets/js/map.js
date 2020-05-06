@@ -235,10 +235,10 @@ var MapBase = {
       $.each(_markers, function (_key, marker) {
         if (Array.isArray(marker)) {
           $.each(marker, function (_, submarker) {
-            MapBase.markers.push(new Marker(marker.text || _key, submarker.lat, submarker.lng, _category, _key));
+            MapBase.markers.push(new Marker(marker.text || _key, submarker.lat, submarker.lng, _category, _key, null, submarker.area, submarker.size));
           });
         } else {
-          MapBase.markers.push(new Marker(marker.text || _category, marker.lat, marker.lng, _category, null, marker.time));
+          MapBase.markers.push(new Marker(marker.text || _category, marker.lat, marker.lng, _category, null, marker.time, marker.area, marker.size));
         }
       });
     });
@@ -391,6 +391,8 @@ var MapBase = {
       case "daily_locations":
       case "sightseeing":
         return "lightgray";
+      case "camps":
+        return "blue";
       default:
         return "red";
     }
