@@ -28,9 +28,10 @@ These are the people that worked on improving the map itself.
 These are the people that provided the locations of the different items on the map.
 
 - Animal heatmaps by Jean and [Senexis](https://github.com/Senexis).
-- Random encounter locations by [Senexis](https://github.com/Senexis), and the Discord community.
+- Random encounter locations by [Senexis](https://github.com/Senexis), and the Discord community. Special shoutout to IronJeff80 for assisting with the rescue/escort revamp.
 - Moonshiner Bootlegger mission locations by [Senexis](https://github.com/Senexis).
 - Plant positions by [Senexis](https://github.com/Senexis) and [EverettLawson](https://github.com/EverettLawson).
+- Player camp positions by [Senexis](https://github.com/Senexis).
 - Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 - Shop locations by [Senexis](https://github.com/Senexis).
 - Freeroam events display by [Richard Westenra](https://www.richardwestenra.com/rdr2-free-roam-event-schedule), adapted to the map by [Senexis](https://github.com/Senexis).
