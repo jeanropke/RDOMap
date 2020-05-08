@@ -191,6 +191,8 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=shops]');
   Menu.reorderMenu('.menu-hidden[data-type=camps]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
+  Menu.reorderMenu('.menu-hidden[data-type=random_encounters]');
+  Menu.reorderMenu('.menu-hidden[data-type=moonshiner_missions]');
 };
 
 Menu.showAll = function () {
