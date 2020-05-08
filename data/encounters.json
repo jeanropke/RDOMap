@@ -270,22 +270,22 @@
 		{ "text": "duel_10", "x": "-81.2764", "y": "95.4652" }
 	],
 	"defend_campsite": [
-		{ "text": "defend_campsite_big_valley_graves", "x": "-77.1427", "y": "83.1427" },
 		{ "text": "defend_campsite_bluewater_marsh", "x": "-69.4060", "y": "146.6601" },
-		{ "text": "defend_campsite_cholla_springs", "x": "-98.1620", "y": "55.6635" },
-		{ "text": "defend_campsite_gaptooth_breach", "x": "-110.7148", "y": "19.5935" },
-		{ "text": "defend_campsite_gaptooth_ridge", "x": "-115.7623", "y": "23.0340" },
+		{ "text": "defend_campsite_cholla_springs", "x": "-98.1813", "y": "55.6367" },
+		{ "text": "defend_campsite_gaptooth_breach", "x": "-110.6813", "y": "19.5609" },
+		{ "text": "defend_campsite_gaptooth_ridge", "x": "-115.7146", "y": "22.9300" },
 		{ "text": "defend_campsite_great_plains", "x": "-80.3635", "y": "89.5553" },
-		{ "text": "defend_campsite_grizzlies", "x": "-37.3483", "y": "84.0862" },
-		{ "text": "defend_campsite_heartlands", "x": "-67.4229", "y": "119.0829" },
+		{ "text": "defend_campsite_grizzlies", "x": "-37.3599", "y": "84.0386" },
+		{ "text": "defend_campsite_heartlands_hilltop", "x": "-57.1894", "y": "113.2158" },
+		{ "text": "defend_campsite_heartlands", "x": "-67.4074", "y": "119.1655" },
 		{ "text": "defend_campsite_hennigans_stead", "x": "-108.0660", "y": "71.5617" },
 		{ "text": "defend_campsite_little_creek", "x": "-54.9492", "y": "71.7249" },
 		{ "text": "defend_campsite_new_hanover", "x": "-61.6538", "y": "140.5017" },
-		{ "text": "defend_campsite_radleys_pasture", "x": "-77.8261", "y": "122.9378" },
-		{ "text": "defend_campsite_rio_bravo", "x": "-117.7395", "y": "51.0988" },
-		{ "text": "defend_campsite_roanoke_river", "x": "-36.4446", "y": "149.6631" },
-		{ "text": "defend_campsite_tall_trees", "x": "-81.4616", "y": "78.1053" },
-		{ "text": "defend_campsite_two_rocks", "x": "-57.4277", "y": "113.3249" }
+		{ "text": "defend_campsite_radleys_pasture", "x": "-77.8777", "y": "122.9807" },
+		{ "text": "defend_campsite_rio_bravo", "x": "-117.7534", "y": "51.0417" },
+		{ "text": "defend_campsite_roanoke_riverside", "x": "-36.3659", "y": "149.6527" },
+		{ "text": "defend_campsite_tall_trees", "x": "-81.4764", "y": "78.0970" },
+		{ "text": "defend_campsite_two_rocks", "x": "-77.0951", "y": "83.1379" }
 	],
 	"escort": [
 		{ "text": "escort_aurora_basin", "x": "-84.7027", "y": "72.5227" },
