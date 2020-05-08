@@ -54,9 +54,17 @@ var shopsDisabledByDefault = [
   'stable', 'tackle', 'tailor'
 ];
 
+var camps = [
+  'bayounwa', 'bigvalley', 'chollasprings', 'cumberland', 'gaptooth', 'greatplains', 'grizzlies',
+  'heartlands', 'hennigans', 'riobravo', 'roanoke', 'scarlett', 'talltrees'
+];
+
+var campsDisabledByDefault = camps;
+
 var enabledCategories = categories;
 var enabledPlants = plants;
 var enabledShops = shops;
+var enabledCamps = camps;
 var categoryButtons = $(".clickable[data-type]");
 
 var date;
@@ -103,6 +111,13 @@ function init() {
 
   enabledShops = enabledShops.filter(function (item) {
     return shopsDisabledByDefault.indexOf(item) === -1;
+  });
+
+  if (typeof $.cookie('disabled-camps') !== 'undefined')
+    campsDisabledByDefault = $.cookie('disabled-camps').split(',');
+
+  enabledCamps = enabledCamps.filter(function (item) {
+    return campsDisabledByDefault.indexOf(item) === -1;
   });
 
   if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
@@ -572,6 +587,24 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
     $.cookie('disabled-shops', shopsDisabledByDefault.join(','), { expires: 999 });
 
     MapBase.addMarkers();
+  } else if (category == 'camps') {
+    if (isDisabled) {
+      enabledCamps = $.grep(enabledCamps, function (value) {
+        return value != collectible;
+      });
+
+      campsDisabledByDefault.push(collectible);
+    } else {
+      enabledCamps.push(collectible);
+
+      campsDisabledByDefault = $.grep(campsDisabledByDefault, function (value) {
+        return value != collectible;
+      });
+    }
+
+    $.cookie('disabled-camps', campsDisabledByDefault.join(','), { expires: 999 });
+
+    MapBase.addMarkers();
   } else {
     MapBase.removeItemFromMap(collectible, collectible, category, true);
   }
@@ -884,6 +917,7 @@ $(function () {
   init();
   MapBase.loadFastTravels();
   MapBase.loadShops();
+  MapBase.loadCamps();
   MadamNazar.loadMadamNazar();
   Treasures.load();
   Encounters.load();

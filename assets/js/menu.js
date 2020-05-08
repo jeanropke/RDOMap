@@ -38,6 +38,20 @@ var Menu = {
     });
   },
 
+  refreshCamps: function () {
+    $('.menu-hidden[data-type=camp]').children('.collectible-wrapper').remove();
+
+    Object.keys(MapBase.campData).forEach(function (element) {
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.camps.${element}.name`));
+
+      if (!enabledCamps.includes(element))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=camps]').append(collectibleElement.append(collectibleTextElement));
+    });
+  },
+
   showHideAllPlants: function (isToHide) {
     if (isToHide) {
       enabledPlants = [];
@@ -68,7 +82,23 @@ var Menu = {
 
     $.cookie('disabled-shops', shopsDisabledByDefault.join(','), { expires: 999 });
     MapBase.addMarkers();
-  }
+  },
+
+  showHideAllCamps: function (isToHide) {
+    if (isToHide) {
+      enabledCamps = [];
+      campsDisabledByDefault = camps;
+
+      $('[data-type="camps"] .collectible-wrapper').addClass('disabled');
+    } else {
+      enabledCamps = camps;
+      campsDisabledByDefault = [];
+      $('[data-type="camps"] .collectible-wrapper').removeClass('disabled');
+    }
+
+    $.cookie('disabled-camps', campsDisabledByDefault.join(','), { expires: 999 });
+    MapBase.addMarkers();
+  },
 };
 
 Menu.refreshMenu = function () {
@@ -139,6 +169,7 @@ Menu.refreshMenu = function () {
 
   Menu.refreshTreasures();
   Menu.refreshShops();
+  Menu.refreshCamps();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
@@ -158,6 +189,7 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=fish]');
   Menu.reorderMenu('.menu-hidden[data-type=plants]');
   Menu.reorderMenu('.menu-hidden[data-type=shops]');
+  Menu.reorderMenu('.menu-hidden[data-type=camps]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
 };
 

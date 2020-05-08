@@ -12,6 +12,7 @@ var MapBase = {
   isDarkMode: false,
   fastTravelData: null,
   shopData: null,
+  campData: null,
   dailyData: null,
   updateLoopAvailable: true,
   requestLoopCancel: false,
@@ -235,10 +236,10 @@ var MapBase = {
       $.each(_markers, function (_key, marker) {
         if (Array.isArray(marker)) {
           $.each(marker, function (_, submarker) {
-            MapBase.markers.push(new Marker(marker.text || _key, submarker.lat, submarker.lng, _category, _key, null, submarker.area, submarker.size));
+            MapBase.markers.push(new Marker(marker.text || _key, submarker.lat, submarker.lng, _category, _key, null, submarker.size));
           });
         } else {
-          MapBase.markers.push(new Marker(marker.text || _category, marker.lat, marker.lng, _category, null, marker.time, marker.area, marker.size));
+          MapBase.markers.push(new Marker(marker.text || _category, marker.lat, marker.lng, _category, null, marker.time, marker.size));
         }
       });
     });
@@ -351,6 +352,7 @@ var MapBase = {
 
     MapBase.addFastTravelMarker();
     MapBase.addShops();
+    MapBase.addCamps();
 
     Treasures.addToMap();
     Encounters.addToMap();
@@ -579,6 +581,42 @@ var MapBase = {
           });
 
           marker.bindPopup(`<h1>${Language.get(`map.shops.${category}.name`)}</h1><p>${Language.get(`map.shops.${value.text}.desc`)} ${Language.get(`map.shops.${category}.desc`)}</p>`);
+
+          Layers.itemMarkersLayer.addLayer(marker);
+        });
+      });
+    }
+  },
+
+  loadCamps: function () {
+    $.getJSON('data/camps.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.campData = data;
+      });
+    console.info('%c[camps] Loaded!', 'color: #bada55; background: #242424');
+  },
+
+  addCamps: function () {
+    if (enabledCategories.includes('camps')) {
+      $.each(MapBase.campData, function (category, categoryValue) {
+        if (!enabledCamps.includes(category)) return;
+        $.each(categoryValue, function (key, value) {
+          var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+          var marker = L.marker([value.lat, value.lng], {
+            opacity: Settings.markerOpacity,
+            icon: L.divIcon({
+              iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+              iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+              popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+              html: `
+                <img class="icon" src="./assets/images/icons/camps.png" alt="Icon">
+                <img class="background" src="./assets/images/icons/marker_blue.png" alt="Background">
+                ${shadow}
+              `
+            })
+          });
+
+          marker.bindPopup(`<h1>${Language.get(`map.camps.${category}.name`)} - ${Language.get(`map.camps.sizes.${this.size}`)}</h1><p>${Language.get(`map.camps.desc`)}</p>`);
 
           Layers.itemMarkersLayer.addLayer(marker);
         });
