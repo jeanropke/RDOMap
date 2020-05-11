@@ -481,5 +481,11 @@
     "map.camps.talltrees.name": "Tall Trees",
     "map.camps.sizes.small": "Small (4 players)",
     "map.camps.sizes.large": "Large (7 players)",
-    "map.camps.desc": "This is a possible spawn location for a player camp. Not all spots marked on the map can be used in one session, as there is a limit per region. Also, depending on which camps are used, some others may be blocked from being spawned due to close proximity."
+    "map.camps.desc": "This is a possible spawn location for a player camp. Not all spots marked on the map can be used in one session, as there is a limit per region. Also, depending on which camps are used, some others may be blocked from being spawned due to close proximity.",
+    "menu.kidnapped": "Kidnapping",
+    "map.kidnapped.name": "Kidnapping",
+    "map.kidnapped.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Rescue the person from enemies for a cash and honor reward.",
+    "menu.animal_attack": "Animal Attack",
+    "map.animal_attack.name": "Animal Attack",
+    "map.animal_attack.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Rescue the person from attacking animals for a cash and honor reward."
 }

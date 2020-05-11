@@ -105,20 +105,22 @@ var Encounters = {
         return "orange";
       case "ambush":
         return "red";
-      case "runaway_wagon":
       case "hogtied_lawman":
       case "rescue":
+      case "runaway_wagon":
         return "blue";
-      case "fame_seeker":
+      case "animal_attack":
       case "duel":
+      case "fame_seeker":
+      case "kidnapped":
         return "lightgray";
-      case "tree_map":
-      case "treasure_hunter":
+      case "dog_encounter":
       case "egg_encounter":
       case "grave_robber":
-      case "dog_encounter":
-      case "wounded_animal":
       case "rival_collector":
+      case "treasure_hunter":
+      case "tree_map":
+      case "wounded_animal":
         return "purple";
       case "moonshiner_camp":
       case "moonshiner_destroy":
