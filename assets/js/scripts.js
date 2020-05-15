@@ -309,42 +309,6 @@ function clockTick() {
   $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
 
   if (!enabledCategories.includes('hideouts')) return;
-
-  $('[data-category*="hideouts"]').each(function () {
-    var time = $(this).data('time') + '';
-    if (time === null || time == '') return;
-
-    var hour = gameTime.getHours();
-    if (hour >= 5 && hour < 8) {
-      // 1) 05 - 08: Sunrise
-      if (time.indexOf("1") >= 0) {
-        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
-      } else {
-        $(this).css('filter', 'none');
-      }
-    } else if (hour >= 8 && hour < 17) {
-      // 2) 08 - 17: Day
-      if (time.indexOf("2") >= 0) {
-        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
-      } else {
-        $(this).css('filter', 'none');
-      }
-    } else if (hour >= 17 && hour < 20) {
-      // 3) 17 - 20: Sunset
-      if (time.indexOf("3") >= 0) {
-        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
-      } else {
-        $(this).css('filter', 'none');
-      }
-    } else if (hour >= 20 || hour < 5) {
-      // 4) 20 - 05: Night
-      if (time.indexOf("4") >= 0) {
-        $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
-      } else {
-        $(this).css('filter', 'none');
-      }
-    }
-  });
 }
 
 setInterval(clockTick, 1000);
@@ -863,9 +827,6 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
     if (this.options.category)
       img.dataset.category = this.options.category;
-
-    if (this.options.time)
-      img.dataset.time = this.options.time;
   }
 });
 

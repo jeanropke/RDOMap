@@ -1,12 +1,11 @@
 class Marker {
-  constructor(text, lat, lng, category, subdata, time, size) {
+  constructor(text, lat, lng, category, subdata, size) {
     this.text = text;
     this.lat = lat;
     this.lng = lng;
     this.category = category;
     this.subdata = subdata;
     this.size = size;
-    this.time = time;
     this.title = category == 'plants' ?
       Language.get(`map.plants.${this.text}.name`) :
       category == 'hideouts' ?
