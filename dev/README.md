@@ -8,5 +8,5 @@ This is a happy little folder where I keep all my happy little things.
   * [x] Get spawns & info for Trade Route.
   * [ ] Get spawns & info for Manhunt.
   * [ ] Anything else?
-* [ ] Format all `WORLD_SCENARIO` static spawns and maybe put them on the map (tons of markers, 100k+ likely)
+* [x] Format all `WORLD_SCENARIO` static spawns and maybe put them on the map (tons of markers, 100k+ likely)
 * [ ] ...
