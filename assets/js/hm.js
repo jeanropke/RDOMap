@@ -4,12 +4,18 @@
 
 var Heatmap = {
   data: null,
+  staticMarkers: null,
 
   load: function () {
     $.getJSON(`data/hm.json?nocache=${nocache}`)
       .done(function (data) {
         Heatmap.data = data;
         Heatmap.init();
+      });
+
+    $.getJSON(`data/animal_spawns.json?nocache=${nocache}`)
+      .done(function (data) {
+        Heatmap.staticMarkers = data;
       });
   },
 
@@ -44,12 +50,46 @@ var Heatmap = {
       latField: 'lat',
       lngField: 'lng',
       valueField: 'count',
-      gradient: { 0.25: "rgb(125, 125, 125)", 0.55: "rgb(48, 25, 52)", 1.0: "rgb(255, 42, 32)" }
+      gradient: {
+        0.25: "rgb(125, 125, 125)",
+        0.55: "rgb(48, 25, 52)",
+        1.0: "rgb(255, 42, 32)"
+      }
     });
   },
 
   setHeatmap: function (value, category) {
-    Layers.heatmapLayer.setData({ min: 10, data: Heatmap.data[category][value].data });
+    Layers.animalsLayer.addTo(MapBase.map);
+    Layers.heatmapLayer.setData({
+      min: 10,
+      data: Heatmap.data[category][value].data
+    });
+
+    if (Layers.animalsLayer != null)
+      Layers.animalsLayer.clearLayers();
+
+    if (category === "fish") return;
+
+    animalMarkers = [];
+    Heatmap.data[category][value].groups.forEach((el, i) => {
+      animalMarkers = animalMarkers.concat(Heatmap.staticMarkers[el]);
+    });
+
+    if (animalMarkers.length > 0) {
+      var animalMarkersInst = [];
+      var textVal = value;
+      var catVal = category;
+      MapBase.yieldingLoop(animalMarkers.length, 25, function (i) {
+        var preMarker = animalMarkers[i];
+        var marker = new Marker(textVal, preMarker.x, preMarker.y, catVal, [preMarker.start, preMarker.end])
+        marker.isVisible = false;
+        var markerInst = Heatmap.createCanvasMarker(marker);
+        if (typeof markerInst == 'undefined') return;
+        animalMarkersInst.push(markerInst);
+      }, function () {
+        Layers.animalsLayer.addLayers(animalMarkersInst);
+      });
+    }
   },
 
   removeHeatmap: function (reset = false) {
@@ -59,6 +99,60 @@ var Heatmap = {
       });
     }
 
-    Layers.heatmapLayer.setData({ min: 10, data: [] });
-  }
+    Layers.heatmapLayer.setData({
+      min: 10,
+      data: []
+    });
+
+    if (Layers.animalsLayer != null)
+      Layers.animalsLayer.clearLayers();
+  },
+
+  updateMarkerContent: function (marker) {
+    var categoryText = Language.get(`menu.${marker.category}.${marker.text}`);
+
+    var popupTitle = Language.get(`map.animal_spawns.name`).replace('{animal}', categoryText);
+    var popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', categoryText);
+
+    if (marker.subdata[0] !== undefined && marker.subdata[1] !== undefined) {
+      var format = {
+        timeZone: 'UTC',
+        hour: 'numeric',
+        minute: '2-digit',
+        hourCycle: Settings.display24HoursTimestamps ? 'h23' : 'h12',
+      };
+
+      var startTime = (marker.subdata[0] > 12) ? (marker.subdata[0]-12 + ':00 PM') : (marker.subdata[0] + ':00 AM');
+      var endTime = (marker.subdata[1] > 12) ? (marker.subdata[1]-12 + ':00 PM') : (marker.subdata[1] + ':00 AM');
+      popupContent = Language.get(`map.animal_spawns_timed.desc`).replace('{animal}', categoryText).replace('{start}', startTime).replace('{end}', endTime);
+    }
+    
+    return `
+      <h1>${popupTitle}</h1>
+      <span class="marker-content-wrapper">
+        <p>${popupContent}</p>
+      </span>
+    `;
+  },
+
+  createCanvasMarker: function (marker, opacity = 0.75) {
+    var tempMarker = L.marker([marker.lat, marker.lng], {
+      opacity: opacity,
+      icon: new L.divIcon({
+        iconUrl: `assets/images/icons/animal.png`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
+        popupAnchor: [0, -8]
+      })
+    });
+
+    marker.isVisible = true;
+    tempMarker.id = marker.text;
+    tempMarker.bindPopup(Heatmap.updateMarkerContent(marker), {
+      minWidth: 300,
+      maxWidth: 400
+    });
+
+    return tempMarker;
+  },
 };

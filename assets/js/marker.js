@@ -15,9 +15,11 @@ class Marker {
           Language.get(`map.${this.text}.name`);
     this.description = category == 'plants' ?
       Language.get(`map.plants.desc`).replace('{plant}', this.title) :
-      category == 'daily_locations' ?
-        Language.get(`map.daily_locations.desc`) :
-        Language.get(`map.${this.text}.desc`);
+      category == 'hideouts' ?
+        Language.get(`map.hideouts.desc`) :
+        category == 'daily_locations' ?
+          Language.get(`map.daily_locations.desc`) :
+          Language.get(`map.${this.text}.desc`);
     this.isVisible = enabledCategories.includes(category);
     this.isCollected = false;
     this.canCollect = !this.isCollected;
