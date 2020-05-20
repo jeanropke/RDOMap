@@ -359,11 +359,7 @@
     "map.grave_robber.name": "Påträffande av gravplundrare",
     "map.grave_robber.desc": "Detta är en slumpmässig händelse. En vit prick på mini-kartan indikerar händelsen. Närma dig gravplundraren för att acceptera uppdraget. Du har begränsad tid att finna upp till 7 platser för samlarobjekt innan lagmännen kommer.",
     "map.hideouts.name": "Gömställe",
-    "map.hideouts.desc": "Denna plats kan spawna ett gömställe med flera fiender. En röd cirkel indikerar att ett gömställe har spawnat. Gömstället spawnar vid {times}.",
-    "map.hideouts.desc.sunrise": "soluppgång (5 AM - 8 AM)",
-    "map.hideouts.desc.day": "dagtid (8 AM - 5 PM)",
-    "map.hideouts.desc.sunset": "solnedgång (5 PM - 8 PM)",
-    "map.hideouts.desc.night": "nattetid (8 PM - 5 AM)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Fastbunden lagman",
     "map.hogtied_lawman.desc": "Detta är en slumpmässig händelse. En vit prick på mini-kartan indikerar händelsen. Besegra fienden och närma dig den fastbundna lagmannen och befria den för att få en belöning.",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

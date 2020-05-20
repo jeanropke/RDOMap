@@ -359,11 +359,7 @@
     "map.grave_robber.name": "Mezar Soyguncusu Karşılaşması",
     "map.grave_robber.desc": "Bu bir Random Encounter. Mini haritadaki beyaz bir bip, karşılaşmayı belirtecek. Mezar soygununa, görevi kabul etmesi için yaklaşın. Kanunlar gelmeden önce, koleksiyon parçası için 7 lokasyona kadar arama yapmak için sınırlı bir zamanın var.",
     "map.hideouts.name": "Saklanma yeri",
-    "map.hideouts.desc": "Bu yer birden fazla düşmanla saklanabileceği bir yer. Kırmızı bir çember, saklandığıda bir saklanma olduğunu gösterir. Bu saklanma yeri {times}.",
-    "map.hideouts.desc.sunrise": "gündoğumu (5 AM-8 AM)",
-    "map.hideouts.desc.day": "gündüz (8 AM-5 PM)",
-    "map.hideouts.desc.sunset": "sunset (5 PM-8 PM)",
-    "map.hideouts.desc.night": "gece saati (8 adet koruyucu bakım-5 adet)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Hogmid Lawman",
     "map.hogtied_lawman.desc": "Bu bir Random Encounter. Mini haritadaki beyaz bir bip, karşılaşmayı belirtecek. Düşmanları yenip, bir kanun adasına yaklaş ve ödül kazanmak için onları serbest.",
     "map.duel.name": "Düello",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "Tall Trees",
     "map.camps.sizes.small": "Küçük (4 oyunculuk)",
     "map.camps.sizes.large": "Büyük (7 oyunculuk)",
-    "map.camps.desc": "Bu, oyuncu kampının muhtemel bir ortaya çıkış noktasıdır. Her bölgenin bir limiti olduğundan haritada işaretli noktaların tümü tek oturumda kullanılamaz. Ayrıca, hangi kampların kullanıldığına bağlı olarak, birbirlerine çok yakın olduklarından bazı yerlerde doğmak kapatılabilir."
+    "map.camps.desc": "Bu, oyuncu kampının muhtemel bir ortaya çıkış noktasıdır. Her bölgenin bir limiti olduğundan haritada işaretli noktaların tümü tek oturumda kullanılamaz. Ayrıca, hangi kampların kullanıldığına bağlı olarak, birbirlerine çok yakın olduklarından bazı yerlerde doğmak kapatılabilir.",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

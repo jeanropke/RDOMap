@@ -359,11 +359,7 @@
     "map.grave_robber.name": "",
     "map.grave_robber.desc": "Dette er en Random Encounter. En hvid blip på mini-kortet vil indikere, at mødet er i gang. Nærm dig gravrøveren for at tage imod missionen. Du har begrænset tid til at søge op til syv placeringer for et samleobjekt, inden ordenshåndtagerne kommer.",
     "map.hideouts.name": "",
-    "map.hideouts.desc": "Denne placering kan afsprække et skjulested med flere fjender. En rød cirkel indikerer, at et skjulested er yngleligt. Dette skjulested er gynet ved {times}.",
-    "map.hideouts.desc.sunrise": "solopgang (5 AM-8 AM)",
-    "map.hideouts.desc.day": "dagtid (8 AM-5 PM)",
-    "map.hideouts.desc.sunset": "solnedgang (5 PM-8 PM)",
-    "map.hideouts.desc.night": "Nighttime (8 PM-5 AM)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Hogbundet Lawman",
     "map.hogtied_lawman.desc": "Dette er en Random Encounter. En hvid blip på mini-kortet vil indikere, at mødet er i gang. Besejr fjenderne, så tilgå den hovede lovmand og befri dem for at få en belønning.",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

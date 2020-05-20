@@ -359,11 +359,7 @@
     "map.grave_robber.name": "Ladrão de Túmulo",
     "map.grave_robber.desc": "É um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro. Aproxime-se até o ladrão de túmulo para aceitar a missão. Você tem um pouco de tempo para cavar os 7 locais para conseguir um colecionável antes que os polícias aparecem.",
     "map.hideouts.name": "Esconderijo",
-    "map.hideouts.desc": "Nesse local tem um esconderijo com múltiplo inimigos. Um círculo vermelho indicará que tem um esconderijo. Esse esconderijo aparece à {times}.",
-    "map.hideouts.desc.sunrise": "nascer do sol (5 AM - 8 AM)",
-    "map.hideouts.desc.day": "dia (8 AM - 5 PM)",
-    "map.hideouts.desc.sunset": "pôr do sol (5 PM - 8 PM)",
-    "map.hideouts.desc.night": "noite (8 PM - 5 AM)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Policial Amarrado",
     "map.hogtied_lawman.desc": "É um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro. Derrote os inimigos, aproxime-se do policial amarrado e liberte ele para ganhar uma recompensa.",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

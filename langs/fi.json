@@ -359,11 +359,7 @@
     "map.grave_robber.name": "Grave Robber -sisäänkäynti",
     "map.grave_robber.desc": "Tämä on Random Encounter. Minipikartan valkoinen blip osoittaa kohtaamisen. Lähestykää haudanryöstäjää. Sinulla on rajoitetusti aikaa etsiä 7 paikkaa keräilyesineelle ennen kuin lainvalvojat tulevat.",
     "map.hideouts.name": "",
-    "map.hideouts.desc": "Tämä paikka voi kylvää piilopaikan, jossa on useita vihollisia. Punainen ympyrä osoittaa, että piilopaikka on syntynyt. Tämä piilopaikka on {times}.",
-    "map.hideouts.desc.sunrise": "Auringonnousu (5 AM-8 AM)",
-    "map.hideouts.desc.day": "Päiväsaika (8 AM-5 PM)",
-    "map.hideouts.desc.sunset": "Auringonlasku (5 PM-8 PM)",
-    "map.hideouts.desc.night": "Yöllä (8 PM-5 AM)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Hogsidottu Lawman",
     "map.hogtied_lawman.desc": "Tämä on Random Encounter. Minipikartan valkoinen blip osoittaa kohtaamisen. Defeat viholliset sitten lähestytään sidottua lainvartijaa ja vapauttaa heidät saadakseen palkinnon.",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

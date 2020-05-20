@@ -359,11 +359,7 @@
     "map.grave_robber.name": "Rencontre de pilleurs de tombes",
     "map.grave_robber.desc": "",
     "map.hideouts.name": "",
-    "map.hideouts.desc": "This location can spawn a hideout with multiple enemies. A red circle will indicate that a hideout has spawned.",
-    "map.hideouts.desc.sunrise": "Aube (5:00 - 8:00)",
-    "map.hideouts.desc.day": "",
-    "map.hideouts.desc.sunset": "Crépuscule (17:00 - 20:00)",
-    "map.hideouts.desc.night": "",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "",
     "map.hogtied_lawman.desc": "",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

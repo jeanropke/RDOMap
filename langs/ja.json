@@ -359,11 +359,7 @@
     "map.grave_robber.name": "グレイヴ・ロバー・エンカウンター",
     "map.grave_robber.desc": "これはランダム・エンカウンターです ミニ・マップ上の白いブレップが出会うことを示します。 任務を受け入れるために墓泥棒を承認する。 あなたは、法律家が来る前に、収集可能なアイテムを 7 カ所まで検索する時間を制限しています。",
     "map.hideouts.name": "秀out",
-    "map.hideouts.desc": "この場所では、複数の敵との隠れ場所を作成することができます。 赤い円は、ヒドアウトが spawnされたことを示します。 このヒデアウトは {times} で作成されます。",
-    "map.hideouts.desc.sunrise": "日の出 (午前 5 時 - 8 時)",
-    "map.hideouts.desc.day": "昼行 ( 午前 8 時 - 午後 5 時 )",
-    "map.hideouts.desc.sunset": "日没 (午後 5 時 - 午後 8 時)",
-    "map.hideouts.desc.night": "夜間 (午後 8 時 - 5 時)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "ホグタイ・ラーマン",
     "map.hogtied_lawman.desc": "これはランダム・エンカウンターです ミニ・マップ上の白いブレップが出会うことを示します。 敵に出会わせると、敵に接近し、報酬を得るために彼らを解放します。",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

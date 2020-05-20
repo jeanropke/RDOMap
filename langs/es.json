@@ -359,11 +359,7 @@
     "map.grave_robber.name": "Encuentro con Ladron de Tumbas",
     "map.grave_robber.desc": "Este es un encuentro aleatorio. Un blip blanco en el mini mapa indicará el encuentro. Acércate al ladrón de tumbas para aceptar la misión. Tienes tiempo limitado para buscar en 7 ubicaciones un objeto coleccionable antes de que vengan los agentes de la ley.",
     "map.hideouts.name": "Guarida",
-    "map.hideouts.desc": "Esta ubicación genera un escondite con múltiples enemigos. Un círculo rojo indicará que el escondite se a generado. El escondite aparece en {times}.",
-    "map.hideouts.desc.sunrise": "amanecer (5 AM - 8 AM)",
-    "map.hideouts.desc.day": "día (8 AM - 5 PM)",
-    "map.hideouts.desc.sunset": "atardecer (5 PM - 8 PM)",
-    "map.hideouts.desc.night": "noche (8 PM - 5 AM)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Agente Retenido",
     "map.hogtied_lawman.desc": "Este es un encuentro aleatorio. Un blip blanco en el mapa indicara el encuentro. Derrota a los enemigos, acércate al agente retenido y libéralo para obtener una recompensa.",
     "map.duel.name": "Duelo",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "Tall Trees",
     "map.camps.sizes.small": "Pequeño (4 Jugadores)",
     "map.camps.sizes.large": "Grande (7 Jugadores)",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

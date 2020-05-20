@@ -359,11 +359,7 @@
     "map.grave_robber.name": "",
     "map.grave_robber.desc": "Tohle je Random Encounter. Bílé blity na minimapě bude indikovat setkání. Přistupte k hrobce, aby přijal misi. Máte omezený čas na vyhledávání až 7 umístění pro shromážditelné položky před tím, než zákonodárci přicházejí.",
     "map.hideouts.name": "",
-    "map.hideouts.desc": "Toto umístění může vytvořit skrýš s více nepřáteli. Červený kruh bude znamenat, že se skrývá skrýš. Tento úkryt zplodil ve {times}.",
-    "map.hideouts.desc.sunrise": "východ slunce (5 AM-8 AM)",
-    "map.hideouts.desc.day": "daytime (8 AM-5 PM)",
-    "map.hideouts.desc.sunset": "západ slunce (5 PM-8 PM)",
-    "map.hideouts.desc.night": "noční čas (8 PM-5 hodin)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "Svázal Lawman",
     "map.hogtied_lawman.desc": "Tohle je Random Encounter. Bílé blity na minimapě bude indikovat setkání. Porazit nepřátele pak přistupovat k hanobení zločinec a osvobodit je získat odměnu.",
     "map.duel.name": "",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "",
     "map.camps.sizes.large": "",
-    "map.camps.desc": ""
+    "map.camps.desc": "",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }

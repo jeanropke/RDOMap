@@ -359,11 +359,7 @@
     "map.grave_robber.name": "盜墓者",
     "map.grave_robber.desc": "這是一次偶然事件。小地圖上的白色光點將指示遭遇。接近盜墓賊接受任務。在執法人員來之前，在有限的時間在7個地點尋找一件收藏品。",
     "map.hideouts.name": "藏身處",
-    "map.hideouts.desc": "這個位置可以產生一個有多個敵人的藏身處。紅色圓圈表示藏身地已經出現。在{times} 時出現。",
-    "map.hideouts.desc.sunrise": "日出 (5 AM - 8 AM)",
-    "map.hideouts.desc.day": "白天 (8 AM - 5 PM)",
-    "map.hideouts.desc.sunset": "日落 (5 PM - 8 PM)",
-    "map.hideouts.desc.night": "夜間 (8 PM - 5 AM)",
+    "map.hideouts.desc": "",
     "map.hogtied_lawman.name": "被綁的警察",
     "map.hogtied_lawman.desc": "這是一次偶然事件。小地圖上的白色光點將指示遭遇。擊敗敵人，然後接近被捆綁的警察，解救他以獲得獎勵。",
     "map.duel.name": "決鬥",
@@ -481,5 +477,14 @@
     "map.camps.talltrees.name": "",
     "map.camps.sizes.small": "小型營地(可容納4人)",
     "map.camps.sizes.large": "大型營地(可容納7人)",
-    "map.camps.desc": "這是玩家營地可能出現的一個地點。每一次進入遊戲時，由於各地區分別有其營地數目的限制，並不是所有地圖上標示的地點都能使用。另外，由於營地之間距離不能太近，當一個地點已經有營地，附近的地點也可能無法使用。"
+    "map.camps.desc": "這是玩家營地可能出現的一個地點。每一次進入遊戲時，由於各地區分別有其營地數目的限制，並不是所有地圖上標示的地點都能使用。另外，由於營地之間距離不能太近，當一個地點已經有營地，附近的地點也可能無法使用。",
+    "menu.kidnapped": "",
+    "map.kidnapped.name": "",
+    "map.kidnapped.desc": "",
+    "menu.animal_attack": "",
+    "map.animal_attack.name": "",
+    "map.animal_attack.desc": "",
+    "map.animal_spawns.name": "",
+    "map.animal_spawns.desc": "",
+    "map.animal_spawns_timed.desc": ""
 }
