@@ -28,6 +28,7 @@ These are the people that worked on improving the map itself.
 These are the people that provided the locations of the different items on the map.
 
 - Animal heatmaps by Jean and [Senexis](https://github.com/Senexis).
+- Static animal spawn positions (black dots) by [Senexis](https://github.com/Senexis).
 - Random encounter locations by [Senexis](https://github.com/Senexis), and the Discord community. Special shoutout to IronJeff80 for assisting with the rescue/escort revamp.
 - Moonshiner Bootlegger mission locations by [Senexis](https://github.com/Senexis).
 - Plant positions by [Senexis](https://github.com/Senexis) and [EverettLawson](https://github.com/EverettLawson).
