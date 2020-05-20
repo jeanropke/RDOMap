@@ -59,6 +59,7 @@ var Heatmap = {
   },
 
   setHeatmap: function (value, category) {
+    MapBase.map.closePopup();
     Layers.animalsLayer.addTo(MapBase.map);
     Layers.heatmapLayer.setData({
       min: 10,
@@ -103,6 +104,8 @@ var Heatmap = {
       min: 10,
       data: []
     });
+
+    MapBase.map.closePopup();
 
     if (Layers.animalsLayer != null)
       Layers.animalsLayer.clearLayers();
