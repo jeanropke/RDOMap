@@ -113,15 +113,9 @@ var Heatmap = {
 
     var popupTitle = Language.get(`map.animal_spawns.name`).replace('{animal}', categoryText);
     var popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', categoryText);
+    var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
     if (marker.subdata[0] !== undefined && marker.subdata[1] !== undefined) {
-      var format = {
-        timeZone: 'UTC',
-        hour: 'numeric',
-        minute: '2-digit',
-        hourCycle: Settings.display24HoursTimestamps ? 'h23' : 'h12',
-      };
-
       var startTime = (marker.subdata[0] > 12) ? (marker.subdata[0]-12 + ':00 PM') : (marker.subdata[0] + ':00 AM');
       var endTime = (marker.subdata[1] > 12) ? (marker.subdata[1]-12 + ':00 PM') : (marker.subdata[1] + ':00 AM');
       popupContent = Language.get(`map.animal_spawns_timed.desc`).replace('{animal}', categoryText).replace('{start}', startTime).replace('{end}', endTime);
@@ -132,6 +126,7 @@ var Heatmap = {
       <span class="marker-content-wrapper">
         <p>${popupContent}</p>
       </span>
+      ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
     `;
   },
 
