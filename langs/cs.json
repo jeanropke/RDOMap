@@ -124,7 +124,7 @@
     "help.marker_size": "Umožňuje vám změnit velikost shromažďovatelných značek na mapě.",
     "help.overlay_opacity": "Umožňuje vám změnit opacitu různých překryvů, které se objevují v místech, kde jsou umístěny jeskyně, budovy atd.",
     "help.read_trader-guide": "Otevře novou kartu s průvodcem obchodníkem, najdete zde všechny informace o mase a zvířatech.",
-    "map.attribution_prefix": "Dlaždice poskytla",
+    "map.attribution_prefix": "",
     "map.copy_link": "Kopírovat odkaz značkovače",
     "map.layers.dark": "Tmavé",
     "map.layers.default": "Výchozí",

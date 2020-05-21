@@ -124,7 +124,7 @@
     "help.marker_size": "允許您更改地圖上收藏品標記的大小。",
     "help.overlay_opacity": "更改出現在洞穴，建築物等處的不同疊加層的透明度。",
     "help.read_trader-guide": "新增分頁打開貿易商指南。",
-    "map.attribution_prefix": "地圖提供由",
+    "map.attribution_prefix": "",
     "map.copy_link": "復制此收藏品分享給好友",
     "map.layers.dark": "黑白",
     "map.layers.default": "預設",

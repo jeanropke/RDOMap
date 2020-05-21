@@ -124,7 +124,7 @@
     "help.marker_size": "Låter dig ändra storleken på samlarobjekts-markörer på kartan.",
     "help.overlay_opacity": "Låter dig ändra genomskinligheten på de olika överlägg som visas där grottor, byggnader etc. är belägna.",
     "help.read_trader-guide": "Öppnar en ny flik med handlar-guiden. Där finns all information om kött och djur.",
-    "map.attribution_prefix": "Ikoner tillhandahålls av",
+    "map.attribution_prefix": "",
     "map.copy_link": "Kopiera markörlänk",
     "map.layers.dark": "Mörk",
     "map.layers.default": "Standard",

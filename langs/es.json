@@ -124,7 +124,7 @@
     "help.marker_size": "Allows you to change the size of the collectible markers on the map.",
     "help.overlay_opacity": "Le permite cambiar la opacidad de las diferentes capas que aparecen en las cuevas, edificios, minas, etc.",
     "help.read_trader-guide": "Opens a new tab with trader guide, you can find there all informations about meat and animals.",
-    "map.attribution_prefix": "Marcadores proporcionados por",
+    "map.attribution_prefix": "",
     "map.copy_link": "Copiar el vínculo del marcador",
     "map.layers.dark": "Oscuro",
     "map.layers.default": "Predeterminado",

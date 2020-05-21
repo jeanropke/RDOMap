@@ -124,7 +124,7 @@
     "help.marker_size": "Erlaubt es Ihnen, die Größe der Sammler-Markierungen auf der Karte zu ändern.",
     "help.overlay_opacity": "Erlaubt es die Transparenz der verschiedenen Overlayer der Karte z.B. für Höhlen, Gebäude, usw. zu definieren.",
     "help.read_trader-guide": "Öffnet einen neuen Tab mit dem Guide zum Händler, dort finden Sie alle Informationen über Fleisch und Tiere.",
-    "map.attribution_prefix": "Karte zur Verfügung gestellt von",
+    "map.attribution_prefix": "",
     "map.copy_link": "Markierungs-Link kopieren",
     "map.layers.dark": "Dunkel",
     "map.layers.default": "Standard",

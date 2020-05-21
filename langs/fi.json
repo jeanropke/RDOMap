@@ -124,7 +124,7 @@
     "help.marker_size": "Tämän toiminnon avulla voit muuttaa keräilymerkkien kokoa kartalla.",
     "help.overlay_opacity": "Tämän toiminnon avulla voit muuttaa eri ylitysten opasiteetin, joka näkyy luolissa, rakennuksissa jne.",
     "help.read_trader-guide": "Avaa uuden välilehden liikkeenharjoittajan oppaassa, voit löytää sieltä kaikki tiedot lihasta ja eläimistä.",
-    "map.attribution_prefix": "Tilat, jotka",
+    "map.attribution_prefix": "",
     "map.copy_link": "Kopioi merkkilinkki",
     "map.layers.dark": "",
     "map.layers.default": "Oletusarvo",

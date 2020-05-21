@@ -124,7 +124,7 @@
     "help.marker_size": "Permite mudar o tamanho em que os marcadores são exibidos no mapa.",
     "help.overlay_opacity": "Permite mudar a opacidade de diferentes overlays que aparecem no mapa como cavernas, prédios, etc.",
     "help.read_trader-guide": "Abre uma nova aba com o guia do mercador, você pode encontrar todas as informações sobre carnes e animais.",
-    "map.attribution_prefix": "Imagens do mapa por",
+    "map.attribution_prefix": "",
     "map.copy_link": "Copiar link do marcador",
     "map.layers.dark": "Escuro",
     "map.layers.default": "Padrão",

@@ -124,7 +124,7 @@
     "help.marker_size": "Pozwala zmienić rozmiar znaczników na mapie.",
     "help.overlay_opacity": "Umożliwia zmianę krycia różnych nakładek, które pojawiają się w miejscach, gdzie znajdują się jaskinie, budynki itp.",
     "help.read_trader-guide": "Otwiera nową kartę z przewodnikiem handlowca, w którym można znaleźć wszystkie informacje na temat mięsa i zwierząt.",
-    "map.attribution_prefix": "Części mapy dostarczoner przez:",
+    "map.attribution_prefix": "",
     "map.copy_link": "Skopiuj link znacznika",
     "map.layers.dark": "Ciemny",
     "map.layers.default": "Domyślny",

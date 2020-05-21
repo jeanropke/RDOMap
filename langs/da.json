@@ -124,7 +124,7 @@
     "help.marker_size": "Giver mulighed for at ændre størrelsen på de samlede markeringer på kortet.",
     "help.overlay_opacity": "Her kan du ændre den oprigtighed af de forskellige overlays, der vises, hvor huler, bygninger osv. er placeret.",
     "help.read_trader-guide": "Åbner en ny fane med trader guide, kan du finde alle oplysninger om kød og dyr der.",
-    "map.attribution_prefix": "Tiles leveret af",
+    "map.attribution_prefix": "",
     "map.copy_link": "Kopiér markeringslink",
     "map.layers.dark": "Mørk",
     "map.layers.default": "Standard",

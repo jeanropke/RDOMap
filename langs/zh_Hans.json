@@ -124,7 +124,7 @@
     "help.marker_size": "允许您更改地图上可收藏标记的大小。",
     "help.overlay_opacity": "允许您更改出现在洞穴，建筑物等处的不同叠加层的不透明度。",
     "help.read_trader-guide": "打开有商贩指南的新页面，你可以找到关于肉类和动物的信息。",
-    "map.attribution_prefix": "提供地图",
+    "map.attribution_prefix": "",
     "map.copy_link": "复制标记链接",
     "map.layers.dark": "黑夜",
     "map.layers.default": "默认",

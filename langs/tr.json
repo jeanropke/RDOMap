@@ -124,7 +124,7 @@
     "help.marker_size": "Eşlemdeki değiştirilebilir imleyicilerin büyüklüğünü değiştirmenizi sağlar.",
     "help.overlay_opacity": "Mağaraların, binaların, vb. konumların bulunduğu farklı şablonların azlığını değiştirmenizi sağlar.",
     "help.read_trader-guide": "trader rehberi ile yeni bir sekme açar, et ve hayvanlarla ilgili tüm informasyonları bulabilirsiniz.",
-    "map.attribution_prefix": "Sağlanan döşemeler",
+    "map.attribution_prefix": "",
     "map.copy_link": "İmleyici bağlantısını kopyala",
     "map.layers.dark": "Koyu",
     "map.layers.default": "Varsayılan",

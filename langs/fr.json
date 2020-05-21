@@ -124,7 +124,7 @@
     "help.marker_size": "Vous permet de modifier l'opacité des marqueurs de collection sur la carte.",
     "help.overlay_opacity": "Vous permet de modifier l'opacité des différentes superpositions qui apparaissent là où se trouvent des grottes, des bâtiments, etc.",
     "help.read_trader-guide": "Ouvre un nouvel onglet avec le guide du marchand. Vous y trouverez toutes les informations concernant la viande et les animaux.",
-    "map.attribution_prefix": "Sous-titres fournis par",
+    "map.attribution_prefix": "",
     "map.copy_link": "Copier le lien du marqueur",
     "map.layers.dark": "Sombre",
     "map.layers.default": "Normale",
