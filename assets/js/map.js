@@ -101,7 +101,7 @@ var MapBase = {
     MapBase.map.addControl(
       L.control.attribution({
         position: 'bottomleft',
-        prefix: '<span data-text="map.attribution_prefix">Tiles provided by</span>'
+        prefix: '<a href="tps://github.com/jeanropke/RDOMap/blob/master/CONTRIBUTORS.md" data-text="map.attribution_prefix">RDO Map Contributors</a>'
       })
     );
 

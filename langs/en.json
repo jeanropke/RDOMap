@@ -124,7 +124,7 @@
     "help.marker_size": "Allows you to change the size of the collectible markers on the map.",
     "help.overlay_opacity": "Allows you to change the opacity of the different overlays that appear where caves, buildings, etc. are located.",
     "help.read_trader-guide": "Opens a new tab with trader guide, you can find there all informations about meat and animals.",
-    "map.attribution_prefix": "Tiles provided by",
+    "map.attribution_prefix": "RDO Map Contributors",
     "map.copy_link": "Copy marker link",
     "map.layers.dark": "Dark",
     "map.layers.default": "Default",
