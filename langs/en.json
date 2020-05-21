@@ -486,5 +486,7 @@
     "map.animal_attack.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter. Rescue the person from attacking animals for a cash and honor reward.",
     "map.animal_spawns.name": "{animal} Spawn Location",
     "map.animal_spawns.desc": "This is a static spawn location for a {animal}. This position is active all the time, but is not guaranteed to spawn it.",
-    "map.animal_spawns_timed.desc": "This is a static spawn location for a {animal}. This position is active from {start} to {end}, but is not guaranteed to spawn it."
+    "map.animal_spawns_timed.desc": "This is a static spawn location for a {animal}. This position is active from {start} to {end}, but is not guaranteed to spawn it.",
+    "menu.translate_body": "Translations are made by the community for the community.",
+    "menu.translate_link": "Help us by translating on Crowdin."
 }

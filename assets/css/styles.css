@@ -726,6 +726,11 @@ a.wiki-page:visited {
     font-size: 14px;
 }
 
+.explain-text a {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
 .no-margin-top {
     margin-top: 0 !important;
 }
