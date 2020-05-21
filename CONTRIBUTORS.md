@@ -1,7 +1,7 @@
-## Contributors
+# Contributors
 Lots of thanks to the community for contributing to the menu either by providing locations or working on developing the menu into something great.
 
-### Menu credits
+## Menu credits
 These are the people that worked on improving the map itself.
 
 - Code optimization and fixes by [MichalD96](https://github.com/MichalD96) and [Senexis](https://github.com/Senexis).
@@ -10,7 +10,7 @@ These are the people that worked on improving the map itself.
     * [All language contributors.](https://github.com/jeanropke/RDOMap/blob/master/langs/README.md)
     * [All other contributors.](https://github.com/jeanropke/RDOMap/graphs/contributors)
 
-### Location credits
+## Location credits
 These are the people that provided the locations of the different items on the map.
 
 - Animal heatmaps by Jean and [Senexis](https://github.com/Senexis).
@@ -25,7 +25,7 @@ These are the people that provided the locations of the different items on the m
 - Madam Nazar location by the [MadamNazar.io API](https://madamnazar.io/).
 - Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase).
 
-### Assets credits
+## Assets credits
 These are the people that provided assets for the map.
 
 - Icons by [Game Icons](https://game-icons.net/) and Rockstar Games.
@@ -33,3 +33,6 @@ These are the people that provided assets for the map.
     * Default tiles by Rockstar Games.
     * Detailed tiles by [RDR2Map](https://rdr2map.com/).
     * Dark tiles by [TDLCTV](https://github.com/TDLCTV).
+
+## Note to Contributors
+If you are a contributor to the map too and we didn't add you to this file yet, get in contact with us on the [Discord](https://discord.com/invite/HkU6ugT) and we'll add you as soon as we can.
