@@ -486,5 +486,7 @@
     "map.animal_attack.desc": "É um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro. Resgate a pessoa dos animais atacando para ganhar dinheiro e honra.",
     "map.animal_spawns.name": "Local de Aparecimento de {animal}",
     "map.animal_spawns.desc": "Esse é um local estático que pode aparecer um/uma {animal}. Essa posição está ativa o tempo todo, mas não é garantido que apareça.",
-    "map.animal_spawns_timed.desc": "Esse é um local estático que pode aparecer um/uma {animal}. Essa posição está ativa das {start} até {end}, mas não é garantido que apareça."
+    "map.animal_spawns_timed.desc": "Esse é um local estático que pode aparecer um/uma {animal}. Essa posição está ativa das {start} até {end}, mas não é garantido que apareça.",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }

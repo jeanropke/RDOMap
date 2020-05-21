@@ -486,5 +486,7 @@
     "map.animal_attack.desc": "To jest losowe spotkanie. Biały punkt na mini mapie wskazuje spotkanie. Obroń nieszczęśnika przed atakującymi go zwierzętami, aby otrzymać nagrodę.",
     "map.animal_spawns.name": "Miejsce pojawiania się {animal}",
     "map.animal_spawns.desc": "To jest statyczne miejsce pojawiania się {animal}. Ta pozycja jest zawsze aktywna, ale nie ma gwarancji, że zwierzę się tutaj pojawi akurat w tym momencie.",
-    "map.animal_spawns_timed.desc": "To jest statyczne miejsce pojawiania się {animal}. Ta pozycja jest aktywna od {start} do {end}, ale nie ma gwarancji, że zwierzę się tutaj pojawi akurat w tym momencie."
+    "map.animal_spawns_timed.desc": "To jest statyczne miejsce pojawiania się {animal}. Ta pozycja jest aktywna od {start} do {end}, ale nie ma gwarancji, że zwierzę się tutaj pojawi akurat w tym momencie.",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }
