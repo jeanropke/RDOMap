@@ -486,5 +486,7 @@
     "map.animal_attack.desc": "",
     "map.animal_spawns.name": "",
     "map.animal_spawns.desc": "",
-    "map.animal_spawns_timed.desc": ""
+    "map.animal_spawns_timed.desc": "",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }
