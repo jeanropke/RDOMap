@@ -205,7 +205,6 @@
     "menu.birds.loon": "Seetaucher",
     "menu.birds.oriole": "Baltimoretrupial",
     "menu.birds.owl": "Eule",
-    "menu.birds.parakeet": "Sittich",
     "menu.birds.pelican": "Pelikan",
     "menu.birds.pheasant": "Fasan",
     "menu.birds.pigeon": "Taube",
@@ -487,6 +486,6 @@
     "map.animal_spawns.name": "",
     "map.animal_spawns.desc": "",
     "map.animal_spawns_timed.desc": "",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Übersetzungen werden von der Community für die Community erstellt.",
+    "menu.translate_link": "Helfen Sie uns durch die Übersetzung auf Crowdin."
 }
