@@ -124,7 +124,7 @@
     "help.marker_size": "Permite mudar o tamanho em que os marcadores são exibidos no mapa.",
     "help.overlay_opacity": "Permite mudar a opacidade de diferentes overlays que aparecem no mapa como cavernas, prédios, etc.",
     "help.read_trader-guide": "Abre uma nova aba com o guia do mercador, você pode encontrar todas as informações sobre carnes e animais.",
-    "map.attribution_prefix": "",
+    "map.attribution_prefix": "Contribuidores do Mapa do RDO",
     "map.copy_link": "Copiar link do marcador",
     "map.layers.dark": "Escuro",
     "map.layers.default": "Padrão",
@@ -486,6 +486,6 @@
     "map.animal_spawns.name": "Local de Aparecimento de {animal}",
     "map.animal_spawns.desc": "Esse é um local estático que pode aparecer um/uma {animal}. Essa posição está ativa o tempo todo, mas não é garantido que apareça.",
     "map.animal_spawns_timed.desc": "Esse é um local estático que pode aparecer um/uma {animal}. Essa posição está ativa das {start} até {end}, mas não é garantido que apareça.",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "As traduções são feitas pela comunidade para a comunidade.",
+    "menu.translate_link": "Ajude-nos traduzindo no Crowdin."
 }
