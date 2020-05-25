@@ -205,7 +205,6 @@
     "menu.birds.loon": "Seetaucher",
     "menu.birds.oriole": "Baltimoretrupial",
     "menu.birds.owl": "Eule",
-    "menu.birds.parakeet": "Sittich",
     "menu.birds.pelican": "Pelikan",
     "menu.birds.pheasant": "Fasan",
     "menu.birds.pigeon": "Taube",
@@ -230,7 +229,7 @@
     "menu.fish.smallmouth_bass": "Schwarzbarsch",
     "menu.fish.sockeye_salmon": "Rotlachs",
     "menu.fish.steelhead_trout": "Stahlkopfforelle",
-    "menu.plants": "",
+    "menu.plants": "Pflanzen",
     "map.plants": "Pflanzen",
     "map.plants.desc": "Verwenden Sie Eagle Eye, um die Anlage {plant} leichter zu sehen.",
     "map.plants.alaskan_ginseng.name": "Igelkraftwurz",
@@ -401,10 +400,10 @@
     "menu.fme.cold_dead_hands": "Kalte Tote Hände",
     "menu.fme.condor_egg": "Condor Ei",
     "menu.fme.day_of_reckoning": "Tag der Abrechnung",
-    "menu.fme.dispatch_rider": "Versandreiter",
+    "menu.fme.dispatch_rider": "Botenritt",
     "menu.fme.fishing_challenge": "Fischerei-Herausforderung",
     "menu.fme.fools_gold": "Narren Gold",
-    "menu.fme.king_of_the_castle": "König der Burg",
+    "menu.fme.king_of_the_castle": "König im Schloss",
     "menu.fme.manhunt": "Verbrecherjagd",
     "menu.fme.master_archer": "Meisterbogenschützen",
     "menu.fme.railroad_baron": "Eisenbahnbaron",
@@ -487,6 +486,6 @@
     "map.animal_spawns.name": "",
     "map.animal_spawns.desc": "",
     "map.animal_spawns_timed.desc": "",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Übersetzungen werden von der Community für die Community erstellt.",
+    "menu.translate_link": "Helfen Sie uns durch die Übersetzung auf Crowdin."
 }

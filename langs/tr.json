@@ -205,7 +205,6 @@
     "menu.birds.loon": "Loon",
     "menu.birds.oriole": "Orole",
     "menu.birds.owl": "Baykuş",
-    "menu.birds.parakeet": "Muhabbet kuşu",
     "menu.birds.pelican": "Pelikan",
     "menu.birds.pheasant": "Sülün",
     "menu.birds.pigeon": "Güvercin",
@@ -487,6 +486,6 @@
     "map.animal_spawns.name": "",
     "map.animal_spawns.desc": "",
     "map.animal_spawns_timed.desc": "",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Çeviriler toplum için toplum tarafından yapılmaktadır.",
+    "menu.translate_link": "Crowdin üzerinden çeviri yaparak bize yardımcı olun."
 }

@@ -205,7 +205,6 @@
     "menu.birds.loon": "Gavia",
     "menu.birds.oriole": "Oriolo",
     "menu.birds.owl": "Gufo",
-    "menu.birds.parakeet": "Parrocchetto",
     "menu.birds.pelican": "Pellicano",
     "menu.birds.pheasant": "Fagiano",
     "menu.birds.pigeon": "Piccione",
@@ -311,8 +310,8 @@
     "fasttravel.annesburg.name": "Annesburg",
     "fasttravel.saint_denis.name": "Saint Denis",
     "fasttravel.lagras.name": "Lagras",
-    "bards_crossing_treasure": "",
-    "benedict_treasure": "",
+    "bards_crossing_treasure": "Bard's Crossing",
+    "benedict_treasure": "Benedict Point",
     "blackbone_forest_treasure": "Black Bone Forest",
     "blue_water_marsh_treasure": "Bluewater Marsh",
     "brandywine_drop_treasure": "",
@@ -487,6 +486,6 @@
     "map.animal_spawns.name": "",
     "map.animal_spawns.desc": "",
     "map.animal_spawns_timed.desc": "",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Le traduzioni sono fatte dalla comunità per la comunità.",
+    "menu.translate_link": "Aiutaci traducendo su Crowdin."
 }
