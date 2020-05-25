@@ -1,0 +1,457 @@
+{
+  "BOUNTY_BOARD_KNOWN_TARGET_HEARTLANDS": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HEARTLANDS_GUARD",
+          "spawn": {
+              "X": "541.523",
+              "Y": "-217.9981",
+              "Z": "147.2137"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HEARTLANDS_GUARD",
+          "spawn": {
+              "X": "536.9377",
+              "Y": "-215.3062",
+              "Z": "147.0104"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HEARTLANDS_GUARD",
+          "spawn": {
+              "X": "549.5428",
+              "Y": "-215.0181",
+              "Z": "147.0391"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HEARTLANDS_GUARD",
+          "spawn": {
+              "X": "555.3794",
+              "Y": "-214.8923",
+              "Z": "147.0616"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_BOLGER_GLADE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BOLGER_GUARD_1",
+          "spawn": {
+              "X": "1587.1753",
+              "Y": "-1846.1831",
+              "Z": "51.3534"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BOLGER_GUARD_1",
+          "spawn": {
+              "X": "1580.1925",
+              "Y": "-1841.0409",
+              "Z": "51.3534"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BOLGER_GUARD_1",
+          "spawn": {
+              "X": "1587.7416",
+              "Y": "-1844.6896",
+              "Z": "51.3534"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BOLGER_GUARD_1",
+          "spawn": {
+              "X": "1583.7875",
+              "Y": "-1856.1649",
+              "Z": "51.3534"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_OLD_BACCHUS_PLACE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BACCHUS_GUARD_1",
+          "spawn": {
+              "X": "-1412.1609",
+              "Y": "-2672.0725",
+              "Z": "41.1746"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BACCHUS_GUARD_1",
+          "spawn": {
+              "X": "-1420.6531",
+              "Y": "-2686.256",
+              "Z": "39.803"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BACCHUS_GUARD_1",
+          "spawn": {
+              "X": "-1413.5011",
+              "Y": "-2665.6873",
+              "Z": "41.1419"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BACCHUS_GUARD_1",
+          "spawn": {
+              "X": "-1414.4187",
+              "Y": "-2666.9827",
+              "Z": "41.0889"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_TWO_CROWS": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TWO_CROWS_GUARD_1",
+          "spawn": {
+              "X": "-3833.1345",
+              "Y": "-2990.869",
+              "Z": "-7.633"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TWO_CROWS_GUARD_1",
+          "spawn": {
+              "X": "-3838.151",
+              "Y": "-2991.9893",
+              "Z": "-7.35235"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TWO_CROWS_GUARD_1",
+          "spawn": {
+              "X": "-3846.5137",
+              "Y": "-3008.6501",
+              "Z": "-7.983"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TWO_CROWS_GUARD_2",
+          "spawn": {
+              "X": "-3819.24",
+              "Y": "-3006.534",
+              "Z": "-7.3487"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_GAPTOOTH_RIDGE_CAMP": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GAPTOOTH_GUARD",
+          "spawn": {
+              "X": "-5455.166",
+              "Y": "-2567.144",
+              "Z": "-1.958"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GAPTOOTH_GUARD",
+          "spawn": {
+              "X": "-5446.952",
+              "Y": "-2568.1235",
+              "Z": "-1.915"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GAPTOOTH_GUARD",
+          "spawn": {
+              "X": "-5444.743",
+              "Y": "-2577.3208",
+              "Z": "-1.8096"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GAPTOOTH_GUARD",
+          "spawn": {
+              "X": "-5454.511",
+              "Y": "-2562.6895",
+              "Z": "-2.0378"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_TALL_TREES": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TALL_TREES_GUARD_1",
+          "spawn": {
+              "X": "-2428.945",
+              "Y": "-1007.338",
+              "Z": "166.9841"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TALL_TREES_GUARD_1",
+          "spawn": {
+              "X": "-2432.015",
+              "Y": "-1005.6409",
+              "Z": "167.1231"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TALL_TREES_GUARD_1",
+          "spawn": {
+              "X": "-2428.8286",
+              "Y": "-994.1292",
+              "Z": "166.885"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_TALL_TREES_GUARD_1",
+          "spawn": {
+              "X": "-2431.389",
+              "Y": "-1012.5157",
+              "Z": "166.9368"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_BIG_VALLEY_CAVE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BIG_VALLEY_CAVE_GUARD_2",
+          "spawn": {
+              "X": "-1511.7078",
+              "Y": "714.2926",
+              "Z": "123.7513"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BIG_VALLEY_CAVE_GUARD_2",
+          "spawn": {
+              "X": "-1517.6154",
+              "Y": "725.7469",
+              "Z": "126.1572"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_BIG_VALLEY_CAVE_GUARD_1",
+          "spawn": {
+              "X": "-1521.916",
+              "Y": "726.2389",
+              "Z": "130.1135"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "spawn": {
+              "X": "-1509.7803",
+              "Y": "719.5198",
+              "Z": "125.0968"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_DEADBOOT_CREEK": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_DEADBOOT_CREEK_GUARD",
+          "spawn": {
+              "X": "-1961.608",
+              "Y": "2159.972",
+              "Z": "326.5599"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_DEADBOOT_CREEK_GUARD",
+          "spawn": {
+              "X": "-1962.2943",
+              "Y": "2157.9463",
+              "Z": "326.6039"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_DEADBOOT_CREEK_GUARD",
+          "spawn": {
+              "X": "-1957.3909",
+              "Y": "2155.264",
+              "Z": "326.0363"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_DEADBOOT_CREEK_GUARD",
+          "spawn": {
+              "X": "-1966.8734",
+              "Y": "2159.0957",
+              "Z": "327.3708"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_ELLIE_ANN_CAVE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_ELLIE_ANN_CAVE_GUARD",
+          "spawn": {
+              "X": "-1177.0837",
+              "Y": "299.8312",
+              "Z": "40.7843"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_ELLIE_ANN_CAVE_GUARD",
+          "spawn": {
+              "X": "-1184.3055",
+              "Y": "324.3753",
+              "Z": "42.821"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_ELLIE_ANN_CAVE_GUARD",
+          "spawn": {
+              "X": "-1153.8102",
+              "Y": "345.8264",
+              "Z": "41.5976"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_ELLIE_ANN_CAVE_GUARD",
+          "spawn": {
+              "X": "-1167.303",
+              "Y": "321.8107",
+              "Z": "40.652"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_ELYSIAN_POOL_CAVE": [
+      {
+          "config": "OBJECTIVE_AI_BOUNTY_TARGET_COMBAT",
+          "volume": "BOUNTY_KNOWN_TARGET_ELYSIAN_POOL_GUARD",
+          "spawn": {
+              "X": "2297.663",
+              "Y": "1064.1669",
+              "Z": "81.4492"
+          }
+      },
+      {
+          "config": "OBJECTIVE_AI_BOUNTY_TARGET_COMBAT",
+          "volume": "BOUNTY_KNOWN_TARGET_ELYSIAN_POOL_GUARD",
+          "spawn": {
+              "X": "2299.4622",
+              "Y": "1063.0481",
+              "Z": "81.6015"
+          }
+      },
+      {
+          "config": "OBJECTIVE_AI_BOUNTY_TARGET_COMBAT",
+          "volume": "BOUNTY_KNOWN_TARGET_ELYSIAN_POOL_GUARD",
+          "spawn": {
+              "X": "2274.8745",
+              "Y": "1061.15",
+              "Z": "77.4196"
+          }
+      },
+      {
+          "config": "OBJECTIVE_AI_BOUNTY_TARGET_COMBAT",
+          "volume": "BOUNTY_KNOWN_TARGET_ELYSIAN_POOL_GUARD",
+          "spawn": {
+              "X": "2304.4353",
+              "Y": "1077.7924",
+              "Z": "85.5334"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_HANIS_BETHEL": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HANIS_BETHEL_GUARD",
+          "spawn": {
+              "X": "1460.8766",
+              "Y": "815.3121",
+              "Z": "100.1314"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HANIS_BETHEL_GUARD",
+          "spawn": {
+              "X": "1465.4803",
+              "Y": "811.6058",
+              "Z": "99.9246"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HANIS_BETHEL_GUARD",
+          "spawn": {
+              "X": "1466.8782",
+              "Y": "815.2715",
+              "Z": "99.2909"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_HANIS_BETHEL_GUARD",
+          "spawn": {
+              "X": "1459.7953",
+              "Y": "819.7004",
+              "Z": "99.1867"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_KNOWN_TARGET_GRIZZLIES_EAST": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GRIZZLIES_EAST",
+          "spawn": {
+              "X": "1604.4851",
+              "Y": "2167.397",
+              "Z": "322.1817"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GRIZZLIES_EAST",
+          "spawn": {
+              "X": "1603.034",
+              "Y": "2162.6445",
+              "Z": "321.718"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GRIZZLIES_EAST",
+          "spawn": {
+              "X": "1601.3741",
+              "Y": "2172.6152",
+              "Z": "322.328"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET",
+          "volume": "BOUNTY_KNOWN_TARGET_GRIZZLIES_EAST",
+          "spawn": {
+              "X": "1590.1912",
+              "Y": "2194.6455",
+              "Z": "323.1049"
+          }
+      }
+  ]
+}

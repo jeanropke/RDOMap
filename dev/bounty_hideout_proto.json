@@ -1,0 +1,616 @@
+{
+  "BOUNTY_HIDEOUT_COLTER": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_COLTER_TARGET",
+          "spawn": {
+              "X": "-1324.2671",
+              "Y": "2438.2334",
+              "Z": "308.5958"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_COLTER_WAVES",
+          "spawn": {
+              "X": "-1347.7788",
+              "Y": "2440.1233",
+              "Z": "307.42"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_COLTER_GUARD_00X",
+          "spawn": {
+              "X": "-1328.6392",
+              "Y": "2452.662",
+              "Z": "308.4579"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_COLTER_WAVES",
+          "spawn": {
+              "X": "-1318.9034",
+              "Y": "2432.8164",
+              "Z": "308.5597"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_COLTER_WAVES",
+          "spawn": {
+              "X": "-1334.324",
+              "Y": "2397.6204",
+              "Z": "306.1031"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_COLTER_GUARD_01X",
+          "spawn": {
+              "X": "-1329.6001",
+              "Y": "2450.3281",
+              "Z": "308.3725"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_EWING_BASIN": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_EWING_BASIN_TARGET",
+          "spawn": {
+              "X": "-1884.353",
+              "Y": "1352.255",
+              "Z": "202.217"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "HIDEOUT_ABANDONED_MINING_STATION_GUARD_00X",
+          "spawn": {
+              "X": "-1884.2183",
+              "Y": "1335.055",
+              "Z": "199.9046"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_ABANDONED_MINING_STATION_GUARD_01X",
+          "spawn": {
+              "X": "-1912.1039",
+              "Y": "1363.6298",
+              "Z": "206.7123"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_ABANDONED_MINING_STATION_GUARD_01X",
+          "spawn": {
+              "X": "-1898.8043",
+              "Y": "1336.0985",
+              "Z": "202.9336"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_ABANDONED_MINING_STATION_GUARD_00X",
+          "spawn": {
+              "X": "-1904.6719",
+              "Y": "1322.608",
+              "Z": "198.3514"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_ABANDONED_MINING_STATION_GUARD_00X",
+          "spawn": {
+              "X": "-1895.34",
+              "Y": "1334.77",
+              "Z": "199.102"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_GAPTOOTH_BREACH": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "GAPTOOTH_DEFENSE_MINE_REAR",
+          "spawn": {
+              "X": "-5968.62",
+              "Y": "-3218.3174",
+              "Z": "-22.5358"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "GAPTOOTH_DEFENSE_MINE_REAR",
+          "spawn": {
+              "X": "-5983.539",
+              "Y": "-3165.003",
+              "Z": "-27.6158"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "GAPTOOTH_DEFENSE_MINE_FRONT",
+          "spawn": {
+              "X": "-5955.515",
+              "Y": "-3180.758",
+              "Z": "-23.3615"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "GAPTOOTH_DEFENSE_FRONT",
+          "spawn": {
+              "X": "-5987.048",
+              "Y": "-3215.0125",
+              "Z": "-18.5439"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "GAPTOOTH_DEFENSE_REAR",
+          "spawn": {
+              "X": "-5961.5063",
+              "Y": "-3246.0618",
+              "Z": "-22.6331"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "GAPTOOTH_DEFENSE_FRONT",
+          "spawn": {
+              "X": "-5988.42",
+              "Y": "-3267.13",
+              "Z": "-22.61"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_HANGING_DOG": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_HANGING_DOG_TARGET",
+          "spawn": {
+              "X": "-2178.465",
+              "Y": "726.621",
+              "Z": "121.614"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_HANGINGDOG_FULL",
+          "spawn": {
+              "X": "-2200.308",
+              "Y": "746.834",
+              "Z": "122.4384"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_HANGINGDOG_FULL",
+          "spawn": {
+              "X": "-2182.5623",
+              "Y": "718.6104",
+              "Z": "121.6173"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_HANGINGDOG_SOUTH",
+          "spawn": {
+              "X": "-2164.9072",
+              "Y": "697.8052",
+              "Z": "120.1597"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_HANGINGDOG_CAMP_BARN",
+          "spawn": {
+              "X": "-2193.0356",
+              "Y": "745.0052",
+              "Z": "122.818"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_HANGINGDOG_FULL",
+          "spawn": {
+              "X": "-2207.666",
+              "Y": "711.833",
+              "Z": "121.311"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_LAKAY": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_LAKAY_GUARD_LEADERX",
+          "spawn": {
+              "X": "2234.141",
+              "Y": "-770.5787",
+              "Z": "42.5268"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_LAKAY_GUARD_01X",
+          "spawn": {
+              "X": "2255.895",
+              "Y": "-775.386",
+              "Z": "42.192"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_LAKAY_GUARD_03X",
+          "spawn": {
+              "X": "2258.138",
+              "Y": "-767.202",
+              "Z": "41.76"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_LAKAY_GUARD_01X",
+          "spawn": {
+              "X": "2250.317",
+              "Y": "-755.931",
+              "Z": "41.743"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_LAKAY_GUARD_01X",
+          "spawn": {
+              "X": "2247.147",
+              "Y": "-780.1473",
+              "Z": "42.9349"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_LAKAY_GUARD_01X",
+          "spawn": {
+              "X": "2255.803",
+              "Y": "-783.165",
+              "Z": "43.179"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_MILLESANI_CLAIM": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_MILLESANI_CLAIM_TARGET",
+          "spawn": {
+              "X": "-1388.331",
+              "Y": "1181.189",
+              "Z": "221.097"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_MILLESANI_CLAIM_BACK",
+          "spawn": {
+              "X": "-1392.751",
+              "Y": "1183.568",
+              "Z": "220.953"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_MILLESANI_CLAIM_MINE",
+          "spawn": {
+              "X": "-1412.59",
+              "Y": "1212.828",
+              "Z": "221.416"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_MILLESANI_CLAIM_ENTRANCE",
+          "spawn": {
+              "X": "-1428.589",
+              "Y": "1181.404",
+              "Z": "225.187"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_MILLESANI_CLAIM_OUTSIDE",
+          "spawn": {
+              "X": "-1390.745",
+              "Y": "1154.575",
+              "Z": "224.031"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_HIDEOUT_MILLESANI_CLAIM_ENTRANCE",
+          "spawn": {
+              "X": "-1405.903",
+              "Y": "1159.575",
+              "Z": "225.598"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_QUAKERS_COVE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_QUAKERS_COVE_GUARD_05",
+          "spawn": {
+              "X": "-1165.0343",
+              "Y": "-1943.2102",
+              "Z": "41.3218"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_QUAKERS_COVE_GUARD_03",
+          "spawn": {
+              "X": "-1175.821",
+              "Y": "-1974.5455",
+              "Z": "41.3495"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "spawn": {
+              "X": "-1199.1869",
+              "Y": "-1948.6301",
+              "Z": "42.8779"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_QUAKERS_COVE_WAVES",
+          "spawn": {
+              "X": "-1170.6107",
+              "Y": "-1934.8666",
+              "Z": "41.32"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_QUAKERS_COVE_GUARD_04",
+          "spawn": {
+              "X": "-1153.9258",
+              "Y": "-1918.0361",
+              "Z": "41.2508"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "spawn": {
+              "X": "-1197.7705",
+              "Y": "-1924.237",
+              "Z": "42.5398"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_SIX_POINT": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_SIXPOINTCABIN_LEADER",
+          "spawn": {
+              "X": "-61.0351",
+              "Y": "1241.4801",
+              "Z": "170.2696"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_SIXPOINTCABIN_GUARD_EAST",
+          "spawn": {
+              "X": "-28.2652",
+              "Y": "1235.7312",
+              "Z": "171.9159"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_SIXPOINTCABIN_GUARD_EAST",
+          "spawn": {
+              "X": "-28.0891",
+              "Y": "1233.725",
+              "Z": "172.0037"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_SIXPOINTCABIN_GUARD_WEST",
+          "spawn": {
+              "X": "-29.3446",
+              "Y": "1218.8365",
+              "Z": "172.081"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "HIDEOUT_SIXPOINTCABIN_GUARD_WEST",
+          "spawn": {
+              "X": "-21.6515",
+              "Y": "1221.6763",
+              "Z": "172.3544"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_SIX_POINT_CABIN_WAVES",
+          "spawn": {
+              "X": "-65.402",
+              "Y": "1238.087",
+              "Z": "169.774"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_THE_LOFT": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "HIDEOUT_THELOFT_LEADER",
+          "spawn": {
+              "X": "1938.29",
+              "Y": "1945.44",
+              "Z": "265.62"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_LOFT_MID_GUARD",
+          "spawn": {
+              "X": "1931.0226",
+              "Y": "1965.7365",
+              "Z": "262.6619"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_HIDEOUT_LOFT_MID_GUARD",
+          "spawn": {
+              "X": "1932.6875",
+              "Y": "1963.2216",
+              "Z": "262.5701"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_LOFT_HIGH_GUARD",
+          "spawn": {
+              "X": "1933.7784",
+              "Y": "1946.099",
+              "Z": "262.0197"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_LOFT_HIGH_GUARD",
+          "spawn": {
+              "X": "1932.332",
+              "Y": "1950.021",
+              "Z": "265.033"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_HIDEOUT_LOFT_HIGH_GUARD",
+          "spawn": {
+              "X": "1936.4316",
+              "Y": "1941.7826",
+              "Z": "264.6498"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_TWIN_ROCKS": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_TWIN_ROCKS_TARGET",
+          "spawn": {
+              "X": "-3961.751",
+              "Y": "-2123.24",
+              "Z": "-5.083"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_TWIN_ROCKS_ROOM",
+          "spawn": {
+              "X": "-3960.853",
+              "Y": "-2121.963",
+              "Z": "-5.085"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_TWIN_ROCKS_DEFENSE_AREA",
+          "spawn": {
+              "X": "-3953.782",
+              "Y": "-2142.399",
+              "Z": "-5.906"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_TWIN_ROCKS_DEFENSE_AREA",
+          "spawn": {
+              "X": "-3953.632",
+              "Y": "-2144.297",
+              "Z": "-6.003"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_HIDEOUT_TWIN_ROCKS_DEFENSE_AREA",
+          "spawn": {
+              "X": "-3969.922",
+              "Y": "-2117.198",
+              "Z": "-6.186"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_HIDEOUT_TWIN_ROCKS_DEFENSE_AREA",
+          "spawn": {
+              "X": "-3982.462",
+              "Y": "-2142.403",
+              "Z": "-7.413"
+          }
+      }
+  ],
+  "BOUNTY_HIDEOUT_WILLARDS_REST": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_WILLARDS_TARGET",
+          "spawn": {
+              "X": "2990.383",
+              "Y": "2182.959",
+              "Z": "165.757"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_HIDEOUT_WILLARDS_REST_BACK",
+          "spawn": {
+              "X": "3002.098",
+              "Y": "2186.161",
+              "Z": "164.9345"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_HIDEOUT_WILLARDS_REST_BACK",
+          "spawn": {
+              "X": "3001.1218",
+              "Y": "2201.2708",
+              "Z": "165.1176"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_HIDEOUT_WILLARDS_REST_FRONT",
+          "spawn": {
+              "X": "2983.7908",
+              "Y": "2204.097",
+              "Z": "165.24"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_WILLARDS_REST_FRONT",
+          "spawn": {
+              "X": "2984.5054",
+              "Y": "2203.3645",
+              "Z": "165.2246"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_HIDEOUT_WILLARDS_REST_FRONT",
+          "spawn": {
+              "X": "2985.632",
+              "Y": "2184.214",
+              "Z": "165.742"
+          }
+      }
+  ]
+}

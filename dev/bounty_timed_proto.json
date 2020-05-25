@@ -1,0 +1,580 @@
+{
+  "BOUNTY_TIMED_BEAVER_HOLLOW": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_BEAVER_HOLLOW_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_BEAVER_HOLLOW_TARGET_DEF_POS",
+          "spawn": {
+              "X": "2397.337",
+              "Y": "1640.149",
+              "Z": "92.112"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_BEAVER_HOLLOW_ESCORT_DEST_1",
+          "volume": "BOUNTY_TIMED_BEAVER_HOLLOW_LOWER_DEF_AREA",
+          "spawn": {
+              "X": "2396.436",
+              "Y": "1643.854",
+              "Z": "92.377"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_BEAVER_HOLLOW_LOWER_DEF_AREA",
+          "spawn": {
+              "X": "2296.286",
+              "Y": "1478.079",
+              "Z": "83.074"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_BEAVER_HOLLOW_LOWER_DEF_AREA",
+          "spawn": {
+              "X": "2306.019",
+              "Y": "1480.168",
+              "Z": "83.094"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_BEAVER_HOLLOW_LOWER_DEF_AREA",
+          "spawn": {
+              "X": "2300.844",
+              "Y": "1457.455",
+              "Z": "82.281"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_BEAVER_HOLLOW_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "2338.368",
+              "Y": "1400.495",
+              "Z": "102.308"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_CHEZ_PORTER": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_CHEZ_PORTER_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_CHEZ_PORTER_TARGET_DEF_POS",
+          "spawn": {
+              "X": "-738.103",
+              "Y": "1159.2",
+              "Z": "146.254"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_CHEZ_PORTER_ESCORT_DEST_1",
+          "volume": "BOUNTY_TIMED_CHEZ_PORTER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-124.336",
+              "Y": "1811.227",
+              "Z": "206.015"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_CHEZ_PORTER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-392.078",
+              "Y": "1729.616",
+              "Z": "215.436"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_CHEZ_PORTER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-397.446",
+              "Y": "1728.246",
+              "Z": "215.491"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_CHEZ_PORTER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-412.803",
+              "Y": "1716.892",
+              "Z": "215.25"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_CHEZ_PORTER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-406.246",
+              "Y": "1731.961",
+              "Z": "215.257"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_CUEVA_SECA": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_CUEVA_SECA_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_CUEVA_SECA_TARGET_DEF_POS",
+          "spawn": {
+              "X": "-5638.937",
+              "Y": "-2497.993",
+              "Z": "-13.203"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_CUEVA_SECA_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-5860.0977",
+              "Y": "-2757.2312",
+              "Z": "-6.8638"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_CUEVA_SECA_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-5850.458",
+              "Y": "-2764.2288",
+              "Z": "-6.038"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_CUEVA_SECA_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-5862.674",
+              "Y": "-2750.4775",
+              "Z": "-7.4633"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_CUEVA_SECA_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-5861.36",
+              "Y": "-2772.0776",
+              "Z": "-5.4615"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_CUEVA_SECA_ESCORT_DEST_2",
+          "volume": "BOUNTY_TIMED_CUEVA_SECA_TARGET_DEF_POS",
+          "spawn": {
+              "X": "5",
+              "Y": "-10",
+              "Z": "0"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_FORT_BRENNAND": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_BRENNAND_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_FORT_BRENNAND_TARGET_DEF_POS",
+          "spawn": {
+              "X": "2166.702",
+              "Y": "-121.566",
+              "Z": "50.04"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_BRENNAND_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "2457.0352",
+              "Y": "295.5253",
+              "Z": "69.339"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_BRENNAND_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "2458.3782",
+              "Y": "289.6745",
+              "Z": "69.7778"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_FORT_BRENNAND_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "2442.651",
+              "Y": "297.8741",
+              "Z": "73.1209"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_FORT_BRENNAND_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "2465.595",
+              "Y": "300.7036",
+              "Z": "73.767"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_BRENNAND_ESCORT_DEST_2",
+          "volume": "BOUNTY_TIMED_FORT_BRENNAND_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "2705.469",
+              "Y": "142.91",
+              "Z": "53.354"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_FORT_MERCER": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_MERCER_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_FORT_MERCER_TARGET_DEFEND_POS",
+          "spawn": {
+              "X": "-4690.658",
+              "Y": "-3678.713",
+              "Z": "10.676"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_MERCER_ESCORT_DEST_2",
+          "volume": "BOUNTY_TIMED_FORT_MERCER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "5",
+              "Y": "-10",
+              "Z": "0"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_RIFLE",
+          "volume": "BOUNTY_TIMED_FORT_MERCER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-4200.748",
+              "Y": "-3417.366",
+              "Z": "40.481"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_RIFLE",
+          "volume": "BOUNTY_TIMED_FORT_MERCER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-4234.814",
+              "Y": "-3464.583",
+              "Z": "40.481"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_FORT_MERCER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-4228.345",
+              "Y": "-3458.489",
+              "Z": "36.088"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_MERCER_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-4231.32",
+              "Y": "-3437.066",
+              "Z": "40.481"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_FORT_RIGGS": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_RIGGS_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_FORT_RIGGS_TARGET_DEFEND_POS",
+          "spawn": {
+              "X": "-1305.779",
+              "Y": "-1099.499",
+              "Z": "72.578"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_FORT_RIGGS_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1575.407",
+              "Y": "-906.715",
+              "Z": "83.354"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_RIGGS_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1560.047",
+              "Y": "-944.428",
+              "Z": "82.859"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_FORT_RIGGS_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1572.033",
+              "Y": "-905.617",
+              "Z": "83.429"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_FORT_RIGGS_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1563.125",
+              "Y": "-943.223",
+              "Z": "82.855"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_RIGGS_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1548.93",
+              "Y": "-916.351",
+              "Z": "88.481"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_FORT_WALLACE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_WALLACE_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_FORT_WALLACE_TARGET_DEFEND_POS",
+          "spawn": {
+              "X": "291.629",
+              "Y": "1196.064",
+              "Z": "176.87"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_FORT_WALLACE_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "343.927",
+              "Y": "1503.833",
+              "Z": "180.862"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_WALLACE_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "329.495",
+              "Y": "1481.949",
+              "Z": "178.899"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_WALLACE_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "343.454",
+              "Y": "1493.01",
+              "Z": "178.619"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_FORT_WALLACE_ESCORT_DEST_1",
+          "volume": "BOUNTY_TIMED_FORT_WALLACE_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-5",
+              "Y": "-10",
+              "Z": "0"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_FORT_WALLACE_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "334.419",
+              "Y": "1497.062",
+              "Z": "180.177"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_MACOMBS_END": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_MACOMBS_END_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_MACOMBS_END_TARGET_DEF_POS",
+          "spawn": {
+              "X": "1600.768",
+              "Y": "-603.062",
+              "Z": "45.716"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_MACOMBS_END_ESCORT_DEST_2",
+          "volume": "BOUNTY_TIMED_MACOMBS_END_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "5",
+              "Y": "-10",
+              "Z": "0"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_MACOMBS_END_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "1876.305",
+              "Y": "-737.456",
+              "Z": "41.636"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_MACOMBS_END_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "1884.897",
+              "Y": "-757.229",
+              "Z": "40.635"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_MACOMBS_END_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "1892.453",
+              "Y": "-737.462",
+              "Z": "41.286"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_MACOMBS_END_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "1872.427",
+              "Y": "-773.245",
+              "Z": "41.464"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_MOUNT_HAGEN": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_MOUNT_HAGEN_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_MOUNT_HAGEN_TARGET_DEF_POS",
+          "spawn": {
+              "X": "-1655.699",
+              "Y": "1215.584",
+              "Z": "347.823"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_MOUNT_HAGEN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1491.023",
+              "Y": "1246.4",
+              "Z": "313.491"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_MOUNT_HAGEN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1505.62",
+              "Y": "1248.116",
+              "Z": "312.736"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_MOUNT_HAGEN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1509.212",
+              "Y": "1250.866",
+              "Z": "312.831"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_MOUNT_HAGEN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1501.453",
+              "Y": "1250.454",
+              "Z": "312.884"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_MOUNT_HAGEN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-1506.479",
+              "Y": "1246.069",
+              "Z": "312.691"
+          }
+      }
+  ],
+  "BOUNTY_TIMED_MOUNT_SHANN_MINE": [
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_MOUNT_SHANN_TARGET_DEST",
+          "volume": "BOUNTY_TIMED_MOUNT_SHANN_TARGET_DEF_POS",
+          "spawn": {
+              "X": "-2762.431",
+              "Y": "-197.161",
+              "Z": "148.924"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE",
+          "volume": "BOUNTY_TIMED_MOUNT_SHANN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-2350.518",
+              "Y": "109.921",
+              "Z": "217.141"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_COMBAT_MOUNTED",
+          "guard_retreat": "BOUNTY_TIMED_MOUNT_SHANN_ESCORT_DEST_2",
+          "volume": "BOUNTY_TIMED_MOUNT_SHANN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "5",
+              "Y": "-10",
+              "Z": "0"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_MOUNT_SHANN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-2320.665",
+              "Y": "81.237",
+              "Z": "220.178"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_REPEATER",
+          "volume": "BOUNTY_TIMED_MOUNT_SHANN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-2332.969",
+              "Y": "85.524",
+              "Z": "218.739"
+          }
+      },
+      {
+          "config": "OBJECTIVE_BOUNTY_TARGET_NO_FLEE_SHOTGUN",
+          "volume": "BOUNTY_TIMED_MOUNT_SHANN_DEFENSIVE_AREA",
+          "spawn": {
+              "X": "-2329.484",
+              "Y": "83.683",
+              "Z": "218.875"
+          }
+      }
+  ]
+}

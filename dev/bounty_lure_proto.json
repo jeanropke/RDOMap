@@ -1,0 +1,242 @@
+{
+  "BOUNTY_BOARD_LURE_ANNESBURG_MINES": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_ANNESBURG_MINE_DEFENSE"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_ANNESBURG_MINE_DEFENSE",
+          "spawn": {
+              "X": "2772.415",
+              "Y": "1396.846",
+              "Z": "68.229"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_ANNESBURG_MINE_DEFENSE",
+          "spawn": {
+              "X": "-2512.867",
+              "Y": "1102.648",
+              "Z": "212.577"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_BIG_VALLEY_SHACK": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_BIG_VALLEY_SHACK"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_BIG_VALLEY_SHACK",
+          "spawn": {
+              "X": "-2573.347",
+              "Y": "1076.857",
+              "Z": "206.892"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_BIG_VALLEY_SHACK",
+          "spawn": {
+              "X": "-2512.867",
+              "Y": "1102.648",
+              "Z": "212.577"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_CALIGA_HALL": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_CALIGA_HALL_DOCK_AREA"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_CALIGA_HALL_DOCK_AREA",
+          "spawn": {
+              "X": "1842.1647",
+              "Y": "-1267.6797",
+              "Z": "42.2216"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_CALIGA_HALL_DOCK_AREA",
+          "spawn": {
+              "X": "1753.5992",
+              "Y": "-1302.6395",
+              "Z": "42.9784"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_CATFISH_JACKSON": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_CATFISH_JACKSONS"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_CATFISH_JACKSONS",
+          "spawn": {
+              "X": "1271.996",
+              "Y": "-2183.084",
+              "Z": "48.353"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_CATFISH_JACKSONS",
+          "spawn": {
+              "X": "1269.642",
+              "Y": "-2179.811",
+              "Z": "48.583"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_FIRWOOD_RISE": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_FIRWOOD_RISE"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_FIRWOOD_RISE",
+          "spawn": {
+              "X": "209.635",
+              "Y": "1087.2",
+              "Z": "179.282"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_FIRWOOD_RISE",
+          "spawn": {
+              "X": "254.491",
+              "Y": "1053.62",
+              "Z": "182.112"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_LARNED_SOD": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_LARNED_SOD"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_LARNED_SOD",
+          "spawn": {
+              "X": "929.884",
+              "Y": "180.584",
+              "Z": "121.794"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_LARNED_SOD",
+          "spawn": {
+              "X": "777.25",
+              "Y": "284.587",
+              "Z": "115.117"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_PAINTED_SKY": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_PAINTED_SKY"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_PAINTED_SKY",
+          "spawn": {
+              "X": "-649.764",
+              "Y": "31.132",
+              "Z": "74.289"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_PAINTED_SKY",
+          "spawn": {
+              "X": "-717.012",
+              "Y": "-43.958",
+              "Z": "75.727"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_RIDGEWOOD_FARM": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_RIDGEWOOD_FARM"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_RIDGEWOOD_FARM",
+          "spawn": {
+              "X": "-4671.474",
+              "Y": "-2794.848",
+              "Z": "-15.039"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_RIDGEWOOD_FARM",
+          "spawn": {
+              "X": "-4691.958",
+              "Y": "-2656.198",
+              "Z": "-7.212"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_SILENT_STEAD": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_SILENT_STEAD"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_SILENT_STEAD",
+          "spawn": {
+              "X": "-5567.843",
+              "Y": "-2570.4",
+              "Z": "-9.8"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_MOUNTED_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_SILENT_STEAD",
+          "spawn": {
+              "X": "-5674.278",
+              "Y": "-2560.625",
+              "Z": "-9.35"
+          }
+      }
+  ],
+  "BOUNTY_BOARD_LURE_THIEVES_LANDING": [
+      {
+          "config": "HAVOC_LEVEL_GOAL",
+          "volume": "BOUNTY_LURE_THIEVES_LANDING"
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_THIEVES_LANDING_CLEAR_AMB",
+          "spawn": {
+              "X": "-1402.191",
+              "Y": "-2334.226",
+              "Z": "42.089"
+          }
+      },
+      {
+          "config": "OBJ_BB_TARGET_MALE_ONLY_FIGHT",
+          "volume": "BOUNTY_LURE_THIEVES_LANDING",
+          "spawn": {
+              "X": "-1404.088",
+              "Y": "-2333.776",
+              "Z": "42.094"
+          }
+      }
+  ]
+}
