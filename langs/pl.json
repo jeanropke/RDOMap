@@ -124,7 +124,7 @@
     "help.marker_size": "Pozwala zmienić rozmiar znaczników na mapie.",
     "help.overlay_opacity": "Umożliwia zmianę krycia różnych nakładek, które pojawiają się w miejscach, gdzie znajdują się jaskinie, budynki itp.",
     "help.read_trader-guide": "Otwiera nową kartę z przewodnikiem handlowca, w którym można znaleźć wszystkie informacje na temat mięsa i zwierząt.",
-    "map.attribution_prefix": "",
+    "map.attribution_prefix": "Współtwórcy mapy RDO",
     "map.copy_link": "Skopiuj link znacznika",
     "map.layers.dark": "Ciemny",
     "map.layers.default": "Domyślny",
@@ -399,7 +399,7 @@
     "menu.fme.time.minutes": "{minutes} minut",
     "menu.fme.cold_dead_hands": "",
     "menu.fme.condor_egg": "Jajo Kondora",
-    "menu.fme.day_of_reckoning": "",
+    "menu.fme.day_of_reckoning": "Sądny dzień",
     "menu.fme.dispatch_rider": "",
     "menu.fme.fishing_challenge": "Rybobranie",
     "menu.fme.fools_gold": "Złoto głupców",
@@ -486,6 +486,6 @@
     "map.animal_spawns.name": "Miejsce pojawiania się {animal}",
     "map.animal_spawns.desc": "To jest statyczne miejsce pojawiania się {animal}. Ta pozycja jest zawsze aktywna, ale nie ma gwarancji, że zwierzę się tutaj pojawi akurat w tym momencie.",
     "map.animal_spawns_timed.desc": "To jest statyczne miejsce pojawiania się {animal}. Ta pozycja jest aktywna od {start} do {end}, ale nie ma gwarancji, że zwierzę się tutaj pojawi akurat w tym momencie.",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Tłumaczenia są wykonywane przez społeczność dla społeczności.",
+    "menu.translate_link": "Pomóż nam, tłumacząc na Crowdin."
 }
