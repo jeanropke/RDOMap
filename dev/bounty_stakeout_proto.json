@@ -1,0 +1,1775 @@
+{
+    "BOUNTY_BOARD_STAKEOUT_SAINT_DENIS": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_SDN_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SDN_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "2078.2444",
+                    "Y": "-1288.4059",
+                    "Z": "41.67049"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2078.2444",
+                        "Y": "-1288.4059",
+                        "Z": "41.67049"
+                    },
+                    {
+                        "X": "2158.4048",
+                        "Y": "-1338.5077",
+                        "Z": "41.33812"
+                    },
+                    {
+                        "X": "2129.04",
+                        "Y": "-1310.6251",
+                        "Z": "41.87146"
+                    },
+                    {
+                        "X": "2183.4482",
+                        "Y": "-1334.7035",
+                        "Z": "43.33439"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SDN_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "2179.2942",
+                    "Y": "-1292.0774",
+                    "Z": "41.21192"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2220.0942",
+                        "Y": "-1309.5193",
+                        "Z": "40.77758"
+                    },
+                    {
+                        "X": "2179.2942",
+                        "Y": "-1292.0774",
+                        "Z": "41.21192"
+                    },
+                    {
+                        "X": "2194.227",
+                        "Y": "-1333.17",
+                        "Z": "40.50329"
+                    },
+                    {
+                        "X": "2223.9783",
+                        "Y": "-1320.8558",
+                        "Z": "40.74844"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SDN_DRIVE_TO_03",
+                "unknown_volume_source": "VOL_TARGET_2_ARRIVE",
+                "spawn_position": {
+                    "X": "2079.2363",
+                    "Y": "-1245.4775",
+                    "Z": "41.82354"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2079.2363",
+                        "Y": "-1245.4775",
+                        "Z": "41.82354"
+                    },
+                    {
+                        "X": "2161.4568",
+                        "Y": "-1262.994",
+                        "Z": "40.49726"
+                    },
+                    {
+                        "X": "2129.7334",
+                        "Y": "-1284.5592",
+                        "Z": "40.81156"
+                    },
+                    {
+                        "X": "2129.5322",
+                        "Y": "-1309.1301",
+                        "Z": "41.86451"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SDN_DRIVE_TO_04",
+                "unknown_volume_source": "VOL_TARGET_3_ARRIVE",
+                "spawn_position": {
+                    "X": "2089.8147",
+                    "Y": "-1315.4968",
+                    "Z": "41.93527"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2089.8147",
+                        "Y": "-1315.4968",
+                        "Z": "41.93527"
+                    },
+                    {
+                        "X": "2172.074",
+                        "Y": "-1284.1183",
+                        "Z": "42.35343"
+                    },
+                    {
+                        "X": "2143.2856",
+                        "Y": "-1306.2368",
+                        "Z": "41.66907"
+                    },
+                    {
+                        "X": "2080.0845",
+                        "Y": "-1285.6084",
+                        "Z": "41.6132"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SDN_DRIVE_TO_05",
+                "unknown_volume_source": "VOL_TARGET_4_ARRIVE",
+                "spawn_position": {
+                    "X": "2169.2163",
+                    "Y": "-1325.0105",
+                    "Z": "41.42455"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2169.2163",
+                        "Y": "-1325.0105",
+                        "Z": "41.42455"
+                    },
+                    {
+                        "X": "2137.5417",
+                        "Y": "-1340.6075",
+                        "Z": "41.53775"
+                    },
+                    {
+                        "X": "2121.1416",
+                        "Y": "-1305.2292",
+                        "Z": "41.75299"
+                    },
+                    {
+                        "X": "2143.133",
+                        "Y": "-1273.5837",
+                        "Z": "40.66163"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SDN_DRIVE_TO_06",
+                "unknown_volume_source": "VOL_TARGET_5_ARRIVE",
+                "spawn_position": {
+                    "X": "2164.4075",
+                    "Y": "-1347.2761",
+                    "Z": "40.71844"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2164.4075",
+                        "Y": "-1347.2761",
+                        "Z": "40.71844"
+                    },
+                    {
+                        "X": "2179.2366",
+                        "Y": "-1338.8735",
+                        "Z": "43.12971"
+                    },
+                    {
+                        "X": "2124.6672",
+                        "Y": "-1298.3267",
+                        "Z": "41.16704"
+                    },
+                    {
+                        "X": "2077.5232",
+                        "Y": "-1330.395",
+                        "Z": "41.97531"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_VALENTINE": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_VAL_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_VAL_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-248.4746",
+                    "Y": "616.145",
+                    "Z": "112.4419"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-248.4746",
+                        "Y": "616.145",
+                        "Z": "112.4419"
+                    },
+                    {
+                        "X": "-272.2845",
+                        "Y": "634.56464",
+                        "Z": "112.43079"
+                    },
+                    {
+                        "X": "-287.68826",
+                        "Y": "655.9261",
+                        "Z": "112.26183"
+                    },
+                    {
+                        "X": "-318.57812",
+                        "Y": "669.45776",
+                        "Z": "114.35002"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_VAL_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-205.62697",
+                    "Y": "671.1731",
+                    "Z": "112.36594"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-205.62697",
+                        "Y": "671.1731",
+                        "Z": "112.36594"
+                    },
+                    {
+                        "X": "-225.66592",
+                        "Y": "631.2905",
+                        "Z": "112.17866"
+                    },
+                    {
+                        "X": "-203.00055",
+                        "Y": "646.6055",
+                        "Z": "111.58604"
+                    },
+                    {
+                        "X": "-220.72116",
+                        "Y": "687.8461",
+                        "Z": "112.73036"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_VAL_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "-232.25607",
+                    "Y": "693.91034",
+                    "Z": "112.62459"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-232.25607",
+                        "Y": "693.91034",
+                        "Z": "112.62459"
+                    },
+                    {
+                        "X": "-242.2939",
+                        "Y": "705.1157",
+                        "Z": "112.3643"
+                    },
+                    {
+                        "X": "-273.9229",
+                        "Y": "716.7045",
+                        "Z": "112.66302"
+                    },
+                    {
+                        "X": "-297.14322",
+                        "Y": "692.965",
+                        "Z": "112.65192"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_VAL_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "-313.0452",
+                    "Y": "710.20294",
+                    "Z": "115.4874"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-313.0452",
+                        "Y": "710.20294",
+                        "Z": "115.4874"
+                    },
+                    {
+                        "X": "-268.7482",
+                        "Y": "578.6195",
+                        "Z": "103.28687"
+                    },
+                    {
+                        "X": "-225.54292",
+                        "Y": "599.9164",
+                        "Z": "111.4705"
+                    },
+                    {
+                        "X": "-175.30762",
+                        "Y": "659.2605",
+                        "Z": "113.96272"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_VAL_DRIVE_TO_03",
+                "unknown_volume_source": "VOL_TARGET_2_ARRIVE",
+                "spawn_position": {
+                    "X": "-294.45636",
+                    "Y": "593.7142",
+                    "Z": "106.1923"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-294.45636",
+                        "Y": "593.7142",
+                        "Z": "106.1923"
+                    },
+                    {
+                        "X": "-290.2357",
+                        "Y": "654.37805",
+                        "Z": "112.42652"
+                    },
+                    {
+                        "X": "-248.27402",
+                        "Y": "738.4885",
+                        "Z": "115.75478"
+                    },
+                    {
+                        "X": "-202.44742",
+                        "Y": "623.22327",
+                        "Z": "112.01604"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_VAL_DRIVE_TO_03",
+                "unknown_volume_source": "VOL_TARGET_2_ARRIVE",
+                "spawn_position": {
+                    "X": "-293.85062",
+                    "Y": "723.9391",
+                    "Z": "115.76958"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-293.85062",
+                        "Y": "723.9391",
+                        "Z": "115.76958"
+                    },
+                    {
+                        "X": "-308.1535",
+                        "Y": "624.37994",
+                        "Z": "109.40344"
+                    },
+                    {
+                        "X": "-198.2688",
+                        "Y": "717.0374",
+                        "Z": "117.45586"
+                    },
+                    {
+                        "X": "-182.90578",
+                        "Y": "677.2752",
+                        "Z": "115.11694"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_DOWNES_RANCH": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_DOWNES_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_DOWNES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-854.7751",
+                    "Y": "398.8399",
+                    "Z": "94.90663"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-770.66925",
+                        "Y": "308.94653",
+                        "Z": "93.44447"
+                    },
+                    {
+                        "X": "-749.3372",
+                        "Y": "352.21613",
+                        "Z": "94.10118"
+                    },
+                    {
+                        "X": "-813.8153",
+                        "Y": "394.65433",
+                        "Z": "94.93269"
+                    },
+                    {
+                        "X": "-854.7751",
+                        "Y": "398.8399",
+                        "Z": "94.90663"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_DOWNES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-796.98987",
+                    "Y": "276.26273",
+                    "Z": "93.74525"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-769.99207",
+                        "Y": "309.89316",
+                        "Z": "93.38937"
+                    },
+                    {
+                        "X": "-749.51276",
+                        "Y": "353.3779",
+                        "Z": "94.1913"
+                    },
+                    {
+                        "X": "-813.1625",
+                        "Y": "395.50635",
+                        "Z": "94.94421"
+                    },
+                    {
+                        "X": "-855.3158",
+                        "Y": "399.63208",
+                        "Z": "94.91528"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_DOWNES_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "-768.8158",
+                    "Y": "384.20566",
+                    "Z": "95.65175"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-806.5587",
+                        "Y": "460.38916",
+                        "Z": "86.30741"
+                    },
+                    {
+                        "X": "-872.5951",
+                        "Y": "448.00204",
+                        "Z": "90.80357"
+                    },
+                    {
+                        "X": "-905.16486",
+                        "Y": "430.81683",
+                        "Z": "91.39751"
+                    },
+                    {
+                        "X": "-913.83014",
+                        "Y": "381.3707",
+                        "Z": "94.42084"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_DOWNES_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "-774.9321",
+                    "Y": "384.72388",
+                    "Z": "95.53313"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-807.8238",
+                        "Y": "460.62494",
+                        "Z": "86.41529"
+                    },
+                    {
+                        "X": "-872.82434",
+                        "Y": "449.67374",
+                        "Z": "90.64688"
+                    },
+                    {
+                        "X": "-906.1264",
+                        "Y": "431.7359",
+                        "Z": "91.3175"
+                    },
+                    {
+                        "X": "-914.2822",
+                        "Y": "380.70654",
+                        "Z": "94.45227"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_DOWNES_DRIVE_TO_03",
+                "unknown_volume_source": "VOL_TARGET_2_ARRIVE",
+                "spawn_position": {
+                    "X": "-798.1381",
+                    "Y": "276.43073",
+                    "Z": "93.69307"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-822.4573",
+                        "Y": "264.62863",
+                        "Z": "92.1343"
+                    },
+                    {
+                        "X": "-878.6613",
+                        "Y": "267.94284",
+                        "Z": "90.08558"
+                    },
+                    {
+                        "X": "-905.0487",
+                        "Y": "275.13895",
+                        "Z": "92.01917"
+                    },
+                    {
+                        "X": "-897.3931",
+                        "Y": "298.59305",
+                        "Z": "94.19894"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_DOWNES_DRIVE_TO_03",
+                "unknown_volume_source": "VOL_TARGET_2_ARRIVE",
+                "spawn_position": {
+                    "X": "-793.41174",
+                    "Y": "274.58527",
+                    "Z": "93.93015"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-820.4237",
+                        "Y": "265.91547",
+                        "Z": "92.3046"
+                    },
+                    {
+                        "X": "-889.2067",
+                        "Y": "275.79498",
+                        "Z": "91.10663"
+                    },
+                    {
+                        "X": "-906.03876",
+                        "Y": "274.17484",
+                        "Z": "91.82751"
+                    },
+                    {
+                        "X": "-898.1255",
+                        "Y": "298.26306",
+                        "Z": "94.20001"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_SOLOMONS_FOLLY": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5408.416",
+                    "Y": "-3723.321",
+                    "Z": "-21.61843"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5399.9033",
+                        "Y": "-3688.001",
+                        "Z": "-22.99991"
+                    },
+                    {
+                        "X": "-5433.684",
+                        "Y": "-3605.0386",
+                        "Z": "-20.83429"
+                    },
+                    {
+                        "X": "-5402.3545",
+                        "Y": "-3619.8242",
+                        "Z": "-23.14738"
+                    },
+                    {
+                        "X": "-5434.282",
+                        "Y": "-3664.7893",
+                        "Z": "-23.03782"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5361.7676",
+                    "Y": "-3712.5127",
+                    "Z": "-23.80428"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5361.7676",
+                        "Y": "-3712.5127",
+                        "Z": "-23.80428"
+                    },
+                    {
+                        "X": "-5453.1426",
+                        "Y": "-3648.473",
+                        "Z": "-22.21244"
+                    },
+                    {
+                        "X": "-5327.5312",
+                        "Y": "-3577.8538",
+                        "Z": "-22.72046"
+                    },
+                    {
+                        "X": "-5421.3135",
+                        "Y": "-3678.2312",
+                        "Z": "-22.47417"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5299.8276",
+                    "Y": "-3637.1577",
+                    "Z": "-21.71438"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5299.8276",
+                        "Y": "-3637.1577",
+                        "Z": "-21.71438"
+                    },
+                    {
+                        "X": "-5474.7266",
+                        "Y": "-3696.2642",
+                        "Z": "-16.83642"
+                    },
+                    {
+                        "X": "-5352.6772",
+                        "Y": "-3581.7007",
+                        "Z": "-10.82816"
+                    },
+                    {
+                        "X": "-5392.3286",
+                        "Y": "-3670.2085",
+                        "Z": "-23.13737"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5299.5615",
+                    "Y": "-3585.5725",
+                    "Z": "-22.50003"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5299.5615",
+                        "Y": "-3585.5725",
+                        "Z": "-22.50003"
+                    },
+                    {
+                        "X": "-5370.8257",
+                        "Y": "-3743.4548",
+                        "Z": "-23.34856"
+                    },
+                    {
+                        "X": "-5385.1753",
+                        "Y": "-3575.2031",
+                        "Z": "-14.27391"
+                    },
+                    {
+                        "X": "-5385.7554",
+                        "Y": "-3652.0154",
+                        "Z": "-23.14316"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5335.463",
+                    "Y": "-3586.733",
+                    "Z": "-21.95719"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5335.463",
+                        "Y": "-3586.733",
+                        "Z": "-21.95719"
+                    },
+                    {
+                        "X": "-5333.953",
+                        "Y": "-3739.3928",
+                        "Z": "-21.19141"
+                    },
+                    {
+                        "X": "-5429.5425",
+                        "Y": "-3564.5542",
+                        "Z": "-18.93863"
+                    },
+                    {
+                        "X": "-5413.184",
+                        "Y": "-3632.1594",
+                        "Z": "-23.14052"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_SOLOMONS_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5451.9546",
+                    "Y": "-3531.2205",
+                    "Z": "-19.08445"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5451.9546",
+                        "Y": "-3531.2205",
+                        "Z": "-19.08445"
+                    },
+                    {
+                        "X": "-5302.7783",
+                        "Y": "-3700.8408",
+                        "Z": "-22.07845"
+                    },
+                    {
+                        "X": "-5445.1704",
+                        "Y": "-3638.6006",
+                        "Z": "-22.4699"
+                    },
+                    {
+                        "X": "-5428.8726",
+                        "Y": "-3642.1714",
+                        "Z": "-23.14026"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_RATHSKELLER_FORK": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-5132.9644",
+                    "Y": "-2179.04",
+                    "Z": "4.06145"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5132.9644",
+                        "Y": "-2179.04",
+                        "Z": "4.06145"
+                    },
+                    {
+                        "X": "-5146.7935",
+                        "Y": "-2115.0735",
+                        "Z": "10.8119"
+                    },
+                    {
+                        "X": "-5201.487",
+                        "Y": "-2151.0679",
+                        "Z": "10.98299"
+                    },
+                    {
+                        "X": "-5244.068",
+                        "Y": "-2188.3486",
+                        "Z": "6.75917"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_GUARD_1_ARRIVE",
+                "spawn_position": {
+                    "X": "-5174.769",
+                    "Y": "-2079.103",
+                    "Z": "11.65881"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5174.769",
+                        "Y": "-2079.103",
+                        "Z": "11.65881"
+                    },
+                    {
+                        "X": "-5197.3647",
+                        "Y": "-2080.858",
+                        "Z": "11.52365"
+                    },
+                    {
+                        "X": "-5246.459",
+                        "Y": "-2215.1816",
+                        "Z": "4.29904"
+                    },
+                    {
+                        "X": "-5121.9067",
+                        "Y": "-2190.806",
+                        "Z": "3.78012"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_DRIVE_TO_03",
+                "unknown_volume_source": "VOL_GUARD_2_ARRIVE",
+                "spawn_position": {
+                    "X": "-5238.8145",
+                    "Y": "-2123.5452",
+                    "Z": "11.07181"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5238.8145",
+                        "Y": "-2123.5452",
+                        "Z": "11.07181"
+                    },
+                    {
+                        "X": "-5234.281",
+                        "Y": "-2205.2966",
+                        "Z": "5.52796"
+                    },
+                    {
+                        "X": "-5172.9087",
+                        "Y": "-2089.59",
+                        "Z": "11.56659"
+                    },
+                    {
+                        "X": "-5132.3745",
+                        "Y": "-2187.4377",
+                        "Z": "3.79851"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_DRIVE_TO_04",
+                "unknown_volume_source": "VOL_GUARD_MULTI_ARRIVE",
+                "spawn_position": {
+                    "X": "-5184.6045",
+                    "Y": "-2194.0417",
+                    "Z": "10.27301"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5184.6045",
+                        "Y": "-2194.0417",
+                        "Z": "10.27301"
+                    },
+                    {
+                        "X": "-5224.75",
+                        "Y": "-2142.455",
+                        "Z": "10.91006"
+                    },
+                    {
+                        "X": "-5177.5693",
+                        "Y": "-2151.8381",
+                        "Z": "11.02641"
+                    },
+                    {
+                        "X": "-5229.058",
+                        "Y": "-2134.119",
+                        "Z": "11.09342"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_DRIVE_TO_04",
+                "unknown_volume_source": "VOL_GUARD_MULTI_ARRIVE",
+                "spawn_position": {
+                    "X": "-5173.056",
+                    "Y": "-2185.8801",
+                    "Z": "10.05617"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5173.056",
+                        "Y": "-2185.8801",
+                        "Z": "10.05617"
+                    },
+                    {
+                        "X": "-5216.239",
+                        "Y": "-2152.013",
+                        "Z": "10.93377"
+                    },
+                    {
+                        "X": "-5153.259",
+                        "Y": "-2124.711",
+                        "Z": "11.22571"
+                    },
+                    {
+                        "X": "-5206.101",
+                        "Y": "-2107.2664",
+                        "Z": "11.68974"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RATHSKELLER_DRIVE_TO_04",
+                "unknown_volume_source": "VOL_GUARD_MULTI_ARRIVE",
+                "spawn_position": {
+                    "X": "-5235.6855",
+                    "Y": "-2221.8008",
+                    "Z": "4.75571"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-5235.6855",
+                        "Y": "-2221.8008",
+                        "Z": "4.75571"
+                    },
+                    {
+                        "X": "-5200.0117",
+                        "Y": "-2168.5818",
+                        "Z": "10.96332"
+                    },
+                    {
+                        "X": "-5155.0967",
+                        "Y": "-2109.4133",
+                        "Z": "11.1104"
+                    },
+                    {
+                        "X": "-5198.757",
+                        "Y": "-2089.8496",
+                        "Z": "11.38826"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_THIEVES_LANDING": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_THIEVES_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_THIEVES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-1451.2723",
+                    "Y": "-2402.6985",
+                    "Z": "43.01005"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-1456.6906",
+                        "Y": "-2359.2227",
+                        "Z": "42.0215"
+                    },
+                    {
+                        "X": "-1408.6584",
+                        "Y": "-2216.6807",
+                        "Z": "42.57399"
+                    },
+                    {
+                        "X": "-1504.0929",
+                        "Y": "-2312.4512",
+                        "Z": "42.98514"
+                    },
+                    {
+                        "X": "-1367.7822",
+                        "Y": "-2233.107",
+                        "Z": "41.54322"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_THIEVES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-1486.0952",
+                    "Y": "-2367.3987",
+                    "Z": "41.49706"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-1486.0952",
+                        "Y": "-2367.3987",
+                        "Z": "41.49706"
+                    },
+                    {
+                        "X": "-1432.2537",
+                        "Y": "-2374.7388",
+                        "Z": "42.00204"
+                    },
+                    {
+                        "X": "-1485.2255",
+                        "Y": "-2410.5464",
+                        "Z": "50.20089"
+                    },
+                    {
+                        "X": "-1377.0906",
+                        "Y": "-2223.1145",
+                        "Z": "42.06647"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_THIEVES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "-1512.4365",
+                    "Y": "-2338.5964",
+                    "Z": "42.49662"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-1512.4365",
+                        "Y": "-2338.5964",
+                        "Z": "42.49662"
+                    },
+                    {
+                        "X": "-1461.9103",
+                        "Y": "-2355.1455",
+                        "Z": "42.11414"
+                    },
+                    {
+                        "X": "-1523.421",
+                        "Y": "-2369.827",
+                        "Z": "43.3177"
+                    },
+                    {
+                        "X": "-1415.952",
+                        "Y": "-2214.2827",
+                        "Z": "42.34541"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_THIEVES_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_MULTI_ARRIVE",
+                "spawn_position": {
+                    "X": "-1519.3203",
+                    "Y": "-2257.2",
+                    "Z": "49.05835"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-1519.3203",
+                        "Y": "-2257.2",
+                        "Z": "49.05835"
+                    },
+                    {
+                        "X": "-1489.4572",
+                        "Y": "-2296.1406",
+                        "Z": "45.13703"
+                    },
+                    {
+                        "X": "-1544.3676",
+                        "Y": "-2335.1643",
+                        "Z": "42.94373"
+                    },
+                    {
+                        "X": "-1457.3677",
+                        "Y": "-2294.1443",
+                        "Z": "42.14724"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_THIEVES_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_MULTI_ARRIVE",
+                "spawn_position": {
+                    "X": "-1438.3068",
+                    "Y": "-2209.8313",
+                    "Z": "42.21195"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-1438.3068",
+                        "Y": "-2209.8313",
+                        "Z": "42.21195"
+                    },
+                    {
+                        "X": "-1473.2504",
+                        "Y": "-2273.0173",
+                        "Z": "45.03573"
+                    },
+                    {
+                        "X": "-1541.7644",
+                        "Y": "-2247.1558",
+                        "Z": "47.45038"
+                    },
+                    {
+                        "X": "-1461.4941",
+                        "Y": "-2323.5393",
+                        "Z": "42.14997"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_THIEVES_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_MULTI_ARRIVE",
+                "spawn_position": {
+                    "X": "-1350.9949",
+                    "Y": "-2211.0603",
+                    "Z": "41.97039"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "-1350.9949",
+                        "Y": "-2211.0603",
+                        "Z": "41.97039"
+                    },
+                    {
+                        "X": "-1363.4788",
+                        "Y": "-2183.8608",
+                        "Z": "42.31989"
+                    },
+                    {
+                        "X": "-1464.9656",
+                        "Y": "-2183.2283",
+                        "Z": "52.2915"
+                    },
+                    {
+                        "X": "-1423.5962",
+                        "Y": "-2349.0547",
+                        "Z": "42.02784"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_LANNAHECHEE_RIVER": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1961.9164",
+                    "Y": "-1622.0931",
+                    "Z": "40.49999"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1961.9164",
+                        "Y": "-1622.0931",
+                        "Z": "40.49999"
+                    },
+                    {
+                        "X": "2019.657",
+                        "Y": "-1593.1807",
+                        "Z": "40.61434"
+                    },
+                    {
+                        "X": "1986.1073",
+                        "Y": "-1634.3241",
+                        "Z": "40.55042"
+                    },
+                    {
+                        "X": "2016.8104",
+                        "Y": "-1638.9432",
+                        "Z": "40.99858"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "1965.2876",
+                    "Y": "-1572.3983",
+                    "Z": "41.43997"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1965.2876",
+                        "Y": "-1572.3983",
+                        "Z": "41.43997"
+                    },
+                    {
+                        "X": "1926.8079",
+                        "Y": "-1619.0369",
+                        "Z": "41.19474"
+                    },
+                    {
+                        "X": "1978.6705",
+                        "Y": "-1667.0476",
+                        "Z": "40.62184"
+                    },
+                    {
+                        "X": "2021.1948",
+                        "Y": "-1668.3599",
+                        "Z": "41.47218"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_DRIVE_TO_02",
+                "unknown_volume_source": "VOL_TARGET_2_ARRIVE",
+                "spawn_position": {
+                    "X": "2055.4087",
+                    "Y": "-1612.1112",
+                    "Z": "40.71778"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2055.4087",
+                        "Y": "-1612.1112",
+                        "Z": "40.71778"
+                    },
+                    {
+                        "X": "2057.6775",
+                        "Y": "-1569.3254",
+                        "Z": "40.78062"
+                    },
+                    {
+                        "X": "2029.7389",
+                        "Y": "-1631.7129",
+                        "Z": "41.04366"
+                    },
+                    {
+                        "X": "1964.6678",
+                        "Y": "-1638.9144",
+                        "Z": "40.80684"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1960.6766",
+                    "Y": "-1614.2976",
+                    "Z": "40.77694"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1960.6766",
+                        "Y": "-1614.2976",
+                        "Z": "40.77694"
+                    },
+                    {
+                        "X": "2012.5245",
+                        "Y": "-1681.9655",
+                        "Z": "41.59163"
+                    },
+                    {
+                        "X": "1956.5631",
+                        "Y": "-1673.9214",
+                        "Z": "41.26247"
+                    },
+                    {
+                        "X": "1984.6589",
+                        "Y": "-1596.8726",
+                        "Z": "41.23312"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "2002.8164",
+                    "Y": "-1584.8876",
+                    "Z": "40.61984"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2002.8164",
+                        "Y": "-1584.8876",
+                        "Z": "40.61984"
+                    },
+                    {
+                        "X": "1990.4454",
+                        "Y": "-1682.3936",
+                        "Z": "40.60792"
+                    },
+                    {
+                        "X": "1994.8179",
+                        "Y": "-1552.4731",
+                        "Z": "40.77655"
+                    },
+                    {
+                        "X": "1975.5978",
+                        "Y": "-1603.624",
+                        "Z": "41.07166"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_LANNAHECHEE_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "2036.1",
+                    "Y": "-1659.1865",
+                    "Z": "41.16166"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "2036.1",
+                        "Y": "-1659.1865",
+                        "Z": "41.16166"
+                    },
+                    {
+                        "X": "1974.6727",
+                        "Y": "-1680.051",
+                        "Z": "40.62803"
+                    },
+                    {
+                        "X": "2009.1963",
+                        "Y": "-1641.1547",
+                        "Z": "40.63842"
+                    },
+                    {
+                        "X": "1970.9445",
+                        "Y": "-1589.4625",
+                        "Z": "40.49999"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_RHODES_WOOLEN_MILL": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_RHODES_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RHODES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1366.6869",
+                    "Y": "-1315.5381",
+                    "Z": "76.2634"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1366.6869",
+                        "Y": "-1315.5381",
+                        "Z": "76.2634"
+                    },
+                    {
+                        "X": "1453.7446",
+                        "Y": "-1291.4487",
+                        "Z": "75.51281"
+                    },
+                    {
+                        "X": "1425.5453",
+                        "Y": "-1271.8107",
+                        "Z": "77.37453"
+                    },
+                    {
+                        "X": "1393.5527",
+                        "Y": "-1279.1907",
+                        "Z": "76.74484"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RHODES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1453.4956",
+                    "Y": "-1339.8744",
+                    "Z": "77.99311"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1453.4956",
+                        "Y": "-1339.8744",
+                        "Z": "77.99311"
+                    },
+                    {
+                        "X": "1364.9902",
+                        "Y": "-1358.2345",
+                        "Z": "77.32984"
+                    },
+                    {
+                        "X": "1377.3236",
+                        "Y": "-1304.8727",
+                        "Z": "76.03175"
+                    },
+                    {
+                        "X": "1388.1146",
+                        "Y": "-1269.9532",
+                        "Z": "76.81464"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RHODES_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_TARGET_1_ARRIVE",
+                "spawn_position": {
+                    "X": "1391.0421",
+                    "Y": "-1253.0944",
+                    "Z": "77.56482"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1391.0421",
+                        "Y": "-1253.0944",
+                        "Z": "77.56482"
+                    },
+                    {
+                        "X": "1424.8175",
+                        "Y": "-1213.3633",
+                        "Z": "74.4954"
+                    },
+                    {
+                        "X": "1366.8312",
+                        "Y": "-1358.9403",
+                        "Z": "77.13588"
+                    },
+                    {
+                        "X": "1413.3396",
+                        "Y": "-1362.0424",
+                        "Z": "80.49786"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RHODES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1439.5448",
+                    "Y": "-1354.7347",
+                    "Z": "80.73261"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1439.5448",
+                        "Y": "-1354.7347",
+                        "Z": "80.73261"
+                    },
+                    {
+                        "X": "1444.7324",
+                        "Y": "-1266.7428",
+                        "Z": "76.04651"
+                    },
+                    {
+                        "X": "1381.2045",
+                        "Y": "-1285.9622",
+                        "Z": "76.18015"
+                    },
+                    {
+                        "X": "1398.0359",
+                        "Y": "-1361.7793",
+                        "Z": "79.97949"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RHODES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1449.2084",
+                    "Y": "-1321.2236",
+                    "Z": "77.52456"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1449.2084",
+                        "Y": "-1321.2236",
+                        "Z": "77.52456"
+                    },
+                    {
+                        "X": "1410.1705",
+                        "Y": "-1251.3618",
+                        "Z": "78.65659"
+                    },
+                    {
+                        "X": "1380.9673",
+                        "Y": "-1300.2422",
+                        "Z": "75.97237"
+                    },
+                    {
+                        "X": "1422.5847",
+                        "Y": "-1350.7716",
+                        "Z": "80.73261"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_RHODES_DRIVE_TO_00",
+                "unknown_volume_source": "VOL_TARGET_0_ARRIVE",
+                "spawn_position": {
+                    "X": "1443.5376",
+                    "Y": "-1295.65",
+                    "Z": "76.82162"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "1443.5376",
+                        "Y": "-1295.65",
+                        "Z": "76.82162"
+                    },
+                    {
+                        "X": "1383.0503",
+                        "Y": "-1260.4121",
+                        "Z": "77.128"
+                    },
+                    {
+                        "X": "1357.7394",
+                        "Y": "-1338.0283",
+                        "Z": "77.20824"
+                    },
+                    {
+                        "X": "1420.3633",
+                        "Y": "-1328.8411",
+                        "Z": "76.86128"
+                    }
+                ]
+            }
+        ]
+    },
+    "BOUNTY_BOARD_STAKEOUT_HEARTLANDS_OIL_FIELDS": {
+        "location": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_GO_TO_0",
+        "objectives": [
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_MOUNTED",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_GUARD_0_ARRIVE",
+                "spawn_position": {
+                    "X": "455.14322",
+                    "Y": "623.57074",
+                    "Z": "110.88096"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "455.14322",
+                        "Y": "623.57074",
+                        "Z": "110.88096"
+                    },
+                    {
+                        "X": "472.2487",
+                        "Y": "723.0103",
+                        "Z": "115.72739"
+                    },
+                    {
+                        "X": "443.81784",
+                        "Y": "684.0949",
+                        "Z": "114.66187"
+                    },
+                    {
+                        "X": "560.9352",
+                        "Y": "704.9824",
+                        "Z": "117.50963"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_GUARD_0_ARRIVE",
+                "spawn_position": {
+                    "X": "470.27585",
+                    "Y": "622.83167",
+                    "Z": "110.45504"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "470.27585",
+                        "Y": "622.83167",
+                        "Z": "110.45504"
+                    },
+                    {
+                        "X": "459.05545",
+                        "Y": "716.1161",
+                        "Z": "116.20415"
+                    },
+                    {
+                        "X": "444.3925",
+                        "Y": "667.76514",
+                        "Z": "114.44808"
+                    },
+                    {
+                        "X": "444.07065",
+                        "Y": "726.28",
+                        "Z": "117.00696"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_GUARD_0_ARRIVE",
+                "spawn_position": {
+                    "X": "495.578",
+                    "Y": "634.67896",
+                    "Z": "110.34703"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "495.578",
+                        "Y": "634.67896",
+                        "Z": "110.34703"
+                    },
+                    {
+                        "X": "446.1855",
+                        "Y": "705.56287",
+                        "Z": "115.85852"
+                    },
+                    {
+                        "X": "464.60196",
+                        "Y": "601.5243",
+                        "Z": "109.18003"
+                    },
+                    {
+                        "X": "426.90915",
+                        "Y": "707.2483",
+                        "Z": "115.23956"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_GUARD_0_ARRIVE",
+                "spawn_position": {
+                    "X": "523.88043",
+                    "Y": "641.03925",
+                    "Z": "109.71888"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "523.88043",
+                        "Y": "641.03925",
+                        "Z": "109.71888"
+                    },
+                    {
+                        "X": "490.85037",
+                        "Y": "598.79486",
+                        "Z": "109.56284"
+                    },
+                    {
+                        "X": "555.68713",
+                        "Y": "593.08636",
+                        "Z": "109.96497"
+                    },
+                    {
+                        "X": "426.3089",
+                        "Y": "674.23444",
+                        "Z": "114.54733"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_GUARD_0_ARRIVE",
+                "spawn_position": {
+                    "X": "563.1674",
+                    "Y": "672.8517",
+                    "Z": "114.10374"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "563.1674",
+                        "Y": "672.8517",
+                        "Z": "114.10374"
+                    },
+                    {
+                        "X": "501.24182",
+                        "Y": "599.31415",
+                        "Z": "109.50537"
+                    },
+                    {
+                        "X": "588.29736",
+                        "Y": "638.5579",
+                        "Z": "112.78864"
+                    },
+                    {
+                        "X": "431.27182",
+                        "Y": "663.7953",
+                        "Z": "114.27135"
+                    }
+                ]
+            },
+            {
+                "config": "BOUNTY_SCOUT_STAKEOUT_TARGET_REPEATER",
+                "unknown_volume": "BOUNTY_SCOUT_STAKEOUT_OILFIELDS_DRIVE_TO_01",
+                "unknown_volume_source": "VOL_GUARD_0_ARRIVE",
+                "spawn_position": {
+                    "X": "514.80743",
+                    "Y": "709.5437",
+                    "Z": "116.18835"
+                },
+                "potential_spawn_positions": [
+                    {
+                        "X": "514.80743",
+                        "Y": "709.5437",
+                        "Z": "116.18835"
+                    },
+                    {
+                        "X": "517.4619",
+                        "Y": "611.56885",
+                        "Z": "110.167"
+                    },
+                    {
+                        "X": "591.01904",
+                        "Y": "703.73096",
+                        "Z": "116.57394"
+                    },
+                    {
+                        "X": "426.7957",
+                        "Y": "619.50775",
+                        "Z": "111.06573"
+                    }
+                ]
+            }
+        ]
+    }
+}
