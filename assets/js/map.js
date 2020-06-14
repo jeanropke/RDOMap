@@ -229,9 +229,6 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
-    if (Settings.isDebugEnabled)
-      console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
-
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (_key, marker) {
         if (Array.isArray(marker)) {
@@ -246,35 +243,6 @@ var MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     MapBase.addMarkers(true);
-
-    // Do search via URL.
-    var searchParam = getParameterByName('search');
-    if (searchParam != null && searchParam) {
-      $('#search').val(searchParam);
-      MapBase.onSearch(searchParam);
-    }
-
-    // Navigate to marker via URL.
-    var markerParam = getParameterByName('m');
-    if (markerParam != null && markerParam != '') {
-      var goTo = MapBase.markers.filter(_m => _m.text == markerParam)[0];
-
-      //if a marker is passed on url, check if is valid
-      if (goTo === undefined || goTo === null) return;
-
-      //set map view with marker lat & lng
-      MapBase.map.setView([goTo.lat, goTo.lng], 6);
-
-      //check if marker category is enabled, if not, enable it
-      if (Layers.itemMarkersLayer.getLayerById(goTo.text) == null) {
-        enabledCategories.push(goTo.category);
-        MapBase.addMarkers();
-        $(`[data-type="${goTo.category}"]`).removeClass('disabled');
-      }
-
-      //open marker popup
-      Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
-    }
   },
 
   onSearch: function (searchString) {
@@ -309,6 +277,44 @@ var MapBase = {
   },
 
   addMarkers: function (refreshMenu = false) {
+    // Do search via URL.
+    var quickParam = getParameterByName('q');
+    if (refreshMenu && quickParam != null && quickParam) {
+      if (categories.indexOf(quickParam) !== -1) {
+        enabledCategories = [quickParam];
+      } else if (plants.indexOf(quickParam) !== -1) {
+        enabledCategories = ["plants"];
+        enabledPlants = [quickParam];
+      } else if (shops.indexOf(quickParam) !== -1) {
+        enabledCategories = ["shops"];
+        enabledShops = [quickParam];
+      } else if (camps.indexOf(quickParam) !== -1) {
+        enabledCategories = ["camps"];
+        enabledCamps = [quickParam];
+      } else {
+        enabledCategories = [];
+
+        if (Heatmap.state !== 2) {
+          // A bit sloppy, but it works.
+          setTimeout(() => {
+            MapBase.addMarkers(refreshMenu);
+          }, 50);
+          return;
+        }
+
+        if (Heatmap.data.animals.hasOwnProperty(quickParam) !== -1) {
+          Heatmap.setHeatmap(quickParam, "animals");
+        } else if (Heatmap.data.birds.hasOwnProperty(quickParam) !== -1) {
+          Heatmap.setHeatmap(quickParam, "birds");
+        } else if (Heatmap.data.fish.hasOwnProperty(quickParam) !== -1) {
+          Heatmap.setHeatmap(quickParam, "fish");
+        }
+      }
+    }
+
+    if (Settings.isDebugEnabled)
+      console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
+
     Layers.plantsLayer.addTo(MapBase.map);
 
     if (Layers.itemMarkersLayer != null)

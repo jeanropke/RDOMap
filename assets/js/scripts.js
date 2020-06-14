@@ -877,13 +877,13 @@ $('#open-delete-all-settings-modal').on('click', function () {
 
 $(function () {
   init();
+  Heatmap.load();
   MapBase.loadFastTravels();
   MapBase.loadShops();
   MapBase.loadCamps();
   MadamNazar.loadMadamNazar();
   Treasures.load();
   Encounters.load();
-  Heatmap.load();
   MapBase.loadMarkers();
   FME.init();
 });

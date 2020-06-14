@@ -17,8 +17,6 @@ var Encounters = {
         Encounters.markers.push(new Marker(marker.text, marker.x, marker.y, _category, marker.type));
       });
     });
-
-    Encounters.addToMap();
   },
 
   updateMarkerContent: function (marker) {

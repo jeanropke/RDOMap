@@ -3,6 +3,7 @@
  */
 
 var Heatmap = {
+  state: 0,
   data: null,
   staticMarkers: null,
 
@@ -11,11 +12,13 @@ var Heatmap = {
       .done(function (data) {
         Heatmap.data = data;
         Heatmap.init();
+        Heatmap.state++;
       });
 
     $.getJSON(`data/animal_spawns.json?nocache=${nocache}`)
       .done(function (data) {
         Heatmap.staticMarkers = data;
+        Heatmap.state++;
       });
   },
 
