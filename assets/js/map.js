@@ -280,6 +280,11 @@ var MapBase = {
     // Do search via URL.
     var quickParam = getParameterByName('q');
     if (refreshMenu && quickParam != null && quickParam) {
+      $('.menu-toggle').remove();
+      $('.clock-container').remove();
+      $('.fme-container').remove();
+      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+
       if (categories.indexOf(quickParam) !== -1) {
         enabledCategories = [quickParam];
       } else if (plants.indexOf(quickParam) !== -1) {
@@ -302,11 +307,11 @@ var MapBase = {
           return;
         }
 
-        if (Heatmap.data.animals.hasOwnProperty(quickParam) !== -1) {
+        if (Heatmap.data.animals.hasOwnProperty(quickParam)) {
           Heatmap.setHeatmap(quickParam, "animals");
-        } else if (Heatmap.data.birds.hasOwnProperty(quickParam) !== -1) {
+        } else if (Heatmap.data.birds.hasOwnProperty(quickParam)) {
           Heatmap.setHeatmap(quickParam, "birds");
-        } else if (Heatmap.data.fish.hasOwnProperty(quickParam) !== -1) {
+        } else if (Heatmap.data.fish.hasOwnProperty(quickParam)) {
           Heatmap.setHeatmap(quickParam, "fish");
         }
       }
