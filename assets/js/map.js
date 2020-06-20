@@ -283,6 +283,7 @@ var MapBase = {
       $('.menu-toggle').remove();
       $('.clock-container').remove();
       $('.fme-container').remove();
+      $('.side-menu').removeClass('menu-opened');
       $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
       if (categories.indexOf(quickParam) !== -1) {
@@ -296,6 +297,10 @@ var MapBase = {
       } else if (camps.indexOf(quickParam) !== -1) {
         enabledCategories = ["camps"];
         enabledCamps = [quickParam];
+      } else if (Treasures.treasures.indexOf(quickParam) !== -1) {
+        enabledCategories = ["treasure"];
+        Treasures.enabledTreasures = [quickParam];
+        Treasures.addToMap(true);
       } else {
         enabledCategories = [];
 
