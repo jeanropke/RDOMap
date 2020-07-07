@@ -8,6 +8,7 @@ var MapBase = {
   map: null,
   overlays: [],
   markers: [],
+  discoverables: [],
   importantItems: [],
   isDarkMode: false,
   fastTravelData: null,
@@ -245,6 +246,21 @@ var MapBase = {
     MapBase.addMarkers(true);
   },
 
+  loadDiscoverables: function () {
+    $.getJSON('data/discoverables.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.setDiscoverables(data);
+      });
+  },
+
+  setDiscoverables: function (data) {
+    $.each(data, function (_key, marker) {
+      MapBase.discoverables.push(new Marker(marker.name, marker.lat, marker.lng, "discoverables", null, [marker.width, marker.height]));
+    });
+
+    MapBase.addMarkers(true);
+  },
+
   onSearch: function (searchString) {
     searchTerms = [];
     $.each(searchString.split(';'), function (key, value) {
@@ -326,11 +342,21 @@ var MapBase = {
       console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
 
     Layers.plantsLayer.addTo(MapBase.map);
+    Layers.discoverablesLayer.addTo(MapBase.map);
+
+    MapBase.map.on('zoom', function () {
+      if (MapBase.map.getZoom() > 5)
+        return Layers.discoverablesLayer.addTo(MapBase.map);
+
+      return Layers.discoverablesLayer.removeFrom(MapBase.map);
+    });
 
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.plantsLayer != null)
       Layers.plantsLayer.clearLayers();
+    if (Layers.discoverablesLayer != null)
+      Layers.discoverablesLayer.clearLayers();
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
 
@@ -360,6 +386,19 @@ var MapBase = {
         plantMarkersInst.push(markerInst);
       }, function () {
         Layers.plantsLayer.addLayers(plantMarkersInst);
+      });
+    }
+
+    if (MapBase.discoverables.length > 0) {
+      var discoverableMarkersInst = [];
+      MapBase.yieldingLoop(MapBase.discoverables.length, 25, function (i) {
+        var marker = MapBase.discoverables[i];
+        marker.isVisible = false;
+        var markerInst = MapBase.createDiscoverableMarker(marker, opacity);
+        if (typeof markerInst == 'undefined') return;
+        discoverableMarkersInst.push(markerInst);
+      }, function () {
+        Layers.discoverablesLayer.addLayers(discoverableMarkersInst);
       });
     }
 
@@ -492,6 +531,30 @@ var MapBase = {
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize]
+      })
+    });
+
+    marker.isVisible = true;
+    tempMarker.id = marker.text;
+    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {
+      minWidth: 300,
+      maxWidth: 400
+    });
+
+    return tempMarker;
+  },
+
+  createDiscoverableMarker: function (marker, opacity = 1) {
+    if (!enabledCategories.includes('discoverables')) return;
+
+    var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/discoveries/${marker.text}.png?nocache=${nocache}`;
+    var tempMarker = L.marker([marker.lat, marker.lng], {
+      opacity: opacity,
+      icon: new L.divIcon({
+        iconUrl: overlay,
+        iconSize: [marker.size[0], marker.size[1]],
+        iconAnchor: [marker.size[0] / 2, marker.size[1] / 2],
+        popupAnchor: [0, 0]
       })
     });
 
