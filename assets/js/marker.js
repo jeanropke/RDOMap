@@ -14,8 +14,6 @@ class Marker {
           return Language.get(`map.hideouts.${this.text}.name`);
         case 'daily_locations':
           return Language.get(`map.daily_locations.${this.text}.name`);
-        case 'shops':
-          return Language.get(`map.shops.${this.text}.name`);
         default:
           return Language.get(`map.${this.text}.name`);
       }
@@ -28,8 +26,6 @@ class Marker {
           return ''; // hideouts does not have description (yet)
         case 'daily_locations':
           return Language.get(`map.daily_locations.${this.text}.desc`);
-        case 'shops':
-          return Language.get(`map.shops.${this.text}.desc`);
         default:
           return Language.get(`map.${this.text}.desc`);
       }
