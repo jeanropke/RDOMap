@@ -56,8 +56,10 @@ var Language = {
             Language.data.en[transKey] ||
             (optional ? '' : transKey);
 
-        return translation.replace(/\{([\w.]+)\}/g,
-            (full, key) => this.get(key, true) || `{${key}}`);
+        return translation.replace(/\{([\w.]+)\}/g, (full, key) => {
+            const translation = this.get(key);
+            return translation === key ? `{${key}}` : translation;
+        });
     },
 
     translateDom: function (context) {

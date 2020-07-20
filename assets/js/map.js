@@ -639,8 +639,10 @@ var MapBase = {
               `
             })
           });
-
-          marker.bindPopup(`<h1>${Language.get(`map.shops.${category}.name`)}</h1><p>${Language.get(`map.shops.${value.text}.desc`)} ${Language.get(`map.shops.${category}.desc`)}</p>`);
+          marker.bindPopup(`
+          <h1>${Language.get(`map.shops.${category}.name`)}</h1>
+          <p>${Language.get(`map.shops.${category}.desc`)}</p>
+          `);
 
           Layers.itemMarkersLayer.addLayer(marker);
         });
