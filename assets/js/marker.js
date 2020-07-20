@@ -11,7 +11,7 @@ class Marker {
         case 'plants':
           return Language.get(`map.plants.${this.text}.name`);
         case 'hideouts':
-          return Language.get(`map.hideouts.${this.text}.name`)
+          return Language.get(`map.hideouts.${this.text}.name`);
         case 'daily_locations':
           return Language.get(`map.daily_locations.${this.text}.name`);
         case 'shops':
@@ -25,7 +25,7 @@ class Marker {
         case 'plants':
           return Language.get(`map.plants.${this.text}.desc`);
         case 'hideouts':
-          return Language.get(`map.hideouts.${this.text}.desc`)
+          return ''; // hideouts does not have description (yet)
         case 'daily_locations':
           return Language.get(`map.daily_locations.${this.text}.desc`);
         case 'shops':
