@@ -36,7 +36,12 @@ var MapBase = {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
         attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
-      })
+      }),
+      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/black/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://github.com/AdamNortonUK" target="_blank">AdamNortonUK</a>'
+      }),
     ];
 
     Heatmap.initLayer();
@@ -113,7 +118,8 @@ var MapBase = {
     var baseMapsLayers = {
       'map.layers.default': mapLayers[0],
       'map.layers.detailed': mapLayers[1],
-      'map.layers.dark': mapLayers[2]
+      'map.layers.dark': mapLayers[2],
+      'map.layers.black': mapLayers[3]
     };
 
     L.control.layers(baseMapsLayers).addTo(MapBase.map);
@@ -127,6 +133,9 @@ var MapBase = {
           break;
         case 'map.layers.dark':
           mapIndex = 2;
+          break;
+        case 'map.layers.black':
+          mapIndex = 3;
           break;
         case 'map.layers.detailed':
         default:

@@ -241,6 +241,11 @@ function setMapBackground(mapIndex) {
       $('#map').css('background-color', '#3d3d3d');
       MapBase.isDarkMode = true;
       break;
+
+    case 3:
+      $('#map').css('background-color', '#000');
+        MapBase.isDarkMode = true;
+        break;
   }
   MapBase.setOverlays();
   $.cookie('map-layer', mapIndex, { expires: 999 });

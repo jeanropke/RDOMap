@@ -129,6 +129,7 @@
     "map.layers.dark": "Dark",
     "map.layers.default": "Default",
     "map.layers.detailed": "Detailed",
+    "map.layers.black": "Black",
     "map.mark_important": "Mark as important",
     "map.madam_nazar.desc": "Wrong location? Follow {link}.",
     "map.remove_add": "Remove/Add from map",
