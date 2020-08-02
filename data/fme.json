@@ -47,7 +47,7 @@
         ["15:22", "menu.fme.manhunt",                     "fme_role_round_up"],
         ["16:52", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"],
         ["18:22", "menu.fme.animal_tagging",              "fme_role_animal_tagging"],
-        ["19:52", "menu.fme.condor_egg",                  "fme_role_condor_egg"]
+        ["19:52", "menu.fme.condor_egg",                  "fme_role_condor_egg"],
         ["21:22", "menu.fme.day_of_reckoning",            "fme_role_greatest_bounty_hunter"],
         ["22:52", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"]
     ]
