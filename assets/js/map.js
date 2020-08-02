@@ -408,7 +408,14 @@ var MapBase = {
         if (typeof markerInst == 'undefined') return;
         discoverableMarkersInst.push(markerInst);
       }, function () {
-        Layers.discoverablesLayer.addLayers(discoverableMarkersInst);
+        try {
+          Layers.discoverablesLayer.addLayers(discoverableMarkersInst);
+        } catch (error) {
+          // 
+        }
+
+        if (MapBase.map.getZoom() <= 5)
+          Layers.discoverablesLayer.removeFrom(MapBase.map);
       });
     }
 
@@ -570,10 +577,12 @@ var MapBase = {
 
     marker.isVisible = true;
     tempMarker.id = marker.text;
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {
-      minWidth: 300,
-      maxWidth: 400
-    });
+
+    // Maybe at some point make these display the text.
+    // tempMarker.bindPopup(`<h1>${marker.title}</h1>`, {
+    //   minWidth: 300,
+    //   maxWidth: 400
+    // });
 
     return tempMarker;
   },
