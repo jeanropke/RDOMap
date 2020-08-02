@@ -256,6 +256,7 @@ var MapBase = {
   },
 
   loadDiscoverables: function () {
+    if (!Settings.isDebugEnabled) return;
     $.getJSON('data/discoverables.json?nocache=' + nocache)
       .done(function (data) {
         MapBase.setDiscoverables(data);

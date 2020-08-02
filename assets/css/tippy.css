@@ -1,0 +1,26 @@
+.tippy-box[data-theme~='rdr2-theme'] {
+  background-color: transparent;
+  background-image: url(../../assets/images/bgTooltip.png);
+  background-size: 100% 100%;
+  border-radius: 3px;
+  color: #1a1a1a;
+  -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  font-family: RDRLino, serif;
+  font-weight: 400;
+  max-width: 260px;
+  padding: 8px;
+  text-align: center
+}
+
+.tippy-box[data-theme~='rdr2-theme'] .tippy-arrow {
+  color: #cacaca;
+}
+
+.tippy-popper[x-placement^=bottom] .rdr2-theme .tippy-arrow {
+  top: -6px
+}
+
+.tippy-popper[x-placement^=top] .rdr2-theme .tippy-arrow {
+  bottom: -6px
+}

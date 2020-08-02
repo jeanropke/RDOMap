@@ -13,8 +13,9 @@ var Menu = {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
     Treasures.data.filter(function (item) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', item.text);
-      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
+      var collectibleTitle = Language.get(item.text);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', item.text);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
       if (!Treasures.enabledTreasures.includes(item.text))
         collectibleElement.addClass('disabled');
@@ -27,8 +28,9 @@ var Menu = {
     $('.menu-hidden[data-type=shop]').children('.collectible-wrapper').remove();
 
     Object.keys(MapBase.shopData).forEach(function (element) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
-      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.shops.${element}.name`));
+      var collectibleTitle = Language.get(`map.shops.${element}.name`);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
       var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
 
       if (!enabledShops.includes(element))
@@ -42,8 +44,9 @@ var Menu = {
     $('.menu-hidden[data-type=camp]').children('.collectible-wrapper').remove();
 
     Object.keys(MapBase.campData).forEach(function (element) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', element);
-      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(`map.camps.${element}.name`));
+      var collectibleTitle = Language.get(`map.camps.${element}.name`);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
       if (!enabledCamps.includes(element))
         collectibleElement.addClass('disabled');
@@ -121,7 +124,7 @@ Menu.refreshMenu = function () {
       collectibleText = marker.text;
     }
 
-    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', collectibleText);
+    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', collectibleText);
     var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
     var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
@@ -193,6 +196,8 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   Menu.reorderMenu('.menu-hidden[data-type=random_encounters]');
   Menu.reorderMenu('.menu-hidden[data-type=moonshiner_missions]');
+
+  tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
 };
 
 Menu.showAll = function () {

@@ -24,8 +24,7 @@ var categories = [
   'hogtied_lawman', 'duel', 'moonshiner_camp', 'moonshiner_destroy', 'moonshiner_roadblock',
   'moonshiner_sabotage', 'nazar', 'plants', 'rescue', 'rival_collector', 'runaway_wagon',
   'shops', 'sightseeing', 'trains', 'treasure', 'treasure_hunter', 'tree_map', 'user_pins',
-  'wounded_animal', 'camps', 'animal_attack', 'kidnapped',
-  // 'discoverables',
+  'wounded_animal', 'camps', 'animal_attack', 'kidnapped', 'discoverables',
 ];
 
 var categoriesDisabledByDefault = [
@@ -33,8 +32,7 @@ var categoriesDisabledByDefault = [
   'grave_robber', 'hogtied_lawman', 'duel', 'moonshiner_camp', 'moonshiner_destroy',
   'moonshiner_roadblock', 'moonshiner_sabotage', 'rescue', 'rival_collector', 'runaway_wagon',
   'sightseeing', 'treasure_hunter', 'tree_map', 'wounded_animal', 'camps', 'animal_attack',
-  'kidnapped',
-  // 'discoverables',
+  'kidnapped', 'discoverables',
 ];
 
 var plants = [

@@ -25,21 +25,18 @@ var Heatmap = {
   init: function () {
     $.each(Heatmap.data, function (heatmapKey, heatmapValue) {
       $.each(heatmapValue, function (key, value) {
-        if (value.data.length == 0)
-          return;
-
         var animalText = key;
-        var animalTitle = Language.get(`menu.${heatmapKey}.${key}`);
-        var animalImage = $('<img>').attr('src', `./assets/images/icons/game/animals/${value.image}.png`).addClass('animal-icon');
+        var animalTitle = Language.get(`menu.cmpndm.${key}`);
+        var animalImage = $('<img>').attr('src', `./assets/images/icons/game/animals/${key}.png`).addClass('animal-icon');
 
-        var animalElement = $('<div>').addClass('animal-wrapper').attr('data-help', 'item').attr('data-type', animalText);
+        var animalElement = $('<div>').addClass('animal-wrapper').attr('data-help', 'item').attr('data-tippy-content', animalTitle).attr('data-type', animalText);
         var animalTextWrapperElement = $('<span>').addClass('animal-text disabled');
         var animalTextElement = $('<p>').addClass('animal').text(animalTitle);
 
         $(`.menu-hidden[data-type=${heatmapKey}]`).append(animalElement.append(animalImage).append(animalTextWrapperElement.append(animalTextElement)));
       });
       Menu.reorderMenu(`.menu-hidden[data-type=${heatmapKey}]`);
-
+      tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
     });
   },
 
@@ -62,17 +59,20 @@ var Heatmap = {
   },
 
   setHeatmap: function (value, category) {
+    var origData = Heatmap.data[category][value].data;
+
     MapBase.map.closePopup();
     Layers.animalsLayer.addTo(MapBase.map);
-    Layers.heatmapLayer.setData({
-      min: 10,
-      data: Heatmap.data[category][value].data
-    });
 
     if (Layers.animalsLayer != null)
       Layers.animalsLayer.clearLayers();
 
-    if (category === "fish") return;
+    if (category === "fish") {
+      Layers.heatmapLayer.setData({
+        data: origData
+      });
+      return;
+    }
 
     animalMarkers = [];
     Heatmap.data[category][value].groups.forEach((el, i) => {
@@ -90,8 +90,12 @@ var Heatmap = {
         var markerInst = Heatmap.createCanvasMarker(marker);
         if (typeof markerInst == 'undefined') return;
         animalMarkersInst.push(markerInst);
+        origData.push({lat: preMarker.x, lng: preMarker.y});
       }, function () {
         Layers.animalsLayer.addLayers(animalMarkersInst);
+        Layers.heatmapLayer.setData({
+          data: origData
+        });
       });
     }
   },
