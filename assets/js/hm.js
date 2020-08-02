@@ -119,7 +119,7 @@ var Heatmap = {
   },
 
   updateMarkerContent: function (marker) {
-    var categoryText = Language.get(`menu.${marker.category}.${marker.text}`);
+    var categoryText = Language.get(`menu.cmpndm.${marker.text}`);
 
     var popupTitle = Language.get(`map.animal_spawns.name`).replace('{animal}', categoryText);
     var popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', categoryText);
