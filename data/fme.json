@@ -34,21 +34,21 @@
         ["23:15", "menu.fme.fools_gold",          "fme_golden_hat"]
     ],
     "roles": [
-        ["00:22", "menu.fme.day_of_reckoning",    "fme_role_greatest_bounty_hunter"],
-        ["01:52", "menu.fme.day_of_reckoning",    "fme_role_greatest_bounty_hunter"],
-        ["03:22", "menu.fme.salvage",             "fme_role_wreckage"],
-        ["04:52", "menu.fme.trade_route",         "fme_role_supply_train"],
-        ["06:22", "menu.fme.manhunt",             "fme_role_round_up"],
-        ["07:52", "menu.fme.condor_egg",          "fme_role_condor_egg"],
-        ["09:22", "menu.fme.day_of_reckoning",    "fme_role_greatest_bounty_hunter"],
-        ["10:52", "menu.fme.salvage",             "fme_role_wreckage"],
-        ["12:22", "menu.fme.trade_route",         "fme_role_supply_train"],
-        ["13:52", "menu.fme.manhunt",             "fme_role_round_up"],
-        ["15:22", "menu.fme.condor_egg",          "fme_role_condor_egg"],
-        ["16:52", "menu.fme.day_of_reckoning",    "fme_role_greatest_bounty_hunter"],
-        ["18:22", "menu.fme.salvage",             "fme_role_wreckage"],
-        ["19:52", "menu.fme.trade_route",         "fme_role_supply_train"],
-        ["21:22", "menu.fme.manhunt",             "fme_role_round_up"],
-        ["22:52", "menu.fme.condor_egg",          "fme_role_condor_egg"]
+        ["00:22", "menu.fme.animal_tagging",              "fme_role_animal_tagging"],
+        ["01:52", "menu.fme.day_of_reckoning",            "fme_role_greatest_bounty_hunter"],
+        ["03:22", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"],
+        ["04:52", "menu.fme.animal_tagging",              "fme_role_animal_tagging"],
+        ["06:22", "menu.fme.salvage",                     "fme_role_wreckage"],
+        ["07:52", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"],
+        ["09:22", "menu.fme.animal_tagging",              "fme_role_animal_tagging"],
+        ["10:52", "menu.fme.trade_route",                 "fme_role_supply_train"],
+        ["12:22", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"],
+        ["13:52", "menu.fme.animal_tagging",              "fme_role_animal_tagging"],
+        ["15:22", "menu.fme.manhunt",                     "fme_role_round_up"],
+        ["16:52", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"],
+        ["18:22", "menu.fme.animal_tagging",              "fme_role_animal_tagging"],
+        ["19:52", "menu.fme.condor_egg",                  "fme_role_condor_egg"]
+        ["21:22", "menu.fme.day_of_reckoning",            "fme_role_greatest_bounty_hunter"],
+        ["22:52", "menu.fme.protect_legendary_animal",    "fme_role_protect_legendary_animal"]
     ]
 }
