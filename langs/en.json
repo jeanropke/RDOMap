@@ -329,6 +329,8 @@
     "menu.fme.random": "Random Event",
     "menu.fme.salvage": "Salvage",
     "menu.fme.trade_route": "Trade Route",
+    "menu.fme.protect_legendary_animal": "Protect Legendary Animal",
+    "menu.fme.animal_tagging": "Wild Animal Tagging",
     "menu.fme.wild_animal_kills": "Wild Animal Kills",
     "menu.delete_all_settings": "Reset all settings",
     "menu.modal_delete_all_settings_title": "Reset all settings?",
