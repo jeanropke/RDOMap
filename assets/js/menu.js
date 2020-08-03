@@ -24,6 +24,22 @@ var Menu = {
     });
   },
 
+  refreshLegendaries: function () {
+    $('.menu-hidden[data-type=legendary_animals]').children('.collectible-wrapper').remove();
+
+    Legendary.data.filter(function (item) {
+      var collectibleTitle = Language.get(item.text);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', item.text);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
+
+      if (!Legendary.enabledLegendaries.includes(item.text))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=legendary_animals]').append(collectibleElement.append(collectibleTextElement));
+    });
+    Menu.reorderMenu('.menu-hidden[data-type=legendary_animals]');
+  },
+
   refreshShops: function () {
     $('.menu-hidden[data-type=shop]').children('.collectible-wrapper').remove();
 
@@ -173,6 +189,7 @@ Menu.refreshMenu = function () {
   Menu.refreshTreasures();
   Menu.refreshShops();
   Menu.refreshCamps();
+  Menu.refreshLegendaries();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
@@ -194,6 +211,7 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=shops]');
   Menu.reorderMenu('.menu-hidden[data-type=camps]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
+  Menu.reorderMenu('.menu-hidden[data-type=legendary_animals]');
   Menu.reorderMenu('.menu-hidden[data-type=random_encounters]');
   Menu.reorderMenu('.menu-hidden[data-type=moonshiner_missions]');
 
@@ -210,6 +228,7 @@ Menu.showAll = function () {
 
   MapBase.addMarkers();
   Treasures.addToMap();
+  Legendary.addToMap();
   Encounters.addToMap();
 };
 
@@ -224,6 +243,7 @@ Menu.hideAll = function () {
   MapBase.addMarkers();
   Treasures.addToMap();
   Encounters.addToMap();
+  Legendary.addToMap();
   Heatmap.removeHeatmap(true);
 };
 

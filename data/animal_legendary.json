@@ -1,0 +1,31 @@
+[
+  {"text":"mp_animal_beaver_legendary_01","x":"-71.625","y":"73.2188","radius":"3"},
+  {"text":"mp_animal_beaver_legendary_02","x":"-51.0625","y":"148.75","radius":"3"},
+  {"text":"mp_animal_beaver_legendary_03","x":"-35.375","y":"150.75","radius":"3"},
+  {"text":"mp_animal_bison_legendary_01","x":"-53.3125","y":"126","radius":"3"},
+  {"text":"mp_animal_bison_legendary_02","x":"-38.6875","y":"82.8125","radius":"3"},
+  {"text":"mp_animal_bison_legendary_03","x":"-65.125","y":"74.5","radius":"3"},
+  {"text":"mp_animal_boar_legendary_01","x":"-65.125","y":"150.625","radius":"3"},
+  {"text":"mp_animal_boar_legendary_02","x":"-97","y":"81.875","radius":"3"},
+  {"text":"mp_animal_boar_legendary_03","x":"-99","y":"66.25","radius":"3"},
+  {"text":"mp_animal_cougar_legendary_01","x":"-88.375","y":"94.5625","radius":"3"},
+  {"text":"mp_animal_cougar_legendary_02","x":"-118.0938","y":"12.9375","radius":"3"},
+  {"text":"mp_animal_cougar_legendary_03","x":"-120.5313","y":"32.4063","radius":"3"},
+  {"text":"mp_animal_elk_legendary_01","x":"-48.8125","y":"105.9375","radius":"3"},
+  {"text":"mp_animal_elk_legendary_02","x":"-103.4688","y":"43.0938","radius":"3"},
+  {"text":"mp_animal_elk_legendary_03","x":"-29.875","y":"89.5625","radius":"3"},
+  {"text":"mp_animal_fox_legendary_01","x":"-87.5625","y":"126.4375","radius":"3"},
+  {"text":"mp_animal_fox_legendary_02","x":"-23.6875","y":"89.875","radius":"3"},
+  {"text":"mp_animal_fox_legendary_03","x":"-78.5","y":"146.4688","radius":"3"},
+  {"text":"mp_animal_ram_legendary_01","x":"-109.0938","y":"61.75","radius":"3"},
+  {"text":"mp_animal_ram_legendary_02","x":"-40.5313","y":"110.8438","radius":"3"},
+  {"text":"mp_animal_ram_legendary_03","x":"-100.7188","y":"42.75","radius":"3"},
+  {"text":"mp_animal_wolf_legendary_01","x":"-44.5","y":"131.4375","radius":"3"},
+  {"text":"mp_animal_wolf_legendary_02","x":"-27.5","y":"121.875","radius":"3"},
+  {"text":"mp_animal_wolf_legendary_03","x":"-33","y":"111.875","radius":"3"}
+  
+]
+
+
+
+

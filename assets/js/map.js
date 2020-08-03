@@ -369,6 +369,8 @@ var MapBase = {
       Layers.discoverablesLayer.clearLayers();
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
+    if (Layers.legendaryLayers != null)
+      Layers.legendaryLayers.clearLayers();
 
     var opacity = Settings.markerOpacity;
 
@@ -429,24 +431,41 @@ var MapBase = {
     Treasures.addToMap();
     Encounters.addToMap();
     MadamNazar.addMadamNazar();
+    Legendary.addToMap();
 
     if (refreshMenu)
       Menu.refreshMenu();
   },
 
   removeItemFromMap: function (text, subdata, category) {
+
     if (category == 'treasure') {
       if (Treasures.enabledTreasures.includes(text))
         Treasures.enabledTreasures = $.grep(Treasures.enabledTreasures, function (treasure) {
           return treasure !== text;
         });
-      else
+      else {
         Treasures.enabledTreasures.push(text);
+      }
 
       $(`[data-type=${text}]`).toggleClass('disabled');
 
       Treasures.addToMap();
       Treasures.save();
+    }
+    else if (category == 'legendary_animals') {
+      if (Legendary.enabledLegendaries.includes(text))
+      Legendary.enabledLegendaries = $.grep(Legendary.enabledLegendaries, function (animal) {
+          return animal !== text;
+        });
+      else {
+      Legendary.enabledLegendaries.push(text);
+      }
+
+      $(`[data-type=${text}]`).toggleClass('disabled');
+
+      Legendary.addToMap();
+      Legendary.save();
     }
   },
 

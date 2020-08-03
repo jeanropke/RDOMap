@@ -24,7 +24,7 @@ var categories = [
   'hogtied_lawman', 'duel', 'moonshiner_camp', 'moonshiner_destroy', 'moonshiner_roadblock',
   'moonshiner_sabotage', 'nazar', 'plants', 'rescue', 'rival_collector', 'runaway_wagon',
   'shops', 'sightseeing', 'trains', 'treasure', 'treasure_hunter', 'tree_map', 'user_pins',
-  'wounded_animal', 'camps', 'animal_attack', 'kidnapped', 'discoverables',
+  'wounded_animal', 'camps', 'animal_attack', 'kidnapped', 'discoverables', 'legendary_animals'
 ];
 
 var categoriesDisabledByDefault = [
@@ -474,6 +474,8 @@ $('.clickable').on('click', function (e) {
     Treasures.addToMap();
   else if (menu.data('type') == 'user_pins')
     Pins.addToMap();
+  else if (menu.data('type') == 'legendary_animals')
+    Legendary.addToMap();
   else
     MapBase.addMarkers();
 });
@@ -888,6 +890,7 @@ $(function () {
   MapBase.loadCamps();
   MadamNazar.loadMadamNazar();
   Treasures.load();
+  Legendary.load();
   Encounters.load();
   MapBase.loadMarkers();
   MapBase.loadDiscoverables();
