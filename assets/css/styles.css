@@ -1092,6 +1092,11 @@ a.no-style:visited {
     text-transform: uppercase;
 }
 
+/* Fix being able to select the overlays. */
+.leaflet-overlay-pane {
+    user-select: none;
+}
+
 /* Leaflet Marker styling */
 
 .leaflet-div-icon {
