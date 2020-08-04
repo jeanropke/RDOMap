@@ -24,6 +24,7 @@ These are the people that provided the locations of the different items on the m
 - Freeroam events display by [Richard Westenra](https://www.richardwestenra.com/rdr2-free-roam-event-schedule), adapted to the map by [Senexis](https://github.com/Senexis).
 - Madam Nazar location by the [MadamNazar.io API](https://madamnazar.io/).
 - Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase).
+- Legendary Animal locations by [Senexis](https://github.com/Senexis), [Tez2](https://twitter.com/TezFunz2) and [IronJeff80](https://github.com/IronJeff80).
 
 ## Assets credits
 These are the people that provided assets for the map.
