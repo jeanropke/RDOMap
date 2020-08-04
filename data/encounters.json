@@ -394,5 +394,66 @@
 		{ "text": "kidnapped_hennigans_stead_2", "x": "-103.3152", "y": "66.0565" },
 		{ "text": "kidnapped_rio_bravo_1", "x": "-120.6194", "y": "40.7398" },
 		{ "text": "kidnapped_rio_bravo_2", "x": "-115.7006", "y": "38.0225" }
+	],
+	"beggar": [
+		{ "text": "beggar_st_denis_0", "x": "-82.5802", "y": "154.9929" },
+		{ "text": "beggar_st_denis_1", "x": "-83.5676", "y": "151.6799" },
+		{ "text": "beggar_st_denis_2", "x": "-82.2644", "y": "152.5926" },
+		{ "text": "beggar_st_denis_3", "x": "-82.3217", "y": "153.9782" },
+		{ "text": "beggar_st_denis_4", "x": "-81.4383", "y": "150.5693" },
+		{ "text": "beggar_st_denis_5", "x": "-82.7380", "y": "153.4173" },
+		{ "text": "beggar_st_denis_6", "x": "-85.5938", "y": "152.2595" },
+		{ "text": "beggar_st_denis_7", "x": "-81.9906", "y": "153.2447" },
+		{ "text": "beggar_st_denis_8", "x": "-83.4449", "y": "154.4592" },
+		{ "text": "beggar_st_denis_9", "x": "-82.3402", "y": "151.5359" },
+		{ "text": "beggar_st_denis_10", "x": "-80.8774", "y": "152.7296" },
+		{ "text": "beggar_st_denis_11", "x": "-86.3478", "y": "149.8120" },
+		{ "text": "beggar_blackwater_0", "x": "-83.9482", "y": "99.0010" },
+		{ "text": "beggar_blackwater_1", "x": "-83.1567", "y": "99.2005" },
+		{ "text": "beggar_blackwater_2", "x": "-83.5069", "y": "98.1946" }
+	],
+	"stalking_hunter": [
+		{ "text": "stalking_hunter_big_valley_0", "x": "-67.7056", "y": "71.1410" },
+		{ "text": "stalking_hunter_big_valley_1", "x": "-57.5632", "y": "71.2766" },
+		{ "text": "stalking_hunter_big_valley_2", "x": "-56.3236", "y": "77.1991" },
+		{ "text": "stalking_hunter_great_plains_0", "x": "-87.0854", "y": "85.8807" },
+		{ "text": "stalking_hunter_great_plains_1", "x": "-91.6128", "y": "98.4812" },
+		{ "text": "stalking_hunter_grz_east_0", "x": "-38.9399", "y": "139.0229" },
+		{ "text": "stalking_hunter_grz_east_1", "x": "-42.0699", "y": "141.7076" },
+		{ "text": "stalking_hunter_grz_east_2", "x": "-31.0165", "y": "121.1854" },
+		{ "text": "stalking_hunter_grz_east_3", "x": "-45.5706", "y": "131.4089" },
+		{ "text": "stalking_hunter_tall_trees_0", "x": "-84.9072", "y": "78.6942" },
+		{ "text": "stalking_hunter_tall_trees_1", "x": "-88.1859", "y": "77.0682" }
+	],
+	"slumped_hunter": [
+		{ "text": "slumped_hunter_annesburg_1", "x": "-30.9350", "y": "94.0672" },
+		{ "text": "slumped_hunter_bolger_glade_1", "x": "-117.0757", "y": "44.5422" },
+		{ "text": "slumped_hunter_cairn_lake_1", "x": "-102.2838", "y": "50.8324" },
+		{ "text": "slumped_hunter_cholla_springs_1", "x": "-108.0993", "y": "77.2933" },
+		{ "text": "slumped_hunter_cumberland_1", "x": "-85.5228", "y": "78.9480" },
+		{ "text": "slumped_hunter_hennigans_1", "x": "-55.2835", "y": "97.3593" },
+		{ "text": "slumped_hunter_o_creagh_1", "x": "-59.5034", "y": "115.6467" },
+		{ "text": "slumped_hunter_rio_bravo_1", "x": "-42.5689", "y": "135.3163" },
+		{ "text": "slumped_hunter_tall_trees_1", "x": "-45.1389", "y": "152.4644" },
+		{ "text": "slumped_hunter_twin_stack_1", "x": "-96.2145", "y": "134.7113" }
+	],
+	"crashed_wagon": [
+		{ "text": "crashed_wagon_big_valley_1", "x": "-72.1973", "y": "88.0194" },
+		{ "text": "crashed_wagon_big_valley_2", "x": "-59.4310", "y": "83.9663" },
+		{ "text": "crashed_wagon_big_valley_3", "x": "-66.0529", "y": "68.4218" },
+		{ "text": "crashed_wagon_big_valley_4", "x": "-75.3472", "y": "100.1223" },
+		{ "text": "crashed_wagon_scarlett_meadows_1", "x": "-82.9747", "y": "126.0577" },
+		{ "text": "crashed_wagon_scarlett_meadows_2", "x": "-85.6167", "y": "128.1803" },
+		{ "text": "crashed_wagon_scarlett_meadows_3", "x": "-88.4895", "y": "131.3060" }
+	],
+	"suspension_trap": [
+		{ "text": "suspension_trap_hennigans_01", "x": "-106.6617", "y": "78.9893" },
+		{ "text": "suspension_trap_hennigans_02", "x": "-108.2933", "y": "76.2308" },
+		{ "text": "suspension_trap_hennigans_03", "x": "-106.5886", "y": "65.8937" },
+		{ "text": "suspension_trap_hennigans_04", "x": "-109.8150", "y": "70.1871" },
+		{ "text": "suspension_trap_armadillo_01", "x": "-95.8016", "y": "75.2227" },
+		{ "text": "suspension_trap_rio_bravo_01", "x": "-98.7481", "y": "57.6594" },
+		{ "text": "suspension_trap_rio_bravo_02", "x": "-120.2618", "y": "55.7095" },
+		{ "text": "suspension_trap_macfarlane_01", "x": "-126.4617", "y": "29.7396" }
 	]
 }

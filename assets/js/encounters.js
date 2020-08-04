@@ -111,6 +111,8 @@ var Encounters = {
       case "duel":
       case "fame_seeker":
       case "kidnapped":
+      case "beggar":
+      case "crashed_wagon":
         return "lightgray";
       case "dog_encounter":
       case "egg_encounter":
@@ -125,6 +127,10 @@ var Encounters = {
       case "moonshiner_roadblock":
       case "moonshiner_sabotage":
         return "darkpurple";
+      case "stalking_hunter":
+      case "slumped_hunter":
+      case "suspension_trap":
+        return "darkgreen";
       default:
         return "lightred";
     }

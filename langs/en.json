@@ -564,5 +564,20 @@
     "mp_animal_wolf_legendary_03": "Moonstone Wolf",
     "mp_animal_wolf_legendary_01.desc": "Any time or weather.",
     "mp_animal_wolf_legendary_02.desc": "Any time or weather.",
-    "mp_animal_wolf_legendary_03.desc": "Mission only."
+    "mp_animal_wolf_legendary_03.desc": "Mission only.",
+    "menu.beggar": "Beggar",
+    "map.beggar.name": "Beggar",
+    "map.beggar.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
+    "menu.stalking_hunter": "Hunter - Stalking",
+    "map.stalking_hunter.name": "Hunter - Stalking",
+    "map.stalking_hunter.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
+    "menu.slumped_hunter": "Hunter - Slumped",
+    "map.slumped_hunter.name": "Hunter - Slumped",
+    "map.slumped_hunter.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
+    "menu.crashed_wagon": "Crashed Wagon",
+    "map.crashed_wagon.name": "Crashed Wagon",
+    "map.crashed_wagon.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
+    "menu.suspension_trap": "Suspension Trap",
+    "map.suspension_trap.name": "Suspension Trap",
+    "map.suspension_trap.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter."
 }
