@@ -1,4 +1,18 @@
 var Legendary = {
+  // Needed to check against Q param.
+  legendaries: [
+    'mp_animal_alligator_legendary_01', 'mp_animal_alligator_legendary_02', 'mp_animal_bear_legendary_01',
+    'mp_animal_bear_legendary_02', 'mp_animal_beaver_legendary_01', 'mp_animal_beaver_legendary_02',
+    'mp_animal_bison_legendary_01', 'mp_animal_bison_legendary_02', 'mp_animal_boar_legendary_01',
+    'mp_animal_boar_legendary_02', 'mp_animal_buck_legendary_01', 'mp_animal_buck_legendary_02',
+    'mp_animal_cougar_legendary_01', 'mp_animal_cougar_legendary_02', 'mp_animal_coyote_legendary_01',
+    'mp_animal_coyote_legendary_02', 'mp_animal_elk_legendary_01', 'mp_animal_elk_legendary_02',
+    'mp_animal_fox_legendary_01', 'mp_animal_fox_legendary_02', 'mp_animal_moose_legendary_01',
+    'mp_animal_moose_legendary_02', 'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02',
+    'mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02', 'mp_animal_wolf_legendary_01',
+    'mp_animal_wolf_legendary_02'
+  ],
+  
   enabledLegendaries: $.cookie('legendary-enabled') ? $.cookie('legendary-enabled').split(';') : [],
   data: [],
   markers: [],
@@ -13,7 +27,7 @@ var Legendary = {
   set: function (inPreview = false) {
     Legendary.markers = [];
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var treasureIcon = L.divIcon({
+    var legendaryIcon = L.divIcon({
       iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
       iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
       popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
@@ -39,7 +53,7 @@ var Legendary = {
       });
 
       var marker = L.marker([value.x, value.y], {
-        icon: treasureIcon
+        icon: legendaryIcon
       });
 
       var locationsCross = [];

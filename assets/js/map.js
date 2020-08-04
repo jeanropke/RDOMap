@@ -327,6 +327,10 @@ var MapBase = {
         enabledCategories = ["treasure"];
         Treasures.enabledTreasures = [quickParam];
         Treasures.addToMap(true);
+      } else if (Legendary.legendaries.indexOf(quickParam) !== -1) {
+        enabledCategories = ["legendary_animals"];
+        Legendary.enabledLegendaries = [quickParam];
+        Legendary.addToMap(true);
       } else {
         enabledCategories = [];
 
