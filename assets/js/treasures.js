@@ -42,8 +42,8 @@ var Treasures = {
 
     $.each(Treasures.data, function (key, value) {
       var circle = L.circle([value.x, value.y], {
-        color: "#fff79900",
-        fillColor: "#fff799",
+        color: "#fdc607",
+        fillColor: "#fdc607",
         fillOpacity: 0.5,
         radius: value.radius
       });

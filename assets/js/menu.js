@@ -22,6 +22,8 @@ var Menu = {
 
       $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
     });
+
+    tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
   },
 
   refreshLegendaries: function () {
@@ -37,7 +39,8 @@ var Menu = {
 
       $('.menu-hidden[data-type=legendary_animals]').append(collectibleElement.append(collectibleTextElement));
     });
-    Menu.reorderMenu('.menu-hidden[data-type=legendary_animals]');
+
+    tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
   },
 
   refreshShops: function () {
