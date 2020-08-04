@@ -4,7 +4,7 @@ var Layers = {
   animalsLayer: L.canvasIconLayer({ zoomAnimation: true }),
   plantsLayer: L.canvasIconLayer({ zoomAnimation: true }),
   discoverablesLayer: L.canvasIconLayer({ zoomAnimation: true }),
-  miscLayer: new L.LayerGroup(),  
+  miscLayer: new L.LayerGroup(),
   legendaryLayers: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup(),
   pinsLayer: new L.LayerGroup(),

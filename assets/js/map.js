@@ -371,6 +371,8 @@ var MapBase = {
       Layers.miscLayer.clearLayers();
     if (Layers.legendaryLayers != null)
       Layers.legendaryLayers.clearLayers();
+    if (Layers.legendaryLayers != null)
+      Layers.legendaryLayers.clearLayers();
 
     var opacity = Settings.markerOpacity;
 
@@ -455,11 +457,11 @@ var MapBase = {
     }
     else if (category == 'legendary_animals') {
       if (Legendary.enabledLegendaries.includes(text))
-      Legendary.enabledLegendaries = $.grep(Legendary.enabledLegendaries, function (animal) {
+        Legendary.enabledLegendaries = $.grep(Legendary.enabledLegendaries, function (animal) {
           return animal !== text;
         });
       else {
-      Legendary.enabledLegendaries.push(text);
+        Legendary.enabledLegendaries.push(text);
       }
 
       $(`[data-type=${text}]`).toggleClass('disabled');

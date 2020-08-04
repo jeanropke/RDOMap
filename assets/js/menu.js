@@ -228,8 +228,8 @@ Menu.showAll = function () {
 
   MapBase.addMarkers();
   Treasures.addToMap();
-  Legendary.addToMap();
   Encounters.addToMap();
+  Legendary.addToMap();
 };
 
 Menu.hideAll = function () {

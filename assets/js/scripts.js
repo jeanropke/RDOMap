@@ -436,6 +436,7 @@ $("#marker-size").on("change", function () {
   $.cookie('marker-size', Settings.markerSize, { expires: 999 });
   MapBase.addMarkers();
   Treasures.set();
+  Legendary.set();
 });
 
 // Toggle visibility of FME cards.
