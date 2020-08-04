@@ -48,17 +48,17 @@ var Legendary = {
           icon: crossIcon
         });
 
-        var debugDisplayLatLng = $('<small>').text(`Latitude: ${crossValue.x} / Longitude: ${crossValue.y}`);
-        var popupContent = Language.get(crossValue.text + '.desc');
-        crossMarker.bindPopup(`<h1>Possible Location</h1>
-          <span class="marker-content-wrapper">
-          <p>${popupContent}</p>
-          </span>
-          ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        `, {
-          minWidth: 400,
-          maxWidth: 400
-        });
+        // var debugDisplayLatLng = $('<small>').text(`Latitude: ${crossValue.x} / Longitude: ${crossValue.y}`);
+        // var popupContent = Language.get(crossValue.text + '.desc');
+        // crossMarker.bindPopup(`<h1>Possible Location</h1>
+        //   <span class="marker-content-wrapper">
+        //   <p>${popupContent}</p>
+        //   </span>
+        //   ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
+        // `, {
+        //   minWidth: 400,
+        //   maxWidth: 400
+        // });
 
         locationsCross.push(crossMarker);
       });
