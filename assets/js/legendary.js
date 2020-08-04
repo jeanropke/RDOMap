@@ -36,7 +36,7 @@ var Legendary = {
           icon: treasureIcon
         });
   
-        marker.bindPopup(`<h1>${Language.get(value.text)}</h1><p>${Language.get(value.text+'.desc')}</p><br><p><a href="https://www.reddit.com/r/RedDeadOnline/comments/i2aqhe/version_3/">Credits to lucas756</a></p><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}', 'legendary_animals')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
+        marker.bindPopup(`<h1>${Language.get(value.text)}</h1><p>${Language.get(value.text+'.desc')}</p><p>${Language.get('map.legendary_animal.desc')}</p><br><p>Credits to IronJeff80</p><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}', 'legendary_animals')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
           minWidth: 400,
           maxWidth: 400
         });
