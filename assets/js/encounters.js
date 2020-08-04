@@ -1,4 +1,5 @@
 var Encounters = {
+  data: null,
   markers: [],
   updateLoopAvailable: true,
   requestLoopCancel: false,
@@ -6,6 +7,7 @@ var Encounters = {
   load: function () {
     $.getJSON('data/encounters.json?nocache=' + nocache)
       .done(function (data) {
+        Encounters.data = data;
         Encounters.set(data);
       });
     console.info('%c[Encounters] Loaded!', 'color: #bada55; background: #242424');

@@ -9,6 +9,25 @@ var Menu = {
     }).appendTo(menu);
   },
 
+  refreshEncounters: function () {
+    $('.menu-hidden[data-type=encounters]').children('.collectible-wrapper').remove();
+
+    Object.keys(Encounters.data).forEach(function (element) {
+      var collectibleTitle = Language.get(`menu.${element}`);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
+      var collectibleImage = $('<img>').attr('src', `./assets/images/icons/${element}.png`).addClass('collectible-icon');
+
+      if (!enabledCategories.includes(element))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=encounters]').append(collectibleElement.append(collectibleImage).append(collectibleTextElement));
+    });
+
+    tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
+  },
+
+
   refreshTreasures: function () {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
@@ -189,6 +208,7 @@ Menu.refreshMenu = function () {
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement)));
   });
 
+  Menu.refreshEncounters();
   Menu.refreshTreasures();
   Menu.refreshShops();
   Menu.refreshCamps();
@@ -206,7 +226,6 @@ Menu.refreshMenu = function () {
     }
   });
 
-  Menu.reorderMenu('#random_encounters');
   Menu.reorderMenu('.menu-hidden[data-type=animals]');
   Menu.reorderMenu('.menu-hidden[data-type=birds]');
   Menu.reorderMenu('.menu-hidden[data-type=fish]');
@@ -215,7 +234,7 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=camps]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   Menu.reorderMenu('.menu-hidden[data-type=legendary_animals]');
-  Menu.reorderMenu('.menu-hidden[data-type=random_encounters]');
+  Menu.reorderMenu('.menu-hidden[data-type=encounters]');
   Menu.reorderMenu('.menu-hidden[data-type=moonshiner_missions]');
 
   tippy('[data-tippy-content]', {theme: 'rdr2-theme'});

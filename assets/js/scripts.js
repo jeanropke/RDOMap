@@ -522,11 +522,29 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var category = menu.parent().data('type');
 
   if (typeof collectible === 'undefined') return;
-
+  
   $('[data-type=' + collectible + ']').toggleClass('disabled');
   var isDisabled = $('[data-type=' + collectible + ']').hasClass('disabled');
 
-  if (category == 'plants') {
+  if (category == 'encounters') {
+    if (isDisabled) {
+      enabledCategories = $.grep(enabledCategories, function (value) {
+        return value != collectible;
+      });
+
+      categoriesDisabledByDefault.push(collectible);
+    } else {
+      enabledCategories.push(collectible);
+
+      categoriesDisabledByDefault = $.grep(categoriesDisabledByDefault, function (value) {
+        return value != collectible;
+      });
+    }
+
+    $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
+
+    Encounters.addToMap();
+  } else if (category == 'plants') {
     if (isDisabled) {
       enabledPlants = $.grep(enabledPlants, function (value) {
         return value != collectible;
