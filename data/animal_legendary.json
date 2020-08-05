@@ -229,7 +229,7 @@
     ]
   },
   {
-    "text": "mp_animal_moose_legendary_01", "x": -29.7969, "y": 151.75, "radius": 6,
+    "text": "mp_animal_moose_legendary_02", "x": -29.7969, "y": 151.75, "radius": 6,
     "locations": [
       { "text": "moose_barrow_lagoon_nw", "x": "-29.7445", "y": "155.9338" },
       { "text": "moose_barrow_lagoon_s", "x": "-28.0544", "y": "154.8757" },
@@ -239,7 +239,7 @@
     ]
   },
   {
-    "text": "mp_animal_moose_legendary_02", "x": -39.3984, "y": 96.5703, "radius": 2.5,
+    "text": "mp_animal_moose_legendary_01", "x": -39.3984, "y": 96.5703, "radius": 2.5,
     "locations": [
       { "text": "moose_roanoke_ridge_n", "x": "-39.5415", "y": "96.4371" },
       { "text": "moose_roanoke_ridge_n_2", "x": "-39.3638", "y": "95.4010" },
