@@ -106,6 +106,8 @@ select,
 #main-header-left,
 #main-header-right {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     height: 75px;
 }
 
@@ -224,6 +226,8 @@ select,
 #time-in-game {
     font-size: 16px;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     margin: auto 8px auto 0;
 }
 
@@ -278,6 +282,8 @@ select,
     font-size: 14px;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     margin-top: 8px;
 }
 
@@ -372,6 +378,8 @@ select,
 
 .input-container {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
@@ -379,6 +387,8 @@ select,
 
 .input-container-noflex {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     margin: 5px 0;
     text-align: center;
 }
@@ -447,6 +457,8 @@ select,
     text-align: center;
     line-height: 1.85;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     cursor: pointer;
 }
 
@@ -480,6 +492,8 @@ select,
     align-items: start;
     padding: 0 5px;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     cursor: pointer;
     line-height: 36px;
 }
@@ -560,6 +574,8 @@ select,
 .collection-reset {
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
 }
 
 .side-menu .menu-hidden .collectible-wrapper,
@@ -567,6 +583,8 @@ select,
     padding: 6px 12px;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
 }
 
 .side-menu .menu-hidden.two-column .collectible-wrapper,
@@ -580,6 +598,7 @@ select,
     float: left;
     height: 28px;
     margin-right: 10px;
+    margin-top: 6px;
 }
 
 .side-menu .menu-hidden .collectible-icon.random-encounter,
@@ -610,7 +629,7 @@ select,
 .side-menu .menu-hidden .collectible,
 .side-menu .menu-hidden .animal,
 .input-container label {
-    line-height: 24px;
+    line-height: 31px;
 }
 
 .same-cycle-warning-menu {
@@ -648,6 +667,8 @@ select,
 
 .help-button {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     font-size: 14px;
 }
 
@@ -706,6 +727,8 @@ a.wiki-page:visited {
     top: 20px;
     text-align: center;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     cursor: pointer;
 }
 
@@ -769,6 +792,8 @@ a.wiki-page:visited {
 
 .cycle-changer {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     display: flex;
     justify-content: center;
 }
@@ -918,6 +943,8 @@ a.no-style:visited {
 
 .modal {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
 }
 
 .modal-content {
@@ -1098,6 +1125,8 @@ a.no-style:visited {
 /* Fix being able to select the overlays. */
 .leaflet-overlay-pane {
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
 }
 
 /* Leaflet Marker styling */
@@ -1166,6 +1195,8 @@ a.no-style:visited {
     bottom: 5px;
     z-index: 990;
     user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
     transition: all 200ms ease-out;
 }
 
