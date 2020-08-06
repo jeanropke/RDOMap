@@ -12,6 +12,15 @@ var Legendary = {
     'mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02', 'mp_animal_wolf_legendary_01',
     'mp_animal_wolf_legendary_02'
   ],
+  // Legendary animals not yet released.
+  notReleased: [
+    'mp_animal_bear_legendary_01', 'mp_animal_bear_legendary_02', 'mp_animal_buck_legendary_01',
+    'mp_animal_buck_legendary_02', 'mp_animal_coyote_legendary_01', 'mp_animal_coyote_legendary_02',
+    'mp_animal_moose_legendary_01', 'mp_animal_moose_legendary_02', 'mp_animal_panther_legendary_01',
+    'mp_animal_panther_legendary_02'
+  ],
+  // PlayStation 4 exclusives
+  psExclusive: ['mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02'],
   
   enabledLegendaries: $.cookie('legendary-enabled') ? $.cookie('legendary-enabled').split(';') : [],
   data: [],
@@ -76,8 +85,12 @@ var Legendary = {
 
         locationsCross.push(crossMarker);
       });
-
-      marker.bindPopup(`<h1>${Language.get(value.text)}</h1><p>${Language.get(value.text + '.desc')}</p><br><p>${Language.get('map.legendary_animal.desc')}</p><br><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}', 'legendary_animals')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
+      marker.bindPopup(
+        `<h1>${Language.get(value.text)}</h1>` +
+        `<p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>${Legendary.notReleased.includes(value.text) ? Language.get('map.generic_not_released') : Legendary.psExclusive.includes(value.text) ? Language.get('map.generic_ps_exlusive') : ''}</p>` +
+        `<p>${Language.get(value.text + '.desc')}</p>` +
+        `<br><p>${Language.get('map.legendary_animal.desc')}</p>` +
+        `<br><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}', 'legendary_animals')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
         minWidth: 400,
         maxWidth: 400
       });

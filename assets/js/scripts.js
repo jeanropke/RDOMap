@@ -470,7 +470,6 @@ $('.clickable').on('click', function (e) {
       return value != menu.data('type');
     });
   }
-
   $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
 
   if (menu.data('type') == 'treasure')
@@ -478,7 +477,7 @@ $('.clickable').on('click', function (e) {
   else if (menu.data('type') == 'user_pins')
     Pins.addToMap();
   else if (menu.data('type') == 'legendary_animals')
-    Legendary.addToMap();
+    Legendary.addToMap();    
   else
     MapBase.addMarkers();
 });

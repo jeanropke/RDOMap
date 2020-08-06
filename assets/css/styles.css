@@ -510,6 +510,9 @@ select,
     color: #f95050 !important;
 }
 
+.side-menu .ps-exclusive {
+    color: #357aea !important;
+}
 .side-menu .menu-option .icon {
     width: 35px;
     margin-top: 6px;

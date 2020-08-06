@@ -614,5 +614,7 @@
     "map.crashed_wagon.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
     "menu.suspension_trap": "Suspension Trap",
     "map.suspension_trap.name": "Suspension Trap",
-    "map.suspension_trap.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter."
+    "map.suspension_trap.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
+    "map.generic_not_released": "This content is not yet in the game.",
+    "map.generic_ps_exlusive": "This content is only avaliable on PlayStation 4."
 }
