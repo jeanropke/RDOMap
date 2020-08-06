@@ -614,5 +614,7 @@
     "map.crashed_wagon.desc": "Este é um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro.",
     "menu.suspension_trap": "",
     "map.suspension_trap.name": "",
-    "map.suspension_trap.desc": "Este é um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro."
+    "map.suspension_trap.desc": "Este é um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro.",
+    "map.generic_not_released": "Esse conteúdo ainda não está no jogo.",
+    "map.generic_ps_exlusive": "Esse conteúdo está disponível apenas no PlayStation 4."
 }

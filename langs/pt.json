@@ -614,5 +614,7 @@
     "map.crashed_wagon.desc": "",
     "menu.suspension_trap": "",
     "map.suspension_trap.name": "",
-    "map.suspension_trap.desc": ""
+    "map.suspension_trap.desc": "",
+    "map.generic_not_released": "",
+    "map.generic_ps_exlusive": ""
 }
