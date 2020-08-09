@@ -60,7 +60,7 @@ var Treasures = {
       });
 
 
-      marker.bindPopup(`<h1>${Language.get(value.text)}</h1><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
+      marker.bindPopup(`<h1>${Language.get(value.text)}</h1><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}', 'treasure')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
         minWidth: 300,
         maxWidth: 400
       });
