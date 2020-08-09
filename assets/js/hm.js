@@ -36,7 +36,8 @@ var Heatmap = {
         $(`.menu-hidden[data-type=${heatmapKey}]`).append(animalElement.append(animalImage).append(animalTextWrapperElement.append(animalTextElement)));
       });
       Menu.reorderMenu(`.menu-hidden[data-type=${heatmapKey}]`);
-      tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
+      if(Settings.toolTip == 1)
+        tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
     });
   },
 

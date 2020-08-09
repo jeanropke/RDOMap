@@ -439,6 +439,14 @@ $("#marker-size").on("change", function () {
   Legendary.set();
 });
 
+$("#tooltip").on("change", function () {
+  var parsed = parseInt($("#tooltip").val());
+  Settings.toolTip = parsed ? parsed : 0;
+  $.cookie('tooltip-enabled', Settings.toolTip, { expires: 999 });
+
+  Menu.refreshMenu();
+});
+
 // Toggle visibility of FME cards.
 $("#fme-display").on("change", function () {
   var parsed = parseInt($("#fme-display").val());

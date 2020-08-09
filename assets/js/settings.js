@@ -19,5 +19,6 @@ var Settings = {
   showAllMarkers: false,
   showHelp: $.cookie('show-help') == '1',
   sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
-  toolType: $.cookie('tools') ? $.cookie('tools') : '3'
+  toolType: $.cookie('tools') ? $.cookie('tools') : '3',
+  toolTip: $.cookie('tooltip-enabled') ? $.cookie('tooltip-enabled') : '0',
 };
