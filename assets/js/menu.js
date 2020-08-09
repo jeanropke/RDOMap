@@ -52,6 +52,10 @@ var Menu = {
     $('.menu-hidden[data-type=legendary_animals]').children('.collectible-wrapper').remove();
 
     Legendary.data.filter(function (item) {
+
+      if(Legendary.notReleased.includes(item.text) && !Settings.isDebugEnabled)
+        return;
+
       var collectibleTitle = Language.get(item.text);
       var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', item.text);
       var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
