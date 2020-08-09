@@ -424,9 +424,10 @@ $("#marker-opacity").on("change", function () {
 
 $("#overlay-opacity").on("change", function () {
   var parsed = parseFloat($("#overlay-opacity").val());
-  Settings.overlayOpacity = parsed ? parsed : 0.5;
+  Settings.overlayOpacity = !isNaN(parsed) ? parsed : 0.5;
   $.cookie('overlay-opacity', Settings.overlayOpacity, { expires: 999 });
   MapBase.setOverlays(parsed);
+  Legendary.addToMap();
 });
 
 //Change & save marker size
