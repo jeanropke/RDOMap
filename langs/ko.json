@@ -312,7 +312,7 @@
     "menu.fme_display.1": "",
     "menu.fme_display.2": "",
     "menu.fme_display.3": "",
-    "menu.fme.time.starts_in": "{time}분 후 시작",
+    "menu.fme.time.starts_in": "{time} 후 시작",
     "menu.fme.time.less_than_a_minute": "1분 이내",
     "menu.fme.time.minute": "",
     "menu.fme.time.minutes": "",
