@@ -14,7 +14,7 @@ var Settings = {
   markerCluster: $.cookie('marker-cluster') == '1',
   markerOpacity: parseFloat($.cookie('marker-opacity')) ? parseFloat($.cookie('marker-opacity')) : 1,
   markerSize: parseFloat($.cookie('marker-size')) ? parseFloat($.cookie('marker-size')) : 1,
-  overlayOpacity: parseFloat($.cookie('overlay-opacity')) ? parseFloat($.cookie('overlay-opacity')) : 0.5,
+  overlayOpacity: !isNaN(parseFloat($.cookie('overlay-opacity'))) ? parseFloat($.cookie('overlay-opacity')) : 0.5,
   resetMarkersDaily: $.cookie('remove-markers-daily') == '1',
   showAllMarkers: false,
   showHelp: $.cookie('show-help') == '1',
