@@ -15,9 +15,8 @@ var Legendary = {
   // Legendary animals not yet released.
   notReleased: [
     'mp_animal_bear_legendary_01', 'mp_animal_bear_legendary_02', 'mp_animal_buck_legendary_01',
-    'mp_animal_buck_legendary_02', 'mp_animal_coyote_legendary_01', 'mp_animal_coyote_legendary_02',
-    'mp_animal_moose_legendary_01', 'mp_animal_moose_legendary_02', 'mp_animal_panther_legendary_01',
-    'mp_animal_panther_legendary_02'
+    'mp_animal_buck_legendary_02', 'mp_animal_moose_legendary_01', 'mp_animal_moose_legendary_02',
+    'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02'
   ],
   // PlayStation 4 exclusives
   psExclusive: ['mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02'],
