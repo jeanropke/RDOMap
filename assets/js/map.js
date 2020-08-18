@@ -14,6 +14,7 @@ var MapBase = {
   fastTravelData: null,
   shopData: null,
   campData: null,
+  campDisabled: [],
   dailyData: null,
   updateLoopAvailable: true,
   requestLoopCancel: false,
@@ -707,6 +708,8 @@ var MapBase = {
       $.each(MapBase.campData, function (category, categoryValue) {
         if (!enabledCamps.includes(category)) return;
         $.each(categoryValue, function (key, value) {
+          if(MapBase.campDisabled.includes(value.id)) return;
+
           var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
           var marker = L.marker([value.lat, value.lng], {
             opacity: Settings.markerOpacity,

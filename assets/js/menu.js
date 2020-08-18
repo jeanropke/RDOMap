@@ -136,19 +136,31 @@ var Menu = {
     MapBase.addMarkers();
   },
 
-  showHideAllCamps: function (isToHide) {
-    if (isToHide) {
-      enabledCamps = [];
-      campsDisabledByDefault = camps;
-
-      $('[data-type="camps"] .collectible-wrapper').addClass('disabled');
-    } else {
-      enabledCamps = camps;
-      campsDisabledByDefault = [];
-      $('[data-type="camps"] .collectible-wrapper').removeClass('disabled');
+  setCampSize: function (type) {
+    var aElement = type == 'small' ? 0 : 1;
+    var button = $($('[data-type=camps]').children('.collection-value').children('a')[aElement]);
+    if(button.hasClass('disabled')) {
+      Object.values(MapBase.campData).filter(region => 
+        region.filter(
+          function(camp) {
+          if(camp.size == type) {
+            MapBase.campDisabled = $.grep(MapBase.campDisabled, function(value) {
+              return value != camp.id;
+            });
+          }
+        }
+      ));
+      } else {
+      Object.values(MapBase.campData).filter(region => 
+        region.filter(
+          function(camp) {
+          if(camp.size == type) {
+            MapBase.campDisabled.push(camp.id);
+          }
+        }
+      ));
     }
-
-    $.cookie('disabled-camps', campsDisabledByDefault.join(','), { expires: 999 });
+    button.toggleClass('disabled');
     MapBase.addMarkers();
   },
 };

@@ -620,5 +620,7 @@
     "map.suspension_trap.name": "Suspension Trap",
     "map.suspension_trap.desc": "This is a Random Encounter. A white blip on the mini map will indicate the encounter.",
     "map.generic_not_released": "This content is not yet in the game.",
-    "map.generic_ps_exlusive": "This content is only avaliable on PlayStation 4."
+    "map.generic_ps_exlusive": "This content is only available on PlayStation 4.",
+    "menu.small_btn": "Small camps",
+    "menu.large_btn": "Large camps"
 }
