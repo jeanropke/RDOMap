@@ -12,15 +12,16 @@ var Legendary = {
     'mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02', 'mp_animal_wolf_legendary_01',
     'mp_animal_wolf_legendary_02'
   ],
+
   // Legendary animals not yet released.
   notReleased: [
-    'mp_animal_bear_legendary_01', 'mp_animal_bear_legendary_02', 'mp_animal_buck_legendary_01',
-    'mp_animal_buck_legendary_02', 'mp_animal_moose_legendary_01', 'mp_animal_moose_legendary_02',
-    'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02'
+    'mp_animal_bear_legendary_01', 'mp_animal_bear_legendary_02', 'mp_animal_moose_legendary_01',
+    'mp_animal_moose_legendary_02', 'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02'
   ],
+
   // PlayStation 4 exclusives
   psExclusive: ['mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02'],
-  
+
   enabledLegendaries: $.cookie('legendary-enabled') ? $.cookie('legendary-enabled').split(';') : [],
   data: [],
   markers: [],
@@ -35,12 +36,12 @@ var Legendary = {
   set: function (inPreview = false) {
     Legendary.markers = [];
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    
+
     var legendaryIcon = L.divIcon({
       iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
       iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
       popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
-      html:  `
+      html: `
       <img class="icon" src="./assets/images/icons/legendary_animals.png" alt="Icon">
       <img class="background" src="./assets/images/icons/marker_black.png" alt="Background">
       ${shadow}`
@@ -54,9 +55,9 @@ var Legendary = {
 
     $.each(Legendary.data, function (key, value) {
 
-      if(Legendary.notReleased.includes(value.text) && !Settings.isDebugEnabled)
+      if (Legendary.notReleased.includes(value.text) && !Settings.isDebugEnabled)
         return;
-    
+
       var circle = L.circle([value.x, value.y], {
         color: "#fdc607",
         fillColor: "#fdc607",
@@ -128,7 +129,7 @@ var Legendary = {
         });
 
         var overlay = `assets/images/icons/game/animals/legendaries/${value.animal}.png?nocache=${nocache}`;
-        Layers.legendaryLayers.addLayer(L.imageOverlay(overlay, [[value.circle._latlng.lat-value.circle._mRadius, value.circle._latlng.lng-value.circle._mRadius*2], [value.circle._latlng.lat+value.circle._mRadius, value.circle._latlng.lng+value.circle._mRadius*2]], {
+        Layers.legendaryLayers.addLayer(L.imageOverlay(overlay, [[value.circle._latlng.lat - value.circle._mRadius, value.circle._latlng.lng - value.circle._mRadius * 2], [value.circle._latlng.lat + value.circle._mRadius, value.circle._latlng.lng + value.circle._mRadius * 2]], {
           opacity: Settings.overlayOpacity
         }));
       }
