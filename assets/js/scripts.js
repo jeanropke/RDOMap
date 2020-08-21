@@ -1,3 +1,11 @@
+Object.defineProperty(String.prototype, 'filename', {
+  value: function (extension) {
+    let s = this.replace(/\\/g, '/');
+    s = s.substring(s.lastIndexOf('/') + 1);
+    return extension ? s.replace(/[?#].+$/, '') : s.split('.')[0];
+  }
+});
+
 Object.defineProperty(String.prototype, 'includesOneOf', {
   value: function (...elements) {
     var include = false;
@@ -172,11 +180,6 @@ function init() {
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
-  if ($.cookie('fme-display') === undefined) {
-    FME.display = 3;
-    $.cookie('fme-display', '3', { expires: 999 });
-  }
-
   if ($.cookie('timestamps-24') === undefined) {
     Settings.display24HoursTimestamps = false;
     $.cookie('timestamps-24', 'false', { expires: 999 });
@@ -195,7 +198,6 @@ function init() {
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
-  $('#fme-display').val(FME.display);
   $('#marker-size').val(Settings.markerSize);
   $('#overlay-opacity').val(Settings.overlayOpacity);
 
@@ -448,14 +450,6 @@ $("#tooltip").on("change", function () {
   Menu.refreshMenu();
 });
 
-// Toggle visibility of FME cards.
-$("#fme-display").on("change", function () {
-  var parsed = parseInt($("#fme-display").val());
-  FME.display = !isNaN(parsed) ? parsed : 3;
-  $.cookie('fme-display', FME.display, { expires: 999 });
-  FME.update();
-});
-
 //Disable & enable collection category
 $('.clickable').on('click', function (e) {
   e.stopPropagation();
@@ -616,17 +610,20 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
 $('.menu-toggle').on('click', function () {
   $('.side-menu').toggleClass('menu-opened');
 
-  if ($('.side-menu').hasClass('menu-opened')) {
+  var isOpen = $('.side-menu').hasClass('menu-opened');
+
+  if (isOpen) {
     $('.menu-toggle').text('X');
     $.cookie('menu-opened', '1');
   } else {
     $('.menu-toggle').text('>');
     $.cookie('menu-opened', '0');
   }
-  $('.timer-container').toggleClass('timer-menu-opened');
-  $('.counter-container').toggleClass('counter-menu-opened');
-  $('.clock-container').toggleClass('timer-menu-opened');
-  $('.fme-container').toggleClass('fme-menu-opened');
+
+  $('.timer-container').toggleClass('timer-menu-opened', isOpen);
+  $('.counter-container').toggleClass('counter-menu-opened', isOpen);
+  $('.clock-container').toggleClass('timer-menu-opened', isOpen);
+  $('#fme-container').toggleClass('fme-menu-opened', isOpen);
 });
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {

@@ -5,7 +5,8 @@
   <title>Red Dead Online - RDO Map</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Red Dead Online RDO Map. Find any useful items, locations or event around the map of RDO.">
+  <meta name="description"
+    content="Red Dead Online RDO Map. Find any useful items, locations or event around the map of RDO.">
   <meta name="keywords" content="Red Dead Online, RDO Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
 
   <link rel="apple-touch-icon" sizes="60x60" href="./apple-touch-icon.png">
@@ -21,13 +22,31 @@
   <!-- Preconnects to improve performance -->
   <link rel="preconnect" href="https://jeanropke.b-cdn.net">
 
+  <!-- Preloads for certain UI elements -->
+  <link rel="preload" as="image" href="./assets/images/action_indicator_clear.png">
+  <link rel="preload" as="image" href="./assets/images/action_indicator_copy.png">
+  <link rel="preload" as="image" href="./assets/images/action_indicator_external.png">
+  <link rel="preload" as="image" href="./assets/images/action_indicator.png">
+  <link rel="preload" as="image" href="./assets/images/arrow.png">
+  <link rel="preload" as="image" href="./assets/images/fme_background.png">
+  <link rel="preload" as="image" href="./assets/images/header_bg_center.png">
+  <link rel="preload" as="image" href="./assets/images/header_border_divider.png">
+  <link rel="preload" as="image" href="./assets/images/header_border_white.png">
+  <link rel="preload" as="image" href="./assets/images/help_text_bg.png">
+  <link rel="preload" as="image" href="./assets/images/menu_donate.png">
+  <link rel="preload" as="image" href="./assets/images/modal_bg.png">
+  <link rel="preload" as="image" href="./assets/images/moon.png">
+  <link rel="preload" as="image" href="./assets/images/selection_boxes.png">
+  <link rel="preload" as="image" href="./assets/images/sun.png">
+  <link rel="preload" as="image" href="./assets/images/timer_bg.png">
+
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1437" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1438" />
   <link rel="stylesheet" href="assets/css/tippy.css" />
 
   <script>
-    var nocache = 1437;
+    var nocache = 1438;
   </script>
 </head>
 
@@ -252,7 +271,8 @@
     <div class="settings-container">
       <div class="explain-text">
         <span data-text="menu.translate_body">Translations are made by the community for the community.</span>
-        <a data-text="menu.translate_link" href="https://crowdin.com/project/rdr2rdomap" target="_blank" rel="noopener noreferrer">Help us by translating on Crowdin.</a>
+        <a data-text="menu.translate_link" href="https://crowdin.com/project/rdr2rdomap" target="_blank"
+          rel="noopener noreferrer">Help us by translating on Crowdin.</a>
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="language">
@@ -331,20 +351,46 @@
           <option value="1" data-text="menu.overlay_opacity.100" selected>Opaque</option>
         </select>
       </div>
+      <hr class="menu-divider">
       <div class="input-container" data-help="fme_display">
-        <label for="fme-display" data-text="menu.fme_display">Freemode events display</label>
-        <select class="input-text wide-select-menu" id="fme-display">
-          <option value="0" data-text="menu.fme_display.0">None</option>
-          <option value="1" data-text="menu.fme_display.1">General events only</option>
-          <option value="2" data-text="menu.fme_display.2">Role events only</option>
-          <option value="3" data-text="menu.fme_display.3" selected>Both</option>
-        </select>
+        <label for="fme-display" data-text="menu.fme_display">Show Freeroam Events</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="fme-display" value="1" id="fme-display" />
+          <label class="input-checkbox-label" for="fme-display"></label>
+        </div>
       </div>
+      <div class="input-container" data-help="fme_display_general_period">
+        <label for="fme-display-general-period" data-text="menu.fme_display_general_period">General Event display
+          period</label>
+        <input id="fme-display-general-period" class="input-text narrow-select-menu" type="number" min="10" max="45"
+          value="90">
+      </div>
+      <div class="input-container" data-help="fme_display_role_period">
+        <label for="fme-display-role-period" data-text="menu.fme_display_role_period">Role Event display period</label>
+        <input id="fme-display-role-period" class="input-text narrow-select-menu" type="number" min="10" max="90"
+          value="90">
+      </div>
+      <div class="input-container" data-help="fme_notification">
+        <label for="fme-notification" data-text="menu.fme_notification">Enable event notifications</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="fme-notification" value="1" id="fme-notification" />
+          <label class="input-checkbox-label" for="fme-notification"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="fme_notification_period">
+        <label for="fme-notification-period" data-text="menu.fme_notification_period">Event notification period</label>
+        <input id="fme-notification-period" class="input-text narrow-select-menu" type="number" min="1" max="30"
+          value="10">
+      </div>
+      <div id="open-fme-enabled-events-modal" class="input-container clickable" data-help="fme_enabled_events">
+        <label data-text="menu.fme_enabled_events">Select enabled events</label>
+        <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
       <!-- <div id="open-clear-important-items-modal" class="input-container clickable" data-help="clear_important_items">
         <label data-text="menu.clear_important_items">Clear important markers</label>
         <div class="input-action"></div>
       </div> -->
-      <hr class="menu-divider">
       <div class="input-container" data-help="user_pins_place_mode">
         <label for="pins-place-mode" data-text="menu.user_pins_place_mode">Create new pin on click</label>
         <div class="input-checkbox-wrapper">
@@ -372,16 +418,19 @@
         </div>
       </div>
       <div class="input-container" data-help="enable_marker_popups_hover">
-        <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on hover</label>
+        <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
+          hover</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1" id="enable-marker-popups-hover" />
+          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
+            id="enable-marker-popups-hover" />
           <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
         </div>
       </div>
       <div class="input-container" data-help="enable_marker_shadows">
         <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1" id="enable-marker-shadows" />
+          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1"
+            id="enable-marker-shadows" />
           <label class="input-checkbox-label" for="enable-marker-shadows"></label>
         </div>
       </div>
@@ -434,8 +483,10 @@
         <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_button" data-help="cookie_import">Import</button>
-        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_button" data-help="cookie_export">Export</button>
+        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.import_button" data-help="cookie_import">Import</button>
+        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.export_button" data-help="cookie_export">Export</button>
       </div>
       <div class="input-container-noflex">
         <h4 data-text="menu.pins_import_export_title">User Pins</h4>
@@ -449,8 +500,10 @@
         <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
-        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
+        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
       </div>
     </div>
     <div id="debug-container">
@@ -502,7 +555,9 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <a class="no-style wiki-page" href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)" target="_blank">
+      <a class="no-style wiki-page"
+        href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
+        target="_blank">
         <div class="input-container clickable" data-help="read_wiki">
           <label data-text="menu.read_wiki">Read this map's Wiki</label>
           <div class="input-action external"></div>
@@ -520,12 +575,14 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+        target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
         <input type="hidden" name="lc" value="en_US" />
 
-        <input type="image" src="./assets/images/donate.png" border="0" name="submit" title="Donate with PayPal" alt="Donate with PayPal button" />
+        <input type="image" src="./assets/images/donate.png" border="0" name="submit" title="Donate with PayPal"
+          alt="Donate with PayPal button" />
         <select class="input-text" name="currency_code">
           <option value="AUD">AUD $</option>
           <option value="BRL">BRL R$</option>
@@ -554,7 +611,8 @@
         </select>
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
-      <div id="open-delete-all-settings-modal" class="input-container clickable text-danger" data-help="delete_all_settings">
+      <div id="open-delete-all-settings-modal" class="input-container clickable text-danger"
+        data-help="delete_all_settings">
         <label data-text="menu.delete_all_settings">Reset all settings</label>
         <div class="input-action"></div>
       </div>
@@ -575,21 +633,22 @@
     <div class="day-cycle"></div>
   </div>
 
-  <div class="fme-container" style="display: none;">
-    <div id="next-fr-event" class="fme-card">
-      <img class="fme-image" id="next-fr-event-image" />
+  <div id="fme-container" style="display: none;">
+    <div id="next-general-event" class="fme-card">
+      <img class="fme-image" id="next-general-image" />
       <div class="fme-body">
-        <h3 class="fme-title" id="next-fr-event-name"></h3>
-        <p class="fme-text" id="next-fr-event-eta"></p>
+        <h3 class="fme-title" id="next-general-name"></h3>
+        <p class="fme-text" id="next-general-eta"></p>
       </div>
+      <span id="next-general-mobile"></span>
     </div>
-
     <div id="next-role-event" class="fme-card">
-      <img class="fme-image" id="next-role-event-image" />
+      <img class="fme-image" id="next-role-image" />
       <div class="fme-body">
-        <h3 class="fme-title" id="next-role-event-name"></h3>
-        <p class="fme-text" id="next-role-event-eta"></p>
+        <h3 class="fme-title" id="next-role-name"></h3>
+        <p class="fme-text" id="next-role-eta"></p>
       </div>
+      <span id="next-role-mobile"></span>
     </div>
   </div>
 
@@ -600,7 +659,33 @@
   </div>
 
   <!-- Modals -->
-  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog" aria-labelledby="clear-important-items-title">
+  <div class="modal fade" id="fme-enabled-events-modal" tabindex="-1" role="dialog"
+    aria-labelledby="fme-enabled-events-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-header">
+        <h4 class="modal-title" id="fme-enabled-events-title" data-text="menu.modal_fme_enabled_events_title">
+          Free Roam Event Settings
+        </h4>
+      </div>
+      <div class="modal-content">
+        <div class="modal-body">
+          <p data-text="menu.modal_fme_enabled_events_body">
+            Select which events you want to display on the map and/or to receive notifications for.
+          </p>
+          <h4 data-text="menu.modal_fme_general_events_title">General Events</h4>
+          <div id="general" class="settings-container"></div>
+          <h4 data-text="menu.modal_fme_role_events_title">Role Events</h4>
+          <div id="role" class="settings-container"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog"
+    aria-labelledby="clear-important-items-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -613,24 +698,28 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="delete-all-settings-modal" tabindex="-1" role="dialog" aria-labelledby="delete-all-settings-title">
+  <div class="modal fade" id="delete-all-settings-modal" tabindex="-1" role="dialog"
+    aria-labelledby="delete-all-settings-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="delete-all-settings-title" data-text="menu.modal_delete_all_settings_title">Reset all settings?</h4>
+          <h4 class="modal-title" id="delete-all-settings-title" data-text="menu.modal_delete_all_settings_title">Reset
+            all settings?</h4>
         </div>
         <div class="modal-body" data-text="menu.modal_delete_all_settings_body">
           This will reset all settings to their default values and reload the page.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
@@ -652,20 +741,20 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1437"></script>
-  <script src="assets/js/settings.js?nocache=1437"></script>
-  <script src="assets/js/nazar.js?nocache=1437"></script>
-  <script src="assets/js/marker.js?nocache=1437"></script>
-  <script src="assets/js/treasures.js?nocache=1437"></script>
-  <script src="assets/js/legendary.js?nocache=1437"></script>
-  <script src="assets/js/encounters.js?nocache=1437"></script>
-  <script src="assets/js/hm.js?nocache=1437"></script>
-  <script src="assets/js/pins.js?nocache=1437"></script>
-  <script src="assets/js/map.js?nocache=1437"></script>
-  <script src="assets/js/language.js?nocache=1437"></script>
-  <script src="assets/js/menu.js?nocache=1437"></script>
-  <script src="assets/js/scripts.js?nocache=1437"></script>
-  <script src="assets/js/fme.js?nocache=1437"></script>
+  <script src="assets/js/layers.js?nocache=1438"></script>
+  <script src="assets/js/settings.js?nocache=1438"></script>
+  <script src="assets/js/nazar.js?nocache=1438"></script>
+  <script src="assets/js/marker.js?nocache=1438"></script>
+  <script src="assets/js/treasures.js?nocache=1438"></script>
+  <script src="assets/js/legendary.js?nocache=1438"></script>
+  <script src="assets/js/encounters.js?nocache=1438"></script>
+  <script src="assets/js/hm.js?nocache=1438"></script>
+  <script src="assets/js/pins.js?nocache=1438"></script>
+  <script src="assets/js/map.js?nocache=1438"></script>
+  <script src="assets/js/language.js?nocache=1438"></script>
+  <script src="assets/js/menu.js?nocache=1438"></script>
+  <script src="assets/js/scripts.js?nocache=1438"></script>
+  <script src="assets/js/fme.js?nocache=1438"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
