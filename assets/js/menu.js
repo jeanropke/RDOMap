@@ -104,6 +104,22 @@ var Menu = {
     });
   },
 
+  refreshGfh: function () {
+    $('.menu-hidden[data-type=gfh]').children('.collectible-wrapper').remove();
+
+    Object.keys(MapBase.gfhData).forEach(function (element) {
+      var collectibleTitle = Language.get(`map.gfh.${element}.name`);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-tippy-content', collectibleTitle).attr('data-type', element);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
+      var collectibleImage = $('<img>').attr('src', `./assets/images/icons/gfh.png`).addClass('collectible-icon');
+
+      if (!enabledGfh.includes(element))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=gfh]').append(collectibleElement.append(collectibleImage).append(collectibleTextElement));
+    });
+  },
+
   showHideAllPlants: function (isToHide) {
     if (isToHide) {
       enabledPlants = [];
@@ -133,6 +149,22 @@ var Menu = {
     }
 
     $.cookie('disabled-shops', shopsDisabledByDefault.join(','), { expires: 999 });
+    MapBase.addMarkers();
+  },
+
+  showHideAllGfh: function (isToHide) {
+    if (isToHide) {
+      enabledGfh = [];
+      gfhDisabledByDefault = gfh;
+
+      $('[data-type="gfh"] .collectible-wrapper').addClass('disabled');
+    } else {
+      enabledGfh = gfh;
+      gfhDisabledByDefault = [];
+      $('[data-type="gfh"] .collectible-wrapper').removeClass('disabled');
+    }
+
+    $.cookie('disabled-gfh', gfhDisabledByDefault.join(','), { expires: 999 });
     MapBase.addMarkers();
   },
 
@@ -235,6 +267,7 @@ Menu.refreshMenu = function () {
   Menu.refreshTreasures();
   Menu.refreshShops();
   Menu.refreshCamps();
+  Menu.refreshGfh();
   Menu.refreshLegendaries();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
@@ -255,6 +288,7 @@ Menu.refreshMenu = function () {
   Menu.reorderMenu('.menu-hidden[data-type=plants]');
   Menu.reorderMenu('.menu-hidden[data-type=shops]');
   Menu.reorderMenu('.menu-hidden[data-type=camps]');
+  Menu.reorderMenu('.menu-hidden[data-type=gfh]');
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   Menu.reorderMenu('.menu-hidden[data-type=legendary_animals]');
   Menu.reorderMenu('.menu-hidden[data-type=encounters]');

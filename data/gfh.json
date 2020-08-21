@@ -1,0 +1,74 @@
+{
+  "aberdeen_pig_farmers": [
+    { "text": "gfh_aberdeen_pig_farm", "lat": "-64.9537", "lng": "138.9636" }
+  ],
+  "alden": [
+    { "text": "gfh_annesburg_train_station", "lat": "-43.6942", "lng": "156.8086" },
+    { "text": "gfh_rhodes_train_station", "lat": "-83.7542", "lng": "130.3835" },
+    { "text": "gfh_valentine_train_station", "lat": "-53.7924", "lng": "108.5691" },
+    { "text": "gfh_van_horn_post_office", "lat": "-54.6592", "lng": "157.6520" }
+  ],
+  "anthony_foreman": [
+    { "text": "gfh_radleys_pasture", "lat": "-83.7638", "lng": "128.4982" },
+    { "text": "gfh_saint_denis", "lat": "-81.5668", "lng": "154.5895" }
+  ],
+  "black_belle": [
+    { "text": "gfh_slave_pen_shack", "lat": "-95.9865", "lng": "132.8608" }
+  ],
+  "bonnie": [
+    { "text": "gfh_macfarlane_house", "lat": "-100.8708", "lng": "75.3771" }
+  ],
+  "flaco_hernandez": [
+    { "text": "gfh_cairn_lake", "lat": "-29.9227", "lng": "96.6399" }
+  ],
+  "hector": [
+    { "text": "gfh_benedict_train_station", "lat": "-117.5565", "lng": "30.1903" },
+    { "text": "gfh_blackwater_post_office", "lat": "-84.3843", "lng": "97.7217" },
+    { "text": "gfh_riggs_train_station", "lat": "-72.5630", "lng": "94.2645" },
+    { "text": "gfh_strawberry_post_office", "lat": "-69.5045", "lng": "83.8795" }
+  ],
+  "joe": [
+    { "text": "gfh_happy_family_shack", "lat": "-58.8910", "lng": "140.5954" }
+  ],
+  "josiah_trelawny": [
+    { "text": "gfh_rhodes_camp", "lat": "-81.2415", "lng": "131.4804" }
+  ],
+  "langton": [
+    { "text": "gfh_don_julio_lake", "lat": "-114.8412", "lng": "58.5345" },
+    { "text": "gfh_pikes_basin", "lat": "-98.3747", "lng": "70.1792" }
+  ],
+  "mamma_watson": [
+    { "text": "gfh_watsons_cabin", "lat": "-53.3778", "lng": "83.0945" }
+  ],
+  "sadie_adler": [
+    { "text": "gfh_adler_ranch", "lat": "-21.5418", "lng": "102.6943" }
+  ],
+  "sean_macquire": [
+    { "text": "gfh_south_great_plains", "lat": "-91.2722", "lng": "93.5295" },
+    { "text": "gfh_tanners_reach", "lat": "-88.2692", "lng": "74.3675" }
+  ],
+  "shaky": [
+    { "text": "gfh_gaptooth_shore", "lat": "-123.8511", "lng": "24.1919" },
+    { "text": "gfh_rattlesnake_hollow", "lat": "-102.4645", "lng": "46.4247" },
+    { "text": "gfh_thieves_landing_docks", "lat": "-99.9079", "lng": "90.1200" }
+  ],
+  "sheriff_freeman": [
+    { "text": "gfh_tumbleweed_sheriff", "lat": "-109.0835", "lng": "25.4496" }
+  ],
+  "the_boy": [
+    { "text": "gfh_flatneck_station", "lat": "-69.3502", "lng": "105.9565" },
+    { "text": "gfh_valentine_camp", "lat": "-52.2507", "lng": "105.3355" }
+  ],
+  "thomas_skiff_captain": [
+    { "text": "gfh_lagras", "lat": "-72.2755", "lng": "144.1544" }
+  ],
+  "wallace_train_clerk": [
+    { "text": "gfh_emerald_ranch_train_station", "lat": "-56.8647", "lng": "134.8856" },
+    { "text": "gfh_saint_denis_train_station", "lat": "-85.2824", "lng": "153.7147" },
+    { "text": "gfh_wallace_train_station", "lat": "-57.2491", "lng": "91.1040" }
+  ],
+  "war_vet": [
+    { "text": "gfh_ocreaghs_run", "lat": "-40.1521", "lng": "137.6149" },
+    { "text": "gfh_wapiti", "lat": "-34.9401", "lng": "113.7077" }
+  ]
+}

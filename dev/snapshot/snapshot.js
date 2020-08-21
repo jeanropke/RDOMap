@@ -242,6 +242,28 @@ const camps = [
     { "name": "talltrees", "type": "long", "url": "http://localhost/rdo/?q=talltrees" },
 ];
 
+const gfh = [
+    { "name": "aberdeen_pig_farmers", "type": "long", "url": "http://localhost/rdo/?q=aberdeen_pig_farmers" },
+    { "name": "alden", "type": "long", "url": "http://localhost/rdo/?q=alden" },
+    { "name": "anthony_foreman", "type": "long", "url": "http://localhost/rdo/?q=anthony_foreman" },
+    { "name": "black_belle", "type": "long", "url": "http://localhost/rdo/?q=black_belle" },
+    { "name": "bonnie", "type": "long", "url": "http://localhost/rdo/?q=bonnie" },
+    { "name": "flaco_hernandez", "type": "long", "url": "http://localhost/rdo/?q=flaco_hernandez" },
+    { "name": "hector", "type": "long", "url": "http://localhost/rdo/?q=hector" },
+    { "name": "joe", "type": "long", "url": "http://localhost/rdo/?q=joe" },
+    { "name": "josiah_trelawny", "type": "long", "url": "http://localhost/rdo/?q=josiah_trelawny" },
+    { "name": "langton", "type": "long", "url": "http://localhost/rdo/?q=langton" },
+    { "name": "mamma_watson", "type": "long", "url": "http://localhost/rdo/?q=mamma_watson" },
+    { "name": "sadie_adler", "type": "long", "url": "http://localhost/rdo/?q=sadie_adler" },
+    { "name": "sean_macquire", "type": "long", "url": "http://localhost/rdo/?q=sean_macquire" },
+    { "name": "shaky", "type": "long", "url": "http://localhost/rdo/?q=shaky" },
+    { "name": "sheriff_freeman", "type": "long", "url": "http://localhost/rdo/?q=sheriff_freeman" },
+    { "name": "the_boy", "type": "long", "url": "http://localhost/rdo/?q=the_boy" },
+    { "name": "thomas_skiff_captain", "type": "long", "url": "http://localhost/rdo/?q=thomas_skiff_captain" },
+    { "name": "wallace_train_clerk", "type": "long", "url": "http://localhost/rdo/?q=wallace_train_clerk" },
+    { "name": "war_vet", "type": "long", "url": "http://localhost/rdo/?q=war_vet" },
+];
+
 const misc = [
     { "name": "ambush", "type": "long", "url": "http://localhost/rdo/?q=ambush" },
     { "name": "animal_attack", "type": "long", "url": "http://localhost/rdo/?q=animal_attack" },
@@ -962,6 +984,7 @@ sites = sites.concat(treasures);
 sites = sites.concat(plants);
 sites = sites.concat(shops);
 sites = sites.concat(camps);
+sites = sites.concat(gfh);
 sites = sites.concat(misc);
 
 const bar = new ProgressBar('[:bar] :current/:total (:percent)', {

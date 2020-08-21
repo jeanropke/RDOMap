@@ -309,7 +309,7 @@ var MapBase = {
     if (refreshMenu && quickParam != null && quickParam) {
       $('.menu-toggle').remove();
       $('.clock-container').remove();
-      $('.fme-container').remove();
+      $('#fme-container').remove();
       $('.side-menu').removeClass('menu-opened');
       $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
@@ -324,6 +324,9 @@ var MapBase = {
       } else if (camps.indexOf(quickParam) !== -1) {
         enabledCategories = ["camps"];
         enabledCamps = [quickParam];
+      } else if (gfh.indexOf(quickParam) !== -1) {
+        enabledCategories = ["gfh"];
+        enabledGfh = [quickParam];
       } else if (Treasures.treasures.indexOf(quickParam) !== -1) {
         enabledCategories = ["treasure"];
         Treasures.enabledTreasures = [quickParam];
@@ -434,6 +437,7 @@ var MapBase = {
     MapBase.addFastTravelMarker();
     MapBase.addShops();
     MapBase.addCamps();
+    MapBase.addGfh();
 
     Treasures.addToMap();
     Encounters.addToMap();
@@ -708,7 +712,7 @@ var MapBase = {
       $.each(MapBase.campData, function (category, categoryValue) {
         if (!enabledCamps.includes(category)) return;
         $.each(categoryValue, function (key, value) {
-          if(MapBase.campDisabled.includes(value.id)) return;
+          if (MapBase.campDisabled.includes(value.id)) return;
 
           var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
           var marker = L.marker([value.lat, value.lng], {
@@ -726,6 +730,44 @@ var MapBase = {
           });
 
           marker.bindPopup(`<h1>${Language.get(`map.camps.${category}.name`)} - ${Language.get(`map.camps.sizes.${this.size}`)}</h1><p>${Language.get(`map.camps.desc`)}</p>`);
+
+          Layers.itemMarkersLayer.addLayer(marker);
+        });
+      });
+    }
+  },
+
+  loadGfh: function () {
+    $.getJSON('data/gfh.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.gfhData = data;
+      });
+    console.info('%c[Gfh] Loaded!', 'color: #bada55; background: #242424');
+  },
+
+  addGfh: function () {
+    if (enabledCategories.includes('gfh')) {
+      $.each(MapBase.gfhData, function (category, categoryValue) {
+        if (!enabledGfh.includes(category)) return;
+        $.each(categoryValue, function (key, value) {
+          var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+          var marker = L.marker([value.lat, value.lng], {
+            opacity: Settings.markerOpacity,
+            icon: L.divIcon({
+              iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+              iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+              popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+              html: `
+                <img class="icon" src="./assets/images/icons/gfh.png" alt="Icon">
+                <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+                ${shadow}
+              `
+            })
+          });
+          marker.bindPopup(`
+            <h1>${Language.get(`map.gfh.${category}.name`)}</h1>
+            <p>${Language.get(`map.gfh.${category}.desc`)}</p>
+          `);
 
           Layers.itemMarkersLayer.addLayer(marker);
         });

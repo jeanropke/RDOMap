@@ -33,7 +33,7 @@ var categories = [
   'moonshiner_sabotage', 'nazar', 'plants', 'rescue', 'rival_collector', 'runaway_wagon',
   'shops', 'sightseeing', 'trains', 'treasure', 'treasure_hunter', 'tree_map', 'user_pins',
   'wounded_animal', 'camps', 'animal_attack', 'kidnapped', 'discoverables', 'legendary_animals',
-  'beggar', 'stalking_hunter', 'slumped_hunter', 'crashed_wagon', 'suspension_trap'
+  'beggar', 'stalking_hunter', 'slumped_hunter', 'crashed_wagon', 'suspension_trap', 'gfh'
 ];
 
 var categoriesDisabledByDefault = [
@@ -42,7 +42,7 @@ var categoriesDisabledByDefault = [
   'moonshiner_roadblock', 'moonshiner_sabotage', 'rescue', 'rival_collector', 'runaway_wagon',
   'sightseeing', 'treasure_hunter', 'tree_map', 'wounded_animal', 'camps', 'animal_attack',
   'kidnapped', 'discoverables', 'beggar', 'stalking_hunter', 'slumped_hunter', 'crashed_wagon',
-  'suspension_trap'
+  'suspension_trap', 'gfh'
 ];
 
 var plants = [
@@ -72,10 +72,19 @@ var camps = [
 
 var campsDisabledByDefault = camps;
 
+var gfh = [
+  'aberdeen_pig_farmers', 'alden', 'anthony_foreman', 'black_belle', 'bonnie', 'flaco_hernandez',
+  'hector', 'joe', 'josiah_trelawny', 'langton', 'mamma_watson', 'sadie_adler', 'sean_macquire',
+  'shaky', 'sheriff_freeman', 'the_boy', 'thomas_skiff_captain', 'wallace_train_clerk', 'war_vet'
+];
+
+var gfhDisabledByDefault = [];
+
 var enabledCategories = categories;
 var enabledPlants = plants;
 var enabledShops = shops;
 var enabledCamps = camps;
+var enabledGfh = gfh;
 var categoryButtons = $(".clickable[data-type]");
 
 var date;
@@ -129,6 +138,13 @@ function init() {
 
   enabledCamps = enabledCamps.filter(function (item) {
     return campsDisabledByDefault.indexOf(item) === -1;
+  });
+
+  if (typeof $.cookie('disabled-gfh') !== 'undefined')
+    gfhDisabledByDefault = $.cookie('disabled-gfh').split(',');
+
+  enabledGfh = enabledGfh.filter(function (item) {
+    return gfhDisabledByDefault.indexOf(item) === -1;
   });
 
   if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
@@ -246,8 +262,8 @@ function setMapBackground(mapIndex) {
 
     case 3:
       $('#map').css('background-color', '#000');
-        MapBase.isDarkMode = true;
-        break;
+      MapBase.isDarkMode = true;
+      break;
   }
   MapBase.setOverlays();
   $.cookie('map-layer', mapIndex, { expires: 999 });
@@ -480,7 +496,7 @@ $('.clickable').on('click', function (e) {
   else if (menu.data('type') == 'user_pins')
     Pins.addToMap();
   else if (menu.data('type') == 'legendary_animals')
-    Legendary.addToMap();    
+    Legendary.addToMap();
   else
     MapBase.addMarkers();
 });
@@ -524,7 +540,7 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var category = menu.parent().data('type');
 
   if (typeof collectible === 'undefined') return;
-  
+
   $('[data-type=' + collectible + ']').toggleClass('disabled');
   var isDisabled = $('[data-type=' + collectible + ']').hasClass('disabled');
 
@@ -598,6 +614,24 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
     }
 
     $.cookie('disabled-camps', campsDisabledByDefault.join(','), { expires: 999 });
+
+    MapBase.addMarkers();
+  } else if (category == 'gfh') {
+    if (isDisabled) {
+      enabledGfh = $.grep(enabledGfh, function (value) {
+        return value != collectible;
+      });
+
+      gfhDisabledByDefault.push(collectible);
+    } else {
+      enabledGfh.push(collectible);
+
+      gfhDisabledByDefault = $.grep(gfhDisabledByDefault, function (value) {
+        return value != collectible;
+      });
+    }
+
+    $.cookie('disabled-gfh', gfhDisabledByDefault.join(','), { expires: 999 });
 
     MapBase.addMarkers();
   } else {
@@ -914,6 +948,7 @@ $(function () {
   MapBase.loadFastTravels();
   MapBase.loadShops();
   MapBase.loadCamps();
+  MapBase.loadGfh();
   MadamNazar.loadMadamNazar();
   Treasures.load();
   Legendary.load();
