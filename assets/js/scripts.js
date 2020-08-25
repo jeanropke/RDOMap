@@ -93,6 +93,7 @@ var debugMarkersArray = [];
 var tempCollectedMarkers = "";
 
 function init() {
+
   //sometimes, cookies are saved in the wrong order
   var cookiesList = [];
   $.each($.cookie(), function (key, value) {
@@ -236,6 +237,20 @@ function init() {
 
   Pins.addToMap();
   changeCursor();
+
+  Menu.init();
+  
+  const locations = Location.init();
+  const encounters = Encounter.init();  
+  const treasures = Treasure.init();
+  const plants = Plants.init();
+  const camps = Camp.init();
+  const shops = Shop.init();
+  const gfh = GunForHire.init();
+  const nazar = MadamNazar.init();
+
+  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar])
+    .then(Loader.resolveMapModelLoaded);
 }
 
 function isLocalHost() {
@@ -469,7 +484,7 @@ $("#tooltip").on("change", function () {
 //Disable & enable collection category
 $('.clickable').on('click', function (e) {
   e.stopPropagation();
-
+return;
   var menu = $(this);
   if (menu.data('type') === undefined) return;
 
@@ -534,7 +549,7 @@ $('.submenu-only').on('click', function (e) {
 });
 
 //Remove item from map when using the menu
-$(document).on('click', '.collectible-wrapper[data-type]', function () {
+$(document).on('cslick', '.collectible-wrapper[data-type]', function () {
   var menu = $(this);
   var collectible = menu.data('type');
   var category = menu.parent().data('type');
@@ -545,7 +560,7 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var isDisabled = $('[data-type=' + collectible + ']').hasClass('disabled');
 
   if (category == 'encounters') {
-    if (isDisabled) {
+    /*if (isDisabled) {
       enabledCategories = $.grep(enabledCategories, function (value) {
         return value != collectible;
       });
@@ -559,9 +574,9 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
       });
     }
 
-    $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
+    $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });*/
 
-    Encounters.addToMap();
+    //Encounters.addToMap();
   } else if (category == 'plants') {
     if (isDisabled) {
       enabledPlants = $.grep(enabledPlants, function (value) {
@@ -945,14 +960,7 @@ $('#open-delete-all-settings-modal').on('click', function () {
 $(function () {
   init();
   Heatmap.load();
-  MapBase.loadFastTravels();
-  MapBase.loadShops();
-  MapBase.loadCamps();
-  MapBase.loadGfh();
-  MadamNazar.loadMadamNazar();
-  Treasures.load();
   Legendary.load();
-  Encounters.load();
   MapBase.loadMarkers();
   MapBase.loadDiscoverables();
   FME.init();

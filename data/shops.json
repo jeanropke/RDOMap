@@ -1,93 +1,81 @@
-{
-    "barber": [
-        { "text": "barber_01", "lat": "-84.8196", "lng": "98.6503" },
-        { "text": "barber_02", "lat": "-50.95", "lng": "106.5362" },
-        { "text": "barber_03", "lat": "-81.9285", "lng": "152.5339" }
-    ],
-    "butcher": [
-        { "text": "butcher_01", "lat": "-109.3442", "lng": "25.79" },
-        { "text": "butcher_02", "lat": "-83.5314", "lng": "99.5969" },
-        { "text": "butcher_03", "lat": "-69.6925", "lng": "84.0772" },
-        { "text": "butcher_04", "lat": "-51.6894", "lng": "106.0308" },
-        { "text": "butcher_05", "lat": "-83.441", "lng": "131.426" },
-        { "text": "butcher_06", "lat": "-84.2616", "lng": "155.0486" }
-    ],
-    "doctor": [
-        { "text": "doctor_01", "lat": "-51.1211", "lng": "106.821" },
-        { "text": "doctor_02", "lat": "-82.7154", "lng": "153.5236" }
-    ],
-    "fence": [
-        { "text": "fence_01", "lat": "-59.3542", "lng": "133.2863" },
-        { "text": "fence_02", "lat": "-81.3251", "lng": "131.7676" },
-        { "text": "fence_03", "lat": "-82.2575", "lng": "155.6696" },
-        { "text": "fence_04", "lat": "-54.8665", "lng": "158.2502" },
-        { "text": "fence_05", "lat": "-99.5598", "lng": "89.531" }
-    ],
-    "general_store": [
-        { "text": "general_store_01", "lat": "-109.2139", "lng": "26.1287" },
-        { "text": "general_store_02", "lat": "-104.315", "lng": "54.0631" },
-        { "text": "general_store_03", "lat": "-84.1167", "lng": "99.1147" },
-        { "text": "general_store_04", "lat": "-69.626", "lng": "83.5092" },
-        { "text": "general_store_05", "lat": "-57.4749", "lng": "91.0682" },
-        { "text": "general_store_06", "lat": "-51.1263", "lng": "106.2615" },
-        { "text": "general_store_07", "lat": "-83.6863", "lng": "131.9278" },
-        { "text": "general_store_08", "lat": "-84.1642", "lng": "155.0198" }
-    ],
-    "gunsmith": [
-        { "text": "gunsmith_01", "lat": "-109.6144", "lng": "25.8059" },
-        { "text": "gunsmith_02", "lat": "-51.5104", "lng": "106.9162" },
-        { "text": "gunsmith_03", "lat": "-84.1139", "lng": "131.8344" },
-        { "text": "gunsmith_04", "lat": "-83.5742", "lng": "153.4734" },
-        { "text": "gunsmith_05", "lat": "-43.1113", "lng": "157.0283" }
-    ],
-    "honor": [
-        { "text": "honor_01", "lat": "-106.7032", "lng": "54.7921" },
-        { "text": "honor_02", "lat": "-42.9919", "lng": "152.0362" },
-        { "text": "honor_03", "lat": "-73.0132", "lng": "91.8992" }
-    ],
-    "photo_studio": [
-        { "text": "photo_studio_01", "lat": "-84.9214", "lng": "98.6629" },
-        { "text": "photo_studio_02", "lat": "-80.9786", "lng": "153.7244" }
-    ],
-    "post_office": [
-        { "text": "post_office_01", "lat": "-117.4277", "lng": "30.1398" },
-        { "text": "post_office_02", "lat": "-103.9531", "lng": "53.3281" },
-        { "text": "post_office_03", "lat": "-84.1964", "lng": "97.7095" },
-        { "text": "post_office_04", "lat": "-69.5769", "lng": "83.9161" },
-        { "text": "post_office_05", "lat": "-72.5625", "lng": "94.3057" },
-        { "text": "post_office_06", "lat": "-57.3957", "lng": "91.1011" },
-        { "text": "post_office_07", "lat": "-53.8525", "lng": "108.5269" },
-        { "text": "post_office_08", "lat": "-56.7534", "lng": "134.91" },
-        { "text": "post_office_09", "lat": "-83.6996", "lng": "130.3285" },
-        { "text": "post_office_10", "lat": "-85.3013", "lng": "153.9515" },
-        { "text": "post_office_11", "lat": "-54.7544", "lng": "157.6362" },
-        { "text": "post_office_12", "lat": "-43.6947", "lng": "156.8097" }
-    ],
-    "saloon": [
-        { "text": "saloon_01", "lat": "-108.8125", "lng": "25.6328" },
-        { "text": "saloon_02", "lat": "-103.8516", "lng": "53.8594" },
-        { "text": "saloon_03", "lat": "-84.125", "lng": "98.5391" },
-        { "text": "saloon_04", "lat": "-51.0781", "lng": "106.4688" },
-        { "text": "saloon_05", "lat": "-51.6641", "lng": "107.5625" },
-        { "text": "saloon_06", "lat": "-84.9531", "lng": "132.1797" },
-        { "text": "saloon_07", "lat": "-82.6016", "lng": "152.2031" },
-        { "text": "saloon_08", "lat": "-81.7422", "lng": "154.6328" },
-        { "text": "saloon_09", "lat": "-55.4063", "lng": "157.0547" }
-    ],
-    "stable": [
-        { "text": "stable_01", "lat": "-110.8495", "lng": "25.6087" },
-        { "text": "stable_02", "lat": "-84.8035", "lng": "97.8134" },
-        { "text": "stable_03", "lat": "-72.3194", "lng": "83.0455" },
-        { "text": "stable_04", "lat": "-51.3905", "lng": "105.5562" },
-        { "text": "stable_05", "lat": "-66.5982", "lng": "130.0545" },
-        { "text": "stable_06", "lat": "-86.0986", "lng": "150.2175" },
-        { "text": "stable_07", "lat": "-51.2346", "lng": "157.3421" }
-    ],
-    "tackle": [
-        { "text": "tackle_01", "lat": "-73.1991", "lng": "144.8365" }
-    ],
-    "tailor": [
-        { "text": "tailor_01", "lat": "-83.6759", "lng": "99.4626" },
-        { "text": "tailor_02", "lat": "-81.7114", "lng": "150.945" }
-    ]
-}
+[
+  {
+    "color": "black",
+    "key": "barber",
+    "locations": [{"text": "shop_blk_barber", "x": -84.7851, "y": 98.6281}, {"text": "shop_sdn_barber", "x": -81.9138, "y": 152.5173}, {"text": "shop_val_barber", "x": -50.9947, "y": 106.5070}]
+  },
+  {
+    "color": "black",
+    "key": "butcher",
+    "locations": [{"text": "shop_blk_butcher", "x": -83.5389, "y": 99.6020}, {"text": "shop_rho_butcher", "x": -83.4288, "y": 131.4299}, {"text": "shop_sdn_butcher", "x": -84.2624, "y": 155.0488}, {"text": "shop_str_butcher", "x": -69.7065, "y": 84.1000}, {"text": "shop_tbl_butcher", "x": -109.3269, "y": 25.7909}, {"text": "shop_val_butcher", "x": -51.7067, "y": 106.0184}]
+  },
+  {    "color": "black",
+    "key": "doctor",
+    "locations": [{"text": "shop_sdn_doctor", "x": -82.7154, "y": 153.5226}, {"text": "shop_val_doctor", "x": -51.1196, "y": 106.8218}]
+  },
+  {
+    "color": "black",
+    "key": "fence",
+    "locations": [{"text": "shop_emr_fence", "x": -59.3531, "y": 133.2871}, {"text": "shop_rho_fence", "x": -81.3251, "y": 131.7676}, {"text": "shop_sdn_fence", "x": -82.2569, "y": 155.6695}, {"text": "shop_van_fence", "x": -54.8719, "y": 158.2492}, {"text": "shop_thl_fence", "x": -99.5624, "y": 89.5357}]
+  },
+  {
+    "color": "black",
+    "key": "general_store",
+    "locations": [{"text": "shop_amd_general_store", "x": -104.3150, "y": 54.0631}, {"text": "shop_blk_general_store", "x": -84.1215, "y": 99.1149}, {"text": "shop_rho_general_store", "x": -83.6887, "y": 131.9255}, {"text": "shop_sdn_general_store", "x": -84.0779, "y": 155.1300}, {"text": "shop_str_general_store", "x": -69.6263, "y": 83.5089}, {"text": "shop_tbl_general_store", "x": -109.1998, "y": 26.1486}, {"text": "shop_val_general_store", "x": -51.1262, "y": 106.2615}, {"text": "shop_wal_general_store", "x": -57.4932, "y": 91.0859}]
+  },
+  {
+    "color": "black",
+    "key": "gunsmith",
+    "locations": [{"text": "shop_asb_gunsmith", "x": -43.1219, "y": 157.0465}, {"text": "shop_rho_gunsmith", "x": -84.1323, "y": 131.8113}, {"text": "shop_sdn_gunsmith", "x": -83.5753, "y": 153.4529}, {"text": "shop_tbl_gunsmith", "x": -109.5996, "y": 25.8280}, {"text": "shop_val_gunsmith", "x": -51.5090, "y": 106.9164}]
+  },
+  {
+    "color": "black",
+    "key": "honor",
+    "locations": [{"text": "shop_amd_honor_mp", "x": -106.7246, "y": 54.8181}, {"text": "shop_boj_honor_mp", "x": -73.0241, "y": 91.9031}, {"text": "shop_roj_honor_mp", "x": -42.9806, "y": 152.0385}]
+  },
+  {
+    "color": "black",
+    "key": "photo_studio",
+    "locations": [{"text": "shop_blk_photo_studio", "x": -84.8898, "y": 98.6651}, {"text": "shop_sdn_photo_studio", "x": -80.9913, "y": 153.7010}]
+  },
+  {
+    "color": "black",
+    "key": "post_office",
+    "locations": [{"text": "shop_amd_post_office", "x": -103.9225, "y": 53.3600}, {"text": "shop_asb_post_office", "x": -43.6248, "y": 156.9046}, {"text": "shop_ben_post_office", "x": -117.4410, "y": 30.1614}, {"text": "shop_blk_post_office", "x": -84.1992, "y": 97.7092}, {"text": "shop_emr_post_office", "x": -56.7534, "y": 134.9101}, {"text": "shop_rgg_post_office", "x": -72.5347, "y": 94.3286}, {"text": "shop_rho_post_office", "x": -83.6995, "y": 130.3280}, {"text": "shop_sdn_post_office", "x": -85.3004, "y": 153.9512}, {"text": "shop_str_post_office", "x": -69.5770, "y": 83.9140}, {"text": "shop_val_post_office", "x": -53.8518, "y": 108.5275}, {"text": "shop_van_post_office", "x": -54.7517, "y": 157.6365}, {"text": "shop_wal_post_office", "x": -57.3786, "y": 91.1170}]
+  },
+  {
+    "color": "black",
+    "key": "saloon",
+    "locations": [{"text": "shop_amd_bartender", "x": -103.8825, "y": 53.8813}, {"text": "shop_blk_bartender", "x": -84.0895, "y": 98.5976}, {"text": "shop_rho_bartender", "x": -84.9446, "y": 132.0747}, {"text": "shop_sdn_bartender", "x": -82.5800, "y": 152.2615}, {"text": "shop_sdn_bartender_slum", "x": -81.7083, "y": 154.6410}, {"text": "shop_tbl_bartender", "x": -108.7077, "y": 25.6365}, {"text": "shop_val_bartender", "x": -51.0648, "y": 106.4184}, {"text": "shop_val_bartender_keane", "x": -51.6639, "y": 107.5886}, {"text": "shop_van_bartender", "x": -55.3890, "y": 157.0379}]
+  },
+  {
+    "color": "black",
+    "key": "stable",
+    "locations": [{"text": "shop_blk_horse_shop", "x": -84.8035, "y": 97.8134}, {"text": "shop_sdn_horse_shop", "x": -86.0986, "y": 150.2184}, {"text": "shop_str_horse_shop", "x": -72.3542, "y": 83.0894}, {"text": "shop_tbl_horse_shop", "x": -110.8427, "y": 25.5937}, {"text": "shop_val_horse_shop", "x": -51.3717, "y": 105.5549}, {"text": "shop_van_horse_shop", "x": -51.2464, "y": 157.2936}, {"text": "shop_scm_horse_shop", "x": -66.5982, "y": 130.0545}]
+  },
+  {
+    "color": "black",
+    "key": "tackle",
+    "locations": [{"text": "shop_lag_bait_store", "x": -73.2059, "y": 144.8683}]
+  },
+  {
+    "color": "black",
+    "key": "tailor",
+    "locations": [{"text": "shop_blk_tailor", "x": -83.6750, "y": 99.4618}, {"text": "shop_sdn_tailor", "x": -81.7125, "y": 150.9470}]
+  },
+  {
+    "color": "black",
+    "key": "musician",
+    "locations": [{"text": "shop_blk_pianist", "x": -83.9790, "y": 98.6417}, {"text": "shop_rho_pianist", "x": -84.8798, "y": 132.1947}, {"text": "shop_sdn_pianist", "x": -82.7253, "y": 152.1360}, {"text": "shop_sdn_pianist_slum", "x": -81.6704, "y": 154.7559}, {"text": "shop_tbl_pianist", "x": -108.8332, "y": 25.6817}, {"text": "shop_val_pianist", "x": -51.1994, "y": 106.4426}, {"text": "shop_van_pianist", "x": -55.3932, "y": 156.9832}, {"text": "shop_blk_musician_guitarist_first", "x": -83.7296, "y": 99.2015}, {"text": "shop_blk_musician_guitarist_second", "x": -85.4360, "y": 98.6930}, {"text": "shop_blk_musician_guitarist_third", "x": -84.4809, "y": 98.5062}, {"text": "shop_but_musician_banjo", "x": -51.5945, "y": 150.6625}, {"text": "shop_rho_musician_banjo", "x": -84.1508, "y": 132.2633}, {"text": "shop_sdn_musician_guitarist", "x": -80.6181, "y": 155.1523}, {"text": "shop_sdn_musician_banjo", "x": -78.4533, "y": 154.3894}, {"text": "shop_str_musician_banjo", "x": -69.3711, "y": 83.6438}, {"text": "shop_str_musician_guitarist", "x": -70.2305, "y": 83.2621}]
+  },
+  {
+    "color": "black",
+    "key": "trapper",
+    "locations": [{"text": "shop_sdn_trapper", "x": -82.5847, "y": 155.2034}, {"text": "shop_bgv_trapper_1", "x": -61.4731, "y": 67.2061}, {"text": "shop_bgv_trapper_2", "x": -72.0494, "y": 95.6559}, {"text": "shop_roa_trapper", "x": -48.0162, "y": 143.4887}, {"text": "shop_tal_trapper", "x": -93.2601, "y": 76.2895}, {"text": "shop_cho_trapper", "x": -109.2366, "y": 37.9045}]
+  },
+  {
+    "color": "black",
+    "key": "harriet",
+    "locations": [{"text": "shop_hen_harriet", "x": -96.6940, "y": 77.3690}, {"text": "shop_bgv_harriet", "x": -56.0618, "y": 86.8562}, {"text": "shop_bay_harriet", "x": -71.7883, "y": 141.8129}]
+  }
+]

@@ -233,10 +233,10 @@ var MapBase = {
   },
 
   loadMarkers: function () {
-    $.getJSON('data/items.json?nocache=' + nocache)
+    /*$.getJSON('data/items.json?nocache=' + nocache)
       .done(function (data) {
         MapBase.setMarkers(data);
-      });
+      });*/
   },
 
   setMarkers: function (data) {
@@ -439,8 +439,8 @@ var MapBase = {
     MapBase.addCamps();
     MapBase.addGfh();
 
-    Treasures.addToMap();
-    Encounters.addToMap();
+    //Treasures.addToMap();
+    //Encounters.addToMap();
     MadamNazar.addMadamNazar();
     Legendary.addToMap();
 

@@ -1,7 +1,50 @@
-/**
- * Created by Jean on 2019-10-09.
- */
+class Menu {
+  static init() {    
+    Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
+  }
 
+  static reorderMenu(menu) {
+    $(menu).children().sort(function (a, b) {
+      return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
+    }).appendTo(menu);
+  }
+
+  static refreshMenu() {
+    console.log('refreshMenu');
+    Menu.reorderMenu('.menu-hidden[data-type=encounters]');
+  }
+
+  static activateHandlers() {
+    //camps buttons
+    $('.camps-small-btn').on('click', function () {
+      $(this).toggleClass('disabled');
+      Camp.isSmall = !Camp.isSmall;
+      Camp.locations.forEach(function(camp) { if(camp.layer['_map'] != null) camp.reinitMarker() });
+    });
+    $('.camps-large-btn').on('click', function () {
+      $(this).toggleClass('disabled');
+      Camp.isLarge = !Camp.isLarge;
+      Camp.locations.forEach(function(camp) { if(camp.layer['_map'] != null) camp.reinitMarker() });
+    });
+
+    //shops buttons
+    $('.shops-hide-btn').on('click', function () {
+      Shop.locations.forEach(shop => { if(shop.onMap) shop.onMap = !shop.onMap});
+    });
+    $('.shops-show-btn').on('click', function () {
+      Shop.locations.forEach(shop => { if(!shop.onMap) shop.onMap = !shop.onMap});
+    });
+
+    //gfh buttons
+    $('.gfh-hide-btn').on('click', function () {
+      GunForHire.locations.forEach(_gfh => { if(_gfh.onMap) _gfh.onMap = !_gfh.onMap});
+    });
+    $('.gfh-show-btn').on('click', function () {
+      GunForHire.locations.forEach(_gfh => { if(!_gfh.onMap) _gfh.onMap = !_gfh.onMap});
+    });
+  }
+}
+/*
 var Menu = {
   reorderMenu: function (menu) {
     $(menu).children().sort(function (a, b) {
@@ -264,7 +307,7 @@ Menu.refreshMenu = function () {
   });
 
   Menu.refreshEncounters();
-  Menu.refreshTreasures();
+  //Menu.refreshTreasures();
   Menu.refreshShops();
   Menu.refreshCamps();
   Menu.refreshGfh();
@@ -333,4 +376,4 @@ $('#clear_highlights').on('click', function () {
   $.each(tempArray, function () {
     MapBase.highlightImportantItem(tempArray[0]);
   });
-});
+});*/

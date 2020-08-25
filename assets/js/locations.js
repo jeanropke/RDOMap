@@ -1,0 +1,68 @@
+class Location {
+    static init() {
+      this.locations = [];
+  
+      return Loader.promises['items'].consumeJson(data => {
+        data.forEach(item => this.locations.push(new Location(item)));
+        console.info('%c[Locations] Loaded!', 'color: #bada55; background: #242424');
+        //Menu.reorderMenu('.menu-hidden[data-type=encounters]');
+      });
+    }
+  
+    constructor(preliminary) {
+      Object.assign(this, preliminary);
+  
+      this.layer = L.layerGroup();
+  
+      this.markers = [];
+      this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
+  
+      this.element = $(`.menu-option[data-type=${this.key}]`)
+        .toggleClass('disabled', !this.onMap)
+        .on('click', () => this.onMap = !this.onMap)
+        .translate();
+        
+      this.reinitMarker();
+  
+      if(this.onMap)
+        this.layer.addTo(MapBase.map);
+    }
+  
+    reinitMarker() {
+      this.markers.forEach(
+        marker => {
+          this.layer.addLayer(L.marker([marker.lat, marker.lng], {
+            opacity: Settings.opacity  / 3,
+            icon: new L.DivIcon.DataMarkup({
+              iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+              iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+              popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
+              html: `<div>
+                <img class="icon" src="assets/images/icons/${this.key}.png" alt="Icon">
+                <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
+                <img class="shadow" width="${35 * Settings.markerSize}"
+                  height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
+              </div>`,
+              marker: this.key
+            })
+          })
+          .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
+        }
+      );
+    }
+  
+    set onMap(state) {
+      if (state) {
+        this.layer.addTo(MapBase.map);
+        this.element.removeClass('disabled');
+        localStorage.setItem(`rdo:${this.key}`, 'true');
+      } else {
+        this.layer.remove();
+        this.element.addClass('disabled');
+        localStorage.removeItem(`rdo:${this.key}`);
+      }
+    }
+    get onMap() {
+      return !!localStorage.getItem(`rdo:${this.key}`);
+    }
+  }

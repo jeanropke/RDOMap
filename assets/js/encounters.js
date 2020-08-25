@@ -1,140 +1,75 @@
-var Encounters = {
-  data: null,
-  markers: [],
-  updateLoopAvailable: true,
-  requestLoopCancel: false,
+class Encounter {
+  static init() {
+    this.locations = [];
+    this.context = $('.menu-hidden[data-type=encounters]');
 
-  load: function () {
-    $.getJSON('data/encounters.json?nocache=' + nocache)
-      .done(function (data) {
-        Encounters.data = data;
-        Encounters.set(data);
-      });
-    console.info('%c[Encounters] Loaded!', 'color: #bada55; background: #242424');
-  },
-
-  set: function (data) {
-    $.each(data, function (_category, _markers) {
-      $.each(_markers, function (key, marker) {
-        Encounters.markers.push(new Marker(marker.text, marker.x, marker.y, _category, marker.type));
-      });
+    return Loader.promises['encounters'].consumeJson(data => {
+      data.forEach(item => this.locations.push(new Encounter(item)));
+      console.info('%c[Encounters] Loaded!', 'color: #bada55; background: #242424');
+      Menu.reorderMenu('.menu-hidden[data-type=encounters]');
     });
-  },
+  }
 
-  updateMarkerContent: function (marker) {
-    var popupContent = marker.description;
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
 
-    // TODO: Fix later. :-)
-    // var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDOMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
-    // var importantItem = ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>`;
-    // var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(importantItem);
-    var linksElement = $('<p>');
-    var debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
-    var title = Language.get(`map.${marker.category}.name`);
+    this.layer = L.layerGroup();
 
-    if (marker.category == 'rescue') {
-      title = Language.get(`map.${marker.category}.${marker.subdata}.name`);
-    }
+    this.markers = [];
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
 
-    return `<h1>${title}</h1>
-        <span class="marker-content-wrapper">
-        <p>${Language.get(`map.${marker.category}.desc`)}</p>
-        </span>
-        ${linksElement.prop('outerHTML')}
-        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        `;
-  },
+    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
+      .toggleClass('disabled', !this.onMap)
+      .on('click', () => this.onMap = !this.onMap)
+      .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
+      .append($('<p class="collectible">').attr('data-text', 'menu.'+ this.key))
+      .translate();
 
-  addToMap: function () {
-    if (!Encounters.updateLoopAvailable) {
-      Encounters.requestLoopCancel = true;
-      setTimeout(function () {
-        Encounters.addToMap();
-      }, 0);
-      return;
-    }
+    this.element.appendTo(Encounter.context);
 
-    Layers.encountersLayer.clearLayers();
+    this.reinitMarker();
 
-    Encounters.updateLoopAvailable = false;
-    MapBase.yieldingLoop(
-      Encounters.markers.length,
-      25,
-      function (i) {
-        if (Encounters.requestLoopCancel) return;
+    if(this.onMap)
+      this.layer.addTo(MapBase.map);
+  }
 
-        var marker = Encounters.markers[i];
+  reinitMarker() {
 
-        if (!enabledCategories.includes(marker.category)) return;
-        var overlay = '';
-
-        if (marker.category == 'rescue' && marker.subdata == 'mission_giver')
-          overlay = `<img class="overlay" src="assets/images/icons/overlay_giver.png" alt="Mission giver">`;
-
-        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-        var tempMarker = L.marker([marker.lat, marker.lng], {
-          opacity: Settings.markerOpacity,
-          icon: L.divIcon({
+    this.markers.forEach(
+      marker => {
+        this.layer.addLayer(L.marker([marker.lat, marker.lng], {
+          opacity: Settings.opacity  / 3,
+          icon: new L.DivIcon.DataMarkup({
             iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
             iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-            popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
-            html: `
-              ${overlay}
-              <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_${Encounters.getIconColor(marker.category)}.png" alt="Background">
-              ${shadow}
-            `
+            popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
+            html: `<div>
+              ${marker.subdata == 'mission_giver' ? '<img class="overlay" src="assets/images/icons/overlay_giver.png" alt="Mission giver">' : ''}
+              <img class="icon" src="assets/images/icons/${this.key}.png" alt="Icon">
+              <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
+              <img class="shadow" width="${35 * Settings.markerSize}"
+                height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
+            </div>`,
+            marker: this.key
           })
-        });
-
-        tempMarker.bindPopup(Encounters.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
-        Layers.encountersLayer.addLayer(tempMarker);
-      },
-      function () {
-        Encounters.updateLoopAvailable = true;
-        Encounters.requestLoopCancel = false;
-        Layers.encountersLayer.addTo(MapBase.map);
+        })
+        .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
       }
     );
-  },
-  getIconColor: function (value) {
-    switch (value) {
-      case "escort":
-        return "blue";
-      case "defend_campsite":
-        return "orange";
-      case "ambush":
-        return "red";
-      case "hogtied_lawman":
-      case "rescue":
-      case "runaway_wagon":
-        return "blue";
-      case "animal_attack":
-      case "duel":
-      case "fame_seeker":
-      case "kidnapped":
-      case "beggar":
-      case "crashed_wagon":
-        return "lightgray";
-      case "dog_encounter":
-      case "egg_encounter":
-      case "grave_robber":
-      case "rival_collector":
-      case "treasure_hunter":
-      case "tree_map":
-      case "wounded_animal":
-        return "purple";
-      case "moonshiner_camp":
-      case "moonshiner_destroy":
-      case "moonshiner_roadblock":
-      case "moonshiner_sabotage":
-        return "darkpurple";
-      case "stalking_hunter":
-      case "slumped_hunter":
-      case "suspension_trap":
-        return "darkgreen";
-      default:
-        return "lightred";
+  }
+
+  set onMap(state) {
+    if (state) {
+      this.layer.addTo(MapBase.map);
+      this.element.removeClass('disabled');
+      localStorage.setItem(`rdo:${this.key}`, 'true');
+    } else {
+      this.layer.remove();
+      this.element.addClass('disabled');
+      localStorage.removeItem(`rdo:${this.key}`);
     }
   }
-};
+  get onMap() {
+    return !!localStorage.getItem(`rdo:${this.key}`);
+  }
+}

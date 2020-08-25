@@ -1,4 +1,4 @@
-var Layers = {
+const Layers = {
   itemMarkersLayer: new L.LayerGroup(),
   overlaysLayer: new L.LayerGroup(),
   animalsLayer: L.canvasIconLayer({ zoomAnimation: true }),

@@ -140,7 +140,7 @@ var Legendary = {
 
     Layers.legendaryLayers.addTo(MapBase.map);
 
-    Menu.refreshLegendaries();
+    //Menu.refreshLegendaries();
   },
   save: function () {
     $.cookie('legendary-enabled', Legendary.enabledLegendaries.join(';'), {

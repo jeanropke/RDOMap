@@ -571,7 +571,8 @@ select,
 }
 
 .side-menu .menu-hidden .collection-sell,
-.collection-reset {
+.collection-reset, .camps-small-btn, .camps-large-btn,
+.shops-hide-btn, .shops-show-btn, .gfh-hide-btn, .gfh-show-btn {
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none; /* Safari */

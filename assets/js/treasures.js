@@ -1,119 +1,106 @@
-var Treasures = {
-  // Needed to check against Q param.
-  treasures: [
-    "bards_crossing_treasure", "benedict_treasure", "blackbone_forest_treasure", "blue_water_marsh_treasure", "brandywine_drop_treasure",
-    "burned_town_treasure", "calumet_ravine_treasure", "cattail_pond_treasure", "citadel_rock_treasure", "civil_war_treasure",
-    "cumberland_forest_west_treasure", "dakota_river_treasure", "diablo_ridge_treasure", "east_watson_treasure", "gaptooth_treasure",
-    "hanging_rock_treasure", "hawks_eye_treasure", "hennigans_central_treasure", "hennigans_north_treasure", "kamassa_river_treasure",
-    "lake_isabella_treasure", "little_creek_treasure", "north_clingman_treasure", "north_ridgewood_treasure", "north_tumbleweed_treasure",
-    "ocreaghs_run_treasure", "san_luis_treasure", "southren_roanoke_treasure", "west_hill_haven_treasure"
-  ],
-
-  enabledTreasures: $.cookie('treasures-enabled') ? $.cookie('treasures-enabled').split(';') : [],
-  data: [],
-  markers: [],
-  load: function () {
-    $.getJSON('data/treasures.json?nocache=' + nocache)
-      .done(function (data) {
-        Treasures.data = data;
-        Treasures.set();
-      });
-    console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
-  },
-  set: function (inPreview = false) {
-    Treasures.markers = [];
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var treasureIcon = L.divIcon({
-      iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-      iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-      popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+class Treasure {
+  // requires MapBase.map, Menu.reorderMenu, Settings.some and DOM ready
+  // not idempotent
+  static init() {
+    this.treasures = [];
+    this.layer = L.layerGroup();
+    this.layer.addTo(MapBase.map);
+    const pane = MapBase.map.createPane('treasureX');
+    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
+    this.context = $('.menu-hidden[data-type=treasure]');
+    this.crossIcon = L.icon({
+      iconUrl: './assets/images/icons/cross.png',
+      iconSize: [16, 16],
+      iconAnchor: [8, 8],
+    });
+    this.onSettingsChanged();
+    $('.menu-hidden[data-type="treasure"] > *:first-child a').click(e => {
+      e.preventDefault();
+      const showAll = $(e.target).attr('data-text') === 'menu.show_all';
+      Treasure.treasures.forEach(treasure => treasure.onMap = showAll);
+    });
+    return Loader.promises['treasures'].consumeJson(data => {
+      data.forEach(item => this.treasures.push(new Treasure(item)));
+      this.onLanguageChanged();
+      console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
+    });
+  }
+  static onLanguageChanged() {
+    Menu.reorderMenu(this.context);
+  }
+  static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
+    this.mainIcon = L.divIcon({
+      iconSize: [35 * markerSize, 45 * markerSize],
+      iconAnchor: [17 * markerSize, 42 * markerSize],
+      popupAnchor: [1 * markerSize, -29 * markerSize],
       html: `
         <img class="icon" src="./assets/images/icons/treasure.png" alt="Icon">
         <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
-        ${shadow}
+        ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
+            src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
       `
     });
-
-    var crossIcon = L.icon({
-      iconUrl: './assets/images/icons/cross.png',
-      iconSize: [16, 16],
-      iconAnchor: [8, 8]
-    });
-
-    $.each(Treasures.data, function (key, value) {
-      var circle = L.circle([value.x, value.y], {
-        color: "#fdc607",
-        fillColor: "#fdc607",
-        fillOpacity: 0.5,
-        radius: value.radius
-      });
-
-      var marker = L.marker([value.x, value.y], {
-        icon: treasureIcon
-      });
-
-      var treasuresCross = [];
-      $.each(value.treasures, function (crossKey, crossValue) {
-        treasuresCross.push(L.marker([crossValue.x, crossValue.y], {
-          icon: crossIcon
-        }));
-      });
-
-
-      marker.bindPopup(`<h1>${Language.get(value.text)}</h1><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}', 'treasure')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, {
-        minWidth: 300,
-        maxWidth: 400
-      });
-
-      Treasures.markers.push({
-        treasure: value.text,
-        marker: marker,
-        circle: circle,
-        treasuresCross: treasuresCross
-      });
-    });
-
-    Treasures.addToMap();
-  },
-
-  addToMap: function (inPreview = false) {
-
-    Layers.miscLayer.clearLayers();
-
-    if (!enabledCategories.includes('treasure'))
-      return;
-
-    var previewLoc = null;
-    $.each(Treasures.markers, function (key, value) {
-      if (Treasures.enabledTreasures.includes(value.treasure)) {
-        previewLoc = value.marker;
-
-        Layers.miscLayer.addLayer(value.marker);
-        Layers.miscLayer.addLayer(value.circle);
-        $.each(value.treasuresCross, function (crossKey, crossValue) {
-          Layers.miscLayer.addLayer(crossValue);
-        });
-      }
-    });
-
-    if (inPreview)
-      MapBase.map.setView(previewLoc._latlng, 6);
-
-    Layers.miscLayer.addTo(MapBase.map);
-    Menu.refreshTreasures();
-  },
-  save: function () {
-    $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), {
-      expires: 999
-    });
-  },
-  showHideAll: function (isToHide) {
-    if (isToHide) {
-      Treasures.enabledTreasures = [];
-    } else {
-      Treasures.enabledTreasures = Treasures.data.map(_treasure => _treasure.text);
-    }
-    Treasures.addToMap();
-    Treasures.save();
+    this.treasures.forEach(treasure => treasure.reinitMarker());
   }
-};
+  // not idempotent (on the environment)
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+    this._shownKey = `shown.${this.text}`;
+    this.element = $('<div class="collectible-wrapper" data-help="item">')
+      .on('click', () => this.onMap = !this.onMap)
+      .append($('<p class="collectible">').attr('data-text', this.text))
+      .translate();
+    this.reinitMarker();
+    this.element.appendTo(Treasure.context);
+  }
+  // auto remove marker? from map, recreate marker, auto add? marker
+  // idempotent
+  reinitMarker() {
+    if (this.marker) Treasure.layer.removeLayer(this.marker);
+    this.marker = L.layerGroup();
+    this.marker.addLayer(L.circle([this.x, this.y], {
+      color: "#fff79900",
+      fillColor: "#fff799",
+      fillOpacity: 0.5,
+      radius: this.radius,
+    }));
+    this.marker.addLayer(L.marker([this.x, this.y], { icon: Treasure.mainIcon })
+      .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
+    );
+    this.locations.forEach(cross =>
+      this.marker.addLayer(L.marker([cross.x, cross.y], {
+        icon: Treasure.crossIcon,
+        pane: 'treasureX',
+      }))
+    );
+    this.onMap = this.onMap;
+  }
+  popupContent() {
+    const snippet = $(`<div class="handover-wrapper-with-no-influence">
+        <h1 data-text="${this.text}"></h1>
+        <button type="button" class="btn btn-info remove-button" data-text="map.remove">
+          </button>
+      </div>`).translate();
+    snippet.find('button').on('click', () => this.onMap = false);
+    return snippet[0];
+  }
+  set onMap(state) {
+    if (state) {
+      const method = enabledCategories.includes('treasure') ? 'addLayer' : 'removeLayer';
+      Treasure.layer[method](this.marker);
+      this.element.removeClass('disabled');
+      localStorage.setItem(this._shownKey, 'true');
+    } else {
+      Treasure.layer.removeLayer(this.marker);
+      this.element.addClass('disabled');
+      localStorage.removeItem(this._shownKey);
+    }
+  }
+  get onMap() {
+    return !!localStorage.getItem(this._shownKey);
+  }
+  static onCategoryToggle() {
+    Treasure.treasures.forEach(treasure => treasure.onMap = treasure.onMap);
+  }
+}
