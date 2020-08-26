@@ -248,8 +248,9 @@ function init() {
   const shops = Shop.init();
   const gfh = GunForHire.init();
   const nazar = MadamNazar.init();
+  const legendary = Legendary.init();
 
-  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar])
+  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary])
     .then(Loader.resolveMapModelLoaded);
 }
 
@@ -960,7 +961,6 @@ $('#open-delete-all-settings-modal').on('click', function () {
 $(function () {
   init();
   Heatmap.load();
-  Legendary.load();
   MapBase.loadMarkers();
   MapBase.loadDiscoverables();
   FME.init();

@@ -434,16 +434,6 @@ var MapBase = {
     Layers.itemMarkersLayer.addTo(MapBase.map);
     Layers.pinsLayer.addTo(MapBase.map);
 
-    MapBase.addFastTravelMarker();
-    MapBase.addShops();
-    MapBase.addCamps();
-    MapBase.addGfh();
-
-    //Treasures.addToMap();
-    //Encounters.addToMap();
-    MadamNazar.addMadamNazar();
-    Legendary.addToMap();
-
     if (refreshMenu)
       Menu.refreshMenu();
   },
