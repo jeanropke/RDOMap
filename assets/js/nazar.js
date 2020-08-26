@@ -18,6 +18,9 @@ class MadamNazar {
     this.currentLocation = null;
     this.currentDate = null;
 
+    this.layer = L.layerGroup();
+    this.layer.addTo(MapBase.map);
+
     this.context = $('.menu-option[data-type=nazar]');
 
     this.context.toggleClass('disabled', !MadamNazar.onMap)
@@ -40,9 +43,10 @@ class MadamNazar {
   }
 
   static addMadamNazar() {
-
     if (this.currentLocation == null || !MadamNazar.onMap)
       return;
+
+      MadamNazar.layer.clearLayers();
 
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
@@ -59,22 +63,22 @@ class MadamNazar {
     });
 
     marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });
-    Layers.itemMarkersLayer.addLayer(marker);
+    MadamNazar.layer.addLayer(marker);
   }
 
   static set onMap(state) {
     if (state) {
-      Layers.itemMarkersLayer.addTo(MapBase.map);
+      MadamNazar.layer.addTo(MapBase.map);
       this.context.removeClass('disabled');
       localStorage.setItem(`rdo:nazar`, 'true');
       MadamNazar.addMadamNazar();
     } else {
-      Layers.itemMarkersLayer.remove();
+      MadamNazar.layer.remove();
       this.context.addClass('disabled');
-      localStorage.removeItem(`rdo:nazar`);
+      localStorage.setItem(`rdo:nazar`, 'false');
     }
   }
   static get onMap() {
-    return !!localStorage.getItem(`rdo:nazar`);
+    return JSON.parse(localStorage.getItem(`rdo:nazar`)) || JSON.parse(localStorage.getItem(`rdo:nazar`)) == null;
   }
 }
