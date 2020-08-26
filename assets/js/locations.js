@@ -5,7 +5,6 @@ class Location {
       return Loader.promises['items'].consumeJson(data => {
         data.forEach(item => this.locations.push(new Location(item)));
         console.info('%c[Locations] Loaded!', 'color: #bada55; background: #242424');
-        //Menu.reorderMenu('.menu-hidden[data-type=encounters]');
       });
     }
   
@@ -59,10 +58,10 @@ class Location {
       } else {
         this.layer.remove();
         this.element.addClass('disabled');
-        localStorage.removeItem(`rdo:${this.key}`);
+        localStorage.setItem(`rdo:${this.key}`, 'false');
       }
     }
     get onMap() {
-      return !!localStorage.getItem(`rdo:${this.key}`);
+      return JSON.parse(localStorage.getItem(`rdo:${this.key}`)) || (JSON.parse(localStorage.getItem(`rdo:${this.key}`)) == null && !this.disabled);
     }
   }
