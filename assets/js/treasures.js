@@ -60,8 +60,8 @@ class Treasure {
     if (this.marker) Treasure.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
     this.marker.addLayer(L.circle([this.x, this.y], {
-      color: "#fff79900",
-      fillColor: "#fff799",
+      color: "#f4e98a",
+      fillColor: "#f4e98a",
       fillOpacity: 0.5,
       radius: this.radius,
     }));
