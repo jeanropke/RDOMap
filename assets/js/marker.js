@@ -10,7 +10,6 @@ class Marker {
       switch (category) {
         case 'fasttravel':
           return Language.get(`${this.category}.${this.text}.name`);
-        case 'plants':
         case 'shops':
         case 'gfh':
         case 'rescue':
@@ -27,8 +26,6 @@ class Marker {
       switch (category) {
         case 'fasttravel':
           return '';
-        case 'plants':
-          return Language.get(`map.plants.desc`).replace(/{plant}/, this.title);
         case 'shops':
         case 'gfh':
           return Language.get(`map.${this.category}.${this.subdata}.desc`);

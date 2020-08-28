@@ -24,9 +24,9 @@ class Plants {
           })
         });
         tempMarker.bindPopup(
-          `<h1>${Language.get(`map.animal_spawns.name`).replace('{animal}', Language.get(`menu.cmpndm.${this.key}`))}</h1>
+          `<h1>${Language.get(`map.plants.${this.key}.name`)}</h1>
           <span class="marker-content-wrapper">
-            <p></p>
+            <p>${Language.get(`map.plants.desc`).replace(/{plant}/, Language.get(`map.plants.${this.key}.name`))}</p>
           </span>
           `, {
           minWidth: 300,
