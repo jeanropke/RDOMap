@@ -53,6 +53,7 @@ class Legendary {
   }
   static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
     this.mainIcon = L.divIcon({
+      opacity: Settings.markerOpacity,
       iconSize: [35 * markerSize, 45 * markerSize],
       iconAnchor: [17 * markerSize, 42 * markerSize],
       popupAnchor: [1 * markerSize, -29 * markerSize],

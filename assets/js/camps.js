@@ -44,7 +44,7 @@ class Camp {
           if(!Camp.isSmall && marker.size == 'small') return;
 
           this.layer.addLayer(L.marker([marker.lat, marker.lng], {
-            opacity: Settings.opacity  / 3,
+            opacity: Settings.markerOpacity,
             icon: new L.DivIcon.DataMarkup({
               iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
               iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
