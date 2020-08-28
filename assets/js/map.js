@@ -45,7 +45,7 @@ var MapBase = {
       }),
     ];
 
-    Heatmap.initLayer();
+    //Heatmap.initLayer();    
 
     // Override bindPopup to include mouseover and mouseout logic.
     L.Layer.include({
@@ -102,7 +102,7 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[parseInt($.cookie('map-layer'))], Layers.heatmapLayer]
+      layers: [mapLayers[parseInt($.cookie('map-layer'))], AnimalCollection.layer]
     }).setView([-70, 111.75], 3);
 
     MapBase.map.addControl(

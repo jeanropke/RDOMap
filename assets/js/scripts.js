@@ -249,8 +249,9 @@ function init() {
   const gfh = GunForHire.init();
   const nazar = MadamNazar.init();
   const legendary = Legendary.init();
+  const heatmaps = AnimalCollection.init();
 
-  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary])
+  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, heatmaps])
     .then(Loader.resolveMapModelLoaded);
 }
 
@@ -480,60 +481,6 @@ $("#tooltip").on("change", function () {
   $.cookie('tooltip-enabled', Settings.toolTip, { expires: 999 });
 
   Menu.refreshMenu();
-});
-
-//Disable & enable collection category
-$('.clickable').on('click', function (e) {
-  e.stopPropagation();
-return;
-  var menu = $(this);
-  if (menu.data('type') === undefined) return;
-
-  $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
-  var isDisabled = menu.hasClass('disabled');
-
-  if (isDisabled) {
-    enabledCategories = $.grep(enabledCategories, function (value) {
-      return value != menu.data('type');
-    });
-
-    categoriesDisabledByDefault.push(menu.data('type'));
-  } else {
-    enabledCategories.push(menu.data('type'));
-
-    categoriesDisabledByDefault = $.grep(categoriesDisabledByDefault, function (value) {
-      return value != menu.data('type');
-    });
-  }
-  $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
-
-  if (menu.data('type') == 'treasure')
-    Treasures.addToMap();
-  else if (menu.data('type') == 'user_pins')
-    Pins.addToMap();
-  else if (menu.data('type') == 'legendary_animals')
-    Legendary.addToMap();
-  else
-    MapBase.addMarkers();
-});
-
-//Disable & enable collection category
-$(document).on('click', '.animal-wrapper[data-type]', function (e) {
-  e.stopPropagation();
-
-  var menu = $(this);
-
-  $('.menu-hidden .animal-wrapper').each(function (key, value) {
-    if (menu.data('type') != $(value).data('type'))
-      $(value).children('span').addClass('disabled');
-  });
-
-  menu.children('span').toggleClass('disabled');
-  if (menu.children('span').hasClass('disabled')) {
-    Heatmap.removeHeatmap();
-  } else {
-    Heatmap.setHeatmap(menu.data('type'), menu.parent().data('type'));
-  }
 });
 
 //Open collection submenu
@@ -960,7 +907,6 @@ $('#open-delete-all-settings-modal').on('click', function () {
 
 $(function () {
   init();
-  Heatmap.load();
   MapBase.loadMarkers();
   MapBase.loadDiscoverables();
   FME.init();

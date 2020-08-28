@@ -1,7 +1,3 @@
-/**
- * Created by Jean on 2019-10-09.
- */
-
 var Heatmap = {
   state: 0,
   data: null,
