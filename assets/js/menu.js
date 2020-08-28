@@ -9,11 +9,6 @@ class Menu {
     }).appendTo(menu);
   }
 
-  static refreshMenu() {
-    console.log('refreshMenu');
-    Menu.reorderMenu('.menu-hidden[data-type=encounters]');
-  }
-
   static activateHandlers() {
     //camps buttons
     $('.camps-small-btn').on('click', function () {

@@ -102,7 +102,7 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[parseInt($.cookie('map-layer'))], AnimalCollection.layer]
+      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
     }).setView([-70, 111.75], 3);
 
     MapBase.map.addControl(
@@ -433,9 +433,6 @@ var MapBase = {
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
     Layers.pinsLayer.addTo(MapBase.map);
-
-    if (refreshMenu)
-      Menu.refreshMenu();
   },
 
   removeItemFromMap: function (text, subdata, category) {

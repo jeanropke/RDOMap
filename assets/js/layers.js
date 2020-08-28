@@ -8,6 +8,5 @@ const Layers = {
   legendaryLayers: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup(),
   pinsLayer: new L.LayerGroup(),
-  heatmapLayer: null,
   oms: null,
 };
