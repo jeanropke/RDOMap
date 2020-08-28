@@ -1,12 +1,13 @@
 class Shop {
+    static start = Date.now();
     static init() {
       this.locations = [];
       this.context = $('.menu-hidden[data-type=shops]');
   
       return Loader.promises['shops'].consumeJson(data => {
         data.forEach(item => this.locations.push(new Shop(item)));
-        console.info('%c[Shops] Loaded!', 'color: #bada55; background: #242424');
-        Menu.reorderMenu('.menu-hidden[data-type=shops]');
+        console.info(`%c[Shops] Loaded ${Date.now() - Shop.start}ms!`, 'color: #bada55; background: #242424');
+        Menu.reorderMenu(this.context);
       });
     }
   

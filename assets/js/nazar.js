@@ -1,4 +1,5 @@
 class MadamNazar {
+  static start = Date.now();
   static init() {
     this.possibleLocations = [
       { "x": -40.7817, "y": 109.4863, "id": "der" },
@@ -38,7 +39,7 @@ class MadamNazar {
         day: "2-digit", month: "long", year: "numeric"
       });
       MadamNazar.addMadamNazar();
-      console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
+      console.info(`%c[Nazar] Loaded in ${Date.now() - MadamNazar.start}ms!`, 'color: #bada55; background: #242424');
     });
   }
 

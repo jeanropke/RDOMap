@@ -1,4 +1,5 @@
 class Camp {
+    static start = Date.now();
     static isLarge = true;
     static isSmall = true;
 
@@ -8,8 +9,8 @@ class Camp {
 
       return Loader.promises['camps'].consumeJson(data => {
         data.forEach(item => this.locations.push(new Camp(item)));
-        console.info('%c[Camps] Loaded!', 'color: #bada55; background: #242424');
-        Menu.reorderMenu('.menu-hidden[data-type=camps]');
+        console.info(`%c[Camps] Loaded in ${Date.now() - Camp.start}ms!`, 'color: #bada55; background: #242424');
+        Menu.reorderMenu(this.context);
       });
     }
   

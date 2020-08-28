@@ -12,8 +12,8 @@ class Animal {
           .translate();
 
         this.markers = [];
-
-        if(this.groups != null)
+        
+        if(this.groups != null) {
           this.groups.forEach(_group => {
             AnimalCollection.groups[_group].forEach(_marker => {
               var tempMarker = L.marker([_marker.x, _marker.y], {
@@ -25,7 +25,6 @@ class Animal {
                   popupAnchor: [0, -8]
                 })
               });
-              
               let popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', Language.get(`menu.cmpndm.${this.key}`));
               if(_marker.start && _marker.end) {
                 let startTime = (_marker.start > 12) ? (_marker.start-12 + ':00 PM') : (_marker.start + ':00 AM');
@@ -42,10 +41,10 @@ class Animal {
                 minWidth: 300,
                 maxWidth: 400
               });
-          
               this.markers.push(tempMarker);
             });
           });
+        }
     
         this.element.appendTo(this.context);
       }
@@ -70,7 +69,7 @@ class Animal {
 }
 
 class AnimalCollection {
-
+    static start = Date.now();
     static heatmapLayer = new HeatmapOverlay({
         radius: 1.5,
         maxOpacity: 0.5,
@@ -97,14 +96,14 @@ class AnimalCollection {
       this.groups = [];
       Loader.promises['animal_spawns'].consumeJson(data => {
         this.groups = data[0];
-        console.info('%c[Animals Spawns] Loaded!', 'color: #bada55; background: #242424');
+        console.info(`%c[Animals Spawns] Loaded in ${Date.now() - AnimalCollection.start}ms!`, 'color: #bada55; background: #242424');
       });
 
       return Loader.promises['hm'].consumeJson(data => {
         data.forEach(item => {          
             this.collections.push(new AnimalCollection(item));
           });
-        console.info('%c[Animals Heatmaps] Loaded!', 'color: #bada55; background: #242424');
+        console.info(`%c[Animals Heatmaps] Loaded in ${Date.now() - AnimalCollection.start}ms!`, 'color: #bada55; background: #242424');
       });
     }
 
@@ -113,7 +112,7 @@ class AnimalCollection {
 
         this.animals = [];
 
-        this.data.forEach(animal => this.animals.push(new Animal(animal, this.key)));
+        this.data.forEach(animal => { this.animals.push(new Animal(animal, this.key))});
         Menu.reorderMenu($(`.menu-hidden[data-type=${this.key}]`));
     }
 }

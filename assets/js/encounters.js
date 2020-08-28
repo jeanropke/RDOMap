@@ -1,12 +1,13 @@
 class Encounter {
+  static start = Date.now();
   static init() {
     this.locations = [];
     this.context = $('.menu-hidden[data-type=encounters]');
 
     return Loader.promises['encounters'].consumeJson(data => {
       data.forEach(item => this.locations.push(new Encounter(item)));
-      console.info('%c[Encounters] Loaded!', 'color: #bada55; background: #242424');
-      Menu.reorderMenu('.menu-hidden[data-type=encounters]');
+      console.info(`%c[Encounters] Loaded in ${Date.now() - Encounter.start}ms!`, 'color: #bada55; background: #242424');
+      Menu.reorderMenu(this.context);
     });
   }
 

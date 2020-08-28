@@ -1,13 +1,15 @@
 class GunForHire {
 
+    static start = Date.now();
+
     static init() {
         this.locations = [];
         this.context = $('.menu-hidden[data-type=gfh]');
   
         return Loader.promises['gfh'].consumeJson(data => {
           data.forEach(item => this.locations.push(new GunForHire(item)));
-          console.info('%c[Freeroam Missions] Loaded!', 'color: #bada55; background: #242424');
-          Menu.reorderMenu('.menu-hidden[data-type=gfh]');
+          console.info(`%c[Freeroam Missions] Loaded in ${Date.now() - GunForHire.start}ms!`, 'color: #bada55; background: #242424');
+          Menu.reorderMenu(this.context);
         });
     }
 

@@ -1,4 +1,7 @@
 class Legendary {
+  
+  static start = Date.now();
+  
   static init() {
     // Needed to check against Q param.
     this.legendaries = [
@@ -45,7 +48,7 @@ class Legendary {
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => this.animals.push(new Legendary(item)));
       this.onLanguageChanged();
-      console.info('%c[Legendary animals] Loaded!', 'color: #bada55; background: #242424');
+      console.info(`%c[Legendary animals] Loaded in ${Date.now() - Legendary.start}ms!`, 'color: #bada55; background: #242424');
     });
   }
   static onLanguageChanged() {

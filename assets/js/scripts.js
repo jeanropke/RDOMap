@@ -243,7 +243,7 @@ function init() {
   const locations = Location.init();
   const encounters = Encounter.init();  
   const treasures = Treasure.init();
-  const plants = Plants.init();
+  const plants = PlantsCollection.init();
   const camps = Camp.init();
   const shops = Shop.init();
   const gfh = GunForHire.init();
