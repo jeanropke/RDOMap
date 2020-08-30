@@ -1,3 +1,7 @@
+Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
+    value: function () { return this.toISOString().split('T')[0]; }
+});
+
 class Loader {
     static init(urls) {
         this.promises = {};
@@ -27,6 +31,11 @@ class Loader {
     }
 }
 
+const dailiesChangeTime = (() => {
+    const now = new Date();
+    return new Date(now.valueOf() - 21600000).toISOUTCDateString(); // 21600000 = 6 hours
+})();
+
 const urls = [
     'data/encounters.json',
     'data/fme.json',
@@ -44,5 +53,7 @@ const urls = [
     'data/plants.json',
     'data/gfh.json',
     'https://pepegapi.jeanropke.net/rdo/nazar',
+    'data/possible_dailies.json',
+    `https://aligueler.com/RDODailies/data/daily/${dailiesChangeTime}.json`,
 ];
 Loader.init(urls);

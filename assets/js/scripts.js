@@ -19,9 +19,6 @@ Object.defineProperty(String.prototype, 'includesOneOf', {
   }
 });
 
-Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
-  value: function () { return this.toISOString().split('T')[0]; },
-});
 
 var searchTerms = [];
 var uniqueSearchMarkers = [];
@@ -910,4 +907,5 @@ $(function () {
   MapBase.loadMarkers();
   MapBase.loadDiscoverables();
   FME.init();
+  Dailies.init();
 });

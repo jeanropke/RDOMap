@@ -1290,3 +1290,18 @@ a.no-style:visited {
         margin-right: 8px;
     }
 }
+.dailies {
+    margin: 5px;
+    font-size: 1.5rem;
+    overflow: hidden;
+}
+.one-daily-container {
+    margin: 5px 5px;
+}
+.one-daily-container > span {
+    position: absolute;
+    left: 50px;
+}
+.daily-role {
+    margin: 20px 0 5px 5px;
+}

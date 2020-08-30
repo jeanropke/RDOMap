@@ -15,7 +15,7 @@ class Marker {
         case 'rescue':
           return Language.get(`map.${this.category}.${this.subdata}.name`);
         case 'hideouts':
-          return Language.get(`map.${this.category}.${this.text}.name`);          
+          return Language.get(`map.${this.category}.${this.text}.name`);
         case 'camps':
           return Language.get(`map.${this.category}.${this.subdata}.name`) + ' - ' + Language.get(`map.camps.sizes.${this.size}`);
         default:
@@ -40,7 +40,7 @@ class Marker {
   updateMarkerContent() {
     let linksElement = $('<p>');
     let debugDisplayLatLng = $('<small>').text(`Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}`);
-   
+
     return `<h1>${this.title}</h1>
         <span class="marker-content-wrapper">
         <p>${this.description}</p>
