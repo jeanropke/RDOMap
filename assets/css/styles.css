@@ -1292,8 +1292,8 @@ a.no-style:visited {
 }
 .dailies {
     margin: 5px;
-    font-size: 1.5rem;
-    overflow: hidden;
+    font-size: 1.45rem;
+    user-select: none;
 }
 .one-daily-container {
     margin: 5px 5px;
@@ -1301,6 +1301,11 @@ a.no-style:visited {
 .one-daily-container > span {
     position: absolute;
     left: 50px;
+    max-height: 25px;
+    max-width: 86%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .daily-role {
     margin: 20px 0 5px 5px;

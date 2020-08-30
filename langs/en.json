@@ -1084,5 +1084,7 @@
     "menu.dailies_collector": "Collector",
     "menu.dailies_bounty_hunter": "Bounty hunter",
     "menu.dailies_moonshiner": "Moonshiner",
-    "menu.dailies_naturalist": "Naturalist"
+    "menu.dailies_trader": "Trader",
+    "menu.dailies_naturalist": "Naturalist",
+    "menu.dailies_not_found": "Today's dailies haven't been updated yet"
 }

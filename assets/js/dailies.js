@@ -7,8 +7,8 @@ const Dailies = {
     const websiteData = this.websiteJsonData();
     const jsonData = this.loadDailiesList();
     Promise.all([websiteData, jsonData])
-      .then((data) => this.appendMenu())
-      .catch((err) => this.dailiesNotUpdated());
+      .then(() => this.appendMenu())
+      .catch(() => this.dailiesNotUpdated());
   },
   websiteJsonData: function () {
     return Loader.promises[dailiesChangeTime].consumeJson(data => {
@@ -23,28 +23,24 @@ const Dailies = {
     });
   },
   appendMenu: function () {
-    const $dailies = $('.dailies');
-    $dailies
-      .find('.daily-not-found')
-      .addClass('hidden')
-      .end();
+    Object.keys(this.dailies).forEach(role => {
+      $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
 
-    Object.keys(this.dailies).forEach((role) => {
-      this.dailies[role].list.forEach(({ text, target }, index) => {
-        const key = this.jsonData.find((element) => element.dailyName === text)['dailyKey'];
+      this.dailies[role].list.forEach(({ text, target }) => {
+        const key = this.jsonData.find(element => element.dailyName === text)['dailyKey'];
         const $menuElement = $(`
-        <div class="one-daily-container">0/${target}<span>${Language.get(key)}</span></div>
+        <div class="one-daily-container">
+          0/${target}<span>${Language.get(key)}</span>
+        </div>
         `);
 
-        $(`.dailies > .${role.toLowerCase().replace(/_/, '-')}`).append($menuElement);
+        $(`.dailies > .${role}`).append($menuElement);
       });
     });
   },
   dailiesNotUpdated: function () {
-    const $dailies = $('.dailies');
-    $dailies
-      .find('.general, .collector, .bounty-hunter, .moonshiner, .naturalist')
-      .addClass('hidden')
-      .end();
+    $('.dailies').append($(`
+    <div class="daily-not-found not-found">${Language.get('menu.dailies_not_found')}</div>
+    `));
   }
 }
