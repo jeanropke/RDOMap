@@ -1291,7 +1291,7 @@ a.no-style:visited {
     }
 }
 .dailies {
-    margin: 5px;
+    margin: 5px 5px 5px 0;
     font-size: 1.45rem;
     user-select: none;
 }
@@ -1299,14 +1299,15 @@ a.no-style:visited {
     margin: 5px 5px;
 }
 .one-daily-container > span {
+    display: inline-block;
     position: absolute;
-    left: 50px;
+    margin: 0 0 0 5px;
     max-height: 25px;
-    max-width: 86%;
-    overflow: hidden;
+    max-width: 84%;
+    overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .daily-role {
-    margin: 20px 0 5px 5px;
+    margin: 25px 0 5px 5px;
 }
