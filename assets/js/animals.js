@@ -12,10 +12,12 @@ class Animal {
           .translate();
 
         this.markers = [];
+        let self = this;
         
         if(this.groups != null) {
           this.groups.forEach(_group => {
-            AnimalCollection.groups[_group].forEach(_marker => {
+            MapBase.yieldingLoop(AnimalCollection.groups[_group].length, 50, function (i) {
+              var _marker = AnimalCollection.groups[_group][i];
               var tempMarker = L.marker([_marker.x, _marker.y], {
                 opacity: .75,
                 icon: new L.divIcon({
@@ -25,15 +27,16 @@ class Animal {
                   popupAnchor: [0, -8]
                 })
               });
-              let popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', Language.get(`menu.cmpndm.${this.key}`));
+
+              let popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', Language.get(`menu.cmpndm.${self.key}`));
               if(_marker.start && _marker.end) {
                 let startTime = (_marker.start > 12) ? (_marker.start-12 + ':00 PM') : (_marker.start + ':00 AM');
                 let endTime = (_marker.end > 12) ? (_marker.end-12 + ':00 PM') : (_marker.end + ':00 AM');
-                popupContent = Language.get(`map.animal_spawns_timed.desc`).replace('{animal}', Language.get(`menu.cmpndm.${this.key}`)).replace('{start}', startTime).replace('{end}', endTime);
+                popupContent = Language.get(`map.animal_spawns_timed.desc`).replace('{animal}', Language.get(`menu.cmpndm.${self.key}`)).replace('{start}', startTime).replace('{end}', endTime);
               }
 
               tempMarker.bindPopup(
-                `<h1>${Language.get(`map.animal_spawns.name`).replace('{animal}', Language.get(`menu.cmpndm.${this.key}`))}</h1>
+                `<h1>${Language.get(`map.animal_spawns.name`).replace('{animal}', Language.get(`menu.cmpndm.${self.key}`))}</h1>
                 <span class="marker-content-wrapper">
                   <p>${popupContent}</p>
                 </span>
@@ -41,9 +44,11 @@ class Animal {
                 minWidth: 300,
                 maxWidth: 400
               });
-              this.markers.push(tempMarker);
+
+              self.markers.push(tempMarker);
+            }, function () {
             });
-          });
+          });         
         }
     
         this.element.appendTo(this.context);
@@ -54,7 +59,8 @@ class Animal {
         if (state) {
           AnimalCollection.spawnLayer.clearLayers();
           AnimalCollection.heatmapLayer.setData({ data: this.data });
-          AnimalCollection.spawnLayer.addLayers(this.markers);
+          if(this.markers.length > 0)
+            AnimalCollection.spawnLayer.addLayers(this.markers);
           this.element.children('span').removeClass('disabled');
         } else {
           AnimalCollection.heatmapLayer.setData({ data: [] })
