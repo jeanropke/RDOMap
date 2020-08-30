@@ -1,7 +1,6 @@
 class Dailies {
-  constructor(role, text, key, target, value = 0) {
+  constructor(role, key, target, value = 0) {
     this.role = role;
-    this.text = text;
     this.key = key;
     this.target = target;
     this.value = value;
@@ -14,7 +13,7 @@ class Dailies {
     const websiteData = Loader.promises['daily'].consumeJson(data => this.dailies = data.dailies);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
-    Promise.all([websiteData, allDailies])
+    return Promise.all([websiteData, allDailies])
       .then(() => {
         console.info(`%c[Dailies] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
 
@@ -22,12 +21,12 @@ class Dailies {
           $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
           this.dailies[role].list.forEach(({ text, target }) => {
             const key = this.jsonData.find(element => element.dailyName === text.replace(/\*$/, ''))['dailyKey'];
-            const newDaily = new Dailies(role, text, key, target);
+            const newDaily = new Dailies(role, key, target);
             newDaily.appendToMenu();
           });
         });
       })
-      .catch(() => this.dailiesNotUpdated());
+      .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
     const $menuElement = $(`
