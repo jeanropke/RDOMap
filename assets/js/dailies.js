@@ -27,7 +27,7 @@ const Dailies = {
       $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
 
       this.dailies[role].list.forEach(({ text, target }) => {
-        const key = this.jsonData.find(element => (element.dailyName) === text.replace(/\*$/, ''))['dailyKey'];
+        const key = this.jsonData.find(element => element.dailyName === text.replace(/\*$/, ''))['dailyKey'];
         const $menuElement = $(`
         <div class="one-daily-container">
           0/${target}<span>${Language.get(key)}</span>

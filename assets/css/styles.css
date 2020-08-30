@@ -1292,22 +1292,21 @@ a.no-style:visited {
 }
 .dailies {
     margin: 5px 5px 5px 0;
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     user-select: none;
 }
 .one-daily-container {
-    margin: 5px 5px;
+    margin: 5px 0 5px 2px;
 }
 .one-daily-container > span {
     display: inline-block;
     position: absolute;
-    margin: 0 0 0 5px;
-    max-height: 25px;
-    max-width: 84%;
+    margin: 0 0 0 8px;
     overflow-x: hidden;
+    max-width: 340px;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .daily-role {
-    margin: 25px 0 5px 5px;
+    margin: 25px 0 5px 2px;
 }
