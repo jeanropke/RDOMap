@@ -1060,8 +1060,8 @@ a.no-style:visited {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 390px;
-        left: -390px;
+        width: 400px;
+        left: -400px;
         top: 0;
     }
 
@@ -1070,7 +1070,7 @@ a.no-style:visited {
     }
 
     .timer-menu-opened {
-        left: 395px;
+        left: 410px;
     }
 
     .counter-menu-opened {
@@ -1291,24 +1291,29 @@ a.no-style:visited {
     }
 }
 .dailies {
-    margin: 5px 5px 5px 2px;
+    margin: 5px;
     font-size: 1.6rem;
     user-select: none;
 }
 .one-daily-container {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     margin: 5px 0 5px 5px;
 }
 .one-daily-container > span {
-
     display: inline-block;
     position: absolute;
     margin: 0 0 0 8px;
+    max-width: 100%;
     overflow: hidden;
-    max-width: 340px;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .daily-role {
-    margin: 25px 0 5px 2px;
+    margin: 25px 0 5px 4px;
+}
+.daily-not-found {
+    margin: auto;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
 }
