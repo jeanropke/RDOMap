@@ -100,6 +100,11 @@ class Legendary {
         pane: 'animalX',
       }))
     );
+    var overlay = `assets/images/icons/game/animals/legendaries/${this.text}.png?nocache=${nocache}`;
+    this.marker.addLayer(L.imageOverlay(overlay, [[this.x - this.radius, this.y - this.radius * 2], [this.x + this.radius, this.y + this.radius * 2]], {
+      opacity: Settings.overlayOpacity
+    }));
+
     this.onMap = this.onMap;
   }
   popupContent() {
