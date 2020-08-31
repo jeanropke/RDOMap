@@ -240,6 +240,7 @@ function init() {
 
   Menu.init();
   
+  AnimalCollection.init();
   const locations = Location.init();
   const encounters = Encounter.init();  
   const treasures = Treasure.init();
@@ -249,9 +250,9 @@ function init() {
   const gfh = GunForHire.init();
   const nazar = MadamNazar.init();
   const legendary = Legendary.init();
-  const heatmaps = AnimalCollection.init();
+  const discoverables = Discoverable.init();
 
-  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, heatmaps])
+  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables])
     .then(Loader.resolveMapModelLoaded);
 }
 
@@ -908,6 +909,5 @@ $('#open-delete-all-settings-modal').on('click', function () {
 $(function () {
   init();
   MapBase.loadMarkers();
-  MapBase.loadDiscoverables();
   FME.init();
 });

@@ -94,22 +94,18 @@ class AnimalCollection {
     static spawnLayer = L.canvasIconLayer({ zoomAnimation: true });
 
     static init() {
-      AnimalCollection.heatmapLayer.addTo(MapBase.map);
-      AnimalCollection.spawnLayer.addTo(MapBase.map);
-      
+      this.groups = [];
       this.collections = [];
 
-      this.groups = [];
-      Loader.promises['animal_spawns'].consumeJson(data => {
-        this.groups = data[0];
-        console.info(`%c[Animals Spawns] Loaded in ${Date.now() - AnimalCollection.start}ms!`, 'color: #bada55; background: #242424');
-      });
+      AnimalCollection.heatmapLayer.addTo(MapBase.map);
+      AnimalCollection.spawnLayer.addTo(MapBase.map);      
 
-      return Loader.promises['hm'].consumeJson(data => {
-        data.forEach(item => {          
-            this.collections.push(new AnimalCollection(item));
-          });
-        console.info(`%c[Animals Heatmaps] Loaded in ${Date.now() - AnimalCollection.start}ms!`, 'color: #bada55; background: #242424');
+      const animalSpawns = Loader.promises['animal_spawns'].consumeJson(data => this.groups = data[0]);
+      const animalHeatmap = Loader.promises['hm'].consumeJson(data => this.collections = data);
+
+      return Promise.all([animalSpawns, animalHeatmap]).then(() => {
+        console.info(`%c[Animals] Loaded in ${Date.now() - AnimalCollection.start}ms!`, 'color: #bada55; background: #242424');
+        this.collections.forEach(collection => new AnimalCollection(collection));
       });
     }
 
@@ -117,7 +113,6 @@ class AnimalCollection {
         Object.assign(this, preliminary);
 
         this.animals = [];
-
         this.data.forEach(animal => { this.animals.push(new Animal(animal, this.key))});
         Menu.reorderMenu($(`.menu-hidden[data-type=${this.key}]`));
     }
