@@ -21,4 +21,5 @@ var Settings = {
   sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
   toolType: $.cookie('tools') ? $.cookie('tools') : '3',
   toolTip: $.cookie('tooltip-enabled') ? $.cookie('tooltip-enabled') : '0',
+  showDailies: $.cookie('show-dailies') == '1',
 };

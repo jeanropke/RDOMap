@@ -199,6 +199,11 @@ function init() {
     $.cookie('timestamps-24', 'false', { expires: 999 });
   }
 
+  if ($.cookie('show-dailies') === undefined) {
+    Settings.showDailies = true;
+    $.cookie('show-dailies', '1', { expires: 999 });
+  }
+
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
 
@@ -226,11 +231,13 @@ function init() {
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $('#timestamps-24').prop("checked", Settings.display24HoursTimestamps);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
+  $('#show-dailies').prop("checked", Settings.showDailies);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
   $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
 
   $("#help-container").toggle(Settings.showHelp);
+  $('.daily-challenges').toggle(Settings.showDailies);
 
   Pins.addToMap();
   changeCursor();
@@ -478,6 +485,12 @@ $("#tooltip").on("change", function () {
   $.cookie('tooltip-enabled', Settings.toolTip, { expires: 999 });
 
   Menu.refreshMenu();
+});
+
+$('#show-dailies').on("change", function () {
+  Settings.showDailies = $("#show-dailies").prop('checked');
+  $.cookie('show-dailies', Settings.showDailies ? '1' : '0', { expires: 999 });
+  $('.daily-challenges').toggle(Settings.showDailies);
 });
 
 //Open collection submenu
