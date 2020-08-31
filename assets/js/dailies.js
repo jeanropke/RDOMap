@@ -1,7 +1,7 @@
 class Dailies {
-  constructor(role, key, target, value = 0) {
+  constructor(role, translationKey, target, value = 0) {
     this.role = role;
-    this.key = key;
+    this.translationKey = translationKey;
     this.target = target;
     this.value = value;
   }
@@ -20,8 +20,8 @@ class Dailies {
         Object.keys(this.dailies).forEach(role => {
           $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
           this.dailies[role].list.forEach(({ text, target }) => {
-            const key = this.jsonData.find(element => element.dailyName === text.replace(/\*$/, ''))['dailyKey'];
-            const newDaily = new Dailies(role, key, target);
+            const translationKey = this.jsonData.find(element => element.dailyName === text.replace(/\*$/, ''))['dailyKey'];
+            const newDaily = new Dailies(role, translationKey, target);
             newDaily.appendToMenu();
           });
         });
@@ -31,7 +31,7 @@ class Dailies {
   appendToMenu() {
     const $menuElement = $(`
         <div class="one-daily-container">
-          ${this.value}/${this.target}<span>${Language.get(this.key)}</span>
+          ${this.value}/${this.target}<span>${Language.get(this.translationKey)}</span>
         </div>
         `);
 
