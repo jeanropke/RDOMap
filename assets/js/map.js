@@ -8,7 +8,6 @@ var MapBase = {
   map: null,
   overlays: [],
   markers: [],
-  discoverables: [],
   importantItems: [],
   isDarkMode: false,
   fastTravelData: null,
@@ -362,19 +361,10 @@ var MapBase = {
     Layers.plantsLayer.addTo(MapBase.map);
     Layers.discoverablesLayer.addTo(MapBase.map);
 
-    MapBase.map.on('zoom', function () {
-      if (MapBase.map.getZoom() > 5)
-        return Layers.discoverablesLayer.addTo(MapBase.map);
-
-      return Layers.discoverablesLayer.removeFrom(MapBase.map);
-    });
-
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.plantsLayer != null)
       Layers.plantsLayer.clearLayers();
-    if (Layers.discoverablesLayer != null)
-      Layers.discoverablesLayer.clearLayers();
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
     if (Layers.legendaryLayers != null)
