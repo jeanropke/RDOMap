@@ -20,7 +20,8 @@ class Dailies {
         Object.keys(this.dailies).forEach(role => {
           $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
           this.dailies[role].list.forEach(({ text, target }) => {
-            const translationKey = this.jsonData.find(element => element.dailyName === text.replace(/\*$/, ''))['dailyKey'];
+            text = text.replace(/\*+$/, '').toLowerCase();
+            const translationKey = this.jsonData.find(element => element.dailyName.toLowerCase() === text)['dailyKey'];
             const newDaily = new Dailies(role, translationKey, target);
             newDaily.appendToMenu();
           });
