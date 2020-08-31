@@ -21,7 +21,7 @@ class Dailies {
           $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
           this.dailies[role].list.forEach(({ text, target }) => {
             text = text.replace(/\*+$/, '').toLowerCase();
-            const translationKey = this.jsonData.find(element => element.dailyName.toLowerCase() === text)['dailyKey'];
+            const translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
             const newDaily = new Dailies(role, translationKey, target);
             newDaily.appendToMenu();
           });
@@ -30,6 +30,8 @@ class Dailies {
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
+    // TODO: This format needs to be translatable. Russian uses "<challenge>: 0/<goal>",
+    // otherwise it doesn't make sense grammatically. - Bob
     const $menuElement = $(`
         <div class="one-daily-container">
           ${this.value}/${this.target}<span>${Language.get(this.translationKey)}</span>
