@@ -32,13 +32,17 @@ class Dailies {
   appendToMenu() {
     // TODO: This format needs to be translatable. Russian uses "<challenge>: 0/<goal>",
     // otherwise it doesn't make sense grammatically. - Bob
-    const structure = Language.get('menu.daily_challenge_structure')
-      .replace("{counter}", `<span id="counter">${this.value}/${this.target}</span>`)
-      .replace("{daily-challenge}", `<span id="daily">${Language.get(this.translationKey)}</span>`);
+    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}\s?\{(.+?)\}/);
+    $('.one-daily-container').css({
+      'grid-template-areas': `\"${structure[1]} ${structure[2]}\"`
+      
+      });
 
-    const $menuElement = $(`<div class="one-daily-container">${structure}</div>`);
-
-    $(`.dailies > .${this.role}`).append($menuElement);
+    $(`.dailies > .${this.role}`).append($(`
+      <div class="one-daily-container">
+        <span id="counter">${this.value}/${this.target}</span>
+        <span id="daily">${Language.get(this.translationKey)}</span>
+      </div>`));
   }
   static dailiesNotUpdated() {
     $('.dailies').append($(`
