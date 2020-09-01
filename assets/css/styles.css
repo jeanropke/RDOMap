@@ -1290,27 +1290,35 @@ a.no-style:visited {
         margin-right: 8px;
     }
 }
+
+/* TODO Fix displaying counter when order counter/ daily is reversed */
 .dailies {
     margin: 5px;
-    font-size: 1.6rem;
+    font-size: 2rem;
     user-select: none;
 }
+
 .one-daily-container {
-    font-size: 1.45rem;
-    margin: 5px 0 5px 5px;
+    font-size: 1.5rem;
+    margin: 5px 0;
 }
-.one-daily-container > span {
+
+.one-daily-container>span#counter {
     display: inline-block;
-    position: absolute;
-    margin: 0 0 0 8px;
-    max-width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    min-width: 55px;
+    text-align: center;
 }
+
+.one-daily-container>span#daily {
+    display: inline-flex;
+    margin: 0 3px;
+    max-width: 80%;
+}
+
 .daily-role {
-    margin: 25px 0 5px 4px;
+    margin: 20px 0;
 }
+
 .daily-not-found {
     margin: auto;
     width: 100%;

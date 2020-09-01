@@ -1088,5 +1088,6 @@
     "menu.dailies_naturalist": "Naturalist",
     "menu.dailies_not_found": "Today's dailies haven't been updated yet",
     "menu.show_dailies": "Show daily challenges",
-    "help.show_dailies": "Enable showing daily challenges in menu"
+    "help.show_dailies": "Enable showing daily challenges in menu",
+    "menu.daily_challenge_structure": "{counter} {daily-challenge}"
 }
