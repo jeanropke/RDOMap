@@ -9,4 +9,5 @@ const Layers = {
   encountersLayer: new L.LayerGroup(),
   pinsLayer: new L.LayerGroup(),
   oms: null,
+  debugLayer: new L.LayerGroup()
 };

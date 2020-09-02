@@ -164,6 +164,8 @@ var MapBase = {
 
     MapBase.loadOverlays();
 
+    Layers.debugLayer.addTo(MapBase.map);
+
     // Enable this and disable the above to see cool stuff.
     // MapBase.loadOverlaysBeta();
   },
@@ -224,7 +226,7 @@ var MapBase = {
 
     Layers.overlaysLayer.addTo(MapBase.map);
   },
-  
+
   onSearch: function (searchString) {
     searchTerms = [];
     $.each(searchString.split(';'), function (key, value) {
@@ -293,7 +295,7 @@ var MapBase = {
     marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, {
       minWidth: 300
     });
-    Layers.itemMarkersLayer.addLayer(marker);
+    Layers.debugLayer.addLayer(marker);
   },
 
   testData: {
