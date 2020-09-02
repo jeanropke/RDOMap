@@ -1,155 +1,213 @@
-var Pins = {
-  pinsList: [],
+class Pin {
+  constructor(preliminary) {
+    this.lat = preliminary.lat;
+    this.lng = preliminary.lng;
+    this.id = preliminary.id || this.generateHash(`${this.lat}_${this.lng}_${Date.now()}`);
+    this.title = preliminary.title || Language.get('map.user_pins.default_title');
+    this.description = preliminary.description || Language.get('map.user_pins.default_desc');
+    this.icon = preliminary.icon || 'pin';
+    this.color = preliminary.color || 'orange';
+  }
 
-  addToMap: function () {
-    if (!enabledCategories.includes('user_pins'))
-      this.removeAllPins();
-    else
-      this.loadAllPins();
-  },
+  generateHash(str) {
+    let hash = 0;
 
-  addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
-    if (lat === null || lat === undefined || lng === null || lng === undefined) return;
+    if (str.length == 0) return hash;
 
-    var pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
-    if (pinAtPositionExists) return;
+    for (let i = 0, l = str.length; i < l; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash |= 0;
+    }
+    return hash;
+  }
 
-    icon = icon == null ? 'pin' : icon;
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var marker = L.marker([lat, lng], {
-      id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
-      name: name == null ? Language.get('map.user_pins.default_title') : name,
-      desc: desc == null ? Language.get('map.user_pins.default_desc') : desc,
-      icon_name: icon,
-      draggable: Settings.isPinsEditingEnabled,
-      icon: L.divIcon({
-        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-        popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
-        html: `
-          <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
-          <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-          ${shadow}
-        `
-      })
-    });
-
-    marker.addEventListener('dragend', function (event) {
-      Pins.saveAllPins();
-    }, false);
-
-    this.pinsList.push(marker);
-
-    this.updatePopup(marker);
-    Layers.pinsLayer.addLayer(marker);
-
-    if (doSave) this.saveAllPins();
-  },
-
-  addPinToCenter: function () {
-    var center = MapBase.map.getCenter();
-    this.addPin(center.lat, center.lng);
-  },
-
-  savePin: function (id, name, desc, icon) {
-    var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
-
-    var marker = this.pinsList[markerIndex];
-    marker.options.name = name.replace(/[\:\;\<\>\"]/gi, '');
-    marker.options.desc = desc.replace(/[\:\;\<\>\"]/gi, '');
-    marker.options.icon_name = icon;
-
-    this.updatePopup(marker);
-    this.saveAllPins();
-  },
-
-  removePin: function (id, doSave = true) {
-    var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
-
-    var marker = this.pinsList[markerIndex];
-    Layers.pinsLayer.removeLayer(marker);
-
-    this.pinsList = this.pinsList.filter(function (marker) { return marker.options.id != id; });
-    if (doSave) this.saveAllPins();
-  },
-
-  saveAllPins: function () {
-    var pinnedItems = "";
-
-    this.pinsList.forEach(pin => {
-      pinnedItems += `${pin._latlng.lat}:${pin._latlng.lng}:${pin.options.id}:${pin.options.name}:${pin.options.desc}:${pin.options.icon_name};`;
-    });
-
-    localStorage.setItem("pinned-items", pinnedItems);
-    console.log("Saved all pins!");
-
-    this.loadAllPins();
-  },
-
-  loadAllPins: function () {
-    if (this.pinsList.length > 0) this.removeAllPins();
-
-    var pinnedItems = localStorage.getItem("pinned-items");
-
-    if (pinnedItems == null)
-      return;
-
-    pinnedItems.split(';').forEach(pinnedItem => {
-      if (pinnedItem == '') return;
-
-      var properties = pinnedItem.split(':');
-      this.addPin(properties[0], properties[1], properties[2] || null, properties[3] || null, properties[4] || null, properties[5] || null, false);
-    });
-  },
-
-  removeAllPins: function () {
-    MapBase.map.closePopup();
-    this.pinsList.forEach(pin => { this.removePin(pin.options.id, false); });
-  },
-
-  updatePopup: function (marker) {
-    var markerId = marker.options.id;
-    var markerIconSelect = "";
+  updateMarkerContent() {
+    let snippet = $(`
+      <div>
+        <h1 id="${this.id}_name">${this.title}</h1>
+        <p id="${this.id}_desc">${this.description}</p>
+      </div>
+    `);
 
     if (Settings.isPinsEditingEnabled) {
-      var markerIcons = ["pin"];
-      markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
+      const markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp"];
+      const markerColors = ["aquagreen", "beige", "black", "blue", "brown", "cadetblue", "darkblue", "darkgreen", "darkorange", "darkpurple", "darkred", "gray", "green", "lightblue", "lightdarkred", "lightgray", "lightgreen", "lightorange", "lightred", "orange", "pink", "purple", "red", "white", "yellow"];
+      const markerIconSelect = $('<select>').attr('id', `${this.id}_icon`).addClass('marker-popup-pin-input-icon');
+      const markerColorSelect = $('<select>').attr('id', `${this.id}_color`).addClass('marker-popup-pin-input-icon');
 
-      markerIcons.forEach(icon => {
-        var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
-        if (icon == marker.options.icon_name) option.attr('selected', 'selected');
-        markerIconSelect.append(option);
+      markerColors.forEach(color => {
+        const option = $('<option></option>').attr('value', color).attr('data-text', `map.user_pins.color.${color}`).text(Language.get(`map.user_pins.color.${color}`));
+        if (color == this.color) option.attr('selected', 'selected');
+        markerColorSelect.append(option);
       });
 
-      markerIconSelect = markerIconSelect.prop('outerHTML');
+      markerIcons.forEach(icon => {
+        const option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
+        if (icon == this.icon) option.attr('selected', 'selected');
+        markerIconSelect.append(option);
+      });
+      
+      snippet = $(`
+        <div>
+          <h1>
+            <input id="${this.id}_name" class="marker-popup-pin-input-name" type="text" value="${this.title}" placeholder="${Language.get('map.user_pins.placeholder_title')}">
+          </h1>
+          <p>
+            <textarea id="${this.id}_desc" class="marker-popup-pin-input-desc" rows="5" value="${this.description}" placeholder="${Language.get('map.user_pins.placeholder_desc')}">${this.description}</textarea>
+          </p>
+          <hr class="marker-popup-pin-input-divider">
+          <div style="display: grid;">
+            <label for="${this.id}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">
+              ${Language.get('map.user_pins.icon')}
+            </label>
+            ${markerIconSelect.prop('outerHTML')}
+
+            <label for="${this.id}_color" class="marker-popup-pin-label" data-text="map.user_pins.color">
+              ${Language.get('map.user_pins.color')}
+            </label>
+            ${markerColorSelect.prop('outerHTML')}
+          </div>
+          <div style="display: grid;">
+            <button type="button" class="btn btn-info save-button" data-text="map.user_pins.save">
+              ${Language.get('map.user_pins.save')}
+            </button>
+            <button type="button" class="btn btn-danger remove-button" data-text="map.user_pins.remove">
+              ${Language.get('map.user_pins.remove')}
+            </button>            
+            <small class="popupContentDebug">
+              Latitude: ${this.lat} / Longitude: ${this.lng}
+            </small>
+          </div>
+        </div>
+        `);
+        snippet.find('button.save-button').on('click', () => 
+          this.save($(`#${this.id}_name`).val(), $(`#${this.id}_desc`).val(), $(`#${this.id}_icon`).val(), $(`#${this.id}_color`).val())
+        );
+        snippet.find('button.remove-button').on('click', () => this.remove());
     }
+    
+    return snippet[0];    
+  }
 
-    var markerTitle = Settings.isPinsEditingEnabled ? `<h1><input type="text" id="${markerId}_name" class="marker-popup-pin-input-name" value="${marker.options.name}" placeholder="${Language.get('map.user_pins.placeholder_title')}"></h1>` : `<h1 id="${markerId}_name">${marker.options.name}</h1>`;
-    var markerDesc = Settings.isPinsEditingEnabled ? `<p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc" rows="5" value="${marker.options.desc}" placeholder="${Language.get('map.user_pins.placeholder_desc')}">${marker.options.desc}</textarea></p>` : `<p id="${markerId}_desc">${marker.options.desc}</p>`;
-    var markerDivider = Settings.isPinsEditingEnabled ? `<hr class="marker-popup-pin-input-divider">` : '';
-    var markerIconLabel = Settings.isPinsEditingEnabled ? `<label for="${markerId}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">${Language.get('map.user_pins.icon')}</label>` : '';
-    var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val(), $('#${markerId}_icon').val())" data-text="map.user_pins.save">${Language.get('map.user_pins.save')}</button>` : '';
-    var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})" data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>` : '';
-    var markerContent = markerTitle + markerDesc + markerDivider + markerIconLabel + markerIconSelect + markerSaveButton + markerRemoveButton;
+  save(title, desc, icon, color) {
+    this.title = title;
+    this.description = desc;
+    this.icon = icon;
+    this.color = color;
 
-    marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
-  },
+    Pins.layer.removeLayer(
+      Object.keys(Pins.layer._layers)
+      .find(marker => {
+        this.lat = Pins.layer._layers[marker]._latlng.lat;
+        this.lng = Pins.layer._layers[marker]._latlng.lng;
+        return Pins.layer._layers[marker].options.id == this.id;
+      }));
 
-  updateAllPopups: function () {
-    MapBase.map.closePopup();
-    this.pinsList.forEach(pin => { this.updatePopup(pin); });
-  },
+    Pins.pinsList = Pins.pinsList.filter(_pin => _pin.id != this.id);
 
-  exportPins: function () {
-    var text = localStorage.getItem("pinned-items");
-    var filename = 'pinned-items.txt';
+    Pins.addPin(JSON.parse(JSON.stringify(this)));
 
-    if (text === null || !text.includes(':') || !text.includes(';')) {
+    Pins.save();
+  }
+
+  remove() {
+    let id = this.id;
+    Pins.pinsList = Pins.pinsList.filter(function (pin) {
+      return pin.id != id;
+    });
+
+    Pins.layer.removeLayer(Object.keys(Pins.layer._layers).find(marker => Pins.layer._layers[marker].options.id == this.id));
+   
+    Pins.save();
+  }
+}
+
+class Pins {
+
+  static layer = L.layerGroup();
+
+  static init() {
+
+    this.context = $('.menu-option[data-type=user_pins]');
+    this.context.toggleClass('disabled', !this.onMap)
+      .on('click', () => this.onMap = !this.onMap)
+      .translate();
+
+    this.loadPins();
+
+    if(this.onMap)
+      this.layer.addTo(MapBase.map);
+  }
+
+  static loadPins() {    
+    this.layer.clearLayers();
+    this.pinsList = [];
+
+    if(Pins.isValidJSON(localStorage.getItem(`rdo:pinned-items`))) {
+      JSON.parse(localStorage.getItem(`rdo:pinned-items`)).forEach(pinnedItem => {
+        this.addPin(pinnedItem);
+      });
+    }
+  }
+
+  static addPin(data) {
+    const pin = new Pin(data);
+    this.pinsList.push(pin);
+
+    Pins.layer.addLayer(
+      L.marker([pin.lat, pin.lng], {
+        opacity: Settings.markerOpacity,
+        icon: new L.DivIcon.DataMarkup({
+          iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+          iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+          popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
+          html: `<div>
+            <img class="icon" src="assets/images/icons/${pin.icon}.png" alt="Icon">
+            <img class="background" src="assets/images/icons/marker_${pin.color}.png" alt="Background">
+            <img class="shadow" width="${35 * Settings.markerSize}"
+              height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
+          </div>`
+          }),
+        id: pin.id,        
+        draggable: Settings.isPinsEditingEnabled
+      })
+      .bindPopup(pin.updateMarkerContent(), { minWidth: 300, maxWidth: 400 })
+    );
+  }
+
+  static addPinToCenter() {
+    const center = MapBase.map.getCenter();
+    Pins.addPin({ lat: center.lat, lng: center.lng });
+  }
+
+  static save() {
+    localStorage.setItem(`rdo:pinned-items`, JSON.stringify(this.pinsList));
+  }
+
+  static importPins(text) {
+    if(Pins.isValidJSON(text)) {
+      console.log(text);
+      localStorage.setItem(`rdo:pinned-items`, text);
+      this.loadPins();
+    }
+    else {
+      alert(Language.get('alerts.file_not_valid'));
+      console.log(ex);
+      console.log(text);
+    }
+  }
+
+  static exportPins() {
+    const text = localStorage.getItem("rdo:pinned-items");
+    const filename = 'pinned-items.txt';
+
+    if (text === null) {
       alert(Language.get('alerts.nothing_to_export'));
       return;
     }
 
-    var element = document.createElement('a');
+    const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
 
@@ -159,46 +217,31 @@ var Pins = {
     element.click();
 
     document.body.removeChild(element);
-  },
-
-  importPins: function (text) {
-    if (!text.includes(':') || !text.includes(';')) {
-      alert(Language.get('alerts.file_not_valid'));
-    }
-
-    localStorage.setItem("pinned-items", text);
-
-    try {
-      this.loadAllPins();
-    } catch (error) {
-      this.removeAllPins();
-      alert(Language.get('alerts.file_not_valid'));
-    }
-  },
-
-  generatePinHash: function (str) {
-    var hash = 0,
-      i, char;
-
-    if (str.length == 0) return hash;
-
-    for (i = 0, l = str.length; i < l; i++) {
-      char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash |= 0;
-    }
-
-    return hash;
-  },
-
-  createChunkedString: function (str, size) {
-    var numChunks = Math.ceil(str.length / size);
-    var chunks = new Array(numChunks);
-
-    for (i = 0, o = 0; i < numChunks; ++i, o += size) {
-      chunks[i] = str.substr(o, size);
-    }
-
-    return chunks;
   }
-};
+  
+  static isValidJSON(str) {
+    try {
+      if(str == null)
+        return false;
+      JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+  }
+
+  static set onMap(state) { 
+    if (state) {
+      this.layer.addTo(MapBase.map);
+      localStorage.setItem(`rdo:pins-enabled`, 'true');
+      this.context.removeClass('disabled');
+    } else {
+      this.layer.remove();
+      localStorage.removeItem(`rdo:pins-enabled`);
+      this.context.addClass('disabled');
+    }      
+  }
+  static get onMap() {
+    return !!localStorage.getItem(`rdo:pins-enabled`);
+  }
+}
