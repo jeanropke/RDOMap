@@ -1304,8 +1304,7 @@ a.no-style:visited {
 .one-daily-container {
     font-size: 1.5rem;
     display: grid;
-    grid-template-areas:
-    'counter daily-challenge';
+    grid-template-areas: 'counter daily-challenge';
     grid-gap: 5px;
     margin: 10px 0;
     justify-content: space-between;
