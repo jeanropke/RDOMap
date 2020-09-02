@@ -1291,7 +1291,6 @@ a.no-style:visited {
     }
 }
 
-/* TODO Fix displaying counter when order counter/ daily is reversed */
 .dailies {
     margin: 20px 10px;
     font-size: 2rem;
@@ -1309,28 +1308,21 @@ a.no-style:visited {
     'counter daily-challenge';
     grid-gap: 5px;
     margin: 10px 0;
-    justify-content: left;
-    text-justify: left;
+    justify-content: space-between;
 }
 
-.one-daily-container>span#counter {
+span#counter {
     grid-area: counter;
     width: 45px;
     margin: 0 5px;
-    justify-items: left;
-    align-items: left;
     display: grid;
     justify-content: center;
     align-content: center;
 }
 
-.one-daily-container>span#daily {
+span#daily {
     grid-area: daily-challenge;
     margin: 0 5px;
-    justify-self: start;
-    display: grid;
-    justify-content: center;
-    align-content: left;
 }
 
 .daily-not-found {

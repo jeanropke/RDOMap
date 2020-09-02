@@ -32,14 +32,16 @@ class Dailies {
   appendToMenu() {
     // TODO: This format needs to be translatable. Russian uses "<challenge>: 0/<goal>",
     // otherwise it doesn't make sense grammatically. - Bob
-    const structure = Language.get('menu.daily_challenge_structure').match(/^\{(.+?)\}\s?\{(.+?)\}$/);
-    $('.one-daily-container').css({ 'grid-template-areas': `\"${structure[1]} ${structure[2]}\"` });
-
+    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}\.*?\{(.+?)\}/);
     $(`.dailies > .${this.role}`).append($(`
-      <div class="one-daily-container">
-        <span id="counter">${this.value}/${this.target}</span>
-        <span id="daily">${Language.get(this.translationKey)}</span>
-      </div>`));
+          <div class="one-daily-container">
+            <span id="counter">${this.value}/${this.target}</span>
+            <span id="daily">${Language.get(this.translationKey)}</span>
+          </div>`));
+    $('.one-daily-container').css({
+      'grid-template-areas': `\"${structure[1]} ${structure[2]}\"`,
+      'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
+    });
   }
   static dailiesNotUpdated() {
     $('.dailies').append($(`
