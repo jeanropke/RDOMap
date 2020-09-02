@@ -792,7 +792,7 @@ a.wiki-page:visited {
     cursor: pointer;
 }
 
-.cycle-changer {
+.dailies-changer {
     user-select: none;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ and Edge */
@@ -800,14 +800,16 @@ a.wiki-page:visited {
     justify-content: center;
 }
 
-#cycle-changer-container {
+#dailies-changer-container {
     margin: 10px 0;
 }
 
-#cycle-changer-container .cycle-data {
+#dailies-changer-container .dailies-title {
     text-align: center;
-    min-width: 100px;
+    min-width: 170px;
     margin: 0 6px;
+    font-family: RDRLino, serif;
+    font-size: 19px;
 }
 
 .marker-content-wrapper {

@@ -6,6 +6,8 @@ class Dailies {
     this.value = value;
   }
   static init() {
+    this.categories = ['general', 'trader', 'collector', 'bounty_hunter', 'moonshiner', 'naturalist'];
+    this.categoryOffset = 0;
     this.jsonData = [];
     this.dailies = [];
 
@@ -18,7 +20,7 @@ class Dailies {
         console.info(`%c[Dailies] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
 
         Object.keys(this.dailies).forEach(role => {
-          $('.dailies').append($(`<div class="${role} daily-role">${Language.get('menu.dailies_' + role)}</div>`));
+          $('.dailies').append($(`<div class="${role} daily-role"></div>`).css('display', role == 'general' ? 'block' : 'none'));
           this.dailies[role].list.forEach(({ text, target }) => {
             text = text.replace(/\*+$/, '').toLowerCase();
             const translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
@@ -51,6 +53,29 @@ class Dailies {
       <div class="daily-not-found not-found">${Language.get('menu.dailies_not_found')}</div>
     `));
   }
+  static nextCategory() {
+    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
+
+    Dailies.categoryOffset++;
+
+    if(Dailies.categoryOffset > Dailies.categories.length-1)
+      Dailies.categoryOffset = 0;
+
+    $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
+    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
+  }
+  static prevCategory() {    
+    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
+
+    Dailies.categoryOffset--;
+
+    if(Dailies.categoryOffset < 0)
+      Dailies.categoryOffset = Dailies.categories.length-1;
+
+    $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
+    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
+  }
+
   set completedDailies(num) {
     if (num === 'true')
       this.value = this.target;
