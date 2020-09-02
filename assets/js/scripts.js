@@ -235,7 +235,7 @@ function init() {
 
   $("#help-container").toggle(Settings.showHelp);
 
-  Pins.addToMap();
+  Pins.init();
   changeCursor();
 
   Menu.init();
@@ -669,7 +669,7 @@ $('#pins-edit-mode').on("change", function () {
   Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
   $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
 
-  Pins.addToMap();
+  Pins.loadPins();
 });
 
 $('#pins-place-new').on("click", function () {
@@ -908,6 +908,5 @@ $('#open-delete-all-settings-modal').on('click', function () {
 
 $(function () {
   init();
-  MapBase.loadMarkers();
   FME.init();
 });
