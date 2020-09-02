@@ -617,10 +617,8 @@ $('.menu-toggle').on('click', function () {
     $('.menu-toggle').text('>');
     $.cookie('menu-opened', '0');
   }
-
-  $('.timer-container').toggleClass('timer-menu-opened', isOpen);
-  $('.counter-container').toggleClass('counter-menu-opened', isOpen);
-  $('.clock-container').toggleClass('timer-menu-opened', isOpen);
+  
+  $('.top-widget').toggleClass('top-widget-menu-opened', isOpen);
   $('#fme-container').toggleClass('fme-menu-opened', isOpen);
 });
 //Enable & disable markers cluster

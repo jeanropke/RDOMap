@@ -221,31 +221,31 @@ select,
     margin-right: 5px;
 }
 
-#countdown,
-#item-counter,
-#time-in-game {
-    font-size: 16px;
+.top-widget {
+    z-index: 1010;
+    position: fixed;
+    left: 40px;
+    top: 3px;
+    height: 34px;
+    width: 130px;
+    background-image: url(../../assets/images/timer_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 5px 15px 5px 10px;
+    color: #fff;
+    text-align: center;
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
-    margin: auto 8px auto 0;
+    transition: all 200ms ease-out;
 }
 
-.timer-container,
-.clock-container {
-    position: fixed;
-    z-index: 1010;
-    background: #111;
-    border: 1px solid #888;
-    color: #eee;
-    left: 40px;
-    top: 5px;
-    min-width: 50px;
-    height: 30px;
-    transition: all 200ms ease-out;
-    padding: 0 8px;
-    display: inline-flex;
-    line-height: 28px;
+.top-widget>* {
+    display: inline-block;
+    line-height: 18px;
+}
+
+.top-widget>p {
+    margin-right: 2px !important;
+    cursor: pointer;
 }
 
 .day-cycle {
@@ -447,8 +447,9 @@ select,
 .menu-toggle {
     width: 30px;
     height: 30px;
-    background: #111;
-    border: 1px solid #888;
+    background-image: url(../../assets/images/timer_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: fixed;
     z-index: 1000;
     left: 5px;
@@ -457,9 +458,9 @@ select,
     text-align: center;
     line-height: 1.85;
     user-select: none;
+    cursor: pointer;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ and Edge */
-    cursor: pointer;
 }
 
 .side-menu {
@@ -1051,8 +1052,7 @@ a.no-style:visited {
 
 @media (max-width: 1024px) {
 
-    .timer-menu-opened,
-    .counter-menu-opened,
+    .top-widget-menu-opened
     .fme-menu-opened {
         display: none !important;
     }
@@ -1075,6 +1075,9 @@ a.no-style:visited {
 
     .counter-menu-opened {
         left: 410px;
+    }
+    .top-widget-menu-opened {
+        left: 405px;
     }
 }
 
