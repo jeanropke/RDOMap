@@ -43,5 +43,12 @@ class Menu {
       PlantsCollection.locations.forEach(_plants => { if(!_plants.onMap) _plants.onMap = !_plants.onMap});
       setTimeout(() => PlantsCollection.layer.redraw(), 40);
     });
+
+    $('.encounters-hide-btn').on('click', function () {
+      Encounter.locations.forEach(_encounter => { if(_encounter.onMap) _encounter.onMap = !_encounter.onMap});
+    });
+    $('.encounters-show-btn').on('click', function () {
+      Encounter.locations.forEach(_encounter => { if(!_encounter.onMap) _encounter.onMap = !_encounter.onMap});
+    });
   }
 }
