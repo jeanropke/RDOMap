@@ -1,51 +1,49 @@
-var MapBase = {
+const MapBase = {
   minZoom: Settings.isDebugEnabled ? 0 : 2,
   maxZoom: Settings.isDebugEnabled ? 10 : 7,
   map: null,
   overlays: [],
-  markers: [],
-  importantItems: [],
   isDarkMode: false,
-  fastTravelData: null,
-  shopData: null,
-  campData: null,
-  campDisabled: [],
-  dailyData: null,
+  interiors: false,
   updateLoopAvailable: true,
   requestLoopCancel: false,
+  showAllMarkers: false,
+  filtersData: [],
 
   init: function () {
+    'use strict';
 
+    const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
     //Please, do not use the GitHub map tiles. Thanks
-    var mapLayers = [
-      L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+    const mapLayers = {
+      'map.layers.default': L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        bounds: mapBoundary,
         attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
       }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
+      'map.layers.detailed': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        bounds: mapBoundary,
         attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
       }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+      'map.layers.dark': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        bounds: mapBoundary,
         attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
       }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/black/{z}/{x}_{y}.jpg', {
+      'map.layers.black': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/black/{z}/{x}_{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        bounds: mapBoundary,
         attribution: '<a href="https://github.com/AdamNortonUK" target="_blank">AdamNortonUK</a>'
       }),
-    ];
+    };
 
     // Override bindPopup to include mouseover and mouseout logic.
     L.Layer.include({
       bindPopup: function (content, options) {
         // TODO: Check if we can move this from here.
         if (content instanceof L.Popup) {
-          Util.setOptions(content, options);
+          L.Util.setOptions(content, options);
           this._popup = content;
           content._source = this;
         } else {
@@ -73,8 +71,8 @@ var MapBase = {
         this.on('mouseout', function (e) {
           if (!Settings.isPopupsHoverEnabled) return;
 
-          var that = this;
-          var timeout = setTimeout(function () {
+          const that = this;
+          const timeout = setTimeout(function () {
             that.closePopup();
           }, 100);
 
@@ -95,13 +93,13 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
+      layers: [mapLayers[Settings.baseLayer]],
     }).setView([-70, 111.75], 3);
 
     MapBase.map.addControl(
       L.control.attribution({
         position: 'bottomright',
-        prefix: '<a target="_blank" href="https://github.com/jeanropke/RDOMap/blob/master/CONTRIBUTORS.md" data-text="map.attribution_prefix">RDO Map Contributors</a>'
+        prefix: '<a target="_blank" href="https://github.com/jeanropke/RDR2CollectorsMap/blob/master/CONTRIBUTORS.md" data-text="map.attribution_prefix">Collectors Map Contributors</a>'
       })
     );
 
@@ -109,48 +107,34 @@ var MapBase = {
       position: 'bottomright'
     }).addTo(MapBase.map);
 
-    var baseMapsLayers = {
-      'map.layers.default': mapLayers[0],
-      'map.layers.detailed': mapLayers[1],
-      'map.layers.dark': mapLayers[2],
-      'map.layers.black': mapLayers[3]
-    };
+    L.control.layers(mapLayers).addTo(MapBase.map);
 
-    L.control.layers(baseMapsLayers).addTo(MapBase.map);
+    // Leaflet leaves the layer names here, with a space in front of them.
+    $('.leaflet-control-layers-list span').each(function (index, node) {
+      // Move the layer name (which is chosen to be our language key) into a
+      // new tightly fitted span for use with our localization.
+      const langKey = node.textContent.trim();
+      $(node).html([' ', $('<span>').attr('data-text', langKey).text(langKey)]);
+    });
 
     MapBase.map.on('baselayerchange', function (e) {
-      var mapIndex;
+      Settings.baseLayer = e.name;
+      MapBase.setMapBackground();
+    });
 
-      switch (e.name) {
-        case 'map.layers.default':
-          mapIndex = 0;
-          break;
-        case 'map.layers.dark':
-          mapIndex = 2;
-          break;
-        case 'map.layers.black':
-          mapIndex = 3;
-          break;
-        case 'map.layers.detailed':
-        default:
-          mapIndex = 1;
-          break;
-      }
-
-      setMapBackground(mapIndex);
+    $('#overlay-opacity').val(Settings.overlayOpacity);
+    $("#overlay-opacity").on("change", function () {
+      Settings.overlayOpacity = Number($("#overlay-opacity").val());
+      MapBase.setOverlays();
     });
 
     MapBase.map.on('click', function (e) {
       MapBase.addCoordsOnMap(e);
     });
 
-    if (Settings.isDoubleClickZoomEnabled) {
-      MapBase.map.doubleClickZoom.enable();
-    } else {
-      MapBase.map.doubleClickZoom.disable();
-    }
+    MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
 
-    var southWest = L.latLng(-160, -50),
+    const southWest = L.latLng(-160, -120),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
@@ -163,11 +147,18 @@ var MapBase = {
     });
 
     MapBase.loadOverlays();
-
     Layers.debugLayer.addTo(MapBase.map);
 
     // Enable this and disable the above to see cool stuff.
     // MapBase.loadOverlaysBeta();
+    MapBase.setMapBackground();
+  },
+
+  setMapBackground: function () {
+    'use strict';
+    MapBase.isDarkMode = ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer) ? true : false;
+    $('#map').css('background-color', MapBase.isDarkMode ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
+    MapBase.setOverlays();
   },
 
   loadOverlays: function () {
@@ -305,7 +296,7 @@ var MapBase = {
   heatmapCount: 10,
   addCoordsOnMap: function (coords) {
     // Show clicked coordinates (like google maps)
-    if (Settings.isCoordsEnabled) {
+    if (Settings.isCoordsOnClickEnabled) {
       $('.lat-lng-container').css('display', 'block');
 
       $('.lat-lng-container p').html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
@@ -326,7 +317,7 @@ var MapBase = {
     }
 
     if (Settings.isPinsPlacingEnabled)
-      Pins.addPin({lat: coords.latlng.lat, lng: coords.latlng.lng });
+      Pins.addPin({ lat: coords.latlng.lat, lng: coords.latlng.lng });
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {

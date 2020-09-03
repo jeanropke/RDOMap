@@ -14,6 +14,17 @@ class Menu {
     $('#dailies-prev').on('click', Dailies.prevCategory);
     $('#dailies-next').on('click', Dailies.nextCategory);
 
+    const help = document.getElementById('help-container');
+    const $helpParagraph = $(help).children('p');
+    $('.side-menu, .top-widget, .lat-lng-container')
+      .on('mouseover mouseout', event => {
+        const target = event.type === 'mouseover' ? event.target : event.relatedTarget;
+        // keep current help if pointer jumped to help container or it overgrew current pointer pos.
+        if (help.contains(target)) return;
+        const helpTransId = $(target).closest('[data-help]').attr('data-help') || 'default';
+        $helpParagraph.html(Language.get(`help.${helpTransId}`));
+      });
+
     $('.camps-small-btn').on('click', function () {
       $(this).toggleClass('disabled');
       Camp.isSmall = !Camp.isSmall;

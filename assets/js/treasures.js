@@ -87,18 +87,17 @@ class Treasure {
   }
   set onMap(state) {
     if (state) {
-      const method = enabledCategories.includes('treasure') ? 'addLayer' : 'removeLayer';
-      Treasure.layer[method](this.marker);
+      Treasure.layer.addLayer(this.marker);
       this.element.removeClass('disabled');
-      localStorage.setItem(this._shownKey, 'true');
+      localStorage.setItem(`rdo:${this._shownKey}`, 'true');
     } else {
       Treasure.layer.removeLayer(this.marker);
       this.element.addClass('disabled');
-      localStorage.removeItem(this._shownKey);
+      localStorage.removeItem(`rdo:${this._shownKey}`);
     }
   }
   get onMap() {
-    return !!localStorage.getItem(this._shownKey);
+    return !!localStorage.getItem(`rdo:${this._shownKey}`);
   }
   static onCategoryToggle() {
     Treasure.treasures.forEach(treasure => treasure.onMap = treasure.onMap);

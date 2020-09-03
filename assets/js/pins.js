@@ -47,7 +47,7 @@ class Pin {
         if (icon == this.icon) option.attr('selected', 'selected');
         markerIconSelect.append(option);
       });
-      
+
       snippet = $(`
         <div>
           <h1>
@@ -81,13 +81,13 @@ class Pin {
           </div>
         </div>
         `);
-        snippet.find('button.save-button').on('click', () => 
-          this.save($(`#${this.id}_name`).val(), $(`#${this.id}_desc`).val(), $(`#${this.id}_icon`).val(), $(`#${this.id}_color`).val())
-        );
-        snippet.find('button.remove-button').on('click', () => this.remove());
+      snippet.find('button.save-button').on('click', () =>
+        this.save($(`#${this.id}_name`).val(), $(`#${this.id}_desc`).val(), $(`#${this.id}_icon`).val(), $(`#${this.id}_color`).val())
+      );
+      snippet.find('button.remove-button').on('click', () => this.remove());
     }
-    
-    return snippet[0];    
+
+    return snippet[0];
   }
 
   save(title, desc, icon, color) {
@@ -98,11 +98,11 @@ class Pin {
 
     Pins.layer.removeLayer(
       Object.keys(Pins.layer._layers)
-      .find(marker => {
-        this.lat = Pins.layer._layers[marker]._latlng.lat;
-        this.lng = Pins.layer._layers[marker]._latlng.lng;
-        return Pins.layer._layers[marker].options.id == this.id;
-      }));
+        .find(marker => {
+          this.lat = Pins.layer._layers[marker]._latlng.lat;
+          this.lng = Pins.layer._layers[marker]._latlng.lng;
+          return Pins.layer._layers[marker].options.id == this.id;
+        }));
 
     Pins.pinsList = Pins.pinsList.filter(_pin => _pin.id != this.id);
 
@@ -118,7 +118,7 @@ class Pin {
     });
 
     Pins.layer.removeLayer(Object.keys(Pins.layer._layers).find(marker => Pins.layer._layers[marker].options.id == this.id));
-   
+
     Pins.save();
   }
 }
@@ -129,6 +129,68 @@ class Pins {
 
   static init() {
 
+    $('#pins-place-mode').on("change", function () {
+      Settings.isPinsPlacingEnabled = $("#pins-place-mode").prop('checked');
+      $.cookie('pins-place-enabled', Settings.isPinsPlacingEnabled ? '1' : '0', { expires: 999 });
+    });
+
+    $('#pins-edit-mode').on("change", function () {
+      Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
+      $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
+
+      Pins.loadPins();
+    });
+
+    $('#pins-place-new').on("click", function () {
+      Pins.addPinToCenter();
+    });
+
+    $('#pins-export').on("click", function () {
+      try {
+        Pins.exportPins();
+      } catch (error) {
+        console.error(error);
+        alert(Language.get('alerts.feature_not_supported'));
+      }
+    });
+
+    $('#pins-import').on('click', function () {
+      try {
+        var file = $('#pins-import-file').prop('files')[0];
+        var fallback = false;
+
+        if (!file) {
+          alert(Language.get('alerts.file_not_found'));
+          return;
+        }
+
+        try {
+          file.text().then((text) => {
+            Pins.importPins(text);
+          });
+        } catch (error) {
+          fallback = true;
+        }
+
+        if (fallback) {
+          var reader = new FileReader();
+
+          reader.addEventListener('loadend', (e) => {
+            var text = e.srcElement.result;
+            Pins.importPins(text);
+          });
+
+          reader.readAsText(file);
+        }
+      } catch (error) {
+        console.error(error);
+        alert(Language.get('alerts.feature_not_supported'));
+      }
+    });
+
+    $("#pins-place-mode").prop('checked', Settings.isPinsPlacingEnabled);
+    $("#pins-edit-mode").prop('checked', Settings.isPinsEditingEnabled);
+
     this.context = $('.menu-option[data-type=user_pins]');
     this.context.toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
@@ -136,15 +198,15 @@ class Pins {
 
     this.loadPins();
 
-    if(this.onMap)
+    if (this.onMap)
       this.layer.addTo(MapBase.map);
   }
 
-  static loadPins() {    
+  static loadPins() {
     this.layer.clearLayers();
     this.pinsList = [];
 
-    if(Pins.isValidJSON(localStorage.getItem(`rdo:pinned-items`))) {
+    if (Pins.isValidJSON(localStorage.getItem(`rdo:pinned-items`))) {
       JSON.parse(localStorage.getItem(`rdo:pinned-items`)).forEach(pinnedItem => {
         this.addPin(pinnedItem);
       });
@@ -154,6 +216,8 @@ class Pins {
   static addPin(data) {
     const pin = new Pin(data);
     this.pinsList.push(pin);
+
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     Pins.layer.addLayer(
       L.marker([pin.lat, pin.lng], {
@@ -165,14 +229,13 @@ class Pins {
           html: `<div>
             <img class="icon" src="assets/images/icons/${pin.icon}.png" alt="Icon">
             <img class="background" src="assets/images/icons/marker_${pin.color}.png" alt="Background">
-            <img class="shadow" width="${35 * Settings.markerSize}"
-              height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
+            ${shadow}
           </div>`
-          }),
-        id: pin.id,        
+        }),
+        id: pin.id,
         draggable: Settings.isPinsEditingEnabled
       })
-      .bindPopup(pin.updateMarkerContent(), { minWidth: 300, maxWidth: 400 })
+        .bindPopup(pin.updateMarkerContent(), { minWidth: 300, maxWidth: 400 })
     );
   }
 
@@ -186,7 +249,7 @@ class Pins {
   }
 
   static importPins(text) {
-    if(Pins.isValidJSON(text)) {
+    if (Pins.isValidJSON(text)) {
       console.log(text);
       localStorage.setItem(`rdo:pinned-items`, text);
       this.loadPins();
@@ -218,19 +281,19 @@ class Pins {
 
     document.body.removeChild(element);
   }
-  
+
   static isValidJSON(str) {
     try {
-      if(str == null)
+      if (str == null)
         return false;
       JSON.parse(str);
     } catch (e) {
-        return false;
+      return false;
     }
     return true;
   }
 
-  static set onMap(state) { 
+  static set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
       localStorage.setItem(`rdo:pins-enabled`, 'true');
@@ -239,7 +302,7 @@ class Pins {
       this.layer.remove();
       localStorage.removeItem(`rdo:pins-enabled`);
       this.context.addClass('disabled');
-    }      
+    }
   }
   static get onMap() {
     return !!localStorage.getItem(`rdo:pins-enabled`);

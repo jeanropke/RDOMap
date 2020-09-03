@@ -33,14 +33,10 @@ class Marker {
           return Language.get(`map.${this.category}.desc`);
       }
     })();
-    this.isVisible = enabledCategories.includes(category);
-    this.isCollected = false;
-    this.canCollect = !this.isCollected;
   }
   updateMarkerContent() {
     let linksElement = $('<p>');
     let debugDisplayLatLng = $('<small>').text(`Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}`);
-
     return `<h1>${this.title}</h1>
         <span class="marker-content-wrapper">
         <p>${this.description}</p>

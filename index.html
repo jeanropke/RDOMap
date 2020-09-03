@@ -332,13 +332,6 @@
           <option value="zh-Hant">繁体中文 (Chinese Traditional)</option>
         </select>
       </div>
-      <div class="input-container" data-help="tooltip">
-        <label for="tooltip" data-text="menu.tooltip">Tooltip</label>
-        <select class="input-text wide-select-menu" id="tooltip">
-          <option value="0" data-text="menu.tooltip_disabled">Disabled</option>
-          <option value="1" data-text="menu.tooltip_enabled">Enabled</option>
-        </select>
-      </div>
       <div class="input-container" data-help="marker_size">
         <label for="marker-size" data-text="menu.marker_size">Marker size</label>
         <select class="input-text wide-select-menu" id="marker-size">
@@ -371,6 +364,13 @@
           <option value="0.75" data-text="menu.overlay_opacity.75">75%</option>
           <option value="1" data-text="menu.overlay_opacity.100" selected>Opaque</option>
         </select>
+      </div>
+      <div class="input-container" data-help="tooltip">
+        <label for="tooltip" data-text="menu.tooltip">Tooltip</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="tooltip" value="1" id="tooltip" />
+          <label class="input-checkbox-label" for="tooltip"></label>
+        </div>
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="fme_display">
@@ -431,13 +431,13 @@
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
-      <div class="input-container" data-help="marker_cluster">
+      <!--div class="input-container" data-help="marker_cluster">
         <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
           <label class="input-checkbox-label" for="marker-cluster"></label>
         </div>
-      </div>
+      </div-->
       <div class="input-container" data-help="enable_marker_popups_hover">
         <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
           hover</label>

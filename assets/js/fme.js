@@ -28,28 +28,24 @@ const FME = {
    * A list of flags to use for the FME enabled settings
    */
   flags: {
-    general: {
-      none: 0,
-      fme_archery: 1,
-      fme_dead_drop: 2,
-      fme_fishing_challenge: 4,
-      fme_golden_hat: 8,
-      fme_hot_property: 16,
-      fme_king_of_the_castle: 32,
-      fme_king_of_the_rail: 64,
-      fme_random: 128,
-      fme_wild_animal_kills: 256,
-    },
-    role: {
-      none: 0,
-      fme_role_animal_tagging: 1,
-      fme_role_condor_egg: 2,
-      fme_role_greatest_bounty_hunter: 4,
-      fme_role_protect_legendary_animal: 8,
-      fme_role_round_up: 16,
-      fme_role_supply_train: 32,
-      fme_role_wreckage: 64,
-    }
+    none: 0,
+    fme_archery: 1,
+    fme_dead_drop: 2,
+    fme_fishing_challenge: 4,
+    fme_golden_hat: 8,
+    fme_hot_property: 16,
+    fme_king_of_the_castle: 32,
+    fme_king_of_the_rail: 64,
+    fme_random: 128,
+    fme_role_animal_tagging: 256,
+    fme_role_condor_egg: 512,
+    fme_role_greatest_bounty_hunter: 1024,
+    fme_role_protect_legendary_animal: 2048,
+    fme_role_round_up: 4096,
+    fme_role_supply_train: 8192,
+    fme_role_wildlife_photographer: 16384,
+    fme_role_wreckage: 32768,
+    fme_wild_animal_kills: 65536,
   },
 
   /**
@@ -87,9 +83,7 @@ const FME = {
     schedule.forEach(function (e, i) {
       const event = FME.getEventObject(e, frequency);
 
-      if (key === "general" && !(Settings.fmeEnabledGeneralEvents & FME.flags.general[event.name])) return;
-      if (key === "role" && !(Settings.fmeEnabledRoleEvents & FME.flags.role[event.name])) return;
-
+      if (!(Settings.fmeEnabledEvents & FME.flags[event.name])) return;
       if (event.eta > 0 && event.eta < frequency) {
         hasValidNext = true;
 
@@ -133,20 +127,20 @@ const FME = {
     var oneDay = this.minutesToMilliseconds(24 * 60);
     var dateTime = this.getDateTime(now, eventTime);
     var eta = dateTime - now;
-  
+
     // Ensure that event dates are not in the past or too far
     // in the future, where timezone is not UTC
     if (eta > frequency) {
       dateTime = this.getDateTime(now - oneDay, eventTime);
       eta = dateTime - now;
     }
-  
+
     // Ensure that all event dates are in the future, to fix timezone bug
     if (eta <= 0) {
       dateTime = this.getDateTime(now + oneDay, eventTime);
       eta = dateTime - now;
     }
-  
+
     return {
       id: d[1],
       dateTime: dateTime,
@@ -186,16 +180,6 @@ const FME = {
    * Update the FME card
    */
   update: function () {
-    // START RDO CUSTOM BLOCK
-    $.cookie('fmeDisplayGeneralPeriod', Settings.fmeDisplayGeneralPeriod, {expires: 999});
-    $.cookie('fmeDisplayRolePeriod', Settings.fmeDisplayRolePeriod, {expires: 999});
-    $.cookie('fmeEnabledGeneralEvents', Settings.fmeEnabledGeneralEvents, {expires: 999});
-    $.cookie('fmeEnabledRoleEvents', Settings.fmeEnabledRoleEvents, {expires: 999});
-    $.cookie('fmeNotificationPeriod', Settings.fmeNotificationPeriod, {expires: 999});
-    $.cookie('isFmeDisplayEnabled', Settings.isFmeDisplayEnabled, {expires: 999});
-    $.cookie('isFmeNotificationEnabled', Settings.isFmeNotificationEnabled, {expires: 999});
-    // END RDO CUSTOM BLOCK
-
     if (!Settings.isFmeDisplayEnabled && !Settings.isFmeNotificationEnabled) {
       FME.updateVisiblity();
       return;
@@ -234,16 +218,6 @@ const FME = {
    * Retrieve the FME data from FME.json
    */
   init: function () {
-    // START RDO CUSTOM BLOCK
-    Settings.fmeDisplayGeneralPeriod = $.cookie('fmeDisplayGeneralPeriod') !== undefined ? (parseInt($.cookie('fmeDisplayGeneralPeriod'))) : 30;
-    Settings.fmeDisplayRolePeriod = $.cookie('fmeDisplayRolePeriod') !== undefined ? (parseInt($.cookie('fmeDisplayRolePeriod'))) : 60;
-    Settings.fmeEnabledGeneralEvents = $.cookie('fmeEnabledGeneralEvents') !== undefined ? (parseInt($.cookie('fmeEnabledGeneralEvents'))) : 511;
-    Settings.fmeEnabledRoleEvents = $.cookie('fmeEnabledRoleEvents') !== undefined ? (parseInt($.cookie('fmeEnabledRoleEvents'))) : 127;
-    Settings.fmeNotificationPeriod = $.cookie('fmeNotificationPeriod') !== undefined ? (parseInt($.cookie('fmeNotificationPeriod'))) : 10;
-    Settings.isFmeDisplayEnabled = $.cookie('isFmeDisplayEnabled') !== undefined ? ($.cookie('isFmeDisplayEnabled') === "true") : true;
-    Settings.isFmeNotificationEnabled = $.cookie('isFmeNotificationEnabled') !== undefined ? ($.cookie('isFmeNotificationEnabled') === "true") : false;
-    // END RDO CUSTOM BLOCK
-
     $('#fme-display').on("change", function () {
       Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
       $('#fme-display-general-period, #fme-display-role-period').parent().toggle(Settings.isFmeDisplayEnabled);
@@ -301,16 +275,10 @@ const FME = {
     $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
     $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
 
-    $("input[name='fme-enabled-general-events[]']").each(function (i, v) {
+    $("input[name='fme-enabled-events[]']").each(function (i, v) {
       const id = $(this).attr('id');
-      $(this).prop('checked', (Settings.fmeEnabledGeneralEvents & FME.flags.general[id]));
+      $(this).prop('checked', (Settings.fmeEnabledEvents & FME.flags[id]));
     });
-
-    $("input[name='fme-enabled-role-events[]']").each(function (i, v) {
-      const id = $(this).attr('id');
-      $(this).prop('checked', (Settings.fmeEnabledRoleEvents & FME.flags.role[id]));
-    });
-
 
     $('#open-fme-enabled-events-modal').on('click', function () {
       $('#fme-enabled-events-modal').modal();
@@ -327,14 +295,14 @@ const FME = {
   },
 
   initModal: function () {
-    Object.keys(this.flags.general).forEach(f => {
+    Object.keys(this.flags).forEach(f => {
       if (f === "none") return;
       var snippet = $(`
         <div class="input-container">
           <label for="${f}" data-text="menu.fme.${f}"></label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="${this.flags.general[f]}"
-              id="${f}" ${(Settings.fmeEnabledGeneralEvents & FME.flags.general[f]) ? "checked" : ""} />
+            <input class="input-checkbox" type="checkbox" name="fme-enabled-events[]" value="${this.flags[f]}"
+              id="${f}" ${(Settings.fmeEnabledEvents & FME.flags[f]) ? "checked" : ""} />
             <label class="input-checkbox-label" for="${f}"></label>
           </div>
         </div>
@@ -342,40 +310,23 @@ const FME = {
 
       snippet.change(function () {
         let total = 0;
-        $("input[name='fme-enabled-general-events[]']:checked").each(function (i, v) {
+        $("input[name='fme-enabled-events[]']:checked").each(function (i, v) {
           const value = parseInt($(this).val());
           total += value;
         });
-        Settings.fmeEnabledGeneralEvents = total;
+        Settings.fmeEnabledEvents = total;
         FME.update();
       });
 
-      $('#fme-enabled-events-modal #general').append(Language.translateDom(snippet)[0]);
+      $('#fme-enabled-events-modal #events').append(Language.translateDom(snippet)[0]);
     });
-    Object.keys(this.flags.role).forEach(f => {
-      if (f === "none") return;
-      var snippet = $(`
-        <div class="input-container">
-          <label for="${f}" data-text="menu.fme.${f}"></label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="${this.flags.role[f]}"
-            id="${f}" ${(Settings.fmeEnabledRoleEvents & FME.flags.role[f]) ? "checked" : ""} />
-            <label class="input-checkbox-label" for="${f}"></label>
-          </div>
-        </div>
-      `);
 
-      snippet.change(function () {
-        let total = 0;
-        $("input[name='fme-enabled-role-events[]']:checked").each(function (i, v) {
-          const value = parseInt($(this).val());
-          total += value;
-        });
-        Settings.fmeEnabledRoleEvents = total;
-        FME.update();
-      });
-
-      $('#fme-enabled-events-modal #role').append(Language.translateDom(snippet)[0]);
+    var items = $('#fme-enabled-events-modal #events').children('.input-container').get();
+    items.sort(function (a, b) {
+      return $(a).find('label').text().toLowerCase().localeCompare($(b).find('label').text().toLowerCase());
+    });
+    $.each(items, function (i, e) {
+      $('#fme-enabled-events-modal #events').append(e);
     });
   },
 

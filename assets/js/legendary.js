@@ -56,7 +56,6 @@ class Legendary {
   }
   static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
     this.mainIcon = L.divIcon({
-      opacity: Settings.markerOpacity,
       iconSize: [35 * markerSize, 45 * markerSize],
       iconAnchor: [17 * markerSize, 42 * markerSize],
       popupAnchor: [1 * markerSize, -29 * markerSize],
@@ -91,7 +90,7 @@ class Legendary {
       fillOpacity: 0.5,
       radius: this.radius,
     }));
-    this.marker.addLayer(L.marker([this.x, this.y], { icon: Legendary.mainIcon })
+    this.marker.addLayer(L.marker([this.x, this.y], { icon: Legendary.mainIcon, opacity: Settings.markerOpacity, })
       .bindPopup(this.popupContent.bind(this), { minWidth: 400 })
     );
     this.locations.forEach(cross =>
@@ -104,7 +103,6 @@ class Legendary {
     this.marker.addLayer(L.imageOverlay(overlay, [[this.x - this.radius, this.y - this.radius * 2], [this.x + this.radius, this.y + this.radius * 2]], {
       opacity: Settings.overlayOpacity
     }));
-
     this.onMap = this.onMap;
   }
   popupContent() {
@@ -121,8 +119,7 @@ class Legendary {
   }
   set onMap(state) {
     if (state) {
-      const method = enabledCategories.includes('legendary_animals') ? 'addLayer' : 'removeLayer';
-      Legendary.layer[method](this.marker);
+      Legendary.layer.addLayer(this.marker);
       this.element.removeClass('disabled');
       localStorage.setItem(`rdo:${this._shownKey}`, 'true');
     } else {

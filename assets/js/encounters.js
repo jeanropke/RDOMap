@@ -35,9 +35,10 @@ class Encounter {
   }
 
   reinitMarker() {
-
+    this.layer.clearLayers();
     this.markers.forEach(
       marker => {
+        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         this.layer.addLayer(L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
@@ -48,8 +49,7 @@ class Encounter {
               ${marker.subdata == 'mission_giver' ? '<img class="overlay" src="assets/images/icons/overlay_giver.png" alt="Mission giver">' : ''}
               <img class="icon" src="assets/images/icons/${this.key}.png" alt="Icon">
               <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
-              <img class="shadow" width="${35 * Settings.markerSize}"
-                height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
+              ${shadow}
             </div>`,
             marker: this.key
           })

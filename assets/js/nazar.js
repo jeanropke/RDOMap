@@ -25,7 +25,7 @@ class MadamNazar {
     this.context = $('.menu-option[data-type=nazar]');
 
     this.context.toggleClass('disabled', !MadamNazar.onMap)
-      .on('click', () => MadamNazar.onMap = !MadamNazar.onMap)      
+      .on('click', () => MadamNazar.onMap = !MadamNazar.onMap)
       .translate();
 
     return Loader.promises['nazar'].consumeJson(nazar => {
@@ -33,7 +33,7 @@ class MadamNazar {
       if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam)
         this.currentLocation = _nazarParam;
       else
-        this.currentLocation = nazar.nazar_id - 1;        
+        this.currentLocation = nazar.nazar_id - 1;
 
       this.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
         day: "2-digit", month: "long", year: "numeric"
@@ -47,12 +47,12 @@ class MadamNazar {
     if (this.currentLocation == null || !MadamNazar.onMap)
       return;
 
-      MadamNazar.layer.clearLayers();
+    MadamNazar.layer.clearLayers();
 
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
+      opacity: Settings.markerOpacity,
       icon: L.divIcon({
-        opacity: Settings.markerOpacity,
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],

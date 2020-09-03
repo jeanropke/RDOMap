@@ -43,7 +43,7 @@ class Camp {
 
           if(!Camp.isLarge && marker.size == 'large') return;
           if(!Camp.isSmall && marker.size == 'small') return;
-
+          var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
           this.layer.addLayer(L.marker([marker.lat, marker.lng], {
             opacity: Settings.markerOpacity,
             icon: new L.DivIcon.DataMarkup({
@@ -53,8 +53,7 @@ class Camp {
               html: `<div>
                 <img class="icon" src="assets/images/icons/camps.png" alt="Icon">
                 <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
-                <img class="shadow" width="${35 * Settings.markerSize}"
-                  height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
+                ${shadow}
               </div>`,
               marker: this.key
             })
