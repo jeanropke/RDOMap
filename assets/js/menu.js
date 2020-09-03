@@ -11,9 +11,6 @@ class Menu {
 
   static activateHandlers() {
 
-    $('#dailies-prev').on('click', Dailies.prevCategory);
-    $('#dailies-next').on('click', Dailies.nextCategory);
-
     const help = document.getElementById('help-container');
     const $helpParagraph = $(help).children('p');
     $('.side-menu, .top-widget, .lat-lng-container')
