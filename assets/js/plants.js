@@ -54,7 +54,8 @@ class Plants {
       }
       PlantsCollection.layer.clearLayers();
       PlantsCollection.layer.addLayers(PlantsCollection.markers);
-      localStorage.setItem(`rdo:${this.key}`, 'true');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:${this.key}`, 'true');
       this.element.removeClass('disabled');
     } else {
 
@@ -65,7 +66,8 @@ class Plants {
       if (PlantsCollection.markers.length > 0)
         PlantsCollection.layer.addLayers(PlantsCollection.markers);
 
-      localStorage.removeItem(`rdo:${this.key}`);
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:${this.key}`);
       this.element.addClass('disabled');
     }
   }

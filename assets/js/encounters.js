@@ -2,10 +2,14 @@ class Encounter {
   static start = Date.now();
   static init() {
     this.locations = [];
+    this.quickParams = [];
     this.context = $('.menu-hidden[data-type=encounters]');
 
     return Loader.promises['encounters'].consumeJson(data => {
-      data.forEach(item => this.locations.push(new Encounter(item)));
+      data.forEach(item => { 
+        this.locations.push(new Encounter(item));
+        this.quickParams.push(item.key);
+      });
       console.info(`%c[Encounters] Loaded in ${Date.now() - Encounter.start}ms!`, 'color: #bada55; background: #242424');
       Menu.reorderMenu(this.context);
     });
@@ -23,14 +27,14 @@ class Encounter {
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
-      .append($('<p class="collectible">').attr('data-text', 'menu.'+ this.key))
+      .append($('<p class="collectible">').attr('data-text', 'menu.' + this.key))
       .translate();
 
     this.element.appendTo(Encounter.context);
 
     this.reinitMarker();
 
-    if(this.onMap)
+    if (this.onMap)
       this.layer.addTo(MapBase.map);
   }
 
@@ -54,7 +58,7 @@ class Encounter {
             marker: this.key
           })
         })
-        .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
+          .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
       }
     );
   }
@@ -63,11 +67,13 @@ class Encounter {
     if (state) {
       this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
-      localStorage.setItem(`rdo:${this.key}`, 'true');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:${this.key}`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
-      localStorage.removeItem(`rdo:${this.key}`);
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:${this.key}`);
     }
   }
   get onMap() {

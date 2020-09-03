@@ -1,10 +1,14 @@
 class Location {
   static start = Date.now();
   static init() {
+    this.quickParams = [];
     this.locations = [];
 
     return Loader.promises['items'].consumeJson(data => {
-      data.forEach(item => this.locations.push(new Location(item)));
+      data.forEach(item => {
+        this.locations.push(new Location(item)); 
+        this.quickParams.push(item.key);
+      });
       console.info(`%c[Locations] Loaded in ${Date.now() - Location.start}ms!`, 'color: #bada55; background: #242424');
     });
   }
@@ -56,11 +60,13 @@ class Location {
     if (state) {
       this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
-      localStorage.setItem(`rdo:${this.key}`, 'true');
+      if(!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:${this.key}`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
-      localStorage.setItem(`rdo:${this.key}`, 'false');
+      if(!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:${this.key}`, 'false');
     }
   }
   get onMap() {

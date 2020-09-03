@@ -296,11 +296,13 @@ class Pins {
   static set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      localStorage.setItem(`rdo:pins-enabled`, 'true');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:pins-enabled`, 'true');
       this.context.removeClass('disabled');
     } else {
       this.layer.remove();
-      localStorage.removeItem(`rdo:pins-enabled`);
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:pins-enabled`);
       this.context.addClass('disabled');
     }
   }

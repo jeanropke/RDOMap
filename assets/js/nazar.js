@@ -72,12 +72,14 @@ class MadamNazar {
     if (state) {
       MadamNazar.layer.addTo(MapBase.map);
       this.context.removeClass('disabled');
-      localStorage.setItem(`rdo:nazar`, 'true');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:nazar`, 'true');
       MadamNazar.addMadamNazar();
     } else {
       MadamNazar.layer.remove();
       this.context.addClass('disabled');
-      localStorage.setItem(`rdo:nazar`, 'false');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:nazar`, 'false');
     }
   }
   static get onMap() {

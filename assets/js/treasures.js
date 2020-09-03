@@ -89,11 +89,13 @@ class Treasure {
     if (state) {
       Treasure.layer.addLayer(this.marker);
       this.element.removeClass('disabled');
-      localStorage.setItem(`rdo:${this._shownKey}`, 'true');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:${this._shownKey}`, 'true');
     } else {
       Treasure.layer.removeLayer(this.marker);
       this.element.addClass('disabled');
-      localStorage.removeItem(`rdo:${this._shownKey}`);
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:${this._shownKey}`);
     }
   }
   get onMap() {

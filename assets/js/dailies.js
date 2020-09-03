@@ -61,19 +61,19 @@ class Dailies {
 
     Dailies.categoryOffset++;
 
-    if(Dailies.categoryOffset > Dailies.categories.length-1)
+    if (Dailies.categoryOffset > Dailies.categories.length - 1)
       Dailies.categoryOffset = 0;
 
     $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
     $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
   }
-  static prevCategory() {    
+  static prevCategory() {
     $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
 
     Dailies.categoryOffset--;
 
-    if(Dailies.categoryOffset < 0)
-      Dailies.categoryOffset = Dailies.categories.length-1;
+    if (Dailies.categoryOffset < 0)
+      Dailies.categoryOffset = Dailies.categories.length - 1;
 
     $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
     $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');

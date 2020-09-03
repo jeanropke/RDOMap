@@ -40,7 +40,7 @@ function init() {
 
   Menu.init();
   
-  AnimalCollection.init();
+  const animals = AnimalCollection.init();
   const locations = Location.init();
   const encounters = Encounter.init();  
   const treasures = Treasure.init();
@@ -52,8 +52,8 @@ function init() {
   const legendary = Legendary.init();
   const discoverables = Discoverable.init();
 
-  Promise.all([locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables])
-    .then(Loader.resolveMapModelLoaded);
+  Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables])
+    .then(() => { Loader.resolveMapModelLoaded; MapBase.runOncePostLoad(); });
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);

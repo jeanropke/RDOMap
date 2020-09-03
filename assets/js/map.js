@@ -9,6 +9,7 @@ const MapBase = {
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
+  isPrewviewMode: false,
 
   init: function () {
     'use strict';
@@ -161,6 +162,53 @@ const MapBase = {
     MapBase.setOverlays();
   },
 
+  runOncePostLoad: function () {
+    var quickParam = getParameterByName('q');
+    if (quickParam) {      
+      $('.menu-toggle').remove();
+      $('.top-widget').remove();
+      $('#fme-container').remove();
+      $('.side-menu').removeClass('menu-opened');
+      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+
+      this.isPrewviewMode = true;
+
+      this.disableAll();
+
+      if (Location.quickParams.indexOf(quickParam) !== -1) {
+        Location.locations.filter(item => item.key == quickParam)[0].onMap = true;
+      }
+      else if (Camp.quickParams.indexOf(quickParam) !== -1) {
+        Camp.locations.filter(item => item.key == quickParam)[0].onMap = true;
+      }
+      else if (Camp.quickParams.indexOf(quickParam) !== -1) {
+        Camp.locations.filter(item => item.key == quickParam)[0].onMap = true;
+      }
+      else if (Shop.quickParams.indexOf(quickParam) !== -1) {
+        Shop.locations.filter(item => item.key == quickParam)[0].onMap = true;
+      }
+      else if (Encounter.quickParams.indexOf(quickParam) !== -1) {
+        Encounter.locations.filter(item => item.key == quickParam)[0].onMap = true;
+      }
+      else if (GunForHire.quickParams.indexOf(quickParam) !== -1) {
+        GunForHire.locations.filter(item => item.key == quickParam)[0].onMap = true;
+      }
+      else if (AnimalCollection.quickParams.indexOf(quickParam) !== -1) {
+        AnimalCollection.collection.filter(collection => collection.animals.filter(
+          animal => { if (animal.key == quickParam) animal.isEnabled = true }))
+      }
+    }
+  },
+
+  disableAll: function (toShow = false) {
+    Camp.locations.forEach(camp => camp.onMap = toShow);
+    Encounter.locations.forEach(encounter => encounter.onMap = toShow);
+    GunForHire.locations.forEach(gfh => gfh.onMap = toShow);
+    Location.locations.forEach(location => location.onMap = toShow);
+    MadamNazar.onMap = toShow;
+    Shop.locations.forEach(shop => shop.onMap = toShow);
+  },
+
   loadOverlays: function () {
     $.getJSON('data/overlays.json?nocache=' + nocache)
       .done(function (data) {
@@ -280,7 +328,8 @@ const MapBase = {
           <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
           ${shadow}
         `
-      })
+      }),
+      draggable: true
     });
 
     marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, {

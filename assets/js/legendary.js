@@ -1,7 +1,7 @@
 class Legendary {
-  
+
   static start = Date.now();
-  
+
   static init() {
     // Needed to check against Q param.
     this.legendaries = [
@@ -121,11 +121,13 @@ class Legendary {
     if (state) {
       Legendary.layer.addLayer(this.marker);
       this.element.removeClass('disabled');
-      localStorage.setItem(`rdo:${this._shownKey}`, 'true');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:${this._shownKey}`, 'true');
     } else {
       Legendary.layer.removeLayer(this.marker);
       this.element.addClass('disabled');
-      localStorage.removeItem(`rdo:${this._shownKey}`);
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:${this._shownKey}`);
     }
   }
   get onMap() {
