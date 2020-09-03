@@ -53,7 +53,7 @@ function init() {
   const discoverables = Discoverable.init();
 
   Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables])
-    .then(() => { Loader.resolveMapModelLoaded; MapBase.runOncePostLoad(); });
+    .then(() => { Loader.resolveMapModelLoaded(); MapBase.runOncePostLoad(); });
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
