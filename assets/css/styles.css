@@ -793,7 +793,7 @@ a.wiki-page:visited {
     cursor: pointer;
 }
 
-.cycle-changer {
+.dailies-changer {
     user-select: none;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ and Edge */
@@ -801,14 +801,16 @@ a.wiki-page:visited {
     justify-content: center;
 }
 
-#cycle-changer-container {
+#dailies-changer-container {
     margin: 10px 0;
 }
 
-#cycle-changer-container .cycle-data {
+#dailies-changer-container .dailies-title {
     text-align: center;
-    min-width: 100px;
+    min-width: 170px;
     margin: 0 6px;
+    font-family: RDRLino, serif;
+    font-size: 19px;
 }
 
 .marker-content-wrapper {
@@ -1060,8 +1062,8 @@ a.no-style:visited {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 390px;
-        left: -390px;
+        width: 400px;
+        left: -400px;
         top: 0;
     }
 
@@ -1070,7 +1072,7 @@ a.no-style:visited {
     }
 
     .timer-menu-opened {
-        left: 395px;
+        left: 410px;
     }
 
     .counter-menu-opened {
@@ -1292,4 +1294,44 @@ a.no-style:visited {
         height: auto;
         margin-right: 8px;
     }
+}
+
+.dailies {
+    margin: 20px 10px;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.daily-role {
+    margin: 25px 0;
+}
+
+.one-daily-container {
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-areas: 'counter daily-challenge';
+    grid-gap: 5px;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+span#counter {
+    grid-area: counter;
+    width: 45px;
+    margin: 0 5px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+span#daily {
+    grid-area: daily-challenge;
+    margin: 0 5px;
+}
+
+.daily-not-found {
+    margin: auto;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
 }

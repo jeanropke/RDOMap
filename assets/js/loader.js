@@ -1,3 +1,7 @@
+Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
+    value: function () { return this.toISOString().split('T')[0]; }
+});
+
 class Loader {
     static init(urls) {
         this.promises = {};
@@ -44,5 +48,7 @@ const urls = [
     'data/plants.json',
     'data/gfh.json',
     'https://pepegapi.jeanropke.net/rdo/nazar',
+    'data/possible_dailies.json',
+    'https://pepegapi.jeanropke.net/rdo/daily',
 ];
 Loader.init(urls);

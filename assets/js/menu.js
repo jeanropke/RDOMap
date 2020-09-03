@@ -11,6 +11,9 @@ class Menu {
 
   static activateHandlers() {
 
+    $('#dailies-prev').on('click', Dailies.prevCategory);
+    $('#dailies-next').on('click', Dailies.nextCategory);
+
     $('.camps-small-btn').on('click', function () {
       $(this).toggleClass('disabled');
       Camp.isSmall = !Camp.isSmall;
