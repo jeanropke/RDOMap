@@ -23,7 +23,7 @@ class Dailies {
         console.info(`%c[Dailies] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
 
         Object.keys(this.dailies).forEach(role => {
-          $('.dailies').append($(`<div class="${role} daily-role"></div>`).css('display', role == 'general' ? 'block' : 'none'));
+          $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).css('display', role == 'general' ? 'block' : 'none'));
           this.dailies[role].list.forEach(({ text, target }) => {
             text = text.replace(/\*+$/, '').toLowerCase();
             const translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
@@ -35,14 +35,12 @@ class Dailies {
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
-    // TODO: This format needs to be translatable. Russian uses "<challenge>: 0/<goal>",
-    // otherwise it doesn't make sense grammatically. - Bob
     const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
-    $(`.dailies > .${this.role}`)
+    $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
-            <span id="counter">${this.value}/${this.target}</span>
-            <span id="daily">${Language.get(this.translationKey)}</span>
+            <span class="counter">${this.value}/${this.target}</span>
+            <span class="daily">${Language.get(this.translationKey)}</span>
           </div>`))
       .find('.one-daily-container')
       .css({
@@ -57,7 +55,7 @@ class Dailies {
     `));
   }
   static nextCategory() {
-    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
+    $(`#${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
 
     Dailies.categoryOffset++;
 
@@ -65,10 +63,10 @@ class Dailies {
       Dailies.categoryOffset = 0;
 
     $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
-    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
+    $(`#${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
   }
   static prevCategory() {
-    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
+    $(`#${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'none');
 
     Dailies.categoryOffset--;
 
@@ -76,7 +74,7 @@ class Dailies {
       Dailies.categoryOffset = Dailies.categories.length - 1;
 
     $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
-    $(`.${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
+    $(`#${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
   }
 
   set completedDailies(num) {

@@ -1315,7 +1315,7 @@ a.no-style:visited {
     justify-content: space-between;
 }
 
-span#counter {
+span.counter {
     grid-area: counter;
     width: 45px;
     margin: 0 5px;
@@ -1324,7 +1324,7 @@ span#counter {
     align-content: center;
 }
 
-span#daily {
+span.daily {
     grid-area: daily-challenge;
     margin: 0 5px;
 }
