@@ -15,7 +15,7 @@ class Dailies {
     const websiteData = Loader.promises['daily'].consumeJson(data => this.dailies = data.dailies);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
-    Promise.all([websiteData, allDailies])
+    return Promise.all([websiteData, allDailies])
       .then(() => {
         console.info(`%c[Dailies] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
 
