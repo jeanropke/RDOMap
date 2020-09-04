@@ -163,6 +163,6 @@ Object.entries({
   showHelp: { default: true },
   showImportExportSettings: { default: true },
   showUtilitiesSettings: { default: true },
-  showTooltips: { default: false },
+  showTooltips: { default: true },
   showDailies: { default: false }
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
