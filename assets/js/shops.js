@@ -24,6 +24,7 @@ class Shop {
     this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'shops', this.key)));
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
+      .attr('data-tippy-content', Language.get(`map.shops.${this.key}.name`))
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))

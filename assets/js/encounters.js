@@ -6,7 +6,7 @@ class Encounter {
     this.context = $('.menu-hidden[data-type=encounters]');
 
     return Loader.promises['encounters'].consumeJson(data => {
-      data.forEach(item => { 
+      data.forEach(item => {
         this.locations.push(new Encounter(item));
         this.quickParams.push(item.key);
       });
@@ -24,10 +24,11 @@ class Encounter {
     this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
+    .attr('data-tippy-content', Language.get(`menu.${this.key}`))
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
-      .append($('<p class="collectible">').attr('data-text', 'menu.' + this.key))
+      .append($('<p class="collectible">').attr('data-text', `menu.${this.key}`))
       .translate();
 
     this.element.appendTo(Encounter.context);

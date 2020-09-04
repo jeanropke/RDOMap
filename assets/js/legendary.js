@@ -65,6 +65,7 @@ class Legendary {
     Object.assign(this, preliminary);
     this._shownKey = `shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
+      .attr('data-tippy-content', Language.get(this.text))
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
       .translate();

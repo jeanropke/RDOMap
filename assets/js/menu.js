@@ -1,5 +1,6 @@
 class Menu {
-  static init() {    
+  static init() {
+    this.tippyInstances = [];
     Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
   }
 

@@ -5,6 +5,7 @@ class Animal {
     this.context = $(`.menu-hidden[data-type=${type}]`);
 
     this.element = $(`<div class="animal-wrapper" data-help="item" data-type="${this.key}">`)
+      .attr('data-tippy-content', Language.get(`menu.cmpndm.${this.key}`))
       .on('click', () => this.isEnabled = !this.isEnabled)
       .append($(`<img src="./assets/images/icons/game/animals/${this.key}.png" class="animal-icon">`))
       .append($('<span class="animal-text disabled">')
@@ -115,7 +116,7 @@ class AnimalCollection {
     Object.assign(this, preliminary);
 
     this.animals = [];
-    this.data.forEach(animal => { 
+    this.data.forEach(animal => {
       this.animals.push(new Animal(animal, this.key));
       AnimalCollection.quickParams.push(animal.key);
     });

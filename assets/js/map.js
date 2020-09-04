@@ -221,6 +221,9 @@ const MapBase = {
         });
       }
     }
+
+    if(Settings.showTooltips)
+      Menu.tippyInstances = tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
   },
 
   disableAll: function (toShow = false) {

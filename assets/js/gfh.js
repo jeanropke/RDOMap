@@ -26,6 +26,7 @@ class GunForHire {
     this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'gfh', this.key, item.type)));
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
+      .attr('data-tippy-content', Language.get(`map.gfh.${this.key}.name`))
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', `map.gfh.${this.key}.name`))

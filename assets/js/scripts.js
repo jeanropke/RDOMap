@@ -59,6 +59,7 @@ function init() {
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
   $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
+  $('#tooltip').prop("checked", Settings.showTooltips);
   $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
@@ -185,6 +186,12 @@ $('#overlay-opacity').on('change', function () {
 //TODO: tooltips
 $('#tooltip').on('change', function () {
   Settings.showTooltips = $("#tooltip").prop('checked');
+
+  if (Settings.showTooltips)
+    Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
+  else {
+    Menu.tippyInstances.forEach(instance => instance.destroy());
+  }      
 });
 
 $('#enable-marker-popups-hover').on("change", function () {
