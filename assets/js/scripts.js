@@ -191,6 +191,7 @@ $('#tooltip').on('change', function () {
     Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
   else {
     Menu.tippyInstances.forEach(instance => instance.destroy());
+    Menu.tippyInstances = [];
   }      
 });
 
