@@ -121,6 +121,8 @@ const MapBase = {
     MapBase.map.on('baselayerchange', function (e) {
       Settings.baseLayer = e.name;
       MapBase.setMapBackground();
+
+      Discoverable.createOverlays();
     });
 
     $('#overlay-opacity').val(Settings.overlayOpacity);
@@ -222,8 +224,11 @@ const MapBase = {
       }
     }
 
-    if(Settings.showTooltips)
-      Menu.tippyInstances = tippy('[data-tippy-content]', {theme: 'rdr2-theme'});
+    if (Settings.showTooltips)
+      Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
+
+
+    Discoverable.createOverlays();
   },
 
   disableAll: function (toShow = false) {
