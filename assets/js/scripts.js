@@ -125,6 +125,16 @@ function clockTick() {
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
 
   $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
+
+  $('.leaflet-marker-icon[data-marker="hideouts"]').each(function () {
+    let time = $(this).data('time') + '';
+    if (time === null || time == '') return;
+    if (time.split(",").includes(gameHour + "")) {
+      $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+    } else {
+      $(this).css('filter', 'none');
+    }
+  });
 }
 
 setInterval(clockTick, 1000);
@@ -183,7 +193,6 @@ $('#overlay-opacity').on('change', function () {
   Legendary.onSettingsChanged();
 });
 
-//TODO: tooltips
 $('#tooltip').on('change', function () {
   Settings.showTooltips = $("#tooltip").prop('checked');
 
@@ -192,7 +201,7 @@ $('#tooltip').on('change', function () {
   else {
     Menu.tippyInstances.forEach(instance => instance.destroy());
     Menu.tippyInstances = [];
-  }      
+  }
 });
 
 $('#enable-marker-popups-hover').on("change", function () {
@@ -307,6 +316,19 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
     if (this.options.category)
       img.dataset.category = this.options.category;
+
+    if (this.options.time) {
+      var from = parseInt(this.options.time[0]);
+      var to = parseInt(this.options.time[1]);
+
+      // Add all valid hours to the marker to be able to simply `.includes()` it later.
+      // Could also check `if X between start and end`, might be slightly better. ¯\_(ツ)_/¯
+      var times = [];
+      for (let index = from; index != to; (index != 23) ? index++ : index = 0)
+        times.push(index);
+
+      img.dataset.time = times;
+    }
   }
 });
 

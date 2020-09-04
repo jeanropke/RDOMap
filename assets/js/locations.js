@@ -19,7 +19,7 @@ class Location {
     this.layer = L.layerGroup();
 
     this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.time)));
 
     this.element = $(`.menu-option[data-type=${this.key}]`)
       .toggleClass('disabled', !this.onMap)
@@ -48,7 +48,8 @@ class Location {
               <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
               ${shadow}
             </div>`,
-            marker: this.key
+            marker: this.key,
+            time: marker.subdata
           })
         })
           .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
