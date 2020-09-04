@@ -106,8 +106,10 @@ select,
 #main-header-left,
 #main-header-right {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     height: 75px;
 }
 
@@ -282,8 +284,10 @@ select,
     font-size: 14px;
     cursor: pointer;
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     margin-top: 8px;
 }
 
@@ -378,8 +382,10 @@ select,
 
 .input-container {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
@@ -387,8 +393,10 @@ select,
 
 .input-container-noflex {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     margin: 5px 0;
     text-align: center;
 }
@@ -459,8 +467,10 @@ select,
     line-height: 1.85;
     user-select: none;
     cursor: pointer;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
 }
 
 .side-menu {
@@ -493,8 +503,10 @@ select,
     align-items: start;
     padding: 0 5px;
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     cursor: pointer;
     line-height: 36px;
 }
@@ -528,6 +540,7 @@ select,
 .side-menu .ps-exclusive {
     color: #357aea !important;
 }
+
 .side-menu .menu-option .icon {
     width: 35px;
     margin-top: 6px;
@@ -572,13 +585,23 @@ select,
 }
 
 .side-menu .menu-hidden .collection-sell,
-.collection-reset, .camps-small-btn, .camps-large-btn,
-.shops-hide-btn, .shops-show-btn, .gfh-hide-btn, .gfh-show-btn,
-.plants-hide-btn, .plants-show-btn, .encounters-hide-btn, .encounters-show-btn {
+.collection-reset,
+.camps-small-btn,
+.camps-large-btn,
+.shops-hide-btn,
+.shops-show-btn,
+.gfh-hide-btn,
+.gfh-show-btn,
+.plants-hide-btn,
+.plants-show-btn,
+.encounters-hide-btn,
+.encounters-show-btn {
     cursor: pointer;
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
 }
 
 .side-menu .menu-hidden .collectible-wrapper,
@@ -586,8 +609,10 @@ select,
     padding: 6px 12px;
     cursor: pointer;
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
 }
 
 .side-menu .menu-hidden.two-column .collectible-wrapper,
@@ -670,8 +695,10 @@ select,
 
 .help-button {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     font-size: 14px;
 }
 
@@ -730,8 +757,10 @@ a.wiki-page:visited {
     top: 20px;
     text-align: center;
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     cursor: pointer;
 }
 
@@ -795,8 +824,10 @@ a.wiki-page:visited {
 
 .dailies-changer {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
     display: flex;
     justify-content: center;
 }
@@ -1054,8 +1085,7 @@ a.no-style:visited {
 
 @media (max-width: 1024px) {
 
-    .top-widget-menu-opened
-    .fme-menu-opened {
+    .top-widget-menu-opened .fme-menu-opened {
         display: none !important;
     }
 }
@@ -1078,6 +1108,7 @@ a.no-style:visited {
     .counter-menu-opened {
         left: 410px;
     }
+
     .top-widget-menu-opened {
         left: 405px;
     }
@@ -1146,8 +1177,10 @@ a.no-style:visited {
 /* Fix being able to select the overlays. */
 .leaflet-overlay-pane {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
 }
 
 /* Leaflet Marker styling */
@@ -1371,11 +1404,6 @@ span.daily {
     color: #d4d4d4 !important;
 }
 
-/* Fix being able to select the overlays. */
-.leaflet-overlay-pane {
-    user-select: none;
-}
-
 .leaflet-control-layers {
     box-shadow: 0 1px 5px #111;
     background: #333;
@@ -1400,6 +1428,7 @@ span.daily {
     background: #222;
     color: #d4d4d4;
 }
+
 .btn.btn-info.remove-button,
 .save-button {
     background-color: #008fbece;
