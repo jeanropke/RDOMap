@@ -164,7 +164,7 @@ const MapBase = {
 
   runOncePostLoad: function () {
     var quickParam = getParameterByName('q');
-    if (quickParam) {      
+    if (quickParam) {
       $('.menu-toggle').remove();
       $('.top-widget').remove();
       $('#fme-container').remove();
@@ -197,6 +197,29 @@ const MapBase = {
         AnimalCollection.collection.filter(collection => collection.animals.filter(
           animal => { if (animal.key == quickParam) animal.isEnabled = true }))
       }
+      else if (Legendary.quickParams.indexOf(quickParam) !== -1) {
+        Legendary.animals.filter(item => {
+          if (item.text == quickParam) {
+            item.onMap = true;
+            MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
+          }
+        });
+      }
+      else if (quickParam == 'nazar') {
+        MadamNazar.onMap = true;
+        MapBase.map.setView({
+          lat: MadamNazar.possibleLocations[MadamNazar.currentLocation].x,
+          lng: MadamNazar.possibleLocations[MadamNazar.currentLocation].y
+        }, 5);
+      }
+      else if (Treasure.quickParams.indexOf(quickParam) !== -1) {
+        Treasure.treasures.filter(item => {
+          if (item.text == quickParam) {
+            item.onMap = true;
+            MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
+          }
+        });
+      }
     }
   },
 
@@ -205,6 +228,7 @@ const MapBase = {
     Encounter.locations.forEach(encounter => encounter.onMap = toShow);
     GunForHire.locations.forEach(gfh => gfh.onMap = toShow);
     Location.locations.forEach(location => location.onMap = toShow);
+    Legendary.animals.forEach(animal => animal.onMap = toShow);
     MadamNazar.onMap = toShow;
     Shop.locations.forEach(shop => shop.onMap = toShow);
   },
@@ -329,7 +353,7 @@ const MapBase = {
           ${shadow}
         `
       }),
-      draggable: true
+      draggable: Settings.isDebugEnabled
     });
 
     marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, {

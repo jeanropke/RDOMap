@@ -20,13 +20,13 @@ class MadamNazar {
     this.currentDate = null;
 
     this.layer = L.layerGroup();
-    this.layer.addTo(MapBase.map);
 
     this.context = $('.menu-option[data-type=nazar]');
 
     this.context.toggleClass('disabled', !MadamNazar.onMap)
       .on('click', () => MadamNazar.onMap = !MadamNazar.onMap)
       .translate();
+
 
     return Loader.promises['nazar'].consumeJson(nazar => {
       var _nazarParam = getParameterByName('nazar');
@@ -38,19 +38,18 @@ class MadamNazar {
       this.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
         day: "2-digit", month: "long", year: "numeric"
       });
+
       MadamNazar.addMadamNazar();
       console.info(`%c[Nazar] Loaded in ${Date.now() - MadamNazar.start}ms!`, 'color: #bada55; background: #242424');
     });
   }
 
   static addMadamNazar() {
-    if (this.currentLocation == null || !MadamNazar.onMap)
+    if (this.currentLocation == null)
       return;
 
-    MadamNazar.layer.clearLayers();
-
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
+    MadamNazar.layer.addLayer(L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
       opacity: Settings.markerOpacity,
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -62,10 +61,11 @@ class MadamNazar {
               ${shadow}
             `
       })
-    });
+    })
+      .bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 })
+    );
 
-    marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });
-    MadamNazar.layer.addLayer(marker);
+    this.onMap = this.onMap;
   }
 
   static set onMap(state) {
@@ -74,7 +74,6 @@ class MadamNazar {
       this.context.removeClass('disabled');
       if (!MapBase.isPrewviewMode)
         localStorage.setItem(`rdo:nazar`, 'true');
-      MadamNazar.addMadamNazar();
     } else {
       MadamNazar.layer.remove();
       this.context.addClass('disabled');

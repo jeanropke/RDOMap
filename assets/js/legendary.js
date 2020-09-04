@@ -4,18 +4,7 @@ class Legendary {
 
   static init() {
     // Needed to check against Q param.
-    this.legendaries = [
-      'mp_animal_alligator_legendary_01', 'mp_animal_alligator_legendary_02', 'mp_animal_bear_legendary_01',
-      'mp_animal_bear_legendary_02', 'mp_animal_beaver_legendary_01', 'mp_animal_beaver_legendary_02',
-      'mp_animal_bison_legendary_01', 'mp_animal_bison_legendary_02', 'mp_animal_boar_legendary_01',
-      'mp_animal_boar_legendary_02', 'mp_animal_buck_legendary_01', 'mp_animal_buck_legendary_02',
-      'mp_animal_cougar_legendary_01', 'mp_animal_cougar_legendary_02', 'mp_animal_coyote_legendary_01',
-      'mp_animal_coyote_legendary_02', 'mp_animal_elk_legendary_01', 'mp_animal_elk_legendary_02',
-      'mp_animal_fox_legendary_01', 'mp_animal_fox_legendary_02', 'mp_animal_moose_legendary_01',
-      'mp_animal_moose_legendary_02', 'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02',
-      'mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02', 'mp_animal_wolf_legendary_01',
-      'mp_animal_wolf_legendary_02'
-    ];
+    this.quickParams = [];
 
     // Legendary animals not yet released.
     this.notReleased = [
@@ -46,7 +35,10 @@ class Legendary {
       Legendary.animals.forEach(animal => animal.onMap = showAll);
     });
     return Loader.promises['animal_legendary'].consumeJson(data => {
-      data.forEach(item => this.animals.push(new Legendary(item)));
+      data.forEach(item => {
+        this.animals.push(new Legendary(item));
+        this.quickParams.push(item.text);
+      });
       this.onLanguageChanged();
       console.info(`%c[Legendary animals] Loaded in ${Date.now() - Legendary.start}ms!`, 'color: #bada55; background: #242424');
     });

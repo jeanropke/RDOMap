@@ -6,7 +6,7 @@ class Location {
 
     return Loader.promises['items'].consumeJson(data => {
       data.forEach(item => {
-        this.locations.push(new Location(item)); 
+        this.locations.push(new Location(item));
         this.quickParams.push(item.key);
       });
       console.info(`%c[Locations] Loaded in ${Date.now() - Location.start}ms!`, 'color: #bada55; background: #242424');
@@ -25,10 +25,10 @@ class Location {
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .translate();
-      
+
     this.reinitMarker();
 
-    if(this.onMap)
+    if (this.onMap)
       this.layer.addTo(MapBase.map);
   }
 
@@ -51,7 +51,7 @@ class Location {
             marker: this.key
           })
         })
-        .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
+          .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
       }
     );
   }
@@ -60,12 +60,12 @@ class Location {
     if (state) {
       this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
-      if(!MapBase.isPrewviewMode)
+      if (!MapBase.isPrewviewMode)
         localStorage.setItem(`rdo:${this.key}`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
-      if(!MapBase.isPrewviewMode)
+      if (!MapBase.isPrewviewMode)
         localStorage.setItem(`rdo:${this.key}`, 'false');
     }
   }

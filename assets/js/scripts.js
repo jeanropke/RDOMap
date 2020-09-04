@@ -39,10 +39,10 @@ function init() {
   changeCursor();
 
   Menu.init();
-  
+
   const animals = AnimalCollection.init();
   const locations = Location.init();
-  const encounters = Encounter.init();  
+  const encounters = Encounter.init();
   const treasures = Treasure.init();
   const plants = PlantsCollection.init();
   const camps = Camp.init();
@@ -158,7 +158,7 @@ $('#marker-size').on('change', function () {
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker()); 
+  Location.locations.forEach(location => location.reinitMarker());
   Pins.loadPins();
   MadamNazar.addMadamNazar();
   Shop.locations.forEach(shop => shop.reinitMarker());
@@ -170,7 +170,7 @@ $('#marker-opacity').on('change', function () {
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker()); 
+  Location.locations.forEach(location => location.reinitMarker());
   Pins.loadPins();
   MadamNazar.addMadamNazar();
   Shop.locations.forEach(shop => shop.reinitMarker());
@@ -183,7 +183,7 @@ $('#overlay-opacity').on('change', function () {
 });
 
 //TODO: tooltips
-$('#tooltip').on('change', function() {
+$('#tooltip').on('change', function () {
   Settings.showTooltips = $("#tooltip").prop('checked');
 });
 
@@ -193,11 +193,11 @@ $('#enable-marker-popups-hover').on("change", function () {
 
 $('#enable-marker-shadows').on("change", function () {
   Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
-  Treasure.onSettingsChanged();  
+  Treasure.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker()); 
+  Location.locations.forEach(location => location.reinitMarker());
   Pins.loadPins();
   MadamNazar.addMadamNazar();
   Shop.locations.forEach(shop => shop.reinitMarker());
@@ -257,7 +257,7 @@ $('.menu-toggle').on('click', function () {
     $('.menu-toggle').text('>');
     $.cookie('menu-opened', '0');
   }
-  
+
   $('.top-widget').toggleClass('top-widget-menu-opened', isOpen);
   $('#fme-container').toggleClass('fme-menu-opened', isOpen);
 });

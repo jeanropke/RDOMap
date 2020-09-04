@@ -3,6 +3,7 @@ class Treasure {
   // not idempotent
   static init() {
     this.treasures = [];
+    this.quickParams = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
     const pane = MapBase.map.createPane('treasureX');
@@ -21,7 +22,10 @@ class Treasure {
       Treasure.treasures.forEach(treasure => treasure.onMap = showAll);
     });
     return Loader.promises['treasures'].consumeJson(data => {
-      data.forEach(item => this.treasures.push(new Treasure(item)));
+      data.forEach(item => {
+        this.treasures.push(new Treasure(item));
+        this.quickParams.push(item.text);
+      });
       this.onLanguageChanged();
       console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
     });
