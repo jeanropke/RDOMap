@@ -1335,3 +1335,78 @@ span.daily {
     padding: 10px 0;
     text-align: center;
 }
+
+
+/* Dark mode styling */
+.leaflet-popup-content-wrapper {
+    background: #222;
+    color: #dadada;
+}
+
+.leaflet-container a:visited,
+.leaflet-container a {
+    color: #3db2ff;
+}
+
+.leaflet-container a:hover {
+    color: #3dc6fc;
+}
+
+.leaflet-bar a {
+    background-color: #333;
+}
+
+.leaflet-bar a:hover {
+    background-color: #444;
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+    border-bottom: 1px solid #555;
+    color: #d4d4d4;
+}
+
+.leaflet-bar a.leaflet-disabled {
+    background-color: #555;
+    color: #d4d4d4 !important;
+}
+
+/* Fix being able to select the overlays. */
+.leaflet-overlay-pane {
+    user-select: none;
+}
+
+.leaflet-control-layers {
+    box-shadow: 0 1px 5px #111;
+    background: #333;
+    user-select: none;
+}
+
+.leaflet-control-layers-expanded {
+    color: #d4d4d4;
+    background: #333;
+}
+
+.leaflet-control-zoom {
+    background-color: #333;
+    color: #d4d4d4;
+}
+
+.leaflet-control-zoom a {
+    background-color: #333;
+}
+
+.leaflet-popup-tip {
+    background: #222;
+    color: #d4d4d4;
+}
+.btn.btn-info.remove-button,
+.save-button {
+    background-color: #008fbece;
+    border: 1px solid #15b4f3af;
+}
+
+.btn.btn-info.remove-button:hover,
+.save-button:hover {
+    background-color: #15b4f3af;
+}
