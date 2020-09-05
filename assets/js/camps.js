@@ -1,5 +1,4 @@
 class Camp {
-  static start = Date.now();
   static isLarge = true;
   static isSmall = true;
 
@@ -13,7 +12,7 @@ class Camp {
         this.locations.push(new Camp(item));
         this.quickParams.push(item.key);
       });
-      console.info(`%c[Camps] Loaded in ${Date.now() - Camp.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Camps] Loaded!`, 'color: #bada55; background: #242424');
       Menu.reorderMenu(this.context);
     });
   }

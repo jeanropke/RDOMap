@@ -1,5 +1,4 @@
 class Discoverable {
-  static start = Date.now();
   static layer = L.layerGroup();
 
   static init() {
@@ -20,7 +19,7 @@ class Discoverable {
       data.forEach(item => {
         this.overlays.push(item);
       });
-      console.info(`%c[Discoverables] Loaded in ${Date.now() - Discoverable.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Discoverables] Loaded!`, 'color: #bada55; background: #242424');
     });
   }
 

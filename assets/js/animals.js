@@ -76,7 +76,6 @@ class Animal {
 }
 
 class AnimalCollection {
-  static start = Date.now();
   static heatmapLayer = new HeatmapOverlay({
     radius: 2.5,
     maxOpacity: 0.5,
@@ -107,7 +106,7 @@ class AnimalCollection {
     const animalHeatmap = Loader.promises['hm'].consumeJson(data => this.collectionsData = data);
 
     return Promise.all([animalSpawns, animalHeatmap]).then(() => {
-      console.info(`%c[Animals] Loaded in ${Date.now() - AnimalCollection.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Animals] Loaded!`, 'color: #bada55; background: #242424');
       this.collectionsData.forEach(collection => this.collection.push(new AnimalCollection(collection)));
     });
   }

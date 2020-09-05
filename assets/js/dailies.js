@@ -11,7 +11,6 @@ class Dailies {
     this.jsonData = [];
     this.dailies = [];
 
-    const start = Date.now();
     const websiteData = Loader.promises['daily'].consumeJson(data => this.dailies = data.dailies);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
@@ -20,7 +19,7 @@ class Dailies {
 
     return Promise.all([websiteData, allDailies])
       .then(() => {
-        console.info(`%c[Dailies] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
+        console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
 
         Object.keys(this.dailies).forEach(role => {
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).css('display', role == 'general' ? 'block' : 'none'));

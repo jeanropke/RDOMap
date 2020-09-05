@@ -1,7 +1,5 @@
 class GunForHire {
 
-  static start = Date.now();
-
   static init() {
     this.locations = [];
     this.quickParams = [];
@@ -12,7 +10,7 @@ class GunForHire {
         this.locations.push(new GunForHire(item));
         this.quickParams.push(item.key);
       });
-      console.info(`%c[Freeroam Missions] Loaded in ${Date.now() - GunForHire.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Freeroam Missions] Loaded!`, 'color: #bada55; background: #242424');
       Menu.reorderMenu(this.context);
     });
   }

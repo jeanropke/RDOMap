@@ -1,7 +1,5 @@
 class Legendary {
 
-  static start = Date.now();
-
   static init() {
     // Needed to check against Q param.
     this.quickParams = [];
@@ -40,7 +38,7 @@ class Legendary {
         this.quickParams.push(item.text);
       });
       this.onLanguageChanged();
-      console.info(`%c[Legendary animals] Loaded in ${Date.now() - Legendary.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Legendary animals] Loaded!`, 'color: #bada55; background: #242424');
     });
   }
   static onLanguageChanged() {

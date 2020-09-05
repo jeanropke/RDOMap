@@ -1,5 +1,4 @@
 class Location {
-  static start = Date.now();
   static init() {
     this.quickParams = [];
     this.locations = [];
@@ -9,7 +8,7 @@ class Location {
         this.locations.push(new Location(item));
         this.quickParams.push(item.key);
       });
-      console.info(`%c[Locations] Loaded in ${Date.now() - Location.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Locations] Loaded!`, 'color: #bada55; background: #242424');
     });
   }
 

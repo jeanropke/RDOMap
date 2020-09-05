@@ -1,5 +1,4 @@
 class Shop {
-  static start = Date.now();
   static init() {
     this.locations = [];
     this.quickParams = [];
@@ -10,7 +9,7 @@ class Shop {
         this.locations.push(new Shop(item));
         this.quickParams.push(item.key);
       });
-      console.info(`%c[Shops] Loaded ${Date.now() - Shop.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Shops] Loaded!`, 'color: #bada55; background: #242424');
       Menu.reorderMenu(this.context);
     });
   }

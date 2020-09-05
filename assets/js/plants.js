@@ -82,7 +82,6 @@ class Plants {
 
 class PlantsCollection {
 
-  static start = Date.now();
   static layer = L.canvasIconLayer({ zoomAnimation: true });
   static enabledCategories = [];
   static markers = [];
@@ -94,7 +93,7 @@ class PlantsCollection {
 
     return Loader.promises['plants'].consumeJson(data => {
       data.forEach(item => this.locations.push(new Plants(item)));
-      console.info(`%c[Plants] Loaded in ${Date.now() - PlantsCollection.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Plants] Loaded!`, 'color: #bada55; background: #242424');
       setTimeout(() => PlantsCollection.layer.redraw(), 40);
       Menu.reorderMenu(this.context);
     });
