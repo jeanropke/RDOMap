@@ -41,7 +41,6 @@ class Dailies {
   }
   appendToMenu() {
     const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
-    const noTranslation = Language.get(this.translationKey) == this.translationKey;
 
     $(`.dailies > #${this.role}`)
       .append($(`
@@ -55,7 +54,7 @@ class Dailies {
         'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
       })
       .find(`#daily-${this.role}-${this.index}`)
-      .toggleClass('not-found', noTranslation)
+      .toggleClass('not-found', Language.get(this.translationKey) == this.translationKey)
       .end();
   }
   static dailiesNotUpdated() {
