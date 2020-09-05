@@ -26,11 +26,14 @@ class Plants {
     this.locations.forEach(_marker => {
       var tempMarker = L.marker([_marker.x, _marker.y], {
         opacity: Settings.markerOpacity,
-        icon: new L.divIcon({
+        icon: L.divIcon({
           iconUrl: `assets/images/markers/${this.key}.png`,
           iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-          popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize]
+          popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+          shadowUrl: 'assets/images/markers-shadow.png',
+          shadowSize:   [35 * Settings.markerSize, 16 * Settings.markerSize], 
+          shadowAnchor: [10 * Settings.markerSize, 10 * Settings.markerSize]
         })
       });
       tempMarker.bindPopup(
