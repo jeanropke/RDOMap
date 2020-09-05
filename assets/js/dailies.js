@@ -1,9 +1,10 @@
 class Dailies {
-  constructor(role, translationKey, target, value = 0) {
+  constructor(role, translationKey, target, index, value = 0) {
     this.role = role;
     this.translationKey = translationKey;
     this.target = target;
     this.value = value;
+    this.index = index;
   }
   static init() {
     this.categories = ['general', 'trader', 'collector', 'bounty_hunter', 'moonshiner', 'naturalist'];
@@ -23,10 +24,15 @@ class Dailies {
 
         Object.keys(this.dailies).forEach(role => {
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).css('display', role == 'general' ? 'block' : 'none'));
-          this.dailies[role].list.forEach(({ text, target }) => {
+          this.dailies[role].list.forEach(({ text, target }, index) => {
             text = text.replace(/\*+$/, '').toLowerCase();
-            const translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
-            const newDaily = new Dailies(role, translationKey, target);
+            let translationKey
+            try {
+              translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
+            } catch {
+              translationKey = text;
+            }
+            const newDaily = new Dailies(role, translationKey, target, index);
             newDaily.appendToMenu();
           });
         });
@@ -35,17 +41,21 @@ class Dailies {
   }
   appendToMenu() {
     const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
+    const noTranslation = Language.get(this.translationKey) == this.translationKey;
+
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
             <span class="counter">${this.value}/${this.target}</span>
-            <span class="daily">${Language.get(this.translationKey)}</span>
+            <span class="daily" id="daily-${this.role}-${this.index}">${Language.get(this.translationKey)}</span>
           </div>`))
       .find('.one-daily-container')
       .css({
         'grid-template-areas': `\"${structure[1]} ${structure[2]}\"`,
         'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
       })
+      .find(`#daily-${this.role}-${this.index}`)
+      .toggleClass('not-found', noTranslation)
       .end();
   }
   static dailiesNotUpdated() {
