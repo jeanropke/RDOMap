@@ -159,8 +159,12 @@ $('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
 
 $('#language').on('change', function () {
   Settings.language = $("#language").val();
-  //too lazy to refresh everything for now :P
+  // TODO: Need to find the way to translate marker popups without reloading the map
   location.reload();
+
+  Language.setMenuLanguage();
+  Treasure.onLanguageChanged();
+  Dailies.onLanguageChanged();
 });
 
 $('#marker-size').on('change', function () {

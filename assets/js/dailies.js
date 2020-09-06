@@ -11,6 +11,7 @@ class Dailies {
     this.categoryOffset = 0;
     this.jsonData = [];
     this.dailies = [];
+    this.context = $('.daily-challenges[data-type=dailies]');
 
     const websiteData = Loader.promises['daily'].consumeJson(data => this.dailies = data.dailies);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
@@ -36,6 +37,7 @@ class Dailies {
             newDaily.appendToMenu();
           });
         });
+        this.onLanguageChanged();
       })
       .catch(this.dailiesNotUpdated);
   }
@@ -45,9 +47,10 @@ class Dailies {
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
-            <span class="counter">${this.value}/${this.target}</span>
-            <span class="daily" id="daily-${this.role}-${this.index}">${Language.get(this.translationKey)}</span>
+            <span class="counter" data-text="${this.value}/${this.target}"></span>
+            <span class="daily" id="daily-${this.role}-${this.index}" data-text="${this.translationKey}"></span>
           </div>`))
+      .translate()
       .find('.one-daily-container')
       .css({
         'grid-template-areas': `\"${structure[1]} ${structure[2]}\"`,
@@ -84,7 +87,9 @@ class Dailies {
     $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
     $(`#${Dailies.categories[Dailies.categoryOffset]}.daily-role`).css('display', 'block');
   }
-
+  static onLanguageChanged() {
+    Menu.reorderMenu(this.context);
+  }
   set completedDailies(num) {
     if (num === 'true')
       this.value = this.target;
