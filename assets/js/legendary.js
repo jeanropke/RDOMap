@@ -60,12 +60,17 @@ class Legendary {
   }
   // not idempotent (on the environment)
   constructor(preliminary) {
+
     Object.assign(this, preliminary);
+    if (Legendary.notReleased.includes(this.text) && !Settings.isDebugEnabled)
+      return;
+
     this._shownKey = `shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .attr('data-tippy-content', Language.get(this.text))
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
+      .addClass(Legendary.notReleased.includes(this.text) ? 'not-found' : Legendary.psExclusive.includes(this.text) ? 'ps-exclusive' : '')
       .translate();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);

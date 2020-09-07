@@ -68,6 +68,9 @@ function init() {
   $('#show-dailies').prop("checked", Settings.showDailies);
   $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
 
+  $('#enable-debug').prop("checked", Settings.isDebugEnabled);
+  $('#enable-right-click').prop("checked", Settings.isRightClickEnabled);
+
   $("#help-container").toggle(Settings.showHelp);
   $('.daily-challenges').toggle(Settings.showDailies);
 }
@@ -252,6 +255,11 @@ $('#show-coordinates').on('change', function () {
   Settings.isCoordsOnClickEnabled = $("#show-coordinates").prop('checked');
   changeCursor();
 });
+
+$('#enable-debug').on("change", function () {
+  Settings.isDebugEnabled = $("#enable-debug").prop('checked');
+});
+
 //Open collection submenu
 $('.open-submenu').on('click', function (e) {
   e.stopPropagation();
