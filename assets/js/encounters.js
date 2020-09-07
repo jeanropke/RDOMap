@@ -19,9 +19,8 @@ class Encounter {
 
     this.layer = L.layerGroup();
 
-    this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
-
+    this.onLanguageChanged();
+   
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
     .attr('data-tippy-content', Language.get(`menu.${this.key}`))
       .toggleClass('disabled', !this.onMap)
@@ -32,10 +31,15 @@ class Encounter {
 
     this.element.appendTo(Encounter.context);
 
-    this.reinitMarker();
-
     if (this.onMap)
       this.layer.addTo(MapBase.map);
+  }
+
+  onLanguageChanged() {
+    this.markers = [];
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
+
+    this.reinitMarker();
   }
 
   reinitMarker() {

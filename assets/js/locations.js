@@ -17,18 +17,22 @@ class Location {
 
     this.layer = L.layerGroup();
 
-    this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.time)));
+    this.onLanguageChanged();
 
     this.element = $(`.menu-option[data-type=${this.key}]`)
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .translate();
 
-    this.reinitMarker();
-
     if (this.onMap)
       this.layer.addTo(MapBase.map);
+  }
+
+  onLanguageChanged() {
+    this.markers = [];
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.time)));
+
+    this.reinitMarker();
   }
 
   reinitMarker() {

@@ -17,11 +17,10 @@ class GunForHire {
 
   constructor(preliminary) {
     Object.assign(this, preliminary);
-
+    
     this.layer = L.layerGroup();
 
-    this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'gfh', this.key, item.type)));
+    this.onLanguageChanged();
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`map.gfh.${this.key}.name`))
@@ -32,10 +31,15 @@ class GunForHire {
 
     this.element.appendTo(GunForHire.context);
 
-    this.reinitMarker();
-
     if (this.onMap)
       this.layer.addTo(MapBase.map);
+  }
+
+  onLanguageChanged() {
+    this.markers = [];
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'gfh', this.key, item.type)));
+
+    this.reinitMarker();
   }
 
   reinitMarker() {

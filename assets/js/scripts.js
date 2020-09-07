@@ -162,8 +162,12 @@ $('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
 
 $('#language').on('change', function () {
   Settings.language = $("#language").val();
-  // TODO: Need to find the way to translate marker popups without reloading the map
-  location.reload();
+  //WIP: update markers without reload page
+  Camp.locations.forEach(camp => camp.onLanguageChanged());
+  Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
+  GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
+  Location.locations.forEach(location => location.onLanguageChanged());
+  Shop.locations.forEach(shop => shop.onLanguageChanged());
 
   Language.setMenuLanguage();
   Treasure.onLanguageChanged();

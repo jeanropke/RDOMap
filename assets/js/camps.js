@@ -22,8 +22,7 @@ class Camp {
 
     this.layer = L.layerGroup();
 
-    this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'camps', this.key, item.type)));
+    this.onLanguageChanged();
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .toggleClass('disabled', !this.onMap)
@@ -33,10 +32,15 @@ class Camp {
 
     this.element.appendTo(Camp.context);
 
-    this.reinitMarker();
-
     if (this.onMap)
       this.layer.addTo(MapBase.map);
+  }
+
+  onLanguageChanged() {
+    this.markers = [];
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'camps', this.key, item.type)));
+
+    this.reinitMarker();
   }
 
   reinitMarker() {
