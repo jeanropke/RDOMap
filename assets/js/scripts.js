@@ -19,6 +19,12 @@ Object.defineProperty(String.prototype, 'includesOneOf', {
   }
 });
 
+Object.defineProperty(Number.prototype, 'mod', {
+  value: function (num) {
+    return ((this % num) + num) % num;
+  }
+});
+
 function init() {
 
   const navLang = navigator.language;
