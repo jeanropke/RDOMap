@@ -90,17 +90,4 @@ class Dailies {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  set completedDailies(num) {
-    if (num === 'true')
-      this.value = this.target;
-    else if (num === 'false')
-      this.value = 0;
-    else if (typeof num === 'number') {
-      this.value + num;
-      if (this.value < 0)
-        this.value = 0;
-      if (this.value > this.target)
-        this.value = this.target;
-    }
-  }
 }
