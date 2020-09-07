@@ -162,6 +162,11 @@ $('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
 
 $('#language').on('change', function () {
   Settings.language = $("#language").val();
+
+  Language.setMenuLanguage();
+  Treasure.onLanguageChanged();
+  Dailies.onLanguageChanged();
+  
   //WIP: update markers without reload page
   Camp.locations.forEach(camp => camp.onLanguageChanged());
   Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
@@ -169,9 +174,6 @@ $('#language').on('change', function () {
   Location.locations.forEach(location => location.onLanguageChanged());
   Shop.locations.forEach(shop => shop.onLanguageChanged());
 
-  Language.setMenuLanguage();
-  Treasure.onLanguageChanged();
-  Dailies.onLanguageChanged();
 });
 
 $('#marker-size').on('change', function () {
