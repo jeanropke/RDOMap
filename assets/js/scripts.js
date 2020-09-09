@@ -304,18 +304,10 @@ $('.submenu-only').on('click', function (e) {
 $('.menu-toggle').on('click', function () {
   $('.side-menu').toggleClass('menu-opened');
 
-  var isOpen = $('.side-menu').hasClass('menu-opened');
+  Settings.isMenuOpened = $('.side-menu').hasClass('menu-opened');
 
-  if (isOpen) {
-    $('.menu-toggle').text('X');
-    $.cookie('menu-opened', '1');
-  } else {
-    $('.menu-toggle').text('>');
-    $.cookie('menu-opened', '0');
-  }
-
-  $('.top-widget').toggleClass('top-widget-menu-opened', isOpen);
-  $('#fme-container').toggleClass('fme-menu-opened', isOpen);
+  $('.top-widget').toggleClass('top-widget-menu-opened', Settings.isMenuOpened);
+  $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
 });
 
 
