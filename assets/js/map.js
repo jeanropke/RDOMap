@@ -125,12 +125,6 @@ const MapBase = {
       Discoverable.createOverlays();
     });
 
-    $('#overlay-opacity').val(Settings.overlayOpacity);
-    $("#overlay-opacity").on("change", function () {
-      Settings.overlayOpacity = Number($("#overlay-opacity").val());
-      MapBase.setOverlays();
-    });
-
     MapBase.map.on('click', function (e) {
       MapBase.addCoordsOnMap(e);
     });
@@ -149,7 +143,6 @@ const MapBase = {
       MapBase.map.closePopup();
     });
 
-    MapBase.loadOverlays();
     Layers.debugLayer.addTo(MapBase.map);
 
     // Enable this and disable the above to see cool stuff.
@@ -161,7 +154,6 @@ const MapBase = {
     'use strict';
     MapBase.isDarkMode = ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer) ? true : false;
     $('#map').css('background-color', MapBase.isDarkMode ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
-    MapBase.setOverlays();
   },
 
   runOncePostLoad: function () {
@@ -239,30 +231,6 @@ const MapBase = {
     Legendary.animals.forEach(animal => animal.onMap = toShow);
     MadamNazar.onMap = toShow;
     Shop.locations.forEach(shop => shop.onMap = toShow);
-  },
-
-  loadOverlays: function () {
-    $.getJSON('data/overlays.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.overlays = data;
-        MapBase.setOverlays(Settings.overlayOpacity);
-        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
-      });
-  },
-
-  setOverlays: function (opacity = 0.5) {
-    Layers.overlaysLayer.clearLayers();
-
-    if (opacity == 0) return;
-
-    $.each(MapBase.overlays, function (key, value) {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
-      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, {
-        opacity: opacity
-      }));
-    });
-
-    Layers.overlaysLayer.addTo(MapBase.map);
   },
 
   loadOverlaysBeta: function () {

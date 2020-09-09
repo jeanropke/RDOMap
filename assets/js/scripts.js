@@ -33,7 +33,6 @@ function init() {
   });
 
   MapBase.init();
-  MapBase.setOverlays(Settings.overlayOpacity);
 
   Language.init();
   Language.setMenuLanguage();
@@ -57,8 +56,9 @@ function init() {
   const nazar = MadamNazar.init();
   const legendary = Legendary.init();
   const discoverables = Discoverable.init();
+  const overlays = Overlay.init();
 
-  Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables])
+  Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables, overlays])
     .then(() => { Loader.resolveMapModelLoaded(); MapBase.runOncePostLoad(); });
 
   $('#language').val(Settings.language);
@@ -208,8 +208,8 @@ $('#marker-opacity').on('change', function () {
 
 $('#overlay-opacity').on('change', function () {
   Settings.overlayOpacity = Number($("#overlay-opacity").val());
-  MapBase.setOverlays();
   Legendary.onSettingsChanged();
+  Overlay.onSettingsChanged();
 });
 
 $('#tooltip').on('change', function () {
