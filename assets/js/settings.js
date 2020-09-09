@@ -142,7 +142,7 @@ Object.entries({
   fmeDisplayRolePeriod: { default: 60 },
   fmeEnabledEvents: { default: 131071 },
   fmeNotificationPeriod: { default: 10 },
-  isClock24Hour: { default: false },
+  isClock24Hour: { default: !navigator.hour12 },
   isCoordsOnClickEnabled: { default: false },
   isRightClickEnabled: { default: false },
   isDebugEnabled: { default: false },
