@@ -209,9 +209,9 @@ class Pins {
 
     //Check if exists old pins data
     let oldPinnedItems = localStorage.getItem(`pinned-items`);
-    if(oldPinnedItems != null) {
+    if (oldPinnedItems != null) {
       oldPinnedItems.split(';').forEach(oldItem => {
-        if (oldItem == '') return;  
+        if (oldItem == '') return;
         var properties = oldItem.split(':');
         this.addPin(JSON.parse(`{"lat": ${properties[0]}, "lng": ${properties[1]}, "id": ${properties[2]}, "title": "${properties[3]}", "description": "${properties[4]}", "icon": "${properties[5]}", "color": "red"}`));
       });
@@ -229,25 +229,26 @@ class Pins {
     this.pinsList.push(pin);
 
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    var tempMarker = L.marker([pin.lat, pin.lng], {
+      opacity: Settings.markerOpacity,
+      icon: new L.DivIcon.DataMarkup({
+        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+        popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
+        html: `<div>
+          <img class="icon" src="assets/images/icons/${pin.icon}.png" alt="Icon">
+          <img class="background" src="assets/images/icons/marker_${pin.color}.png" alt="Background">
+          ${shadow}
+        </div>`
+      }),
+      id: pin.id,
+      draggable: Settings.isPinsEditingEnabled
+    });
+    tempMarker.bindPopup(pin.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
 
-    Pins.layer.addLayer(
-      L.marker([pin.lat, pin.lng], {
-        opacity: Settings.markerOpacity,
-        icon: new L.DivIcon.DataMarkup({
-          iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-          iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-          popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
-          html: `<div>
-            <img class="icon" src="assets/images/icons/${pin.icon}.png" alt="Icon">
-            <img class="background" src="assets/images/icons/marker_${pin.color}.png" alt="Background">
-            ${shadow}
-          </div>`
-        }),
-        id: pin.id,
-        draggable: Settings.isPinsEditingEnabled
-      })
-        .bindPopup(pin.updateMarkerContent(), { minWidth: 300, maxWidth: 400 })
-    );
+    Pins.layer.addLayer(tempMarker);
+    if (Settings.isMarkerClusterEnabled && !Settings.isPinsEditingEnabled)
+      Layers.oms.addMarker(tempMarker);
   }
 
   static addPinToCenter() {

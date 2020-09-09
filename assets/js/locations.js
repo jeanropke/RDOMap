@@ -40,7 +40,7 @@ class Location {
     this.markers.forEach(
       marker => {
         var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-        this.layer.addLayer(L.marker([marker.lat, marker.lng], {
+        var tempMarker = L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
             iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -54,8 +54,12 @@ class Location {
             marker: this.key,
             time: marker.subdata
           })
-        })
-          .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
+        });
+        tempMarker.bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
+
+        this.layer.addLayer(tempMarker);
+        if (Settings.isMarkerClusterEnabled)
+          Layers.oms.addMarker(tempMarker);
       }
     );
   }

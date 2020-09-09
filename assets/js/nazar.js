@@ -50,7 +50,7 @@ class MadamNazar {
     MadamNazar.layer.clearLayers();
 
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    MadamNazar.layer.addLayer(L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
+    var tempMarker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
       opacity: Settings.markerOpacity,
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -62,9 +62,12 @@ class MadamNazar {
               ${shadow}
             `
       })
-    })
-      .bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 })
-    );
+    });
+    tempMarker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });
+
+    MadamNazar.layer.addLayer(tempMarker);
+    if (Settings.isMarkerClusterEnabled)
+      Layers.oms.addMarker(tempMarker);
 
     this.onMap = this.onMap;
   }

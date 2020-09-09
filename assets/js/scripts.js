@@ -223,6 +223,20 @@ $('#tooltip').on('change', function () {
   }
 });
 
+$('#marker-cluster').on("change", function () {
+  Settings.isMarkerClusterEnabled = $("#marker-cluster").prop('checked');
+
+  Layers.oms.clearMarkers();
+
+  Camp.locations.forEach(camp => camp.reinitMarker());
+  Encounter.locations.forEach(encounter => encounter.reinitMarker());
+  GunForHire.locations.forEach(gfh => gfh.reinitMarker());
+  Location.locations.forEach(location => location.reinitMarker());
+  Shop.locations.forEach(shop => shop.reinitMarker());
+  MadamNazar.addMadamNazar();
+  Pins.loadPins();
+});
+
 $('#enable-marker-popups-hover').on("change", function () {
   Settings.isPopupsHoverEnabled = $("#enable-marker-popups-hover").prop('checked');
 });

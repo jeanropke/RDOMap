@@ -20,9 +20,9 @@ class Encounter {
     this.layer = L.layerGroup();
 
     this.onLanguageChanged();
-   
+
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-    .attr('data-tippy-content', Language.get(`menu.${this.key}`))
+      .attr('data-tippy-content', Language.get(`menu.${this.key}`))
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
@@ -47,7 +47,7 @@ class Encounter {
     this.markers.forEach(
       marker => {
         var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-        this.layer.addLayer(L.marker([marker.lat, marker.lng], {
+        var tempMarker = L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
             iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -61,8 +61,12 @@ class Encounter {
             </div>`,
             marker: this.key
           })
-        })
-          .bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 }));
+        });
+        tempMarker.bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
+
+        this.layer.addLayer(tempMarker);
+        if (Settings.isMarkerClusterEnabled)
+          Layers.oms.addMarker(tempMarker);
       }
     );
   }
