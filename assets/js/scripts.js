@@ -303,9 +303,8 @@ $('.submenu-only').on('click', function (e) {
 //Open & close side menu
 $('.menu-toggle').on('click', function () {
   $('.side-menu').toggleClass('menu-opened');
-
   Settings.isMenuOpened = $('.side-menu').hasClass('menu-opened');
-
+  $('.menu-toggle').text(Settings.isMenuOpened ? 'X' : '>');
   $('.top-widget').toggleClass('top-widget-menu-opened', Settings.isMenuOpened);
   $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
 });
