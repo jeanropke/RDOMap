@@ -15,7 +15,7 @@ class Marker {
         case 'rescue':
           return Language.get(`map.${this.category}.${this.subdata}.name`);
         case 'hideouts':
-          return Language.get(`map.${this.category}.${this.text}.name`);
+          return Language.get(`map.${this.category}.${this.text}.name`) + ' - ' + `[${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
         case 'camps':
           return Language.get(`map.${this.category}.${this.subdata}.name`) + ' - ' + Language.get(`map.camps.sizes.${this.size}`);
         default:

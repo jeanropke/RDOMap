@@ -270,6 +270,7 @@ $('#show-help').on("change", function () {
 $('#timestamps-24').on('change', function () {
   Settings.isClock24Hour = $("#timestamps-24").prop('checked');
   clockTick();
+  $("#language").triggerHandler('change');
 });
 
 $('#show-dailies').on('change', function () {
@@ -329,6 +330,15 @@ $('#delete-all-settings').on('click', function () {
 
   location.reload(true);
 });
+
+// converts string 'hours:minutes' to time 12/24 hours
+function convertToTime(hours = '00', minutes = '00') {
+  const pad = (e, s) => (1e3 + +e + '').slice(-s);
+  return new Date('1970-01-01T' + `${pad(hours, 2)}:${pad(minutes, 2)}:00` + '.000Z')
+    .toLocaleTimeString({},
+      { timeZone:'UTC', hour12: !Settings.isClock24Hour, hour:'numeric', minute:'numeric' }
+    );
+}
 
 /**
  * Modals

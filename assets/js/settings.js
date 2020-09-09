@@ -143,7 +143,7 @@ Object.entries({
   fmeEnabledEvents: { default: 131071 },
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
-  isCoordsOnClickEnabled: { default: false },  
+  isCoordsOnClickEnabled: { default: false },
   isRightClickEnabled: { default: false },
   isDebugEnabled: { default: false },
   isDoubleClickZoomEnabled: { default: true },
