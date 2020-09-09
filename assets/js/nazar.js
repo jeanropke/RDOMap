@@ -47,6 +47,8 @@ class MadamNazar {
     if (this.currentLocation == null)
       return;
 
+    MadamNazar.layer.clearLayers();
+
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     MadamNazar.layer.addLayer(L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
       opacity: Settings.markerOpacity,

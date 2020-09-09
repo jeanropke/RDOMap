@@ -172,14 +172,14 @@ $('#language').on('change', function () {
   Language.setMenuLanguage();
   Treasure.onLanguageChanged();
   Dailies.onLanguageChanged();
-  
+
   //WIP: update markers without reload page
   Camp.locations.forEach(camp => camp.onLanguageChanged());
   Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
   GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
   Location.locations.forEach(location => location.onLanguageChanged());
   Shop.locations.forEach(shop => shop.onLanguageChanged());
-
+  MadamNazar.addMadamNazar();
 });
 
 $('#marker-size').on('change', function () {
@@ -189,9 +189,9 @@ $('#marker-size').on('change', function () {
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
   Location.locations.forEach(location => location.reinitMarker());
-  Pins.loadPins();
-  MadamNazar.addMadamNazar();
   Shop.locations.forEach(shop => shop.reinitMarker());
+  MadamNazar.addMadamNazar();
+  Pins.loadPins();
 });
 
 $('#marker-opacity').on('change', function () {
@@ -201,9 +201,9 @@ $('#marker-opacity').on('change', function () {
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
   Location.locations.forEach(location => location.reinitMarker());
-  Pins.loadPins();
-  MadamNazar.addMadamNazar();
   Shop.locations.forEach(shop => shop.reinitMarker());
+  MadamNazar.addMadamNazar();
+  Pins.loadPins();
 });
 
 $('#overlay-opacity').on('change', function () {
