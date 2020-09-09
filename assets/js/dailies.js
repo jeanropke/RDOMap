@@ -26,7 +26,7 @@ class Dailies {
           this.categories.push(role);
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).toggleClass('hidden', role !== this.categories[0]));
           this.dailies[role].list.forEach(({ text, target }, index) => {
-            text = text.replace(/\*+$/, '').toLowerCase();
+            text = text.replace(/\*+$/, '').toLowerCase().trim();
             let translationKey
             try {
               translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
