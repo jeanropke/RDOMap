@@ -301,14 +301,6 @@ const MapBase = {
     MapBase.debugMarker((0.01552 * lng + -63.6).toFixed(4), (0.01552 * lat + 111.29).toFixed(4), name);
   },
 
-  game2Map: function ({
-    x,
-    y,
-    z
-  }) {
-    MapBase.debugMarker((0.01552 * y + -63.6).toFixed(4), (0.01552 * x + 111.29).toFixed(4), z);
-  },
-
   submitDebugForm: function () {
     var lat = $('input[name=debug-marker-lat]').val();
     var lng = $('input[name=debug-marker-lng]').val();
@@ -382,5 +374,31 @@ const MapBase = {
         finished.call(null);
       }
     })();
+  },
+
+  //R* converting stuff
+  _debugMarker: function (coords) {
+    let temp = MapBase.map.unproject(this._gameToMap(coords), 8);
+    MapBase.debugMarker(temp.lat, temp.lng);
+  },
+
+  _gameToMap: function (t) {
+    let image = [48841, 38666],
+    topLeft = [-7168, 4096],
+    bottomRight = [5120, -5632];
+
+    let i = image[0],
+      n = image[1],
+      e = this._normal_xy(topLeft, bottomRight),
+      s = this._normal_xy(topLeft, t);
+    return [i * (s[0] / e[0]), n * (s[1] / e[1])]
+  },
+
+  _normal_xy: function (t, i) {
+    return [this._num_distance(t[0], i[0]), this._num_distance(t[1], i[1])]
+  },
+
+  _num_distance: function (t, i) {
+    return t > i ? t - i : i - t;
   }
 };
