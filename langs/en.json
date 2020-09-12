@@ -1154,5 +1154,6 @@
     "menu.daily_challenge_structure": "{counter}{daily-challenge}",
     "menu.harrietum": "Harrietum Officianalis",
     "map.harrietum.name": "Harrietum Officianalis",
-    "map.harrietum.desc": "Collect 3 or 5 of these to be able to transform into an animal."
+    "map.harrietum.desc": "Collect 3 or 5 of these to be able to transform into an animal.",
+    "map.remove": "Remove from map"
 }
