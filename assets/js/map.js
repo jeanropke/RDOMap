@@ -123,6 +123,7 @@ const MapBase = {
       MapBase.setMapBackground();
 
       Discoverable.createOverlays();
+      Overlay.onSettingsChanged();
     });
 
     MapBase.map.on('click', function (e) {
@@ -382,15 +383,15 @@ const MapBase = {
     MapBase.debugMarker(temp.lat, temp.lng);
   },
 
-  _gameToMap: function (t) {
+  _gameToMap: function (coords) {
     let image = [48841, 38666],
-    topLeft = [-7168, 4096],
-    bottomRight = [5120, -5632];
+      topLeft = [-7168, 4096],
+      bottomRight = [5120, -5632];
 
     let i = image[0],
       n = image[1],
       e = this._normal_xy(topLeft, bottomRight),
-      s = this._normal_xy(topLeft, t);
+      s = this._normal_xy(topLeft, coords);
     return [i * (s[0] / e[0]), n * (s[1] / e[1])]
   },
 
