@@ -358,8 +358,10 @@ const MapBase = {
       Layers.heatmapLayer.setData(MapBase.testData);
     }
 
-    if (Settings.isPinsPlacingEnabled)
-      Pins.addPin({ lat: coords.latlng.lat, lng: coords.latlng.lng });
+    if (Settings.isPinsPlacingEnabled) {
+      Pins.onMap = true;
+      Pins.addPin(coords.latlng);
+    }
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {

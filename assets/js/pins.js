@@ -132,17 +132,17 @@ class Pins {
 
     $('#pins-place-mode').on("change", function () {
       Settings.isPinsPlacingEnabled = $("#pins-place-mode").prop('checked');
-      $.cookie('pins-place-enabled', Settings.isPinsPlacingEnabled ? '1' : '0', { expires: 999 });
+      Pins.onMap = true;
     });
 
     $('#pins-edit-mode').on("change", function () {
       Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
-      $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
-
+      Pins.onMap = true;
       Pins.loadPins();
     });
 
     $('#pins-place-new').on("click", function () {
+      Pins.onMap = true;
       Pins.addPinToCenter();
     });
 
