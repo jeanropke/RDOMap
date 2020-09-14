@@ -10,28 +10,35 @@ class Dailies {
     this.categories = [];
     this.categoryOffset = 0;
     this.jsonData = [];
-    this.dailies = [];
+    this.dailiesList = [];
     this.context = $('.daily-challenges[data-type=dailies]');
 
-    const websiteData = Loader.promises['daily'].consumeJson(data => this.dailies = data.dailies);
+    const websiteData = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
     $('#dailies-prev').on('click', Dailies.prevCategory);
     $('#dailies-next').on('click', Dailies.nextCategory);
 
+    const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString();  // 21600000 = 6 hours
+
     return Promise.all([websiteData, allDailies])
       .then(() => {
+        if (this.dailiesList.date !== dailiesDate)
+          return Promise.reject();
+
         console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
-        Object.keys(this.dailies).forEach(role => {
+
+        Object.keys(this.dailiesList.data).forEach(role => {
           this.categories.push(role);
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).toggleClass('hidden', role !== this.categories[0]));
-          this.dailies[role].list.forEach(({ text, target }, index) => {
-            text = text.replace(/\*+$/, '').toLowerCase().trim();
-            let translationKey
+          this.dailiesList.data[role].forEach(({ daily, target }, index) => {
+            let translationKey;
+            // temporary in try catch statement until we unify dailies lists
             try {
-              translationKey = this.jsonData.find(daily => daily.name.toLowerCase() === text).key;
+              translationKey = this.jsonData.find(_daily => _daily.name.toLowerCase() === daily.toLowerCase()).key;
             } catch {
-              translationKey = text;
+              translationKey = daily;
+              console.info(`%c[Dailies] "${daily}" key not found`, 'color: #CD4822; background: #242424');
             }
             const newDaily = new Dailies(role, translationKey, target, index);
             newDaily.appendToMenu();
@@ -53,7 +60,7 @@ class Dailies {
       .translate()
       .find('.one-daily-container')
       .css({
-        'grid-template-areas': `\"${structure[1]} ${structure[2]}\"`,
+        'grid-template-areas': `"${structure[1]} ${structure[2]}"`,
         'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
       })
       .find(`#daily-${this.role}-${this.index}`)
