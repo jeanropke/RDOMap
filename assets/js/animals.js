@@ -18,8 +18,8 @@ class Animal {
     if (this.groups != null) {
       this.groups.forEach(_group => {
         MapBase.yieldingLoop(AnimalCollection.groups[_group].length, 50, function (i) {
-          var _marker = AnimalCollection.groups[_group][i];
-          var tempMarker = L.marker([_marker.x, _marker.y], {
+          const _marker = AnimalCollection.groups[_group][i];
+          const tempMarker = L.marker([_marker.x, _marker.y], {
             opacity: .75,
             icon: new L.divIcon({
               iconUrl: `assets/images/icons/animal.png`,
@@ -29,11 +29,16 @@ class Animal {
             })
           });
 
-          let popupContent = Language.get(`map.animal_spawns.desc`).replace('{animal}', Language.get(`menu.cmpndm.${self.key}`));
+          let popupContent = Language.get(`map.animal_spawns.desc`)
+            .replace('{animal}', Language.get(`menu.cmpndm.${self.key}`));
+
           if (_marker.start && _marker.end) {
-            let startTime = (_marker.start > 12) ? (_marker.start - 12 + ':00 PM') : (_marker.start + ':00 AM');
-            let endTime = (_marker.end > 12) ? (_marker.end - 12 + ':00 PM') : (_marker.end + ':00 AM');
-            popupContent = Language.get(`map.animal_spawns_timed.desc`).replace('{animal}', Language.get(`menu.cmpndm.${self.key}`)).replace('{start}', startTime).replace('{end}', endTime);
+            const startTime = convertToTime(_marker.start);
+            const endTime = convertToTime(_marker.end);
+            popupContent = Language.get(`map.animal_spawns_timed.desc`)
+              .replace('{animal}', Language.get(`menu.cmpndm.${self.key}`))
+              .replace('{start}', startTime)
+              .replace('{end}', endTime);
           }
 
           tempMarker.bindPopup(
