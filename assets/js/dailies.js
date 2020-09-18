@@ -32,15 +32,7 @@ class Dailies {
           this.categories.push(role);
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).toggleClass('hidden', role !== this.categories[0]));
           this.dailiesList.data[role].forEach(({ daily, target }, index) => {
-            let translationKey;
-            // temporary in try catch statement until we unify dailies lists
-            try {
-              translationKey = this.jsonData.find(_daily => _daily.name.toLowerCase() === daily.toLowerCase()).key;
-            } catch {
-              translationKey = daily;
-              console.info(`%c[Dailies] "${daily}" key not found`, 'color: #CD4822; background: #242424');
-            }
-            const newDaily = new Dailies(role, translationKey, target, index);
+            const newDaily = new Dailies(role, daily.toLowerCase(), target, index);
             newDaily.appendToMenu();
           });
         });
