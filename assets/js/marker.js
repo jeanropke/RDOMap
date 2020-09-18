@@ -18,6 +18,8 @@ class Marker {
           return Language.get(`map.${this.category}.${this.text}.name`) + ' - ' + `[${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
         case 'camps':
           return Language.get(`map.${this.category}.${this.subdata}.name`) + ' - ' + Language.get(`map.camps.sizes.${this.size}`);
+        case 'daily_locations':
+          return Language.get(`map.${this.category}.${this.text}.name`);
         default:
           return Language.get(`map.${this.category}.name`);
       }
