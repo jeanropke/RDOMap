@@ -1156,5 +1156,7 @@
     "menu.harrietum": "Harrietum Officianalis",
     "map.harrietum.name": "Harrietum Officianalis",
     "map.harrietum.desc": "Collect 3 or 5 of these to be able to transform into an animal.",
-    "map.remove": "Remove from map"
+    "map.remove": "Remove from map",
+    "map.harrietum_animals.name": "Animal Transform",
+    "map.harrietum_animals.desc": ""
 }

@@ -20,6 +20,8 @@ class Marker {
           return Language.get(`map.${this.category}.${this.subdata}.name`) + ' - ' + Language.get(`map.camps.sizes.${this.size}`);
         case 'daily_locations':
           return Language.get(`map.${this.category}.${this.text}.name`);
+        case 'harrietum_animals':
+          return Language.get('map.harrietum_animals.name') + ' - ' + Language.get(`menu.cmpndm.${this.text}`);
         default:
           return Language.get(`map.${this.category}.name`);
       }

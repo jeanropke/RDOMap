@@ -72,7 +72,7 @@
     <div class="links-container">
       <a data-text="menu.hide_all" class="menu-hide-all" data-help="hide_all" href="javascript:void(0);">Hide all</a>
       <a data-text="menu.show_all" class="menu-show-all" data-help="show_all" href="javascript:void(0);">Show all</a>
-    </div>   
+    </div>
 
     <div>
       <div class="menu-option clickable" data-type="harrietum" data-help="item_category">
@@ -80,6 +80,13 @@
           <img class="icon" src="./assets/images/icons/harrietum.png" />
           <span data-text="menu.harrietum" style="color: #fdc607;">Harrietum Officianalis</span>
         </span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden">
+        <div class="collectible-wrapper" data-help="item" data-type="harrietum_animals">
+          <img class="collectible-icon" src="./assets/images/icons/harrietum_animals.png" />
+          <p class="collectible" data-text="map.harrietum_animals.name"></p>
+        </div>
       </div>
     </div>
     <div>
@@ -507,9 +514,11 @@
     </div>
 
     <div id="dailies-changer-container" class="dailies-changer daily-challenges">
-      <div id="dailies-prev" class="input-selection-arrow"><img src="assets/images/selection_left.png" alt="arrow"></div>
+      <div id="dailies-prev" class="input-selection-arrow"><img src="assets/images/selection_left.png" alt="arrow">
+      </div>
       <span class="dailies-title">General</span>
-      <div id="dailies-next" class="input-selection-arrow"><img src="assets/images/selection_right.png" alt="arrow"></div>
+      <div id="dailies-next" class="input-selection-arrow"><img src="assets/images/selection_right.png" alt="arrow">
+      </div>
     </div>
 
     <div class="dailies daily-challenges" data-type="dailies"></div>
@@ -605,8 +614,7 @@
         </div>
       </a>
       <a class="no-style wiki-page"
-        href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide"
-        target="_blank">
+        href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide" target="_blank">
         <div class="input-container clickable" data-help="read_wiki">
           <label data-text="menu.read_wiki">Read this map's Wiki</label>
           <div class="input-action external"></div>
