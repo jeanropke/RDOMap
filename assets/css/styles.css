@@ -675,7 +675,7 @@ select {
     color: #fff;
 }
 
-.side-menu .menu-hidden .collection-sell, .collection-reset, .camps-small-btn, .camps-large-btn, .shops-hide-btn, .shops-show-btn, .gfh-hide-btn, .gfh-show-btn, .plants-hide-btn, .plants-show-btn, .encounters-hide-btn, .encounters-show-btn {
+.side-menu .menu-hidden .collection-sell, .collection-reset, .camps-small-btn, .camps-large-btn, .camps-wilderness-btn, .shops-hide-btn, .shops-show-btn, .gfh-hide-btn, .gfh-show-btn, .plants-hide-btn, .plants-show-btn, .encounters-hide-btn, .encounters-show-btn {
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;

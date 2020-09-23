@@ -55,6 +55,11 @@ class Menu {
       Camp.isLarge = !Camp.isLarge;
       Camp.locations.forEach(camp => { if (camp.layer['_map'] != null) camp.reinitMarker() });
     });
+    $('.camps-wilderness-btn').on('click', function () {
+      $(this).toggleClass('disabled');
+      Camp.isWilderness = !Camp.isWilderness;
+      Camp.locations.forEach(camp => { if (camp.layer['_map'] != null) camp.reinitMarker() });
+    });
 
     $('.shops-hide-btn').on('click', function () {
       Shop.locations.forEach(shop => { if (shop.onMap) shop.onMap = !shop.onMap });

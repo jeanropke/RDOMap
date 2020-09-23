@@ -1,6 +1,7 @@
 class Camp {
   static isLarge = true;
   static isSmall = true;
+  static isWilderness = true;
 
   static init() {
     this.locations = [];
@@ -50,6 +51,7 @@ class Camp {
 
         if (!Camp.isLarge && marker.size == 'large') return;
         if (!Camp.isSmall && marker.size == 'small') return;
+        if (!Camp.isWilderness && marker.size == 'wild') return;
         
         var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var tempMarker = L.marker([marker.lat, marker.lng], {
