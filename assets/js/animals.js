@@ -33,8 +33,8 @@ class Animal {
             .replace('{animal}', Language.get(`menu.cmpndm.${self.key}`));
 
           if (_marker.start && _marker.end) {
-            const startTime = Settings.isClock24Hour ? `${_marker.start}:00` : `${_marker.start % 12 || 12}:00${_marker.start > 12 ? 'PM' : 'AM'}`;
-            const endTime = Settings.isClock24Hour ? `${_marker.end}:00` : `${_marker.end % 12 || 12}:00${_marker.end > 12 ? 'PM' : 'AM'}`;
+            const startTime = convertToTime(_marker.start);
+            const endTime = convertToTime(_marker.end);
             popupContent = Language.get(`map.animal_spawns_timed.desc`)
               .replace('{animal}', Language.get(`menu.cmpndm.${self.key}`))
               .replace('{start}', startTime)
