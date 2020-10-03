@@ -1458,37 +1458,33 @@ a.no-style:visited {
 .one-daily-container {
     font-size: 1.5rem;
     display: grid;
-    grid-template-areas: "counter daily-challenge";
+    grid-template-columns: auto 1fr auto;
     grid-gap: 5px;
     margin: 10px 0;
     justify-content: space-between;
+    align-content: center;
     background-image: url(../../assets/images/menu_hover.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 100%;
-    min-width: 385px;
-    height: 50px;
+    min-height: 55px;
 }
 
 span.counter {
     font-size: 1.9rem;
     grid-area: counter;
     font-weight: bold;
-    min-width: 15px;
-    margin: 0 18px;
     display: grid;
     justify-content: center;
     align-content: center;
+    width: 55px;
 }
 
 span.daily {
     display: grid;
-    width: 265px;
     align-content: center;
     text-align: left;
-    align-content: left;
     grid-area: daily-challenge;
-    margin: 0 5px 0 0;
+    margin: 0;
 }
 
 .daily-not-found {
@@ -1496,6 +1492,12 @@ span.daily {
     width: 100%;
     padding: 10px 0;
     text-align: center;
+}
+.one-daily-container .input-checkbox-wrapper {
+    display: grid;
+    grid-area: daily-checkbox;
+    margin: 5px;
+    width: 25px;
 }
 
 /* Dark mode styling */

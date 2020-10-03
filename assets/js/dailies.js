@@ -40,18 +40,24 @@ class Dailies {
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
-    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
+    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}.*?\{(.+?)\}/);
 
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
+            <label for="checkbox-${this.role}-${this.index}"></label>
             <span class="counter" data-text="${this.target}"></span>
             <span class="daily" id="daily-${this.role}-${this.index}" data-text="${this.translationKey}"></span>
+            <div class="input-checkbox-wrapper">
+              <input class="input-checkbox" type="checkbox" name="check-${this.role}-${this.index}" value="0"
+                id="checkbox-${this.role}-${this.index}" />
+              <label class="input-checkbox-label" for="checkbox-${this.role}-${this.index}"></label>
+            </div>
           </div>`))
       .translate()
       .find('.one-daily-container')
       .css({
-        'grid-template-areas': `"${structure[1]} ${structure[2]} daily-checkbox"`,
+        'grid-template-areas': `"${structure[1]} ${structure[2]} ${structure[3]}"`,
         'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
       })
       .find(`#daily-${this.role}-${this.index}`)
