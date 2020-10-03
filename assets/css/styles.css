@@ -1496,7 +1496,7 @@ span.daily {
 .one-daily-container .input-checkbox-wrapper {
     display: grid;
     grid-area: daily-checkbox;
-    margin: 5px;
+    margin: 10px;
     width: 25px;
 }
 

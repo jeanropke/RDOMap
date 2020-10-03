@@ -166,3 +166,5 @@ Object.entries({
   showTooltips: { default: true },
   showDailies: { default: true }
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
+
+const DailyChallenges = SettingProxy.createSettingProxy('rdo:dailies');

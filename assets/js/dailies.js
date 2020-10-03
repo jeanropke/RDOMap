@@ -20,6 +20,17 @@ class Dailies {
 
     const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString();  // 21600000 = 6 hours
 
+    SettingProxy.addSetting(Settings, 'lastDailiesDate', { default: dailiesDate });
+
+    // delete old saved completed dailies on day change
+    if (Settings.lastDailiesDate !== dailiesDate) {
+      for (let setting in localStorage) {
+        if (setting.startsWith('rdo:dailies.'))
+          delete localStorage[setting];
+      }
+      Settings.lastDailiesDate = dailiesDate;
+    }
+
     return Promise.all([websiteData, allDailies])
       .then(() => {
         if (this.dailiesList.date !== dailiesDate)
@@ -31,6 +42,7 @@ class Dailies {
           this.categories.push(role);
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).toggleClass('hidden', role !== this.categories[0]));
           this.dailiesList.data[role].forEach(({ daily, target }, index) => {
+            SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
             const newDaily = new Dailies(role, daily.toLowerCase(), target, index);
             newDaily.appendToMenu();
           });
@@ -56,12 +68,16 @@ class Dailies {
           </div>`))
       .translate()
       .find('.one-daily-container')
-      .css({
-        'grid-template-areas': `"${structure[1]} ${structure[2]} ${structure[3]}"`,
-        'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
-      })
-      .find(`#daily-${this.role}-${this.index}`)
-      .toggleClass('not-found', Language.get(this.translationKey) === this.translationKey)
+        .css({
+          'grid-template-areas': `"${structure[1]} ${structure[2]} ${structure[3]}"`,
+          'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
+        })
+      .end()
+      .find(`#checkbox-${this.role}-${this.index}`)
+        .prop('checked', DailyChallenges[`${this.role}_${this.index}`])
+        .on('change', () => {
+          DailyChallenges[`${this.role}_${this.index}`] = $(`#checkbox-${this.role}-${this.index}`).prop('checked');
+        })
       .end();
   }
   static dailiesNotUpdated() {
