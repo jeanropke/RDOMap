@@ -14,7 +14,9 @@
     text-rendering: optimizeLegibility;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -58,7 +60,10 @@ p {
     margin: 0 !important;
 }
 
-input, textarea, select, .btn {
+input,
+textarea,
+select,
+.btn {
     outline: none;
 }
 
@@ -78,7 +83,8 @@ select {
     background: black;
 }
 
-.cycle-table td, .cycle-table th {
+.cycle-table td,
+.cycle-table th {
     padding: 2px;
     border: 1px solid black;
 }
@@ -108,7 +114,8 @@ select {
     line-height: 64px;
 }
 
-#main-header-left, #main-header-right {
+#main-header-left,
+#main-header-right {
     user-select: none;
     -webkit-user-select: none;
     /* Safari */
@@ -195,7 +202,8 @@ select {
     text-align: center;
 }
 
-.map-alert .close-button, .map-cycle-alert .close-button {
+.map-alert .close-button,
+.map-cycle-alert .close-button {
     position: absolute;
     top: 0;
     right: 15px;
@@ -281,7 +289,8 @@ select {
     background-size: auto 3px;
 }
 
-.save-button, .remove-button {
+.save-button,
+.remove-button {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
@@ -309,7 +318,8 @@ select {
     line-height: 33px;
 }
 
-.marker-popup-pin-input-name, .marker-popup-pin-input-desc {
+.marker-popup-pin-input-name,
+.marker-popup-pin-input-desc {
     border: none;
     width: 100%;
     background-color: #222;
@@ -333,7 +343,8 @@ select {
     margin-bottom: 2px;
 }
 
-.marker-popup-pin-input-icon, .marker-popup-pin-input-color {
+.marker-popup-pin-input-icon,
+.marker-popup-pin-input-color {
     background: #eee;
     border: none;
     padding: 5px 10px;
@@ -590,7 +601,8 @@ select {
     top: 0;
 }
 
-.side-menu, .menu-toggle {
+.side-menu,
+.menu-toggle {
     transition: all 200ms ease-out;
 }
 
@@ -608,7 +620,9 @@ select {
     line-height: 36px;
 }
 
-.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover, .side-menu .menu-hidden .animal-wrapper:hover {
+.side-menu .menu-option:hover,
+.side-menu .menu-hidden .collectible-wrapper:hover,
+.side-menu .menu-hidden .animal-wrapper:hover {
     background-image: url(../images/menu_hover.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -618,7 +632,9 @@ select {
     opacity: 0.5;
 }
 
-.side-menu .disabled .menu-option-text, .side-menu .disabled span span, .side-menu .disabled .collectible-text {
+.side-menu .disabled .menu-option-text,
+.side-menu .disabled span span,
+.side-menu .disabled .collectible-text {
     text-decoration: line-through;
 }
 
@@ -651,13 +667,15 @@ select {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #debug-container {
+.side-menu .menu-hidden,
+#debug-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #debug-container.opened {
+.side-menu .menu-hidden.opened,
+#debug-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }
@@ -675,7 +693,19 @@ select {
     color: #fff;
 }
 
-.side-menu .menu-hidden .collection-sell, .collection-reset, .camps-small-btn, .camps-large-btn, .camps-wilderness-btn, .shops-hide-btn, .shops-show-btn, .gfh-hide-btn, .gfh-show-btn, .plants-hide-btn, .plants-show-btn, .encounters-hide-btn, .encounters-show-btn {
+.side-menu .menu-hidden .collection-sell,
+.collection-reset,
+.camps-small-btn,
+.camps-large-btn,
+.camps-wilderness-btn,
+.shops-hide-btn,
+.shops-show-btn,
+.gfh-hide-btn,
+.gfh-show-btn,
+.plants-hide-btn,
+.plants-show-btn,
+.encounters-hide-btn,
+.encounters-show-btn {
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -684,7 +714,8 @@ select {
     /* IE 10+ and Edge */
 }
 
-.side-menu .menu-hidden .collectible-wrapper, .side-menu .menu-hidden .animal-wrapper {
+.side-menu .menu-hidden .collectible-wrapper,
+.side-menu .menu-hidden .animal-wrapper {
     padding: 6px 12px;
     cursor: pointer;
     user-select: none;
@@ -694,19 +725,22 @@ select {
     /* IE 10+ and Edge */
 }
 
-.side-menu .menu-hidden.two-column .collectible-wrapper, .side-menu .menu-hidden.two-column .animal-wrapper {
+.side-menu .menu-hidden.two-column .collectible-wrapper,
+.side-menu .menu-hidden.two-column .animal-wrapper {
     width: calc(50% - 4px);
     display: inline-block;
 }
 
-.side-menu .menu-hidden .collectible-icon, .side-menu .menu-hidden .animal-icon {
+.side-menu .menu-hidden .collectible-icon,
+.side-menu .menu-hidden .animal-icon {
     float: left;
     height: 28px;
     margin-right: 10px;
     margin-top: 6px;
 }
 
-.side-menu .menu-hidden .collectible-icon.random-encounter, .side-menu .menu-hidden .animal-icon.random-encounter {
+.side-menu .menu-hidden .collectible-icon.random-encounter,
+.side-menu .menu-hidden .animal-icon.random-encounter {
     width: 32px;
     height: auto;
     margin-top: 1px;
@@ -714,19 +748,25 @@ select {
     margin-bottom: -3px;
 }
 
-.side-menu .menu-hidden .collectible-text, .side-menu .menu-hidden .animal-text {
+.side-menu .menu-hidden .collectible-text,
+.side-menu .menu-hidden .animal-text {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
 }
 
-.side-menu .menu-hidden .collectible, .side-menu .menu-hidden .animal, .input-container label, .menu-option span {
+.side-menu .menu-hidden .collectible,
+.side-menu .menu-hidden .animal,
+.input-container label,
+.menu-option span {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.side-menu .menu-hidden .collectible, .side-menu .menu-hidden .animal, .input-container label {
+.side-menu .menu-hidden .collectible,
+.side-menu .menu-hidden .animal,
+.input-container label {
     line-height: 31px;
 }
 
@@ -971,11 +1011,13 @@ a.wiki-page:visited {
 
 /* Custom action button styling */
 
-.input-container.clickable, .input-container.clickable label {
+.input-container.clickable,
+.input-container.clickable label {
     cursor: pointer !important;
 }
 
-.input-container.clickable.disabled, .input-container.clickable.disabled label {
+.input-container.clickable.disabled,
+.input-container.clickable.disabled label {
     cursor: not-allowed !important;
 }
 
@@ -1078,14 +1120,17 @@ a.no-style:visited {
     box-shadow: none !important;
 }
 
-.modal-header, .modal-body, .modal-footer {
+.modal-header,
+.modal-body,
+.modal-footer {
     padding-left: 40px;
     padding-right: 40px;
     text-align: center;
     border: none;
 }
 
-.modal-header, .modal-body {
+.modal-header,
+.modal-body {
     color: #fff;
 }
 
@@ -1110,6 +1155,7 @@ a.no-style:visited {
         text-align: center;
         padding: 0 !important;
     }
+
     .modal:before {
         content: "";
         display: inline-block;
@@ -1118,11 +1164,13 @@ a.no-style:visited {
         margin-right: -4px;
         /* Adjusts for spacing */
     }
+
     .modal-dialog {
         display: inline-block;
         text-align: left;
         vertical-align: middle;
     }
+
     .modal-sm {
         width: 450px;
     }
@@ -1130,7 +1178,8 @@ a.no-style:visited {
 
 /* Fix buttons showing on top of sidebar on mobile menu */
 
-.leaflet-top, .leaflet-bottom {
+.leaflet-top,
+.leaflet-bottom {
     z-index: 910;
 }
 
@@ -1162,15 +1211,19 @@ a.no-style:visited {
         left: -400px;
         top: 0;
     }
+
     .menu-opened {
         left: 0;
     }
+
     .timer-menu-opened {
         left: 410px;
     }
+
     .counter-menu-opened {
         left: 410px;
     }
+
     .top-widget-menu-opened {
         left: 405px;
     }
@@ -1255,7 +1308,10 @@ a.no-style:visited {
     border: none;
 }
 
-.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .shadow {
+.leaflet-div-icon .overlay,
+.leaflet-div-icon .icon,
+.leaflet-div-icon .background,
+.leaflet-div-icon .shadow {
     position: absolute;
     text-align: center;
 }
@@ -1351,7 +1407,8 @@ a.no-style:visited {
     font-size: 18px;
 }
 
-#fme-container .fme-card #next-general-mobile, #fme-container .fme-card #next-role-mobile {
+#fme-container .fme-card #next-general-mobile,
+#fme-container .fme-card #next-role-mobile {
     display: none;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1366,16 +1423,21 @@ a.no-style:visited {
     #fme-container {
         right: 50px;
     }
+
     #fme-container .fme-card {
         padding: 10px 20px 10px 10px;
         width: initial;
     }
-    #fme-container .fme-card #next-general-mobile, #fme-container .fme-card #next-role-mobile {
+
+    #fme-container .fme-card #next-general-mobile,
+    #fme-container .fme-card #next-role-mobile {
         display: block;
     }
+
     #fme-container .fme-card .fme-body {
         display: none;
     }
+
     #fme-container .fme-card .fme-image {
         width: 32px;
         height: auto;
@@ -1384,7 +1446,7 @@ a.no-style:visited {
 }
 
 .dailies {
-    margin: 20px 10px;
+    margin: 20px 5px;
     font-size: 2rem;
     user-select: none;
 }
@@ -1400,20 +1462,33 @@ a.no-style:visited {
     grid-gap: 5px;
     margin: 10px 0;
     justify-content: space-between;
+    background-image: url(../../assets/images/menu_hover.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    min-width: 385px;
+    height: 50px;
 }
 
 span.counter {
+    font-size: 1.9rem;
     grid-area: counter;
-    width: 45px;
-    margin: 0 5px;
+    font-weight: bold;
+    min-width: 15px;
+    margin: 0 18px;
     display: grid;
     justify-content: center;
     align-content: center;
 }
 
 span.daily {
+    display: grid;
+    width: 265px;
+    align-content: center;
+    text-align: left;
+    align-content: left;
     grid-area: daily-challenge;
-    margin: 0 5px;
+    margin: 0 5px 0 0;
 }
 
 .daily-not-found {
@@ -1430,7 +1505,8 @@ span.daily {
     color: #dadada;
 }
 
-.leaflet-container a:visited, .leaflet-container a {
+.leaflet-container a:visited,
+.leaflet-container a {
     color: #3db2ff;
 }
 
@@ -1446,7 +1522,8 @@ span.daily {
     background-color: #444;
 }
 
-.leaflet-bar a, .leaflet-bar a:hover {
+.leaflet-bar a,
+.leaflet-bar a:hover {
     border-bottom: 1px solid #555;
     color: #d4d4d4;
 }
@@ -1481,11 +1558,13 @@ span.daily {
     color: #d4d4d4;
 }
 
-.btn.btn-info.remove-button, .save-button {
+.btn.btn-info.remove-button,
+.save-button {
     background-color: #008fbece;
     border: 1px solid #15b4f3af;
 }
 
-.btn.btn-info.remove-button:hover, .save-button:hover {
+.btn.btn-info.remove-button:hover,
+.save-button:hover {
     background-color: #15b4f3af;
 }

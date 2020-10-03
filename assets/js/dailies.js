@@ -1,9 +1,8 @@
 class Dailies {
-  constructor(role, translationKey, target, index, value = 0) {
+  constructor(role, translationKey, target, index) {
     this.role = role;
     this.translationKey = translationKey;
     this.target = target;
-    this.value = value;
     this.index = index;
   }
   static init() {
@@ -46,13 +45,13 @@ class Dailies {
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
-            <span class="counter" data-text="${this.value}/${this.target}"></span>
+            <span class="counter" data-text="${this.target}"></span>
             <span class="daily" id="daily-${this.role}-${this.index}" data-text="${this.translationKey}"></span>
           </div>`))
       .translate()
       .find('.one-daily-container')
       .css({
-        'grid-template-areas': `"${structure[1]} ${structure[2]}"`,
+        'grid-template-areas': `"${structure[1]} ${structure[2]} daily-checkbox"`,
         'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
       })
       .find(`#daily-${this.role}-${this.index}`)
