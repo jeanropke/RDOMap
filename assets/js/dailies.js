@@ -22,15 +22,13 @@ class Dailies {
 
     const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString();  // 21600000 = 6 hours
 
-    SettingProxy.addSetting(Settings, 'lastDailiesDate', { default: dailiesDate });
-
     // delete old saved completed dailies on day change
-    if (Settings.lastDailiesDate !== dailiesDate) {
+    if (localStorage.lastDailiesDate !== dailiesDate) {
       for (let setting in localStorage) {
         if (setting.startsWith('rdo:dailies.'))
           delete localStorage[setting];
       }
-      Settings.lastDailiesDate = dailiesDate;
+      localStorage.setItem('lastDailiesDate', dailiesDate);
     }
 
     return Promise.all([websiteData, allDailies])
