@@ -47,7 +47,7 @@ const urls = [
     'data/treasures.json',
     'data/plants.json',
     'data/gfh.json',
-    'https://pepegapi.jeanropke.net/rdo/nazar',
+    'https://pepegapi.jeanropke.net/v2/rdo/nazar',
     'data/possible_dailies.json',
     'https://pepegapi.jeanropke.net/rdo/dailies',
 ];
