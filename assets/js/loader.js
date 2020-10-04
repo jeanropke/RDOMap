@@ -49,6 +49,6 @@ const urls = [
     'data/gfh.json',
     'https://pepegapi.jeanropke.net/v2/rdo/nazar',
     'data/possible_dailies.json',
-    'https://pepegapi.jeanropke.net/rdo/dailies',
+    'https://pepegapi.jeanropke.net/v2/rdo/dailies',
 ];
 Loader.init(urls);

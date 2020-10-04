@@ -1153,7 +1153,7 @@
     "menu.dailies_not_found": "Today's dailies haven't been updated yet",
     "menu.show_dailies": "Show daily challenges",
     "help.show_dailies": "Enable showing daily challenges in menu",
-    "menu.daily_challenge_structure": "{counter}{daily-challenge}{daily-checkbox}",
+    "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "Harrietum Officianalis",
     "map.harrietum.name": "Harrietum Officianalis",
     "map.harrietum.desc": "Collect 3 or 5 of these to be able to transform into an animal.",

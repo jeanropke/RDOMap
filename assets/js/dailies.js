@@ -38,23 +38,31 @@ class Dailies {
 
         console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
 
-        Object.keys(this.dailiesList.data).forEach(role => {
+        this.dailiesList.data.forEach((item, roleIndex) => {
+          const role = this.dailiesList.data[roleIndex].role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
+          if (role === 'general') this.categoryOffset = roleIndex;
           this.categories.push(role);
-          $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).toggleClass('hidden', role !== this.categories[0]));
-          this.dailiesList.data[role].forEach(({ daily, target }, index) => {
-            const activeCategory = this.jsonData.find(_daily => _daily.key === daily.toLowerCase()).category;
+
+          $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`)
+            .toggleClass('hidden', role !== 'general'));
+
+          this.dailiesList.data[roleIndex].challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
+            const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
             this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
-            const newDaily = new Dailies(role, daily.toLowerCase(), target, index);
+
+            if (displayType === "DISPLAY_CASH") desiredGoal = desiredGoal / 100;
+
+            const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
             newDaily.appendToMenu();
-          });
+          })
         });
         this.onLanguageChanged();
       })
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
-    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}.*?\{(.+?)\}/);
+    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
 
     $(`.dailies > #${this.role}`)
       .append($(`
@@ -71,8 +79,7 @@ class Dailies {
       .translate()
       .find('.one-daily-container')
         .css({
-          'grid-template-areas': `"${structure[1]} ${structure[2]} ${structure[3]}"`,
-          'justify-content': structure[2] === 'counter' ? 'space-between' : 'left'
+          'grid-template-areas': `"${structure[1]} daily-challenge ${structure[2]}"`,
         })
       .end()
       .find(`#checkbox-${this.role}-${this.index}`)
@@ -88,12 +95,13 @@ class Dailies {
     `));
     $('#dailies-changer-container, #sync-map-to-dailies').addClass('hidden');
   }
+  // changed +1 and -1 offset to remain categories order
   static nextCategory() {
-    Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
+    Dailies.categoryOffset = (Dailies.categoryOffset - 1).mod(Dailies.categories.length);
     Dailies.switchCategory();
   }
   static prevCategory() {
-    Dailies.categoryOffset = (Dailies.categoryOffset - 1).mod(Dailies.categories.length);
+    Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
     Dailies.switchCategory();
   }
   static switchCategory() {
