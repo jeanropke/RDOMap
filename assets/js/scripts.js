@@ -382,6 +382,108 @@ L.LayerGroup.include({
   }
 });
 
+$('#cookie-export').on("click", function () {
+  try {
+    var cookies = $.cookie();
+    var storage = localStorage;
+
+    // Remove irrelevant properties (permanently from localStorage):
+    delete cookies['_ga'];
+    delete storage['randid'];
+    delete storage['inventory'];
+
+    // TODO: Need to more differentiate settings form RDO and Collectors map, to don't add hundreds of settings to this list (add prefix or sth)
+    // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
+    storage = $.extend(true, {}, localStorage);
+    delete storage['pinned-items'];
+    delete storage['routes.customRoute'];
+    delete storage['importantItems'];
+    delete storage['enabled-categories'];
+
+    for (var key in storage) {
+      if (storage.hasOwnProperty(key) && key.includesOneOf('collected.', 'routes.', 'shown.', 'amount.')) {
+        delete storage[key];
+      }
+    }
+
+    var settings = {
+      'cookies': cookies,
+      'local': storage
+    };
+
+    var settingsJson = JSON.stringify(settings, null, 4);
+    var exportDate = new Date().toISOUTCDateString();
+
+    downloadAsFile(`RDO-map-settings-(${exportDate}).json`, settingsJson);
+  } catch (error) {
+    console.error(error);
+    alert(Language.get('alerts.feature_not_supported'));
+  }
+});
+
+function setSettings(settings) {
+  $.each(settings.cookies, function (key, value) {
+    $.cookie(key, value, { expires: 999 });
+  });
+
+  $.each(settings.local, function (key, value) {
+    localStorage.setItem(key, value);
+  });
+
+  location.reload();
+}
+
+$('#cookie-import').on('click', function () {
+  try {
+    var settings = null;
+    var file = $('#cookie-import-file').prop('files')[0];
+    var fallback = false;
+
+    if (!file) {
+      alert(Language.get('alerts.file_not_found'));
+      return;
+    }
+
+    try {
+      file.text().then((text) => {
+        try {
+          settings = JSON.parse(text);
+          setSettings(settings);
+        } catch (error) {
+          alert(Language.get('alerts.file_not_valid'));
+          return;
+        }
+      });
+    }
+    catch (error) {
+      fallback = true;
+    }
+
+    if (fallback) {
+      var reader = new FileReader();
+
+      reader.addEventListener('loadend', (e) => {
+        var text = e.srcElement.result;
+
+        try {
+          settings = JSON.parse(text);
+          setSettings(settings);
+        }
+        catch (error) {
+          alert(Language.get('alerts.file_not_valid'));
+          return;
+        }
+      });
+
+      reader.readAsText(file);
+    }
+  }
+  catch (error) {
+    console.error(error);
+    alert(Language.get('alerts.feature_not_supported'));
+  }
+});
+
 /**
  * Event listeners
  */
