@@ -1,4 +1,5 @@
 class Dailies {
+  'use strict';
   constructor(role, translationKey, target, index) {
     this.role = role;
     this.translationKey = translationKey;
@@ -11,6 +12,7 @@ class Dailies {
     this.jsonData = [];
     this.dailiesList = [];
     this.context = $('.daily-challenges[data-type=dailies]');
+    this.markersCategories = [];
 
     const websiteData = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
@@ -42,6 +44,8 @@ class Dailies {
           this.categories.push(role);
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`).toggleClass('hidden', role !== this.categories[0]));
           this.dailiesList.data[role].forEach(({ daily, target }, index) => {
+            const activeCategory = this.jsonData.find(_daily => _daily.key === daily.toLowerCase()).category;
+            this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
             const newDaily = new Dailies(role, daily.toLowerCase(), target, index);
             newDaily.appendToMenu();
@@ -84,7 +88,7 @@ class Dailies {
     $('.dailies').append($(`
       <div class="daily-not-found not-found">${Language.get('menu.dailies_not_found')}</div>
     `));
-    $('#dailies-changer-container').addClass('hidden');
+    $('#dailies-changer-container, #sync-map-to-dailies').addClass('hidden');
   }
   static nextCategory() {
     Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
@@ -103,5 +107,51 @@ class Dailies {
   }
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
+  }
+}
+
+
+
+
+// Still looking for a better way than trigger handlers, if you have any better idea feel free to modify it
+class SynchronizeDailies {
+  'use strict';
+  constructor(category, marker) {
+    this.category = category;
+    this.markers = marker;
+  }
+  static init() {
+    $('.menu-hide-all').trigger('click');
+    Dailies.markersCategories.forEach(element => {
+      const [category, marker] = element;
+      if (marker === "") return;
+      const newSyncedCategory = new SynchronizeDailies(category, marker);
+      newSyncedCategory.sync();
+    });
+  }
+  sync() {
+    this.key = (() => {
+      switch (this.category) {
+        case 'animal':
+        case 'fish':
+          return `menu.cmpndm.${this.category}_${this.markers}`;
+        case 'shops':
+        case 'plants':
+        case 'gfh':
+          return `map.${this.category}.${this.markers}.name`;
+        case 'menu':
+          return `${this.category}.${this.markers}`;
+        case 'nazar':
+          return `menu.${this.markers}`;
+        case 'daily_location':
+          return `menu.${this.markers}.name`;
+        default:
+          console.log(`${this.category} ${this.markers} not found`); // only temporary
+      }
+    })();
+
+    if ($(`[data-text="${this.key}"]`).parent().hasClass('disabled') ||
+      $(`[data-text="${this.key}"]`).parent().parent().hasClass('disabled'))
+      $(`[data-text="${this.key}"]`).trigger('click');
   }
 }

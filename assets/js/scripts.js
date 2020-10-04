@@ -309,6 +309,9 @@ $('.menu-toggle').on('click', function () {
   $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
 });
 
+$('#sync-map-to-dailies').on('click', function () {
+  SynchronizeDailies.init();
+});
 
 $(document).on('contextmenu', function (e) {
   if (!Settings.isRightClickEnabled) e.preventDefault();

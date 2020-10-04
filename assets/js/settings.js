@@ -167,4 +167,5 @@ Object.entries({
   showDailies: { default: true }
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
+// Completed daily challenges settings (file dailies.js)
 const DailyChallenges = SettingProxy.createSettingProxy('rdo:dailies');
