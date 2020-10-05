@@ -82,7 +82,7 @@ class Animal {
 
 class AnimalCollection {
 
-  static async init() {
+  static init() {
     this.heatmapLayer = new HeatmapOverlay({
       radius: 2.5,
       maxOpacity: 0.5,
@@ -111,9 +111,10 @@ class AnimalCollection {
     const animalSpawns = Loader.promises['animal_spawns'].consumeJson(data => this.groups = data[0]);
     const animalHeatmap = Loader.promises['hm'].consumeJson(data => this.collectionsData = data);
 
-    await Promise.all([animalSpawns, animalHeatmap]);
-    console.info(`%c[Animals] Loaded!`, 'color: #bada55; background: #242424');
-    this.collectionsData.forEach(collection => this.collection.push(new AnimalCollection(collection)));
+    return Promise.all([animalSpawns, animalHeatmap]).then(() => {
+      console.info(`%c[Animals] Loaded!`, 'color: #bada55; background: #242424');
+      this.collectionsData.forEach(collection => this.collection.push(new AnimalCollection(collection)));
+    });
   }
 
   constructor(preliminary) {
