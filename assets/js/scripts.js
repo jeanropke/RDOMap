@@ -25,6 +25,18 @@ Object.defineProperty(Number.prototype, 'mod', {
   }
 });
 
+
+$(function () {
+  try {
+    init();
+  } catch (e) {
+    if (getParameterByName('show-alert') == '1') {
+      alert(e);
+    }
+    console.error(e);
+  }
+});
+
 function init() {
 
   const navLang = navigator.language;
@@ -44,6 +56,9 @@ function init() {
   changeCursor();
 
   Menu.init();
+
+  FME.init()
+  Dailies.init();
 
   const animals = AnimalCollection.init();
   const locations = Location.init();
@@ -483,14 +498,3 @@ $('#cookie-import').on('click', function () {
     alert(Language.get('alerts.feature_not_supported'));
   }
 });
-
-/**
- * Event listeners
- */
-
-$(function () {
-  init();
-  FME.init()
-  Dailies.init();
-});
-
