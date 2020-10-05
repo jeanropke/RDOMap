@@ -37,21 +37,21 @@ class Dailies {
 
         console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
 
-        this.dailiesList.data.forEach((item, roleIndex) => {
-          const role = this.dailiesList.data[roleIndex].role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
+        this.dailiesList.data.forEach((roleData, roleIndex) => {
+          const role = roleData.role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
           if (role === 'general') this.categoryOffset = roleIndex;
           this.categories.push(role);
 
           $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`)
             .toggleClass('hidden', role !== 'general'));
 
-          this.dailiesList.data[roleIndex].challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
+            roleData.challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
             const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
             this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
 
-            if (displayType === "DISPLAY_CASH") desiredGoal = desiredGoal / 100;
-            if (displayType === "DISPLAY_MS_TO_MINUTES") desiredGoal = desiredGoal / 60000;
+            if (displayType === "DISPLAY_CASH") desiredGoal /= 100;
+            if (displayType === "DISPLAY_MS_TO_MINUTES") desiredGoal /= 60000;
             if (displayType === "DISPLAY_AS_BOOL") desiredGoal = 1;
 
             const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
@@ -96,13 +96,12 @@ class Dailies {
     `));
     $('#dailies-changer-container, #sync-map-to-dailies').addClass('hidden');
   }
-  // changed +1 and -1 offset to remain categories order
   static nextCategory() {
-    Dailies.categoryOffset = (Dailies.categoryOffset - 1).mod(Dailies.categories.length);
+    Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
     Dailies.switchCategory();
   }
   static prevCategory() {
-    Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
+    Dailies.categoryOffset = (Dailies.categoryOffset - 1).mod(Dailies.categories.length);
     Dailies.switchCategory();
   }
   static switchCategory() {
