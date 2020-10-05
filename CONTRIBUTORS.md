@@ -21,10 +21,14 @@ These are the people that provided the locations of the different items on the m
 - Player camp positions by [Senexis](https://github.com/Senexis).
 - Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 - Shop locations by [Senexis](https://github.com/Senexis).
-- Freeroam events display by [Richard Westenra](https://www.richardwestenra.com/rdr2-free-roam-event-schedule), adapted to the map by [Senexis](https://github.com/Senexis).
-- Madam Nazar location by the [MadamNazar.io API](https://madamnazar.io/).
 - Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase).
-- Legendary Animal locations by [Senexis](https://github.com/Senexis), alloc8or and [IronJeff80](https://github.com/IronJeff80).
+- Legendary Animal locations by [Senexis](https://github.com/Senexis), [alloc8or](https://github.com/alloc8or/) and [IronJeff80](https://github.com/IronJeff80).
+
+## Service credits
+These are the people or services that make the dynamic content of the map work.
+- Daily Challenges provided by [alloc8or](https://github.com/alloc8or/) and the [RDO Dailies API](https://rdodailies.com/).
+- Madam Nazar provided by [alloc8or](https://github.com/alloc8or/) and the [MadamNazar.io API](https://madamnazar.io/).
+- Freeroam events display by [Richard Westenra](https://www.richardwestenra.com/rdr2-free-roam-event-schedule), adapted to the map by [Senexis](https://github.com/Senexis).
 
 ## Assets credits
 These are the people that provided assets for the map.
