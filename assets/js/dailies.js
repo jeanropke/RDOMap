@@ -51,6 +51,8 @@ class Dailies {
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
 
             if (displayType === "DISPLAY_CASH") desiredGoal = desiredGoal / 100;
+            if (displayType === "DISPLAY_MS_TO_MINUTES") desiredGoal = desiredGoal / 60000;
+            if (displayType === "DISPLAY_AS_BOOL") desiredGoal = 1;
 
             const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
             newDaily.appendToMenu();
