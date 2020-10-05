@@ -13,7 +13,7 @@ class Dailies {
     this.context = $('.daily-challenges[data-type=dailies]');
     this.markersCategories = [];
 
-    const websiteData = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
+    const currentDailies = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
     $('#dailies-prev').on('click', Dailies.prevCategory);
@@ -30,9 +30,9 @@ class Dailies {
       localStorage.setItem('lastDailiesDate', dailiesDate);
     }
 
-    return Promise.all([websiteData, allDailies])
+    return Promise.all([currentDailies, allDailies])
       .then(() => {
-        if (this.dailiesList.date !== dailiesDate)
+        if (this.dailiesList.date.indexOf(dailiesDate) === -1)
           return Promise.reject();
 
         console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
@@ -42,21 +42,33 @@ class Dailies {
           if (role === 'general') this.categoryOffset = roleIndex;
           this.categories.push(role);
 
-          $('.dailies').append($(`<div id="${role}" class="daily-role"></div>`)
+          $('.dailies')
+            .append($(`<div id="${role}" class="daily-role"></div>`)
             .toggleClass('hidden', role !== 'general'));
 
-            roleData.challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
+          roleData.challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
             const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
             this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
 
-            if (displayType === "DISPLAY_CASH") desiredGoal /= 100;
-            if (displayType === "DISPLAY_MS_TO_MINUTES") desiredGoal /= 60000;
-            if (displayType === "DISPLAY_AS_BOOL") desiredGoal = 1;
+            switch (displayType) {
+              case 'DISPLAY_CASH':
+                desiredGoal /= 100;
+                break;
+              case 'DISPLAY_MS_TO_MINUTES':
+                desiredGoal /= 60000;
+                break;
+              case 'DISPLAY_AS_BOOL':
+                desiredGoal = 1;
+                break;
+              case 'DISPLAY_FEET':
+                desiredGoal = Math.floor(desiredGoal * 3.281);
+                break;
+            }
 
             const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
             newDaily.appendToMenu();
-          })
+          });
         });
         this.onLanguageChanged();
       })
@@ -129,7 +141,7 @@ class SynchronizeDailies {
     $('.menu-hide-all').trigger('click');
     Dailies.markersCategories.forEach(element => {
       const [category, marker] = element;
-      if (marker === "") return;
+      if (marker === '') return;
       const newSyncedCategory = new SynchronizeDailies(category, marker);
       newSyncedCategory.sync();
     });
