@@ -51,6 +51,6 @@
 	"color": "green",
 	"disabled": false,
 	"key": "harrietum_animals",
-	"locations": [{"text": "animal_buck", "x": -54.1953, "y": 76.4844}, {"text": "animal_rabbit", "x": -85.8906, "y": 79.0313}]
+	"locations": [{"text": "animal_buck", "x": -54.1532, "y": 76.6028}, {"text": "animal_boar", "x": -92.9201, "y": 135.8231}, {"text": "animal_possum", "x": -61.9061, "y": 107.0408}, {"text": "animal_rabbit", "x": -85.9389, "y": 78.9914}]
   }
 ]

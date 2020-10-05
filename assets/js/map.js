@@ -299,7 +299,10 @@ const MapBase = {
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
-    MapBase.debugMarker((0.01552 * lng + -63.6).toFixed(4), (0.01552 * lat + 111.29).toFixed(4), name);
+    const lati = (0.01552 * lng + -63.6).toFixed(4);
+    const long = (0.01552 * lat + 111.29).toFixed(4);
+    MapBase.debugMarker(lati, long, name);
+    return {name, lati, long};
   },
 
   submitDebugForm: function () {
