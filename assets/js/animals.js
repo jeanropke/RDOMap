@@ -81,24 +81,25 @@ class Animal {
 }
 
 class AnimalCollection {
-  static heatmapLayer = new HeatmapOverlay({
-    radius: 2.5,
-    maxOpacity: 0.5,
-    minOpacity: 0,
-    scaleRadius: true,
-    useLocalExtrema: false,
-    latField: 'lat',
-    lngField: 'lng',
-    gradient: {
-      0.25: "rgb(125, 125, 125)",
-      0.55: "rgb(48, 25, 52)",
-      1.0: "rgb(255, 42, 32)"
-    }
-  });
 
-  static spawnLayer = L.canvasIconLayer({ zoomAnimation: true });
+  static async init() {
+    this.heatmapLayer = new HeatmapOverlay({
+      radius: 2.5,
+      maxOpacity: 0.5,
+      minOpacity: 0,
+      scaleRadius: true,
+      useLocalExtrema: false,
+      latField: 'lat',
+      lngField: 'lng',
+      gradient: {
+        0.25: "rgb(125, 125, 125)",
+        0.55: "rgb(48, 25, 52)",
+        1.0: "rgb(255, 42, 32)"
+      }
+    });
 
-  static init() {
+    this.spawnLayer = L.canvasIconLayer({ zoomAnimation: true });
+
     this.groups = [];
     this.collection = [];
     this.collectionsData = [];
@@ -110,10 +111,9 @@ class AnimalCollection {
     const animalSpawns = Loader.promises['animal_spawns'].consumeJson(data => this.groups = data[0]);
     const animalHeatmap = Loader.promises['hm'].consumeJson(data => this.collectionsData = data);
 
-    return Promise.all([animalSpawns, animalHeatmap]).then(() => {
-      console.info(`%c[Animals] Loaded!`, 'color: #bada55; background: #242424');
-      this.collectionsData.forEach(collection => this.collection.push(new AnimalCollection(collection)));
-    });
+    await Promise.all([animalSpawns, animalHeatmap]);
+    console.info(`%c[Animals] Loaded!`, 'color: #bada55; background: #242424');
+    this.collectionsData.forEach(collection => this.collection.push(new AnimalCollection(collection)));
   }
 
   constructor(preliminary) {

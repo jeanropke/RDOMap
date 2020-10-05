@@ -81,11 +81,10 @@ class Plants {
 }
 
 class PlantsCollection {
-
-  static layer = L.canvasIconLayer({ zoomAnimation: true });
-  static enabledCategories = [];
-  static markers = [];
   static init() {
+    this.layer = L.canvasIconLayer({ zoomAnimation: true });
+    this.enabledCategories = [];
+    this.markers = [];
     PlantsCollection.layer.addTo(MapBase.map);
 
     this.locations = [];

@@ -1,9 +1,8 @@
 class Camp {
-  static isLarge = true;
-  static isSmall = true;
-  static isWilderness = true;
-
   static init() {
+    this.isLarge = true;
+    this.isSmall = true;
+    this.isWilderness = true;
     this.locations = [];
     this.quickParams = [];
     this.context = $('.menu-hidden[data-type=camps]');

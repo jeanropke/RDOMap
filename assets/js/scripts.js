@@ -44,20 +44,13 @@ function init() {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en',
   });
 
+  Menu.init();
   MapBase.init();
-
   Language.init();
   Language.setMenuLanguage();
 
-  if (Settings.isMenuOpened)
-    $('.menu-toggle').click();
-
-  Pins.init();
   changeCursor();
-
-  Menu.init();
-
-  FME.init()
+  Pins.init();
   Dailies.init();
 
   const animals = AnimalCollection.init();
@@ -72,9 +65,13 @@ function init() {
   const legendary = Legendary.init();
   const discoverables = Discoverable.init();
   const overlays = Overlay.init();
+  FME.init()
 
   Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables, overlays])
     .then(() => { Loader.resolveMapModelLoaded(); MapBase.runOncePostLoad(); });
+
+  if (Settings.isMenuOpened)
+    $('.menu-toggle').click();
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);

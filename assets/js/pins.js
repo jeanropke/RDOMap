@@ -125,10 +125,8 @@ class Pin {
 }
 
 class Pins {
-
-  static layer = L.layerGroup();
-
   static init() {
+    this.layer = L.layerGroup();
 
     $('#pins-place-mode').on("change", function () {
       Settings.isPinsPlacingEnabled = $("#pins-place-mode").prop('checked');

@@ -1,8 +1,6 @@
 class Discoverable {
-  static layer = L.layerGroup();
-
   static init() {
-
+    this.layer = L.layerGroup();
     this.overlays = [];
 
     if (MapBase.map.getZoom() > 5)
