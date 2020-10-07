@@ -40,18 +40,7 @@ class Legendary {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
-    this.mainIcon = L.divIcon({
-      iconSize: [35 * markerSize, 45 * markerSize],
-      iconAnchor: [17 * markerSize, 42 * markerSize],
-      popupAnchor: [1 * markerSize, -29 * markerSize],
-      html: `
-        <img class="icon" src="./assets/images/icons/legendary_animals.png" alt="Icon">
-        <img class="background" src="./assets/images/icons/marker_black.png" alt="Background">
-        ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
-            src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
-      `
-    });
+  static onSettingsChanged() {
     this.animals.forEach(animal => animal.reinitMarker());
   }
   // not idempotent (on the environment)
@@ -66,7 +55,7 @@ class Legendary {
       .attr('data-tippy-content', Language.get(this.text))
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
-      .addClass(Legendary.notReleased.includes(this.text) ? 'not-found' : '')
+      .toggleClass('not-found', Legendary.notReleased.includes(this.text))
       .translate();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
@@ -77,23 +66,25 @@ class Legendary {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
     this.marker.addLayer(L.circle([this.x, this.y], {
-      color: "#fdc607",
-      fillColor: "#fdc607",
-      fillOpacity: 0.5,
-      radius: this.radius,
-    }));
-    this.marker.addLayer(L.marker([this.x, this.y], { icon: Legendary.mainIcon, opacity: Settings.markerOpacity, })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 400 })
-    );
+        color: "#fdc607",
+        fillColor: "#fdc607",
+        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+        radius: this.radius,
+      })
+      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
-        icon: Legendary.crossIcon,
-        pane: 'animalX',
-      }))
+          icon: Legendary.crossIcon,
+          pane: 'animalX',
+        })
+        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
-    var overlay = `assets/images/icons/game/animals/legendaries/${this.text}.png?nocache=${nocache}`;
-    this.marker.addLayer(L.imageOverlay(overlay, [[this.x - this.radius, this.y - this.radius * 2], [this.x + this.radius, this.y + this.radius * 2]], {
-      opacity: Settings.overlayOpacity
+    const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.png?nocache=${nocache}`;
+    this.marker.addLayer(L.imageOverlay(overlay, [
+      [this.x - this.radius, this.y - this.radius * 2],
+      [this.x + this.radius, this.y + this.radius * 2],
+    ], {
+      opacity: linear(Settings.overlayOpacity, 0, 1, 0.5, 1),
     }));
     this.onMap = this.onMap;
   }
@@ -103,6 +94,7 @@ class Legendary {
         <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : ''}</p>
         <p>${Language.get(this.text + '.desc')}</p>
         <br><p>${Language.get('map.legendary_animal.desc')}</p>
+        <br><p class="legendary-price">${Language.get('map.gus_price')} $${this.gusPrice.toFixed(2)}</p>
         <button type="button" class="btn btn-info remove-button" data-text="map.remove">
           </button>
       </div>`).translate();

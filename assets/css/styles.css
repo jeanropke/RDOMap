@@ -1501,7 +1501,6 @@ span.daily {
 }
 
 /* Dark mode styling */
-
 .leaflet-popup-content-wrapper {
     background: #222;
     color: #dadada;
@@ -1569,4 +1568,9 @@ span.daily {
 .btn.btn-info.remove-button:hover,
 .save-button:hover {
     background-color: #15b4f3af;
+}
+/* end dark mode styling */
+
+.legendary-price {
+    color: #fdc607;
 }

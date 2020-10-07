@@ -495,3 +495,10 @@ $('#cookie-import').on('click', function () {
     alert(Language.get('alerts.feature_not_supported'));
   }
 });
+
+function linear(value, iMin, iMax, oMin, oMax) {
+  const clamp = (num, min, max) => {
+    return num <= min ? min : num >= max ? max : num;
+  }
+  return clamp((((value - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin), oMin, oMax);
+}
