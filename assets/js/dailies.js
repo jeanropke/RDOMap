@@ -64,6 +64,8 @@ class Dailies {
               case 'DISPLAY_FEET':
                 desiredGoal = Math.floor(desiredGoal * 3.281);
                 break;
+              default:
+                desiredGoal = Math.floor(desiredGoal);
             }
 
             const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
