@@ -51,6 +51,8 @@ class Plants {
 
 
   set onMap(state) {
+    if(!PlantsCollection.onMap)
+      return false;
     if (state) {
       if (!PlantsCollection.enabledCategories.includes(this.key)) {
         PlantsCollection.markers = PlantsCollection.markers.concat(this.markers);
@@ -85,6 +87,11 @@ class PlantsCollection {
     this.layer = L.canvasIconLayer({ zoomAnimation: true });
     this.enabledCategories = [];
     this.markers = [];
+    this.element = $('.menu-option.clickable[data-type=plants]')
+      .toggleClass('disabled', !PlantsCollection.onMap)
+      .on('click', () => PlantsCollection.onMap = !PlantsCollection.onMap)
+      .translate();
+
     PlantsCollection.layer.addTo(MapBase.map);
 
     this.locations = [];
@@ -96,5 +103,27 @@ class PlantsCollection {
       setTimeout(() => PlantsCollection.layer.redraw(), 40);
       Menu.reorderMenu(this.context);
     });
+  }
+
+  static set onMap(state) {
+    if (state) {
+      this.layer.addTo(MapBase.map);
+      this.element.removeClass('disabled');
+      this.context.removeClass('disabled');
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:plants`, 'true');
+    } else {
+      this.layer.remove();
+      this.element.addClass('disabled');
+      this.context.addClass('disabled');
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:plants`);
+    }
+    PlantsCollection.locations.forEach(_plants => { if (_plants.onMap) _plants.onMap = state });
+
+  }
+
+  static get onMap() {
+    return !!localStorage.getItem(`rdo:plants`);
   }
 }

@@ -2,6 +2,9 @@ class Treasure {
   // requires MapBase.map, Menu.reorderMenu, Settings.some and DOM ready
   // not idempotent
   static init() {
+    this.treasuresParentElement = $('.menu-option.clickable[data-type=treasure]')
+      .toggleClass('disabled', !this.treasuresOnMap)
+      .on('click', () => this.treasuresOnMap = !this.treasuresOnMap);
     this.treasures = [];
     this.quickParams = [];
     this.layer = L.layerGroup();
@@ -9,7 +12,7 @@ class Treasure {
     const pane = MapBase.map.createPane('treasureX');
     pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
     pane.style.pointerEvents = 'none';
-    this.context = $('.menu-hidden[data-type=treasure]');
+    this.context = $('.menu-hidden[data-type=treasure]').toggleClass('disabled', !this.treasuresOnMap);
     this.crossIcon = L.icon({
       iconUrl: './assets/images/icons/cross.png',
       iconSize: [16, 16],
@@ -92,21 +95,41 @@ class Treasure {
   }
   set onMap(state) {
     if (state) {
+      if(Treasure.treasuresOnMap)
       Treasure.layer.addLayer(this.marker);
-      this.element.removeClass('disabled');
       if (!MapBase.isPrewviewMode)
         localStorage.setItem(`rdo:${this._shownKey}`, 'true');
+      this.element.removeClass('disabled');
     } else {
+      if(Treasure.treasuresOnMap)
       Treasure.layer.removeLayer(this.marker);
-      this.element.addClass('disabled');
       if (!MapBase.isPrewviewMode)
         localStorage.removeItem(`rdo:${this._shownKey}`);
+      this.element.addClass('disabled');
     }
   }
   get onMap() {
     return !!localStorage.getItem(`rdo:${this._shownKey}`);
   }
-  static onCategoryToggle() {
-    Treasure.treasures.forEach(treasure => treasure.onMap = treasure.onMap);
+
+  static set treasuresOnMap(state) {
+    if (state) {
+      MapBase.map.addLayer(Treasure.layer);
+      if (!MapBase.isPrewviewMode)
+        localStorage.setItem(`rdo:treasures`, 'true');
+        
+    this.treasures.forEach(_t => { if(_t.onMap) _t.onMap = state});
+    } else {
+      Treasure.layer.remove();
+      if (!MapBase.isPrewviewMode)
+        localStorage.removeItem(`rdo:treasures`);
+    }
+
+    this.treasuresParentElement.toggleClass('disabled', !state);
+    this.context.toggleClass('disabled', !state);
+  }
+
+  static get treasuresOnMap() {
+    return !!localStorage.getItem(`rdo:treasures`);
   }
 }
