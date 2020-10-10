@@ -19,7 +19,7 @@ class Dailies {
     $('#dailies-prev').on('click', Dailies.prevCategory);
     $('#dailies-next').on('click', Dailies.nextCategory);
 
-    const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString();  // 21600000 = 6 hours
+    const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString(); // 21600000ms = 6 hours
 
     // delete old saved completed dailies on day change
     if (localStorage.lastDailiesDate !== dailiesDate) {
@@ -44,7 +44,7 @@ class Dailies {
 
           $('.dailies')
             .append($(`<div id="${role}" class="daily-role"></div>`)
-            .toggleClass('hidden', role !== 'general'));
+              .toggleClass('hidden', role !== 'general'));
 
           roleData.challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
             const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
@@ -65,7 +65,7 @@ class Dailies {
                 desiredGoal = Math.floor(desiredGoal * 3.281);
                 break;
               default:
-                desiredGoal = Math.floor(desiredGoal);
+                desiredGoal = Math.trunc(desiredGoal);
             }
 
             const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
