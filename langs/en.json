@@ -1162,5 +1162,8 @@
     "menu.sync_map_to_dailies": "Sync enabled markers to current dailies",
     "help.sync_map_to_dailies": "Allows you to automatically enable only markers and categories related to current daily challenges.",
     "map.harrietum_animals.name": "Animal Transform",
-    "map.harrietum_animals.desc": ""
+    "map.harrietum_animals.desc": "",
+    "menu.remove_all_pins": "Remove all pins",
+    "menu.modal_remove_all_pins_title": "Remove all pins?",
+    "menu.modal_remove_all_pins_body": "This will delete all your custom pins. This action cannot be undone."
 }

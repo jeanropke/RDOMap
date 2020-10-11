@@ -31,7 +31,7 @@ class Pin {
     `);
 
     if (Settings.isPinsEditingEnabled) {
-      const markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp"];
+      const markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp", "harrietum"];
       const markerColors = ["aquagreen", "beige", "black", "blue", "brown", "cadetblue", "darkblue", "darkgreen", "darkorange", "darkpurple", "darkred", "gray", "green", "lightblue", "lightgray", "lightgreen", "lightorange", "lightred", "orange", "pink", "purple", "red", "white", "yellow"];
       const markerIconSelect = $('<select>').attr('id', `${this.id}_icon`).addClass('marker-popup-pin-input-icon');
       const markerColorSelect = $('<select>').attr('id', `${this.id}_color`).addClass('marker-popup-pin-input-color');
@@ -75,7 +75,7 @@ class Pin {
             </button>
             <button type="button" class="btn btn-danger remove-button" data-text="map.user_pins.remove">
               ${Language.get('map.user_pins.remove')}
-            </button>            
+            </button>
             <small class="popupContentDebug">
               Latitude: ${this.lat} / Longitude: ${this.lng}
             </small>
@@ -142,6 +142,15 @@ class Pins {
     $('#pins-place-new').on("click", function () {
       Pins.onMap = true;
       Pins.addPinToCenter();
+      Pins.save();
+    });
+
+    $('#open-remove-all-pins-modal').on('click', function () {
+      $('#remove-all-pins-modal').modal();
+    });
+
+    $('#remove-all-pins').on('click', function () {
+      Pins.removeAllPins();
     });
 
     $('#pins-export').on("click", function () {
@@ -247,6 +256,7 @@ class Pins {
     Pins.layer.addLayer(tempMarker);
     if (Settings.isMarkerClusterEnabled && !Settings.isPinsEditingEnabled)
       Layers.oms.addMarker(tempMarker);
+      Pins.save();
   }
 
   static addPinToCenter() {
@@ -319,5 +329,13 @@ class Pins {
   }
   static get onMap() {
     return !!localStorage.getItem(`rdo:pins-enabled`);
+  }
+
+  static removeAllPins() {
+    Pins.pinsList = [];
+    Object.keys(Pins.layer._layers).forEach(pin => {
+      Pins.layer.removeLayer(pin);
+    });
+    Pins.save();
   }
 }
