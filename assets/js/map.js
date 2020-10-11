@@ -200,6 +200,13 @@ const MapBase = {
           }
         });
       }
+      else if (PlantsCollection.quickParams.indexOf(quickParam) !== -1) {
+        PlantsCollection.locations.filter(item => {
+          if (item.key == quickParam) {
+            item.onMap = true;
+          }
+        });
+      }
       else if (quickParam == 'nazar') {
         MadamNazar.onMap = true;
         MapBase.map.setView({
@@ -232,6 +239,7 @@ const MapBase = {
     Legendary.animals.forEach(animal => animal.onMap = toShow);
     MadamNazar.onMap = toShow;
     Shop.locations.forEach(shop => shop.onMap = toShow);
+    PlantsCollection.locations.forEach(plants => plants.onMap = toShow);
   },
 
   loadOverlaysBeta: function () {

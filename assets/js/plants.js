@@ -87,6 +87,8 @@ class PlantsCollection {
     this.layer = L.canvasIconLayer({ zoomAnimation: true });
     this.enabledCategories = [];
     this.markers = [];
+    this.quickParams = [];
+
     this.element = $('.menu-option.clickable[data-type=plants]')
       .toggleClass('disabled', !PlantsCollection.onMap)
       .on('click', () => PlantsCollection.onMap = !PlantsCollection.onMap)
@@ -98,7 +100,10 @@ class PlantsCollection {
     this.context = $('.menu-hidden[data-type=plants]');
 
     return Loader.promises['plants'].consumeJson(data => {
-      data.forEach(item => this.locations.push(new Plants(item)));
+      data.forEach(item => {
+        this.locations.push(new Plants(item));
+        this.quickParams.push(item.key);
+      });
       console.info(`%c[Plants] Loaded!`, 'color: #bada55; background: #242424');
       setTimeout(() => PlantsCollection.layer.redraw(), 40);
       Menu.reorderMenu(this.context);
