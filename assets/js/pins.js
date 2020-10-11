@@ -164,8 +164,8 @@ class Pins {
 
     $('#pins-import').on('click', function () {
       try {
-        var file = $('#pins-import-file').prop('files')[0];
-        var fallback = false;
+        let file = $('#pins-import-file').prop('files')[0];
+        let fallback = false;
 
         if (!file) {
           alert(Language.get('alerts.file_not_found'));
@@ -181,10 +181,10 @@ class Pins {
         }
 
         if (fallback) {
-          var reader = new FileReader();
+          const reader = new FileReader();
 
           reader.addEventListener('loadend', (e) => {
-            var text = e.srcElement.result;
+            const text = e.srcElement.result;
             Pins.importPins(text);
           });
 
@@ -219,7 +219,7 @@ class Pins {
     if (oldPinnedItems != null) {
       oldPinnedItems.split(';').forEach(oldItem => {
         if (oldItem == '') return;
-        var properties = oldItem.split(':');
+        const properties = oldItem.split(':');
         this.addPin(JSON.parse(`{"lat": ${properties[0]}, "lng": ${properties[1]}, "id": ${properties[2]}, "title": "${properties[3]}", "description": "${properties[4]}", "icon": "${properties[5]}", "color": "red"}`));
       });
     }
@@ -235,8 +235,8 @@ class Pins {
     const pin = new Pin(data);
     this.pinsList.push(pin);
 
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var tempMarker = L.marker([pin.lat, pin.lng], {
+    const shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    const tempMarker = L.marker([pin.lat, pin.lng], {
       opacity: Settings.markerOpacity,
       icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -277,7 +277,6 @@ class Pins {
     }
     else {
       alert(Language.get('alerts.file_not_valid'));
-      console.log(ex);
       console.log(text);
     }
   }
