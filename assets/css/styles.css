@@ -1370,6 +1370,7 @@ a.no-style:visited {
 
 #fme-container.fme-menu-opened {
     left: 405px;
+    overflow: hidden;
 }
 
 #fme-container .fme-card {
