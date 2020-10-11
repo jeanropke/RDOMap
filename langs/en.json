@@ -187,6 +187,7 @@
     "map.user_pins.icon.nazar": "Madam Nazar",
     "map.user_pins.icon.treasure": "Treasure",
     "map.user_pins.icon.camp": "Camp",
+    "map.user_pins.icon.harrietum": "Harrietum",
     "map.user_pins.placeholder_desc": "Description",
     "map.user_pins.placeholder_title": "Name",
     "map.user_pins.remove": "Remove",
@@ -236,7 +237,6 @@
     "map.hideouts.beaver_hollow.name": "Beaver Hollow",
     "map.hideouts.clemens_cove.name": "Clemens Cove",
     "map.hideouts.colter.name": "Colter",
-    "map.hideouts.cueva_seca.name": "Cueva Seca",
     "map.hideouts.cumberland_falls.name": "Cumberland Falls",
     "map.hideouts.ewing_basin.name": "Ewing Basin",
     "map.hideouts.firwood_rise.name": "Firwood Rise",
@@ -268,6 +268,9 @@
     "map.hideouts.west_bayou.name": "West Bayou",
     "map.hideouts.willards_rest.name": "Willard's Rest",
     "map.hideouts.millisani_claim.name": "Millisani claim",
+    "map.hideouts.cholla_springs.name": "Cholla Springs",
+    "map.hideouts.cuera_seca.name": "Cuera Seca",
+    "map.hideouts.rocky_seven.name": "Rocky Seven",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Armadillo",
     "fasttravel.macfarlanes.name": "MacFarlane's Ranch",
@@ -1166,4 +1169,5 @@
     "menu.remove_all_pins": "Remove all pins",
     "menu.modal_remove_all_pins_title": "Remove all pins?",
     "menu.modal_remove_all_pins_body": "This will delete all your custom pins. This action cannot be undone."
+
 }
