@@ -233,7 +233,7 @@
   { "name": "Prairie Poppies picked", "key": "mpgc_prairie_poppy_picked", "category": ["plants", "prairie_poppy"] },
   { "name": "Pronghorns skinned", "key": "mpgc_pronghorns_skinned", "category": ["animal", "pronghorn_american_m"] },
   { "name": "Black-tailed Jackrabbits skinned", "key": "mpgc_rabbits_skinned", "category": ["animal", "rabbit"] },
-  { "name": "North American Raccoons skinned", "key": "mpgc_raccoons_skinned", "category": ["animal", "raccoon"] },
+  { "name": "North American Raccoons skinned", "key": "mpgc_raccoons_skinned", "category": ["animal", "racoon"] },
   { "name": "Placed top 3 in a Race", "key": "mpgc_race_wins", "category": ["", ""] },
   { "name": "Ram's Head picked", "key": "mpgc_rams_head_picked", "category": ["plants", "rams_head"] },
   { "name": "Rams skinned", "key": "mpgc_rams_skinned", "category": ["animal", "ram"] },
