@@ -1,11 +1,11 @@
 console.log("Welcome!");
 
-const ProgressBar = require('progress');
+const ProgressBar = require("progress");
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 
-const legendary_animals = [
+const legendaryAnimals = [
     { "name": "mp_animal_alligator_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_alligator_legendary_01" },
     { "name": "mp_animal_alligator_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_alligator_legendary_02" },
     { "name": "mp_animal_bear_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_bear_legendary_01" },
@@ -33,7 +33,7 @@ const legendary_animals = [
     { "name": "mp_animal_ram_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_ram_legendary_01" },
     { "name": "mp_animal_ram_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_ram_legendary_02" },
     { "name": "mp_animal_wolf_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_wolf_legendary_01" },
-    { "name": "mp_animal_wolf_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_wolf_legendary_02" },
+    { "name": "mp_animal_wolf_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_wolf_legendary_02" }
 ];
 
 const animals = [
@@ -142,7 +142,7 @@ const animals = [
     { "name": "fish_northernpike", "type": "long", "url": "http://localhost/rdo/?q=fish_northernpike" },
     { "name": "fish_smallmouthbass", "type": "long", "url": "http://localhost/rdo/?q=fish_smallmouthbass" },
     { "name": "fish_salmon_sockeye", "type": "long", "url": "http://localhost/rdo/?q=fish_salmon_sockeye" },
-    { "name": "fish_steelheadtrout", "type": "long", "url": "http://localhost/rdo/?q=fish_steelheadtrout" },
+    { "name": "fish_steelheadtrout", "type": "long", "url": "http://localhost/rdo/?q=fish_steelheadtrout" }
 ];
 
 const treasures = [
@@ -174,7 +174,7 @@ const treasures = [
     { "name": "ocreaghs_run_treasure", "type": "short", "url": "http://localhost/rdo/?q=ocreaghs_run_treasure" },
     { "name": "san_luis_treasure", "type": "short", "url": "http://localhost/rdo/?q=san_luis_treasure" },
     { "name": "southren_roanoke_treasure", "type": "short", "url": "http://localhost/rdo/?q=southren_roanoke_treasure" },
-    { "name": "west_hill_haven_treasure", "type": "short", "url": "http://localhost/rdo/?q=west_hill_haven_treasure" },
+    { "name": "west_hill_haven_treasure", "type": "short", "url": "http://localhost/rdo/?q=west_hill_haven_treasure" }
 ];
 
 const plants = [
@@ -207,7 +207,7 @@ const plants = [
     { "name": "wild_feverfew", "type": "long", "url": "http://localhost/rdo/?q=wild_feverfew" },
     { "name": "wild_mint", "type": "long", "url": "http://localhost/rdo/?q=wild_mint" },
     { "name": "wintergreen_berry", "type": "long", "url": "http://localhost/rdo/?q=wintergreen_berry" },
-    { "name": "yarrow", "type": "long", "url": "http://localhost/rdo/?q=yarrow" },
+    { "name": "yarrow", "type": "long", "url": "http://localhost/rdo/?q=yarrow" }
 ];
 
 const shops = [
@@ -223,7 +223,7 @@ const shops = [
     { "name": "saloon", "type": "long", "url": "http://localhost/rdo/?q=saloon" },
     { "name": "stable", "type": "long", "url": "http://localhost/rdo/?q=stable" },
     { "name": "tackle", "type": "long", "url": "http://localhost/rdo/?q=tackle" },
-    { "name": "tailor", "type": "long", "url": "http://localhost/rdo/?q=tailor" },
+    { "name": "tailor", "type": "long", "url": "http://localhost/rdo/?q=tailor" }
 ];
 
 const camps = [
@@ -239,7 +239,7 @@ const camps = [
     { "name": "riobravo", "type": "long", "url": "http://localhost/rdo/?q=riobravo" },
     { "name": "roanoke", "type": "long", "url": "http://localhost/rdo/?q=roanoke" },
     { "name": "scarlett", "type": "long", "url": "http://localhost/rdo/?q=scarlett" },
-    { "name": "talltrees", "type": "long", "url": "http://localhost/rdo/?q=talltrees" },
+    { "name": "talltrees", "type": "long", "url": "http://localhost/rdo/?q=talltrees" }
 ];
 
 const gfh = [
@@ -261,7 +261,7 @@ const gfh = [
     { "name": "the_boy", "type": "long", "url": "http://localhost/rdo/?q=the_boy" },
     { "name": "thomas_skiff_captain", "type": "long", "url": "http://localhost/rdo/?q=thomas_skiff_captain" },
     { "name": "wallace_train_clerk", "type": "long", "url": "http://localhost/rdo/?q=wallace_train_clerk" },
-    { "name": "war_vet", "type": "long", "url": "http://localhost/rdo/?q=war_vet" },
+    { "name": "war_vet", "type": "long", "url": "http://localhost/rdo/?q=war_vet" }
 ];
 
 const misc = [
@@ -283,7 +283,7 @@ const misc = [
     { "name": "hideouts", "type": "long", "url": "http://localhost/rdo/?q=hideouts" },
     { "name": "hogtied_lawman", "type": "long", "url": "http://localhost/rdo/?q=hogtied_lawman" },
     { "name": "kidnapped", "type": "long", "url": "http://localhost/rdo/?q=kidnapped" },
-    { "name": "legendary_animals", "type": "long", "url": "http://localhost/rdo/?q=legendary_animals" },
+    { "name": "legendaryAnimals", "type": "long", "url": "http://localhost/rdo/?q=legendaryAnimals" },
     { "name": "moonshiner_camp", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_camp" },
     { "name": "moonshiner_destroy", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_destroy" },
     { "name": "moonshiner_roadblock", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_roadblock" },
@@ -298,7 +298,7 @@ const misc = [
     { "name": "trains", "type": "long", "url": "http://localhost/rdo/?q=trains" },
     { "name": "treasure_hunter", "type": "long", "url": "http://localhost/rdo/?q=treasure_hunter" },
     { "name": "tree_map", "type": "long", "url": "http://localhost/rdo/?q=tree_map" },
-    { "name": "wounded_animal", "type": "long", "url": "http://localhost/rdo/?q=wounded_animal" },
+    { "name": "wounded_animal", "type": "long", "url": "http://localhost/rdo/?q=wounded_animal" }
 ];
 
 const collectableCategories = [
@@ -319,7 +319,7 @@ const collectableCategories = [
     { "name": "coastal", "type": "long", "url": "http://localhost/?q=coastal" },
     { "name": "megafauna", "type": "long", "url": "http://localhost/?q=megafauna" },
     { "name": "oceanic", "type": "long", "url": "http://localhost/?q=oceanic" },
-    { "name": "random", "type": "long", "url": "http://localhost/?q=random" },
+    { "name": "random", "type": "long", "url": "http://localhost/?q=random" }
 ];
 
 const collectableIndividual = [
@@ -962,7 +962,7 @@ const collectableIndividual = [
     { "name": "wands_two_3", "type": "short", "url": "http://localhost/?q=wands_two&cycles=3" },
     { "name": "wands_two_4", "type": "short", "url": "http://localhost/?q=wands_two&cycles=4" },
     { "name": "wands_two_5", "type": "short", "url": "http://localhost/?q=wands_two&cycles=5" },
-    { "name": "wands_two_6", "type": "short", "url": "http://localhost/?q=wands_two&cycles=6" },
+    { "name": "wands_two_6", "type": "short", "url": "http://localhost/?q=wands_two&cycles=6" }
 ];
 
 let sites = [];
@@ -972,13 +972,13 @@ let sites = [];
         sites.push({
             name: (c.name + "_" + i),
             type: c.type,
-            url: (c.url + "&cycles=" + i),
+            url: (c.url + "&cycles=" + i)
         });
     });
 });
 
 sites = sites.concat(collectableIndividual);
-sites = sites.concat(legendary_animals);
+sites = sites.concat(legendaryAnimals);
 sites = sites.concat(animals);
 sites = sites.concat(treasures);
 sites = sites.concat(plants);
@@ -987,14 +987,14 @@ sites = sites.concat(camps);
 sites = sites.concat(gfh);
 sites = sites.concat(misc);
 
-const bar = new ProgressBar('[:bar] :current/:total (:percent)', {
-    complete: '=',
-    incomplete: ' ',
+const bar = new ProgressBar("[:bar] :current/:total (:percent)", {
+    complete: "=",
+    incomplete: " ",
     total: sites.length,
     width: 80
 });
 
-async function doScreenCapture(url, site_type, site_name) {
+async function doScreenCapture(url, siteType, siteName) {
     const browser = await puppeteer.launch({
         defaultViewport: {
             width: 3840,
@@ -1002,8 +1002,8 @@ async function doScreenCapture(url, site_type, site_name) {
         }
     });
     const page = await browser.newPage();
-    const writeDir = path.join(__dirname, `_${site_type}`);
-    const fileDir = path.join(writeDir, `${site_name}.jpg`);
+    const writeDir = path.join(__dirname, `_${siteType}`);
+    const fileDir = path.join(writeDir, `${siteName}.jpg`);
 
     if (!fs.existsSync(writeDir)) fs.mkdirSync(writeDir);
 
@@ -1040,7 +1040,7 @@ async function run() {
         await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8]);
         bar.tick(8);
         if (bar.complete) {
-            console.log('\nDone!\n');
+            console.log("\nDone!\n");
         }
     }
 }

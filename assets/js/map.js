@@ -12,36 +12,38 @@ const MapBase = {
   isPreviewMode: false,
 
   init: function () {
-    'use strict';
+    "use strict";
 
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
+
     //Please, do not use the GitHub map tiles. Thanks
     const mapLayers = {
-      'map.layers.default': L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+      "map.layers.default": L.tileLayer("https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg", {
         noWrap: true,
         bounds: mapBoundary,
         attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
       }),
-      'map.layers.detailed': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
+      "map.layers.detailed": L.tileLayer((isLocalHost() ? "" : "https://jeanropke.b-cdn.net/") + "assets/maps/detailed/{z}/{x}_{y}.jpg", {
         noWrap: true,
         bounds: mapBoundary,
         attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
       }),
-      'map.layers.dark': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+      "map.layers.dark": L.tileLayer((isLocalHost() ? "" : "https://jeanropke.b-cdn.net/") + "assets/maps/darkmode/{z}/{x}_{y}.jpg", {
         noWrap: true,
         bounds: mapBoundary,
         attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
       }),
-      'map.layers.black': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/black/{z}/{x}_{y}.jpg', {
+      "map.layers.black": L.tileLayer((isLocalHost() ? "" : "https://jeanropke.b-cdn.net/") + "assets/maps/black/{z}/{x}_{y}.jpg", {
         noWrap: true,
         bounds: mapBoundary,
         attribution: '<a href="https://github.com/AdamNortonUK" target="_blank">AdamNortonUK</a>'
-      }),
+      })
     };
 
     // Override bindPopup to include mouseover and mouseout logic.
     L.Layer.include({
       bindPopup: function (content, options) {
+
         // TODO: Check if we can move this from here.
         if (content instanceof L.Popup) {
           L.Util.setOptions(content, options);
@@ -64,12 +66,12 @@ const MapBase = {
           this._popupHandlersAdded = true;
         }
 
-        this.on('mouseover', function (e) {
+        this.on("mouseover", function (e) {
           if (!Settings.isPopupsHoverEnabled) return;
           this.openPopup();
         });
 
-        this.on('mouseout', function (e) {
+        this.on("mouseout", function (e) {
           if (!Settings.isPopupsHoverEnabled) return;
 
           const that = this;
@@ -77,9 +79,9 @@ const MapBase = {
             that.closePopup();
           }, 100);
 
-          $('.leaflet-popup').on('mouseover', function (e) {
+          $(".leaflet-popup").on("mouseover", function (e) {
             clearTimeout(timeout);
-            $('.leaflet-popup').off('mouseover');
+            $(".leaflet-popup").off("mouseover");
           });
         });
 
@@ -87,38 +89,39 @@ const MapBase = {
       }
     });
 
-    MapBase.map = L.map('map', {
+    MapBase.map = L.map("map", {
       preferCanvas: true,
       attributionControl: false,
       minZoom: this.minZoom,
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[Settings.baseLayer]],
+      layers: [mapLayers[Settings.baseLayer]]
     }).setView([-70, 111.75], 3);
 
     MapBase.map.addControl(
       L.control.attribution({
-        position: 'bottomright',
+        position: "bottomright",
         prefix: '<a target="_blank" href="https://github.com/jeanropke/RDR2CollectorsMap/blob/master/CONTRIBUTORS.md" data-text="map.attribution_prefix">Collectors Map Contributors</a>'
       })
     );
 
     L.control.zoom({
-      position: 'bottomright'
+      position: "bottomright"
     }).addTo(MapBase.map);
 
     L.control.layers(mapLayers).addTo(MapBase.map);
 
     // Leaflet leaves the layer names here, with a space in front of them.
-    $('.leaflet-control-layers-list span').each(function (index, node) {
+    $(".leaflet-control-layers-list span").each(function (index, node) {
+
       // Move the layer name (which is chosen to be our language key) into a
       // new tightly fitted span for use with our localization.
       const langKey = node.textContent.trim();
-      $(node).html([' ', $('<span>').attr('data-text', langKey).text(langKey)]);
+      $(node).html([" ", $("<span>").attr("data-text", langKey).text(langKey)]);
     });
 
-    MapBase.map.on('baselayerchange', function (e) {
+    MapBase.map.on("baselayerchange", function (e) {
       Settings.baseLayer = e.name;
       MapBase.setMapBackground();
 
@@ -126,11 +129,11 @@ const MapBase = {
       Overlay.onSettingsChanged();
     });
 
-    MapBase.map.on('click', function (e) {
+    MapBase.map.on("click", function (e) {
       MapBase.addCoordsOnMap(e);
     });
 
-    MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
+    MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? "enable" : "disable"]();
 
     const southWest = L.latLng(-160, -120),
       northEast = L.latLng(25, 250),
@@ -140,7 +143,7 @@ const MapBase = {
     Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, {
       keepSpiderfied: true
     });
-    Layers.oms.addListener('spiderfy', function (markers) {
+    Layers.oms.addListener("spiderfy", function (markers) {
       MapBase.map.closePopup();
     });
 
@@ -152,19 +155,19 @@ const MapBase = {
   },
 
   setMapBackground: function () {
-    'use strict';
-    MapBase.isDarkMode = ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer) ? true : false;
-    $('#map').css('background-color', MapBase.isDarkMode ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
+    "use strict";
+    MapBase.isDarkMode = ["map.layers.dark", "map.layers.black"].includes(Settings.baseLayer) ? true : false;
+    $("#map").css("background-color", MapBase.isDarkMode ? (Settings.baseLayer === "map.layers.black" ? "#000" : "#3d3d3d") : "#d2b790");
   },
 
   runOncePostLoad: function () {
-    var quickParam = getParameterByName('q');
+    var quickParam = getParameterByName("q");
     if (quickParam) {
-      $('.menu-toggle').remove();
-      $('.top-widget').remove();
-      $('#fme-container').remove();
-      $('.side-menu').removeClass('menu-opened');
-      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+      $(".menu-toggle").remove();
+      $(".top-widget").remove();
+      $("#fme-container").remove();
+      $(".side-menu").removeClass("menu-opened");
+      $(".leaflet-top.leaflet-right, .leaflet-control-zoom").remove();
 
       this.isPreviewMode = true;
 
@@ -172,49 +175,41 @@ const MapBase = {
 
       if (Location.quickParams.indexOf(quickParam) !== -1) {
         Location.locations.filter(item => item.key == quickParam)[0].onMap = true;
-      }
-      else if (Camp.quickParams.indexOf(quickParam) !== -1) {
+      } else if (Camp.quickParams.indexOf(quickParam) !== -1) {
         Camp.locations.filter(item => item.key == quickParam)[0].onMap = true;
-      }
-      else if (Camp.quickParams.indexOf(quickParam) !== -1) {
+      } else if (Camp.quickParams.indexOf(quickParam) !== -1) {
         Camp.locations.filter(item => item.key == quickParam)[0].onMap = true;
-      }
-      else if (Shop.quickParams.indexOf(quickParam) !== -1) {
+      } else if (Shop.quickParams.indexOf(quickParam) !== -1) {
         Shop.locations.filter(item => item.key == quickParam)[0].onMap = true;
-      }
-      else if (Encounter.quickParams.indexOf(quickParam) !== -1) {
+      } else if (Encounter.quickParams.indexOf(quickParam) !== -1) {
         Encounter.locations.filter(item => item.key == quickParam)[0].onMap = true;
-      }
-      else if (GunForHire.quickParams.indexOf(quickParam) !== -1) {
+      } else if (GunForHire.quickParams.indexOf(quickParam) !== -1) {
         GunForHire.locations.filter(item => item.key == quickParam)[0].onMap = true;
-      }
-      else if (AnimalCollection.quickParams.indexOf(quickParam) !== -1) {
+      } else if (AnimalCollection.quickParams.indexOf(quickParam) !== -1) {
         AnimalCollection.collection.filter(collection => collection.animals.filter(
-          animal => { if (animal.key == quickParam) animal.isEnabled = true }))
-      }
-      else if (Legendary.quickParams.indexOf(quickParam) !== -1) {
+          animal => {
+            if (animal.key == quickParam) animal.isEnabled = true;
+          }));
+      } else if (Legendary.quickParams.indexOf(quickParam) !== -1) {
         Legendary.animals.filter(item => {
           if (item.text == quickParam) {
             item.onMap = true;
             MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
           }
         });
-      }
-      else if (PlantsCollection.quickParams.indexOf(quickParam) !== -1) {
+      } else if (PlantsCollection.quickParams.indexOf(quickParam) !== -1) {
         PlantsCollection.locations.filter(item => {
           if (item.key == quickParam) {
             item.onMap = true;
           }
         });
-      }
-      else if (quickParam == 'nazar') {
+      } else if (quickParam == "nazar") {
         MadamNazar.onMap = true;
         MapBase.map.setView({
           lat: MadamNazar.possibleLocations[MadamNazar.currentLocation].x,
           lng: MadamNazar.possibleLocations[MadamNazar.currentLocation].y
         }, 5);
-      }
-      else if (Treasure.quickParams.indexOf(quickParam) !== -1) {
+      } else if (Treasure.quickParams.indexOf(quickParam) !== -1) {
         Treasure.treasures.filter(item => {
           if (item.text == quickParam) {
             item.onMap = true;
@@ -224,20 +219,20 @@ const MapBase = {
       }
     }
 
-    var zoomParam = Number.parseInt(getParameterByName('z'));
+    var zoomParam = Number.parseInt(getParameterByName("z"));
     if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
       MapBase.map.setZoom(zoomParam);
     }
 
-    var flyParam = getParameterByName('ft');
+    var flyParam = getParameterByName("ft");
     if (flyParam) {
-      const latLng = flyParam.split(',');
+      const latLng = flyParam.split(",");
       if (latLng.filter(Number).length === 2)
         MapBase.map.flyTo(latLng);
     }
 
     if (Settings.showTooltips)
-      Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
+      Menu.tippyInstances = tippy("[data-tippy-content]", { theme: "rdr2-theme" });
 
     if (!this.isPreviewMode)
       Discoverable.createOverlays();
@@ -255,11 +250,11 @@ const MapBase = {
   },
 
   loadOverlaysBeta: function () {
-    $.getJSON('data/overlays_beta.json?nocache=' + nocache)
+    $.getJSON("data/overlays_beta.json?nocache=" + nocache)
       .done(function (data) {
         MapBase.overlaysBeta = data;
         MapBase.setOverlaysBeta(Settings.overlayOpacity);
-        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+        console.info("%c[Overlays] Loaded!", "color: #bada55; background: #242424");
       });
   },
 
@@ -269,7 +264,7 @@ const MapBase = {
     if (opacity == 0) return;
 
     $.each(MapBase.overlaysBeta, function (key, value) {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/game/${value.name}.png?nocache=${nocache}`;
+      var overlay = `assets/overlays/${(MapBase.isDarkMode ? "dark" : "normal")}/game/${value.name}.png?nocache=${nocache}`;
 
       var x = (value.width / 2);
       var y = (value.height / 2);
@@ -289,7 +284,7 @@ const MapBase = {
 
   onSearch: function (searchString) {
     searchTerms = [];
-    $.each(searchString.split(';'), function (key, value) {
+    $.each(searchString.split(";"), function (key, value) {
       if ($.inArray(value.trim(), searchTerms) == -1) {
         if (value.length > 0)
           searchTerms.push(value.trim());
@@ -326,14 +321,14 @@ const MapBase = {
   },
 
   submitDebugForm: function () {
-    var lat = $('input[name=debug-marker-lat]').val();
-    var lng = $('input[name=debug-marker-lng]').val();
+    var lat = $("input[name=debug-marker-lat]").val();
+    var lng = $("input[name=debug-marker-lng]").val();
     if (!isNaN(lat) && !isNaN(lng))
       MapBase.debugMarker(lat, lng);
   },
 
-  debugMarker: function (lat, long, name = 'Debug Marker') {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+  debugMarker: function (lat, long, name = "Debug Marker") {
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : "";
     var marker = L.marker([lat, long], {
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -360,14 +355,15 @@ const MapBase = {
   },
   heatmapCount: 10,
   addCoordsOnMap: function (coords) {
+
     // Show clicked coordinates (like google maps)
     if (Settings.isCoordsOnClickEnabled) {
-      $('.lat-lng-container').css('display', 'block');
+      $(".lat-lng-container").css("display", "block");
 
-      $('.lat-lng-container p').html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
+      $(".lat-lng-container p").html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
 
-      $('#lat-lng-container-close-button').click(function () {
-        $('.lat-lng-container').css('display', 'none');
+      $("#lat-lng-container-close-button").click(function () {
+        $(".lat-lng-container").css("display", "none");
       });
     }
 
@@ -417,11 +413,11 @@ const MapBase = {
       n = image[1],
       e = this._normal_xy(topLeft, bottomRight),
       s = this._normal_xy(topLeft, coords);
-    return [i * (s[0] / e[0]), n * (s[1] / e[1])]
+    return [i * (s[0] / e[0]), n * (s[1] / e[1])];
   },
 
   _normal_xy: function (t, i) {
-    return [this._num_distance(t[0], i[0]), this._num_distance(t[1], i[1])]
+    return [this._num_distance(t[0], i[0]), this._num_distance(t[1], i[1])];
   },
 
   _num_distance: function (t, i) {

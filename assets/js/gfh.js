@@ -3,14 +3,14 @@ class GunForHire {
   static init() {
     this.locations = [];
     this.quickParams = [];
-    this.context = $('.menu-hidden[data-type=gfh]');
+    this.context = $(".menu-hidden[data-type=gfh]");
 
-    return Loader.promises['gfh'].consumeJson(data => {
+    return Loader.promises["gfh"].consumeJson(data => {
       data.forEach(item => {
         this.locations.push(new GunForHire(item));
         this.quickParams.push(item.key);
       });
-      console.info(`%c[Freeroam Missions] Loaded!`, 'color: #bada55; background: #242424');
+      console.info("%c[Freeroam Missions] Loaded!", "color: #bada55; background: #242424");
       Menu.reorderMenu(this.context);
     });
   }
@@ -23,10 +23,10 @@ class GunForHire {
     this.onLanguageChanged();
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`map.gfh.${this.key}.name`))
-      .toggleClass('disabled', !this.onMap)
-      .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', `map.gfh.${this.key}.name`))
+      .attr("data-tippy-content", Language.get(`map.gfh.${this.key}.name`))
+      .toggleClass("disabled", !this.onMap)
+      .on("click", () => this.onMap = !this.onMap)
+      .append($('<p class="collectible">').attr("data-text", `map.gfh.${this.key}.name`))
       .translate();
 
     this.element.appendTo(GunForHire.context);
@@ -37,7 +37,7 @@ class GunForHire {
 
   onLanguageChanged() {
     this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'gfh', this.key, item.type)));
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, "gfh", this.key, item.type)));
 
     this.reinitMarker();
   }
@@ -46,7 +46,7 @@ class GunForHire {
     this.layer.clearLayers();
     this.markers.forEach(
       marker => {
-        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : "";
         var tempMarker = L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
@@ -74,12 +74,12 @@ class GunForHire {
     this.reinitMarker();
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.removeClass('disabled');
+      this.element.removeClass("disabled");
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'true');
+        localStorage.setItem(`rdo:${this.key}`, "true");
     } else {
       this.layer.remove();
-      this.element.addClass('disabled');
+      this.element.addClass("disabled");
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }

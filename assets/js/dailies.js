@@ -10,24 +10,24 @@ class Dailies {
     this.categoryOffset = 0;
     this.jsonData = [];
     this.dailiesList = [];
-    this.context = $('.daily-challenges[data-type=dailies]');
+    this.context = $(".daily-challenges[data-type=dailies]");
     this.markersCategories = [];
 
-    const currentDailies = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
-    const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
+    const currentDailies = Loader.promises["dailies"].consumeJson(data => this.dailiesList = data);
+    const allDailies = Loader.promises["possible_dailies"].consumeJson(data => this.jsonData = data);
 
-    $('#dailies-prev').on('click', Dailies.prevCategory);
-    $('#dailies-next').on('click', Dailies.nextCategory);
+    $("#dailies-prev").on("click", Dailies.prevCategory);
+    $("#dailies-next").on("click", Dailies.nextCategory);
 
     const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString(); // 21600000ms = 6 hours
 
     // delete old saved completed dailies on day change
     if (localStorage.lastDailiesDate !== dailiesDate) {
       for (let setting in localStorage) {
-        if (setting.startsWith('rdo:dailies.'))
+        if (setting.startsWith("rdo:dailies."))
           delete localStorage[setting];
       }
-      localStorage.setItem('lastDailiesDate', dailiesDate);
+      localStorage.setItem("lastDailiesDate", dailiesDate);
     }
 
     return Promise.all([currentDailies, allDailies])
@@ -35,17 +35,17 @@ class Dailies {
         if (this.dailiesList.date.indexOf(dailiesDate) === -1)
           return Promise.reject();
 
-        console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
+        console.info("%c[Dailies] Loaded!", "color: #bada55; background: #242424");
         this.dailiesLoaded();
 
         this.dailiesList.data.forEach((roleData, roleIndex) => {
-          const role = roleData.role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
-          if (role === 'general') this.categoryOffset = roleIndex;
+          const role = roleData.role.replace(/CHARACTER_RANK_?/, "").toLowerCase() || "general";
+          if (role === "general") this.categoryOffset = roleIndex;
           this.categories.push(role);
 
-          $('.dailies')
+          $(".dailies")
             .append($(`<div id="${role}" class="daily-role"></div>`)
-              .toggleClass('hidden', role !== 'general'));
+              .toggleClass("hidden", role !== "general"));
 
           roleData.challenges.forEach(({ desiredGoal, displayType, description: { label } }, index) => {
             const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
@@ -53,16 +53,16 @@ class Dailies {
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
 
             switch (displayType) {
-              case 'DISPLAY_CASH':
+              case "DISPLAY_CASH":
                 desiredGoal /= 100;
                 break;
-              case 'DISPLAY_MS_TO_MINUTES':
+              case "DISPLAY_MS_TO_MINUTES":
                 desiredGoal /= 60000;
                 break;
-              case 'DISPLAY_AS_BOOL':
+              case "DISPLAY_AS_BOOL":
                 desiredGoal = 1;
                 break;
-              case 'DISPLAY_FEET':
+              case "DISPLAY_FEET":
                 desiredGoal = Math.floor(desiredGoal * 3.281);
                 break;
               default:
@@ -79,7 +79,7 @@ class Dailies {
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
-    const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
+    const structure = Language.get("menu.daily_challenge_structure").match(/\{(.+?)\}.*?\{(.+?)\}/);
 
     $(`.dailies > #${this.role}`)
       .append($(`
@@ -94,26 +94,26 @@ class Dailies {
             </div>
           </div>`))
       .translate()
-      .find('.one-daily-container')
+      .find(".one-daily-container")
       .css({
-        'grid-template-areas': `"${structure[1]} daily-challenge ${structure[2]}"`,
+        "grid-template-areas": `"${structure[1]} daily-challenge ${structure[2]}"`
       })
       .end()
       .find(`#checkbox-${this.role}-${this.index}`)
-      .prop('checked', DailyChallenges[`${this.role}_${this.index}`])
-      .on('change', () => {
-        DailyChallenges[`${this.role}_${this.index}`] = $(`#checkbox-${this.role}-${this.index}`).prop('checked');
+      .prop("checked", DailyChallenges[`${this.role}_${this.index}`])
+      .on("change", () => {
+        DailyChallenges[`${this.role}_${this.index}`] = $(`#checkbox-${this.role}-${this.index}`).prop("checked");
       })
       .end();
   }
   static dailiesLoaded() {
-    $('.dailies .daily-status.loading').addClass('hidden');
+    $(".dailies .daily-status.loading").addClass("hidden");
   }
   static dailiesNotUpdated() {
-    $('.dailies').append($(`
-      <div class="daily-status not-found">${Language.get('menu.dailies_not_found')}</div>
+    $(".dailies").append($(`
+      <div class="daily-status not-found">${Language.get("menu.dailies_not_found")}</div>
     `));
-    $('#dailies-changer-container, #sync-map-to-dailies').addClass('hidden');
+    $("#dailies-changer-container, #sync-map-to-dailies").addClass("hidden");
   }
   static nextCategory() {
     Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
@@ -125,12 +125,12 @@ class Dailies {
   }
   static switchCategory() {
     if (!Dailies.categories[Dailies.categoryOffset]) return;
-    const roles = $('.daily-role');
+    const roles = $(".daily-role");
     [].forEach.call(roles, element => {
-      $(element).toggleClass('hidden', element.id !== Dailies.categories[Dailies.categoryOffset]);
+      $(element).toggleClass("hidden", element.id !== Dailies.categories[Dailies.categoryOffset]);
     });
     const textKey = `menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`;
-    $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
+    $(".dailies-title").attr("data-text", textKey).text(Language.get(textKey));
   }
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
@@ -144,10 +144,10 @@ class SynchronizeDailies {
     this.markers = marker;
   }
   static init() {
-    $('.menu-hide-all').trigger('click');
+    $(".menu-hide-all").trigger("click");
     Dailies.markersCategories.forEach(element => {
       const [category, marker] = element;
-      if (marker === '') return;
+      if (marker === "") return;
       const newSyncedCategory = new SynchronizeDailies(category, marker);
       newSyncedCategory.sync();
     });
@@ -155,26 +155,26 @@ class SynchronizeDailies {
   sync() {
     this.key = (() => {
       switch (this.category) {
-        case 'animal':
-        case 'fish':
+        case "animal":
+        case "fish":
           return `menu.cmpndm.${this.category}_${this.markers}`;
-        case 'shops':
-        case 'plants':
-        case 'gfh':
+        case "shops":
+        case "plants":
+        case "gfh":
           return `map.${this.category}.${this.markers}.name`;
-        case 'menu':
+        case "menu":
           return `${this.category}.${this.markers}`;
-        case 'nazar':
+        case "nazar":
           return `menu.${this.markers}`;
-        case 'daily_location':
+        case "daily_location":
           return `menu.${this.markers}.name`;
         default:
           console.log(`${this.category} ${this.markers} not found`); // only temporary
       }
     })();
 
-    if ($(`[data-text="${this.key}"]`).parent().hasClass('disabled') ||
-      $(`[data-text="${this.key}"]`).parent().parent().hasClass('disabled'))
-      $(`[data-text="${this.key}"]`).trigger('click');
+    if ($(`[data-text="${this.key}"]`).parent().hasClass("disabled") ||
+      $(`[data-text="${this.key}"]`).parent().parent().hasClass("disabled"))
+      $(`[data-text="${this.key}"]`).trigger("click");
   }
 }

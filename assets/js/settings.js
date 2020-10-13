@@ -40,10 +40,10 @@ SettingProxy.addListener(Settings, 'day secondSetting', callback)
 
 */
 
-const SettingProxy = function () {
-  'use strict';
-  const _domain = Symbol('domain');
-  const _proxyConfig = Symbol('proxyConfig');
+const SettingProxy = (function () {
+  "use strict";
+  const _domain = Symbol("domain");
+  const _proxyConfig = Symbol("proxyConfig");
   const settingHandler = {
     _checkAndGetSettingConfig: function (proxyConfig, name, errorType) {
       if (!proxyConfig.has(name)) {
@@ -56,7 +56,7 @@ const SettingProxy = function () {
       if (name === _proxyConfig) return proxyConfig;
 
       const config = settingHandler._checkAndGetSettingConfig(proxyConfig, name, ReferenceError);
-      if ('value' in config) return config.value;
+      if ("value" in config) return config.value;
 
       let value = localStorage.getItem(config.settingName);
 
@@ -64,10 +64,10 @@ const SettingProxy = function () {
         value = config.default;
       } else {
         try {
+
           // JSON.parse might raise SyntaxError, bc the setting is malformed
           value = config.type(JSON.parse(value));
-        }
-        catch (e) {
+        } catch (e) {
           value = config.default;
         }
       }
@@ -85,13 +85,13 @@ const SettingProxy = function () {
       } else {
         localStorage.setItem(config.settingName, JSON.stringify(value));
       }
-      if (!('value' in config) || config.value !== value) {
+      if (!("value" in config) || config.value !== value) {
         const resolved = Promise.resolve();
         config.listeners.forEach(callback => resolved.then(callback));
       }
       config.value = value;
       return true;
-    },
+    }
   };
 
   return {
@@ -106,38 +106,38 @@ const SettingProxy = function () {
       config = Object.assign(Object.create(null), config);
       delete config.value;
       config.listeners = [];
-      if (!('default' in config)) {
-        config.default = 'type' in config ? config.type() : false;
+      if (!("default" in config)) {
+        config.default = "type" in config ? config.type() : false;
       }
-      if (!('type' in config)) {
+      if (!("type" in config)) {
         const defaultType = typeof config.default;
-        const basicTypes = { 'boolean': Boolean, 'string': String, 'number': Number };
+        const basicTypes = { "boolean": Boolean, "string": String, "number": Number };
         config.type = defaultType in basicTypes ? basicTypes[defaultType] : x => x;
       }
-      if (!('filter' in config)) {
+      if (!("filter" in config)) {
         config.filter = x => true;
       }
-      if (!('settingName' in config)) {
+      if (!("settingName" in config)) {
         config.settingName = `${proxyConfig.get(_domain)}.${name}`;
       }
       proxyConfig.set(name, config);
     },
     addListener: function (settingProxy, names, callback) {
       const proxyConfig = settingProxy[_proxyConfig];
-      names.split(' ').forEach(name => {
+      names.split(" ").forEach(name => {
         settingHandler._checkAndGetSettingConfig(proxyConfig, name, ReferenceError)
-          .listeners.push(callback)
+          .listeners.push(callback);
       });
       return callback;
-    },
+    }
   };
-}();
+})();
 
 // General settings
-const Settings = SettingProxy.createSettingProxy('main');
+const Settings = SettingProxy.createSettingProxy("main");
 Object.entries({
   alertClosed: { default: false },
-  baseLayer: { default: 'map.layers.default' },
+  baseLayer: { default: "map.layers.default" },
   fmeDisplayGeneralPeriod: { default: 30 },
   fmeDisplayRolePeriod: { default: 60 },
   fmeEnabledEvents: { default: 131071 },
@@ -168,4 +168,4 @@ Object.entries({
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Completed daily challenges settings (file dailies.js)
-const DailyChallenges = SettingProxy.createSettingProxy('rdo:dailies');
+const DailyChallenges = SettingProxy.createSettingProxy("rdo:dailies");

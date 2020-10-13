@@ -1,17 +1,18 @@
 /**
  * Display various Free Mode Events.
- * 
+ *
  * Created by Richard Westenra, stripped to only display next 2 events.
  * For the full experience, please visit his websites at:
- * 
+ *
  * Website: https://www.richardwestenra.com/rdr2-free-roam-event-schedule
  * Patreon: https://www.patreon.com/bePatron?u=24592842
  * GitHub: https://github.com/richardwestenra
- * 
+ *
  * License: MIT
  */
 
 const FME = {
+
   /**
    * The last retrieved events JSON
    */
@@ -45,7 +46,7 @@ const FME = {
     fme_role_supply_train: 8192,
     fme_role_wildlife_photographer: 16384,
     fme_role_wreckage: 32768,
-    fme_wild_animal_kills: 65536,
+    fme_wild_animal_kills: 65536
   },
 
   /**
@@ -53,16 +54,16 @@ const FME = {
    */
   elements: {
     general: {
-      nextEventImage: document.getElementById('next-general-image'),
-      nextEventName: document.getElementById('next-general-name'),
-      nextEventEta: document.getElementById('next-general-eta'),
-      nextEventBodyMobile: document.getElementById('next-general-mobile'),
+      nextEventImage: document.getElementById("next-general-image"),
+      nextEventName: document.getElementById("next-general-name"),
+      nextEventEta: document.getElementById("next-general-eta"),
+      nextEventBodyMobile: document.getElementById("next-general-mobile")
     },
     role: {
-      nextEventImage: document.getElementById('next-role-image'),
-      nextEventName: document.getElementById('next-role-name'),
-      nextEventEta: document.getElementById('next-role-eta'),
-      nextEventBodyMobile: document.getElementById('next-role-mobile'),
+      nextEventImage: document.getElementById("next-role-image"),
+      nextEventName: document.getElementById("next-role-name"),
+      nextEventEta: document.getElementById("next-role-eta"),
+      nextEventBodyMobile: document.getElementById("next-role-mobile")
     }
   },
 
@@ -90,7 +91,7 @@ const FME = {
         // No need to update DOM when it's not visible.
         if (Settings.isFmeDisplayEnabled) {
           const fmeName = event.nameText;
-          const fmeBody = Language.get('menu.fme.time.starts_in').replace('{time}', event.etaText);
+          const fmeBody = Language.get("menu.fme.time.starts_in").replace("{time}", event.etaText);
 
           if (elements.nextEventImage.src.filename() !== event.imageSrc.filename())
             elements.nextEventImage.src = event.imageSrc;
@@ -149,7 +150,7 @@ const FME = {
       image: `${d[1]}.png`,
       imageSrc: `./assets/images/fme/${d[1]}.png`,
       eta: eta,
-      etaText: FME.getEtaText(eta),
+      etaText: FME.getEtaText(eta)
     };
   },
 
@@ -167,13 +168,13 @@ const FME = {
   getEtaText: function (time) {
     time = time / 1000; // convert to seconds
     function pluralize(time) {
-      return time === 1 ? '' : 's';
+      return time === 1 ? "" : "s";
     }
     if (time < 60) {
-      return Language.get('menu.fme.time.less_than_a_minute');
+      return Language.get("menu.fme.time.less_than_a_minute");
     }
     time = Math.round(time / 60); // convert to minutes
-    return Language.get('menu.fme.time.minute' + pluralize(time)).replace('{minutes}', time);
+    return Language.get("menu.fme.time.minute" + pluralize(time)).replace("{minutes}", time);
   },
 
   /**
@@ -197,52 +198,52 @@ const FME = {
    * Update the visibility of the FME card
    */
   updateVisiblity: function () {
-    $('#fme-container').toggle(Settings.isFmeDisplayEnabled);
+    $("#fme-container").toggle(Settings.isFmeDisplayEnabled);
   },
 
   markNotSupported: function () {
     Settings.isFmeNotificationEnabled = false;
-    $('#fme-notification').prop('checked', false).prop('disabled', true);
-    $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.no_support');
-    $('#fme-notification-period').parent().hide();
+    $("#fme-notification").prop("checked", false).prop("disabled", true);
+    $("#fme-notification").parent().parent().addClass("disabled").prop("disabled", true).attr("data-help", "fme_notification.no_support");
+    $("#fme-notification-period").parent().hide();
   },
 
   markPermissionDenied: function () {
     Settings.isFmeNotificationEnabled = false;
-    $('#fme-notification').prop('checked', false).prop('disabled', true);
-    $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.denied');
-    $('#fme-notification-period').parent().hide();
+    $("#fme-notification").prop("checked", false).prop("disabled", true);
+    $("#fme-notification").parent().parent().addClass("disabled").prop("disabled", true).attr("data-help", "fme_notification.denied");
+    $("#fme-notification-period").parent().hide();
   },
 
   /**
    * Retrieve the FME data from FME.json
    */
   init: function () {
-    $('#fme-display').on("change", function () {
-      Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
-      $('#fme-display-general-period, #fme-display-role-period').parent().toggle(Settings.isFmeDisplayEnabled);
-      $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+    $("#fme-display").on("change", function () {
+      Settings.isFmeDisplayEnabled = $("#fme-display").prop("checked");
+      $("#fme-display-general-period, #fme-display-role-period").parent().toggle(Settings.isFmeDisplayEnabled);
+      $("#open-fme-enabled-events-modal").toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
       FME.update();
     });
 
-    $('#fme-display-general-period').on("change", function () {
-      let inputValue = parseInt($('#fme-display-general-period').val());
+    $("#fme-display-general-period").on("change", function () {
+      let inputValue = parseInt($("#fme-display-general-period").val());
       inputValue = !isNaN(inputValue) ? inputValue : 30;
       if (inputValue < 10 || inputValue > 45) inputValue = 30;
       Settings.fmeDisplayGeneralPeriod = inputValue;
       FME.update();
     });
 
-    $('#fme-display-role-period').on("change", function () {
-      let inputValue = parseInt($('#fme-display-role-period').val());
+    $("#fme-display-role-period").on("change", function () {
+      let inputValue = parseInt($("#fme-display-role-period").val());
       inputValue = !isNaN(inputValue) ? inputValue : 60;
       if (inputValue < 10 || inputValue > 90) inputValue = 60;
       Settings.fmeDisplayRolePeriod = inputValue;
       FME.update();
     });
 
-    $('#fme-notification').on("change", function () {
-      Settings.isFmeNotificationEnabled = $("#fme-notification").prop('checked');
+    $("#fme-notification").on("change", function () {
+      Settings.isFmeNotificationEnabled = $("#fme-notification").prop("checked");
 
       Notification.requestPermission().then(function (permission) {
         if (permission === "denied") {
@@ -250,12 +251,12 @@ const FME = {
         }
       });
 
-      $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-      $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+      $("#fme-notification-period").parent().toggle(Settings.isFmeNotificationEnabled);
+      $("#open-fme-enabled-events-modal").toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
     });
 
-    $('#fme-notification-period').on("change", function () {
-      let inputValue = parseInt($('#fme-notification-period').val());
+    $("#fme-notification-period").on("change", function () {
+      let inputValue = parseInt($("#fme-notification-period").val());
       inputValue = !isNaN(inputValue) ? inputValue : 10;
       if (inputValue < 1 || inputValue > 30) inputValue = 10;
       Settings.fmeNotificationPeriod = inputValue;
@@ -267,21 +268,21 @@ const FME = {
       this.markPermissionDenied();
     }
 
-    $("#fme-display").prop('checked', Settings.isFmeDisplayEnabled);
+    $("#fme-display").prop("checked", Settings.isFmeDisplayEnabled);
     $("#fme-display-general-period").val(Settings.fmeDisplayGeneralPeriod).parent().toggle(Settings.isFmeDisplayEnabled);
     $("#fme-display-role-period").val(Settings.fmeDisplayRolePeriod).parent().toggle(Settings.isFmeDisplayEnabled);
-    $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
+    $("#fme-notification").prop("checked", Settings.isFmeNotificationEnabled);
     $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
-    $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-    $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+    $("#fme-notification-period").parent().toggle(Settings.isFmeNotificationEnabled);
+    $("#open-fme-enabled-events-modal").toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
 
     $("input[name='fme-enabled-events[]']").each(function (i, v) {
-      const id = $(this).attr('id');
-      $(this).prop('checked', (Settings.fmeEnabledEvents & FME.flags[id]));
+      const id = $(this).attr("id");
+      $(this).prop("checked", (Settings.fmeEnabledEvents & FME.flags[id]));
     });
 
-    $('#open-fme-enabled-events-modal').on('click', function () {
-      $('#fme-enabled-events-modal').modal();
+    $("#open-fme-enabled-events-modal").on("click", function () {
+      $("#fme-enabled-events-modal").modal();
     });
 
     $.getJSON(`data/fme.json?nocache=${nocache}`)
@@ -290,7 +291,7 @@ const FME = {
         FME.update();
         FME.initModal();
         window.setInterval(FME.update, 10000);
-        console.info('%c[FME] Loaded!', 'color: #bada55; background: #242424');
+        console.info("%c[FME] Loaded!", "color: #bada55; background: #242424");
       });
   },
 
@@ -318,15 +319,15 @@ const FME = {
         FME.update();
       });
 
-      $('#fme-enabled-events-modal #events').append(Language.translateDom(snippet)[0]);
+      $("#fme-enabled-events-modal #events").append(Language.translateDom(snippet)[0]);
     });
 
-    var items = $('#fme-enabled-events-modal #events').children('.input-container').get();
+    var items = $("#fme-enabled-events-modal #events").children(".input-container").get();
     items.sort(function (a, b) {
-      return $(a).find('label').text().toLowerCase().localeCompare($(b).find('label').text().toLowerCase());
+      return $(a).find("label").text().toLowerCase().localeCompare($(b).find("label").text().toLowerCase());
     });
     $.each(items, function (i, e) {
-      $('#fme-enabled-events-modal #events').append(e);
+      $("#fme-enabled-events-modal #events").append(e);
     });
   },
 
@@ -335,6 +336,7 @@ const FME = {
    * @param {Object} event The event to send a notification for
    */
   notify: function (event) {
+
     // Disabled in settings.
     if (!Settings.isFmeNotificationEnabled) return;
 
@@ -353,15 +355,15 @@ const FME = {
     if (!(event.eta > timeMin && event.eta < timeMax)) return;
 
     // Use the formatted time in case we want to change the notification period later
-    const notificationBody = Language.get('notification.fme.body')
-      .replace('{name}', event.nameText)
-      .replace('{time}', event.etaText);
+    const notificationBody = Language.get("notification.fme.body")
+      .replace("{name}", event.nameText)
+      .replace("{time}", event.etaText);
 
     if (Notification.permission === "granted") {
       new Notification(event.nameText, {
         body: notificationBody,
         icon: event.imageSrc,
-        lang: Settings.language,
+        lang: Settings.language
       });
     } else if (Notification.permission !== "denied") {
       Notification.requestPermission().then(function (permission) {
@@ -369,7 +371,7 @@ const FME = {
           new Notification(event.nameText, {
             body: notificationBody,
             icon: event.imageSrc,
-            lang: Settings.language,
+            lang: Settings.language
           });
         }
       });

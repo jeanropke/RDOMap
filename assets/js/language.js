@@ -4,21 +4,21 @@ jQuery.fn.translate = function () {
 
 var Language = {
     data: {},
-    availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
+    availableLanguages: ["en", "af", "ar", "ca", "cs", "da", "de", "el", "en-GB", "es", "fi", "fr", "he", "hu", "it", "ja", "ko", "no", "pl", "pt", "pt-BR", "ro", "ru", "sr", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"],
 
     init: function () {
-        'use strict';
-        let langs = ['en'];
+        "use strict";
+        let langs = ["en"];
 
-        if (Settings.language !== 'en') {
+        if (Settings.language !== "en") {
             langs.push(Settings.language);
         }
 
         langs.forEach(language => {
             $.ajax({
-                url: `./langs/${language.replace('-', '_')}.json?nocache=${nocache}`,
+                url: `./langs/${language.replace("-", "_")}.json?nocache=${nocache}`,
                 async: false,
-                dataType: 'json',
+                dataType: "json",
                 success: function (json) {
                     let result = {};
 
@@ -35,18 +35,18 @@ var Language = {
     },
 
     get: function (transKey, optional) {
-        'use strict';
+        "use strict";
         let translation = false;
 
-        if (transKey === 'GitHub') {
+        if (transKey === "GitHub") {
             translation = '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>';
-        } else if (transKey === 'Discord') {
+        } else if (transKey === "Discord") {
             translation = '<a href="https://discord.gg/WWru8cP" target="_blank">Discord</a>';
-        } else if (transKey === 'int.random_spot.link') {
+        } else if (transKey === "int.random_spot.link") {
             translation = '<a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot" target="_blank">';
-        } else if (transKey === 'int.end.link') {
-            translation = '</a>';
-        } else if (transKey === 'collection') {
+        } else if (transKey === "int.end.link") {
+            translation = "</a>";
+        } else if (transKey === "collection") {
             transKey = `weekly.desc.${weeklySetData.current}`;
         }
 
@@ -54,7 +54,7 @@ var Language = {
             translation ||
             Language.data[Settings.language][transKey] ||
             Language.data.en[transKey] ||
-            (optional ? '' : transKey);
+            (optional ? "" : transKey);
 
         return translation.replace(/\{([\w.]+)\}/g, (full, key) => {
             const translation = this.get(key);
@@ -63,22 +63,22 @@ var Language = {
     },
 
     translateDom: function (context) {
-        'use strict';
-        $('[data-text]', context).html(function () {
+        "use strict";
+        $("[data-text]", context).html(function () {
             const $this = $(this);
-            return Language.get($this.attr('data-text'), $this.data('text-optional'));
+            return Language.get($this.attr("data-text"), $this.data("text-optional"));
         });
         return context;
     },
 
     setMenuLanguage: function () {
-        'use strict';
+        "use strict";
 
         if (Language.data[Settings.language] === undefined) {
             $.ajax({
-                url: `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}`,
+                url: `./langs/${Settings.language.replace("-", "_")}.json?nocache=${nocache}`,
                 async: false,
-                dataType: 'json',
+                dataType: "json",
                 success: function (json) {
                     let result = {};
 
@@ -93,23 +93,23 @@ var Language = {
             });
         }
 
-        const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
+        const wikiBase = "https://github.com/jeanropke/RDR2CollectorsMap/wiki/";
         const wikiPages = {
-            'en': 'RDO-Collectors-Map-User-Guide-(English)',
-            'de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
-            'fr': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
-            'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
+            "en": "RDO-Collectors-Map-User-Guide-(English)",
+            "de": "RDO-Sammler-Landkarte-Benutzerhandbuch-(German)",
+            "fr": "RDO-Collectors-Map-Guide-d'Utilisateur-(French)",
+            "pt": "Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)"
         };
-        const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
-        $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
+        const wikiLang = Settings.language in wikiPages ? Settings.language : "en";
+        $(".wiki-page").attr("href", wikiBase + wikiPages[wikiLang]);
 
-        $('.leaflet-control-layers-base label span').each((key, value) => {
+        $(".leaflet-control-layers-base label span").each((key, value) => {
             var $this = $(value);
-            $this.text(' ' + Language.get($this.text().trim()));
+            $this.text(" " + Language.get($this.text().trim()));
         });
 
         this.translateDom();
 
-        $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
+        $("#search").attr("placeholder", Language.get("menu.search_placeholder"));
     }
 };
