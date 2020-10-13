@@ -184,6 +184,7 @@
     "map.hideouts.solomons_folly.name": "Solomons dårskap",
     "map.hideouts.the_loft.name": "Loftet",
     "map.hideouts.twin_rocks.name": "Tvillingstenarna",
+    "map.hideouts.cholla_springs.name": "Rattlesnake Hollow",
     "fasttravel.manzanita.name": "Manzanita utpost",
     "fasttravel.strawberry.name": "Jordbær",
     "fasttravel.valentine.name": "Valentin",
@@ -377,5 +378,7 @@
     "menu.fme.fme_role_round_up": "Förbrytarjakt",
     "menu.fme.fme_role_supply_train": "Handelsväg",
     "menu.fme.fme_role_wreckage": "Bärgning",
-    "menu.fme.fme_wild_animal_kills": "Döda vilda djur"
+    "menu.fme.fme_wild_animal_kills": "Döda vilda djur",
+    "menu.reload_map": "Genindlæs kortet nu",
+    "help.reload_map": "Giver mulighed for at genindlæse kortet, hvis der er noget galt med webstedet."
 }

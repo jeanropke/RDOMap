@@ -217,6 +217,8 @@
     "map.hideouts.twin_rocks.name": "Twin Rocks",
     "map.hideouts.west_bayou.name": "West Bayou",
     "map.hideouts.millisani_claim.name": "Millisani Claim",
+    "map.hideouts.cholla_springs.name": "Cholla Springs",
+    "map.hideouts.rocky_seven.name": "Rocky Seven",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Armadillo",
     "fasttravel.macfarlanes.name": "MacFarlane's Ranch",
@@ -488,5 +490,6 @@
     "map.gfh.shaky.name": "Shaky",
     "map.gfh.shaky.desc": "Shaky, het hoofd van een smokkeloperatie, heeft hulp nodig om zijn kleine crimineel imperium in stand te houden met gevangenisuitbraken, overvallen en moorden.",
     "map.gfh.sheriff_freeman.name": "Sheriff Freeman",
-    "menu.join_discord": "Join onze Discord!"
+    "menu.join_discord": "Join onze Discord!",
+    "menu.reload_map": "Kaart nu opnieuw laden"
 }

@@ -235,7 +235,6 @@
     "map.hideouts.beaver_hollow.name": "Beaver Hollow",
     "map.hideouts.clemens_cove.name": "Clemens Cove",
     "map.hideouts.colter.name": "Colter",
-    "map.hideouts.cueva_seca.name": "Cueva Seca",
     "map.hideouts.cumberland_falls.name": "Cumberland Falls",
     "map.hideouts.ewing_basin.name": "Ewing Basin",
     "map.hideouts.firwood_rise.name": "Firwood Rise",
@@ -267,6 +266,8 @@
     "map.hideouts.west_bayou.name": "Zachodnie Bayou",
     "map.hideouts.willards_rest.name": "Willard's Rest",
     "map.hideouts.millisani_claim.name": "Millisani Claim",
+    "map.hideouts.cholla_springs.name": "Cholla Springs",
+    "map.hideouts.rocky_seven.name": "Rocky Seven",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Armadillo",
     "fasttravel.macfarlanes.name": "Ranczo MacFarlane'a",
@@ -1075,5 +1076,7 @@
     "map.remove": "Usuń z mapy",
     "menu.sync_map_to_dailies": "Synchronizuj znaczniki z bieżącymi zadaniami dziennymi",
     "help.sync_map_to_dailies": "Pozwala na automatyczne wyświetlenie tylko znaczników i kategorii związanych z bieżącymi zadaniami dziennymi.",
-    "map.harrietum_animals.name": "Zamiana w zwierzę"
+    "map.harrietum_animals.name": "Zamiana w zwierzę",
+    "menu.reload_map": "Przeładuj mapę",
+    "help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową."
 }

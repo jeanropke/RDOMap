@@ -206,7 +206,6 @@
     "map.hideouts.bear_claw.name": "幫派據點",
     "map.hideouts.beaver_hollow.name": "幫派據點",
     "map.hideouts.colter.name": "幫派據點",
-    "map.hideouts.cueva_seca.name": "幫派據點",
     "map.hideouts.cumberland_falls.name": "幫派據點",
     "map.hideouts.ewing_basin.name": "幫派據點",
     "map.hideouts.fort_mercer.name": "幫派據點",
@@ -233,6 +232,7 @@
     "map.hideouts.twin_rocks.name": "幫派據點",
     "map.hideouts.west_bayou.name": "幫派據點",
     "map.hideouts.willards_rest.name": "幫派據點",
+    "map.hideouts.cholla_springs.name": "幫派據點",
     "fasttravel.tumbleweed.name": "風滾草鎮",
     "fasttravel.armadillo.name": "阿馬迪約",
     "fasttravel.macfarlanes.name": "麥克法蘭牧場",
@@ -997,5 +997,7 @@
     "mprc_trader_supplies_donated_carcass_perfect": "已捐贈給克里普斯的完美屍體",
     "mprc_trader_supplies_donated_predator": "已捐贈致命掠食動物屍體或毛皮",
     "mprc_trader_travel_wagon": "在任務中搭乘運送馬車移動的距離（英尺）",
-    "map.remove": "從地圖移除"
+    "map.remove": "從地圖移除",
+    "menu.reload_map": "重新載入地圖",
+    "help.reload_map": "重新載入地圖。"
 }

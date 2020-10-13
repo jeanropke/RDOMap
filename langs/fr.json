@@ -207,7 +207,6 @@
     "map.hideouts.beaver_hollow.name": "Beaver Hollow",
     "map.hideouts.clemens_cove.name": "Clemens Cove",
     "map.hideouts.colter.name": "Colter",
-    "map.hideouts.cueva_seca.name": "Cueva Seca",
     "map.hideouts.cumberland_falls.name": "Cumberland Falls",
     "map.hideouts.ewing_basin.name": "Ewing Basin",
     "map.hideouts.firwood_rise.name": "Firwood Rise",
@@ -239,6 +238,8 @@
     "map.hideouts.west_bayou.name": "West Bayou",
     "map.hideouts.willards_rest.name": "Willard's Rest",
     "map.hideouts.millisani_claim.name": "Millisani Claim",
+    "map.hideouts.cholla_springs.name": "Rattlesnake Hollow",
+    "map.hideouts.rocky_seven.name": "Rocky Seven",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Tatou",
     "fasttravel.macfarlanes.name": "Ranch MacFarlane",
@@ -564,6 +565,7 @@
     "mp_animal_wolf_legendary_01.desc": "On voit fréquemment ce loup près d'O'Creagh's Run. Il est réputé pour son pelage brun fauve et ses splendides yeux verts. Discret et très intelligent, il n'hésite pas à attaquer s'il se sent menacé par d'autres animaux ou par des voyageurs. C'est un animal nocturne qui ne craint pas de chasser dans les pires conditions météorologiques.",
     "mp_animal_wolf_legendary_02.desc": "Ce loup d'onyx légendaire, que l'on aurait vu passer près de Wapiti, se distingue par ses yeux jaune vif qui contrastent avec son pelage foncé. De nature méfiante, il défend farouchement son territoire et attaque les hommes qui s'en approchent. Cet animal est principalement actif la nuit et préfère chasser par temps sec.",
     "mp_animal_wolf_legendary_03.desc": "Une meute menée par un énorme loup blanc a fait parler d'elle au nord de Cumberland Forest. Réputée pour attaquer les voyageurs qui empruntent les routes des environs, elle a attiré l'attention des naturalistes comme des braconniers. Ces loups étant très loyaux à leur chef, attendez-vous à tomber sur la meute entière si vous tentez de suivre cet animal légendaire.",
+    "map.gus_price": "Prix revente Gus :",
     "menu.beggar": "Mendiant",
     "map.beggar.name": "Mendiant",
     "map.beggar.desc": "Il s'agit d'une rencontre aléatoire. Une icône blanche sur la carte indiquera cette rencontre.",
@@ -1005,5 +1007,7 @@
     "mprc_trader_supplies_donated_animal_small": "Cadavres de petits animaux donnés à Cripps",
     "mprc_trader_supplies_donated_carcass_perfect": "Cadavres en parfait état remis à Cripps",
     "mprc_trader_supplies_donated_predator": "Cadavre ou peau d'un prédateur dangereux donné",
-    "mprc_trader_travel_wagon": "Distance parcourue en chariot de livraison lorsque vous êtes en mission"
+    "mprc_trader_travel_wagon": "Distance parcourue en chariot de livraison lorsque vous êtes en mission",
+    "menu.reload_map": "Actualiser la carte maintenant",
+    "help.reload_map": "Vous permet de recharger la carte si quelque chose ne va pas avec le site web."
 }

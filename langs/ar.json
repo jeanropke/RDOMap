@@ -207,7 +207,6 @@
     "map.hideouts.bear_claw.name": "مخلب الدب",
     "map.hideouts.beaver_hollow.name": "تجويف القندس",
     "map.hideouts.colter.name": "مدينة Colter",
-    "map.hideouts.cueva_seca.name": "الكهف الجاف",
     "map.hideouts.cumberland_falls.name": "انهار كمبرلاند",
     "map.hideouts.ewing_basin.name": "ايوينق باسين",
     "map.hideouts.fort_mercer.name": "حصن ميرسر",
@@ -234,6 +233,7 @@
     "map.hideouts.twin_rocks.name": "توين روكس",
     "map.hideouts.west_bayou.name": "وست بايو",
     "map.hideouts.willards_rest.name": "ويلاردس رست",
+    "map.hideouts.cholla_springs.name": "تجويف الافعى المجلجله",
     "fasttravel.tumbleweed.name": "مدينة Tumbleweed",
     "fasttravel.armadillo.name": "مدينة Armadillo",
     "fasttravel.macfarlanes.name": "مزرعة MacFarlane's",
@@ -505,5 +505,7 @@
     "menu.fme.fme_role_round_up": "مطاردة الاشخاص",
     "menu.fme.fme_role_supply_train": "مسار التجارة",
     "menu.fme.fme_role_wreckage": "الخردوات",
-    "menu.fme.fme_wild_animal_kills": "قتل الحيوانات"
+    "menu.fme.fme_wild_animal_kills": "قتل الحيوانات",
+    "menu.reload_map": "إعادة تحميل الخريطة الآن",
+    "help.reload_map": "يسمح لك بإعادة تحميل الخريطة إذا كان هناك أي خطأ في الموقع."
 }

@@ -209,7 +209,6 @@
     "map.hideouts.bear_claw.name": "Bärenklaue",
     "map.hideouts.beaver_hollow.name": "Beaver Hollow",
     "map.hideouts.colter.name": "Colter",
-    "map.hideouts.cueva_seca.name": "Cueva Seca",
     "map.hideouts.cumberland_falls.name": "Cumberland Falls",
     "map.hideouts.ewing_basin.name": "Ewing Basin",
     "map.hideouts.fort_mercer.name": "Fort Mercer",
@@ -236,6 +235,7 @@
     "map.hideouts.twin_rocks.name": "Twin Rocks",
     "map.hideouts.west_bayou.name": "West Bayou",
     "map.hideouts.willards_rest.name": "Willard's Rest",
+    "map.hideouts.cholla_springs.name": "Rattlesnake Hollow",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Gürteltier",
     "fasttravel.macfarlanes.name": "MacFarlanes Ranch",
@@ -594,6 +594,7 @@
     "mp_animal_wolf_legendary_01.desc": "Dieser Wolf wird häufig in der Umgebung von O'Creagh's Run gesehen. Er ist für sein rostbraunes Fell und die leuchtend grünen Augen bekannt. Er ist verstohlen und äußerst intelligent und hat keine Angst, anzugreifen, wenn er sich durch andere Tiere oder Reisende bedroht fühlt. Dieses nachtaktive Tier lässt sich auch bei schlechtestem Wetter nicht von der Jagd abbringen.",
     "mp_animal_wolf_legendary_02.desc": "Der legendäre Onyxwolf wurde auf dem Weg durch Wapiti entdeckt. Er ist bekannt für seine leuchtend gelben Augen, die aus seinem dunklen Fell herausstechen. Er verteidigt sein Revier aggressiv gegen alle Menschen, die ihm zu nahe kommen. Dieser Wolf ist meistens nachts aktiv und jagt am liebsten bei trockenem Wetter.",
     "mp_animal_wolf_legendary_03.desc": "Ein Wolfsrudel nördlich des Cumberland Forest ist zu zweifelhaftem Ruhm gekommen. Es hat einen markanten Anführer, einen großen, weißen Wolf. Das Rudel greift Reisende auf den angrenzenden Straßen an und hat die Aufmerksamkeit von Naturkundlern und Wilderern erregt. Der legendäre Mondsteinwolf hat ein loyales Gefolge. Sei bei der Pirsch darauf vorbereitet, dem ganzen Rudel zu begegnen.",
+    "map.gus_price": "Preis bei Gus:",
     "menu.beggar": "Bettler",
     "map.beggar.name": "Bettler",
     "map.beggar.desc": "Das ist eine zufällige Begegnung. Ein weisser Punkt erscheint auf der Minimap.",
@@ -1084,5 +1085,7 @@
     "mprc_trader_supplies_donated_carcass_perfect": "Perfekte Tierkadaver an Cripps gespendet",
     "mprc_trader_supplies_donated_predator": "Den Kadaver oder die Haut eines tödlichen Raubtiers gespendet",
     "mprc_trader_travel_wagon": "Distanz im Lieferwagen in Missionen zurückgelegt (Fuß)",
-    "map.remove": "Von Karte entfernen"
+    "map.remove": "Von Karte entfernen",
+    "menu.reload_map": "Karte jetzt neu laden",
+    "help.reload_map": "Ermöglicht das erneute Laden der Karte, falls etwas mit der Website nicht stimmt."
 }

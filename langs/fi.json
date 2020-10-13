@@ -339,5 +339,7 @@
     "menu.fme.fme_role_greatest_bounty_hunter": "Tilinteon päivä",
     "menu.fme.fme_role_round_up": "Metsästys",
     "menu.fme.fme_role_supply_train": "Kauppareitti",
-    "menu.fme.fme_wild_animal_kills": "Villieläinten kidukset"
+    "menu.fme.fme_wild_animal_kills": "Villieläinten kidukset",
+    "menu.reload_map": "Ladatkaa kartta nyt",
+    "help.reload_map": "Voit ladata kartan uudelleen, jos Web-sivustossa on jotain vikaa."
 }

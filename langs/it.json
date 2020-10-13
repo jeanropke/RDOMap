@@ -236,7 +236,6 @@
     "map.hideouts.beaver_hollow.name": "Tana del Castoro",
     "map.hideouts.clemens_cove.name": "Clemens Cove",
     "map.hideouts.colter.name": "Coltro",
-    "map.hideouts.cueva_seca.name": "Grotta Secca",
     "map.hideouts.cumberland_falls.name": "Cascate di Cumberland",
     "map.hideouts.ewing_basin.name": "Bacino di Ewing",
     "map.hideouts.firwood_rise.name": "Firwood Rise",
@@ -268,6 +267,7 @@
     "map.hideouts.west_bayou.name": "Bayou Occidentale",
     "map.hideouts.willards_rest.name": "Riposo di Willard",
     "map.hideouts.millisani_claim.name": "Millisani Claim",
+    "map.hideouts.cholla_springs.name": "Tana del Serpente a Sonagli",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Armadillo",
     "fasttravel.macfarlanes.name": "Ranch di MacFarlane",
@@ -1160,5 +1160,6 @@
     "map.remove": "Rimuovi dalla mappa",
     "menu.sync_map_to_dailies": "Sincronizzazione abilitata per le sfide giornaliere attuali",
     "help.sync_map_to_dailies": "Ti permette di abilitare automaticamente solo i segnalini e le categorie relative alle sfide giornaliere attuali.",
-    "map.harrietum_animals.name": "Trasformazione animale"
+    "map.harrietum_animals.name": "Trasformazione animale",
+    "menu.reload_map": "Ricarica la mappa adesso"
 }

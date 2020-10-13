@@ -206,7 +206,6 @@
     "map.hideouts.bear_claw.name": "Лігво (Bear Claw)",
     "map.hideouts.beaver_hollow.name": "Лігво (Beaver Hollow)",
     "map.hideouts.colter.name": "Лігво (Colter)",
-    "map.hideouts.cueva_seca.name": "Лігво (Cueva Seca)",
     "map.hideouts.cumberland_falls.name": "Лігво (Cumberland Falls)",
     "map.hideouts.ewing_basin.name": "Лігво (Ewing Basin)",
     "map.hideouts.fort_mercer.name": "Лігво - Fort Mercer",
@@ -233,6 +232,7 @@
     "map.hideouts.twin_rocks.name": "Лігво - Twin Rocks",
     "map.hideouts.west_bayou.name": "Лігво - West Bayou",
     "map.hideouts.willards_rest.name": "Лігво - Willard's Rest",
+    "map.hideouts.cholla_springs.name": "Лігво (Rattlesnake Hollow)",
     "fasttravel.tumbleweed.name": "Тамблвід",
     "fasttravel.armadillo.name": "Армадільйо",
     "fasttravel.macfarlanes.name": "Ранчо Макфарлана",
@@ -595,6 +595,7 @@
     "mp_animal_wolf_legendary_01.desc": "Цього вовка часто бачать на околицях О'Кріа Ран. Його легко впізнати за іржаво-бурим хутром і яскраво-зеленими очима. Він скрадливий і надзвичайно розумний. Відчуваючи загрозу з боку інших тварин чи мандрівників одразу ж нападе. Це нічний хижак, котрий полюватиме навіть за найнесприятливіших погодних умов.",
     "mp_animal_wolf_legendary_02.desc": "На околиці Вапіті бачили легендарного вовка - Нічний онікс. Він вирізняється яскраво-жовтими очима, особливо помітними на фоні темного хутра. Тварина обережна, але готова нападати навіть на людей, котрі зайшли на його територію. Він веде нічне життя і полюбляє полювати за ясної погоди.",
     "mp_animal_wolf_legendary_03.desc": "Останнім часом багато подейкують про вовчу зграю, котра полює північніше Камберлендського лісу. Її вожак – величезний білий вовк. Зграя часто нападає на подорожніх, що привернуло увагу браконьєрів та натуралістів. Члени зграї віддані своєму вожакові. Якщо відстежуватимете його, приготуйтесь до зустрічі з усією зграєю.",
+    "map.gus_price": "Ціна у Гаса:",
     "menu.beggar": "Жебрак",
     "map.beggar.name": "Жебрак",
     "map.beggar.desc": "Це випадкова зустріч. Біла мітка на міні-карті вказуватиме на місце зустрічі.",
@@ -693,5 +694,7 @@
     "map.gfh.war_vet.name": "Хаміш Сінклер",
     "map.gfh.war_vet.desc": "Хаміш Сінклер, старий ветеран війни, що проживає самітником у пустелі, час від часу пропонує роботу пов’язану із порятунком та поверненням.",
     "menu.join_discord": "Приєднуйтеся до нашого Discord!",
-    "map.remove": "Приховати на карті"
+    "map.remove": "Приховати на карті",
+    "menu.reload_map": "Перезавантажити карту",
+    "help.reload_map": "Дозволяє перезавантажити карту, якщо з сайтом негаразд."
 }

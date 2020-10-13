@@ -205,7 +205,6 @@
     "map.hideouts.bear_claw.name": "Ayı Pençesi",
     "map.hideouts.beaver_hollow.name": "Beaver Hollow",
     "map.hideouts.colter.name": "Colter",
-    "map.hideouts.cueva_seca.name": "Cueva Seca",
     "map.hideouts.cumberland_falls.name": "Cumberland Şelalesi",
     "map.hideouts.ewing_basin.name": "Ewing Havzası",
     "map.hideouts.fort_mercer.name": "Fort Mercer.",
@@ -232,6 +231,7 @@
     "map.hideouts.twin_rocks.name": "İkiz Kaya",
     "map.hideouts.west_bayou.name": "Batı Bayou",
     "map.hideouts.willards_rest.name": "Willard 'ın Dinlenmesi",
+    "map.hideouts.cholla_springs.name": "Rattlesnake Hollow",
     "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Armadillo.",
     "fasttravel.macfarlanes.name": "MacFarlane'in Çiftliği",
@@ -513,6 +513,7 @@
     "mp_animal_bear_legendary_02.desc": "The Legendary Ridgeback Spirit Bear zaman zaman Little Creek River civarında görülüyor. Sırtından aşağıya doğru inen belirgin kırmızı çizgisi sayesinde kolayca fark edilebilir. Bu ayılar çok agresiflerdir. Yaklaşırken dikkatli olun. Gündüz saatlerinde aktiflerdir ve gece köşelerine çekilirler, avlanmak için parlak ve net havaları tercih ederler.",
     "mp_animal_bear_legendary_03.desc": "The Legendary Golden Spirit Bear, Big Valley'de görülmeye başladı. Kalın ve sıcak olan sarı tüyleri ile bilinir. Bu ayı, bölgesine fazla yaklaşan gezginleri yaralamasıyla ün saldı. Türü daha çok incelemek isteyen Naturalistlerin ve şaşaalı tüylerine göz diken kaçak avcıların dikkatini çekti. Her ikisi de bu ayıyla karşılaşmanın ölümcül olabileceği konusunda uyarılmıştır.",
     "mp_animal_beaver_legendary_01.desc": "Bu kunduzun yuvasını Owanjila'da yaptığı biliniyor. Yumuşak ve sarı kürküyle tanınır. Kunduzlar çekingen hayvanlardır bu yüzden sessiz yaklaşın. Dikkat edin, kışkırtıldıklarında ısırdıkları da bilinir. Bu tür alacakaranlık ve şafağın loş ışıklarını tercih eder ve hava durumlarından etkilenmez.",
+    "map.gus_price": "Gus'un teklifi:",
     "map.generic_not_released": "Bu içerik henüz oyunda değil.",
     "menu.fme_display": "Freemode olayları ekranı",
     "help.fme_display": "Bir sonraki genel olayların, rol olaylarının, her ikisinin de gösterilip gösterilmeyeceğini ve tam olarak ne zaman başlayacaklarını seçmenize olanak tanır.",
@@ -556,5 +557,7 @@
     "menu.modal_fme_role_events_title": "Rol Eventleri",
     "menu.close": "Kapat",
     "menu.join_discord": "Discord'umuza katılın!",
-    "map.remove": "Haritadan kaldır"
+    "map.remove": "Haritadan kaldır",
+    "menu.reload_map": "Haritayı şimdi yenile",
+    "help.reload_map": "Eğer web sitesinde bir yanlışlık varsa haritayı yenilemenizi sağlar."
 }

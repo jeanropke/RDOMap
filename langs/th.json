@@ -143,5 +143,6 @@
     "menu.cmpndm.animal_armadillo": "Armadillo",
     "menu.fme_display": "แสดงกิจกรรม",
     "menu.fme_notification": "เปิดการแจ้งเตือนกิจกรรม",
-    "menu.close": "ปิด"
+    "menu.close": "ปิด",
+    "menu.reload_map": "รีโหลดแผนที่เดี๋ยวนี้"
 }

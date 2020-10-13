@@ -236,7 +236,6 @@
     "map.hideouts.beaver_hollow.name": "海狸树洞",
     "map.hideouts.clemens_cove.name": "克莱曼岬",
     "map.hideouts.colter.name": "犁刀村",
-    "map.hideouts.cueva_seca.name": "干枯洞穴",
     "map.hideouts.cumberland_falls.name": "坎伯兰瀑布",
     "map.hideouts.ewing_basin.name": "尤因盆地",
     "map.hideouts.firwood_rise.name": "冷杉坡",
@@ -265,6 +264,7 @@
     "map.hideouts.twin_rocks.name": "双子岩",
     "map.hideouts.west_bayou.name": "约旦河",
     "map.hideouts.willards_rest.name": "威拉德之息",
+    "map.hideouts.cholla_springs.name": "响尾蛇山谷",
     "fasttravel.tumbleweed.name": "风滚草镇",
     "fasttravel.armadillo.name": "犰狳镇",
     "fasttravel.macfarlanes.name": "麦克法兰牧场",
@@ -1155,5 +1155,7 @@
     "map.remove": "从地图中移除",
     "menu.sync_map_to_dailies": "启用与当前每日挑战相关的标记",
     "help.sync_map_to_dailies": "允许您自动启用与当前每日挑战相关的标记和类别。",
-    "map.harrietum_animals.name": "变成动物的地点"
+    "map.harrietum_animals.name": "变成动物的地点",
+    "menu.reload_map": "立即重载地图",
+    "help.reload_map": "允许你重新加载地图，如果网站出现什么错误。"
 }

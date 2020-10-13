@@ -201,7 +201,6 @@
     "map.hideouts.bear_claw.name": "ベアー・クロー",
     "map.hideouts.beaver_hollow.name": "ビーバー・ホロウ",
     "map.hideouts.colter.name": "コルター",
-    "map.hideouts.cueva_seca.name": "クエバ・セカ",
     "map.hideouts.cumberland_falls.name": "カンバーランド滝",
     "map.hideouts.ewing_basin.name": "ユーイング盆地",
     "map.hideouts.fort_mercer.name": "フォート・マーサー",
@@ -228,6 +227,7 @@
     "map.hideouts.twin_rocks.name": "ツイン・ロックス",
     "map.hideouts.west_bayou.name": "ウェスト・バイ浴場",
     "map.hideouts.willards_rest.name": "ウィラード・レスト",
+    "map.hideouts.cholla_springs.name": "ラトルスネイク・ホロウ",
     "fasttravel.tumbleweed.name": "タムルウィード",
     "fasttravel.armadillo.name": "アルマジロ",
     "fasttravel.macfarlanes.name": "マクファーレン・ランチ",
@@ -908,5 +908,7 @@
     "mprc_trader_supplies_donated_animal_small": "匹の小型動物の死骸をクリップスに寄付した。",
     "mprc_trader_supplies_donated_carcass_perfect": "匹の最良の死骸をクリップスに寄付した。",
     "mprc_trader_supplies_donated_predator": "回、凶暴な肉食獣の死骸または皮を寄付した。",
-    "mprc_trader_travel_wagon": "フィートミッション中に配達馬車で移動した。(3.22km)"
+    "mprc_trader_travel_wagon": "フィートミッション中に配達馬車で移動した。(3.22km)",
+    "menu.reload_map": "今すぐマップを再ロード",
+    "help.reload_map": "Web サイトで何らかの問題がある場合は、マップを再ロードできます。"
 }

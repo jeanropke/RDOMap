@@ -236,7 +236,6 @@
     "map.hideouts.beaver_hollow.name": "Логово - Beaver Hollow",
     "map.hideouts.clemens_cove.name": "Бухта Клеменса",
     "map.hideouts.colter.name": "Логово - Colter",
-    "map.hideouts.cueva_seca.name": "Логово - Cueva Seca",
     "map.hideouts.cumberland_falls.name": "Логово - Cumberland Falls",
     "map.hideouts.ewing_basin.name": "Логово - Ewing Basin",
     "map.hideouts.firwood_rise.name": "Фервуд-Райз",
@@ -268,6 +267,8 @@
     "map.hideouts.west_bayou.name": "Логово - West Bayou",
     "map.hideouts.willards_rest.name": "Логово - Willard's Rest",
     "map.hideouts.millisani_claim.name": "Шахта Миллесани",
+    "map.hideouts.cholla_springs.name": "Логово - Rattlesnake Hollow",
+    "map.hideouts.rocky_seven.name": "Роки-Севен",
     "fasttravel.tumbleweed.name": "Тамблвид",
     "fasttravel.armadillo.name": "Армадилло",
     "fasttravel.macfarlanes.name": "Ранчо Макфарлейн",
@@ -631,6 +632,7 @@
     "mp_animal_wolf_legendary_01.desc": "Этого волка нередко видят возле О'Кригс-Ран. Его легко узнать по ржаво-бурой шкуре и ярко-зелёным глазам. Он очень хитёр и избегает людских глаз. Если он ощущает угрозу со стороны других животных и людей, то без колебаний нападает. Этот волк - ночной хищник, который будет продолжать охотиться даже в самых плохих погодных условиях.",
     "mp_animal_wolf_legendary_02.desc": "Легендарного волка Ночного Оникса видели в окрестностях Вапити. Он отличается ярко-жёлтыми глазами, особенно заметных на фоне тёмного меха. Зверь осторожен, но готов нападать даже на людей, если они зашли на его территорию. Он ведёт ночной образ жизни и предпочитает охотиться в ясную погоду.",
     "mp_animal_wolf_legendary_03.desc": "В последнее время ходит много слухов о волчьей стае, которая живёт к северу от Камберлендского леса. её вожак - огромный белый волк. Стая часто нападает на путников, что и привлекло внимание натуралистов и браконьеров. Члены стаи преданы своему вожаку. Если вы выслеживаете его, будьте готовы к встрече со всей стаей.",
+    "map.gus_price": "Цена у Гаса:",
     "menu.beggar": "Нищий",
     "map.beggar.name": "Нищий",
     "map.beggar.desc": "Это событие появляется случайным образом. Белая метка на мини-карте укажет место события.",
@@ -1160,5 +1162,7 @@
     "map.remove": "Скрыть на карте",
     "menu.sync_map_to_dailies": "Синхронизировать включенные маркеры с текущими ежедневными испытаниями",
     "help.sync_map_to_dailies": "Позволяет автоматически включать только метки и категории, относящиеся к текущим ежедневным испытаниям.",
-    "map.harrietum_animals.name": "Превращение в животного"
+    "map.harrietum_animals.name": "Превращение в животного",
+    "menu.reload_map": "Перезагрузить карту сейчас",
+    "help.reload_map": "Позволяет перезагрузить карту, если что-то не так с сайтом."
 }
