@@ -2,14 +2,14 @@ class Shop {
   static init() {
     this.locations = [];
     this.quickParams = [];
-    this.context = $(".menu-hidden[data-type=shops]");
+    this.context = $('.menu-hidden[data-type=shops]');
 
-    return Loader.promises["shops"].consumeJson(data => {
+    return Loader.promises['shops'].consumeJson(data => {
       data.forEach(item => {
         this.locations.push(new Shop(item));
         this.quickParams.push(item.key);
       });
-      console.info("%c[Shops] Loaded!", "color: #bada55; background: #242424");
+      console.info('%c[Shops] Loaded!', 'color: #bada55; background: #242424');
       Menu.reorderMenu(this.context);
     });
   }
@@ -22,11 +22,11 @@ class Shop {
     this.onLanguageChanged();
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr("data-tippy-content", Language.get(`map.shops.${this.key}.name`))
-      .toggleClass("disabled", !this.onMap)
-      .on("click", () => this.onMap = !this.onMap)
+      .attr('data-tippy-content', Language.get(`map.shops.${this.key}.name`))
+      .toggleClass('disabled', !this.onMap)
+      .on('click', () => this.onMap = !this.onMap)
       .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
-      .append($('<p class="collectible">').attr("data-text", `map.shops.${this.key}.name`))
+      .append($('<p class="collectible">').attr('data-text', `map.shops.${this.key}.name`))
       .translate();
 
     this.element.appendTo(Shop.context);
@@ -37,7 +37,7 @@ class Shop {
 
   onLanguageChanged() {
     this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, "shops", this.key)));
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'shops', this.key)));
 
     this.reinitMarker();
   }
@@ -46,7 +46,8 @@ class Shop {
     this.layer.clearLayers();
     this.markers.forEach(
       marker => {
-        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : "";
+        const shadow = Settings.isShadowsEnabled ?
+          `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
         var tempMarker = L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
@@ -73,12 +74,12 @@ class Shop {
   set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.removeClass("disabled");
+      this.element.removeClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, "true");
+        localStorage.setItem(`rdo:${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.addClass("disabled");
+      this.element.addClass('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }

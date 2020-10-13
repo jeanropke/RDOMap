@@ -1,12 +1,20 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "jquery": true,
+        "node": true
     },
     "parserOptions": {
         "ecmaVersion": 12
     },
     "rules": {
+        "indent": [
+            "error",
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
         "no-negated-in-lhs": "error",
         "no-cond-assign": [
             "error",
@@ -22,7 +30,7 @@
         ],
         "no-unused-expressions": "error",
         "no-sequences": "error",
-        "no-nested-ternary": "error",
+        "no-nested-ternary": "warn",
         "no-unreachable": "error",
         "wrap-iife": [
             "error",
@@ -31,7 +39,7 @@
         "no-caller": "error",
         "quotes": [
             "error",
-            "double",
+            "single",
             {
                 "avoidEscape": true
             }
@@ -51,7 +59,7 @@
             }
         ],
         "max-len": [
-            "error",
+            "warn",
             {
                 "code": 140,
                 "ignoreComments": true,
@@ -65,7 +73,13 @@
         "no-multi-str": "error",
         "comma-dangle": [
             "error",
-            "never"
+            {
+                "arrays": "never",
+                "objects": "always-multiline",
+                "imports": "never",
+                "exports": "never",
+                "functions": "never"
+            }
         ],
         "comma-spacing": [
             "error",
