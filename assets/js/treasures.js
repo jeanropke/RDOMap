@@ -97,13 +97,13 @@ class Treasure {
     if (state) {
       if(Treasure.treasuresOnMap)
       Treasure.layer.addLayer(this.marker);
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this._shownKey}`, 'true');
       this.element.removeClass('disabled');
     } else {
       if(Treasure.treasuresOnMap)
       Treasure.layer.removeLayer(this.marker);
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this._shownKey}`);
       this.element.addClass('disabled');
     }
@@ -115,13 +115,13 @@ class Treasure {
   static set treasuresOnMap(state) {
     if (state) {
       MapBase.map.addLayer(Treasure.layer);
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:treasures`, 'true');
         
     this.treasures.forEach(_t => { if(_t.onMap) _t.onMap = state});
     } else {
       Treasure.layer.remove();
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:treasures`);
     }
 

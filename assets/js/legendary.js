@@ -102,15 +102,16 @@ class Legendary {
     return snippet[0];
   }
   set onMap(state) {
+    if (!this.marker) return;
     if (state) {
       Legendary.layer.addLayer(this.marker);
       this.element.removeClass('disabled');
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this._shownKey}`, 'true');
     } else {
       Legendary.layer.removeLayer(this.marker);
       this.element.addClass('disabled');
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this._shownKey}`);
     }
   }

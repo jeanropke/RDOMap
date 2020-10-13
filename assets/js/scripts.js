@@ -51,7 +51,11 @@ function init() {
 
   changeCursor();
   Pins.init();
+
+  // Prevent blocks by external services. Sometimes these requests took >6 seconds.
+  // Bonus: If either of these fail to load, it doesn't block the map from working properly.
   Dailies.init();
+  MadamNazar.init()
 
   const animals = AnimalCollection.init();
   const locations = Location.init();
@@ -61,13 +65,12 @@ function init() {
   const camps = Camp.init();
   const shops = Shop.init();
   const gfh = GunForHire.init();
-  const nazar = MadamNazar.init();
   const legendary = Legendary.init();
   const discoverables = Discoverable.init();
   const overlays = Overlay.init();
   FME.init()
 
-  Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, nazar, legendary, discoverables, overlays])
+  Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, legendary, discoverables, overlays])
     .then(() => { Loader.resolveMapModelLoaded(); MapBase.runOncePostLoad(); });
 
   if (Settings.isMenuOpened)
@@ -185,7 +188,7 @@ $('#language').on('change', function () {
   Treasure.onLanguageChanged();
   Dailies.onLanguageChanged();
 
-  //WIP: update markers without reload page
+  // WIP: update markers without reload page
   Camp.locations.forEach(camp => camp.onLanguageChanged());
   Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
   GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
@@ -334,6 +337,10 @@ $('#delete-all-settings').on('click', function () {
     localStorage.removeItem(key);
   });
 
+  location.reload(true);
+});
+
+$('#reload-map').on('click', function () {
   location.reload(true);
 });
 

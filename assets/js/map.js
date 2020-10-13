@@ -9,7 +9,7 @@ const MapBase = {
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
-  isPrewviewMode: false,
+  isPreviewMode: false,
 
   init: function () {
     'use strict';
@@ -166,7 +166,7 @@ const MapBase = {
       $('.side-menu').removeClass('menu-opened');
       $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
-      this.isPrewviewMode = true;
+      this.isPreviewMode = true;
 
       this.disableAll();
 
@@ -224,9 +224,23 @@ const MapBase = {
       }
     }
 
+    var zoomParam = Number.parseInt(getParameterByName('z'));
+    if (
+      !isNaN(zoomParam) &&
+      MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom
+    ) {
+      MapBase.map.setZoom(zoomParam);
+    }
+
+    var flyParam = getParameterByName('ft');
+    if (flyParam) {
+      const latLng = flyParam.split(',');
+      if (latLng.filter(Number).length !== 2) return;
+      MapBase.map.flyTo(latLng);
+    }
+
     if (Settings.showTooltips)
       Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
-
 
     Discoverable.createOverlays();
   },
@@ -310,7 +324,7 @@ const MapBase = {
     const lati = (0.01552 * lng + -63.6).toFixed(4);
     const long = (0.01552 * lat + 111.29).toFixed(4);
     MapBase.debugMarker(lati, long, name);
-    return {name, lati, long};
+    return { name, lati, long };
   },
 
   submitDebugForm: function () {

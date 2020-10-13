@@ -89,7 +89,7 @@
     "menu.overlay_opacity.100": "Opaque",
     "menu.read_trader-guide": "Read Trader guide",
     "menu.sightseeing": "Sightseeing",
-    "menu.dailies": "Dailies",
+    "menu.dailies": "Daily Challenges",
     "help.clear_important_items": "Clears the highlight from all markers marked as important.",
     "help.collector_map": "Opens a new tab with the other map by Jean, where you can browse markers related to the Collector role.",
     "help.cookie_export": "Exports your settings to a file.",
@@ -1154,6 +1154,7 @@
     "menu.dailies_moonshiner": "Moonshiner",
     "menu.dailies_trader": "Trader",
     "menu.dailies_naturalist": "Naturalist",
+    "menu.dailies_loading": "Loading today's daily challenges...",
     "menu.dailies_not_found": "Today's dailies haven't been updated yet",
     "menu.show_dailies": "Show daily challenges",
     "help.show_dailies": "Enable showing daily challenges in menu",
@@ -1165,9 +1166,11 @@
     "menu.sync_map_to_dailies": "Sync enabled markers to current dailies",
     "help.sync_map_to_dailies": "Allows you to automatically enable only markers and categories related to current daily challenges.",
     "map.harrietum_animals.name": "Animal Transform",
-    "map.harrietum_animals.desc": "",
+    "map.harrietum_animals.desc": "Visit this location with the appropriate Vitalism Studies pamphlet and the correct amount of Harrietum to transform into this animal.",
     "menu.remove_all_pins": "Remove all pins",
+    "help.remove_all_pins": "Removes all user-created pins.",
     "menu.modal_remove_all_pins_title": "Remove all pins?",
-    "menu.modal_remove_all_pins_body": "This will delete all your custom pins. This action cannot be undone."
-
+    "menu.modal_remove_all_pins_body": "This will delete all your custom pins. This action cannot be undone.",
+    "menu.reload_map": "Reload the map now",
+    "help.reload_map": "Allows you to reload the map if anything is wrong with the website."
 }

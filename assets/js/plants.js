@@ -60,7 +60,7 @@ class Plants {
       }
       PlantsCollection.layer.clearLayers();
       PlantsCollection.layer.addLayers(PlantsCollection.markers);
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this.key}`, 'true');
       this.element.removeClass('disabled');
     } else {
@@ -72,7 +72,7 @@ class Plants {
       if (PlantsCollection.markers.length > 0)
         PlantsCollection.layer.addLayers(PlantsCollection.markers);
 
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
       this.element.addClass('disabled');
     }
@@ -115,13 +115,13 @@ class PlantsCollection {
       this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
       this.context.removeClass('disabled');
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:plants`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
       this.context.addClass('disabled');
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:plants`);
     }
     PlantsCollection.locations.forEach(_plants => { if (_plants.onMap) _plants.onMap = state });

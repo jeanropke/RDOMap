@@ -36,6 +36,7 @@ class Dailies {
           return Promise.reject();
 
         console.info(`%c[Dailies] Loaded!`, 'color: #bada55; background: #242424');
+        this.dailiesLoaded();
 
         this.dailiesList.data.forEach((roleData, roleIndex) => {
           const role = roleData.role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
@@ -46,7 +47,7 @@ class Dailies {
             .append($(`<div id="${role}" class="daily-role"></div>`)
               .toggleClass('hidden', role !== 'general'));
 
-          roleData.challenges.forEach(({ desiredGoal, displayType, description: { label }}, index) => {
+          roleData.challenges.forEach(({ desiredGoal, displayType, description: { label } }, index) => {
             const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
             this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
@@ -72,6 +73,7 @@ class Dailies {
             newDaily.appendToMenu();
           });
         });
+
         this.onLanguageChanged();
       })
       .catch(this.dailiesNotUpdated);
@@ -93,20 +95,23 @@ class Dailies {
           </div>`))
       .translate()
       .find('.one-daily-container')
-        .css({
-          'grid-template-areas': `"${structure[1]} daily-challenge ${structure[2]}"`,
-        })
+      .css({
+        'grid-template-areas': `"${structure[1]} daily-challenge ${structure[2]}"`,
+      })
       .end()
       .find(`#checkbox-${this.role}-${this.index}`)
-        .prop('checked', DailyChallenges[`${this.role}_${this.index}`])
-        .on('change', () => {
-          DailyChallenges[`${this.role}_${this.index}`] = $(`#checkbox-${this.role}-${this.index}`).prop('checked');
-        })
+      .prop('checked', DailyChallenges[`${this.role}_${this.index}`])
+      .on('change', () => {
+        DailyChallenges[`${this.role}_${this.index}`] = $(`#checkbox-${this.role}-${this.index}`).prop('checked');
+      })
       .end();
+  }
+  static dailiesLoaded() {
+    $('.dailies .daily-status.loading').addClass('hidden');
   }
   static dailiesNotUpdated() {
     $('.dailies').append($(`
-      <div class="daily-not-found not-found">${Language.get('menu.dailies_not_found')}</div>
+      <div class="daily-status not-found">${Language.get('menu.dailies_not_found')}</div>
     `));
     $('#dailies-changer-container, #sync-map-to-dailies').addClass('hidden');
   }
@@ -119,19 +124,18 @@ class Dailies {
     Dailies.switchCategory();
   }
   static switchCategory() {
+    if (!Dailies.categories[Dailies.categoryOffset]) return;
     const roles = $('.daily-role');
     [].forEach.call(roles, element => {
       $(element).toggleClass('hidden', element.id !== Dailies.categories[Dailies.categoryOffset]);
     });
-    $('.dailies-title').text(Language.get(`menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`));
+    const textKey = `menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`;
+    $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
   }
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
 }
-
-
-
 
 // Still looking for a better way than trigger handlers, if you have any better idea feel free to modify it
 class SynchronizeDailies {

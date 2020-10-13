@@ -1,18 +1,18 @@
 class MadamNazar {
   static init() {
     this.possibleLocations = [
-      { "x": -40.7817, "y": 109.4863, "id": "der", "key": "MPSW_LOCATION_10" },
-      { "x": -43.1046, "y": 132.8263, "id": "grz", "key": "MPSW_LOCATION_07" },
-      { "x": -36.5097, "y": 154.1859, "id": "bbr", "key": "MPSW_LOCATION_11" },
-      { "x": -56.1619, "y": 78.5000, "id": "bgv", "key": "MPSW_LOCATION_04" },
-      { "x": -63.8927, "y": 105.3496, "id": "hrt_w", "key": "MPSW_LOCATION_06" },
-      { "x": -60.9622, "y": 130.6067, "id": "hrt_e", "key": "MPSW_LOCATION_05" },
-      { "x": -65.9688, "y": 150.4468, "id": "blu", "key": "MPSW_LOCATION_09" },
-      { "x": -84.2973, "y": 82.4512, "id": "tal", "key": "MPSW_LOCATION_03" },
-      { "x": -90.0802, "y": 135.6969, "id": "scm", "key": "MPSW_LOCATION_08" },
-      { "x": -100.0742, "y": 49.0765, "id": "cho", "key": "MPSW_LOCATION_01" },
-      { "x": -104.7679, "y": 85.7222, "id": "hen", "key": "MPSW_LOCATION_02" },
-      { "x": -123.9039, "y": 34.8213, "id": "rio", "key": "MPSW_LOCATION_00" },
+      { "key": "MPSW_LOCATION_00", "x": -123.9039, "y": 34.8213 },
+      { "key": "MPSW_LOCATION_01", "x": -100.0742, "y": 49.0765 },
+      { "key": "MPSW_LOCATION_02", "x": -104.7679, "y": 85.7222 },
+      { "key": "MPSW_LOCATION_03", "x": -84.2973, "y": 82.4512 },
+      { "key": "MPSW_LOCATION_04", "x": -56.1619, "y": 78.5000 },
+      { "key": "MPSW_LOCATION_05", "x": -60.9622, "y": 130.6067 },
+      { "key": "MPSW_LOCATION_06", "x": -63.8927, "y": 105.3496 },
+      { "key": "MPSW_LOCATION_07", "x": -43.1046, "y": 132.8263 },
+      { "key": "MPSW_LOCATION_08", "x": -90.0802, "y": 135.6969 },
+      { "key": "MPSW_LOCATION_09", "x": -65.9688, "y": 150.4468 },
+      { "key": "MPSW_LOCATION_10", "x": -40.7817, "y": 109.4863 },
+      { "key": "MPSW_LOCATION_11", "x": -36.5097, "y": 154.1859 },
     ];
 
     this.currentLocation = null;
@@ -25,7 +25,6 @@ class MadamNazar {
     this.context.toggleClass('disabled', !MadamNazar.onMap)
       .on('click', () => MadamNazar.onMap = !MadamNazar.onMap)
       .translate();
-
 
     return Loader.promises['nazar'].consumeJson(data => {
       var _nazarParam = getParameterByName('nazar');
@@ -76,12 +75,12 @@ class MadamNazar {
     if (state) {
       MadamNazar.layer.addTo(MapBase.map);
       this.context.removeClass('disabled');
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:nazar`, 'true');
     } else {
       MadamNazar.layer.remove();
       this.context.addClass('disabled');
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:nazar`, 'false');
     }
   }

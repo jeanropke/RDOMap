@@ -316,12 +316,12 @@ class Pins {
   static set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:pins-enabled`, 'true');
       this.context.removeClass('disabled');
     } else {
       this.layer.remove();
-      if (!MapBase.isPrewviewMode)
+      if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:pins-enabled`);
       this.context.addClass('disabled');
     }
