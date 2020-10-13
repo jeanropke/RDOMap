@@ -225,24 +225,22 @@ const MapBase = {
     }
 
     var zoomParam = Number.parseInt(getParameterByName('z'));
-    if (
-      !isNaN(zoomParam) &&
-      MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom
-    ) {
+    if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
       MapBase.map.setZoom(zoomParam);
     }
 
     var flyParam = getParameterByName('ft');
     if (flyParam) {
       const latLng = flyParam.split(',');
-      if (latLng.filter(Number).length !== 2) return;
-      MapBase.map.flyTo(latLng);
+      if (latLng.filter(Number).length === 2)
+        MapBase.map.flyTo(latLng);
     }
 
     if (Settings.showTooltips)
       Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
 
-    Discoverable.createOverlays();
+    if (!this.isPreviewMode)
+      Discoverable.createOverlays();
   },
 
   disableAll: function (toShow = false) {
