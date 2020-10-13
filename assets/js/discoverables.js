@@ -24,8 +24,8 @@ class Discoverable {
   static createOverlays() {
     Discoverable.layer.clearLayers();
     this.overlays.forEach(item => {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/discoveries/${item.name}.png?nocache=${nocache}`;
-      let offset = 100;
+      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/discoveries/${item.name}.svg?nocache=${nocache}`;
+      let offset = 130;
       var tempMarker = L.imageOverlay(overlay, [[item.lat - item.height / offset, item.lng - item.width / offset], [item.lat + item.height / offset, item.lng + item.width / offset]], {
         opacity: Settings.markerOpacity
       });
