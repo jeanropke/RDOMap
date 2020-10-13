@@ -1074,9 +1074,13 @@
     "map.harrietum.name": "Harrietum Officianalis",
     "map.harrietum.desc": "Zbierz 3 lub 5 z nich, aby móc przemieniać się w zwierzę.",
     "map.remove": "Usuń z mapy",
-    "menu.sync_map_to_dailies": "Synchronizuj znaczniki z bieżącymi zadaniami dziennymi",
+    "menu.sync_map_to_dailies": "Synchronizuj znaczniki z zadaniami dziennymi",
     "help.sync_map_to_dailies": "Pozwala na automatyczne wyświetlenie tylko znaczników i kategorii związanych z bieżącymi zadaniami dziennymi.",
     "map.harrietum_animals.name": "Zamiana w zwierzę",
+    "menu.remove_all_pins": "Usuń wszystkie piny",
+    "help.remove_all_pins": "Usuwa wszystkie piny użytkownika.",
+    "menu.modal_remove_all_pins_title": "Usunąć wszystkie piny?",
+    "menu.modal_remove_all_pins_body": "Spowoduje to usunięcie wszystkich Twoich pinów. Tej akcji nie można cofnąć.",
     "menu.reload_map": "Przeładuj mapę",
     "help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową."
 }
