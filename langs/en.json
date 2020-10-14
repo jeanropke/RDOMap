@@ -1155,7 +1155,7 @@
     "menu.dailies_trader": "Trader",
     "menu.dailies_naturalist": "Naturalist",
     "menu.dailies_loading": "Loading today's daily challenges...",
-    "menu.dailies_not_found": "Today's dailies haven't been updated yet",
+    "menu.dailies_not_found": "Reload the map to view current dailies",
     "menu.show_dailies": "Show daily challenges",
     "help.show_dailies": "Enable showing daily challenges in menu",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",

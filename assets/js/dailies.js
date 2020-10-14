@@ -110,9 +110,8 @@ class Dailies {
     $('.dailies .daily-status.loading').addClass('hidden');
   }
   static dailiesNotUpdated() {
-    $('.dailies').append($(`
-      <div class="daily-status not-found">${Language.get('menu.dailies_not_found')}</div>
-    `));
+    const textKey = 'menu.dailies_not_found';
+    $('.dailies').append($('<div class="daily-status not-found"></div>').attr('data-text', textKey).text(Language.get(textKey)));
     $('#dailies-changer-container, #sync-map-to-dailies, .dailies .daily-status.loading').addClass('hidden');
   }
   static nextCategory() {
