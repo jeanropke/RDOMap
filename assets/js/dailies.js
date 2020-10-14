@@ -85,11 +85,13 @@ class Dailies {
             <label for="checkbox-${this.role}-${this.index}"></label>
             <span class="counter" data-text="${this.target}"></span>
             <span class="daily" id="daily-${this.role}-${this.index}" data-text="${this.translationKey}"></span>
-            <div class="input-checkbox-wrapper">
-              <input class="input-checkbox" type="checkbox" name="check-${this.role}-${this.index}" value="0"
-                id="checkbox-${this.role}-${this.index}" />
-              <label class="input-checkbox-label" for="checkbox-${this.role}-${this.index}"></label>
-            </div>
+            <span class="daily-checkbox">
+              <div class="input-checkbox-wrapper">
+                <input class="input-checkbox" type="checkbox" name="check-${this.role}-${this.index}" value="0"
+                  id="checkbox-${this.role}-${this.index}" />
+                <label class="input-checkbox-label" for="checkbox-${this.role}-${this.index}"></label>
+              </div>
+            </span>
           </div>`))
       .translate()
       .find('.one-daily-container')

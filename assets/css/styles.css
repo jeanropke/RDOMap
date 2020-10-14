@@ -1494,10 +1494,16 @@ span.daily {
     padding: 10px 0;
     text-align: center;
 }
-.one-daily-container .input-checkbox-wrapper {
+.daily-checkbox {
     display: grid;
     grid-area: daily-checkbox;
-    margin: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.one-daily-container .input-checkbox-wrapper {
     width: 25px;
 }
 
