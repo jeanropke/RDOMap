@@ -16,9 +16,6 @@ class Dailies {
     const currentDailies = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
-    $('#dailies-prev').on('click', Dailies.prevCategory);
-    $('#dailies-next').on('click', Dailies.nextCategory);
-
     const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString(); // 21600000ms = 6 hours
 
     // delete old saved completed dailies on day change
@@ -76,6 +73,7 @@ class Dailies {
 
         this.onLanguageChanged();
       })
+      .then(this.activateHandlers)
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
@@ -123,7 +121,6 @@ class Dailies {
     Dailies.switchCategory();
   }
   static switchCategory() {
-    if (!Dailies.categories[Dailies.categoryOffset]) return;
     const roles = $('.daily-role');
     [].forEach.call(roles, element => {
       $(element).toggleClass('hidden', element.id !== Dailies.categories[Dailies.categoryOffset]);
@@ -133,6 +130,10 @@ class Dailies {
   }
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
+  }
+  static activateHandlers() {
+    $('#dailies-prev').on('click', Dailies.prevCategory);
+    $('#dailies-next').on('click', Dailies.nextCategory);
   }
 }
 
