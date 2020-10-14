@@ -647,6 +647,7 @@
     "map.generic_ps_exlusive": "该内容仅在 PlayStation 4上可用。",
     "menu.small_btn": "小的",
     "menu.large_btn": "大的",
+    "menu.wilderness_btn": "荒野",
     "menu.fme_display": "自由模式事件显示",
     "help.fme_display": "允许您选择是显示下一个常规活动，职业活动，还是全部显示还是不显示，以及何时开始显示。",
     "menu.fme_display_general_period": "常规活动时间",
@@ -1146,6 +1147,7 @@
     "menu.dailies_moonshiner": "私酒贩",
     "menu.dailies_trader": "商贩",
     "menu.dailies_naturalist": "博物学家",
+    "menu.dailies_loading": "正在加载今天的每日挑战...",
     "menu.dailies_not_found": "今天的每日任务还没更新",
     "menu.show_dailies": "显示每日挑战",
     "help.show_dailies": "在菜单中显示每日挑战",
@@ -1156,6 +1158,11 @@
     "menu.sync_map_to_dailies": "启用与当前每日挑战相关的标记",
     "help.sync_map_to_dailies": "允许您自动启用与当前每日挑战相关的标记和类别。",
     "map.harrietum_animals.name": "变成动物的地点",
+    "map.harrietum_animals.desc": "用适当的 生命论研究手册 和正确数量的 哈莉特花 来访问这个地方，以转化为这种动物。",
+    "menu.remove_all_pins": "移除所有标记",
+    "help.remove_all_pins": "移除所有用户创建的标记。",
+    "menu.modal_remove_all_pins_title": "移除所有标记？",
+    "menu.modal_remove_all_pins_body": "这将删除您的所有自定义标记。此操作无法撤消。",
     "menu.reload_map": "立即重载地图",
     "help.reload_map": "允许你重新加载地图，如果网站出现什么错误。"
 }
