@@ -91,7 +91,7 @@ const SettingProxy = (function () {
       }
       config.value = value;
       return true;
-    }
+    },
   };
 
   return {
@@ -129,7 +129,7 @@ const SettingProxy = (function () {
           .listeners.push(callback);
       });
       return callback;
-    }
+    },
   };
 })();
 
@@ -164,7 +164,7 @@ Object.entries({
   showImportExportSettings: { default: true },
   showUtilitiesSettings: { default: true },
   showTooltips: { default: true },
-  showDailies: { default: true }
+  showDailies: { default: true },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Completed daily challenges settings (file dailies.js)

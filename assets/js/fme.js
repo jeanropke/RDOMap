@@ -46,7 +46,7 @@ const FME = {
     fme_role_supply_train: 8192,
     fme_role_wildlife_photographer: 16384,
     fme_role_wreckage: 32768,
-    fme_wild_animal_kills: 65536
+    fme_wild_animal_kills: 65536,
   },
 
   /**
@@ -57,14 +57,14 @@ const FME = {
       nextEventImage: document.getElementById('next-general-image'),
       nextEventName: document.getElementById('next-general-name'),
       nextEventEta: document.getElementById('next-general-eta'),
-      nextEventBodyMobile: document.getElementById('next-general-mobile')
+      nextEventBodyMobile: document.getElementById('next-general-mobile'),
     },
     role: {
       nextEventImage: document.getElementById('next-role-image'),
       nextEventName: document.getElementById('next-role-name'),
       nextEventEta: document.getElementById('next-role-eta'),
-      nextEventBodyMobile: document.getElementById('next-role-mobile')
-    }
+      nextEventBodyMobile: document.getElementById('next-role-mobile'),
+    },
   },
 
   /**
@@ -74,7 +74,7 @@ const FME = {
   updateEvent: function (schedule, key) {
     const frequencies = {
       general: Settings.fmeDisplayGeneralPeriod,
-      role: Settings.fmeDisplayRolePeriod
+      role: Settings.fmeDisplayRolePeriod,
     };
 
     const elements = FME.elements[key];
@@ -150,7 +150,7 @@ const FME = {
       image: `${d[1]}.png`,
       imageSrc: `./assets/images/fme/${d[1]}.png`,
       eta: eta,
-      etaText: FME.getEtaText(eta)
+      etaText: FME.getEtaText(eta),
     };
   },
 
@@ -363,7 +363,7 @@ const FME = {
       new Notification(event.nameText, {
         body: notificationBody,
         icon: event.imageSrc,
-        lang: Settings.language
+        lang: Settings.language,
       });
     } else if (Notification.permission !== 'denied') {
       Notification.requestPermission().then(function (permission) {
@@ -371,7 +371,7 @@ const FME = {
           new Notification(event.nameText, {
             body: notificationBody,
             icon: event.imageSrc,
-            lang: Settings.language
+            lang: Settings.language,
           });
         }
       });
@@ -383,5 +383,5 @@ const FME = {
 
     // Always add this to really make sure there's no dupes, even when the user denied permissions.
     this._sentNotifications.push(event.eventDateTime);
-  }
+  },
 };

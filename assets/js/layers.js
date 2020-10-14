@@ -1,5 +1,5 @@
 const Layers = {
   overlaysLayer: new L.LayerGroup(),
   oms: null,
-  debugLayer: new L.LayerGroup()
+  debugLayer: new L.LayerGroup(),
 };

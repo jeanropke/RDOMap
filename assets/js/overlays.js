@@ -17,7 +17,7 @@ class Overlay {
     this.locations.forEach(item => {
       var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${item.key}.png?nocache=${nocache}`;
       Overlay.layer.addLayer(L.imageOverlay(overlay, item.locations, {
-        opacity: Settings.overlayOpacity
+        opacity: Settings.overlayOpacity,
       }));
     });
   }

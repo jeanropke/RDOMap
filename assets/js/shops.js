@@ -59,8 +59,8 @@ class Shop {
                 <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
                 ${shadow}
               </div>`,
-            marker: this.key
-          })
+            marker: this.key,
+          }),
         });
         tempMarker.bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
 

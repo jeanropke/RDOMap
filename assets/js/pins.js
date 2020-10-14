@@ -255,10 +255,10 @@ class Pins {
           <img class="icon" src="assets/images/icons/${pin.icon}.png" alt="Icon">
           <img class="background" src="assets/images/icons/marker_${pin.color}.png" alt="Background">
           ${shadow}
-        </div>`
+        </div>`,
       }),
       id: pin.id,
-      draggable: Settings.isPinsEditingEnabled
+      draggable: Settings.isPinsEditingEnabled,
     });
     tempMarker.bindPopup(pin.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
 

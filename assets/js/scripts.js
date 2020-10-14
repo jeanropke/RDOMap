@@ -3,7 +3,7 @@ Object.defineProperty(String.prototype, 'filename', {
     let s = this.replace(/\\/g, '/');
     s = s.substring(s.lastIndexOf('/') + 1);
     return extension ? s.replace(/[?#].+$/, '') : s.split('.')[0];
-  }
+  },
 });
 
 Object.defineProperty(String.prototype, 'includesOneOf', {
@@ -16,13 +16,13 @@ Object.defineProperty(String.prototype, 'includesOneOf', {
       }
     }
     return include;
-  }
+  },
 });
 
 Object.defineProperty(Number.prototype, 'mod', {
   value: function (num) {
     return ((this % num) + num) % num;
-  }
+  },
 });
 
 
@@ -41,7 +41,7 @@ function init() {
 
   const navLang = navigator.language;
   SettingProxy.addSetting(Settings, 'language', {
-    default: Language.availableLanguages.includes(navLang) ? navLang : 'en'
+    default: Language.availableLanguages.includes(navLang) ? navLang : 'en',
   });
 
   Menu.init();
@@ -145,7 +145,7 @@ function clockTick() {
     timeZone: 'UTC',
     hour: 'numeric',
     minute: '2-digit',
-    hourCycle: Settings.isClock24Hour ? 'h23' : 'h12'
+    hourCycle: Settings.isClock24Hour ? 'h23' : 'h12',
   };
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
@@ -390,7 +390,7 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
       img.dataset.time = times;
     }
-  }
+  },
 });
 
 L.LayerGroup.include({
@@ -400,7 +400,7 @@ L.LayerGroup.include({
         return this._layers[i];
       }
     }
-  }
+  },
 });
 
 $('#cookie-export').on('click', function () {
@@ -429,7 +429,7 @@ $('#cookie-export').on('click', function () {
 
     var settings = {
       'cookies': cookies,
-      'local': storage
+      'local': storage,
     };
 
     var settingsJson = JSON.stringify(settings, null, 4);

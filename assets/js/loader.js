@@ -1,7 +1,7 @@
 Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
   value: function () {
     return this.toISOString().split('T')[0];
-  }
+  },
 });
 
 class Loader {

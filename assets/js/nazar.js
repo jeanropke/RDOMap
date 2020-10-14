@@ -34,7 +34,7 @@ class MadamNazar {
         this.currentLocation = this.possibleLocations.findIndex(({ key }) => key === data.nazar);
 
       this.currentDate = new Date(data.date).toLocaleString(Settings.language, {
-        day: '2-digit', month: 'long', year: 'numeric'
+        day: '2-digit', month: 'long', year: 'numeric',
       });
 
       MadamNazar.addMadamNazar();
@@ -61,10 +61,15 @@ class MadamNazar {
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
               ${shadow}
-            `
-      })
+            `,
+      }),
     });
-    tempMarker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });
+    tempMarker.bindPopup(`
+    <h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1>
+    <p style="text-align: center;">
+    ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
+    </p>
+    `, { minWidth: 300 });
 
     MadamNazar.layer.addLayer(tempMarker);
     if (Settings.isMarkerClusterEnabled)

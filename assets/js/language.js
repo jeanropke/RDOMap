@@ -29,7 +29,7 @@ var Language = {
           }
 
           Language.data[language] = result;
-        }
+        },
       });
     });
   },
@@ -89,7 +89,7 @@ var Language = {
           }
 
           Language.data[Settings.language] = result;
-        }
+        },
       });
     }
 
@@ -98,7 +98,7 @@ var Language = {
       'en': 'RDO-Collectors-Map-User-Guide-(English)',
       'de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
       'fr': "RDO-Collectors-Map-Guide-d'Utilisateur-(French)",
-      'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)'
+      'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
     };
     const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
     $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
@@ -111,5 +111,5 @@ var Language = {
     this.translateDom();
 
     $('#search').attr('placeholder', Language.get('menu.search_placeholder'));
-  }
+  },
 };

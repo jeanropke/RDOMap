@@ -17,7 +17,7 @@ class Treasure {
     this.crossIcon = L.icon({
       iconUrl: './assets/images/icons/cross.png',
       iconSize: [16, 16],
-      iconAnchor: [8, 8]
+      iconAnchor: [8, 8],
     });
     this.onSettingsChanged();
     $('.menu-hidden[data-type="treasure"] > *:first-child a').click(e => {
@@ -47,7 +47,7 @@ class Treasure {
         <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
         ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
             src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
-      `
+      `,
     });
     this.treasures.forEach(treasure => treasure.reinitMarker());
   }
@@ -74,7 +74,7 @@ class Treasure {
       color: '#f4e98a',
       fillColor: '#f4e98a',
       fillOpacity: 0.5,
-      radius: this.radius
+      radius: this.radius,
     }));
     this.marker.addLayer(L.marker([this.x, this.y], { icon: Treasure.mainIcon })
       .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
@@ -82,7 +82,7 @@ class Treasure {
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
         icon: Treasure.crossIcon,
-        pane: 'treasureX'
+        pane: 'treasureX',
       }))
     );
     this.onMap = this.onMap;
