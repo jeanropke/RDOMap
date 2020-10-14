@@ -113,7 +113,7 @@ class Dailies {
     $('.dailies').append($(`
       <div class="daily-status not-found">${Language.get('menu.dailies_not_found')}</div>
     `));
-    $('#dailies-changer-container, #sync-map-to-dailies').addClass('hidden');
+    $('#dailies-changer-container, #sync-map-to-dailies, .dailies .daily-status.loading').addClass('hidden');
   }
   static nextCategory() {
     Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
