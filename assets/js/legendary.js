@@ -93,7 +93,7 @@ class Legendary {
   }
   getAnimalProperties() {
     const spawnTime = (() => {
-      const spawnTimes = this.spawn_time.flat();
+      const spawnTimes = [].concat.apply([], this.spawn_time);
       let timeString = `${convertToTime(spawnTimes[0])} - ${convertToTime(spawnTimes[1])}`;
       if (spawnTimes[2] && spawnTimes[3])
         timeString += `, ${convertToTime(spawnTimes[2])} - ${convertToTime(spawnTimes[3])}`;
