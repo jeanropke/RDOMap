@@ -25,8 +25,8 @@ class Animal {
               iconUrl: 'assets/images/icons/animal.png',
               iconSize: [32, 32],
               iconAnchor: [16, 16],
-              popupAnchor: [0, -8]
-            })
+              popupAnchor: [0, -8],
+            }),
           });
 
           let popupContent = Language.get('map.animal_spawns.desc')
@@ -43,13 +43,12 @@ class Animal {
 
           tempMarker.bindPopup(
             `<h1>${Language.get('map.animal_spawns.name').replace('{animal}', Language.get(`menu.cmpndm.${self.key}`))}</h1>
-                <span class="marker-content-wrapper">
-                  <p>${popupContent}</p>
-                </span>
-                `, {
-            minWidth: 300,
-            maxWidth: 400
-          });
+            <span class="marker-content-wrapper">
+              <p>${popupContent}</p>
+            </span>`, {
+              minWidth: 300,
+              maxWidth: 400,
+            });
           self.data.push(tempMarker._latlng);
           self.markers.push(tempMarker);
         }, function () {
@@ -94,8 +93,8 @@ class AnimalCollection {
       gradient: {
         0.25: 'rgb(125, 125, 125)',
         0.55: 'rgb(48, 25, 52)',
-        1.0: 'rgb(255, 42, 32)'
-      }
+        1.0: 'rgb(255, 42, 32)',
+      },
     });
 
     this.spawnLayer = L.canvasIconLayer({ zoomAnimation: true });

@@ -355,11 +355,7 @@ const MapBase = {
     Layers.debugLayer.addLayer(marker);
   },
 
-  testData: {
-    max: 10,
-    data: [],
-  },
-  heatmapCount: 10,
+  testData: { data: [] },
   addCoordsOnMap: function (coords) {
 
     // Show clicked coordinates (like google maps)
@@ -376,14 +372,13 @@ const MapBase = {
       });
     }
 
-    if (false && Settings.isDebugEnabled) {
-      console.log(`{"lat":"${coords.latlng.lat.toFixed(4)}","lng":"${coords.latlng.lng.toFixed(4)}","count":"${MapBase.heatmapCount}"},`);
+    if (Settings.isDebugEnabled) {
+      console.log(`{ "lat": ${coords.latlng.lat.toFixed(4)}, "lng": ${coords.latlng.lng.toFixed(4)} },`);
       MapBase.testData.data.push({
         lat: coords.latlng.lat.toFixed(4),
         lng: coords.latlng.lng.toFixed(4),
-        count: MapBase.heatmapCount,
       });
-      Layers.heatmapLayer.setData(MapBase.testData);
+      AnimalCollection.heatmapLayer.setData(MapBase.testData);
     }
 
     if (Settings.isPinsPlacingEnabled) {
@@ -405,6 +400,20 @@ const MapBase = {
         finished.call(null);
       }
     })();
+  },
+
+  // Rectangle for testing.
+  _rectangle: function (x, y, width, height) {
+    var currentPoint = this.map.latLngToContainerPoint([x, y]);
+
+    var xDifference = width / 2;
+    var yDifference = height / 2;
+
+    var southWest = L.point((currentPoint.x - xDifference), (currentPoint.y - yDifference));
+    var northEast = L.point((currentPoint.x + xDifference), (currentPoint.y + yDifference));
+
+    var bounds = L.latLngBounds(this.map.containerPointToLatLng(southWest), this.map.containerPointToLatLng(northEast));
+    L.rectangle(bounds).addTo(this.map);
   },
 
   //R* converting stuff
