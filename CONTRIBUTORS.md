@@ -4,7 +4,7 @@ Lots of thanks to the community for contributing to the menu either by providing
 ## Menu credits
 These are the people that worked on improving the map itself.
 
-- Code optimization and fixes by [MichalD96](https://github.com/MichalD96) and [Senexis](https://github.com/Senexis).
+- Code optimization and fixes by [Michal__d](https://github.com/MichalD96) and [Senexis](https://github.com/Senexis).
 - Updated menu design by [Senexis](https://github.com/Senexis).
 - Other general contributors:
     * [All language contributors.](https://github.com/jeanropke/RDOMap/blob/master/langs/README.md)
@@ -23,6 +23,7 @@ These are the people that provided the locations of the different items on the m
 - Shop locations by [Senexis](https://github.com/Senexis).
 - Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase).
 - Legendary Animal locations by [Senexis](https://github.com/Senexis), [alloc8or](https://github.com/alloc8or/) and [IronJeff80](https://github.com/IronJeff80).
+- Legendary Animal parts prices by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96).
 
 ## Service credits
 These are the people or services that make the dynamic content of the map work.
