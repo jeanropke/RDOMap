@@ -39,6 +39,13 @@ These are the people that provided assets for the map.
     * Default tiles by Rockstar Games.
     * Detailed tiles by [RDR2Map](https://rdr2map.com/).
     * Dark tiles by [TDLCTV](https://github.com/TDLCTV).
+    * Black tiles by [AdamNorton](https://github.com/AdamNortonUK)
+
+## Features credits
+These are the people that added new features to the map.
+- Displaying daily challenges by [Michal__d](https://github.com/MichalD96).
+- Synchronization enabled markers to current daily challenges by [Michal__d](https://github.com/MichalD96).
+- Displaying in-game clock by [Michal__d](https://github.com/MichalD96).
 
 ## Note to Contributors
 If you are a contributor to the map too and we didn't add you to this file yet, get in contact with us on the [Discord](https://discord.com/invite/HkU6ugT) and we'll add you as soon as we can.
