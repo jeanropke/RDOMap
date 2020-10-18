@@ -15,7 +15,7 @@ These are the people that provided the locations of the different items on the m
 
 - Animal heatmaps by Jean and [Senexis](https://github.com/Senexis).
 - Static animal spawn positions (black dots) by [Senexis](https://github.com/Senexis).
-- Random encounter locations by [Senexis](https://github.com/Senexis), and the Discord community. Special shoutout to IronJeff80 for assisting with the rescue/escort revamp.
+- Random encounter locations by [Senexis](https://github.com/Senexis), and the Discord community. Special shoutout to [IronJeff80](https://github.com/IronJeff80) for assisting with the rescue/escort revamp.
 - Moonshiner Bootlegger mission locations by [Senexis](https://github.com/Senexis).
 - Plant positions by [Senexis](https://github.com/Senexis) and [EverettLawson](https://github.com/EverettLawson).
 - Player camp positions by [Senexis](https://github.com/Senexis).
@@ -23,7 +23,7 @@ These are the people that provided the locations of the different items on the m
 - Shop locations by [Senexis](https://github.com/Senexis).
 - Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase).
 - Legendary Animal locations by [Senexis](https://github.com/Senexis), [alloc8or](https://github.com/alloc8or/) and [IronJeff80](https://github.com/IronJeff80).
-- Legendary Animal parts prices by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96).
+- Legendary Animal parts prices by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96) special thanks to [IronJeff80](https://github.com/IronJeff80) for collected data.
 
 ## Service credits
 These are the people or services that make the dynamic content of the map work.
