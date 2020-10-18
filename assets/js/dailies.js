@@ -20,7 +20,7 @@ class Dailies {
 
     // delete old saved completed dailies on day change
     if (localStorage.lastDailiesDate !== dailiesDate) {
-      for (let setting in localStorage) {
+      for (const setting in localStorage) {
         if (setting.startsWith('rdo:dailies.'))
           delete localStorage[setting];
       }
@@ -60,7 +60,7 @@ class Dailies {
                 desiredGoal = 1;
                 break;
               case 'DISPLAY_FEET':
-                desiredGoal = Math.floor(desiredGoal * 3.281);
+                desiredGoal = Math.floor(desiredGoal * 3.28084);
                 break;
               default:
                 desiredGoal = Math.trunc(desiredGoal);
