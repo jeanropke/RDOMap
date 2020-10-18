@@ -292,7 +292,6 @@ $('#timestamps-24').on('change', function () {
   Settings.isClock24Hour = $('#timestamps-24').prop('checked');
   clockTick();
   $('#language').triggerHandler('change');
-  Legendary.onSettingsChanged();
 });
 
 $('#show-dailies').on('change', function () {
