@@ -197,6 +197,7 @@ $('#language').on('change', function () {
   Location.locations.forEach(location => location.onLanguageChanged());
   Shop.locations.forEach(shop => shop.onLanguageChanged());
   MadamNazar.addMadamNazar();
+  Legendary.onSettingsChanged();
 });
 
 $('#marker-size').on('change', function () {
@@ -288,6 +289,7 @@ $('#timestamps-24').on('change', function () {
   Settings.isClock24Hour = $('#timestamps-24').prop('checked');
   clockTick();
   $('#language').triggerHandler('change');
+  Legendary.onSettingsChanged();
 });
 
 $('#show-dailies').on('change', function () {
