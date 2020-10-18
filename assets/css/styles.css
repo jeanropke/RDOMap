@@ -1578,6 +1578,11 @@ span.daily {
 }
 /* end dark mode styling */
 
+.legendary-properties {
+    line-height: 1.8rem;
+    margin: 10px 0;
+    width: 100%;
+}
 
 /*Legendary animals popup text color*/
 .legendary-spawn-time,

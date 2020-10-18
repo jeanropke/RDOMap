@@ -121,14 +121,16 @@ class Legendary {
         </p>
         <p data-text="${Language.get(this.text + '.desc')}"></p>
         <br><p data-text="map.legendary_animal.desc"></p>
-        <br><p class="legendary-spawn-time">${Language.get('map.legendary.spawn_time').replace('{spawn_time}', properties.spawnTime)}</p>
-        <br><p class="legendary-preferred-weather">${Language.get('map.legendary.preferred_weather').replace('{preferred_weather}', Language.get(properties.preferredWeather))}</p>
-        <br><p class="legendary-trader-materials">${Language.get('map.legendary.trader_materials').replace('{trader_materials}', properties.traderMaterials)}</p>
-        <br><p class="legendary-trader-pelt-materials">${Language.get('map.legendary.trader_pelt_materials').replace('{trader_pelt_materials}', properties.traderPeltMaterials)}</p>
-        <br><p class="legendary-trapper-value">${Language.get('map.legendary.trapper_value').replace('{trapper_value}', properties.trapperValue)}</p>
-        <br><p class="legendary-trapper-pelt-value">${Language.get('map.legendary.trapper_pelt_value').replace('{trapper_pelt_value}', properties.trapperPeltValue)}</p>
-        <br><p class="legendary-trapper-part-value">${Language.get('map.legendary.trapper_part_value').replace('{trapper_part_value}', properties.trapperPartValue)}</p>
-        <br><p class="legendary-sample-value">${Language.get('map.legendary.sample_value').replace('{sample_value}', properties.sampleValue)}</p>
+        <span class="legendary-properties">
+          <p class="legendary-spawn-time">${Language.get('map.legendary.spawn_time').replace('{spawn_time}', properties.spawnTime)}</p>
+          <p class="legendary-preferred-weather">${Language.get('map.legendary.preferred_weather').replace('{preferred_weather}', Language.get(properties.preferredWeather))}</p>
+          <p class="legendary-trader-materials">${Language.get('map.legendary.trader_materials').replace('{trader_materials}', properties.traderMaterials)}</p>
+          <p class="legendary-trader-pelt-materials">${Language.get('map.legendary.trader_pelt_materials').replace('{trader_pelt_materials}', properties.traderPeltMaterials)}</p>
+          <p class="legendary-trapper-value">${Language.get('map.legendary.trapper_value').replace('{trapper_value}', properties.trapperValue)}</p>
+          <p class="legendary-trapper-pelt-value">${Language.get('map.legendary.trapper_pelt_value').replace('{trapper_pelt_value}', properties.trapperPeltValue)}</p>
+          <p class="legendary-trapper-part-value">${Language.get('map.legendary.trapper_part_value').replace('{trapper_part_value}', properties.trapperPartValue)}</p>
+          <p class="legendary-sample-value">${Language.get('map.legendary.sample_value').replace('{sample_value}', properties.sampleValue)}</p>
+        </span>
         <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
       </div>`)
       .translate();
