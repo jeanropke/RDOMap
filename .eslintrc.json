@@ -114,12 +114,6 @@
         "no-extra-semi": "error",
         "space-infix-ops": "error",
         "eol-last": "error",
-        "lines-around-comment": [
-            "error",
-            {
-                "beforeLineComment": true
-            }
-        ],
         "no-with": "error",
         "brace-style": "error",
         "no-loop-func": "error",

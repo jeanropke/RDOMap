@@ -55,7 +55,7 @@ class Encounter {
           html: `<div>
               ${marker.subdata === 'mission_giver' ? '<img class="overlay" src="assets/images/icons/overlay_giver.png" alt="Mission giver">' : ''}
               <img class="icon" src="assets/images/icons/${this.key}.png" alt="Icon">
-              <img class="background" src="assets/images/icons/marker_${this.color}.png" alt="Background">
+              <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || this.color}.png" alt="Background">
               ${shadow}
             </div>`,
           marker: this.key,

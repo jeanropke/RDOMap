@@ -253,7 +253,7 @@ class Pins {
         popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
         html: `<div>
           <img class="icon" src="assets/images/icons/${pin.icon}.png" alt="Icon">
-          <img class="background" src="assets/images/icons/marker_${pin.color}.png" alt="Background">
+          <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || pin.color}.png" alt="Background">
           ${shadow}
         </div>`,
       }),

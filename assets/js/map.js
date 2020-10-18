@@ -10,6 +10,7 @@ const MapBase = {
   showAllMarkers: false,
   filtersData: [],
   isPreviewMode: false,
+  colorOverride: null,
 
   init: function () {
     'use strict';
@@ -165,7 +166,36 @@ const MapBase = {
     }));
   },
 
-  runOncePostLoad: function () {
+  beforeLoad: function () {
+    // Sets all marker colors (except for plant markers) to static color.
+    var colorParam = getParameterByName('c');
+    if (colorParam) {
+      const validColors = [
+        'aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple',
+        'darkred', 'gray', 'green', 'lightblue', 'lightdarkred', 'lightgray', 'lightgreen', 'lightorange', 'lightred',
+        'orange', 'pink', 'purple', 'red', 'white', 'yellow'
+      ];
+
+      if (validColors.includes(colorParam)) this.colorOverride = colorParam;
+    }
+
+    // Sets the map's default zoom level to anywhere between minZoom and maxZoom.
+    var zoomParam = Number.parseInt(getParameterByName('z'));
+    if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
+      MapBase.map.setZoom(zoomParam);
+    }
+
+    // Pans the map to a specific coordinate location on the map for default focussing.
+    var flyParam = getParameterByName('ft');
+    if (flyParam) {
+      const latLng = flyParam.split(',');
+      if (latLng.filter(Number).length === 2)
+        MapBase.map.flyTo(latLng);
+    }
+  },
+
+  afterLoad: function () {
+    // Preview mode parameter.
     var quickParam = getParameterByName('q');
     if (quickParam) {
       $('.menu-toggle').remove();
@@ -203,6 +233,7 @@ const MapBase = {
           }
         });
       } else if (PlantsCollection.quickParams.indexOf(quickParam) !== -1) {
+        Plants.onMap = true;
         PlantsCollection.locations.filter(item => {
           if (item.key === quickParam) {
             item.onMap = true;
@@ -222,18 +253,6 @@ const MapBase = {
           }
         });
       }
-    }
-
-    var zoomParam = Number.parseInt(getParameterByName('z'));
-    if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
-      MapBase.map.setZoom(zoomParam);
-    }
-
-    var flyParam = getParameterByName('ft');
-    if (flyParam) {
-      const latLng = flyParam.split(',');
-      if (latLng.filter(Number).length === 2)
-        MapBase.map.flyTo(latLng);
     }
 
     if (Settings.showTooltips)
@@ -342,7 +361,7 @@ const MapBase = {
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
-          <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
+          <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'darkblue'}.png" alt="Background">
           ${shadow}
         `,
       }),
@@ -372,7 +391,8 @@ const MapBase = {
       });
     }
 
-    if (Settings.isDebugEnabled) {
+    // Remove this false if you want to manually create the heatmap.
+    if (false && Settings.isDebugEnabled) {
       console.log(`{ "lat": ${coords.latlng.lat.toFixed(4)}, "lng": ${coords.latlng.lng.toFixed(4)} },`);
       MapBase.testData.data.push({
         lat: coords.latlng.lat.toFixed(4),

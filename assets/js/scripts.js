@@ -51,11 +51,14 @@ function init() {
 
   changeCursor();
   Pins.init();
+  FME.init();
 
   // Prevent blocks by external services. Sometimes these requests took >6 seconds.
   // Bonus: If either of these fail to load, it doesn't block the map from working properly.
   Dailies.init();
   MadamNazar.init();
+
+  MapBase.beforeLoad();
 
   const animals = AnimalCollection.init();
   const locations = Location.init();
@@ -68,11 +71,11 @@ function init() {
   const legendary = Legendary.init();
   const discoverables = Discoverable.init();
   const overlays = Overlay.init();
-  FME.init();
 
   Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, legendary, discoverables, overlays])
     .then(() => {
-      Loader.resolveMapModelLoaded(); MapBase.runOncePostLoad();
+      Loader.resolveMapModelLoaded();
+      MapBase.afterLoad();
     });
 
   if (Settings.isMenuOpened)
@@ -155,7 +158,7 @@ function clockTick() {
   $('.leaflet-marker-icon[data-marker="hideouts"]').each(function () {
     let time = $(this).data('time') + '';
     if (time === null || time === '') return;
-    if (time.split(',').includes(gameHour + '')) {
+    if (time.split(',').includes(gameHour + '') && !MapBase.isPreviewMode) {
       $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
     } else {
       $(this).css('filter', 'none');

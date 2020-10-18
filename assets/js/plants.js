@@ -53,8 +53,7 @@ class Plants {
 
 
   set onMap(state) {
-    if (!PlantsCollection.onMap)
-      return false;
+    if (!MapBase.isPreviewMode && !PlantsCollection.onMap) return false;
     if (state) {
       if (!PlantsCollection.enabledCategories.includes(this.key)) {
         PlantsCollection.markers = PlantsCollection.markers.concat(this.markers);
