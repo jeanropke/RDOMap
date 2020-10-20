@@ -47,6 +47,7 @@ class Discoverable {
     }
   }
   get onMap() {
+    if (MapBase.isPreviewMode) return false;
     return !!localStorage.getItem('rdo:discoverables');
   }
 }

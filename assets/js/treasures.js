@@ -98,7 +98,7 @@ class Treasure {
   }
   set onMap(state) {
     if (state) {
-      if (Treasure.treasuresOnMap)
+      if (MapBase.isPreviewMode || Treasure.treasuresOnMap)
         Treasure.layer.addLayer(this.marker);
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this._shownKey}`, 'true');

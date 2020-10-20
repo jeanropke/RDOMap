@@ -192,6 +192,9 @@ const MapBase = {
       if (latLng.filter(Number).length === 2)
         MapBase.map.flyTo(latLng);
     }
+
+    var quickParam = getParameterByName('q');
+    if (quickParam) this.isPreviewMode = true;
   },
 
   afterLoad: function () {
@@ -204,53 +207,55 @@ const MapBase = {
       $('.side-menu').removeClass('menu-opened');
       $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
-      this.isPreviewMode = true;
-
       this.disableAll();
 
+      function locationMarkerFilter(item) {
+        if (item.key !== quickParam) return;
+        item.onMap = true;
+        if (item.markers.length !== 1) return;
+        MapBase.map.setView({ lat: item.markers[0].lat, lng: item.markers[0].lng }, 5);
+      }
+
       if (Location.quickParams.indexOf(quickParam) !== -1) {
-        Location.locations.filter(item => item.key === quickParam)[0].onMap = true;
+        Location.locations.filter(locationMarkerFilter);
       } else if (Camp.quickParams.indexOf(quickParam) !== -1) {
-        Camp.locations.filter(item => item.key === quickParam)[0].onMap = true;
-      } else if (Camp.quickParams.indexOf(quickParam) !== -1) {
-        Camp.locations.filter(item => item.key === quickParam)[0].onMap = true;
+        Camp.locations.filter(locationMarkerFilter);
       } else if (Shop.quickParams.indexOf(quickParam) !== -1) {
-        Shop.locations.filter(item => item.key === quickParam)[0].onMap = true;
+        Shop.locations.filter(locationMarkerFilter);
       } else if (Encounter.quickParams.indexOf(quickParam) !== -1) {
-        Encounter.locations.filter(item => item.key === quickParam)[0].onMap = true;
+        Encounter.locations.filter(locationMarkerFilter);
       } else if (GunForHire.quickParams.indexOf(quickParam) !== -1) {
-        GunForHire.locations.filter(item => item.key === quickParam)[0].onMap = true;
+        GunForHire.locations.filter(locationMarkerFilter);
       } else if (AnimalCollection.quickParams.indexOf(quickParam) !== -1) {
-        AnimalCollection.collection.filter(collection =>
+        AnimalCollection.collection.filter(collection => {
           collection.animals.filter(animal => {
-            if (animal.key === quickParam) animal.isEnabled = true;
-          }));
+            if (animal.key !== quickParam) return;
+            animal.isEnabled = true;
+          });
+        });
       } else if (Legendary.quickParams.indexOf(quickParam) !== -1) {
         Legendary.animals.filter(item => {
-          if (item.text === quickParam) {
-            item.onMap = true;
-            MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
-          }
+          if (item.text !== quickParam) return;
+          item.onMap = true;
+          MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
         });
       } else if (PlantsCollection.quickParams.indexOf(quickParam) !== -1) {
         Plants.onMap = true;
         PlantsCollection.locations.filter(item => {
-          if (item.key === quickParam) {
-            item.onMap = true;
-          }
+          if (item.key !== quickParam) return;
+          item.onMap = true;
         });
       } else if (quickParam === 'nazar') {
         MadamNazar.onMap = true;
-        MapBase.map.setView({
-          lat: MadamNazar.possibleLocations[MadamNazar.currentLocation].x,
-          lng: MadamNazar.possibleLocations[MadamNazar.currentLocation].y,
-        }, 5);
+        const loc = MadamNazar.possibleLocations[MadamNazar.currentLocation];
+        MapBase.map.setView({ lat: loc.x, lng: loc.y }, 5);
       } else if (Treasure.quickParams.indexOf(quickParam) !== -1) {
+        Treasure.treasuresOnMap = true;
+        Treasure.onMap = true;
         Treasure.treasures.filter(item => {
-          if (item.text === quickParam) {
-            item.onMap = true;
-            MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
-          }
+          if (item.text !== quickParam) return;
+          item.onMap = true;
+          MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
         });
       }
     }
