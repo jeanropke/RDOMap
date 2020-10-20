@@ -1,1049 +1,280 @@
-console.log("Welcome!");
+console.log('Welcome!');
 
-const ProgressBar = require("progress");
-const puppeteer = require("puppeteer");
-const fs = require("fs");
-const path = require("path");
-
-const legendaryAnimals = [
-    { "name": "mp_animal_alligator_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_alligator_legendary_01" },
-    { "name": "mp_animal_alligator_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_alligator_legendary_02" },
-    { "name": "mp_animal_bear_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_bear_legendary_01" },
-    { "name": "mp_animal_bear_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_bear_legendary_02" },
-    { "name": "mp_animal_beaver_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_beaver_legendary_01" },
-    { "name": "mp_animal_beaver_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_beaver_legendary_02" },
-    { "name": "mp_animal_bison_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_bison_legendary_01" },
-    { "name": "mp_animal_bison_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_bison_legendary_02" },
-    { "name": "mp_animal_boar_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_boar_legendary_01" },
-    { "name": "mp_animal_boar_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_boar_legendary_02" },
-    { "name": "mp_animal_buck_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_buck_legendary_01" },
-    { "name": "mp_animal_buck_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_buck_legendary_02" },
-    { "name": "mp_animal_cougar_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_cougar_legendary_01" },
-    { "name": "mp_animal_cougar_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_cougar_legendary_02" },
-    { "name": "mp_animal_coyote_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_coyote_legendary_01" },
-    { "name": "mp_animal_coyote_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_coyote_legendary_02" },
-    { "name": "mp_animal_elk_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_elk_legendary_01" },
-    { "name": "mp_animal_elk_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_elk_legendary_02" },
-    { "name": "mp_animal_fox_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_fox_legendary_01" },
-    { "name": "mp_animal_fox_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_fox_legendary_02" },
-    { "name": "mp_animal_moose_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_moose_legendary_01" },
-    { "name": "mp_animal_moose_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_moose_legendary_02" },
-    { "name": "mp_animal_panther_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_panther_legendary_01" },
-    { "name": "mp_animal_panther_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_panther_legendary_02" },
-    { "name": "mp_animal_ram_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_ram_legendary_01" },
-    { "name": "mp_animal_ram_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_ram_legendary_02" },
-    { "name": "mp_animal_wolf_legendary_01", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_wolf_legendary_01" },
-    { "name": "mp_animal_wolf_legendary_02", "type": "short", "url": "http://localhost/rdo/?q=mp_animal_wolf_legendary_02" }
-];
-
-const animals = [
-    { "name": "animal_alligator_medium", "type": "long", "url": "http://localhost/rdo/?q=animal_alligator_medium" },
-    { "name": "animal_alligator_little", "type": "long", "url": "http://localhost/rdo/?q=animal_alligator_little" },
-    { "name": "animal_armadillo", "type": "long", "url": "http://localhost/rdo/?q=animal_armadillo" },
-    { "name": "animal_badger", "type": "long", "url": "http://localhost/rdo/?q=animal_badger" },
-    { "name": "animal_bat", "type": "long", "url": "http://localhost/rdo/?q=animal_bat" },
-    { "name": "animal_bear", "type": "long", "url": "http://localhost/rdo/?q=animal_bear" },
-    { "name": "animal_beaver", "type": "long", "url": "http://localhost/rdo/?q=animal_beaver" },
-    { "name": "animal_buffalo", "type": "long", "url": "http://localhost/rdo/?q=animal_buffalo" },
-    { "name": "animal_bear_black", "type": "long", "url": "http://localhost/rdo/?q=animal_bear_black" },
-    { "name": "animal_boar", "type": "long", "url": "http://localhost/rdo/?q=animal_boar" },
-    { "name": "animal_buck", "type": "long", "url": "http://localhost/rdo/?q=animal_buck" },
-    { "name": "animal_bull_devon", "type": "long", "url": "http://localhost/rdo/?q=animal_bull_devon" },
-    { "name": "animal_frogbull", "type": "long", "url": "http://localhost/rdo/?q=animal_frogbull" },
-    { "name": "animal_cat", "type": "long", "url": "http://localhost/rdo/?q=animal_cat" },
-    { "name": "animal_chipmunk", "type": "long", "url": "http://localhost/rdo/?q=animal_chipmunk" },
-    { "name": "animal_cougar", "type": "long", "url": "http://localhost/rdo/?q=animal_cougar" },
-    { "name": "animal_cow", "type": "long", "url": "http://localhost/rdo/?q=animal_cow" },
-    { "name": "animal_coyote", "type": "long", "url": "http://localhost/rdo/?q=animal_coyote" },
-    { "name": "animal_crab", "type": "long", "url": "http://localhost/rdo/?q=animal_crab" },
-    { "name": "animal_deer", "type": "long", "url": "http://localhost/rdo/?q=animal_deer" },
-    { "name": "animal_dog_street", "type": "long", "url": "http://localhost/rdo/?q=animal_dog_street" },
-    { "name": "animal_elk_rocky", "type": "long", "url": "http://localhost/rdo/?q=animal_elk_rocky" },
-    { "name": "animal_mountain_cow_elk", "type": "long", "url": "http://localhost/rdo/?q=animal_mountain_cow_elk" },
-    { "name": "animal_fox_red", "type": "long", "url": "http://localhost/rdo/?q=animal_fox_red" },
-    { "name": "animal_fox_grey", "type": "long", "url": "http://localhost/rdo/?q=animal_fox_grey" },
-    { "name": "animal_gilamonster", "type": "long", "url": "http://localhost/rdo/?q=animal_gilamonster" },
-    { "name": "animal_goat", "type": "long", "url": "http://localhost/rdo/?q=animal_goat" },
-    { "name": "animal_iguana", "type": "long", "url": "http://localhost/rdo/?q=animal_iguana" },
-    { "name": "animal_iguanadesert", "type": "long", "url": "http://localhost/rdo/?q=animal_iguanadesert" },
-    { "name": "animal_moose", "type": "long", "url": "http://localhost/rdo/?q=animal_moose" },
-    { "name": "animal_muskrat", "type": "long", "url": "http://localhost/rdo/?q=animal_muskrat" },
-    { "name": "animal_possum", "type": "long", "url": "http://localhost/rdo/?q=animal_possum" },
-    { "name": "animal_ox_angus", "type": "long", "url": "http://localhost/rdo/?q=animal_ox_angus" },
-    { "name": "animal_panther", "type": "long", "url": "http://localhost/rdo/?q=animal_panther" },
-    { "name": "animal_javelina", "type": "long", "url": "http://localhost/rdo/?q=animal_javelina" },
-    { "name": "animal_pig_berkshire", "type": "long", "url": "http://localhost/rdo/?q=animal_pig_berkshire" },
-    { "name": "animal_pronghorn_american_m", "type": "long", "url": "http://localhost/rdo/?q=animal_pronghorn_american_m" },
-    { "name": "animal_pronghorn_american", "type": "long", "url": "http://localhost/rdo/?q=animal_pronghorn_american" },
-    { "name": "animal_pronghorn_baja", "type": "long", "url": "http://localhost/rdo/?q=animal_pronghorn_baja" },
-    { "name": "animal_pronghorn_baja_f", "type": "long", "url": "http://localhost/rdo/?q=animal_pronghorn_baja_f" },
-    { "name": "animal_rabbit", "type": "long", "url": "http://localhost/rdo/?q=animal_rabbit" },
-    { "name": "animal_racoon", "type": "long", "url": "http://localhost/rdo/?q=animal_racoon" },
-    { "name": "animal_bighornram_rocky", "type": "long", "url": "http://localhost/rdo/?q=animal_bighornram_rocky" },
-    { "name": "animal_bighornram_desert", "type": "long", "url": "http://localhost/rdo/?q=animal_bighornram_desert" },
-    { "name": "animal_bighornram_sierra", "type": "long", "url": "http://localhost/rdo/?q=animal_bighornram_sierra" },
-    { "name": "animal_rat_black", "type": "long", "url": "http://localhost/rdo/?q=animal_rat_black" },
-    { "name": "animal_sheep", "type": "long", "url": "http://localhost/rdo/?q=animal_sheep" },
-    { "name": "animal_bighornram_rocky_f", "type": "long", "url": "http://localhost/rdo/?q=animal_bighornram_rocky_f" },
-    { "name": "animal_bighornram_desert_f", "type": "long", "url": "http://localhost/rdo/?q=animal_bighornram_desert_f" },
-    { "name": "animal_bighornram_sierra_f", "type": "long", "url": "http://localhost/rdo/?q=animal_bighornram_sierra_f" },
-    { "name": "animal_skunk", "type": "long", "url": "http://localhost/rdo/?q=animal_skunk" },
-    { "name": "animal_snake", "type": "long", "url": "http://localhost/rdo/?q=animal_snake" },
-    { "name": "animal_snakeblacktailrattle", "type": "long", "url": "http://localhost/rdo/?q=animal_snakeblacktailrattle" },
-    { "name": "animal_snake_copperhead_northern", "type": "long", "url": "http://localhost/rdo/?q=animal_snake_copperhead_northern" },
-    { "name": "animal_snakewater", "type": "long", "url": "http://localhost/rdo/?q=animal_snakewater" },
-    { "name": "animal_squirrel_grey", "type": "long", "url": "http://localhost/rdo/?q=animal_squirrel_grey" },
-    { "name": "animal_toad", "type": "long", "url": "http://localhost/rdo/?q=animal_toad" },
-    { "name": "animal_toad_sonoran", "type": "long", "url": "http://localhost/rdo/?q=animal_toad_sonoran" },
-    { "name": "animal_turtle_snapping", "type": "long", "url": "http://localhost/rdo/?q=animal_turtle_snapping" },
-    { "name": "animal_wolf_gray", "type": "long", "url": "http://localhost/rdo/?q=animal_wolf_gray" },
-    { "name": "animal_bluejay", "type": "long", "url": "http://localhost/rdo/?q=animal_bluejay" },
-    { "name": "animal_cardinal", "type": "long", "url": "http://localhost/rdo/?q=animal_cardinal" },
-    { "name": "animal_chicken_leghorn", "type": "long", "url": "http://localhost/rdo/?q=animal_chicken_leghorn" },
-    { "name": "animal_californiancondor", "type": "long", "url": "http://localhost/rdo/?q=animal_californiancondor" },
-    { "name": "animal_cormorant_doublecrested", "type": "long", "url": "http://localhost/rdo/?q=animal_cormorant_doublecrested" },
-    { "name": "animal_cormorant_neotropic", "type": "long", "url": "http://localhost/rdo/?q=animal_cormorant_neotropic" },
-    { "name": "animal_cranewhooping_whooping", "type": "long", "url": "http://localhost/rdo/?q=animal_cranewhooping_whooping" },
-    { "name": "animal_crow", "type": "long", "url": "http://localhost/rdo/?q=animal_crow" },
-    { "name": "animal_duck_mallard", "type": "long", "url": "http://localhost/rdo/?q=animal_duck_mallard" },
-    { "name": "animal_eagle_golden", "type": "long", "url": "http://localhost/rdo/?q=animal_eagle_golden" },
-    { "name": "animal_egret_reddish", "type": "long", "url": "http://localhost/rdo/?q=animal_egret_reddish" },
-    { "name": "animal_goosecanada", "type": "long", "url": "http://localhost/rdo/?q=animal_goosecanada" },
-    { "name": "animal_seagull_herring", "type": "long", "url": "http://localhost/rdo/?q=animal_seagull_herring" },
-    { "name": "animal_hawk_ferruginous", "type": "long", "url": "http://localhost/rdo/?q=animal_hawk_ferruginous" },
-    { "name": "animal_heron_greatblue", "type": "long", "url": "http://localhost/rdo/?q=animal_heron_greatblue" },
-    { "name": "animal_loon_pacific", "type": "long", "url": "http://localhost/rdo/?q=animal_loon_pacific" },
-    { "name": "animal_oriole_baltimore", "type": "long", "url": "http://localhost/rdo/?q=animal_oriole_baltimore" },
-    { "name": "animal_oriole_hooded", "type": "long", "url": "http://localhost/rdo/?q=animal_oriole_hooded" },
-    { "name": "animal_owl_great", "type": "long", "url": "http://localhost/rdo/?q=animal_owl_great" },
-    { "name": "animal_owl_californian", "type": "long", "url": "http://localhost/rdo/?q=animal_owl_californian" },
-    { "name": "animal_pelican_white", "type": "long", "url": "http://localhost/rdo/?q=animal_pelican_white" },
-    { "name": "animal_pheasant_ringneck", "type": "long", "url": "http://localhost/rdo/?q=animal_pheasant_ringneck" },
-    { "name": "animal_pigeon_bandtailed", "type": "long", "url": "http://localhost/rdo/?q=animal_pigeon_bandtailed" },
-    { "name": "animal_prairiechicken", "type": "long", "url": "http://localhost/rdo/?q=animal_prairiechicken" },
-    { "name": "animal_quail", "type": "long", "url": "http://localhost/rdo/?q=animal_quail" },
-    { "name": "animal_raven", "type": "long", "url": "http://localhost/rdo/?q=animal_raven" },
-    { "name": "animal_robin", "type": "long", "url": "http://localhost/rdo/?q=animal_robin" },
-    { "name": "animal_rooster_dominique", "type": "long", "url": "http://localhost/rdo/?q=animal_rooster_dominique" },
-    { "name": "animal_songbird_scarlet", "type": "long", "url": "http://localhost/rdo/?q=animal_songbird_scarlet" },
-    { "name": "animal_songbird_western", "type": "long", "url": "http://localhost/rdo/?q=animal_songbird_western" },
-    { "name": "animal_sparrow_eurasian", "type": "long", "url": "http://localhost/rdo/?q=animal_sparrow_eurasian" },
-    { "name": "animal_roseatespoonbill", "type": "long", "url": "http://localhost/rdo/?q=animal_roseatespoonbill" },
-    { "name": "animal_turkey_eastern", "type": "long", "url": "http://localhost/rdo/?q=animal_turkey_eastern" },
-    { "name": "animal_vulture_western", "type": "long", "url": "http://localhost/rdo/?q=animal_vulture_western" },
-    { "name": "animal_vulture_eastern", "type": "long", "url": "http://localhost/rdo/?q=animal_vulture_eastern" },
-    { "name": "animal_cedarwaxwing", "type": "long", "url": "http://localhost/rdo/?q=animal_cedarwaxwing" },
-    { "name": "animal_woodpecker_redbellied", "type": "long", "url": "http://localhost/rdo/?q=animal_woodpecker_redbellied" },
-    { "name": "fish_channelcatfish", "type": "long", "url": "http://localhost/rdo/?q=fish_channelcatfish" },
-    { "name": "fish_lake_sturgeon", "type": "long", "url": "http://localhost/rdo/?q=fish_lake_sturgeon" },
-    { "name": "fish_largemouthbass", "type": "long", "url": "http://localhost/rdo/?q=fish_largemouthbass" },
-    { "name": "fish_longnosegar", "type": "long", "url": "http://localhost/rdo/?q=fish_longnosegar" },
-    { "name": "fish_muskie_clear", "type": "long", "url": "http://localhost/rdo/?q=fish_muskie_clear" },
-    { "name": "fish_northernpike", "type": "long", "url": "http://localhost/rdo/?q=fish_northernpike" },
-    { "name": "fish_smallmouthbass", "type": "long", "url": "http://localhost/rdo/?q=fish_smallmouthbass" },
-    { "name": "fish_salmon_sockeye", "type": "long", "url": "http://localhost/rdo/?q=fish_salmon_sockeye" },
-    { "name": "fish_steelheadtrout", "type": "long", "url": "http://localhost/rdo/?q=fish_steelheadtrout" }
-];
-
-const treasures = [
-    { "name": "bards_crossing_treasure", "type": "short", "url": "http://localhost/rdo/?q=bards_crossing_treasure" },
-    { "name": "benedict_treasure", "type": "short", "url": "http://localhost/rdo/?q=benedict_treasure" },
-    { "name": "blackbone_forest_treasure", "type": "short", "url": "http://localhost/rdo/?q=blackbone_forest_treasure" },
-    { "name": "blue_water_marsh_treasure", "type": "short", "url": "http://localhost/rdo/?q=blue_water_marsh_treasure" },
-    { "name": "brandywine_drop_treasure", "type": "short", "url": "http://localhost/rdo/?q=brandywine_drop_treasure" },
-    { "name": "burned_town_treasure", "type": "short", "url": "http://localhost/rdo/?q=burned_town_treasure" },
-    { "name": "calumet_ravine_treasure", "type": "short", "url": "http://localhost/rdo/?q=calumet_ravine_treasure" },
-    { "name": "cattail_pond_treasure", "type": "short", "url": "http://localhost/rdo/?q=cattail_pond_treasure" },
-    { "name": "citadel_rock_treasure", "type": "short", "url": "http://localhost/rdo/?q=citadel_rock_treasure" },
-    { "name": "civil_war_treasure", "type": "short", "url": "http://localhost/rdo/?q=civil_war_treasure" },
-    { "name": "cumberland_forest_west_treasure", "type": "short", "url": "http://localhost/rdo/?q=cumberland_forest_west_treasure" },
-    { "name": "dakota_river_treasure", "type": "short", "url": "http://localhost/rdo/?q=dakota_river_treasure" },
-    { "name": "diablo_ridge_treasure", "type": "short", "url": "http://localhost/rdo/?q=diablo_ridge_treasure" },
-    { "name": "east_watson_treasure", "type": "short", "url": "http://localhost/rdo/?q=east_watson_treasure" },
-    { "name": "gaptooth_treasure", "type": "short", "url": "http://localhost/rdo/?q=gaptooth_treasure" },
-    { "name": "hanging_rock_treasure", "type": "short", "url": "http://localhost/rdo/?q=hanging_rock_treasure" },
-    { "name": "hawks_eye_treasure", "type": "short", "url": "http://localhost/rdo/?q=hawks_eye_treasure" },
-    { "name": "hennigans_central_treasure", "type": "short", "url": "http://localhost/rdo/?q=hennigans_central_treasure" },
-    { "name": "hennigans_north_treasure", "type": "short", "url": "http://localhost/rdo/?q=hennigans_north_treasure" },
-    { "name": "kamassa_river_treasure", "type": "short", "url": "http://localhost/rdo/?q=kamassa_river_treasure" },
-    { "name": "lake_isabella_treasure", "type": "short", "url": "http://localhost/rdo/?q=lake_isabella_treasure" },
-    { "name": "little_creek_treasure", "type": "short", "url": "http://localhost/rdo/?q=little_creek_treasure" },
-    { "name": "north_clingman_treasure", "type": "short", "url": "http://localhost/rdo/?q=north_clingman_treasure" },
-    { "name": "north_ridgewood_treasure", "type": "short", "url": "http://localhost/rdo/?q=north_ridgewood_treasure" },
-    { "name": "north_tumbleweed_treasure", "type": "short", "url": "http://localhost/rdo/?q=north_tumbleweed_treasure" },
-    { "name": "ocreaghs_run_treasure", "type": "short", "url": "http://localhost/rdo/?q=ocreaghs_run_treasure" },
-    { "name": "san_luis_treasure", "type": "short", "url": "http://localhost/rdo/?q=san_luis_treasure" },
-    { "name": "southren_roanoke_treasure", "type": "short", "url": "http://localhost/rdo/?q=southren_roanoke_treasure" },
-    { "name": "west_hill_haven_treasure", "type": "short", "url": "http://localhost/rdo/?q=west_hill_haven_treasure" }
-];
-
-const plants = [
-    { "name": "alaskan_ginseng", "type": "long", "url": "http://localhost/rdo/?q=alaskan_ginseng" },
-    { "name": "american_ginseng", "type": "long", "url": "http://localhost/rdo/?q=american_ginseng" },
-    { "name": "bay_bolete", "type": "long", "url": "http://localhost/rdo/?q=bay_bolete" },
-    { "name": "black_berry", "type": "long", "url": "http://localhost/rdo/?q=black_berry" },
-    { "name": "black_currant", "type": "long", "url": "http://localhost/rdo/?q=black_currant" },
-    { "name": "burdock_root", "type": "long", "url": "http://localhost/rdo/?q=burdock_root" },
-    { "name": "chanterelles", "type": "long", "url": "http://localhost/rdo/?q=chanterelles" },
-    { "name": "common_bulrush", "type": "long", "url": "http://localhost/rdo/?q=common_bulrush" },
-    { "name": "creeping_thyme", "type": "long", "url": "http://localhost/rdo/?q=creeping_thyme" },
-    { "name": "desert_sage", "type": "long", "url": "http://localhost/rdo/?q=desert_sage" },
-    { "name": "english_mace", "type": "long", "url": "http://localhost/rdo/?q=english_mace" },
-    { "name": "evergreen_huckleberry", "type": "long", "url": "http://localhost/rdo/?q=evergreen_huckleberry" },
-    { "name": "golden_currant", "type": "long", "url": "http://localhost/rdo/?q=golden_currant" },
-    { "name": "hummingbird_sage", "type": "long", "url": "http://localhost/rdo/?q=hummingbird_sage" },
-    { "name": "milkweed", "type": "long", "url": "http://localhost/rdo/?q=milkweed" },
-    { "name": "parasol_mushroom", "type": "long", "url": "http://localhost/rdo/?q=parasol_mushroom" },
-    { "name": "oleander_sage", "type": "long", "url": "http://localhost/rdo/?q=oleander_sage" },
-    { "name": "oregano", "type": "long", "url": "http://localhost/rdo/?q=oregano" },
-    { "name": "prairie_poppy", "type": "long", "url": "http://localhost/rdo/?q=prairie_poppy" },
-    { "name": "red_raspberry", "type": "long", "url": "http://localhost/rdo/?q=red_raspberry" },
-    { "name": "rams_head", "type": "long", "url": "http://localhost/rdo/?q=rams_head" },
-    { "name": "red_sage", "type": "long", "url": "http://localhost/rdo/?q=red_sage" },
-    { "name": "indian_tobacco", "type": "long", "url": "http://localhost/rdo/?q=indian_tobacco" },
-    { "name": "vanilla_flower", "type": "long", "url": "http://localhost/rdo/?q=vanilla_flower" },
-    { "name": "violet_snowdrop", "type": "long", "url": "http://localhost/rdo/?q=violet_snowdrop" },
-    { "name": "wild_carrots", "type": "long", "url": "http://localhost/rdo/?q=wild_carrots" },
-    { "name": "wild_feverfew", "type": "long", "url": "http://localhost/rdo/?q=wild_feverfew" },
-    { "name": "wild_mint", "type": "long", "url": "http://localhost/rdo/?q=wild_mint" },
-    { "name": "wintergreen_berry", "type": "long", "url": "http://localhost/rdo/?q=wintergreen_berry" },
-    { "name": "yarrow", "type": "long", "url": "http://localhost/rdo/?q=yarrow" }
-];
-
-const shops = [
-    { "name": "barber", "type": "long", "url": "http://localhost/rdo/?q=barber" },
-    { "name": "butcher", "type": "long", "url": "http://localhost/rdo/?q=butcher" },
-    { "name": "doctor", "type": "long", "url": "http://localhost/rdo/?q=doctor" },
-    { "name": "fence", "type": "long", "url": "http://localhost/rdo/?q=fence" },
-    { "name": "general_store", "type": "long", "url": "http://localhost/rdo/?q=general_store" },
-    { "name": "gunsmith", "type": "long", "url": "http://localhost/rdo/?q=gunsmith" },
-    { "name": "honor", "type": "long", "url": "http://localhost/rdo/?q=honor" },
-    { "name": "photo_studio", "type": "long", "url": "http://localhost/rdo/?q=photo_studio" },
-    { "name": "post_office", "type": "long", "url": "http://localhost/rdo/?q=post_office" },
-    { "name": "saloon", "type": "long", "url": "http://localhost/rdo/?q=saloon" },
-    { "name": "stable", "type": "long", "url": "http://localhost/rdo/?q=stable" },
-    { "name": "tackle", "type": "long", "url": "http://localhost/rdo/?q=tackle" },
-    { "name": "tailor", "type": "long", "url": "http://localhost/rdo/?q=tailor" }
-];
-
-const camps = [
-    { "name": "bayounwa", "type": "long", "url": "http://localhost/rdo/?q=bayounwa" },
-    { "name": "bigvalley", "type": "long", "url": "http://localhost/rdo/?q=bigvalley" },
-    { "name": "chollasprings", "type": "long", "url": "http://localhost/rdo/?q=chollasprings" },
-    { "name": "cumberland", "type": "long", "url": "http://localhost/rdo/?q=cumberland" },
-    { "name": "gaptooth", "type": "long", "url": "http://localhost/rdo/?q=gaptooth" },
-    { "name": "greatplains", "type": "long", "url": "http://localhost/rdo/?q=greatplains" },
-    { "name": "grizzlies", "type": "long", "url": "http://localhost/rdo/?q=grizzlies" },
-    { "name": "heartlands", "type": "long", "url": "http://localhost/rdo/?q=heartlands" },
-    { "name": "hennigans", "type": "long", "url": "http://localhost/rdo/?q=hennigans" },
-    { "name": "riobravo", "type": "long", "url": "http://localhost/rdo/?q=riobravo" },
-    { "name": "roanoke", "type": "long", "url": "http://localhost/rdo/?q=roanoke" },
-    { "name": "scarlett", "type": "long", "url": "http://localhost/rdo/?q=scarlett" },
-    { "name": "talltrees", "type": "long", "url": "http://localhost/rdo/?q=talltrees" }
-];
-
-const gfh = [
-    { "name": "aberdeen_pig_farmers", "type": "long", "url": "http://localhost/rdo/?q=aberdeen_pig_farmers" },
-    { "name": "alden", "type": "long", "url": "http://localhost/rdo/?q=alden" },
-    { "name": "anthony_foreman", "type": "long", "url": "http://localhost/rdo/?q=anthony_foreman" },
-    { "name": "black_belle", "type": "long", "url": "http://localhost/rdo/?q=black_belle" },
-    { "name": "bonnie", "type": "long", "url": "http://localhost/rdo/?q=bonnie" },
-    { "name": "flaco_hernandez", "type": "long", "url": "http://localhost/rdo/?q=flaco_hernandez" },
-    { "name": "hector", "type": "long", "url": "http://localhost/rdo/?q=hector" },
-    { "name": "joe", "type": "long", "url": "http://localhost/rdo/?q=joe" },
-    { "name": "josiah_trelawny", "type": "long", "url": "http://localhost/rdo/?q=josiah_trelawny" },
-    { "name": "langton", "type": "long", "url": "http://localhost/rdo/?q=langton" },
-    { "name": "mamma_watson", "type": "long", "url": "http://localhost/rdo/?q=mamma_watson" },
-    { "name": "sadie_adler", "type": "long", "url": "http://localhost/rdo/?q=sadie_adler" },
-    { "name": "sean_macquire", "type": "long", "url": "http://localhost/rdo/?q=sean_macquire" },
-    { "name": "shaky", "type": "long", "url": "http://localhost/rdo/?q=shaky" },
-    { "name": "sheriff_freeman", "type": "long", "url": "http://localhost/rdo/?q=sheriff_freeman" },
-    { "name": "the_boy", "type": "long", "url": "http://localhost/rdo/?q=the_boy" },
-    { "name": "thomas_skiff_captain", "type": "long", "url": "http://localhost/rdo/?q=thomas_skiff_captain" },
-    { "name": "wallace_train_clerk", "type": "long", "url": "http://localhost/rdo/?q=wallace_train_clerk" },
-    { "name": "war_vet", "type": "long", "url": "http://localhost/rdo/?q=war_vet" }
-];
-
-const misc = [
-    { "name": "ambush", "type": "long", "url": "http://localhost/rdo/?q=ambush" },
-    { "name": "animal_attack", "type": "long", "url": "http://localhost/rdo/?q=animal_attack" },
-    { "name": "beggar", "type": "long", "url": "http://localhost/rdo/?q=beggar" },
-    { "name": "boats", "type": "long", "url": "http://localhost/rdo/?q=boats" },
-    { "name": "campfires", "type": "long", "url": "http://localhost/rdo/?q=campfires" },
-    { "name": "crashed_wagon", "type": "long", "url": "http://localhost/rdo/?q=crashed_wagon" },
-    { "name": "daily_locations", "type": "long", "url": "http://localhost/rdo/?q=daily_locations" },
-    { "name": "defend_campsite", "type": "long", "url": "http://localhost/rdo/?q=defend_campsite" },
-    { "name": "dog_encounter", "type": "long", "url": "http://localhost/rdo/?q=dog_encounter" },
-    { "name": "duel", "type": "long", "url": "http://localhost/rdo/?q=duel" },
-    { "name": "egg_encounter", "type": "long", "url": "http://localhost/rdo/?q=egg_encounter" },
-    { "name": "escort", "type": "long", "url": "http://localhost/rdo/?q=escort" },
-    { "name": "fame_seeker", "type": "long", "url": "http://localhost/rdo/?q=fame_seeker" },
-    { "name": "fast_travel", "type": "long", "url": "http://localhost/rdo/?q=fast_travel" },
-    { "name": "grave_robber", "type": "long", "url": "http://localhost/rdo/?q=grave_robber" },
-    { "name": "hideouts", "type": "long", "url": "http://localhost/rdo/?q=hideouts" },
-    { "name": "hogtied_lawman", "type": "long", "url": "http://localhost/rdo/?q=hogtied_lawman" },
-    { "name": "kidnapped", "type": "long", "url": "http://localhost/rdo/?q=kidnapped" },
-    { "name": "legendaryAnimals", "type": "long", "url": "http://localhost/rdo/?q=legendaryAnimals" },
-    { "name": "moonshiner_camp", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_camp" },
-    { "name": "moonshiner_destroy", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_destroy" },
-    { "name": "moonshiner_roadblock", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_roadblock" },
-    { "name": "moonshiner_sabotage", "type": "long", "url": "http://localhost/rdo/?q=moonshiner_sabotage" },
-    { "name": "rescue", "type": "long", "url": "http://localhost/rdo/?q=rescue" },
-    { "name": "rival_collector", "type": "long", "url": "http://localhost/rdo/?q=rival_collector" },
-    { "name": "runaway_wagon", "type": "long", "url": "http://localhost/rdo/?q=runaway_wagon" },
-    { "name": "sightseeing", "type": "long", "url": "http://localhost/rdo/?q=sightseeing" },
-    { "name": "slumped_hunter", "type": "long", "url": "http://localhost/rdo/?q=slumped_hunter" },
-    { "name": "stalking_hunter", "type": "long", "url": "http://localhost/rdo/?q=stalking_hunter" },
-    { "name": "suspension_trap", "type": "long", "url": "http://localhost/rdo/?q=suspension_trap" },
-    { "name": "trains", "type": "long", "url": "http://localhost/rdo/?q=trains" },
-    { "name": "treasure_hunter", "type": "long", "url": "http://localhost/rdo/?q=treasure_hunter" },
-    { "name": "tree_map", "type": "long", "url": "http://localhost/rdo/?q=tree_map" },
-    { "name": "wounded_animal", "type": "long", "url": "http://localhost/rdo/?q=wounded_animal" }
-];
-
-const collectableCategories = [
-    { "name": "arrowhead", "type": "long", "url": "http://localhost/?q=arrowhead" },
-    { "name": "egg", "type": "long", "url": "http://localhost/?q=egg" },
-    { "name": "coin", "type": "long", "url": "http://localhost/?q=coin" },
-    { "name": "heirlooms", "type": "long", "url": "http://localhost/?q=heirlooms" },
-    { "name": "bottle", "type": "long", "url": "http://localhost/?q=bottle" },
-    { "name": "cups", "type": "long", "url": "http://localhost/?q=cups" },
-    { "name": "pentacles", "type": "long", "url": "http://localhost/?q=pentacles" },
-    { "name": "swords", "type": "long", "url": "http://localhost/?q=swords" },
-    { "name": "wands", "type": "long", "url": "http://localhost/?q=wands" },
-    { "name": "ring", "type": "long", "url": "http://localhost/?q=ring" },
-    { "name": "earring", "type": "long", "url": "http://localhost/?q=earring" },
-    { "name": "bracelet", "type": "long", "url": "http://localhost/?q=bracelet" },
-    { "name": "necklace", "type": "long", "url": "http://localhost/?q=necklace" },
-    { "name": "flower", "type": "long", "url": "http://localhost/?q=flower" },
-    { "name": "coastal", "type": "long", "url": "http://localhost/?q=coastal" },
-    { "name": "megafauna", "type": "long", "url": "http://localhost/?q=megafauna" },
-    { "name": "oceanic", "type": "long", "url": "http://localhost/?q=oceanic" },
-    { "name": "random", "type": "long", "url": "http://localhost/?q=random" }
-];
-
-const collectableIndividual = [
-    { "name": "bottle_absinthe_1", "type": "short", "url": "http://localhost/?q=bottle_absinthe&cycles=1" },
-    { "name": "bottle_absinthe_2", "type": "short", "url": "http://localhost/?q=bottle_absinthe&cycles=2" },
-    { "name": "bottle_absinthe_3", "type": "short", "url": "http://localhost/?q=bottle_absinthe&cycles=3" },
-    { "name": "bottle_absinthe_4", "type": "short", "url": "http://localhost/?q=bottle_absinthe&cycles=4" },
-    { "name": "bottle_absinthe_5", "type": "short", "url": "http://localhost/?q=bottle_absinthe&cycles=5" },
-    { "name": "bottle_absinthe_6", "type": "short", "url": "http://localhost/?q=bottle_absinthe&cycles=6" },
-    { "name": "bottle_caribbean_rum_1", "type": "short", "url": "http://localhost/?q=bottle_caribbean_rum&cycles=1" },
-    { "name": "bottle_caribbean_rum_2", "type": "short", "url": "http://localhost/?q=bottle_caribbean_rum&cycles=2" },
-    { "name": "bottle_caribbean_rum_3", "type": "short", "url": "http://localhost/?q=bottle_caribbean_rum&cycles=3" },
-    { "name": "bottle_caribbean_rum_4", "type": "short", "url": "http://localhost/?q=bottle_caribbean_rum&cycles=4" },
-    { "name": "bottle_caribbean_rum_5", "type": "short", "url": "http://localhost/?q=bottle_caribbean_rum&cycles=5" },
-    { "name": "bottle_caribbean_rum_6", "type": "short", "url": "http://localhost/?q=bottle_caribbean_rum&cycles=6" },
-    { "name": "bottle_cognac_bottle_1", "type": "short", "url": "http://localhost/?q=bottle_cognac_bottle&cycles=1" },
-    { "name": "bottle_cognac_bottle_2", "type": "short", "url": "http://localhost/?q=bottle_cognac_bottle&cycles=2" },
-    { "name": "bottle_cognac_bottle_3", "type": "short", "url": "http://localhost/?q=bottle_cognac_bottle&cycles=3" },
-    { "name": "bottle_cognac_bottle_4", "type": "short", "url": "http://localhost/?q=bottle_cognac_bottle&cycles=4" },
-    { "name": "bottle_cognac_bottle_5", "type": "short", "url": "http://localhost/?q=bottle_cognac_bottle&cycles=5" },
-    { "name": "bottle_cognac_bottle_6", "type": "short", "url": "http://localhost/?q=bottle_cognac_bottle&cycles=6" },
-    { "name": "bottle_gran_corazon_madeira_1", "type": "short", "url": "http://localhost/?q=bottle_gran_corazon_madeira&cycles=1" },
-    { "name": "bottle_gran_corazon_madeira_2", "type": "short", "url": "http://localhost/?q=bottle_gran_corazon_madeira&cycles=2" },
-    { "name": "bottle_gran_corazon_madeira_3", "type": "short", "url": "http://localhost/?q=bottle_gran_corazon_madeira&cycles=3" },
-    { "name": "bottle_gran_corazon_madeira_4", "type": "short", "url": "http://localhost/?q=bottle_gran_corazon_madeira&cycles=4" },
-    { "name": "bottle_gran_corazon_madeira_5", "type": "short", "url": "http://localhost/?q=bottle_gran_corazon_madeira&cycles=5" },
-    { "name": "bottle_gran_corazon_madeira_6", "type": "short", "url": "http://localhost/?q=bottle_gran_corazon_madeira&cycles=6" },
-    { "name": "bottle_irish_whiskey_1", "type": "short", "url": "http://localhost/?q=bottle_irish_whiskey&cycles=1" },
-    { "name": "bottle_irish_whiskey_2", "type": "short", "url": "http://localhost/?q=bottle_irish_whiskey&cycles=2" },
-    { "name": "bottle_irish_whiskey_3", "type": "short", "url": "http://localhost/?q=bottle_irish_whiskey&cycles=3" },
-    { "name": "bottle_irish_whiskey_4", "type": "short", "url": "http://localhost/?q=bottle_irish_whiskey&cycles=4" },
-    { "name": "bottle_irish_whiskey_5", "type": "short", "url": "http://localhost/?q=bottle_irish_whiskey&cycles=5" },
-    { "name": "bottle_irish_whiskey_6", "type": "short", "url": "http://localhost/?q=bottle_irish_whiskey&cycles=6" },
-    { "name": "bottle_london_dry_gin_1", "type": "short", "url": "http://localhost/?q=bottle_london_dry_gin&cycles=1" },
-    { "name": "bottle_london_dry_gin_2", "type": "short", "url": "http://localhost/?q=bottle_london_dry_gin&cycles=2" },
-    { "name": "bottle_london_dry_gin_3", "type": "short", "url": "http://localhost/?q=bottle_london_dry_gin&cycles=3" },
-    { "name": "bottle_london_dry_gin_4", "type": "short", "url": "http://localhost/?q=bottle_london_dry_gin&cycles=4" },
-    { "name": "bottle_london_dry_gin_5", "type": "short", "url": "http://localhost/?q=bottle_london_dry_gin&cycles=5" },
-    { "name": "bottle_london_dry_gin_6", "type": "short", "url": "http://localhost/?q=bottle_london_dry_gin&cycles=6" },
-    { "name": "bottle_old_tom_gin_1", "type": "short", "url": "http://localhost/?q=bottle_old_tom_gin&cycles=1" },
-    { "name": "bottle_old_tom_gin_2", "type": "short", "url": "http://localhost/?q=bottle_old_tom_gin&cycles=2" },
-    { "name": "bottle_old_tom_gin_3", "type": "short", "url": "http://localhost/?q=bottle_old_tom_gin&cycles=3" },
-    { "name": "bottle_old_tom_gin_4", "type": "short", "url": "http://localhost/?q=bottle_old_tom_gin&cycles=4" },
-    { "name": "bottle_old_tom_gin_5", "type": "short", "url": "http://localhost/?q=bottle_old_tom_gin&cycles=5" },
-    { "name": "bottle_old_tom_gin_6", "type": "short", "url": "http://localhost/?q=bottle_old_tom_gin&cycles=6" },
-    { "name": "bottle_scotch_whisky_1", "type": "short", "url": "http://localhost/?q=bottle_scotch_whisky&cycles=1" },
-    { "name": "bottle_scotch_whisky_2", "type": "short", "url": "http://localhost/?q=bottle_scotch_whisky&cycles=2" },
-    { "name": "bottle_scotch_whisky_3", "type": "short", "url": "http://localhost/?q=bottle_scotch_whisky&cycles=3" },
-    { "name": "bottle_scotch_whisky_4", "type": "short", "url": "http://localhost/?q=bottle_scotch_whisky&cycles=4" },
-    { "name": "bottle_scotch_whisky_5", "type": "short", "url": "http://localhost/?q=bottle_scotch_whisky&cycles=5" },
-    { "name": "bottle_scotch_whisky_6", "type": "short", "url": "http://localhost/?q=bottle_scotch_whisky&cycles=6" },
-    { "name": "bottle_tennesee_whiskey_1", "type": "short", "url": "http://localhost/?q=bottle_tennesee_whiskey&cycles=1" },
-    { "name": "bottle_tennesee_whiskey_2", "type": "short", "url": "http://localhost/?q=bottle_tennesee_whiskey&cycles=2" },
-    { "name": "bottle_tennesee_whiskey_3", "type": "short", "url": "http://localhost/?q=bottle_tennesee_whiskey&cycles=3" },
-    { "name": "bottle_tennesee_whiskey_4", "type": "short", "url": "http://localhost/?q=bottle_tennesee_whiskey&cycles=4" },
-    { "name": "bottle_tennesee_whiskey_5", "type": "short", "url": "http://localhost/?q=bottle_tennesee_whiskey&cycles=5" },
-    { "name": "bottle_tennesee_whiskey_6", "type": "short", "url": "http://localhost/?q=bottle_tennesee_whiskey&cycles=6" },
-    { "name": "bracelet_abello_ruby_bangle_1", "type": "short", "url": "http://localhost/?q=bracelet_abello_ruby_bangle&cycles=1" },
-    { "name": "bracelet_abello_ruby_bangle_3", "type": "short", "url": "http://localhost/?q=bracelet_abello_ruby_bangle&cycles=3" },
-    { "name": "bracelet_abello_ruby_bangle_5", "type": "short", "url": "http://localhost/?q=bracelet_abello_ruby_bangle&cycles=5" },
-    { "name": "bracelet_durant_pearl_1", "type": "short", "url": "http://localhost/?q=bracelet_durant_pearl&cycles=1" },
-    { "name": "bracelet_durant_pearl_2", "type": "short", "url": "http://localhost/?q=bracelet_durant_pearl&cycles=2" },
-    { "name": "bracelet_durant_pearl_3", "type": "short", "url": "http://localhost/?q=bracelet_durant_pearl&cycles=3" },
-    { "name": "bracelet_durant_pearl_6", "type": "short", "url": "http://localhost/?q=bracelet_durant_pearl&cycles=6" },
-    { "name": "bracelet_elliston_carved_5", "type": "short", "url": "http://localhost/?q=bracelet_elliston_carved&cycles=5" },
-    { "name": "bracelet_greco_sapphire_1", "type": "short", "url": "http://localhost/?q=bracelet_greco_sapphire&cycles=1" },
-    { "name": "bracelet_greco_sapphire_5", "type": "short", "url": "http://localhost/?q=bracelet_greco_sapphire&cycles=5" },
-    { "name": "bracelet_hajnal_garnet_bangle_1", "type": "short", "url": "http://localhost/?q=bracelet_hajnal_garnet_bangle&cycles=1" },
-    { "name": "bracelet_hajnal_garnet_bangle_3", "type": "short", "url": "http://localhost/?q=bracelet_hajnal_garnet_bangle&cycles=3" },
-    { "name": "bracelet_helena_sapphire_1", "type": "short", "url": "http://localhost/?q=bracelet_helena_sapphire&cycles=1" },
-    { "name": "bracelet_helena_sapphire_2", "type": "short", "url": "http://localhost/?q=bracelet_helena_sapphire&cycles=2" },
-    { "name": "bracelet_helena_sapphire_3", "type": "short", "url": "http://localhost/?q=bracelet_helena_sapphire&cycles=3" },
-    { "name": "bracelet_infanta_turquoise_1", "type": "short", "url": "http://localhost/?q=bracelet_infanta_turquoise&cycles=1" },
-    { "name": "bracelet_ojeda_rose_gold_1", "type": "short", "url": "http://localhost/?q=bracelet_ojeda_rose_gold&cycles=1" },
-    { "name": "bracelet_ojeda_rose_gold_2", "type": "short", "url": "http://localhost/?q=bracelet_ojeda_rose_gold&cycles=2" },
-    { "name": "bracelet_ojeda_rose_gold_6", "type": "short", "url": "http://localhost/?q=bracelet_ojeda_rose_gold&cycles=6" },
-    { "name": "cups_ace_1", "type": "short", "url": "http://localhost/?q=cups_ace&cycles=1" },
-    { "name": "cups_ace_2", "type": "short", "url": "http://localhost/?q=cups_ace&cycles=2" },
-    { "name": "cups_ace_3", "type": "short", "url": "http://localhost/?q=cups_ace&cycles=3" },
-    { "name": "cups_ace_4", "type": "short", "url": "http://localhost/?q=cups_ace&cycles=4" },
-    { "name": "cups_ace_5", "type": "short", "url": "http://localhost/?q=cups_ace&cycles=5" },
-    { "name": "cups_ace_6", "type": "short", "url": "http://localhost/?q=cups_ace&cycles=6" },
-    { "name": "cups_eight_1", "type": "short", "url": "http://localhost/?q=cups_eight&cycles=1" },
-    { "name": "cups_eight_2", "type": "short", "url": "http://localhost/?q=cups_eight&cycles=2" },
-    { "name": "cups_eight_3", "type": "short", "url": "http://localhost/?q=cups_eight&cycles=3" },
-    { "name": "cups_eight_4", "type": "short", "url": "http://localhost/?q=cups_eight&cycles=4" },
-    { "name": "cups_eight_5", "type": "short", "url": "http://localhost/?q=cups_eight&cycles=5" },
-    { "name": "cups_eight_6", "type": "short", "url": "http://localhost/?q=cups_eight&cycles=6" },
-    { "name": "cups_five_1", "type": "short", "url": "http://localhost/?q=cups_five&cycles=1" },
-    { "name": "cups_five_2", "type": "short", "url": "http://localhost/?q=cups_five&cycles=2" },
-    { "name": "cups_five_3", "type": "short", "url": "http://localhost/?q=cups_five&cycles=3" },
-    { "name": "cups_five_4", "type": "short", "url": "http://localhost/?q=cups_five&cycles=4" },
-    { "name": "cups_five_5", "type": "short", "url": "http://localhost/?q=cups_five&cycles=5" },
-    { "name": "cups_five_6", "type": "short", "url": "http://localhost/?q=cups_five&cycles=6" },
-    { "name": "cups_four_1", "type": "short", "url": "http://localhost/?q=cups_four&cycles=1" },
-    { "name": "cups_four_2", "type": "short", "url": "http://localhost/?q=cups_four&cycles=2" },
-    { "name": "cups_four_3", "type": "short", "url": "http://localhost/?q=cups_four&cycles=3" },
-    { "name": "cups_four_4", "type": "short", "url": "http://localhost/?q=cups_four&cycles=4" },
-    { "name": "cups_four_5", "type": "short", "url": "http://localhost/?q=cups_four&cycles=5" },
-    { "name": "cups_four_6", "type": "short", "url": "http://localhost/?q=cups_four&cycles=6" },
-    { "name": "cups_king_1", "type": "short", "url": "http://localhost/?q=cups_king&cycles=1" },
-    { "name": "cups_king_2", "type": "short", "url": "http://localhost/?q=cups_king&cycles=2" },
-    { "name": "cups_king_3", "type": "short", "url": "http://localhost/?q=cups_king&cycles=3" },
-    { "name": "cups_king_4", "type": "short", "url": "http://localhost/?q=cups_king&cycles=4" },
-    { "name": "cups_king_5", "type": "short", "url": "http://localhost/?q=cups_king&cycles=5" },
-    { "name": "cups_king_6", "type": "short", "url": "http://localhost/?q=cups_king&cycles=6" },
-    { "name": "cups_knight_1", "type": "short", "url": "http://localhost/?q=cups_knight&cycles=1" },
-    { "name": "cups_knight_2", "type": "short", "url": "http://localhost/?q=cups_knight&cycles=2" },
-    { "name": "cups_knight_3", "type": "short", "url": "http://localhost/?q=cups_knight&cycles=3" },
-    { "name": "cups_knight_4", "type": "short", "url": "http://localhost/?q=cups_knight&cycles=4" },
-    { "name": "cups_knight_5", "type": "short", "url": "http://localhost/?q=cups_knight&cycles=5" },
-    { "name": "cups_knight_6", "type": "short", "url": "http://localhost/?q=cups_knight&cycles=6" },
-    { "name": "cups_nine_1", "type": "short", "url": "http://localhost/?q=cups_nine&cycles=1" },
-    { "name": "cups_nine_2", "type": "short", "url": "http://localhost/?q=cups_nine&cycles=2" },
-    { "name": "cups_nine_3", "type": "short", "url": "http://localhost/?q=cups_nine&cycles=3" },
-    { "name": "cups_nine_4", "type": "short", "url": "http://localhost/?q=cups_nine&cycles=4" },
-    { "name": "cups_nine_5", "type": "short", "url": "http://localhost/?q=cups_nine&cycles=5" },
-    { "name": "cups_nine_6", "type": "short", "url": "http://localhost/?q=cups_nine&cycles=6" },
-    { "name": "cups_page_1", "type": "short", "url": "http://localhost/?q=cups_page&cycles=1" },
-    { "name": "cups_page_2", "type": "short", "url": "http://localhost/?q=cups_page&cycles=2" },
-    { "name": "cups_page_3", "type": "short", "url": "http://localhost/?q=cups_page&cycles=3" },
-    { "name": "cups_page_4", "type": "short", "url": "http://localhost/?q=cups_page&cycles=4" },
-    { "name": "cups_page_5", "type": "short", "url": "http://localhost/?q=cups_page&cycles=5" },
-    { "name": "cups_page_6", "type": "short", "url": "http://localhost/?q=cups_page&cycles=6" },
-    { "name": "cups_queen_1", "type": "short", "url": "http://localhost/?q=cups_queen&cycles=1" },
-    { "name": "cups_queen_2", "type": "short", "url": "http://localhost/?q=cups_queen&cycles=2" },
-    { "name": "cups_queen_3", "type": "short", "url": "http://localhost/?q=cups_queen&cycles=3" },
-    { "name": "cups_queen_4", "type": "short", "url": "http://localhost/?q=cups_queen&cycles=4" },
-    { "name": "cups_queen_5", "type": "short", "url": "http://localhost/?q=cups_queen&cycles=5" },
-    { "name": "cups_queen_6", "type": "short", "url": "http://localhost/?q=cups_queen&cycles=6" },
-    { "name": "cups_seven_1", "type": "short", "url": "http://localhost/?q=cups_seven&cycles=1" },
-    { "name": "cups_seven_2", "type": "short", "url": "http://localhost/?q=cups_seven&cycles=2" },
-    { "name": "cups_seven_3", "type": "short", "url": "http://localhost/?q=cups_seven&cycles=3" },
-    { "name": "cups_seven_4", "type": "short", "url": "http://localhost/?q=cups_seven&cycles=4" },
-    { "name": "cups_seven_5", "type": "short", "url": "http://localhost/?q=cups_seven&cycles=5" },
-    { "name": "cups_seven_6", "type": "short", "url": "http://localhost/?q=cups_seven&cycles=6" },
-    { "name": "cups_six_1", "type": "short", "url": "http://localhost/?q=cups_six&cycles=1" },
-    { "name": "cups_six_2", "type": "short", "url": "http://localhost/?q=cups_six&cycles=2" },
-    { "name": "cups_six_3", "type": "short", "url": "http://localhost/?q=cups_six&cycles=3" },
-    { "name": "cups_six_4", "type": "short", "url": "http://localhost/?q=cups_six&cycles=4" },
-    { "name": "cups_six_5", "type": "short", "url": "http://localhost/?q=cups_six&cycles=5" },
-    { "name": "cups_six_6", "type": "short", "url": "http://localhost/?q=cups_six&cycles=6" },
-    { "name": "cups_ten_1", "type": "short", "url": "http://localhost/?q=cups_ten&cycles=1" },
-    { "name": "cups_ten_2", "type": "short", "url": "http://localhost/?q=cups_ten&cycles=2" },
-    { "name": "cups_ten_3", "type": "short", "url": "http://localhost/?q=cups_ten&cycles=3" },
-    { "name": "cups_ten_4", "type": "short", "url": "http://localhost/?q=cups_ten&cycles=4" },
-    { "name": "cups_ten_5", "type": "short", "url": "http://localhost/?q=cups_ten&cycles=5" },
-    { "name": "cups_ten_6", "type": "short", "url": "http://localhost/?q=cups_ten&cycles=6" },
-    { "name": "cups_three_1", "type": "short", "url": "http://localhost/?q=cups_three&cycles=1" },
-    { "name": "cups_three_2", "type": "short", "url": "http://localhost/?q=cups_three&cycles=2" },
-    { "name": "cups_three_3", "type": "short", "url": "http://localhost/?q=cups_three&cycles=3" },
-    { "name": "cups_three_4", "type": "short", "url": "http://localhost/?q=cups_three&cycles=4" },
-    { "name": "cups_three_5", "type": "short", "url": "http://localhost/?q=cups_three&cycles=5" },
-    { "name": "cups_three_6", "type": "short", "url": "http://localhost/?q=cups_three&cycles=6" },
-    { "name": "cups_two_1", "type": "short", "url": "http://localhost/?q=cups_two&cycles=1" },
-    { "name": "cups_two_2", "type": "short", "url": "http://localhost/?q=cups_two&cycles=2" },
-    { "name": "cups_two_3", "type": "short", "url": "http://localhost/?q=cups_two&cycles=3" },
-    { "name": "cups_two_4", "type": "short", "url": "http://localhost/?q=cups_two&cycles=4" },
-    { "name": "cups_two_5", "type": "short", "url": "http://localhost/?q=cups_two&cycles=5" },
-    { "name": "cups_two_6", "type": "short", "url": "http://localhost/?q=cups_two&cycles=6" },
-    { "name": "earring_calumet_turquoise_3", "type": "short", "url": "http://localhost/?q=earring_calumet_turquoise&cycles=3" },
-    { "name": "earring_calumet_turquoise_4", "type": "short", "url": "http://localhost/?q=earring_calumet_turquoise&cycles=4" },
-    { "name": "earring_duchess_emerald_2", "type": "short", "url": "http://localhost/?q=earring_duchess_emerald&cycles=2" },
-    { "name": "earring_harford_garnet_3", "type": "short", "url": "http://localhost/?q=earring_harford_garnet&cycles=3" },
-    { "name": "earring_josephine_pearl_1", "type": "short", "url": "http://localhost/?q=earring_josephine_pearl&cycles=1" },
-    { "name": "earring_josephine_pearl_5", "type": "short", "url": "http://localhost/?q=earring_josephine_pearl&cycles=5" },
-    { "name": "earring_orchidee_diamond_2", "type": "short", "url": "http://localhost/?q=earring_orchidee_diamond&cycles=2" },
-    { "name": "egg_duck_1", "type": "short", "url": "http://localhost/?q=egg_duck&cycles=1" },
-    { "name": "egg_duck_2", "type": "short", "url": "http://localhost/?q=egg_duck&cycles=2" },
-    { "name": "egg_duck_3", "type": "short", "url": "http://localhost/?q=egg_duck&cycles=3" },
-    { "name": "egg_duck_4", "type": "short", "url": "http://localhost/?q=egg_duck&cycles=4" },
-    { "name": "egg_duck_5", "type": "short", "url": "http://localhost/?q=egg_duck&cycles=5" },
-    { "name": "egg_duck_6", "type": "short", "url": "http://localhost/?q=egg_duck&cycles=6" },
-    { "name": "egg_eagle_1", "type": "long", "url": "http://localhost/?q=egg_eagle&cycles=1" },
-    { "name": "egg_eagle_2", "type": "long", "url": "http://localhost/?q=egg_eagle&cycles=2" },
-    { "name": "egg_eagle_3", "type": "long", "url": "http://localhost/?q=egg_eagle&cycles=3" },
-    { "name": "egg_eagle_4", "type": "long", "url": "http://localhost/?q=egg_eagle&cycles=4" },
-    { "name": "egg_eagle_5", "type": "long", "url": "http://localhost/?q=egg_eagle&cycles=5" },
-    { "name": "egg_eagle_6", "type": "long", "url": "http://localhost/?q=egg_eagle&cycles=6" },
-    { "name": "egg_egret_1", "type": "short", "url": "http://localhost/?q=egg_egret&cycles=1" },
-    { "name": "egg_egret_2", "type": "short", "url": "http://localhost/?q=egg_egret&cycles=2" },
-    { "name": "egg_egret_3", "type": "short", "url": "http://localhost/?q=egg_egret&cycles=3" },
-    { "name": "egg_egret_4", "type": "short", "url": "http://localhost/?q=egg_egret&cycles=4" },
-    { "name": "egg_egret_5", "type": "short", "url": "http://localhost/?q=egg_egret&cycles=5" },
-    { "name": "egg_egret_6", "type": "short", "url": "http://localhost/?q=egg_egret&cycles=6" },
-    { "name": "egg_goose_1", "type": "short", "url": "http://localhost/?q=egg_goose&cycles=1" },
-    { "name": "egg_goose_2", "type": "short", "url": "http://localhost/?q=egg_goose&cycles=2" },
-    { "name": "egg_goose_3", "type": "short", "url": "http://localhost/?q=egg_goose&cycles=3" },
-    { "name": "egg_goose_4", "type": "short", "url": "http://localhost/?q=egg_goose&cycles=4" },
-    { "name": "egg_goose_5", "type": "short", "url": "http://localhost/?q=egg_goose&cycles=5" },
-    { "name": "egg_goose_6", "type": "short", "url": "http://localhost/?q=egg_goose&cycles=6" },
-    { "name": "egg_hawk_1", "type": "long", "url": "http://localhost/?q=egg_hawk&cycles=1" },
-    { "name": "egg_hawk_2", "type": "long", "url": "http://localhost/?q=egg_hawk&cycles=2" },
-    { "name": "egg_hawk_3", "type": "long", "url": "http://localhost/?q=egg_hawk&cycles=3" },
-    { "name": "egg_hawk_4", "type": "long", "url": "http://localhost/?q=egg_hawk&cycles=4" },
-    { "name": "egg_hawk_5", "type": "long", "url": "http://localhost/?q=egg_hawk&cycles=5" },
-    { "name": "egg_hawk_6", "type": "long", "url": "http://localhost/?q=egg_hawk&cycles=6" },
-    { "name": "egg_heron_1", "type": "short", "url": "http://localhost/?q=egg_heron&cycles=1" },
-    { "name": "egg_heron_2", "type": "short", "url": "http://localhost/?q=egg_heron&cycles=2" },
-    { "name": "egg_heron_3", "type": "short", "url": "http://localhost/?q=egg_heron&cycles=3" },
-    { "name": "egg_heron_4", "type": "short", "url": "http://localhost/?q=egg_heron&cycles=4" },
-    { "name": "egg_heron_5", "type": "short", "url": "http://localhost/?q=egg_heron&cycles=5" },
-    { "name": "egg_heron_6", "type": "short", "url": "http://localhost/?q=egg_heron&cycles=6" },
-    { "name": "egg_loon_1", "type": "short", "url": "http://localhost/?q=egg_loon&cycles=1" },
-    { "name": "egg_loon_2", "type": "short", "url": "http://localhost/?q=egg_loon&cycles=2" },
-    { "name": "egg_loon_3", "type": "short", "url": "http://localhost/?q=egg_loon&cycles=3" },
-    { "name": "egg_loon_4", "type": "short", "url": "http://localhost/?q=egg_loon&cycles=4" },
-    { "name": "egg_loon_5", "type": "short", "url": "http://localhost/?q=egg_loon&cycles=5" },
-    { "name": "egg_loon_6", "type": "short", "url": "http://localhost/?q=egg_loon&cycles=6" },
-    { "name": "egg_spoonbill_1", "type": "short", "url": "http://localhost/?q=egg_spoonbill&cycles=1" },
-    { "name": "egg_spoonbill_2", "type": "short", "url": "http://localhost/?q=egg_spoonbill&cycles=2" },
-    { "name": "egg_spoonbill_3", "type": "short", "url": "http://localhost/?q=egg_spoonbill&cycles=3" },
-    { "name": "egg_spoonbill_4", "type": "short", "url": "http://localhost/?q=egg_spoonbill&cycles=4" },
-    { "name": "egg_spoonbill_5", "type": "short", "url": "http://localhost/?q=egg_spoonbill&cycles=5" },
-    { "name": "egg_spoonbill_6", "type": "short", "url": "http://localhost/?q=egg_spoonbill&cycles=6" },
-    { "name": "egg_vulture_1", "type": "short", "url": "http://localhost/?q=egg_vulture&cycles=1" },
-    { "name": "egg_vulture_2", "type": "short", "url": "http://localhost/?q=egg_vulture&cycles=2" },
-    { "name": "egg_vulture_3", "type": "short", "url": "http://localhost/?q=egg_vulture&cycles=3" },
-    { "name": "egg_vulture_4", "type": "short", "url": "http://localhost/?q=egg_vulture&cycles=4" },
-    { "name": "egg_vulture_5", "type": "short", "url": "http://localhost/?q=egg_vulture&cycles=5" },
-    { "name": "egg_vulture_6", "type": "short", "url": "http://localhost/?q=egg_vulture&cycles=6" },
-    { "name": "flower_agarita_1", "type": "long", "url": "http://localhost/?q=flower_agarita&cycles=1" },
-    { "name": "flower_agarita_2", "type": "long", "url": "http://localhost/?q=flower_agarita&cycles=2" },
-    { "name": "flower_agarita_3", "type": "long", "url": "http://localhost/?q=flower_agarita&cycles=3" },
-    { "name": "flower_agarita_4", "type": "long", "url": "http://localhost/?q=flower_agarita&cycles=4" },
-    { "name": "flower_agarita_5", "type": "long", "url": "http://localhost/?q=flower_agarita&cycles=5" },
-    { "name": "flower_agarita_6", "type": "long", "url": "http://localhost/?q=flower_agarita&cycles=6" },
-    { "name": "flower_bitterweed_1", "type": "long", "url": "http://localhost/?q=flower_bitterweed&cycles=1" },
-    { "name": "flower_bitterweed_2", "type": "long", "url": "http://localhost/?q=flower_bitterweed&cycles=2" },
-    { "name": "flower_bitterweed_3", "type": "long", "url": "http://localhost/?q=flower_bitterweed&cycles=3" },
-    { "name": "flower_bitterweed_4", "type": "long", "url": "http://localhost/?q=flower_bitterweed&cycles=4" },
-    { "name": "flower_bitterweed_5", "type": "long", "url": "http://localhost/?q=flower_bitterweed&cycles=5" },
-    { "name": "flower_bitterweed_6", "type": "long", "url": "http://localhost/?q=flower_bitterweed&cycles=6" },
-    { "name": "flower_blood_flower_1", "type": "long", "url": "http://localhost/?q=flower_blood_flower&cycles=1" },
-    { "name": "flower_blood_flower_2", "type": "long", "url": "http://localhost/?q=flower_blood_flower&cycles=2" },
-    { "name": "flower_blood_flower_3", "type": "long", "url": "http://localhost/?q=flower_blood_flower&cycles=3" },
-    { "name": "flower_blood_flower_4", "type": "long", "url": "http://localhost/?q=flower_blood_flower&cycles=4" },
-    { "name": "flower_blood_flower_5", "type": "long", "url": "http://localhost/?q=flower_blood_flower&cycles=5" },
-    { "name": "flower_blood_flower_6", "type": "long", "url": "http://localhost/?q=flower_blood_flower&cycles=6" },
-    { "name": "flower_cardinal_1", "type": "long", "url": "http://localhost/?q=flower_cardinal&cycles=1" },
-    { "name": "flower_cardinal_2", "type": "long", "url": "http://localhost/?q=flower_cardinal&cycles=2" },
-    { "name": "flower_cardinal_3", "type": "long", "url": "http://localhost/?q=flower_cardinal&cycles=3" },
-    { "name": "flower_cardinal_4", "type": "long", "url": "http://localhost/?q=flower_cardinal&cycles=4" },
-    { "name": "flower_cardinal_5", "type": "long", "url": "http://localhost/?q=flower_cardinal&cycles=5" },
-    { "name": "flower_cardinal_6", "type": "long", "url": "http://localhost/?q=flower_cardinal&cycles=6" },
-    { "name": "flower_chocolate_daisy_1", "type": "long", "url": "http://localhost/?q=flower_chocolate_daisy&cycles=1" },
-    { "name": "flower_chocolate_daisy_2", "type": "long", "url": "http://localhost/?q=flower_chocolate_daisy&cycles=2" },
-    { "name": "flower_chocolate_daisy_3", "type": "long", "url": "http://localhost/?q=flower_chocolate_daisy&cycles=3" },
-    { "name": "flower_chocolate_daisy_4", "type": "long", "url": "http://localhost/?q=flower_chocolate_daisy&cycles=4" },
-    { "name": "flower_chocolate_daisy_5", "type": "long", "url": "http://localhost/?q=flower_chocolate_daisy&cycles=5" },
-    { "name": "flower_chocolate_daisy_6", "type": "long", "url": "http://localhost/?q=flower_chocolate_daisy&cycles=6" },
-    { "name": "flower_creek_plum_1", "type": "long", "url": "http://localhost/?q=flower_creek_plum&cycles=1" },
-    { "name": "flower_creek_plum_2", "type": "long", "url": "http://localhost/?q=flower_creek_plum&cycles=2" },
-    { "name": "flower_creek_plum_3", "type": "long", "url": "http://localhost/?q=flower_creek_plum&cycles=3" },
-    { "name": "flower_creek_plum_4", "type": "long", "url": "http://localhost/?q=flower_creek_plum&cycles=4" },
-    { "name": "flower_creek_plum_5", "type": "long", "url": "http://localhost/?q=flower_creek_plum&cycles=5" },
-    { "name": "flower_creek_plum_6", "type": "long", "url": "http://localhost/?q=flower_creek_plum&cycles=6" },
-    { "name": "flower_texas_bluebonnet_1", "type": "long", "url": "http://localhost/?q=flower_texas_bluebonnet&cycles=1" },
-    { "name": "flower_texas_bluebonnet_2", "type": "long", "url": "http://localhost/?q=flower_texas_bluebonnet&cycles=2" },
-    { "name": "flower_texas_bluebonnet_3", "type": "long", "url": "http://localhost/?q=flower_texas_bluebonnet&cycles=3" },
-    { "name": "flower_texas_bluebonnet_4", "type": "long", "url": "http://localhost/?q=flower_texas_bluebonnet&cycles=4" },
-    { "name": "flower_texas_bluebonnet_5", "type": "long", "url": "http://localhost/?q=flower_texas_bluebonnet&cycles=5" },
-    { "name": "flower_texas_bluebonnet_6", "type": "long", "url": "http://localhost/?q=flower_texas_bluebonnet&cycles=6" },
-    { "name": "flower_wild_rhubarb_1", "type": "long", "url": "http://localhost/?q=flower_wild_rhubarb&cycles=1" },
-    { "name": "flower_wild_rhubarb_2", "type": "long", "url": "http://localhost/?q=flower_wild_rhubarb&cycles=2" },
-    { "name": "flower_wild_rhubarb_3", "type": "long", "url": "http://localhost/?q=flower_wild_rhubarb&cycles=3" },
-    { "name": "flower_wild_rhubarb_4", "type": "long", "url": "http://localhost/?q=flower_wild_rhubarb&cycles=4" },
-    { "name": "flower_wild_rhubarb_5", "type": "long", "url": "http://localhost/?q=flower_wild_rhubarb&cycles=5" },
-    { "name": "flower_wild_rhubarb_6", "type": "long", "url": "http://localhost/?q=flower_wild_rhubarb&cycles=6" },
-    { "name": "flower_wisteria_1", "type": "long", "url": "http://localhost/?q=flower_wisteria&cycles=1" },
-    { "name": "flower_wisteria_2", "type": "long", "url": "http://localhost/?q=flower_wisteria&cycles=2" },
-    { "name": "flower_wisteria_3", "type": "long", "url": "http://localhost/?q=flower_wisteria&cycles=3" },
-    { "name": "flower_wisteria_4", "type": "long", "url": "http://localhost/?q=flower_wisteria&cycles=4" },
-    { "name": "flower_wisteria_5", "type": "long", "url": "http://localhost/?q=flower_wisteria&cycles=5" },
-    { "name": "flower_wisteria_6", "type": "long", "url": "http://localhost/?q=flower_wisteria&cycles=6" },
-    { "name": "heirlooms_boar_bristle_brush_1", "type": "short", "url": "http://localhost/?q=heirlooms_boar_bristle_brush&cycles=1" },
-    { "name": "heirlooms_boar_bristle_brush_2", "type": "short", "url": "http://localhost/?q=heirlooms_boar_bristle_brush&cycles=2" },
-    { "name": "heirlooms_boar_bristle_brush_3", "type": "short", "url": "http://localhost/?q=heirlooms_boar_bristle_brush&cycles=3" },
-    { "name": "heirlooms_boar_bristle_brush_4", "type": "short", "url": "http://localhost/?q=heirlooms_boar_bristle_brush&cycles=4" },
-    { "name": "heirlooms_boar_bristle_brush_5", "type": "short", "url": "http://localhost/?q=heirlooms_boar_bristle_brush&cycles=5" },
-    { "name": "heirlooms_boar_bristle_brush_6", "type": "short", "url": "http://localhost/?q=heirlooms_boar_bristle_brush&cycles=6" },
-    { "name": "heirlooms_boxwood_comb_1", "type": "short", "url": "http://localhost/?q=heirlooms_boxwood_comb&cycles=1" },
-    { "name": "heirlooms_boxwood_comb_2", "type": "short", "url": "http://localhost/?q=heirlooms_boxwood_comb&cycles=2" },
-    { "name": "heirlooms_boxwood_comb_3", "type": "short", "url": "http://localhost/?q=heirlooms_boxwood_comb&cycles=3" },
-    { "name": "heirlooms_boxwood_comb_4", "type": "short", "url": "http://localhost/?q=heirlooms_boxwood_comb&cycles=4" },
-    { "name": "heirlooms_boxwood_comb_5", "type": "short", "url": "http://localhost/?q=heirlooms_boxwood_comb&cycles=5" },
-    { "name": "heirlooms_boxwood_comb_6", "type": "short", "url": "http://localhost/?q=heirlooms_boxwood_comb&cycles=6" },
-    { "name": "heirlooms_cherrywood_comb_1", "type": "short", "url": "http://localhost/?q=heirlooms_cherrywood_comb&cycles=1" },
-    { "name": "heirlooms_cherrywood_comb_2", "type": "short", "url": "http://localhost/?q=heirlooms_cherrywood_comb&cycles=2" },
-    { "name": "heirlooms_cherrywood_comb_3", "type": "short", "url": "http://localhost/?q=heirlooms_cherrywood_comb&cycles=3" },
-    { "name": "heirlooms_cherrywood_comb_4", "type": "short", "url": "http://localhost/?q=heirlooms_cherrywood_comb&cycles=4" },
-    { "name": "heirlooms_cherrywood_comb_5", "type": "short", "url": "http://localhost/?q=heirlooms_cherrywood_comb&cycles=5" },
-    { "name": "heirlooms_cherrywood_comb_6", "type": "short", "url": "http://localhost/?q=heirlooms_cherrywood_comb&cycles=6" },
-    { "name": "heirlooms_ebony_hairbrush_1", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairbrush&cycles=1" },
-    { "name": "heirlooms_ebony_hairbrush_2", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairbrush&cycles=2" },
-    { "name": "heirlooms_ebony_hairbrush_3", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairbrush&cycles=3" },
-    { "name": "heirlooms_ebony_hairbrush_4", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairbrush&cycles=4" },
-    { "name": "heirlooms_ebony_hairbrush_5", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairbrush&cycles=5" },
-    { "name": "heirlooms_ebony_hairbrush_6", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairbrush&cycles=6" },
-    { "name": "heirlooms_ebony_hairpin_3", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairpin&cycles=3" },
-    { "name": "heirlooms_ebony_hairpin_5", "type": "short", "url": "http://localhost/?q=heirlooms_ebony_hairpin&cycles=5" },
-    { "name": "heirlooms_goat_hair_brush_1", "type": "short", "url": "http://localhost/?q=heirlooms_goat_hair_brush&cycles=1" },
-    { "name": "heirlooms_goat_hair_brush_2", "type": "short", "url": "http://localhost/?q=heirlooms_goat_hair_brush&cycles=2" },
-    { "name": "heirlooms_goat_hair_brush_3", "type": "short", "url": "http://localhost/?q=heirlooms_goat_hair_brush&cycles=3" },
-    { "name": "heirlooms_goat_hair_brush_4", "type": "short", "url": "http://localhost/?q=heirlooms_goat_hair_brush&cycles=4" },
-    { "name": "heirlooms_goat_hair_brush_5", "type": "short", "url": "http://localhost/?q=heirlooms_goat_hair_brush&cycles=5" },
-    { "name": "heirlooms_goat_hair_brush_6", "type": "short", "url": "http://localhost/?q=heirlooms_goat_hair_brush&cycles=6" },
-    { "name": "heirlooms_horse_hair_brush_1", "type": "short", "url": "http://localhost/?q=heirlooms_horse_hair_brush&cycles=1" },
-    { "name": "heirlooms_horse_hair_brush_2", "type": "short", "url": "http://localhost/?q=heirlooms_horse_hair_brush&cycles=2" },
-    { "name": "heirlooms_horse_hair_brush_3", "type": "short", "url": "http://localhost/?q=heirlooms_horse_hair_brush&cycles=3" },
-    { "name": "heirlooms_horse_hair_brush_4", "type": "short", "url": "http://localhost/?q=heirlooms_horse_hair_brush&cycles=4" },
-    { "name": "heirlooms_horse_hair_brush_5", "type": "short", "url": "http://localhost/?q=heirlooms_horse_hair_brush&cycles=5" },
-    { "name": "heirlooms_horse_hair_brush_6", "type": "short", "url": "http://localhost/?q=heirlooms_horse_hair_brush&cycles=6" },
-    { "name": "heirlooms_ivory_comb_1", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_comb&cycles=1" },
-    { "name": "heirlooms_ivory_comb_2", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_comb&cycles=2" },
-    { "name": "heirlooms_ivory_comb_3", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_comb&cycles=3" },
-    { "name": "heirlooms_ivory_comb_4", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_comb&cycles=4" },
-    { "name": "heirlooms_ivory_comb_5", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_comb&cycles=5" },
-    { "name": "heirlooms_ivory_comb_6", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_comb&cycles=6" },
-    { "name": "heirlooms_ivory_hairpin_1", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_hairpin&cycles=1" },
-    { "name": "heirlooms_ivory_hairpin_2", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_hairpin&cycles=2" },
-    { "name": "heirlooms_ivory_hairpin_4", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_hairpin&cycles=4" },
-    { "name": "heirlooms_ivory_hairpin_6", "type": "short", "url": "http://localhost/?q=heirlooms_ivory_hairpin&cycles=6" },
-    { "name": "heirlooms_jade_hairpin_1", "type": "short", "url": "http://localhost/?q=heirlooms_jade_hairpin&cycles=1" },
-    { "name": "heirlooms_jade_hairpin_4", "type": "short", "url": "http://localhost/?q=heirlooms_jade_hairpin&cycles=4" },
-    { "name": "heirlooms_new_guinea_rosewood_1", "type": "short", "url": "http://localhost/?q=heirlooms_new_guinea_rosewood&cycles=1" },
-    { "name": "heirlooms_new_guinea_rosewood_2", "type": "short", "url": "http://localhost/?q=heirlooms_new_guinea_rosewood&cycles=2" },
-    { "name": "heirlooms_new_guinea_rosewood_3", "type": "short", "url": "http://localhost/?q=heirlooms_new_guinea_rosewood&cycles=3" },
-    { "name": "heirlooms_new_guinea_rosewood_4", "type": "short", "url": "http://localhost/?q=heirlooms_new_guinea_rosewood&cycles=4" },
-    { "name": "heirlooms_new_guinea_rosewood_5", "type": "short", "url": "http://localhost/?q=heirlooms_new_guinea_rosewood&cycles=5" },
-    { "name": "heirlooms_new_guinea_rosewood_6", "type": "short", "url": "http://localhost/?q=heirlooms_new_guinea_rosewood&cycles=6" },
-    { "name": "heirlooms_rosewood_hairbrush_1", "type": "short", "url": "http://localhost/?q=heirlooms_rosewood_hairbrush&cycles=1" },
-    { "name": "heirlooms_rosewood_hairbrush_2", "type": "short", "url": "http://localhost/?q=heirlooms_rosewood_hairbrush&cycles=2" },
-    { "name": "heirlooms_rosewood_hairbrush_3", "type": "short", "url": "http://localhost/?q=heirlooms_rosewood_hairbrush&cycles=3" },
-    { "name": "heirlooms_rosewood_hairbrush_4", "type": "short", "url": "http://localhost/?q=heirlooms_rosewood_hairbrush&cycles=4" },
-    { "name": "heirlooms_rosewood_hairbrush_5", "type": "short", "url": "http://localhost/?q=heirlooms_rosewood_hairbrush&cycles=5" },
-    { "name": "heirlooms_rosewood_hairbrush_6", "type": "short", "url": "http://localhost/?q=heirlooms_rosewood_hairbrush&cycles=6" },
-    { "name": "heirlooms_tortoiseshell_comb_1", "type": "short", "url": "http://localhost/?q=heirlooms_tortoiseshell_comb&cycles=1" },
-    { "name": "heirlooms_tortoiseshell_comb_2", "type": "short", "url": "http://localhost/?q=heirlooms_tortoiseshell_comb&cycles=2" },
-    { "name": "heirlooms_tortoiseshell_comb_3", "type": "short", "url": "http://localhost/?q=heirlooms_tortoiseshell_comb&cycles=3" },
-    { "name": "heirlooms_tortoiseshell_comb_4", "type": "short", "url": "http://localhost/?q=heirlooms_tortoiseshell_comb&cycles=4" },
-    { "name": "heirlooms_tortoiseshell_comb_5", "type": "short", "url": "http://localhost/?q=heirlooms_tortoiseshell_comb&cycles=5" },
-    { "name": "heirlooms_tortoiseshell_comb_6", "type": "short", "url": "http://localhost/?q=heirlooms_tortoiseshell_comb&cycles=6" },
-    { "name": "necklace_ainsworth_cross_1", "type": "short", "url": "http://localhost/?q=necklace_ainsworth_cross&cycles=1" },
-    { "name": "necklace_ainsworth_cross_3", "type": "short", "url": "http://localhost/?q=necklace_ainsworth_cross&cycles=3" },
-    { "name": "necklace_ainsworth_cross_4", "type": "short", "url": "http://localhost/?q=necklace_ainsworth_cross&cycles=4" },
-    { "name": "necklace_blakely_miniatue_1", "type": "short", "url": "http://localhost/?q=necklace_blakely_miniatue&cycles=1" },
-    { "name": "necklace_blakely_miniatue_2", "type": "short", "url": "http://localhost/?q=necklace_blakely_miniatue&cycles=2" },
-    { "name": "necklace_blakely_miniatue_6", "type": "short", "url": "http://localhost/?q=necklace_blakely_miniatue&cycles=6" },
-    { "name": "necklace_braxton_amethyst_1", "type": "short", "url": "http://localhost/?q=necklace_braxton_amethyst&cycles=1" },
-    { "name": "necklace_braxton_amethyst_2", "type": "short", "url": "http://localhost/?q=necklace_braxton_amethyst&cycles=2" },
-    { "name": "necklace_braxton_amethyst_3", "type": "short", "url": "http://localhost/?q=necklace_braxton_amethyst&cycles=3" },
-    { "name": "necklace_dane_topaz_1", "type": "short", "url": "http://localhost/?q=necklace_dane_topaz&cycles=1" },
-    { "name": "necklace_dane_topaz_5", "type": "short", "url": "http://localhost/?q=necklace_dane_topaz&cycles=5" },
-    { "name": "necklace_gosselin_white_gold_2", "type": "short", "url": "http://localhost/?q=necklace_gosselin_white_gold&cycles=2" },
-    { "name": "necklace_gosselin_white_gold_3", "type": "short", "url": "http://localhost/?q=necklace_gosselin_white_gold&cycles=3" },
-    { "name": "necklace_gosselin_white_gold_4", "type": "short", "url": "http://localhost/?q=necklace_gosselin_white_gold&cycles=4" },
-    { "name": "necklace_pelle_pearl_3", "type": "short", "url": "http://localhost/?q=necklace_pelle_pearl&cycles=3" },
-    { "name": "necklace_pelle_pearl_4", "type": "short", "url": "http://localhost/?q=necklace_pelle_pearl&cycles=4" },
-    { "name": "necklace_richelieu_amethyst_1", "type": "short", "url": "http://localhost/?q=necklace_richelieu_amethyst&cycles=1" },
-    { "name": "necklace_richelieu_amethyst_2", "type": "short", "url": "http://localhost/?q=necklace_richelieu_amethyst&cycles=2" },
-    { "name": "necklace_richelieu_amethyst_3", "type": "short", "url": "http://localhost/?q=necklace_richelieu_amethyst&cycles=3" },
-    { "name": "necklace_richelieu_amethyst_6", "type": "short", "url": "http://localhost/?q=necklace_richelieu_amethyst&cycles=6" },
-    { "name": "necklace_rou_pearl_1", "type": "short", "url": "http://localhost/?q=necklace_rou_pearl&cycles=1" },
-    { "name": "necklace_rou_pearl_5", "type": "short", "url": "http://localhost/?q=necklace_rou_pearl&cycles=5" },
-    { "name": "necklace_tuamotu_pearl_3", "type": "short", "url": "http://localhost/?q=necklace_tuamotu_pearl&cycles=3" },
-    { "name": "pentacles_ace_1", "type": "short", "url": "http://localhost/?q=pentacles_ace&cycles=1" },
-    { "name": "pentacles_ace_2", "type": "short", "url": "http://localhost/?q=pentacles_ace&cycles=2" },
-    { "name": "pentacles_ace_3", "type": "short", "url": "http://localhost/?q=pentacles_ace&cycles=3" },
-    { "name": "pentacles_ace_4", "type": "short", "url": "http://localhost/?q=pentacles_ace&cycles=4" },
-    { "name": "pentacles_ace_5", "type": "short", "url": "http://localhost/?q=pentacles_ace&cycles=5" },
-    { "name": "pentacles_ace_6", "type": "short", "url": "http://localhost/?q=pentacles_ace&cycles=6" },
-    { "name": "pentacles_eight_1", "type": "short", "url": "http://localhost/?q=pentacles_eight&cycles=1" },
-    { "name": "pentacles_eight_2", "type": "short", "url": "http://localhost/?q=pentacles_eight&cycles=2" },
-    { "name": "pentacles_eight_3", "type": "short", "url": "http://localhost/?q=pentacles_eight&cycles=3" },
-    { "name": "pentacles_eight_4", "type": "short", "url": "http://localhost/?q=pentacles_eight&cycles=4" },
-    { "name": "pentacles_eight_5", "type": "short", "url": "http://localhost/?q=pentacles_eight&cycles=5" },
-    { "name": "pentacles_eight_6", "type": "short", "url": "http://localhost/?q=pentacles_eight&cycles=6" },
-    { "name": "pentacles_five_1", "type": "short", "url": "http://localhost/?q=pentacles_five&cycles=1" },
-    { "name": "pentacles_five_2", "type": "short", "url": "http://localhost/?q=pentacles_five&cycles=2" },
-    { "name": "pentacles_five_3", "type": "short", "url": "http://localhost/?q=pentacles_five&cycles=3" },
-    { "name": "pentacles_five_4", "type": "short", "url": "http://localhost/?q=pentacles_five&cycles=4" },
-    { "name": "pentacles_five_5", "type": "short", "url": "http://localhost/?q=pentacles_five&cycles=5" },
-    { "name": "pentacles_five_6", "type": "short", "url": "http://localhost/?q=pentacles_five&cycles=6" },
-    { "name": "pentacles_four_1", "type": "short", "url": "http://localhost/?q=pentacles_four&cycles=1" },
-    { "name": "pentacles_four_2", "type": "short", "url": "http://localhost/?q=pentacles_four&cycles=2" },
-    { "name": "pentacles_four_3", "type": "short", "url": "http://localhost/?q=pentacles_four&cycles=3" },
-    { "name": "pentacles_four_4", "type": "short", "url": "http://localhost/?q=pentacles_four&cycles=4" },
-    { "name": "pentacles_four_5", "type": "short", "url": "http://localhost/?q=pentacles_four&cycles=5" },
-    { "name": "pentacles_four_6", "type": "short", "url": "http://localhost/?q=pentacles_four&cycles=6" },
-    { "name": "pentacles_king_1", "type": "short", "url": "http://localhost/?q=pentacles_king&cycles=1" },
-    { "name": "pentacles_king_2", "type": "short", "url": "http://localhost/?q=pentacles_king&cycles=2" },
-    { "name": "pentacles_king_3", "type": "short", "url": "http://localhost/?q=pentacles_king&cycles=3" },
-    { "name": "pentacles_king_4", "type": "short", "url": "http://localhost/?q=pentacles_king&cycles=4" },
-    { "name": "pentacles_king_5", "type": "short", "url": "http://localhost/?q=pentacles_king&cycles=5" },
-    { "name": "pentacles_king_6", "type": "short", "url": "http://localhost/?q=pentacles_king&cycles=6" },
-    { "name": "pentacles_knight_1", "type": "short", "url": "http://localhost/?q=pentacles_knight&cycles=1" },
-    { "name": "pentacles_knight_2", "type": "short", "url": "http://localhost/?q=pentacles_knight&cycles=2" },
-    { "name": "pentacles_knight_3", "type": "short", "url": "http://localhost/?q=pentacles_knight&cycles=3" },
-    { "name": "pentacles_knight_4", "type": "short", "url": "http://localhost/?q=pentacles_knight&cycles=4" },
-    { "name": "pentacles_knight_5", "type": "short", "url": "http://localhost/?q=pentacles_knight&cycles=5" },
-    { "name": "pentacles_knight_6", "type": "short", "url": "http://localhost/?q=pentacles_knight&cycles=6" },
-    { "name": "pentacles_nine_1", "type": "short", "url": "http://localhost/?q=pentacles_nine&cycles=1" },
-    { "name": "pentacles_nine_2", "type": "short", "url": "http://localhost/?q=pentacles_nine&cycles=2" },
-    { "name": "pentacles_nine_3", "type": "short", "url": "http://localhost/?q=pentacles_nine&cycles=3" },
-    { "name": "pentacles_nine_4", "type": "short", "url": "http://localhost/?q=pentacles_nine&cycles=4" },
-    { "name": "pentacles_nine_5", "type": "short", "url": "http://localhost/?q=pentacles_nine&cycles=5" },
-    { "name": "pentacles_nine_6", "type": "short", "url": "http://localhost/?q=pentacles_nine&cycles=6" },
-    { "name": "pentacles_page_1", "type": "short", "url": "http://localhost/?q=pentacles_page&cycles=1" },
-    { "name": "pentacles_page_2", "type": "short", "url": "http://localhost/?q=pentacles_page&cycles=2" },
-    { "name": "pentacles_page_3", "type": "short", "url": "http://localhost/?q=pentacles_page&cycles=3" },
-    { "name": "pentacles_page_4", "type": "short", "url": "http://localhost/?q=pentacles_page&cycles=4" },
-    { "name": "pentacles_page_5", "type": "short", "url": "http://localhost/?q=pentacles_page&cycles=5" },
-    { "name": "pentacles_page_6", "type": "short", "url": "http://localhost/?q=pentacles_page&cycles=6" },
-    { "name": "pentacles_queen_1", "type": "short", "url": "http://localhost/?q=pentacles_queen&cycles=1" },
-    { "name": "pentacles_queen_2", "type": "short", "url": "http://localhost/?q=pentacles_queen&cycles=2" },
-    { "name": "pentacles_queen_3", "type": "short", "url": "http://localhost/?q=pentacles_queen&cycles=3" },
-    { "name": "pentacles_queen_4", "type": "short", "url": "http://localhost/?q=pentacles_queen&cycles=4" },
-    { "name": "pentacles_queen_5", "type": "short", "url": "http://localhost/?q=pentacles_queen&cycles=5" },
-    { "name": "pentacles_queen_6", "type": "short", "url": "http://localhost/?q=pentacles_queen&cycles=6" },
-    { "name": "pentacles_seven_1", "type": "short", "url": "http://localhost/?q=pentacles_seven&cycles=1" },
-    { "name": "pentacles_seven_2", "type": "short", "url": "http://localhost/?q=pentacles_seven&cycles=2" },
-    { "name": "pentacles_seven_3", "type": "short", "url": "http://localhost/?q=pentacles_seven&cycles=3" },
-    { "name": "pentacles_seven_4", "type": "short", "url": "http://localhost/?q=pentacles_seven&cycles=4" },
-    { "name": "pentacles_seven_5", "type": "short", "url": "http://localhost/?q=pentacles_seven&cycles=5" },
-    { "name": "pentacles_seven_6", "type": "short", "url": "http://localhost/?q=pentacles_seven&cycles=6" },
-    { "name": "pentacles_six_1", "type": "short", "url": "http://localhost/?q=pentacles_six&cycles=1" },
-    { "name": "pentacles_six_2", "type": "short", "url": "http://localhost/?q=pentacles_six&cycles=2" },
-    { "name": "pentacles_six_3", "type": "short", "url": "http://localhost/?q=pentacles_six&cycles=3" },
-    { "name": "pentacles_six_4", "type": "short", "url": "http://localhost/?q=pentacles_six&cycles=4" },
-    { "name": "pentacles_six_5", "type": "short", "url": "http://localhost/?q=pentacles_six&cycles=5" },
-    { "name": "pentacles_six_6", "type": "short", "url": "http://localhost/?q=pentacles_six&cycles=6" },
-    { "name": "pentacles_ten_1", "type": "short", "url": "http://localhost/?q=pentacles_ten&cycles=1" },
-    { "name": "pentacles_ten_2", "type": "short", "url": "http://localhost/?q=pentacles_ten&cycles=2" },
-    { "name": "pentacles_ten_3", "type": "short", "url": "http://localhost/?q=pentacles_ten&cycles=3" },
-    { "name": "pentacles_ten_4", "type": "short", "url": "http://localhost/?q=pentacles_ten&cycles=4" },
-    { "name": "pentacles_ten_5", "type": "short", "url": "http://localhost/?q=pentacles_ten&cycles=5" },
-    { "name": "pentacles_ten_6", "type": "short", "url": "http://localhost/?q=pentacles_ten&cycles=6" },
-    { "name": "pentacles_three_1", "type": "short", "url": "http://localhost/?q=pentacles_three&cycles=1" },
-    { "name": "pentacles_three_2", "type": "short", "url": "http://localhost/?q=pentacles_three&cycles=2" },
-    { "name": "pentacles_three_3", "type": "short", "url": "http://localhost/?q=pentacles_three&cycles=3" },
-    { "name": "pentacles_three_4", "type": "short", "url": "http://localhost/?q=pentacles_three&cycles=4" },
-    { "name": "pentacles_three_5", "type": "short", "url": "http://localhost/?q=pentacles_three&cycles=5" },
-    { "name": "pentacles_three_6", "type": "short", "url": "http://localhost/?q=pentacles_three&cycles=6" },
-    { "name": "pentacles_two_1", "type": "short", "url": "http://localhost/?q=pentacles_two&cycles=1" },
-    { "name": "pentacles_two_2", "type": "short", "url": "http://localhost/?q=pentacles_two&cycles=2" },
-    { "name": "pentacles_two_3", "type": "short", "url": "http://localhost/?q=pentacles_two&cycles=3" },
-    { "name": "pentacles_two_4", "type": "short", "url": "http://localhost/?q=pentacles_two&cycles=4" },
-    { "name": "pentacles_two_5", "type": "short", "url": "http://localhost/?q=pentacles_two&cycles=5" },
-    { "name": "pentacles_two_6", "type": "short", "url": "http://localhost/?q=pentacles_two&cycles=6" },
-    { "name": "ring_aubrey_onyx_2", "type": "short", "url": "http://localhost/?q=ring_aubrey_onyx&cycles=2" },
-    { "name": "ring_aubrey_onyx_6", "type": "short", "url": "http://localhost/?q=ring_aubrey_onyx&cycles=6" },
-    { "name": "ring_banais_topaz_2", "type": "short", "url": "http://localhost/?q=ring_banais_topaz&cycles=2" },
-    { "name": "ring_banais_topaz_3", "type": "short", "url": "http://localhost/?q=ring_banais_topaz&cycles=3" },
-    { "name": "ring_banais_topaz_4", "type": "short", "url": "http://localhost/?q=ring_banais_topaz&cycles=4" },
-    { "name": "ring_banais_topaz_6", "type": "short", "url": "http://localhost/?q=ring_banais_topaz&cycles=6" },
-    { "name": "ring_beaulieux_diamond_2", "type": "short", "url": "http://localhost/?q=ring_beaulieux_diamond&cycles=2" },
-    { "name": "ring_beaulieux_diamond_3", "type": "short", "url": "http://localhost/?q=ring_beaulieux_diamond&cycles=3" },
-    { "name": "ring_beaulieux_diamond_4", "type": "short", "url": "http://localhost/?q=ring_beaulieux_diamond&cycles=4" },
-    { "name": "ring_bonnard_pearl_1", "type": "short", "url": "http://localhost/?q=ring_bonnard_pearl&cycles=1" },
-    { "name": "ring_bonnard_pearl_3", "type": "short", "url": "http://localhost/?q=ring_bonnard_pearl&cycles=3" },
-    { "name": "ring_bonnard_pearl_5", "type": "short", "url": "http://localhost/?q=ring_bonnard_pearl&cycles=5" },
-    { "name": "ring_harland_coral_2", "type": "short", "url": "http://localhost/?q=ring_harland_coral&cycles=2" },
-    { "name": "ring_magnate_turquoise_1", "type": "short", "url": "http://localhost/?q=ring_magnate_turquoise&cycles=1" },
-    { "name": "ring_magnate_turquoise_3", "type": "short", "url": "http://localhost/?q=ring_magnate_turquoise&cycles=3" },
-    { "name": "ring_magnate_turquoise_5", "type": "short", "url": "http://localhost/?q=ring_magnate_turquoise&cycles=5" },
-    { "name": "ring_pilgrim_moonstone_2", "type": "short", "url": "http://localhost/?q=ring_pilgrim_moonstone&cycles=2" },
-    { "name": "ring_pilgrim_moonstone_6", "type": "short", "url": "http://localhost/?q=ring_pilgrim_moonstone&cycles=6" },
-    { "name": "ring_sackville_diamond_2", "type": "short", "url": "http://localhost/?q=ring_sackville_diamond&cycles=2" },
-    { "name": "ring_sackville_diamond_3", "type": "short", "url": "http://localhost/?q=ring_sackville_diamond&cycles=3" },
-    { "name": "ring_sackville_diamond_4", "type": "short", "url": "http://localhost/?q=ring_sackville_diamond&cycles=4" },
-    { "name": "ring_thorburn_turquoise_3", "type": "short", "url": "http://localhost/?q=ring_thorburn_turquoise&cycles=3" },
-    { "name": "ring_thorburn_turquoise_4", "type": "short", "url": "http://localhost/?q=ring_thorburn_turquoise&cycles=4" },
-    { "name": "ring_yates_diamond_2", "type": "short", "url": "http://localhost/?q=ring_yates_diamond&cycles=2" },
-    { "name": "ring_yates_diamond_6", "type": "short", "url": "http://localhost/?q=ring_yates_diamond&cycles=6" },
-    { "name": "swords_ace_1", "type": "short", "url": "http://localhost/?q=swords_ace&cycles=1" },
-    { "name": "swords_ace_2", "type": "short", "url": "http://localhost/?q=swords_ace&cycles=2" },
-    { "name": "swords_ace_3", "type": "short", "url": "http://localhost/?q=swords_ace&cycles=3" },
-    { "name": "swords_ace_4", "type": "short", "url": "http://localhost/?q=swords_ace&cycles=4" },
-    { "name": "swords_ace_5", "type": "short", "url": "http://localhost/?q=swords_ace&cycles=5" },
-    { "name": "swords_ace_6", "type": "short", "url": "http://localhost/?q=swords_ace&cycles=6" },
-    { "name": "swords_eight_1", "type": "short", "url": "http://localhost/?q=swords_eight&cycles=1" },
-    { "name": "swords_eight_2", "type": "short", "url": "http://localhost/?q=swords_eight&cycles=2" },
-    { "name": "swords_eight_3", "type": "short", "url": "http://localhost/?q=swords_eight&cycles=3" },
-    { "name": "swords_eight_4", "type": "short", "url": "http://localhost/?q=swords_eight&cycles=4" },
-    { "name": "swords_eight_5", "type": "short", "url": "http://localhost/?q=swords_eight&cycles=5" },
-    { "name": "swords_eight_6", "type": "short", "url": "http://localhost/?q=swords_eight&cycles=6" },
-    { "name": "swords_five_1", "type": "short", "url": "http://localhost/?q=swords_five&cycles=1" },
-    { "name": "swords_five_2", "type": "short", "url": "http://localhost/?q=swords_five&cycles=2" },
-    { "name": "swords_five_3", "type": "short", "url": "http://localhost/?q=swords_five&cycles=3" },
-    { "name": "swords_five_4", "type": "short", "url": "http://localhost/?q=swords_five&cycles=4" },
-    { "name": "swords_five_5", "type": "short", "url": "http://localhost/?q=swords_five&cycles=5" },
-    { "name": "swords_five_6", "type": "short", "url": "http://localhost/?q=swords_five&cycles=6" },
-    { "name": "swords_four_1", "type": "short", "url": "http://localhost/?q=swords_four&cycles=1" },
-    { "name": "swords_four_2", "type": "short", "url": "http://localhost/?q=swords_four&cycles=2" },
-    { "name": "swords_four_3", "type": "short", "url": "http://localhost/?q=swords_four&cycles=3" },
-    { "name": "swords_four_4", "type": "short", "url": "http://localhost/?q=swords_four&cycles=4" },
-    { "name": "swords_four_5", "type": "short", "url": "http://localhost/?q=swords_four&cycles=5" },
-    { "name": "swords_four_6", "type": "short", "url": "http://localhost/?q=swords_four&cycles=6" },
-    { "name": "swords_king_1", "type": "short", "url": "http://localhost/?q=swords_king&cycles=1" },
-    { "name": "swords_king_2", "type": "short", "url": "http://localhost/?q=swords_king&cycles=2" },
-    { "name": "swords_king_3", "type": "short", "url": "http://localhost/?q=swords_king&cycles=3" },
-    { "name": "swords_king_4", "type": "short", "url": "http://localhost/?q=swords_king&cycles=4" },
-    { "name": "swords_king_5", "type": "short", "url": "http://localhost/?q=swords_king&cycles=5" },
-    { "name": "swords_king_6", "type": "short", "url": "http://localhost/?q=swords_king&cycles=6" },
-    { "name": "swords_knight_1", "type": "short", "url": "http://localhost/?q=swords_knight&cycles=1" },
-    { "name": "swords_knight_2", "type": "short", "url": "http://localhost/?q=swords_knight&cycles=2" },
-    { "name": "swords_knight_3", "type": "short", "url": "http://localhost/?q=swords_knight&cycles=3" },
-    { "name": "swords_knight_4", "type": "short", "url": "http://localhost/?q=swords_knight&cycles=4" },
-    { "name": "swords_knight_5", "type": "short", "url": "http://localhost/?q=swords_knight&cycles=5" },
-    { "name": "swords_knight_6", "type": "short", "url": "http://localhost/?q=swords_knight&cycles=6" },
-    { "name": "swords_nine_1", "type": "short", "url": "http://localhost/?q=swords_nine&cycles=1" },
-    { "name": "swords_nine_2", "type": "short", "url": "http://localhost/?q=swords_nine&cycles=2" },
-    { "name": "swords_nine_3", "type": "short", "url": "http://localhost/?q=swords_nine&cycles=3" },
-    { "name": "swords_nine_4", "type": "short", "url": "http://localhost/?q=swords_nine&cycles=4" },
-    { "name": "swords_nine_5", "type": "short", "url": "http://localhost/?q=swords_nine&cycles=5" },
-    { "name": "swords_nine_6", "type": "short", "url": "http://localhost/?q=swords_nine&cycles=6" },
-    { "name": "swords_page_1", "type": "short", "url": "http://localhost/?q=swords_page&cycles=1" },
-    { "name": "swords_page_2", "type": "short", "url": "http://localhost/?q=swords_page&cycles=2" },
-    { "name": "swords_page_3", "type": "short", "url": "http://localhost/?q=swords_page&cycles=3" },
-    { "name": "swords_page_4", "type": "short", "url": "http://localhost/?q=swords_page&cycles=4" },
-    { "name": "swords_page_5", "type": "short", "url": "http://localhost/?q=swords_page&cycles=5" },
-    { "name": "swords_page_6", "type": "short", "url": "http://localhost/?q=swords_page&cycles=6" },
-    { "name": "swords_queen_1", "type": "short", "url": "http://localhost/?q=swords_queen&cycles=1" },
-    { "name": "swords_queen_2", "type": "short", "url": "http://localhost/?q=swords_queen&cycles=2" },
-    { "name": "swords_queen_3", "type": "short", "url": "http://localhost/?q=swords_queen&cycles=3" },
-    { "name": "swords_queen_4", "type": "short", "url": "http://localhost/?q=swords_queen&cycles=4" },
-    { "name": "swords_queen_5", "type": "short", "url": "http://localhost/?q=swords_queen&cycles=5" },
-    { "name": "swords_queen_6", "type": "short", "url": "http://localhost/?q=swords_queen&cycles=6" },
-    { "name": "swords_seven_1", "type": "short", "url": "http://localhost/?q=swords_seven&cycles=1" },
-    { "name": "swords_seven_2", "type": "short", "url": "http://localhost/?q=swords_seven&cycles=2" },
-    { "name": "swords_seven_3", "type": "short", "url": "http://localhost/?q=swords_seven&cycles=3" },
-    { "name": "swords_seven_4", "type": "short", "url": "http://localhost/?q=swords_seven&cycles=4" },
-    { "name": "swords_seven_5", "type": "short", "url": "http://localhost/?q=swords_seven&cycles=5" },
-    { "name": "swords_seven_6", "type": "short", "url": "http://localhost/?q=swords_seven&cycles=6" },
-    { "name": "swords_six_1", "type": "short", "url": "http://localhost/?q=swords_six&cycles=1" },
-    { "name": "swords_six_2", "type": "short", "url": "http://localhost/?q=swords_six&cycles=2" },
-    { "name": "swords_six_3", "type": "short", "url": "http://localhost/?q=swords_six&cycles=3" },
-    { "name": "swords_six_4", "type": "short", "url": "http://localhost/?q=swords_six&cycles=4" },
-    { "name": "swords_six_5", "type": "short", "url": "http://localhost/?q=swords_six&cycles=5" },
-    { "name": "swords_six_6", "type": "short", "url": "http://localhost/?q=swords_six&cycles=6" },
-    { "name": "swords_ten_1", "type": "short", "url": "http://localhost/?q=swords_ten&cycles=1" },
-    { "name": "swords_ten_2", "type": "short", "url": "http://localhost/?q=swords_ten&cycles=2" },
-    { "name": "swords_ten_3", "type": "short", "url": "http://localhost/?q=swords_ten&cycles=3" },
-    { "name": "swords_ten_4", "type": "short", "url": "http://localhost/?q=swords_ten&cycles=4" },
-    { "name": "swords_ten_5", "type": "short", "url": "http://localhost/?q=swords_ten&cycles=5" },
-    { "name": "swords_ten_6", "type": "short", "url": "http://localhost/?q=swords_ten&cycles=6" },
-    { "name": "swords_three_1", "type": "short", "url": "http://localhost/?q=swords_three&cycles=1" },
-    { "name": "swords_three_2", "type": "short", "url": "http://localhost/?q=swords_three&cycles=2" },
-    { "name": "swords_three_3", "type": "short", "url": "http://localhost/?q=swords_three&cycles=3" },
-    { "name": "swords_three_4", "type": "short", "url": "http://localhost/?q=swords_three&cycles=4" },
-    { "name": "swords_three_5", "type": "short", "url": "http://localhost/?q=swords_three&cycles=5" },
-    { "name": "swords_three_6", "type": "short", "url": "http://localhost/?q=swords_three&cycles=6" },
-    { "name": "swords_two_1", "type": "short", "url": "http://localhost/?q=swords_two&cycles=1" },
-    { "name": "swords_two_2", "type": "short", "url": "http://localhost/?q=swords_two&cycles=2" },
-    { "name": "swords_two_3", "type": "short", "url": "http://localhost/?q=swords_two&cycles=3" },
-    { "name": "swords_two_4", "type": "short", "url": "http://localhost/?q=swords_two&cycles=4" },
-    { "name": "swords_two_5", "type": "short", "url": "http://localhost/?q=swords_two&cycles=5" },
-    { "name": "swords_two_6", "type": "short", "url": "http://localhost/?q=swords_two&cycles=6" },
-    { "name": "wands_ace_1", "type": "short", "url": "http://localhost/?q=wands_ace&cycles=1" },
-    { "name": "wands_ace_2", "type": "short", "url": "http://localhost/?q=wands_ace&cycles=2" },
-    { "name": "wands_ace_3", "type": "short", "url": "http://localhost/?q=wands_ace&cycles=3" },
-    { "name": "wands_ace_4", "type": "short", "url": "http://localhost/?q=wands_ace&cycles=4" },
-    { "name": "wands_ace_5", "type": "short", "url": "http://localhost/?q=wands_ace&cycles=5" },
-    { "name": "wands_ace_6", "type": "short", "url": "http://localhost/?q=wands_ace&cycles=6" },
-    { "name": "wands_eight_1", "type": "short", "url": "http://localhost/?q=wands_eight&cycles=1" },
-    { "name": "wands_eight_2", "type": "short", "url": "http://localhost/?q=wands_eight&cycles=2" },
-    { "name": "wands_eight_3", "type": "short", "url": "http://localhost/?q=wands_eight&cycles=3" },
-    { "name": "wands_eight_4", "type": "short", "url": "http://localhost/?q=wands_eight&cycles=4" },
-    { "name": "wands_eight_5", "type": "short", "url": "http://localhost/?q=wands_eight&cycles=5" },
-    { "name": "wands_eight_6", "type": "short", "url": "http://localhost/?q=wands_eight&cycles=6" },
-    { "name": "wands_five_1", "type": "short", "url": "http://localhost/?q=wands_five&cycles=1" },
-    { "name": "wands_five_2", "type": "short", "url": "http://localhost/?q=wands_five&cycles=2" },
-    { "name": "wands_five_3", "type": "short", "url": "http://localhost/?q=wands_five&cycles=3" },
-    { "name": "wands_five_4", "type": "short", "url": "http://localhost/?q=wands_five&cycles=4" },
-    { "name": "wands_five_5", "type": "short", "url": "http://localhost/?q=wands_five&cycles=5" },
-    { "name": "wands_five_6", "type": "short", "url": "http://localhost/?q=wands_five&cycles=6" },
-    { "name": "wands_four_1", "type": "short", "url": "http://localhost/?q=wands_four&cycles=1" },
-    { "name": "wands_four_2", "type": "short", "url": "http://localhost/?q=wands_four&cycles=2" },
-    { "name": "wands_four_3", "type": "short", "url": "http://localhost/?q=wands_four&cycles=3" },
-    { "name": "wands_four_4", "type": "short", "url": "http://localhost/?q=wands_four&cycles=4" },
-    { "name": "wands_four_5", "type": "short", "url": "http://localhost/?q=wands_four&cycles=5" },
-    { "name": "wands_four_6", "type": "short", "url": "http://localhost/?q=wands_four&cycles=6" },
-    { "name": "wands_king_1", "type": "short", "url": "http://localhost/?q=wands_king&cycles=1" },
-    { "name": "wands_king_2", "type": "short", "url": "http://localhost/?q=wands_king&cycles=2" },
-    { "name": "wands_king_3", "type": "short", "url": "http://localhost/?q=wands_king&cycles=3" },
-    { "name": "wands_king_4", "type": "short", "url": "http://localhost/?q=wands_king&cycles=4" },
-    { "name": "wands_king_5", "type": "short", "url": "http://localhost/?q=wands_king&cycles=5" },
-    { "name": "wands_king_6", "type": "short", "url": "http://localhost/?q=wands_king&cycles=6" },
-    { "name": "wands_knight_1", "type": "short", "url": "http://localhost/?q=wands_knight&cycles=1" },
-    { "name": "wands_knight_2", "type": "short", "url": "http://localhost/?q=wands_knight&cycles=2" },
-    { "name": "wands_knight_3", "type": "short", "url": "http://localhost/?q=wands_knight&cycles=3" },
-    { "name": "wands_knight_4", "type": "short", "url": "http://localhost/?q=wands_knight&cycles=4" },
-    { "name": "wands_knight_5", "type": "short", "url": "http://localhost/?q=wands_knight&cycles=5" },
-    { "name": "wands_knight_6", "type": "short", "url": "http://localhost/?q=wands_knight&cycles=6" },
-    { "name": "wands_nine_1", "type": "short", "url": "http://localhost/?q=wands_nine&cycles=1" },
-    { "name": "wands_nine_2", "type": "short", "url": "http://localhost/?q=wands_nine&cycles=2" },
-    { "name": "wands_nine_3", "type": "short", "url": "http://localhost/?q=wands_nine&cycles=3" },
-    { "name": "wands_nine_4", "type": "short", "url": "http://localhost/?q=wands_nine&cycles=4" },
-    { "name": "wands_nine_5", "type": "short", "url": "http://localhost/?q=wands_nine&cycles=5" },
-    { "name": "wands_nine_6", "type": "short", "url": "http://localhost/?q=wands_nine&cycles=6" },
-    { "name": "wands_page_1", "type": "short", "url": "http://localhost/?q=wands_page&cycles=1" },
-    { "name": "wands_page_2", "type": "short", "url": "http://localhost/?q=wands_page&cycles=2" },
-    { "name": "wands_page_3", "type": "short", "url": "http://localhost/?q=wands_page&cycles=3" },
-    { "name": "wands_page_4", "type": "short", "url": "http://localhost/?q=wands_page&cycles=4" },
-    { "name": "wands_page_5", "type": "short", "url": "http://localhost/?q=wands_page&cycles=5" },
-    { "name": "wands_page_6", "type": "short", "url": "http://localhost/?q=wands_page&cycles=6" },
-    { "name": "wands_queen_1", "type": "short", "url": "http://localhost/?q=wands_queen&cycles=1" },
-    { "name": "wands_queen_2", "type": "short", "url": "http://localhost/?q=wands_queen&cycles=2" },
-    { "name": "wands_queen_3", "type": "short", "url": "http://localhost/?q=wands_queen&cycles=3" },
-    { "name": "wands_queen_4", "type": "short", "url": "http://localhost/?q=wands_queen&cycles=4" },
-    { "name": "wands_queen_5", "type": "short", "url": "http://localhost/?q=wands_queen&cycles=5" },
-    { "name": "wands_queen_6", "type": "short", "url": "http://localhost/?q=wands_queen&cycles=6" },
-    { "name": "wands_seven_1", "type": "short", "url": "http://localhost/?q=wands_seven&cycles=1" },
-    { "name": "wands_seven_2", "type": "short", "url": "http://localhost/?q=wands_seven&cycles=2" },
-    { "name": "wands_seven_3", "type": "short", "url": "http://localhost/?q=wands_seven&cycles=3" },
-    { "name": "wands_seven_4", "type": "short", "url": "http://localhost/?q=wands_seven&cycles=4" },
-    { "name": "wands_seven_5", "type": "short", "url": "http://localhost/?q=wands_seven&cycles=5" },
-    { "name": "wands_seven_6", "type": "short", "url": "http://localhost/?q=wands_seven&cycles=6" },
-    { "name": "wands_six_1", "type": "short", "url": "http://localhost/?q=wands_six&cycles=1" },
-    { "name": "wands_six_2", "type": "short", "url": "http://localhost/?q=wands_six&cycles=2" },
-    { "name": "wands_six_3", "type": "short", "url": "http://localhost/?q=wands_six&cycles=3" },
-    { "name": "wands_six_4", "type": "short", "url": "http://localhost/?q=wands_six&cycles=4" },
-    { "name": "wands_six_5", "type": "short", "url": "http://localhost/?q=wands_six&cycles=5" },
-    { "name": "wands_six_6", "type": "short", "url": "http://localhost/?q=wands_six&cycles=6" },
-    { "name": "wands_ten_1", "type": "short", "url": "http://localhost/?q=wands_ten&cycles=1" },
-    { "name": "wands_ten_2", "type": "short", "url": "http://localhost/?q=wands_ten&cycles=2" },
-    { "name": "wands_ten_3", "type": "short", "url": "http://localhost/?q=wands_ten&cycles=3" },
-    { "name": "wands_ten_4", "type": "short", "url": "http://localhost/?q=wands_ten&cycles=4" },
-    { "name": "wands_ten_5", "type": "short", "url": "http://localhost/?q=wands_ten&cycles=5" },
-    { "name": "wands_ten_6", "type": "short", "url": "http://localhost/?q=wands_ten&cycles=6" },
-    { "name": "wands_three_1", "type": "short", "url": "http://localhost/?q=wands_three&cycles=1" },
-    { "name": "wands_three_2", "type": "short", "url": "http://localhost/?q=wands_three&cycles=2" },
-    { "name": "wands_three_3", "type": "short", "url": "http://localhost/?q=wands_three&cycles=3" },
-    { "name": "wands_three_4", "type": "short", "url": "http://localhost/?q=wands_three&cycles=4" },
-    { "name": "wands_three_5", "type": "short", "url": "http://localhost/?q=wands_three&cycles=5" },
-    { "name": "wands_three_6", "type": "short", "url": "http://localhost/?q=wands_three&cycles=6" },
-    { "name": "wands_two_1", "type": "short", "url": "http://localhost/?q=wands_two&cycles=1" },
-    { "name": "wands_two_2", "type": "short", "url": "http://localhost/?q=wands_two&cycles=2" },
-    { "name": "wands_two_3", "type": "short", "url": "http://localhost/?q=wands_two&cycles=3" },
-    { "name": "wands_two_4", "type": "short", "url": "http://localhost/?q=wands_two&cycles=4" },
-    { "name": "wands_two_5", "type": "short", "url": "http://localhost/?q=wands_two&cycles=5" },
-    { "name": "wands_two_6", "type": "short", "url": "http://localhost/?q=wands_two&cycles=6" }
-];
-
+/** @type {Object[]} The collection of sites that will be used for screenshotting. */
 let sites = [];
 
-[1, 2, 3, 4, 5, 6].forEach(i => {
-    collectableCategories.forEach(c => {
+// Imports, yada yada, boring.
+const ProgressBar = require('progress');
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+const path = require('path');
+
+// Here we see my laziness, instead of finding the file on my FS, I just launch a local server and download them.
+function downloadFileSync(url) {
+  return require('child_process').execFileSync('curl', ['--silent', '-L', url], { encoding: 'utf8' });
+}
+
+// Set up the URL bases.
+const mapOneBase = 'http://localhost/?z=4&ft=-75,110';
+const mapTwoBase = 'http://localhost/rdo/?z=4&ft=-75,110&c=red';
+
+/**
+ * COLLECTOR ITEMS
+ * Get all categories and items for each cycle in the items.json file.
+ * If an item has 1 location on the map, make it a short image to be clearer.
+ */
+let collectorItems = downloadFileSync('http://localhost/data/items.json');
+collectorItems = JSON.parse(collectorItems);
+
+Object.keys(collectorItems).forEach(k => {
+  const category = collectorItems[k];
+  Object.keys(category).forEach(ck => {
+    // Category items.
+    sites.push({
+      name: `${k}_${ck}`,
+      type: 'long',
+      url: `${mapOneBase}&q=${k}&cycles=${ck}`,
+    });
+
+    // Individual items.
+    const items = collectorItems[k][ck];
+    items.forEach(item => {
+      if (item.text.includes('random')) return;
+      if (item.text.match(/_[0-9]$/)) {
+        const name = item.text.replace(/_[0-9]$/, '');
+        if (sites.some(s => s.name === `${name}_${ck}`)) return;
+
         sites.push({
-            name: (c.name + "_" + i),
-            type: c.type,
-            url: (c.url + "&cycles=" + i)
+          name: `${name}_${ck}`,
+          type: 'long',
+          url: `${mapOneBase}&q=${name}&cycles=${ck}`,
         });
+      } else {
+        sites.push({
+          name: `${item.text}_${ck}`,
+          type: 'short',
+          url: `${mapOneBase}&q=${item.text}&cycles=${ck}`,
+        });
+      }
     });
+  });
 });
 
-sites = sites.concat(collectableIndividual);
-sites = sites.concat(legendaryAnimals);
-sites = sites.concat(animals);
-sites = sites.concat(treasures);
-sites = sites.concat(plants);
-sites = sites.concat(shops);
-sites = sites.concat(camps);
-sites = sites.concat(gfh);
-sites = sites.concat(misc);
+/**
+ * ANIMAL ITEMS
+ * Will add each animal heatmap to the list of sites, they are always long images.
+ */
+let animalItems = downloadFileSync('http://localhost/rdo/data/hm.json');
+animalItems = JSON.parse(animalItems);
 
-const bar = new ProgressBar("[:bar] :current/:total (:percent)", {
-    complete: "=",
-    incomplete: " ",
-    total: sites.length,
-    width: 80
+animalItems.forEach(category => {
+  category.data.forEach(animal => {
+    sites.push({
+      name: animal.key,
+      type: 'long',
+      url: `${mapTwoBase}&q=${animal.key}`,
+    });
+  });
 });
 
+/**
+ * ENCOUNTER ITEMS
+ * Will add encounters to the list, while there isn't a single location encounter for now,
+ * check it just to be safe and to be future-proof.
+ */
+let encounterItems = downloadFileSync('http://localhost/rdo/data/encounters.json');
+encounterItems = JSON.parse(encounterItems);
+
+encounterItems.forEach(item => {
+  sites.push({
+    name: item.key,
+    type: item.locations.length !== 1 ? 'long' : 'short',
+    url: `${mapTwoBase}&q=${item.key}`,
+  });
+});
+
+/**
+ * CAMP ITEMS
+ * Will add camps to the list, while there isn't a single location camp for now,
+ * check it just to be safe and to be future-proof.
+ */
+let campItems = downloadFileSync('http://localhost/rdo/data/camps.json');
+campItems = JSON.parse(campItems);
+
+campItems.forEach(item => {
+  sites.push({
+    name: item.key,
+    type: item.locations.length !== 1 ? 'long' : 'short',
+    url: `${mapTwoBase}&q=${item.key}`,
+  });
+});
+
+/**
+ * MISC ITEMS
+ * Will add misc items to the list, while there isn't a single location for now,
+ * check it just to be safe and to be future-proof.
+ */
+let miscItems = downloadFileSync('http://localhost/rdo/data/items.json');
+miscItems = JSON.parse(miscItems);
+
+miscItems.forEach(item => {
+  sites.push({
+    name: item.key,
+    type: item.locations.length !== 1 ? 'long' : 'short',
+    url: `${mapTwoBase}&q=${item.key}`,
+  });
+});
+
+/**
+ * ENCOUNTER ITEMS
+ * Will add plants to the list, while there isn't a single location plant for now,
+ * check it just to be safe and to be future-proof.
+ */
+let plantItems = downloadFileSync('http://localhost/rdo/data/plants.json');
+plantItems = JSON.parse(plantItems);
+
+plantItems.forEach(item => {
+  sites.push({
+    name: item.key,
+    type: item.locations.length !== 1 ? 'long' : 'short',
+    url: `${mapTwoBase}&q=${item.key}`,
+  });
+});
+
+/**
+ * SHOP ITEMS
+ * Will add shops to the list, tackle has only one location, so check for it.
+ */
+let shopItems = downloadFileSync('http://localhost/rdo/data/shops.json');
+shopItems = JSON.parse(shopItems);
+
+shopItems.forEach(item => {
+  sites.push({
+    name: item.key,
+    type: item.locations.length !== 1 ? 'long' : 'short',
+    url: `${mapTwoBase}&q=${item.key}`,
+  });
+});
+
+/**
+ * TREASURE ITEMS
+ * Treasures will always be zoomed in on the map, so they are always short images.
+ */
+let treasureItems = downloadFileSync('http://localhost/rdo/data/treasures.json');
+treasureItems = JSON.parse(treasureItems);
+
+treasureItems.forEach(item => {
+  sites.push({
+    name: item.text,
+    type: 'short',
+    url: `${mapTwoBase}&q=${item.text}`,
+  });
+});
+
+/**
+ * GUN FOR HIRE ITEMS
+ * Will add gfh to the list, certain gfhs have only 1 location, so check for it.
+ */
+let gfhItems = downloadFileSync('http://localhost/rdo/data/gfh.json');
+gfhItems = JSON.parse(gfhItems);
+
+gfhItems.forEach(item => {
+  sites.push({
+    name: item.key,
+    type: item.locations.length !== 1 ? 'long' : 'short',
+    url: `${mapTwoBase}&q=${item.key}`,
+  });
+});
+
+/**
+ * LEGENDARY ANIMALS ITEMS
+ * Legendaries will always be zoomed in on the map, so they are always short images.
+ */
+let legendaryItems = downloadFileSync('http://localhost/rdo/data/animal_legendary.json');
+legendaryItems = JSON.parse(legendaryItems);
+
+legendaryItems.forEach(item => {
+  sites.push({
+    name: item.text,
+    type: 'short',
+    url: `${mapTwoBase}&q=${item.text}`,
+  });
+});
+
+sites.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
+/** @type {ProgressBar} The ProgressBar instance to use for displaying the progress bar in console. */
+const bar = new ProgressBar('[:bar] :current/:total (:percent)', {
+  complete: '=',
+  incomplete: ' ',
+  total: sites.length,
+  width: 80,
+});
+
+/**
+ * Use Puppeteer to create a 4K-resolution image of a certain item.
+ * @param {string} url The URL to screenshot.
+ * @param {string} siteType Used to determine the folder the image will be created in.
+ * @param {string} siteName Used to determine the name of the image.
+ */
 async function doScreenCapture(url, siteType, siteName) {
-    const browser = await puppeteer.launch({
-        defaultViewport: {
-            width: 3840,
-            height: 2160
-        }
-    });
-    const page = await browser.newPage();
-    const writeDir = path.join(__dirname, `_${siteType}`);
-    const fileDir = path.join(writeDir, `${siteName}.jpg`);
+  const browser = await puppeteer.launch({
+    defaultViewport: {
+      width: 3840,
+      height: 2160,
+    },
+  });
+  const page = await browser.newPage();
+  const writeDir = path.join(__dirname, `_${siteType}`);
+  const fileDir = path.join(writeDir, `${siteName}.jpg`);
 
-    if (!fs.existsSync(writeDir)) fs.mkdirSync(writeDir);
+  if (!fs.existsSync(writeDir)) fs.mkdirSync(writeDir);
 
-    await page.goto(url, {
-        waitUntil: "networkidle2"
-    });
-    await page.screenshot({
-        fullPage: true,
-        type: "jpeg",
-        quality: 100,
-        path: fileDir
-    });
-    await browser.close();
+  await page.goto(url, {
+    waitUntil: 'networkidle2',
+  });
+  await page.screenshot({
+    fullPage: true,
+    type: 'jpeg',
+    quality: 100,
+    path: fileDir,
+  });
+  await browser.close();
 }
 
+const valid = sites.map(i => i.name);
+const data = JSON.stringify(valid, null, 2);
+fs.writeFileSync('manifest.json', data);
+
+/**
+ * The main thread logic. This spawns 8 instances of screenshotting at a time to speed up the process.
+ * TODO: Clean this up at some point, no rush.
+ */
 async function run() {
-    for (var i = 0; i < sites.length; i++) {
-        let p1 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p2 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p3 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p4 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p5 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p6 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p7 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-        i++;
-        let p8 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+  for (var i = 0; i < sites.length; i++) {
+    let p1 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p2 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p3 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p4 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p5 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p6 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p7 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+    i++;
+    let p8 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
 
-        await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8]);
-        bar.tick(8);
-        if (bar.complete) {
-            console.log("\nDone!\n");
-        }
+    await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8]);
+    bar.tick(8);
+    if (bar.complete) {
+      console.log('\nDone!\n');
     }
+  }
 }
 
-console.log("Starting the screenshotting process...");
+console.log('Starting the screenshotting process...');
 run();

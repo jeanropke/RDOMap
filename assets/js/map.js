@@ -250,8 +250,6 @@ const MapBase = {
         const loc = MadamNazar.possibleLocations[MadamNazar.currentLocation];
         MapBase.map.setView({ lat: loc.x, lng: loc.y }, 5);
       } else if (Treasure.quickParams.indexOf(quickParam) !== -1) {
-        Treasure.treasuresOnMap = true;
-        Treasure.onMap = true;
         Treasure.treasures.filter(item => {
           if (item.text !== quickParam) return;
           item.onMap = true;
