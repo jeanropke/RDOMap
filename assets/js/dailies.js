@@ -35,17 +35,17 @@ class Dailies {
         console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
         this.dailiesLoaded();
 
-        this.dailiesList.data.forEach((roleData, roleIndex) => {
+        this.dailiesList.data.forEach(roleData => {
           const role = roleData.role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
-          if (role === 'general') this.categoryOffset = roleIndex;
-          this.categories.push(role);
+          const categoryIndex = this.jsonData.category_order.findIndex(element => element === role);
+          this.categories[categoryIndex] = role;
 
           $('.dailies')
             .append($(`<div id="${role}" class="daily-role"></div>`)
               .toggleClass('hidden', role !== 'general'));
 
           roleData.challenges.forEach(({ desiredGoal, displayType, description: { label } }, index) => {
-            const activeCategory = this.jsonData.find(({ key }) => key === label.toLowerCase()).category;
+            const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
             this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
 
