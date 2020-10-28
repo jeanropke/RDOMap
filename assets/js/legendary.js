@@ -72,7 +72,7 @@ class Legendary {
       })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
-    if (!MapBase.isPreviewMode) {
+    if (Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
       this.marker.addLayer(L.imageOverlay(overlay, [
         [this.x - this.radius, this.y - this.radius * 2],

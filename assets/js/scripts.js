@@ -88,6 +88,7 @@ function init() {
   $('#tooltip').prop('checked', Settings.showTooltips);
   $('#enable-marker-popups-hover').prop('checked', Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop('checked', Settings.isShadowsEnabled);
+  $('#enable-legendary-backgrounds').prop('checked', Settings.isLaBgEnabled);
   $('#enable-dclick-zoom').prop('checked', Settings.isDoubleClickZoomEnabled);
   $('#show-help').prop('checked', Settings.showHelp);
   $('#timestamps-24').prop('checked', Settings.isClock24Hour);
@@ -272,6 +273,11 @@ $('#enable-marker-shadows').on('change', function () {
   Pins.loadPins();
   MadamNazar.addMadamNazar();
   Shop.locations.forEach(shop => shop.reinitMarker());
+});
+
+$('#enable-legendary-backgrounds').on('change', function () {
+  Settings.isLaBgEnabled = $('#enable-legendary-backgrounds').prop('checked');
+  Legendary.onSettingsChanged();
 });
 
 $('#enable-dclick-zoom').on('change', function () {
