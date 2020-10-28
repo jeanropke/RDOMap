@@ -1,9 +1,9 @@
 class Dailies {
-  constructor(role, translationKey, target, index) {
+  constructor(role, translationKey, target, challengeId) {
     this.role = role;
     this.translationKey = translationKey;
     this.target = target;
-    this.index = index;
+    this.challengeId = challengeId;
   }
   static init() {
     this.categories = [];
@@ -18,7 +18,6 @@ class Dailies {
 
     const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString(); // 21600000ms = 6 hours
 
-    // delete old saved completed dailies on day change
     if (localStorage.lastDailiesDate !== dailiesDate) {
       for (const setting in localStorage) {
         if (setting.startsWith('rdo:dailies.'))
@@ -44,31 +43,36 @@ class Dailies {
             .append($(`<div id="${role}" class="daily-role"></div>`)
               .toggleClass('hidden', role !== 'general'));
 
-          roleData.challenges.forEach(({ desiredGoal, displayType, description: { label } }, index) => {
-            const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
-            this.markersCategories.push(activeCategory);
-            SettingProxy.addSetting(DailyChallenges, `${role}_${index}`, {});
+          roleData.challenges
+            .sort((...args) => {
+              const [a, b] = args.map(item => Language.get(item.description.label.toLowerCase()));
+              return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
+            })
+            .forEach(({ desiredGoal, id, displayType, description: { label } }) => {
+              const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
+              this.markersCategories.push(activeCategory);
+              SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
 
-            switch (displayType) {
-              case 'DISPLAY_CASH':
-                desiredGoal /= 100;
-                break;
-              case 'DISPLAY_MS_TO_MINUTES':
-                desiredGoal /= 60000;
-                break;
-              case 'DISPLAY_AS_BOOL':
-                desiredGoal = 1;
-                break;
-              case 'DISPLAY_FEET':
-                desiredGoal = Math.floor(desiredGoal * 3.28084);
-                break;
-              default:
-                desiredGoal = Math.trunc(desiredGoal);
-            }
+              switch (displayType) {
+                case 'DISPLAY_CASH':
+                  desiredGoal /= 100;
+                  break;
+                case 'DISPLAY_MS_TO_MINUTES':
+                  desiredGoal /= 60000;
+                  break;
+                case 'DISPLAY_AS_BOOL':
+                  desiredGoal = 1;
+                  break;
+                case 'DISPLAY_FEET':
+                  desiredGoal = Math.floor(desiredGoal * 3.28084);
+                  break;
+                default:
+                  desiredGoal = Math.trunc(desiredGoal);
+              }
 
-            const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, index);
-            newDaily.appendToMenu();
-          });
+              const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, id.toLowerCase());
+              newDaily.appendToMenu();
+            });
         });
 
         this.onLanguageChanged();
@@ -82,14 +86,14 @@ class Dailies {
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
-            <label for="checkbox-${this.role}-${this.index}"></label>
+            <label for="checkbox-${this.role}-${this.challengeId}"></label>
             <span class="counter" data-text="${this.target}"></span>
-            <span class="daily" id="daily-${this.role}-${this.index}" data-text="${this.translationKey}"></span>
+            <span class="daily" id="daily-${this.role}-${this.challengeId}" data-text="${this.translationKey}"></span>
             <span class="daily-checkbox">
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="check-${this.role}-${this.index}" value="0"
-                  id="checkbox-${this.role}-${this.index}" />
-                <label class="input-checkbox-label" for="checkbox-${this.role}-${this.index}"></label>
+                <input class="input-checkbox" type="checkbox" name="check-${this.role}-${this.challengeId}" value="0"
+                  id="checkbox-${this.role}-${this.challengeId}" />
+                <label class="input-checkbox-label" for="checkbox-${this.role}-${this.challengeId}"></label>
               </div>
             </span>
           </div>`))
@@ -99,10 +103,10 @@ class Dailies {
         'grid-template-areas': `"${structure[1]} daily-challenge ${structure[2]}"`,
       })
       .end()
-      .find(`#checkbox-${this.role}-${this.index}`)
-      .prop('checked', DailyChallenges[`${this.role}_${this.index}`])
+      .find(`#checkbox-${this.role}-${this.challengeId}`)
+      .prop('checked', DailyChallenges[`${this.role}_${this.challengeId}`])
       .on('change', () => {
-        DailyChallenges[`${this.role}_${this.index}`] = $(`#checkbox-${this.role}-${this.index}`).prop('checked');
+        DailyChallenges[`${this.role}_${this.challengeId}`] = $(`#checkbox-${this.role}-${this.challengeId}`).prop('checked');
       })
       .end();
   }

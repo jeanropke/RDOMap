@@ -1,5 +1,5 @@
 {
-  "category_order": ["general", "trader", "collector", "bounty_hunter", "moonshiner", "naturalist"],
+  "category_order": ["general", "bounty_hunter", "trader", "collector", "moonshiner", "naturalist"],
   "general": [
     { "name": "Alaskan Ginseng picked", "key": "mpgc_alaskan_ginseng_picked", "category": ["plants", "alaskan_ginseng"] },
     { "name": "American Ginseng picked", "key": "mpgc_american_ginseng_picked", "category": ["plants", "american_ginseng"] },
