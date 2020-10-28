@@ -43,9 +43,13 @@ class Menu {
       Location.locations.forEach(loc => {
         if (loc.onMap) loc.onMap = !loc.onMap;
       });
+      Legendary.animals.forEach(animal => {
+        if (animal.onMap) animal.onMap = !animal.onMap;
+      });
       MadamNazar.onMap = false;
       Pins.onMap = false;
     });
+
     $('.menu-show-all').on('click', function () {
       Shop.locations.forEach(shop => {
         if (!shop.onMap) shop.onMap = !shop.onMap;
@@ -65,6 +69,9 @@ class Menu {
       });
       Location.locations.forEach(loc => {
         if (!loc.onMap) loc.onMap = !loc.onMap;
+      });
+      Legendary.animals.forEach(animal => {
+        if (!animal.onMap) animal.onMap = !animal.onMap;
       });
       MadamNazar.onMap = true;
       Pins.onMap = true;
