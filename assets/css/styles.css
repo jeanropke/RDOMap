@@ -1460,6 +1460,7 @@ a.no-style:visited {
     font-size: 1.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    grid-template-areas: "daily-checkbox daily-challenge counter";
     grid-gap: 5px;
     margin: 10px 0;
     justify-content: space-between;
@@ -1488,19 +1489,20 @@ span.daily {
     margin: 0;
 }
 
-.daily-status {
-    margin: auto;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-}
-.daily-checkbox {
+span.daily-checkbox {
     display: grid;
     grid-area: daily-checkbox;
     width: 100%;
     height: 100%;
     align-items: center;
-    margin-right: 5px;
+    padding: 10px;
+}
+
+.daily-status {
+    margin: auto;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .one-daily-container .input-checkbox-wrapper {
