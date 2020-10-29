@@ -1460,7 +1460,6 @@ a.no-style:visited {
     font-size: 1.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-template-areas: "daily-checkbox daily-challenge counter";
     grid-gap: 5px;
     margin: 10px 0;
     justify-content: space-between;

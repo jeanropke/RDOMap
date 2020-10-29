@@ -696,5 +696,12 @@
     "menu.join_discord": "Приєднуйтеся до нашого Discord!",
     "map.remove": "Приховати на карті",
     "menu.reload_map": "Перезавантажити карту",
-    "help.reload_map": "Дозволяє перезавантажити карту, якщо з сайтом негаразд."
+    "help.reload_map": "Дозволяє перезавантажити карту, якщо з сайтом негаразд.",
+    "map.weather.clear": "Ясна погода",
+    "map.weather.storm": "Штормова погода",
+    "map.weather.foggy": "Туманна погода",
+    "map.weather.rain": "Дощова погода",
+    "map.weather.any": "Будь-яка погода",
+    "map.legendary.sample_value": "Зразок, вартість: {sample_value}",
+    "map.cant_be_picked_up": "Цю тварину не можна забрати."
 }

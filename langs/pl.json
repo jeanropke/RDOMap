@@ -1082,5 +1082,20 @@
     "menu.modal_remove_all_pins_title": "Usunąć wszystkie piny?",
     "menu.modal_remove_all_pins_body": "Spowoduje to usunięcie wszystkich Twoich pinów. Tej akcji nie można cofnąć.",
     "menu.reload_map": "Przeładuj mapę",
-    "help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową."
+    "help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową.",
+    "map.weather.preferred_weather": "Preferowana pogoda: {preferred_weather}",
+    "map.weather.clear": "Ładna pogoda",
+    "map.weather.storm": "Burzowa pogoda",
+    "map.weather.foggy": "Mglistna pogoda",
+    "map.weather.rain": "Deszczowa pogoda",
+    "map.weather.any": "Dowolna pogoda",
+    "map.legendary.spawn_time": "Preferowana pora dnia: {spawn_time}",
+    "map.legendary.preferred_weather": "Preferowana pogoda: {preferred_weather}",
+    "map.legendary.trader_materials": "Materiały handlowca: {trader_materials}",
+    "map.legendary.trader_pelt_materials": "Materiały handlowca - futro: {trader_pelt_materials}",
+    "map.legendary.trapper_value": "Cena trapera: {trapper_value}",
+    "map.legendary.trapper_pelt_value": "Cena trapera - futro: {trapper_pelt_value}",
+    "map.legendary.trapper_part_value": "Cena trapera - inne części: {trapper_part_value}",
+    "map.legendary.sample_value": "Wartość próbki: {sample_value}",
+    "map.cant_be_picked_up": "Tego zwierzęcia nie można podnieść."
 }

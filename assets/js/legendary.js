@@ -125,7 +125,7 @@ class Legendary {
       .translate();
 
     const pElements = $('span > p', snippet);
-    [].forEach.call(pElements, p => {
+    [...pElements].forEach(p => {
       const propertyText = $(p).text().replace(/{([a-z_]+)}/, (full, key) => properties[key]);
       $(p).text(propertyText);
     });
