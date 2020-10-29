@@ -11,7 +11,7 @@ class Marker {
         case 'fasttravel':
           return Language.get(`${this.category}.${this.text}.name`);
         case 'rescue':
-          return Language.get(`map.${this.category}.objective.name`);
+          return Language.get(`map.${this.category}.${this.subdata}.name`);
         case 'shops':
         case 'gfh':
           return Language.get(`map.${this.category}.${this.subdata}.name`);

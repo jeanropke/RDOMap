@@ -21,11 +21,12 @@ class Encounter {
 
     this.onLanguageChanged();
 
+    const imgKey = this.key === 'rescue' ? 'rescue_objective' : this.key;
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`menu.${this.key}`))
       .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
-      .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
+      .append($(`<img src="./assets/images/icons/${imgKey}.png" class="collectible-icon">`))
       .append($('<p class="collectible">').attr('data-text', `menu.${this.key}`))
       .translate();
 
@@ -44,8 +45,8 @@ class Encounter {
   reinitMarker() {
     this.layer.clearLayers();
     this.markers.forEach(marker => {
-      const shadow = Settings.isShadowsEnabled ?
-        `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
+      const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
+      const imgKey = this.key === 'rescue' ? `${this.key}_${marker.subdata}` : this.key;
       var tempMarker = L.marker([marker.lat, marker.lng], {
         opacity: Settings.markerOpacity,
         icon: new L.DivIcon.DataMarkup({
@@ -53,8 +54,7 @@ class Encounter {
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
           popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
           html: `<div>
-              ${marker.subdata === 'mission_giver' ? '<img class="overlay" src="assets/images/icons/overlay_giver.png" alt="Mission giver">' : ''}
-              <img class="icon" src="assets/images/icons/${this.key}.png" alt="Icon">
+              <img class="icon" src="assets/images/icons/${imgKey}.png" alt="Icon">
               <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || this.color}.png" alt="Background">
               ${shadow}
             </div>`,
