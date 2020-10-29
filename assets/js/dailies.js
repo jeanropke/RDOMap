@@ -45,7 +45,7 @@ class Dailies {
 
           roleData.challenges
             .sort((...args) => {
-              const [a, b] = args.map(item => Language.get(item.description.label.toLowerCase()));
+              const [a, b] = args.map(({ description: { label } }) => Language.get(label.toLowerCase()));
               return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
             })
             .forEach(({ desiredGoal, id, displayType, description: { label } }) => {
@@ -128,7 +128,7 @@ class Dailies {
   }
   static switchCategory() {
     const roles = $('.daily-role');
-    [].forEach.call(roles, element => {
+    [...roles].forEach(element => {
       $(element).toggleClass('hidden', element.id !== Dailies.categories[Dailies.categoryOffset]);
     });
     const textKey = `menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`;
