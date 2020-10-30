@@ -192,7 +192,6 @@ $('#language').on('change', function () {
 
   Language.setMenuLanguage();
   Treasure.onLanguageChanged();
-  Dailies.onLanguageChanged();
 
   // WIP: update markers without reload page
   Camp.locations.forEach(camp => camp.onLanguageChanged());

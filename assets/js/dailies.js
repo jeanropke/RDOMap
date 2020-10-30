@@ -10,7 +10,6 @@ class Dailies {
     this.categoryOffset = 0;
     this.jsonData = [];
     this.dailiesList = [];
-    this.context = $('.daily-challenges[data-type=dailies]');
     this.markersCategories = [];
 
     const currentDailies = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
@@ -74,11 +73,9 @@ class Dailies {
               newDaily.appendToMenu();
             });
         });
-
-        this.onLanguageChanged();
       })
       .then(this.activateHandlers)
-      .catch(this.dailiesNotUpdated);
+      //.catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
     const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
@@ -133,9 +130,6 @@ class Dailies {
     });
     const textKey = `menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`;
     $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
-  }
-  static onLanguageChanged() {
-    Menu.reorderMenu(this.context);
   }
   static activateHandlers() {
     $('#dailies-prev').on('click', Dailies.prevCategory);
