@@ -75,7 +75,7 @@ class Dailies {
         });
       })
       .then(this.activateHandlers)
-      //.catch(this.dailiesNotUpdated);
+      .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
     const structure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
