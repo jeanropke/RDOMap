@@ -42,37 +42,33 @@ class Dailies {
             .append($(`<div id="${role}" class="daily-role"></div>`)
               .toggleClass('hidden', role !== 'general'));
 
-          roleData.challenges
-            .sort((...args) => {
-              const [a, b] = args.map(({ description: { label } }) => Language.get(label.toLowerCase()));
-              return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
-            })
-            .forEach(({ desiredGoal, id, displayType, description: { label } }) => {
-              const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
-              this.markersCategories.push(activeCategory);
-              SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
+          roleData.challenges.forEach(({ desiredGoal, id, displayType, description: { label } }) => {
+            const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
+            this.markersCategories.push(activeCategory);
+            SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
 
-              switch (displayType) {
-                case 'DISPLAY_CASH':
-                  desiredGoal /= 100;
-                  break;
-                case 'DISPLAY_MS_TO_MINUTES':
-                  desiredGoal /= 60000;
-                  break;
-                case 'DISPLAY_AS_BOOL':
-                  desiredGoal = 1;
-                  break;
-                case 'DISPLAY_FEET':
-                  desiredGoal = Math.floor(desiredGoal * 3.28084);
-                  break;
-                default:
-                  desiredGoal = Math.trunc(desiredGoal);
-              }
+            switch (displayType) {
+              case 'DISPLAY_CASH':
+                desiredGoal /= 100;
+                break;
+              case 'DISPLAY_MS_TO_MINUTES':
+                desiredGoal /= 60000;
+                break;
+              case 'DISPLAY_AS_BOOL':
+                desiredGoal = 1;
+                break;
+              case 'DISPLAY_FEET':
+                desiredGoal = Math.floor(desiredGoal * 3.28084);
+                break;
+              default:
+                desiredGoal = Math.trunc(desiredGoal);
+            }
 
-              const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, id.toLowerCase());
-              newDaily.appendToMenu();
-            });
+            const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, id.toLowerCase());
+            newDaily.appendToMenu();
+          });
         });
+        this.sortDailies();
       })
       .then(this.activateHandlers)
       .catch(this.dailiesNotUpdated);
@@ -130,6 +126,18 @@ class Dailies {
     });
     const textKey = `menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`;
     $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
+  }
+  static sortDailies() {
+    const $roleContainers = $('.daily-role');
+    [...$roleContainers].forEach(roleContainer => {
+      const dailies = $('.one-daily-container', roleContainer);
+      const sortedDailies = [...dailies].sort((...args) => {
+        const [a, b] = args.map(dailyContainer =>
+          Language.get($(dailyContainer).find('span.daily').attr('data-text')));
+        return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
+      });
+      $(roleContainer).append(sortedDailies);
+    });
   }
   static activateHandlers() {
     $('#dailies-prev').on('click', Dailies.prevCategory);
