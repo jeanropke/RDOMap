@@ -285,14 +285,13 @@ const FME = {
       $('#fme-enabled-events-modal').modal();
     });
 
-    $.getJSON(`data/fme.json?nocache=${nocache}`)
-      .done(function (data) {
-        FME._eventsJson = data;
-        FME.update();
-        FME.initModal();
-        window.setInterval(FME.update, 10000);
-        console.info('%c[FME] Loaded!', 'color: #bada55; background: #242424');
-      });
+    return Loader.promises['fme'].consumeJson(data => {
+      FME._eventsJson = data;
+      FME.update();
+      FME.initModal();
+      window.setInterval(FME.update, 10000);
+      console.info('%c[FME] Loaded!', 'color: #bada55; background: #242424');
+    });
   },
 
   initModal: function () {
