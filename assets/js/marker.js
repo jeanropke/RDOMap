@@ -23,6 +23,8 @@ class Marker {
           return Language.get(`map.${this.category}.${this.text}.name`);
         case 'harrietum_animals':
           return Language.get('map.harrietum_animals.name') + ' - ' + Language.get(`menu.cmpndm.${this.text}`);
+        case 'sightseeing':
+          return Language.get('map.sightseeing.name') + (this.text === 'hidden' ? ' - ' + Language.get('map.sightseeing.hidden') : '');
         default:
           return Language.get(`map.${this.category}.name`);
       }
