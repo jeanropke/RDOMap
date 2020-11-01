@@ -558,6 +558,10 @@
     "menu.close": "Kapat",
     "menu.join_discord": "Discord'umuza katılın!",
     "map.remove": "Haritadan kaldır",
+    "menu.remove_all_pins": "Tüm pimleri kaldır",
+    "help.remove_all_pins": "Kullanıcı tarafından oluşturulan tüm pimleri kaldırır.",
+    "menu.modal_remove_all_pins_title": "Tüm pimler kaldırılsın mı?",
+    "menu.modal_remove_all_pins_body": "Özel pimlerinizin tümünü siler. Bu işlem geri alınamaz.",
     "menu.reload_map": "Haritayı şimdi yenile",
     "help.reload_map": "Eğer web sitesinde bir yanlışlık varsa haritayı yenilemenizi sağlar.",
     "map.weather.preferred_weather": "Tercih edilen hava durumu: {preferred_weather}",
@@ -574,5 +578,7 @@
     "map.legendary.trapper_pelt_value": "Avcı post değeri: {trapper_pelt_value}",
     "map.legendary.trapper_part_value": "Avcı parça değeri: {trapper_part_value}",
     "map.legendary.sample_value": "Örnek değeri: {sample_value}",
-    "map.cant_be_picked_up": "Bu hayvan taşınamaz."
+    "map.cant_be_picked_up": "Bu hayvan taşınamaz.",
+    "menu.enable_legendary_backgrounds": "Legendary Animal arka planları açık",
+    "help.enable_legendary_backgrounds": "Haritadaki sarı yuvarlakların içindeki hayvan simgesi arka planlarını açıp kapatmanızı sağlar."
 }
