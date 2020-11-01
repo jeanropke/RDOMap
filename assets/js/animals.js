@@ -17,6 +17,8 @@ class Animal {
 
     if (this.groups != null) {
       this.groups.forEach(_group => {
+        if (!AnimalCollection.groups[_group])
+          return console.error(`The animal spawns group for ${_group} could not be found.`);
         MapBase.yieldingLoop(AnimalCollection.groups[_group].length, 50, function (i) {
           const _marker = AnimalCollection.groups[_group][i];
           const tempMarker = L.marker([_marker.x, _marker.y], {
@@ -41,11 +43,13 @@ class Animal {
               .replace('{end}', endTime);
           }
 
+          let debugDisplayLatLng = $('<small>').text(`Latitude: ${_marker.x} / Longitude: ${_marker.y} / Start: ${_marker.start} / End: ${_marker.end}`);
           tempMarker.bindPopup(
             `<h1>${Language.get('map.animal_spawns.name').replace('{animal}', Language.get(`menu.cmpndm.${self.key}`))}</h1>
             <span class="marker-content-wrapper">
               <p>${popupContent}</p>
-            </span>`, {
+            </span>
+            ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}`, {
               minWidth: 300,
               maxWidth: 400,
             });
