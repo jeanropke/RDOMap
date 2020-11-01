@@ -107,7 +107,7 @@ class AnimalCollection {
     AnimalCollection.heatmapLayer.addTo(MapBase.map);
     AnimalCollection.spawnLayer.addTo(MapBase.map);
 
-    const animalSpawns = Loader.promises['animal_spawns'].consumeJson(data => this.groups = data[0]);
+    const animalSpawns = Loader.promises['animal_spawns'].consumeJson(data => this.groups = data);
     const animalHeatmap = Loader.promises['hm'].consumeJson(data => this.collectionsData = data);
 
     return Promise.all([animalSpawns, animalHeatmap]).then(() => {
