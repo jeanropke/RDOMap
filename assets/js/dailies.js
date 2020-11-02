@@ -130,7 +130,7 @@ class Dailies {
   static sortDailies() {
     const $roleContainers = $('.daily-role');
     [...$roleContainers].forEach(roleContainer => {
-      const dailies = $('.one-daily-container', roleContainer);
+      const dailies = $(roleContainer).children('.one-daily-container');
       const sortedDailies = [...dailies].sort((...args) => {
         const [a, b] = args.map(dailyContainer =>
           Language.get($(dailyContainer).find('span.daily').attr('data-text')));
