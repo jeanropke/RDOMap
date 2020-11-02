@@ -1199,7 +1199,7 @@ a.no-style:visited {
     background: #000 !important;
 }
 
-@media (min-width: 801px) {
+@media (min-width: 769px) {
     .side-menu {
         width: 400px;
         left: -400px;
@@ -1414,7 +1414,7 @@ a.no-style:visited {
     display: block;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     #fme-container {
         right: 50px;
     }
