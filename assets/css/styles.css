@@ -1199,13 +1199,7 @@ a.no-style:visited {
     background: #000 !important;
 }
 
-@media (max-width: 1024px) {
-    .top-widget-menu-opened .fme-menu-opened {
-        display: none !important;
-    }
-}
-
-@media (min-width: 1025px) {
+@media (min-width: 801px) {
     .side-menu {
         width: 400px;
         left: -400px;
@@ -1420,7 +1414,7 @@ a.no-style:visited {
     display: block;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
     #fme-container {
         right: 50px;
     }
@@ -1433,6 +1427,7 @@ a.no-style:visited {
     #fme-container .fme-card #next-general-mobile,
     #fme-container .fme-card #next-role-mobile {
         display: block;
+        overflow: hidden;
     }
 
     #fme-container .fme-card .fme-body {
@@ -1443,6 +1438,10 @@ a.no-style:visited {
         width: 32px;
         height: auto;
         margin-right: 8px;
+    }
+
+    .top-widget-menu-opened .fme-menu-opened {
+        display: none !important;
     }
 }
 
