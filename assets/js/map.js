@@ -443,6 +443,7 @@ const MapBase = {
   _debugMarker: function (coords) {
     let temp = MapBase.map.unproject(this._gameToMap(coords), 8);
     MapBase.debugMarker(temp.lat, temp.lng);
+    return `{ "lat": ${temp.lat.toFixed(4)}, "lng": ${temp.lng.toFixed(4)} },`;
   },
 
   _gameToMap: function (coords) {

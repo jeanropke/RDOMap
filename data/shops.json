@@ -9,7 +9,8 @@
     "key": "butcher",
     "locations": [{"text": "shop_blk_butcher", "x": -83.5389, "y": 99.6020}, {"text": "shop_rho_butcher", "x": -83.4288, "y": 131.4299}, {"text": "shop_sdn_butcher", "x": -84.2624, "y": 155.0488}, {"text": "shop_str_butcher", "x": -69.7065, "y": 84.1000}, {"text": "shop_tbl_butcher", "x": -109.3269, "y": 25.7909}, {"text": "shop_val_butcher", "x": -51.7067, "y": 106.0184}]
   },
-  {    "color": "black",
+  {
+    "color": "black",
     "key": "doctor",
     "locations": [{"text": "shop_sdn_doctor", "x": -82.7154, "y": 153.5226}, {"text": "shop_val_doctor", "x": -51.1196, "y": 106.8218}]
   },
@@ -77,5 +78,10 @@
     "color": "black",
     "key": "harriet",
     "locations": [{"text": "shop_hen_harriet", "x": -96.6940, "y": 77.3690}, {"text": "shop_bgv_harriet", "x": -56.0618, "y": 86.8562}, {"text": "shop_bay_harriet", "x": -71.7883, "y": 141.8129}]
+  },
+  {
+    "color": "black",
+    "key": "wardrobe",
+    "locations": [{"text": "shop_bay_wardrobe_saint_denis", "x": -81.6223, "y": 150.9340}, {"text": "shop_bgv_wardrobe_strawberry", "x": -69.6771, "y": 83.4655}, {"text": "shop_bgv_wardrobe_wallace_station", "x": -57.4342, "y": 91.1293}, {"text": "shop_cho_wardrobe_armadillo", "x": -104.4427, "y": 54.0344}, {"text": "shop_gap_wardrobe_tumbleweed", "x": -109.1634, "y": 26.1907}, {"text": "shop_grt_wardrobe_blackwater", "x": -83.6750, "y": 99.3898}, {"text": "shop_hrt_wardrobe_valentine", "x": -51.0725, "y": 106.2308}, {"text": "shop_roa_wardrobe_vanhornpost", "x": -54.8857, "y": 158.2338}, {"text": "shop_scm_wardrobe_rhodes", "x": -83.6465, "y": 131.8298}]
   }
 ]
