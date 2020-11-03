@@ -70,13 +70,13 @@ class Legendary {
       fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
       radius: this.radius,
     })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 450 }));
+      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
         icon: Legendary.crossIcon,
         pane: 'animalX',
       })
-        .bindPopup(this.popupContent.bind(this), { minWidth: 450 }))
+        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
     if (!MapBase.isPreviewMode && Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
@@ -139,7 +139,7 @@ class Legendary {
     });
 
     snippet.find('button.remove-animal-category').on('click', () => {
-      localStorage.setItem(`rdo:Legendaries_category_time_${properties.animal_category}`, Date.now() + 8640000); // 8640000 ms = 144 min = 72 in-game hours
+      localStorage.setItem(`rdo:Legendaries_category_time_${properties.animal_category}`, Date.now() + 259200000); // 259200000 ms = 72 hours
       Legendary.toggleAnimalCategory(properties.animal_category, false);
     });
 
