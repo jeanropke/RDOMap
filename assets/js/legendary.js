@@ -23,11 +23,6 @@ class Legendary {
       e.preventDefault();
       const showAll = $(e.target).attr('data-text') === 'menu.show_all';
       Legendary.animals.forEach(animal => animal.onMap = showAll);
-
-      for (const setting in localStorage) {
-        if (setting.startsWith('rdo:Legendaries_category_time_'))
-          delete localStorage[setting];
-      }
     });
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => {
@@ -166,7 +161,7 @@ class Legendary {
         const key = `rdo:Legendaries_category_time_${category}`;
         if (!(key in localStorage)) return;
 
-        const time = localStorage.getItem(key) || 0;
+        const time = localStorage.getItem(key);
         if (time <= Date.now()) {
           delete localStorage[key];
           Legendary.toggleAnimalCategory(category, true);
