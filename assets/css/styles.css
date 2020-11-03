@@ -1479,7 +1479,7 @@ span.counter {
     width: 55px;
 }
 
-span.daily {
+label.daily {
     display: grid;
     align-content: center;
     text-align: left;

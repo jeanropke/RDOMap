@@ -79,12 +79,11 @@ class Dailies {
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container">
-            <label for="checkbox-${this.role}-${this.challengeId}"></label>
             <span class="counter" data-text="${this.target}"></span>
-            <span class="daily" id="daily-${this.role}-${this.challengeId}" data-text="${this.translationKey}"></span>
+            <label class="daily" data-text="${this.translationKey}" for="checkbox-${this.role}-${this.challengeId}"></label>
             <span class="daily-checkbox">
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="check-${this.role}-${this.challengeId}" value="0"
+                <input class="input-checkbox" type="checkbox" name="checkbox-${this.role}-${this.challengeId}" value="0"
                   id="checkbox-${this.role}-${this.challengeId}" />
                 <label class="input-checkbox-label" for="checkbox-${this.role}-${this.challengeId}"></label>
               </div>
@@ -133,7 +132,7 @@ class Dailies {
       const dailies = $(roleContainer).children('.one-daily-container');
       const sortedDailies = [...dailies].sort((...args) => {
         const [a, b] = args.map(dailyContainer =>
-          Language.get($(dailyContainer).find('span.daily').attr('data-text')));
+          Language.get($(dailyContainer).find('label.daily').attr('data-text')));
         return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
       });
       $(roleContainer).append(sortedDailies);
