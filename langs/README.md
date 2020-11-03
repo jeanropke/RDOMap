@@ -12,6 +12,7 @@ english (en-en.json)
   - Senexis
   - Kaffe97
   - yeradd12
+  - Michal__d
 
 german (de-de.json)
   - flameango
@@ -34,6 +35,7 @@ korean (ko.json)
   - pb29
   
 polish (pl.json)
+  - Michal__d
   - githb123
   - yeradd12
   
