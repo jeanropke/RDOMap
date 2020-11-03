@@ -23,6 +23,11 @@ class Legendary {
       e.preventDefault();
       const showAll = $(e.target).attr('data-text') === 'menu.show_all';
       Legendary.animals.forEach(animal => animal.onMap = showAll);
+
+      for (const setting in localStorage) {
+        if (setting.startsWith('rdo:Legendaries_category_time_'))
+          delete localStorage[setting];
+      }
     });
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => {
@@ -31,6 +36,7 @@ class Legendary {
       });
       this.onLanguageChanged();
       console.info('%c[Legendary animals] Loaded!', 'color: #bada55; background: #242424');
+      this.checkSpawnTime();
     });
   }
   static onLanguageChanged() {
@@ -64,13 +70,13 @@ class Legendary {
       fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
       radius: this.radius,
     })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
+      .bindPopup(this.popupContent.bind(this), { minWidth: 450 }));
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
         icon: Legendary.crossIcon,
         pane: 'animalX',
       })
-        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
+        .bindPopup(this.popupContent.bind(this), { minWidth: 450 }))
     );
     if (!MapBase.isPreviewMode && Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
@@ -101,6 +107,7 @@ class Legendary {
       trapper_pelt_value: `$${this.trapper_pelt_value.toFixed(2)}`,
       trapper_part_value: `$${this.trapper_part_value.toFixed(2)}`,
       sample_value: `$${this.sample_value.toFixed(2)}`,
+      animal_category: this.animal_category,
     };
   }
   popupContent() {
@@ -120,7 +127,8 @@ class Legendary {
           <p class="legendary-trapper-part-value" data-text="map.legendary.trapper_part_value"></p>
           <p class="legendary-sample-value" data-text="map.legendary.sample_value"></p>
         </span>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
+        <button type="button" class="btn btn-info remove-button remove-animal-category" data-text="map.remove.animal_category"></button>
+        <button type="button" class="btn btn-info remove-button remove-animal" data-text="map.remove"></button>
       </div>`)
       .translate();
 
@@ -130,8 +138,41 @@ class Legendary {
       $(p).text(propertyText);
     });
 
-    snippet.find('button').on('click', () => this.onMap = false);
+    snippet.find('button.remove-animal-category').on('click', () => {
+      localStorage.setItem(`rdo:Legendaries_category_time_${properties.animal_category}`, Date.now() + 8640000); // 8640000 ms = 144 min = 72 in-game hours
+      Legendary.toggleAnimalCategory(properties.animal_category, false);
+    });
+
+    snippet.find('button.remove-animal').on('click', () => this.onMap = false);
+
     return snippet[0];
+  }
+  static toggleAnimalCategory(category, show) {
+    Legendary.animals.forEach(animal => {
+      const _prop = animal.getAnimalProperties();
+      if (_prop.animal_category === category)
+        animal.onMap = show;
+    });
+  }
+  static checkSpawnTime() {
+    const animalCategories = new Set();
+    Legendary.animals.forEach(animal => {
+      const _prop = animal.getAnimalProperties();
+      animalCategories.add(_prop.animal_category);
+    });
+
+    setInterval(() => {
+      animalCategories.forEach(category => {
+        const key = `rdo:Legendaries_category_time_${category}`;
+        if (!(key in localStorage)) return;
+
+        const time = localStorage.getItem(key) || 0;
+        if (time <= Date.now()) {
+          delete localStorage[key];
+          Legendary.toggleAnimalCategory(category, true);
+        }
+      });
+    }, 10000);
   }
   set onMap(state) {
     if (!this.marker) return;
