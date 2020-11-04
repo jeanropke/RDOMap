@@ -126,7 +126,7 @@ const MapBase = {
       Settings.baseLayer = e.name;
       MapBase.setMapBackground();
 
-      Discoverable.createOverlays();
+      Discoverable.updateLayers();
       Overlay.onSettingsChanged();
     });
 
@@ -260,9 +260,6 @@ const MapBase = {
 
     if (Settings.showTooltips)
       Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
-
-    if (!this.isPreviewMode)
-      Discoverable.createOverlays();
   },
 
   disableAll: function (toShow = false) {
@@ -443,7 +440,7 @@ const MapBase = {
   _debugMarker: function (coords) {
     let temp = MapBase.map.unproject(this._gameToMap(coords), 8);
     MapBase.debugMarker(temp.lat, temp.lng);
-    return `{ "lat": ${temp.lat.toFixed(4)}, "lng": ${temp.lng.toFixed(4)} },`;
+    return { 'lat': temp.lat.toFixed(4), 'lng': temp.lng.toFixed(4) };
   },
 
   _gameToMap: function (coords) {
