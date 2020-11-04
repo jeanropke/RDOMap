@@ -1,6 +1,5 @@
 class Discoverable {
   static init() {
-    this.quickParams = [];
     this.locations = [];
     this.context = $('.menu-hidden[data-type=discoverables]');
 
@@ -10,7 +9,6 @@ class Discoverable {
         if (item.key === 'collectable_treasure_chest') return;
 
         this.locations.push(new Discoverable(item));
-        this.quickParams.push(item.key);
       });
 
       MapBase.map.on('zoomend', function (e) {

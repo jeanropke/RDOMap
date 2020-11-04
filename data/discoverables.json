@@ -861,7 +861,6 @@
     "disabled": true,
     "key": "grave",
     "locations": [
-      { "name": "grave_arthur_bad", "lat": -36.0053, "lng": 123.6346, "width": 64, "height": 64 },
       { "name": "grave_arthur_good", "lat": -36.0053, "lng": 123.6346, "width": 64, "height": 64 },
       { "name": "grave_davey", "lat": -25.2612, "lng": 90.9987, "width": 64, "height": 64 },
       { "name": "grave_eagle_flies", "lat": -33.5987, "lng": 119.2873, "width": 64, "height": 64 },
