@@ -1196,5 +1196,8 @@
     "map.cant_be_picked_up": "Это животное не может быть подобрано.",
     "menu.enable_legendary_backgrounds": "Фоны легендарных животных",
     "help.enable_legendary_backgrounds": "Позволяет включить или отключить фон с изображением легендарного животного в желтых кругах на карте.",
-    "map.sightseeing.hidden": "Скрытое место"
+    "map.sightseeing.hidden": "Скрытое место",
+    "map.remove.animal_category": "Скрыть всех животных из этой категории на 72 часа",
+    "map.shops.wardrobe.name": "Гардероб",
+    "map.shops.wardrobe.desc": "Этот гардероб может быть использован для смены одежды."
 }
