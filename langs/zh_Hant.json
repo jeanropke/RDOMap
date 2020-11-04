@@ -55,7 +55,9 @@
     "menu.show_coords": "顯示點擊坐標",
     "menu.show_help": "在懸停時顯示幫助",
     "menu.toggle_debug": "切換至偵錯模式",
+    "menu.tooltip": "工具提示",
     "menu.tooltip_disabled": "停用",
+    "menu.tooltip_enabled": "啟用",
     "menu.trains": "火車",
     "menu.treasure_hunter": "尋寶獵人",
     "menu.treasures": "藏寶圖",
@@ -1082,6 +1084,7 @@
     "menu.dailies_moonshiner": "私釀酒商",
     "menu.dailies_trader": "貿易商",
     "menu.dailies_naturalist": "博物學家",
+    "menu.show_dailies": "顯示每日挑戰",
     "menu.harrietum": "哈莉特花",
     "map.harrietum.name": "哈莉特花",
     "map.harrietum.desc": "收集 3 或 5 個這些可以轉化為動物。",
@@ -1089,11 +1092,13 @@
     "menu.sync_map_to_dailies": "啟用標記同步到當前一般每日挑戰",
     "map.harrietum_animals.name": "生機論研究體驗",
     "map.harrietum_animals.desc": "請利用適當的生機論研究小冊子和正確數量的哈莉特花來訪問這個地點，轉變為這隻動物。",
+    "menu.remove_all_pins": "移除所有標記",
     "menu.reload_map": "重新載入地圖",
     "help.reload_map": "重新載入地圖。",
     "map.weather.preferred_weather": "受影響的天氣： {preferred_weather}",
     "map.legendary.spawn_time": "首選生成時間：{spawn_time}",
     "map.legendary.preferred_weather": "首選天氣：{preferred_weather}",
     "map.legendary.sample_value": "樣本賣價：{sample_value}",
-    "map.cant_be_picked_up": "此動物屍體無法被抬起。"
+    "map.cant_be_picked_up": "此動物屍體無法被抬起。",
+    "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖"
 }
