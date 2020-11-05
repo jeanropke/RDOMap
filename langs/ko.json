@@ -388,6 +388,7 @@
     "menu.crashed_wagon": "파괴된 마차",
     "map.crashed_wagon.name": "파괴된 마차",
     "map.generic_not_released": "이 내용은 아직 게임에 나오지 않았다.",
+    "menu.fme_display": "유랑 모드 이벤트 표시",
     "menu.fme.time.starts_in": "{time} 후 시작",
     "menu.fme.time.less_than_a_minute": "1분 이내",
     "menu.fme.fme_archery": "활쏘기 달인",

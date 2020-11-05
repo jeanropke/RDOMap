@@ -676,6 +676,9 @@
     "map.shops.harriet.desc": "哈莉特為博物學家開了一間店，您可以購買各種有助於研究的補藥和物品，也可以在此出售動物樣本。",
     "map.shops.trapper.name": "葛斯",
     "map.shops.trapper.desc": "葛斯是經驗老到的捕獸人，只要提供他所需要的材料，他就能製成獨特的飾品、衣物和裝備。他也會收購整隻動物、動物的皮、毛皮和羽毛。",
+    "menu.poacher_hideout": "盜獵者",
+    "map.poacher_hideout.name": "盜獵者（博物學家）",
+    "map.poacher_hideout.desc": "這是一個\"博物學家任務\"，在地圖上隨機顯示任務。殺死盜獵者並釋放動物已獲得\"博物學家\"獎勵。",
     "mpgc_alaskan_ginseng_picked": "已採摘的阿拉斯加人參",
     "mpgc_american_ginseng_picked": "已採摘的花旗參",
     "mpgc_animals_skinned": "已剝取的動物",
@@ -1100,5 +1103,7 @@
     "map.legendary.preferred_weather": "首選天氣：{preferred_weather}",
     "map.legendary.sample_value": "樣本賣價：{sample_value}",
     "map.cant_be_picked_up": "此動物屍體無法被抬起。",
-    "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖"
+    "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖",
+    "map.shops.wardrobe.name": "更衣間",
+    "map.shops.wardrobe.desc": "這個更衣間可以用來改變你的服裝。"
 }
