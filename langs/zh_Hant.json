@@ -679,6 +679,7 @@
     "menu.poacher_hideout": "盜獵者",
     "map.poacher_hideout.name": "盜獵者（博物學家）",
     "map.poacher_hideout.desc": "這是一個\"博物學家任務\"，在地圖上隨機顯示任務。殺死盜獵者並釋放動物已獲得\"博物學家\"獎勵。",
+    "menu.join_discord": "加入我們的 Discord 服務器",
     "mpgc_alaskan_ginseng_picked": "已採摘的阿拉斯加人參",
     "mpgc_american_ginseng_picked": "已採摘的花旗參",
     "mpgc_animals_skinned": "已剝取的動物",
@@ -1105,5 +1106,16 @@
     "map.cant_be_picked_up": "此動物屍體無法被抬起。",
     "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖",
     "map.shops.wardrobe.name": "更衣間",
-    "map.shops.wardrobe.desc": "這個更衣間可以用來改變你的服裝。"
+    "map.shops.wardrobe.desc": "這個更衣間可以用來改變你的服裝。",
+    "menu.discoverables": "亞瑟的筆記本",
+    "menu.discoverables.animal": "動物",
+    "menu.discoverables.collectable_dino_bones": "單人（恐龍骨頭）",
+    "menu.discoverables.collectable_dreamcatcher": "單人（捕夢網）",
+    "menu.discoverables.collectable_rock_carving": "單人（幫派藏身處）",
+    "menu.discoverables.discoverable": "景點",
+    "menu.discoverables.grave": "單人（墳墓）",
+    "menu.discoverables.sp_legendaries": "單人（傳說動物）",
+    "menu.discoverables.sp_areas": "單人（區域）",
+    "menu.discoverables.text": "地標",
+    "menu.discoverables.vegetation": "植物和草藥"
 }
