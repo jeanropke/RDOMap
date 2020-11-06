@@ -136,7 +136,7 @@ class Legendary {
     });
 
     snippet.find('button.remove-animal-category').on('click', () => {
-      localStorage.setItem(`rdr2collector:Legendaries_category_time_${properties.animalSpecies}`, Date.now() + 259200000); // 259200000 ms = 72 hours
+      localStorage.setItem(`rdo:Legendaries_category_time_${properties.animalSpecies}`, Date.now() + 259200000); // 259200000 ms = 72 hours
       Legendary.toggleAnimalSpecies(properties.animalSpecies, false);
     });
 
@@ -160,7 +160,7 @@ class Legendary {
 
     setInterval(() => {
       animalSpeciesSet.forEach(animalSpecies => {
-        const key = `rdr2collector:Legendaries_category_time_${animalSpecies}`;
+        const key = `rdo:Legendaries_category_time_${animalSpecies}`;
         if (!(key in localStorage)) return;
 
         const time = localStorage.getItem(key);
