@@ -1199,5 +1199,17 @@
     "map.sightseeing.hidden": "Скрытое место",
     "map.remove.animal_category": "Скрыть всех животных из этой категории на 72 часа",
     "map.shops.wardrobe.name": "Гардероб",
-    "map.shops.wardrobe.desc": "Этот гардероб может быть использован для смены одежды."
+    "map.shops.wardrobe.desc": "Этот гардероб может быть использован для смены одежды.",
+    "menu.discoverables": "Иконография",
+    "menu.discoverables.animal": "Животные",
+    "menu.discoverables.collectable_dino_bones": "Сюжет. Режим - Кости динозавров",
+    "menu.discoverables.collectable_dreamcatcher": "Сюжет. Режим - Ловцы снов",
+    "menu.discoverables.collectable_rock_carving": "Сюжет. Режим - Наскальные изображения",
+    "menu.discoverables.collectable_treasure_chest": "Сюжет. Режим - Сундуки с сокровищами",
+    "menu.discoverables.discoverable": "Достопримечательности",
+    "menu.discoverables.grave": "Сюжет. Режим - Могилы",
+    "menu.discoverables.sp_legendaries": "Сюжет. Режим - Легендарные животные",
+    "menu.discoverables.sp_areas": "Сюжет. Режим - Области событий",
+    "menu.discoverables.text": "Обнаруженные локации",
+    "menu.discoverables.vegetation": "Растения и Травы"
 }
