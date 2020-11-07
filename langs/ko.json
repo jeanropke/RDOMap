@@ -148,7 +148,7 @@
     "map.treasure_hunter.name": "보물 사냥꾼",
     "map.tree_map.name": "보물 지도 - 나무",
     "map.wounded_animal.name": "다친 동물",
-    "map.legendary_animal.desc": "전설적인 동물은 다른 무작위적인 만남과 마찬가지로 '임의의 만남'이지만, 날씨와 시간 같은 환경적 제약이 있을 수 있다. 조건이 맞으면 레전드 애니멀 페로몬을 사용해 끌어낼 수 있다.",
+    "map.legendary_animal.desc": "전설적인 동물은 랜덤, 날씨와 시간 같은 환경적 제약이 있을 수 있다. 조건이 맞으면 전설의 동물 페로몬을 사용해 지도에 표시할 수 있다.",
     "menu.delete_all_settings": "전체 초기화",
     "menu.modal_delete_all_settings_title": "전체 초기화를 하시겠습니까?",
     "menu.enable_marker_popups_hover": "마커 팝업 열기",
@@ -846,5 +846,15 @@
     "menu.harrietum": "해리어텀 오피시날리스",
     "map.harrietum.name": "해리어텀 오피시날리스",
     "map.harrietum_animals.name": "동물 교감 장소",
-    "menu.reload_map": "지도 다시 불러오기"
+    "menu.reload_map": "지도 다시 불러오기",
+    "map.weather.preferred_weather": "날씨: {preferred_weather}",
+    "map.legendary.spawn_time": "스폰 시간대: {spawn_time}",
+    "map.legendary.preferred_weather": "날씨: {preferred_weather}",
+    "map.legendary.trader_materials": "상인 재료: {trader_materials}",
+    "map.legendary.trader_pelt_materials": "상인 가죽 재료: {trader_pelt_materials}",
+    "map.legendary.trapper_value": "판매: {trapper_value}",
+    "map.legendary.trapper_pelt_value": "상인 가죽 판매: {trapper_pelt_value}",
+    "map.legendary.trapper_part_value": "상인 부분 판매: {trapper_part_value}",
+    "map.legendary.sample_value": "표본 판매: {sample_value}",
+    "map.remove.animal_category": "이 카테고리의 동물을 72시간 동안 표시하지 않습니다."
 }
