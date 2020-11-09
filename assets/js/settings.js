@@ -165,6 +165,7 @@ Object.entries({
   showImportExportSettings: { default: true },
   showUtilitiesSettings: { default: true },
   showTooltips: { default: true },
+  showTooltipsMap: { default: true },
   showDailies: { default: true },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 

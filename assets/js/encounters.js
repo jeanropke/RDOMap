@@ -39,6 +39,7 @@ class Encounter {
   onLanguageChanged() {
     this.markers = [];
     this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, this.key, item.type)));
+
     this.reinitMarker();
   }
 
@@ -59,6 +60,7 @@ class Encounter {
               ${shadow}
             </div>`,
           marker: this.key,
+          tippy: marker.title,
         }),
       });
       tempMarker.bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });

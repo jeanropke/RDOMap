@@ -39,14 +39,16 @@
   <link rel="preload" as="image" href="./assets/images/selection_boxes.png">
   <link rel="preload" as="image" href="./assets/images/sun.png">
   <link rel="preload" as="image" href="./assets/images/timer_bg.png">
+  <link rel="preload" as="image" href="./assets/images/bgTooltip.png">
+  <link rel="preload" as="image" href="./assets/images/bgMapTooltip.png">
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1477" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1478" />
   <link rel="stylesheet" href="assets/css/tippy.css" />
 
   <script>
-    var nocache = 1477;
+    var nocache = 1478;
   </script>
 </head>
 
@@ -479,7 +481,8 @@
         </div>
       </div>
       <div class="input-container" data-help="enable_legendary_backgrounds">
-        <label for="enable-legendary-backgrounds" data-text="menu.enable_legendary_backgrounds">Legendary Animal backgrounds enabled</label>
+        <label for="enable-legendary-backgrounds" data-text="menu.enable_legendary_backgrounds">Legendary Animal
+          backgrounds enabled</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="enable-legendary-backgrounds" value="1"
             id="enable-legendary-backgrounds" />
@@ -606,8 +609,8 @@
       <div class="settings-container">
         <div class="input-container-noflex">
           <p class="explain-text">
-            These settings will not be saved. These settings are for development purposes and should not be used by
-            regular users.
+            These settings are work-in-progress or for development purposes only. If you just want to use the map, you
+            can ignore these.
           </p>
         </div>
         <div class="input-container">
@@ -629,6 +632,13 @@
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="show-all-markers" value="1" id="show-all-markers" />
             <label class="input-checkbox-label" for="show-all-markers"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="tooltip-map">
+          <label for="tooltip-map" data-text="menu.tooltip-map">Tooltip</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="tooltip-map" value="1" id="tooltip-map" />
+            <label class="input-checkbox-label" for="tooltip-map"></label>
           </div>
         </div>
       </div>
@@ -841,7 +851,7 @@
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1477"></script>
+  <script src="assets/js/loader.js?nocache=1478"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -853,28 +863,28 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1477"></script>
-  <script src="assets/js/settings.js?nocache=1477"></script>
-  <script src="assets/js/nazar.js?nocache=1477"></script>
-  <script src="assets/js/marker.js?nocache=1477"></script>
-  <script src="assets/js/treasures.js?nocache=1477"></script>
-  <script src="assets/js/legendary.js?nocache=1477"></script>
-  <script src="assets/js/encounters.js?nocache=1477"></script>
-  <script src="assets/js/locations.js?nocache=1477"></script>
-  <script src="assets/js/plants.js?nocache=1477"></script>
-  <script src="assets/js/camps.js?nocache=1477"></script>
-  <script src="assets/js/shops.js?nocache=1477"></script>
-  <script src="assets/js/gfh.js?nocache=1477"></script>
-  <script src="assets/js/animals.js?nocache=1477"></script>
-  <script src="assets/js/discoverables.js?nocache=1477"></script>
-  <script src="assets/js/overlays.js?nocache=1477"></script>
-  <script src="assets/js/pins.js?nocache=1477"></script>
-  <script src="assets/js/map.js?nocache=1477"></script>
-  <script src="assets/js/language.js?nocache=1477"></script>
-  <script src="assets/js/menu.js?nocache=1477"></script>
-  <script src="assets/js/dailies.js?nocache=1477"></script>
-  <script src="assets/js/scripts.js?nocache=1477"></script>
-  <script src="assets/js/fme.js?nocache=1477"></script>
+  <script src="assets/js/layers.js?nocache=1478"></script>
+  <script src="assets/js/settings.js?nocache=1478"></script>
+  <script src="assets/js/nazar.js?nocache=1478"></script>
+  <script src="assets/js/marker.js?nocache=1478"></script>
+  <script src="assets/js/treasures.js?nocache=1478"></script>
+  <script src="assets/js/legendary.js?nocache=1478"></script>
+  <script src="assets/js/encounters.js?nocache=1478"></script>
+  <script src="assets/js/locations.js?nocache=1478"></script>
+  <script src="assets/js/plants.js?nocache=1478"></script>
+  <script src="assets/js/camps.js?nocache=1478"></script>
+  <script src="assets/js/shops.js?nocache=1478"></script>
+  <script src="assets/js/gfh.js?nocache=1478"></script>
+  <script src="assets/js/animals.js?nocache=1478"></script>
+  <script src="assets/js/discoverables.js?nocache=1478"></script>
+  <script src="assets/js/overlays.js?nocache=1478"></script>
+  <script src="assets/js/pins.js?nocache=1478"></script>
+  <script src="assets/js/map.js?nocache=1478"></script>
+  <script src="assets/js/language.js?nocache=1478"></script>
+  <script src="assets/js/menu.js?nocache=1478"></script>
+  <script src="assets/js/dailies.js?nocache=1478"></script>
+  <script src="assets/js/scripts.js?nocache=1478"></script>
+  <script src="assets/js/fme.js?nocache=1478"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

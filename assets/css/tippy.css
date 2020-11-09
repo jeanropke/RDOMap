@@ -1,4 +1,4 @@
-.tippy-box[data-theme~='rdr2-theme'] {
+.tippy-box[data-theme~='menu-theme'] {
   background-color: transparent;
   background-image: url(../../assets/images/bgTooltip.png);
   background-size: 100% 100%;
@@ -13,14 +13,26 @@
   text-align: center
 }
 
-.tippy-box[data-theme~='rdr2-theme'] .tippy-arrow {
+.tippy-box[data-theme~='menu-theme'] .tippy-arrow {
   color: #cacaca;
 }
 
-.tippy-popper[x-placement^=bottom] .rdr2-theme .tippy-arrow {
+.tippy-box[data-theme~='map-theme'] {
+  background-color: transparent;
+  background-image: url(../../assets/images/bgMapTooltip.png);
+  background-size: 100% 100%;
+  border-radius: 0;
+  color: #fff !important;
+  font-family: Hapna, serif;
+  max-width: 260px;
+  text-align: center;
+  padding: 0;
+}
+
+.tippy-popper[x-placement^=bottom] .menu-theme .tippy-arrow {
   top: -6px
 }
 
-.tippy-popper[x-placement^=top] .rdr2-theme .tippy-arrow {
+.tippy-popper[x-placement^=top] .menu-theme .tippy-arrow {
   bottom: -6px
 }

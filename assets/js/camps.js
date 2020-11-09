@@ -65,6 +65,7 @@ class Camp {
                 ${shadow}
               </div>`,
             marker: this.key,
+            tippy: marker.title,
           }),
         }).bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
 

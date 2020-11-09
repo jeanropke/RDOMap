@@ -15,6 +15,7 @@ const MapBase = {
   init: function () {
     'use strict';
 
+    this.tippyInstances = [];
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
 
     //Please, do not use the GitHub map tiles. Thanks
@@ -258,8 +259,8 @@ const MapBase = {
       }
     }
 
-    if (Settings.showTooltips)
-      Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
+    Menu.updateTippy();
+    MapBase.updateTippy();
   },
 
   disableAll: function (toShow = false) {
@@ -364,6 +365,7 @@ const MapBase = {
           <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'darkblue'}.png" alt="Background">
           ${shadow}
         `,
+        tippy: marker.title,
       }),
       draggable: Settings.isDebugEnabled,
     });
@@ -372,6 +374,8 @@ const MapBase = {
       minWidth: 300,
     });
     Layers.debugLayer.addLayer(marker);
+
+    MapBase.updateTippy();
   },
 
   testData: { data: [] },
@@ -420,6 +424,30 @@ const MapBase = {
         finished.call(null);
       }
     })();
+  },
+
+  updateTippy: function () {
+    // Needs some more update points:
+    // - on marker update
+    // - on menu state change
+    // - on language state change
+    // Just debug for now.
+    if (!Settings.isDebugEnabled) return;
+
+    MapBase.tippyInstances.forEach(instance => instance.destroy());
+    MapBase.tippyInstances = [];
+
+    if (!Settings.showTooltipsMap || Settings.isPopupsHoverEnabled) return;
+
+    MapBase.tippyInstances = tippy('[data-tippy]', {
+      theme: 'map-theme',
+      placement: 'right',
+      arrow: false,
+      distance: 0,
+      content(ref) {
+        return ref.getAttribute('data-tippy');
+      },
+    });
   },
 
   // Rectangle for testing.

@@ -60,6 +60,7 @@ class Shop {
                 ${shadow}
               </div>`,
             marker: this.key,
+            tippy: marker.title,
           }),
         });
         tempMarker.bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });

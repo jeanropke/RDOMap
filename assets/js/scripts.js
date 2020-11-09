@@ -86,6 +86,7 @@ function init() {
   $('#marker-size').val(Settings.markerSize);
   $('#marker-cluster').prop('checked', Settings.isMarkerClusterEnabled);
   $('#tooltip').prop('checked', Settings.showTooltips);
+  $('#tooltip-map').prop('checked', Settings.showTooltipsMap);
   $('#enable-marker-popups-hover').prop('checked', Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop('checked', Settings.isShadowsEnabled);
   $('#enable-legendary-backgrounds').prop('checked', Settings.isLaBgEnabled);
@@ -236,13 +237,12 @@ $('#overlay-opacity').on('change', function () {
 
 $('#tooltip').on('change', function () {
   Settings.showTooltips = $('#tooltip').prop('checked');
+  Menu.updateTippy();
+});
 
-  if (Settings.showTooltips)
-    Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'rdr2-theme' });
-  else {
-    Menu.tippyInstances.forEach(instance => instance.destroy());
-    Menu.tippyInstances = [];
-  }
+$('#tooltip-map').on('change', function () {
+  Settings.showTooltipsMap = $('#tooltip-map').prop('checked');
+  MapBase.updateTippy();
 });
 
 $('#marker-cluster').on('change', function () {
@@ -387,6 +387,9 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
     if (this.options.category)
       img.dataset.category = this.options.category;
+
+    if (this.options.tippy)
+      img.dataset.tippy = this.options.tippy;
 
     if (this.options.time) {
       var from = parseInt(this.options.time[0]);

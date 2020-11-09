@@ -144,4 +144,13 @@ class Menu {
       });
     });
   }
+
+  static updateTippy() {
+    Menu.tippyInstances.forEach(instance => instance.destroy());
+    Menu.tippyInstances = [];
+
+    if (!Settings.showTooltips) return;
+
+    Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'menu-theme' });
+  }
 }

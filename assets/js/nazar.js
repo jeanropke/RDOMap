@@ -49,8 +49,7 @@ class MadamNazar {
     MadamNazar.layer.clearLayers();
     const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
 
-    const shadow = Settings.isShadowsEnabled ?
-      `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
+    const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
     var tempMarker = L.marker([cl.x, cl.y], {
       opacity: Settings.markerOpacity,
       icon: L.divIcon({
@@ -58,17 +57,17 @@ class MadamNazar {
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         html: `
-              <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
-              ${shadow}
-            `,
+          <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
+          <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
+          ${shadow}
+        `,
       }),
     });
     tempMarker.bindPopup(`
-    <h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1>
-    <p style="text-align: center;">
-    ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
-    </p>
+      <h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1>
+      <p style="text-align: center;">
+      ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
+      </p>
     `, { minWidth: 300 });
 
     MadamNazar.layer.addLayer(tempMarker);

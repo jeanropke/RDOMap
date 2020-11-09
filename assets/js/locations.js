@@ -59,6 +59,7 @@ class Location {
             ${shadow}
           </div>`,
           marker: this.key,
+          tippy: marker.title,
           time: marker.subdata,
         }),
       });
