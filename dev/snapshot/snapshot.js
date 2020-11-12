@@ -201,7 +201,19 @@ legendaryItems.forEach(item => {
   });
 });
 
-sites.sort((a, b) => (a.name > b.name) ? 1 : -1);
+/**
+ * NAZAR ITEMS
+ * Nazar has 12 locations, just use a for loop to add them all.
+ */
+for (let i = 0; i < 12; i++) {
+  sites.push({
+    name: `nazar_${i}`,
+    type: 'short',
+    url: `${mapTwoBase}&q=nazar&nazar=${i}`,
+  });
+}
+
+sites.sort((a, b) => a.name.localeCompare(b.name, 'en-US', { numeric: true, ignorePunctuation: true }));
 
 /** @type {ProgressBar} The ProgressBar instance to use for displaying the progress bar in console. */
 const bar = new ProgressBar('[:bar] :current/:total (:percent)', {
@@ -244,7 +256,7 @@ async function doScreenCapture(url, siteType, siteName) {
 
 const valid = sites.map(i => i.name);
 const data = JSON.stringify(valid, null, 2);
-fs.writeFileSync('manifest.json', data);
+fs.writeFileSync('_manifest.json', data);
 
 /**
  * The main thread logic. This spawns 8 instances of screenshotting at a time to speed up the process.

@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "progress": "^2.0.3",
-    "puppeteer": "^5.0.0"
+    "puppeteer": "^5.4.1"
   }
 }

@@ -1,9 +1,12 @@
-_long/
-_short/
 .DS_Store
 .idea/
 desktop.ini
 node_modules/
+
+# Screenshot stuff.
+_long/
+_short/
+_manifest.json
 
 # Used to make development easier.
 rdo/
