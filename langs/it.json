@@ -1161,5 +1161,6 @@
     "menu.sync_map_to_dailies": "Sincronizzazione abilitata per le sfide giornaliere attuali",
     "help.sync_map_to_dailies": "Ti permette di abilitare automaticamente solo i segnalini e le categorie relative alle sfide giornaliere attuali.",
     "map.harrietum_animals.name": "Trasformazione animale",
-    "menu.reload_map": "Ricarica la mappa adesso"
+    "menu.reload_map": "Ricarica la mappa adesso",
+    "map.weather.clear": "Clima sereno"
 }
