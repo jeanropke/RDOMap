@@ -552,5 +552,9 @@
     "map.legendary.trader_materials": "Materiály obchodníka: {trader_materials}",
     "map.legendary.trapper_value": "Lovecká hodnota: {trapper_value}",
     "map.legendary.sample_value": "Hodnota vzorku: {sample_value}",
-    "map.cant_be_picked_up": "Toto zvíře nelze zvednout."
+    "map.cant_be_picked_up": "Toto zvíře nelze zvednout.",
+    "menu.enable_legendary_backgrounds": "Povolit obrázek legendárního zvířete na pozadí",
+    "help.enable_legendary_backgrounds": "Dovoluje zapnout nebo vypnout obrázek legendárního zvířete na pozadí žlutého kruhu na mapě.",
+    "map.sightseeing.hidden": "Skryté místo",
+    "map.remove.animal_category": "Odstranit všechna zvířata z této kategorie po dobu 72 hodin"
 }

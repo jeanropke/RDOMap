@@ -1069,6 +1069,11 @@
     "mprc_trader_supplies_donated_carcass_perfect": "Cadavres en parfait état remis à Cripps",
     "mprc_trader_supplies_donated_predator": "Cadavre ou peau d'un prédateur dangereux donné",
     "mprc_trader_travel_wagon": "Distance parcourue en chariot de livraison lorsque vous êtes en mission",
+    "map.remove": "Supprimer de la carte",
+    "menu.remove_all_pins": "Supprimer toutes les épingles",
+    "help.remove_all_pins": "Supprime toutes les épingles créées par l'utilisateur.",
+    "menu.modal_remove_all_pins_title": "Supprimer toutes les épingles ?",
+    "menu.modal_remove_all_pins_body": "Cela supprimera tous vos épingles personnalisées. Cette action ne peut pas être annulée.",
     "menu.reload_map": "Actualiser la carte maintenant",
     "help.reload_map": "Vous permet de recharger la carte si quelque chose ne va pas avec le site web.",
     "map.weather.preferred_weather": "Préférence météo: {preferred_weather}",
@@ -1087,5 +1092,6 @@
     "map.legendary.sample_value": "Valeur de l'échantillon : {sample_value}",
     "map.cant_be_picked_up": "Cet animal ne peut pas être ramassé.",
     "menu.enable_legendary_backgrounds": "L'arrière plan d'animal légendaire désactivé",
-    "help.enable_legendary_backgrounds": "Permet d'activer ou de désactiver les arrière-plans de l'icône d'animal dans le cercle jaune de la carte."
+    "help.enable_legendary_backgrounds": "Permet d'activer ou de désactiver les arrière-plans de l'icône d'animal dans le cercle jaune de la carte.",
+    "map.remove.animal_category": "Retirer tous les animaux de cette catégorie pendant 72 heures"
 }
