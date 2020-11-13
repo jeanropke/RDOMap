@@ -1164,6 +1164,7 @@
     "menu.dailies_not_found": "Reload the map to view current dailies",
     "menu.show_dailies": "Show daily challenges",
     "help.show_dailies": "Enable showing daily challenges in menu",
+    "help.dailies_change_category": "Allows you to change between general and role dailiy challenges.",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "Harrietum Officianalis",
     "map.harrietum.name": "Harrietum Officianalis",
