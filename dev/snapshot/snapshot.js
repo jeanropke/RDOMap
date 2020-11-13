@@ -14,8 +14,12 @@ function downloadFileSync(url) {
   return require('child_process').execFileSync('curl', ['--silent', '-L', url], { encoding: 'utf8' });
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Set up the URL bases.
-const mapOneBase = 'http://localhost/?z=4&ft=-75,110';
+const mapOneBase = 'http://localhost/?z=4&ft=-75,110&c=red';
 const mapTwoBase = 'http://localhost/rdo/?z=4&ft=-75,110&c=red';
 
 /**
@@ -245,12 +249,16 @@ async function doScreenCapture(url, siteType, siteName) {
   await page.goto(url, {
     waitUntil: 'networkidle2',
   });
+
+  await sleep(1000 * 3);
+
   await page.screenshot({
     fullPage: true,
     type: 'jpeg',
     quality: 100,
     path: fileDir,
   });
+
   await browser.close();
 }
 
