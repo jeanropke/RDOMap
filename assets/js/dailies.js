@@ -110,15 +110,8 @@ class Dailies {
     $('.dailies').append($('<div class="daily-status not-found"></div>').attr('data-text', textKey).text(Language.get(textKey)));
     $('#dailies-changer-container, #sync-map-to-dailies, .dailies .daily-status.loading').addClass('hidden');
   }
-  static nextCategory() {
-    Dailies.categoryOffset = (Dailies.categoryOffset + 1).mod(Dailies.categories.length);
-    Dailies.switchCategory();
-  }
-  static prevCategory() {
-    Dailies.categoryOffset = (Dailies.categoryOffset - 1).mod(Dailies.categories.length);
-    Dailies.switchCategory();
-  }
-  static switchCategory() {
+  static switchCategory(targetButtonId) {
+    Dailies.categoryOffset = (Dailies.categoryOffset + (targetButtonId === 'dailies-next' ? 1 : -1)).mod(Dailies.categories.length);
     const roles = $('.daily-role');
     [...roles].forEach(element => {
       $(element).toggleClass('hidden', element.id !== Dailies.categories[Dailies.categoryOffset]);
@@ -139,8 +132,9 @@ class Dailies {
     });
   }
   static activateHandlers() {
-    $('#dailies-prev').on('click', Dailies.prevCategory);
-    $('#dailies-next').on('click', Dailies.nextCategory);
+    $('#dailies-prev, #dailies-next').on('click', event => {
+      Dailies.switchCategory(event.currentTarget.id);
+    });
   }
 }
 
