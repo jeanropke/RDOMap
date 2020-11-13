@@ -15,7 +15,7 @@ class Dailies {
     const currentDailies = Loader.promises['dailies'].consumeJson(data => this.dailiesList = data);
     const allDailies = Loader.promises['possible_dailies'].consumeJson(data => this.jsonData = data);
 
-    const dailiesDate = new Date(Date.now() - 21600000).toISOUTCDateString(); // 21600000ms = 6 hours
+    const dailiesDate = new Date(Date.now() - 216e5).toISOUTCDateString(); // 21600000ms = 6 hours
 
     if (localStorage.lastDailiesDate !== dailiesDate) {
       for (const setting in localStorage) {

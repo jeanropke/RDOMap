@@ -932,28 +932,6 @@ a.wiki-page:visited {
     cursor: pointer;
 }
 
-.dailies-changer {
-    user-select: none;
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10+ and Edge */
-    display: flex;
-    justify-content: center;
-}
-
-#dailies-changer-container {
-    margin: 10px 0;
-}
-
-#dailies-changer-container .dailies-title {
-    text-align: center;
-    min-width: 170px;
-    margin: 0 6px;
-    font-family: RDRLino, serif;
-    font-size: 19px;
-}
-
 .marker-content-wrapper {
     display: flex;
     align-items: center;
@@ -1043,15 +1021,6 @@ a.wiki-page:visited {
     background-position: center;
     margin-left: 6px;
     cursor: pointer;
-}
-
-.input-selection-arrow {
-    cursor: pointer;
-}
-
-.input-selection-arrow img {
-    height: 16px;
-    width: auto;
 }
 
 a.no-style {
@@ -1445,6 +1414,8 @@ a.no-style:visited {
     }
 }
 
+
+/* Dailies Styling */
 .dailies {
     margin: 20px 5px;
     font-size: 2rem;
@@ -1506,6 +1477,45 @@ span.daily-checkbox {
 .one-daily-container .input-checkbox-wrapper {
     width: 25px;
 }
+
+.input-selection-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+.input-selection-arrow img {
+    height: 16px;
+    margin: auto;
+}
+
+.dailies-changer {
+    user-select: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ and Edge */
+    display: flex;
+    justify-content: center;
+}
+
+#dailies-changer-container {
+    margin: 10px 0;
+}
+
+#dailies-changer-container .dailies-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 170px;
+    margin: 0 6px;
+    font-family: RDRLino, serif;
+    font-size: 19px;
+}
+/* End of dailies Styling */
 
 /* Dark mode styling */
 .leaflet-popup-content-wrapper {
