@@ -1198,7 +1198,6 @@
     "menu.enable_legendary_backgrounds": "Legendary Animal backgrounds enabled",
     "help.enable_legendary_backgrounds": "Allows you enable or disable the animal icon backgrounds in the yellow circles on the map.",
     "map.sightseeing.hidden": "Hidden Spot",
-    "map.remove.animal_category": "Remove all animals from this category for 72 hours",
     "map.shops.wardrobe.name": "Wardrobe",
     "map.shops.wardrobe.desc": "This wardrobe can be used to change your outfit.",
     "menu.discoverables": "Iconography",
@@ -1212,5 +1211,8 @@
     "menu.discoverables.sp_legendaries": "Single Player - Legendary Animals",
     "menu.discoverables.sp_areas": "Single Player - Event Areas",
     "menu.discoverables.text": "Location Text",
-    "menu.discoverables.vegetation": "Plants and Herbs"
+    "menu.discoverables.vegetation": "Plants and Herbs",
+    "map.remove.animal_category": "Grey out all animals of this species for 72 hours",
+    "map.legendary_animal_cooldown_end_time": "Cooldown end: {timer}",
+    "map.reset_animal_timer":"Reset cooldown time for all animals of this species"
 }

@@ -50,6 +50,8 @@ class Legendary {
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
       .translate();
+    this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
+    this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
   }
@@ -60,8 +62,8 @@ class Legendary {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
     this.marker.addLayer(L.circle([this.x, this.y], {
-      color: '#fdc607',
-      fillColor: '#fdc607',
+      color: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
+      fillColor: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
       fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
       radius: this.radius,
     })
@@ -95,7 +97,7 @@ class Legendary {
     })();
 
     return {
-      animalSpecies: this.text.replace(/^mp_animal_|_legendary_\d+$/g, ''),
+      animalSpecies: this.species,
       spawn_time: spawnTime,
       preferred_weather: Language.get(`map.weather.${this.preferred_weather}`),
       trader_materials: this.trader_materials ? this.trader_materials : Language.get('map.cant_be_picked_up'),
@@ -112,6 +114,7 @@ class Legendary {
     const snippet = $(`
       <div class="handover-wrapper-with-no-influence">
         <h1 data-text="${this.text}"></h1>
+        <p class="legendary-cooldown-timer" data-text="map.legendary_animal_cooldown_end_time"></p>
         <p data-text="${Language.get(this.text + '.desc')}"></p>
         <br><p data-text="map.legendary_animal.desc"></p>
         <span class="legendary-properties">
@@ -125,30 +128,54 @@ class Legendary {
           <p class="legendary-sample-value" data-text="map.legendary.sample_value"></p>
         </span>
         <button type="button" class="btn btn-info remove-button remove-animal-category" data-text="map.remove.animal_category"></button>
+        <button type="button" class="btn btn-info remove-button reset-animal-timer" data-text="map.reset_animal_timer"></button>
         <button type="button" class="btn btn-info remove-button remove-animal" data-text="map.remove"></button>
       </div>`)
       .translate();
 
     const pElements = $('span > p', snippet);
     [...pElements].forEach(p => {
-      const propertyText = $(p).text().replace(/{([a-z_]+)}/, (full, key) => properties[key]);
+      const propertyText = Language.get($(p).attr('data-text')).replace(/{([a-z_]+)}/, (full, key) => properties[key]);
       $(p).text(propertyText);
     });
 
-    snippet.find('button.remove-animal-category').on('click', () => {
-      localStorage.setItem(`rdo:Legendaries_category_time_${properties.animalSpecies}`, Date.now() + 259200000); // 259200000 ms = 72 hours
-      Legendary.toggleAnimalSpecies(properties.animalSpecies, false);
-    });
+    if (this.isGreyedOut) {
+      const $cooldownTimer = $('.legendary-cooldown-timer', snippet);
+      $cooldownTimer.text(Language.get($cooldownTimer.attr('data-text'))
+        .replace('{timer}', () => {
+          const timeMilliseconds = +localStorage.getItem(this.animalSpeciesKey);
+          const timer = new Date(timeMilliseconds)
+            .toLocaleString(Settings.language, {
+              weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit',
+            });
+          return `[${timer}]`;
+        })
+      );
+    }
 
-    snippet.find('button.remove-animal').on('click', () => this.onMap = false);
+    snippet
+      .find('.legendary-cooldown-timer')
+      .toggle(this.isGreyedOut)
+      .end()
+      .find('button.remove-animal-category')
+      .toggle(!this.isGreyedOut)
+      .on('click', () => this.isGreyedOut = true)
+      .end()
+      .find('button.reset-animal-timer')
+      .toggle(this.isGreyedOut)
+      .on('click', () => this.isGreyedOut = false)
+      .end()
+      .find('button.remove-animal')
+      .on('click', () => this.onMap = false)
+      .end();
 
     return snippet[0];
   }
-  static toggleAnimalSpecies(animalSpecies, show) {
+  static toggleAnimalSpecies(animalSpecies) {
     Legendary.animals.forEach(animal => {
       const _prop = animal.getAnimalProperties();
       if (_prop.animalSpecies === animalSpecies)
-        animal.onMap = show;
+        animal.reinitMarker();
     });
   }
   static checkSpawnTime() {
@@ -160,16 +187,27 @@ class Legendary {
 
     setInterval(() => {
       animalSpeciesSet.forEach(animalSpecies => {
-        const key = `rdo:Legendaries_category_time_${animalSpecies}`;
+        const key = `rdr2collector:Legendaries_category_time_${animalSpecies}`;
         if (!(key in localStorage)) return;
 
         const time = localStorage.getItem(key);
         if (time <= Date.now()) {
-          delete localStorage[key];
-          Legendary.toggleAnimalSpecies(animalSpecies, true);
+          localStorage.removeItem(key);
+          Legendary.toggleAnimalSpecies(animalSpecies);
         }
       });
-    }, 10000);
+    }, 2000);
+  }
+  set isGreyedOut(state) {
+    if (state)
+      localStorage.setItem(this.animalSpeciesKey, Date.now() + 259200000); // 259200000 ms = 72 hours
+    else
+      localStorage.removeItem(this.animalSpeciesKey);
+
+    Legendary.toggleAnimalSpecies(this.species);
+  }
+  get isGreyedOut() {
+    return !!localStorage.getItem(this.animalSpeciesKey);
   }
   set onMap(state) {
     if (!this.marker) return;
