@@ -1198,7 +1198,6 @@
     "menu.enable_legendary_backgrounds": "Фоны легендарных животных",
     "help.enable_legendary_backgrounds": "Позволяет включить или отключить фон с изображением легендарного животного в желтых кругах на карте.",
     "map.sightseeing.hidden": "Скрытое место",
-    "map.remove.animal_category": "Скрыть всех животных этого вида на 72 часа",
     "map.shops.wardrobe.name": "Гардероб",
     "map.shops.wardrobe.desc": "Этот гардероб может быть использован для смены одежды.",
     "menu.discoverables": "Иконография",
@@ -1212,5 +1211,6 @@
     "menu.discoverables.sp_legendaries": "Сюжет. Режим - Легендарные животные",
     "menu.discoverables.sp_areas": "Сюжет. Режим - Области событий",
     "menu.discoverables.text": "Обнаруженные локации",
-    "menu.discoverables.vegetation": "Растения и Травы"
+    "menu.discoverables.vegetation": "Растения и Травы",
+    "map.remove.animal_category": "Скрыть всех животных этого вида на 72 часа"
 }

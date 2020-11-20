@@ -1093,5 +1093,6 @@
     "map.cant_be_picked_up": "Cet animal ne peut pas être ramassé.",
     "menu.enable_legendary_backgrounds": "L'arrière plan d'animal légendaire désactivé",
     "help.enable_legendary_backgrounds": "Permet d'activer ou de désactiver les arrière-plans de l'icône d'animal dans le cercle jaune de la carte.",
+    "map.sightseeing.hidden": "Spot caché",
     "map.remove.animal_category": "Retirer tous les animaux de cette catégorie pendant 72 heures"
 }

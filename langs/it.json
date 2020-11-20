@@ -1162,5 +1162,8 @@
     "help.sync_map_to_dailies": "Ti permette di abilitare automaticamente solo i segnalini e le categorie relative alle sfide giornaliere attuali.",
     "map.harrietum_animals.name": "Trasformazione animale",
     "menu.reload_map": "Ricarica la mappa adesso",
-    "map.weather.clear": "Clima sereno"
+    "map.weather.clear": "Clima sereno",
+    "map.remove.animal_category": "Disattiva tutti gli animali di questa specie per 72 ore",
+    "map.legendary_animal_cooldown_end_time": "Fine tempo di recupero",
+    "map.reset_animal_timer": "Resetta tempo di recupero per tutti gli animali di questa specie"
 }

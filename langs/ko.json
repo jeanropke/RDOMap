@@ -857,5 +857,7 @@
     "map.legendary.trapper_part_value": "상인 부분 판매: {trapper_part_value}",
     "map.legendary.sample_value": "표본 판매: {sample_value}",
     "map.sightseeing.hidden": "숨겨진 장소",
-    "map.remove.animal_category": "이 카테고리의 동물을 72시간 동안 표시하지 않습니다."
+    "map.remove.animal_category": "이 카테고리의 동물을 72시간 동안 표시하지 않습니다.",
+    "map.legendary_animal_cooldown_end_time": "쿨타임 종료: {timer}",
+    "map.reset_animal_timer": "해당 카테고리 동물의 쿨타임을 초기화 합니다."
 }
