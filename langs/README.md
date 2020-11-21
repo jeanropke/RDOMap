@@ -77,7 +77,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **harleyhawke** (48 words)
   - **Megitsune** (20,489 words)
   - **Raffox97** (273 words)
-  - **Tony_Bell** (125 words)
+  - **Tony_Bell** (128 words)
 
 ### Japanese:
   - **Megitsune** (20,489 words)
