@@ -8,16 +8,11 @@ class Legendary {
     this.animals = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
-
-    const pane = MapBase.map.createPane('animalX');
-    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
-    pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=legendary_animals]');
-    this.crossIcon = L.icon({
-      iconUrl: './assets/images/la_cross.png',
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
-    });
+    const pane = MapBase.map.createPane('animalSpawnPoint');
+    pane.style.zIndex = 450; // markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
+
     this.onSettingsChanged();
     $('.menu-hidden[data-type="legendary_animals"] > *:first-child a').click(e => {
       e.preventDefault();
@@ -51,29 +46,44 @@ class Legendary {
       .append($('<p class="collectible">').attr('data-text', this.text))
       .translate();
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
-    this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
+    this.animalSpeciesKey = `rdo:Legendaries_category_time_${this.species}`;
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
   }
 
   // auto remove marker? from map, recreate marker, auto add? marker
-  // idempotent
   reinitMarker() {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
-    this.marker.addLayer(L.circle([this.x, this.y], {
-      color: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
-      fillColor: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
-      fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
-      radius: this.radius,
-    })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
-    this.locations.forEach(cross =>
-      this.marker.addLayer(L.marker([cross.x, cross.y], {
-        icon: Legendary.crossIcon,
-        pane: 'animalX',
+    if (Settings.isLaBgEnabled) {
+      this.marker.addLayer(L.circle([this.x, this.y], {
+        color: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
+        fillColor: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
+        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+        radius: this.radius,
       })
-        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
+        .bindPopup(this.popupContent.bind(this), {
+          minWidth: 400,
+        })
+      );
+    }
+    const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
+    const spawnIconSize = Settings.legendarySpawnIconSize;
+    this.spawnIcon = L.icon({
+      iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
+      iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
+      iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
+    });
+    this.locations.forEach(point =>
+      this.marker.addLayer(L.marker([point.x, point.y], {
+        icon: this.spawnIcon,
+        pane: 'animalSpawnPoint',
+        opacity: this.isGreyedOut ? .25 : 1,
+      })
+        .bindPopup(this.popupContent.bind(this), {
+          minWidth: 400,
+        })
+      )
     );
     if (!MapBase.isPreviewMode && Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
@@ -187,7 +197,7 @@ class Legendary {
 
     setInterval(() => {
       animalSpeciesSet.forEach(animalSpecies => {
-        const key = `rdr2collector:Legendaries_category_time_${animalSpecies}`;
+        const key = `rdo:Legendaries_category_time_${animalSpecies}`;
         if (!(key in localStorage)) return;
 
         const time = localStorage.getItem(key);

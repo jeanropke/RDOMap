@@ -280,6 +280,16 @@ $('#enable-legendary-backgrounds').on('change', function () {
   Legendary.onSettingsChanged();
 });
 
+$('#legendary-animal-marker-type').on('change', function () {
+  Settings.legendarySpawnIconType = Number($('#legendary-animal-marker-type').val());
+  Legendary.onSettingsChanged();
+});
+
+$('#legendary-animal-marker-size').on('change', function () {
+  Settings.legendarySpawnIconSize = Number($('#legendary-animal-marker-size').val());
+  Legendary.onSettingsChanged();
+});
+
 $('#enable-dclick-zoom').on('change', function () {
   Settings.isDoubleClickZoomEnabled = $('#enable-dclick-zoom').prop('checked');
   if (Settings.isDoubleClickZoomEnabled) {
