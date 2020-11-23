@@ -109,7 +109,7 @@
     ]
   },
   {
-    "color": "purple",
+    "color": "lightgray",
     "key": "fame_seeker",
     "locations": [
       {"text": "big_valley_1", "x": -62.0820, "y": 91.5386},
@@ -258,7 +258,7 @@
     ]
   },
   {
-    "color": "lightgray",
+    "color": "purple",
     "key": "rival_collector",
     "locations": [
       {"text": "aurora_basin_1", "x": -86.2317, "y": 73.2670},
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "color": "lightgray",
+    "color": "blue",
     "key": "hogtied_lawman",
     "locations": [
       {"text": "scarlett_meadows_1", "x": -95.3840, "y": 135.5470},
@@ -479,7 +479,7 @@
     ]
   },
   {
-    "color": "blue",
+    "color": "lightgray",
     "key": "beggar",
     "locations": [
       {"text": "blackwater_0", "x": -83.9518, "y": 98.9975},
@@ -546,7 +546,7 @@
     ]
   },
   {
-    "color": "darkgreen",
+    "color": "blue",
     "key": "suspension_trap",
     "locations": [
       {"text": "armadillo_1", "x": -98.7576, "y": 57.6396},
