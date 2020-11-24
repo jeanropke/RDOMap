@@ -121,6 +121,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Swedish:
   - **Anvnamnet** (2,189 words)
+  - **Shineberg** (106 words)
 
 ### Thai:
   - **MrFermz** (39 words)
