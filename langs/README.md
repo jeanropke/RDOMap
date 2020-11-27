@@ -49,6 +49,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### French:
   - **escaliburos** (10 words)
+  - **FRANCESCADOLORES** (67 words)
   - **JeanBankarbone** (87 words)
   - **kaeporatheglitcha** (403 words)
   - **L2** (97 words)
@@ -93,7 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish:
   - **FrankTVPL** (506 words)
   - **Megitsune** (20,717 words)
-  - **Michal__d** (1,606 words)
+  - **Michal__d** (1,809 words)
 
 ### Portuguese, Brazilian:
   - **FilipFelipe** (13 words)
