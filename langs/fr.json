@@ -1158,9 +1158,11 @@
     "menu.discoverables.vegetation": "Plantes et Herbes",
     "map.remove.animal_category": "Retirer tous les animaux de cette catégorie pendant 72 heures",
     "map.legendary_animal_cooldown_end_time": "Temps de recharge terminé : {timer}",
+    "map.reset_animal_timer": "Réinitialiser le temps de récupération pour tous les animaux de cette espèce",
     "help.legendary_marker_type": "Vous permet de changer l'icone d'emplacement d'apparition d'animaux légendaires.",
     "menu.legendary_animal_marker_type": "Type de marqueur d'animaux légendaire",
     "menu.legendary_icon_type.paw_prints": "Empreintes",
+    "menu.legendary_icon_type.head": "Têtes",
     "help.legendary_marker_size": "Permet de changer l'échelle de l'icône de l'animal légendaire.",
     "menu.legendary_animal_marker_size": "Taille du marqueur animal légendaire"
 }
