@@ -1619,3 +1619,8 @@ span.daily-checkbox {
     color: #d80419;
     margin-bottom: 10px;
 }
+
+.missions-list {
+    margin: 4px 0;
+    padding-left: 30px;
+}

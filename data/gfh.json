@@ -2,96 +2,512 @@
   {
     "color": "lightorange",
     "key": "aberdeen_pig_farmers",
-    "locations": [{"text": "gfh_aberdeen_pig_farm", "x": -64.9537, "y": 138.9636}]
+    "locations": [
+      {
+        "text": "gfh_aberdeen_pig_farm",
+        "x": -64.9537,
+        "y": 138.9636,
+        "types": [
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "gfh_mt_assassination_tracking",
+          "gfh_mt_coach_holdup_kidnap"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "alden",
-    "locations": [{"text": "gfh_annesburg_train_station", "x": -43.6942, "y": 156.8086}, {"text": "gfh_rhodes_train_station", "x": -83.7542, "y": 130.3835}, {"text": "gfh_valentine_train_station", "x": -53.7924, "y": 108.5691}, {"text": "gfh_van_horn_post_office", "x": -54.6592, "y": 157.6520}]
+    "locations": [
+      {
+        "text": "gfh_annesburg_train_station",
+        "x": -43.6942,
+        "y": 156.8086,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_repo",
+          "fetch_resupply"
+        ]
+      },
+      {
+        "text": "gfh_rhodes_train_station",
+        "x": -83.7542,
+        "y": 130.3835,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_resupply"
+        ]
+      },
+      {
+        "text": "gfh_valentine_train_station",
+        "x": -53.7924,
+        "y": 108.5691,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_recover"
+        ]
+      },
+      {
+        "text": "gfh_van_horn_post_office",
+        "x": -54.6592,
+        "y": 157.652,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_recover",
+          "fetch_resupply"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "anthony_foreman",
-    "locations": [{"text": "gfh_radleys_pasture", "x": -83.7638, "y": 128.4982}, {"text": "gfh_saint_denis", "x": -81.5668, "y": 154.5895}]
+    "locations": [
+      {
+        "text": "gfh_radleys_pasture",
+        "x": -83.7638,
+        "y": 128.4982,
+        "types": [
+          "fetch_destroy",
+          "fetch_intercept",
+          "fetch_prisoner_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_kidnap",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      },
+      {
+        "text": "gfh_saint_denis",
+        "x": -81.5668,
+        "y": 154.5895,
+        "types": [
+          "fetch_destroy",
+          "fetch_rescue_ped",
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_kidnap"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "black_belle",
-    "locations": [{"text": "gfh_slave_pen_shack", "x": -95.9865, "y": 132.8608}]
+    "locations": [
+      {
+        "text": "gfh_slave_pen_shack",
+        "x": -95.9865,
+        "y": 132.8608,
+        "types": [
+          "fetch_intercept",
+          "fetch_prisoner_assassination",
+          "fetch_steal_horses",
+          "fetch_wagon_break",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "bonnie",
-    "locations": [{"text": "gfh_macfarlane_house", "x": -100.8708, "y": 75.3771}]
+    "locations": [
+      {
+        "text": "gfh_macfarlane_house",
+        "x": -100.8708,
+        "y": 75.3771,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_recover",
+          "fetch_repo",
+          "gfh_mt_on_the_hunt"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "flaco_hernandez",
-    "locations": [{"text": "gfh_cairn_lake", "x": -29.9227, "y": 96.6399}]
+    "locations": [
+      {
+        "text": "gfh_cairn_lake",
+        "x": -29.9227,
+        "y": 96.6399,
+        "types": [
+          "fetch_destroy",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_assassination_tracking",
+          "gfh_mt_on_the_hunt"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "hector",
-    "locations": [{"text": "gfh_benedict_train_station", "x": -117.5565, "y": 30.1903}, {"text": "gfh_blackwater_post_office", "x": -84.3843, "y": 97.7217}, {"text": "gfh_riggs_train_station", "x": -72.5630, "y": 94.2645}, {"text": "gfh_strawberry_post_office", "x": -69.5045, "y": 83.8795}]
+    "locations": [
+      {
+        "text": "gfh_benedict_train_station",
+        "x": -117.5565,
+        "y": 30.1903,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "gfh_mt_on_the_hunt"
+        ]
+      },
+      {
+        "text": "gfh_blackwater_post_office",
+        "x": -84.3843,
+        "y": 97.7217,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_repo",
+          "fetch_resupply"
+        ]
+      },
+      {
+        "text": "gfh_riggs_train_station",
+        "x": -72.563,
+        "y": 94.2645,
+        "types": ["fetch_convoy_escort_wagon", "fetch_delivery", "fetch_repo"]
+      },
+      {
+        "text": "gfh_strawberry_post_office",
+        "x": -69.5045,
+        "y": 83.8795,
+        "types": ["fetch_delivery", "fetch_repo"]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "joe",
-    "locations": [{"text": "gfh_happy_family_shack", "x": -58.8910, "y": 140.5954}]
+    "locations": [
+      {
+        "text": "gfh_happy_family_shack",
+        "x": -58.891,
+        "y": 140.5954,
+        "types": [
+          "fetch_intercept",
+          "fetch_steal_boat",
+          "fetch_steal_horses",
+          "fetch_wagon_break",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "josiah_trelawny",
-    "locations": [{"text": "gfh_rhodes_camp", "x": -81.2415, "y": 131.4804}]
+    "locations": [
+      {
+        "text": "gfh_rhodes_camp",
+        "x": -81.2415,
+        "y": 131.4804,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_destroy",
+          "fetch_repo",
+          "fetch_rescue_ped",
+          "fetch_steal_horses",
+          "gfh_mt_on_the_hunt"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "langton",
-    "locations": [{"text": "gfh_don_julio_lake", "x": -114.8412, "y": 58.5345}, {"text": "gfh_pikes_basin", "x": -98.3747, "y": 70.1792}]
+    "locations": [
+      {
+        "text": "gfh_don_julio_lake",
+        "x": -114.8412,
+        "y": 58.5345,
+        "types": [
+          "fetch_destroy",
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "fetch_wagon_break",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_kidnap"
+        ]
+      },
+      {
+        "text": "gfh_pikes_basin",
+        "x": -98.3747,
+        "y": 70.1792,
+        "types": [
+          "fetch_intercept",
+          "fetch_prisoner_assassination",
+          "fetch_steal_horses",
+          "fetch_wagon_break",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "mamma_watson",
-    "locations": [{"text": "gfh_watsons_cabin", "x": -53.3778, "y": 83.0945}]
+    "locations": [
+      {
+        "text": "gfh_watsons_cabin",
+        "x": -53.3778,
+        "y": 83.0945,
+        "types": [
+          "fetch_destroy",
+          "fetch_intercept",
+          "fetch_prisoner_assassination",
+          "fetch_wagon_break",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "sadie_adler",
-    "locations": [{"text": "gfh_adler_ranch", "x": -21.5418, "y": 102.6943}]
+    "locations": [
+      {
+        "text": "gfh_adler_ranch",
+        "x": -21.5418,
+        "y": 102.6943,
+        "types": ["gfh_mt_assassination_tracking"]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "sean_macquire",
-    "locations": [{"text": "gfh_south_great_plains", "x": -91.2722, "y": 93.5295}, {"text": "gfh_tanners_reach", "x": -88.2692, "y": 74.3675}]
+    "locations": [
+      {
+        "text": "gfh_south_great_plains",
+        "x": -91.2722,
+        "y": 93.5295,
+        "types": [
+          "fetch_prisoner_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_assassination_tracking",
+          "gfh_mt_coach_holdup_kidnap",
+          "gfh_mt_on_the_hunt"
+        ]
+      },
+      {
+        "text": "gfh_tanners_reach",
+        "x": -88.2692,
+        "y": 74.3675,
+        "types": [
+          "fetch_destroy",
+          "fetch_intercept",
+          "fetch_steal_horses",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "shaky",
-    "locations": [{"text": "gfh_gaptooth_shore", "x": -123.8511, "y": 24.1919}, {"text": "gfh_rattlesnake_hollow", "x": -102.4645, "y": 46.4247}, {"text": "gfh_thieves_landing_docks", "x": -99.9079, "y": 90.1200}]
+    "locations": [
+      {
+        "text": "gfh_gaptooth_shore",
+        "x": -123.8511,
+        "y": 24.1919,
+        "types": [
+          "fetch_destroy",
+          "fetch_intercept",
+          "fetch_prisoner_assassination",
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      },
+      {
+        "text": "gfh_rattlesnake_hollow",
+        "x": -102.4645,
+        "y": 46.4247,
+        "types": [
+          "fetch_destroy",
+          "fetch_intercept",
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "gfh_mt_assassination",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      },
+      {
+        "text": "gfh_thieves_landing_docks",
+        "x": -99.9079,
+        "y": 90.12,
+        "types": [
+          "fetch_intercept",
+          "fetch_steal_boat",
+          "fetch_wagon_break",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_assassination_tracking"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "sheriff_freeman",
-    "locations": [{"text": "gfh_tumbleweed_sheriff", "x": -109.0835, "y": 25.4496}]
+    "locations": [
+      {
+        "text": "gfh_tumbleweed_sheriff",
+        "x": -109.0835,
+        "y": 25.4496,
+        "types": ["fetch_convoy_escort_wagon", "fetch_recover", "fetch_repo"]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "the_boy",
-    "locations": [{"text": "gfh_flatneck_station", "x": -69.3502, "y": 105.9565}, {"text": "gfh_valentine_camp", "x": -52.2507, "y": 105.3355}]
+    "locations": [
+      {
+        "text": "gfh_flatneck_station",
+        "x": -69.3502,
+        "y": 105.9565,
+        "types": [
+          "fetch_destroy",
+          "fetch_intercept",
+          "fetch_rescue_ped",
+          "fetch_steal_boat",
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "fetch_wagon_break",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_robbery"
+        ]
+      },
+      {
+        "text": "gfh_valentine_camp",
+        "x": -52.2507,
+        "y": 105.3355,
+        "types": [
+          "fetch_destroy",
+          "fetch_prisoner_assassination",
+          "fetch_steal_boat",
+          "fetch_steal_horses",
+          "fetch_steal_wagon",
+          "gfh_mt_assassination_pvp_player",
+          "gfh_mt_assassination_pvp_posse",
+          "gfh_mt_coach_holdup_kidnap",
+          "gfh_mt_coach_holdup_robbery",
+          "gfh_mt_on_the_hunt"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "thomas_skiff_captain",
-    "locations": [{"text": "gfh_lagras", "x": -72.2755, "y": 144.1544}]
+    "locations": [
+      {
+        "text": "gfh_lagras",
+        "x": -72.2755,
+        "y": 144.1544,
+        "types": ["fetch_steal_boat"]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "wallace_train_clerk",
-    "locations": [{"text": "gfh_emerald_ranch_train_station", "x": -56.8647, "y": 134.8856}, {"text": "gfh_saint_denis_train_station", "x": -85.2824, "y": 153.7147}, {"text": "gfh_wallace_train_station", "x": -57.2491, "y": 91.1040}]
+    "locations": [
+      {
+        "text": "gfh_emerald_ranch_train_station",
+        "x": -56.8647,
+        "y": 134.8856,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_resupply"
+        ]
+      },
+      {
+        "text": "gfh_saint_denis_train_station",
+        "x": -85.2824,
+        "y": 153.7147,
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_resupply"
+        ]
+      },
+      {
+        "text": "gfh_wallace_train_station",
+        "x": -57.2491,
+        "y": 91.104,
+        "types": [
+          "fetch_delivery",
+          "fetch_recover",
+          "fetch_resupply",
+          "gfh_mt_on_the_hunt"
+        ]
+      }
+    ]
   },
   {
     "color": "lightorange",
     "key": "war_vet",
-    "locations": [{"text": "gfh_ocreaghs_run", "x": -40.1521, "y": 137.6149}, {"text": "gfh_wapiti", "x": -34.9401, "y": 113.7077}]
+    "locations": [
+      {
+        "text": "gfh_ocreaghs_run",
+        "x": -40.1521,
+        "y": 137.6149,
+        "types": [
+          "fetch_recover",
+          "fetch_repo",
+          "fetch_rescue_ped",
+          "fetch_steal_boat"
+        ]
+      },
+      {
+        "text": "gfh_wapiti",
+        "x": -34.9401,
+        "y": 113.7077,
+        "types": ["fetch_repo", "gfh_mt_on_the_hunt"]
+      }
+    ]
   }
 ]

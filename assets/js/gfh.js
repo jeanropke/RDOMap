@@ -37,9 +37,27 @@ class GunForHire {
 
   onLanguageChanged() {
     this.markers = [];
-    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'gfh', this.key, item.type)));
+    this.locations.forEach(item => this.markers.push(new Marker(item.text, item.x, item.y, 'gfh', this.key, item.types)));
 
     this.reinitMarker();
+  }
+
+  updateMarkerContent(marker) {
+    let missionsElement = $('<ul>').addClass('missions-list');
+    marker.size.map(m => Language.get(`map.gfh.missions.${m}`)).sort().forEach(mission => {
+      missionsElement.append(`<li>${mission}</li>`);
+    });
+    $(missionsElement).sort();
+    let debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
+    return `<h1>${marker.title}</h1>
+        <span class="marker-content-wrapper">
+        <p>${marker.description}</p>
+        </span>
+        <br>
+        <p>${Language.get('map.gfh.missions_header')}</p>
+        ${missionsElement.prop('outerHTML')}
+        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
+        `;
   }
 
   reinitMarker() {
@@ -62,7 +80,7 @@ class GunForHire {
           tippy: marker.title,
         }),
       });
-      tempMarker.bindPopup(marker.updateMarkerContent(), { minWidth: 300, maxWidth: 400 });
+      tempMarker.bindPopup(this.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
 
       this.layer.addLayer(tempMarker);
       if (Settings.isMarkerClusterEnabled)
