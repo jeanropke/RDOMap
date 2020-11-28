@@ -38,7 +38,8 @@
         "types": [
           "fetch_convoy_escort_wagon",
           "fetch_delivery",
-          "fetch_resupply"
+          "fetch_resupply",
+          "fetch_wagon_thieves"
         ]
       },
       {
@@ -48,7 +49,8 @@
         "types": [
           "fetch_convoy_escort_wagon",
           "fetch_delivery",
-          "fetch_recover"
+          "fetch_recover",
+          "fetch_wagon_thieves"
         ]
       },
       {
@@ -59,7 +61,8 @@
           "fetch_convoy_escort_wagon",
           "fetch_delivery",
           "fetch_recover",
-          "fetch_resupply"
+          "fetch_resupply",
+          "fetch_wagon_thieves"
         ]
       }
     ]
@@ -88,6 +91,7 @@
         "y": 154.5895,
         "types": [
           "fetch_destroy",
+          "fetch_jailbreak",
           "fetch_rescue_ped",
           "fetch_steal_horses",
           "fetch_steal_wagon",
@@ -108,6 +112,7 @@
         "x": -95.9865,
         "y": 132.8608,
         "types": [
+          "fetch_destroy",
           "fetch_intercept",
           "fetch_prisoner_assassination",
           "fetch_steal_horses",
@@ -148,9 +153,13 @@
         "y": 96.6399,
         "types": [
           "fetch_destroy",
+          "fetch_steal_boat",
+          "fetch_steal_horses",
+          "fetch_wagon_break",
           "gfh_mt_assassination_pvp_player",
           "gfh_mt_assassination_pvp_posse",
           "gfh_mt_assassination_tracking",
+          "gfh_mt_coach_holdup_robbery",
           "gfh_mt_on_the_hunt"
         ]
       }
@@ -185,7 +194,12 @@
         "text": "gfh_riggs_train_station",
         "x": -72.563,
         "y": 94.2645,
-        "types": ["fetch_convoy_escort_wagon", "fetch_delivery", "fetch_repo"]
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_delivery",
+          "fetch_repo",
+          "fetch_wagon_thieves"
+        ]
       },
       {
         "text": "gfh_strawberry_post_office",
@@ -282,6 +296,7 @@
         "types": [
           "fetch_destroy",
           "fetch_intercept",
+          "fetch_jailbreak",
           "fetch_prisoner_assassination",
           "fetch_wagon_break",
           "gfh_mt_assassination_pvp_player",
@@ -299,7 +314,12 @@
         "text": "gfh_adler_ranch",
         "x": -21.5418,
         "y": 102.6943,
-        "types": ["gfh_mt_assassination_tracking"]
+        "types": [
+          "fetch_delivery",
+          "fetch_recover",
+          "fetch_rescue_ped",
+          "gfh_mt_on_the_hunt"
+        ]
       }
     ]
   },
@@ -312,6 +332,7 @@
         "x": -91.2722,
         "y": 93.5295,
         "types": [
+          "fetch_jailbreak",
           "fetch_prisoner_assassination",
           "gfh_mt_assassination_pvp_player",
           "gfh_mt_assassination_pvp_posse",
@@ -394,7 +415,12 @@
         "text": "gfh_tumbleweed_sheriff",
         "x": -109.0835,
         "y": 25.4496,
-        "types": ["fetch_convoy_escort_wagon", "fetch_recover", "fetch_repo"]
+        "types": [
+          "fetch_convoy_escort_wagon",
+          "fetch_recover",
+          "fetch_repo",
+          "fetch_wagon_thieves"
+        ]
       }
     ]
   },
@@ -425,6 +451,7 @@
         "y": 105.3355,
         "types": [
           "fetch_destroy",
+          "fetch_jailbreak",
           "fetch_prisoner_assassination",
           "fetch_steal_boat",
           "fetch_steal_horses",
@@ -446,7 +473,7 @@
         "text": "gfh_lagras",
         "x": -72.2755,
         "y": 144.1544,
-        "types": ["fetch_steal_boat"]
+        "types": ["fetch_repo", "fetch_resupply", "gfh_mt_on_the_hunt"]
       }
     ]
   },
@@ -461,7 +488,8 @@
         "types": [
           "fetch_convoy_escort_wagon",
           "fetch_delivery",
-          "fetch_resupply"
+          "fetch_resupply",
+          "fetch_wagon_thieves"
         ]
       },
       {
@@ -471,7 +499,8 @@
         "types": [
           "fetch_convoy_escort_wagon",
           "fetch_delivery",
-          "fetch_resupply"
+          "fetch_resupply",
+          "fetch_wagon_thieves"
         ]
       },
       {
@@ -482,6 +511,7 @@
           "fetch_delivery",
           "fetch_recover",
           "fetch_resupply",
+          "fetch_wagon_thieves",
           "gfh_mt_on_the_hunt"
         ]
       }
@@ -499,7 +529,8 @@
           "fetch_recover",
           "fetch_repo",
           "fetch_rescue_ped",
-          "fetch_steal_boat"
+          "fetch_steal_boat",
+          "fetch_wagon_thieves"
         ]
       },
       {
