@@ -49,7 +49,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### French:
   - **escaliburos** (10 words)
-  - **FRANCESCADOLORES** (277 words)
+  - **FRANCESCADOLORES** (333 words)
   - **JeanBankarbone** (87 words)
   - **kaeporatheglitcha** (403 words)
   - **L2** (97 words)
