@@ -49,7 +49,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### French:
   - **escaliburos** (10 words)
-  - **FRANCESCADOLORES** (333 words)
+  - **FRANCESCADOLORES** (397 words)
   - **JeanBankarbone** (87 words)
   - **kaeporatheglitcha** (403 words)
   - **L2** (97 words)
@@ -130,6 +130,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Turkish:
   - **birseysoylicem** (134 words)
   - **Krykl** (406 words)
+  - **tercumantanumut** (149 words)
 
 ### Ukrainian:
   - **grmaster5s** (5,664 words)
