@@ -19,17 +19,10 @@ class Location {
 
     this.onLanguageChanged();
 
-    if (this.key === 'harrietum_animals') {
-      this.element = $('.collectible-wrapper[data-type=harrietum_animals]')
-        .toggleClass('disabled', !this.onMap)
-        .on('click', () => this.onMap = !this.onMap)
-        .translate();
-    } else {
-      this.element = $(`.menu-option[data-type=${this.key}]`)
-        .toggleClass('disabled', !this.onMap)
-        .on('click', () => this.onMap = !this.onMap)
-        .translate();
-    }
+    this.element = $(`.menu-option[data-type=${this.key}]`)
+      .toggleClass('disabled', !this.onMap)
+      .on('click', () => this.onMap = !this.onMap)
+      .translate();
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);

@@ -20,6 +20,7 @@ class Marker {
         case 'camps':
           return Language.get(`map.${this.category}.${this.subdata}.name`) + ' - ' + Language.get(`map.camps.sizes.${this.size}`);
         case 'daily_locations':
+        case 'dynamic_bounties':
           return Language.get(`map.${this.category}.${this.text}.name`);
         case 'harrietum_animals':
           return Language.get('map.harrietum_animals.name') + ' - ' + Language.get(`menu.cmpndm.${this.text}`);

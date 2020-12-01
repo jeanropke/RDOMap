@@ -157,7 +157,7 @@ function clockTick() {
 
   $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
 
-  $('.leaflet-marker-icon[data-marker="hideouts"]').each(function () {
+  $('.leaflet-marker-icon[data-time]').each(function () {
     let time = $(this).data('time') + '';
     if (time === null || time === '') return;
     if (time.split(',').includes(gameHour + '') && !MapBase.isPreviewMode) {

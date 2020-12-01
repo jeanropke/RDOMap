@@ -364,8 +364,7 @@ const MapBase = {
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'darkblue'}.png" alt="Background">
           ${shadow}
-        `,
-        tippy: marker.title,
+        `
       }),
       draggable: Settings.isDebugEnabled,
     });
