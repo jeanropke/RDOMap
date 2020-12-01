@@ -1266,5 +1266,12 @@
     "map.dynamic_bounties.bounty_board_known_target_grizzlies_east.name": "Grizzlies East (???)",
     "map.dynamic_bounties.bounty_board_known_target_deadboot_creek.name": "Deadboot Creek (???)",
     "map.dynamic_bounties.bounty_hideout_colter.name": "Colter (???)",
-    "map.plants.harrietum.name": "Harrietum Officianalis"
+    "map.plants.harrietum.name": "Harrietum Officianalis",
+    "mpgc_gfh_bonnie_macfarlane_wins": "Bonnie MacFarlane missions completed",
+    "mpgc_gfh_sadie_adler_wins": "Sadie Adler missions completed",
+    "mpgc_gfh_train_clerk_wins": "Train clerk missions completed",
+    "mprc_bounty_completed_no_kills": "Bounty completed without killing an enemy or bounty target",
+    "mprc_bounty_completed_posse_member": "Bounty completed with at least one other Posse Member",
+    "mprc_bounty_completed_timed": "Bounties completed within one real-world hour",
+    "mprc_bounty_target_photographed_alive": "Living bounty targets in a photograph"
 }
