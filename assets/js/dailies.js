@@ -44,7 +44,7 @@ class Dailies {
 
           roleData.challenges.forEach(({ desiredGoal, id, displayType, description: { label } }) => {
             const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
-            this.markersCategories.push(activeCategory);
+            if (activeCategory) this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
 
             switch (displayType) {
@@ -148,8 +148,8 @@ class SynchronizeDailies {
   static init() {
     $('.menu-hide-all').trigger('click');
     Dailies.markersCategories.forEach(element => {
+      if (!element) return;
       const [category, marker] = element;
-      if (marker === '') return;
       const newSyncedCategory = new SynchronizeDailies(category, marker);
       newSyncedCategory.sync();
     });
