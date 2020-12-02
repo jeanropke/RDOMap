@@ -1132,7 +1132,6 @@
     "help.dailies_change_category": "Pozwala na zmianę pomiędzy wyzwaniami dziennymi ogólnymi i wyzwaniami ról.",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "Harrietum Officianalis",
-    "map.harrietum.name": "Harrietum Officianalis",
     "map.harrietum.desc": "Zbierz 3 lub 5 z nich, aby móc przemieniać się w zwierzę.",
     "map.remove": "Usuń z mapy",
     "menu.sync_map_to_dailies": "Synchronizuj znaczniki z wyzwaniami dziennymi",
