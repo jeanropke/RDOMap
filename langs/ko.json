@@ -859,5 +859,6 @@
     "map.remove.animal_category": "해당 카테고리의 동물을 72시간 동안 회색으로 표시합니다.",
     "map.legendary_animal_cooldown_end_time": "쿨타임 종료: {timer}",
     "map.reset_animal_timer": "해당 카테고리 동물의 쿨타임을 초기화 합니다.",
+    "menu.dynamic_bounties": "현상 수배범 (랜덤)",
     "mprc_bounty_completed_timed": "현실 시간으로 1시간 이내에 현상 수배 완료"
 }
