@@ -1239,7 +1239,7 @@
     "menu.dynamic_bounties": "Dynamic Bounty Target",
     "map.dynamic_bounties.desc": "This is a randomly spawning Bounty Target that will only spawn with the bounty expansion pass bought. Not much more is known yet.",
     "map.dynamic_bounties.annesburg_outskirts.name": "Annesburg Outskirts",
-    "map.dynamic_bounties.cumberland_forest": "Cumberland Forest",
+    "map.dynamic_bounties.cumberland_forest.name": "Cumberland Forest",
     "map.dynamic_bounties.guthrie_farm.name": "Guthrie Farm",
     "map.dynamic_bounties.hanover_convoy_ambush.name": "Hanover Convoy Ambush",
     "map.dynamic_bounties.west_heartlands.name": "West Heartlands",
