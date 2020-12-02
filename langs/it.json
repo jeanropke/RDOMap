@@ -1156,7 +1156,6 @@
     "help.dailies_change_category": "Consente di cambiare tra le sfide generali e quelle di ruolo.",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "Harrietum Officianalis",
-    "map.harrietum.name": "Harrietum Officianalis",
     "map.harrietum.desc": "Raccogli 3 o 5 di questi per poterti trasformare in animale.",
     "map.remove": "Rimuovi dalla mappa",
     "menu.sync_map_to_dailies": "Sincronizzazione abilitata per le sfide giornaliere attuali",

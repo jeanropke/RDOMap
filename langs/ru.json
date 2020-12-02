@@ -1160,7 +1160,6 @@
     "help.dailies_change_category": "Позволяет переключаться между общими и ролевыми ежедневными испытаниями.",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "Гариетум лекарственный",
-    "map.harrietum.name": "Гариетум лекарственный",
     "map.harrietum.desc": "Соберите 3 или 5 из этих растений, чтобы получить возможность превратиться в животное.",
     "map.remove": "Скрыть на карте",
     "menu.sync_map_to_dailies": "Синхронизировать включенные метки с текущими ежедневными испытаниями",

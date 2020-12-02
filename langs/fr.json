@@ -1120,7 +1120,6 @@
     "help.dailies_change_category": "Permet de changer entre les défis généraux et les défis quotidiens.",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "Harrietum Officianalis",
-    "map.harrietum.name": "Harrietum Officianalis",
     "map.harrietum.desc": "Collectez 3 ou 5 de ceux-ci pour pouvoir se transformer en animal.",
     "map.remove": "Supprimer de la carte",
     "menu.sync_map_to_dailies": "Synchronisation des marqueurs activés sur les quotidiens en cours",

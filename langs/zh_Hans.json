@@ -1155,7 +1155,6 @@
     "help.show_dailies": "在菜单中显示每日挑战",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
     "menu.harrietum": "哈莉特花",
-    "map.harrietum.name": "哈莉特花",
     "map.harrietum.desc": "收集3或5个哈莉特花以变成动物。",
     "map.remove": "从地图中移除",
     "menu.sync_map_to_dailies": "启用与当前每日挑战相关的标记",
