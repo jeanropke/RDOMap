@@ -44,7 +44,8 @@ class Dailies {
 
           roleData.challenges.forEach(({ desiredGoal, id, displayType, description: { label } }) => {
             const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
-            if (activeCategory) this.markersCategories.push(activeCategory);
+            if (activeCategory)
+              this.markersCategories.push(activeCategory);
             SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
 
             switch (displayType) {
