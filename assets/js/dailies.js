@@ -1,9 +1,9 @@
 class Dailies {
   constructor(role, translationKey, target, challengeId) {
     this.role = role;
-    this.translationKey = translationKey;
+    this.translationKey = translationKey.toLowerCase();
     this.target = target;
-    this.challengeId = challengeId;
+    this.challengeId = challengeId.toLowerCase();
   }
   static init() {
     this.categories = [];
@@ -65,7 +65,7 @@ class Dailies {
                 desiredGoal = Math.trunc(desiredGoal);
             }
 
-            const newDaily = new Dailies(role, label.toLowerCase(), desiredGoal, id.toLowerCase());
+            const newDaily = new Dailies(role, label, desiredGoal, id);
             newDaily.appendToMenu();
           });
         });
@@ -148,9 +148,7 @@ class SynchronizeDailies {
   }
   static init() {
     $('.menu-hide-all').trigger('click');
-    Dailies.markersCategories.forEach(element => {
-      if (!element) return;
-      const [category, marker] = element;
+    Dailies.markersCategories.forEach(([category, marker]) => {
       const newSyncedCategory = new SynchronizeDailies(category, marker);
       newSyncedCategory.sync();
     });
