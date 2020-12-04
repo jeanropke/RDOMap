@@ -862,5 +862,6 @@
     "menu.dynamic_bounties": "현상 수배범 (랜덤)",
     "mpgc_gfh_train_clerk_wins": "완료한 역무원 임무",
     "mprc_bounty_completed_posse_member": "최소 한 명의 갱단원과 함께 현상 수배 완료",
-    "mprc_bounty_completed_timed": "현실 시간으로 1시간 이내에 현상 수배 완료"
+    "mprc_bounty_completed_timed": "현실 시간으로 1시간 이내에 현상 수배 완료",
+    "mprc_bounty_target_photographed_alive": "살아있는 현상 수배범 사진 촬영"
 }
