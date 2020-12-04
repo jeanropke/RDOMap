@@ -1253,5 +1253,11 @@
     "map.dynamic_bounties.bounty_board_known_target_grizzlies_east.name": "格里兹里东部 (???)",
     "map.dynamic_bounties.bounty_hideout_colter.name": "犁刀村 (???)",
     "map.plants.harrietum.name": "哈莉特花",
-    "mpgc_gfh_bonnie_macfarlane_wins": "邦妮·麦克法兰任务已完成"
+    "mpgc_gfh_bonnie_macfarlane_wins": "邦妮·麦克法兰任务已完成",
+    "mpgc_gfh_sadie_adler_wins": "莎迪·阿德勒任务已完成",
+    "mpgc_gfh_train_clerk_wins": "火车站职员任务已完成",
+    "mprc_bounty_completed_no_kills": "在没有杀死敌人或悬赏目标的情况下完成的悬赏",
+    "mprc_bounty_completed_posse_member": "在杀死至少一名敌人的情况下完成的悬赏",
+    "mprc_bounty_completed_timed": "在现实世界一小时内完成悬赏",
+    "mprc_bounty_target_photographed_alive": "拍摄活着的悬赏目标"
 }
