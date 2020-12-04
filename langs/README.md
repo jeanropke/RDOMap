@@ -25,7 +25,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Jabaay** (496 words)
   - **kagurazakakotori** (16 words)
   - **Megitsune** (20,981 words)
-  - **PeanutSlinger** (2,528 words)
+  - **PeanutSlinger** (2,540 words)
   - **qiexiacn** (223 words)
 
 ### Chinese Traditional:
