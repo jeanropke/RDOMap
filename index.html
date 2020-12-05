@@ -312,7 +312,29 @@
       </div>
       <div class="menu-hidden two-column" data-type="discoverables"></div>
     </div>
-
+    <div>
+      <div class="header daily-challenges">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.dailies">Daily Challenges</h2>
+        <span class="header-border"></span>
+      </div>
+      <div id="dailies-changer-container" class="dailies-changer daily-challenges" data-help="dailies_change_category">
+        <div id="dailies-prev" class="input-selection-arrow">
+          <img src="assets/images/selection_left.png" alt="arrow">
+        </div>
+        <span class="dailies-title" data-text="menu.dailies_general">General</span>
+        <div id="dailies-next" class="input-selection-arrow">
+          <img src="assets/images/selection_right.png" alt="arrow">
+        </div>
+      </div>
+      <div class="dailies daily-challenges" data-type="dailies">
+        <div class="daily-status loading" data-text="menu.dailies_loading">Loading dailies...</div>
+      </div>
+      <div class="input-container-noflex daily-challenges">
+        <button id="sync-map-to-dailies" type="button" class="btn btn-default" data-text="menu.sync_map_to_dailies"
+          data-help="sync_map_to_dailies">Sync map to dailies</button>
+      </div>
+    </div>
     <div class="header">
       <span class="header-border"></span>
       <h2 class="header-title" data-text="menu.settings">Settings</h2>
@@ -559,27 +581,6 @@
         <label data-text="menu.delete_all_settings">Reset all settings</label>
         <div class="input-action"></div>
       </div>
-    </div>
-    <div class="header daily-challenges">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.dailies">Daily Challenges</h2>
-      <span class="header-border"></span>
-    </div>
-    <div id="dailies-changer-container" class="dailies-changer daily-challenges" data-help="dailies_change_category">
-      <div id="dailies-prev" class="input-selection-arrow">
-        <img src="assets/images/selection_left.png" alt="arrow">
-      </div>
-      <span class="dailies-title" data-text="menu.dailies_general">General</span>
-      <div id="dailies-next" class="input-selection-arrow">
-        <img src="assets/images/selection_right.png" alt="arrow">
-      </div>
-    </div>
-    <div class="dailies daily-challenges" data-type="dailies">
-      <div class="daily-status loading" data-text="menu.dailies_loading">Loading dailies...</div>
-    </div>
-    <div class="input-container-noflex daily-challenges">
-      <button id="sync-map-to-dailies" type="button" class="btn btn-default" data-text="menu.sync_map_to_dailies"
-        data-help="sync_map_to_dailies">Sync map to dailies</button>
     </div>
     <div class="header">
       <span class="header-border"></span>
