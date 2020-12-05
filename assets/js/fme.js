@@ -384,3 +384,96 @@ const FME = {
     this._sentNotifications.push(event.eventDateTime);
   },
 };
+
+
+class CondorEgg {
+  // requires MapBase.map, Menu.reorderMenu, Settings.some and DOM ready
+  // not idempotent
+  static init() {
+    this.condorEggParentElement = $('.menu-option[data-type=condor_egg]')
+      .toggleClass('disabled', !this.condorEggOnMap)
+      .on('click', () => this.condorEggOnMap = !this.condorEggOnMap);
+    this.condorEggs = [];
+    this.layer = L.layerGroup();
+    this.layer.addTo(MapBase.map);
+    const pane = MapBase.map.createPane('condorEggX');
+    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
+    this.eggIcon = L.icon({
+      iconUrl: './assets/images/icons/condor_egg_small.png',
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+    });
+    this.onSettingsChanged();
+    return Loader.promises['condor_eggs'].consumeJson(data => {
+      data.forEach(item => {
+        this.condorEggs.push(new CondorEgg(item));
+      });
+      console.info('%c[Condor eggs] Loaded!', 'color: #bada55; background: #242424');
+    });
+  }
+  static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
+    this.mainIcon = L.divIcon({
+      iconSize: [35 * markerSize, 45 * markerSize],
+      iconAnchor: [17 * markerSize, 42 * markerSize],
+      popupAnchor: [1 * markerSize, -29 * markerSize],
+      html: `
+        <img class="icon" src="./assets/images/icons/condor_egg.png" alt="Icon">
+        <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
+        ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
+            src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
+      `,
+    });
+    this.condorEggs.forEach(egg => egg.reinitMarker());
+  }
+  // not idempotent (on the environment)
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+    this.reinitMarker();
+  }
+  // idempotent
+  reinitMarker() {
+    if (this.marker) CondorEgg.layer.removeLayer(this.marker);
+    this.marker = L.layerGroup();
+    this.marker.addLayer(L.circle([this.x, this.y], {
+      color: '#f4e98a',
+      fillColor: '#f4e98a',
+      fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+      radius: this.radius,
+    })
+      .bindPopup(this.popupContent.bind(this), { minWidth: 300 }));
+
+    this.marker.addLayer(L.marker([this.x, this.y], { icon: CondorEgg.mainIcon })
+      .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
+    );
+    this.locations.forEach(cross =>
+      this.marker.addLayer(L.marker([cross.x, cross.y], {
+        icon: CondorEgg.eggIcon,
+        pane: 'condorEggX',
+      })
+        .bindPopup(this.popupContent.bind(this), { minWidth: 300 }))
+    );
+    CondorEgg.layer.addLayer(this.marker);
+    CondorEgg.condorEggOnMap = CondorEgg.condorEggOnMap;
+  }
+  popupContent() {
+    return $(`
+      <div class="handover-wrapper-with-no-influence">
+        <h1 data-text="map.${this.text}.name"></h1>
+      </div>
+    `).translate()[0];
+  }
+  static set condorEggOnMap(state) {
+    if (state) {
+      MapBase.map.addLayer(CondorEgg.layer);
+      localStorage.setItem('rdo:condorEggs', 'true');
+    } else {
+      CondorEgg.layer.remove();
+      localStorage.removeItem('rdo:condorEggs');
+    }
+    this.condorEggParentElement.toggleClass('disabled', !state);
+  }
+  static get condorEggOnMap() {
+    return !!localStorage.getItem('rdo:condorEggs');
+  }
+}

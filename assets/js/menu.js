@@ -48,6 +48,8 @@ class Menu {
       });
       MadamNazar.onMap = false;
       Pins.onMap = false;
+      Treasure.treasuresOnMap = false;
+      CondorEgg.condorEggOnMap = false;
     });
 
     $('.menu-show-all').on('click', function () {
@@ -75,6 +77,8 @@ class Menu {
       });
       MadamNazar.onMap = true;
       Pins.onMap = true;
+      Treasure.treasuresOnMap = true;
+      CondorEgg.condorEggOnMap = true;
     });
 
     $('.camps-small-btn').on('click', function () {

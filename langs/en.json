@@ -90,6 +90,7 @@
     "menu.read_trader-guide": "Read Trader guide",
     "menu.sightseeing": "Sightseeing",
     "menu.dailies": "Daily Challenges",
+    "menu.condor_egg": "Condor Eggs",
     "help.clear_important_items": "Clears the highlight from all markers marked as important.",
     "help.collector_map": "Opens a new tab with the other map by Jean, where you can browse markers related to the Collector role.",
     "help.cookie_export": "Exports your settings to a file.",
@@ -1273,5 +1274,8 @@
     "mprc_bounty_completed_no_kills": "Bounty completed without killing an enemy or bounty target",
     "mprc_bounty_completed_posse_member": "Bounty completed with at least one other Posse Member",
     "mprc_bounty_completed_timed": "Bounties completed within one real-world hour",
-    "mprc_bounty_target_photographed_alive": "Living bounty targets in a photograph"
+    "mprc_bounty_target_photographed_alive": "Living bounty targets in a photograph",
+    "map.condor_egg_san_luis_shore.name": "Condor Egg - San Luis Shore",
+    "map.condor_egg_southern_roanoke.name": "Condor Egg - Southern Roanoke",
+    "map.condor_egg_west_hill_haven.name": "Condor Egg - West Hill Haven"
 }
