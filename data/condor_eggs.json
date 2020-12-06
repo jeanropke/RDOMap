@@ -1,6 +1,6 @@
 [
   {
-    "text": "condor_egg_san_luis_shore",
+    "text": "condor_egg_southern_roanoke",
     "x": -33.7521, "y": 153.0524,
     "radius": 7,
     "locations": [
@@ -17,7 +17,7 @@
     ]
   },
   {
-    "text": "condor_egg_southern_roanoke",
+    "text": "condor_egg_west_hill_haven",
     "x": -90.7227, "y": 77.3138,
     "radius": 9,
     "locations": [
@@ -34,7 +34,7 @@
     ]
   },
   {
-    "text": "condor_egg_west_hill_haven",
+    "text": "condor_egg_san_luis_shore",
     "x": -118.2221, "y": 18.8167,
     "radius": 9,
     "locations": [
