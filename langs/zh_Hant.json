@@ -582,6 +582,7 @@
     "map.beggar.name": "乞丐",
     "menu.slumped_hunter": "獵人 - 陷入困境",
     "map.slumped_hunter.desc": "這是一個隨機遭遇。 迷你地圖上的白色斑點將指示相遇解救獵人。",
+    "map.generic_not_released": "這個內容還沒有在遊戲中。",
     "menu.small_btn": "小型",
     "menu.large_btn": "大型",
     "menu.wilderness_btn": "野外",
@@ -1109,5 +1110,9 @@
     "menu.discoverables.sp_legendaries": "單人（傳說動物）",
     "menu.discoverables.sp_areas": "單人（區域）",
     "menu.discoverables.text": "地標",
-    "menu.discoverables.vegetation": "植物和草藥"
+    "menu.discoverables.vegetation": "植物和草藥",
+    "menu.legendary_animal_marker_type": "傳說動物標記類型",
+    "menu.legendary_icon_type.paw_prints": "掌印",
+    "menu.legendary_icon_type.head": "頭部",
+    "menu.legendary_animal_marker_size": "傳說動物標記大小"
 }
