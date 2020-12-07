@@ -49,6 +49,7 @@
     "menu.yes": "예",
     "menu.marker_size": "마커 사이즈",
     "menu.dailies": "오늘의 도전",
+    "menu.condor_egg": "콘도르의 알",
     "map.copy_link": "마커 링크 복사",
     "map.mark_important": "중요한 마커로 표시",
     "map.remove_add": "지도로부터 지우기/추가하기",
@@ -863,6 +864,7 @@
     "mpgc_gfh_bonnie_macfarlane_wins": "완료한 보니 맥팔레인 임무",
     "mpgc_gfh_sadie_adler_wins": "완료한 세이디 애들러 임무",
     "mpgc_gfh_train_clerk_wins": "완료한 역무원 임무",
+    "mprc_bounty_completed_no_kills": "적이나 현상 수배범을 죽이지 않고 현상 수배 완료",
     "mprc_bounty_completed_posse_member": "최소 한 명의 갱단원과 함께 현상 수배 완료",
     "mprc_bounty_completed_timed": "현실 시간으로 1시간 이내에 현상 수배 완료",
     "mprc_bounty_target_photographed_alive": "살아있는 현상 수배범 사진 촬영"
