@@ -1239,6 +1239,7 @@
     "map.gfh.missions.gfh_mt_on_the_hunt": "Охота",
     "menu.dynamic_bounties": "Разыскиваемая цель",
     "map.dynamic_bounties.annesburg_outskirts.name": "Окраины Аннесберга",
+    "map.dynamic_bounties.cumberland_forest.name": "Камберлендский лес",
     "map.dynamic_bounties.guthrie_farm.name": "Ферма Гатри",
     "map.dynamic_bounties.west_heartlands.name": "Запад Внутренних земель",
     "map.dynamic_bounties.big_valley_south.name": "Юг Большой долины",
@@ -1270,5 +1271,8 @@
     "mprc_bounty_completed_no_kills": "Заданий по поимке преступников выполнено, не убив врага или преступника",
     "mprc_bounty_completed_posse_member": "Заданий по поимке преступников выполнено с членом отряда",
     "mprc_bounty_completed_timed": "Заданий по поимке преступников выполнено за 1 час в реальном времени",
-    "mprc_bounty_target_photographed_alive": "Живых преступников сфотографировано"
+    "mprc_bounty_target_photographed_alive": "Живых преступников сфотографировано",
+    "map.condor_egg_san_luis_shore.name": "Яйцо Кондора - Вест-Элизабет",
+    "map.condor_egg_southern_roanoke.name": "Яйцо Кондора - Нью-Ганновер",
+    "map.condor_egg_west_hill_haven.name": "Яйцо Кондора - Нью-Остин"
 }
