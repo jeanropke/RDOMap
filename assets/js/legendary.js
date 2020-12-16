@@ -69,10 +69,18 @@ class Legendary {
     }
     const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
     const spawnIconSize = Settings.legendarySpawnIconSize;
-    this.spawnIcon = L.icon({
+    this.spawnIcon = new LaIcon({
       iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
       iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
       iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
+      time : (()=>{
+        var times=[];
+        const spawnTimes = [].concat(...this.spawn_time);
+        for(var i=0;i+1<spawnTimes.length;i+=2) {
+            times = [...times, ...timeRange(spawnTimes[i], spawnTimes[(i+1)])];
+        }
+        return times;
+      })(),
     });
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {

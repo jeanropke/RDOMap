@@ -384,7 +384,15 @@ $('#open-delete-all-settings-modal').on('click', function () {
   $('#delete-all-settings-modal').modal();
 });
 
-
+function timeRange(from, to){
+    // Add all valid hours to the marker to be able to simply `.includes()` it later.
+    // Could also check `if X between start and end`, might be slightly better. ¯\_(ツ)_/¯
+    var times = [];
+    for (let index = from; index !== to; (index !== 23) ? index++ : index = 0)
+        times.push(index);
+      
+      return times;
+}
 /**
  * Leaflet plugins
  */
@@ -405,13 +413,7 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
       var from = parseInt(this.options.time[0]);
       var to = parseInt(this.options.time[1]);
 
-      // Add all valid hours to the marker to be able to simply `.includes()` it later.
-      // Could also check `if X between start and end`, might be slightly better. ¯\_(ツ)_/¯
-      var times = [];
-      for (let index = from; index !== to; (index !== 23) ? index++ : index = 0)
-        times.push(index);
-
-      img.dataset.time = times;
+      img.dataset.time = timeRange(from, to);
     }
   },
 });
@@ -425,6 +427,15 @@ L.LayerGroup.include({
     }
   },
 });
+
+LaIcon = L.Icon.extend({
+    _setIconStyles: function (img, name) {
+        L.Icon.prototype._setIconStyles.call(this, img, name);
+        if (this.options.time && this.options.time !== []) {
+            img.dataset.time = this.options.time
+        }
+    }
+})
 
 $('#cookie-export').on('click', function () {
   try {
