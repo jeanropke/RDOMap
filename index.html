@@ -44,11 +44,11 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1488" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1489" />
   <link rel="stylesheet" href="assets/css/tippy.css" />
 
   <script>
-    var nocache = 1488;
+    var nocache = 1489;
   </script>
 </head>
 
@@ -279,6 +279,14 @@
       </div>
     </div>
     <div>
+      <div class="menu-option" data-type="condor_egg" data-help="item_category">
+        <span>
+          <img class="icon" src="./assets/images/icons/condor_egg.png" />
+          <span data-text="menu.condor_egg">condor Eggs</span>
+        </span>
+      </div>
+    </div>
+    <div>
       <div class="menu-option clickable" data-type="daily_locations" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/daily_locations.png" />
@@ -312,7 +320,29 @@
       </div>
       <div class="menu-hidden two-column" data-type="discoverables"></div>
     </div>
-
+    <div>
+      <div class="header daily-challenges">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.dailies">Daily Challenges</h2>
+        <span class="header-border"></span>
+      </div>
+      <div id="dailies-changer-container" class="dailies-changer daily-challenges" data-help="dailies_change_category">
+        <div id="dailies-prev" class="input-selection-arrow">
+          <img src="assets/images/selection_left.png" alt="arrow">
+        </div>
+        <span class="dailies-title" data-text="menu.dailies_general">General</span>
+        <div id="dailies-next" class="input-selection-arrow">
+          <img src="assets/images/selection_right.png" alt="arrow">
+        </div>
+      </div>
+      <div class="dailies daily-challenges" data-type="dailies">
+        <div class="daily-status loading" data-text="menu.dailies_loading">Loading dailies...</div>
+      </div>
+      <div class="input-container-noflex daily-challenges">
+        <button id="sync-map-to-dailies" type="button" class="btn btn-default" data-text="menu.sync_map_to_dailies"
+          data-help="sync_map_to_dailies">Sync map to dailies</button>
+      </div>
+    </div>
     <div class="header">
       <span class="header-border"></span>
       <h2 class="header-title" data-text="menu.settings">Settings</h2>
@@ -559,27 +589,6 @@
         <label data-text="menu.delete_all_settings">Reset all settings</label>
         <div class="input-action"></div>
       </div>
-    </div>
-    <div class="header daily-challenges">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.dailies">Daily Challenges</h2>
-      <span class="header-border"></span>
-    </div>
-    <div id="dailies-changer-container" class="dailies-changer daily-challenges" data-help="dailies_change_category">
-      <div id="dailies-prev" class="input-selection-arrow">
-        <img src="assets/images/selection_left.png" alt="arrow">
-      </div>
-      <span class="dailies-title" data-text="menu.dailies_general">General</span>
-      <div id="dailies-next" class="input-selection-arrow">
-        <img src="assets/images/selection_right.png" alt="arrow">
-      </div>
-    </div>
-    <div class="dailies daily-challenges" data-type="dailies">
-      <div class="daily-status loading" data-text="menu.dailies_loading">Loading dailies...</div>
-    </div>
-    <div class="input-container-noflex daily-challenges">
-      <button id="sync-map-to-dailies" type="button" class="btn btn-default" data-text="menu.sync_map_to_dailies"
-        data-help="sync_map_to_dailies">Sync map to dailies</button>
     </div>
     <div class="header">
       <span class="header-border"></span>
@@ -874,7 +883,7 @@
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1488"></script>
+  <script src="assets/js/loader.js?nocache=1489"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -886,28 +895,28 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1488"></script>
-  <script src="assets/js/settings.js?nocache=1488"></script>
-  <script src="assets/js/nazar.js?nocache=1488"></script>
-  <script src="assets/js/marker.js?nocache=1488"></script>
-  <script src="assets/js/treasures.js?nocache=1488"></script>
-  <script src="assets/js/legendary.js?nocache=1488"></script>
-  <script src="assets/js/encounters.js?nocache=1488"></script>
-  <script src="assets/js/locations.js?nocache=1488"></script>
-  <script src="assets/js/plants.js?nocache=1488"></script>
-  <script src="assets/js/camps.js?nocache=1488"></script>
-  <script src="assets/js/shops.js?nocache=1488"></script>
-  <script src="assets/js/gfh.js?nocache=1488"></script>
-  <script src="assets/js/animals.js?nocache=1488"></script>
-  <script src="assets/js/discoverables.js?nocache=1488"></script>
-  <script src="assets/js/overlays.js?nocache=1488"></script>
-  <script src="assets/js/pins.js?nocache=1488"></script>
-  <script src="assets/js/map.js?nocache=1488"></script>
-  <script src="assets/js/language.js?nocache=1488"></script>
-  <script src="assets/js/menu.js?nocache=1488"></script>
-  <script src="assets/js/dailies.js?nocache=1488"></script>
-  <script src="assets/js/scripts.js?nocache=1488"></script>
-  <script src="assets/js/fme.js?nocache=1488"></script>
+  <script src="assets/js/layers.js?nocache=1489"></script>
+  <script src="assets/js/settings.js?nocache=1489"></script>
+  <script src="assets/js/nazar.js?nocache=1489"></script>
+  <script src="assets/js/marker.js?nocache=1489"></script>
+  <script src="assets/js/treasures.js?nocache=1489"></script>
+  <script src="assets/js/legendary.js?nocache=1489"></script>
+  <script src="assets/js/encounters.js?nocache=1489"></script>
+  <script src="assets/js/locations.js?nocache=1489"></script>
+  <script src="assets/js/plants.js?nocache=1489"></script>
+  <script src="assets/js/camps.js?nocache=1489"></script>
+  <script src="assets/js/shops.js?nocache=1489"></script>
+  <script src="assets/js/gfh.js?nocache=1489"></script>
+  <script src="assets/js/animals.js?nocache=1489"></script>
+  <script src="assets/js/discoverables.js?nocache=1489"></script>
+  <script src="assets/js/overlays.js?nocache=1489"></script>
+  <script src="assets/js/pins.js?nocache=1489"></script>
+  <script src="assets/js/map.js?nocache=1489"></script>
+  <script src="assets/js/language.js?nocache=1489"></script>
+  <script src="assets/js/menu.js?nocache=1489"></script>
+  <script src="assets/js/dailies.js?nocache=1489"></script>
+  <script src="assets/js/scripts.js?nocache=1489"></script>
+  <script src="assets/js/fme.js?nocache=1489"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

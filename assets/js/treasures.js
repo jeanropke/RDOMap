@@ -37,18 +37,7 @@ class Treasure {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
-    this.mainIcon = L.divIcon({
-      iconSize: [35 * markerSize, 45 * markerSize],
-      iconAnchor: [17 * markerSize, 42 * markerSize],
-      popupAnchor: [1 * markerSize, -29 * markerSize],
-      html: `
-        <img class="icon" src="./assets/images/icons/treasure.png" alt="Icon">
-        <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'beige'}.png" alt="Background">
-        ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
-            src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
-      `,
-    });
+  static onSettingsChanged() {
     this.treasures.forEach(treasure => treasure.reinitMarker());
   }
 
@@ -73,17 +62,17 @@ class Treasure {
     this.marker.addLayer(L.circle([this.x, this.y], {
       color: '#f4e98a',
       fillColor: '#f4e98a',
-      fillOpacity: 0.5,
+      fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
       radius: this.radius,
-    }));
-    this.marker.addLayer(L.marker([this.x, this.y], { icon: Treasure.mainIcon })
+    })
       .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
     );
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
         icon: Treasure.crossIcon,
         pane: 'treasureX',
-      }))
+      })
+        .bindPopup(this.popupContent.bind(this), { minWidth: 300 }))
     );
     this.onMap = this.onMap;
   }

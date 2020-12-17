@@ -42,23 +42,24 @@ class Loader {
 }
 
 const urls = [
-  'data/encounters.json',
-  'data/fme.json',
-  'data/hm.json',
-  'data/animal_spawns.json',
   'data/animal_legendary.json',
-  'data/overlays.json',
-  'data/overlays_beta.json',
-  'data/items.json',
-  'data/discoverables.json',
-  'data/fasttravels.json',
-  'data/shops.json',
+  'data/animal_spawns.json',
   'data/camps.json',
-  'data/treasures.json',
-  'data/plants.json',
+  'data/condor_eggs.json',
+  'data/discoverables.json',
+  'data/encounters.json',
+  'data/fasttravels.json',
+  'data/fme.json',
   'data/gfh.json',
-  'https://pepegapi.jeanropke.net/v2/rdo/nazar',
+  'data/hm.json',
+  'data/items.json',
+  'data/overlays_beta.json',
+  'data/overlays.json',
+  'data/plants.json',
   'data/possible_dailies.json',
-  'https://pepegapi.jeanropke.net/v2/rdo/dailies'
+  'data/shops.json',
+  'data/treasures.json',
+  'https://pepegapi.jeanropke.net/v2/rdo/dailies',
+  'https://pepegapi.jeanropke.net/v2/rdo/nazar'
 ];
 Loader.init(urls);

@@ -64,6 +64,7 @@ function init() {
   const locations = Location.init();
   const encounters = Encounter.init();
   const treasures = Treasure.init();
+  const condorEggs = CondorEgg.init();
   const plants = PlantsCollection.init();
   const camps = Camp.init();
   const shops = Shop.init();
@@ -72,7 +73,7 @@ function init() {
   const discoverables = Discoverable.init();
   const overlays = Overlay.init();
 
-  Promise.all([animals, locations, encounters, treasures, plants, camps, shops, gfh, legendary, discoverables, overlays])
+  Promise.all([animals, locations, encounters, treasures, condorEggs, plants, camps, shops, gfh, legendary, discoverables, overlays])
     .then(() => {
       Loader.resolveMapModelLoaded();
       MapBase.afterLoad();
@@ -208,6 +209,7 @@ $('#language').on('change', function () {
 $('#marker-size').on('change', function () {
   Settings.markerSize = Number($('#marker-size').val());
   Treasure.onSettingsChanged();
+  CondorEgg.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
@@ -220,6 +222,7 @@ $('#marker-size').on('change', function () {
 $('#marker-opacity').on('change', function () {
   Settings.markerOpacity = Number($('#marker-opacity').val());
   Treasure.onSettingsChanged();
+  CondorEgg.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
@@ -233,6 +236,7 @@ $('#overlay-opacity').on('change', function () {
   Settings.overlayOpacity = Number($('#overlay-opacity').val());
   Legendary.onSettingsChanged();
   Overlay.onSettingsChanged();
+  CondorEgg.onSettingsChanged();
 });
 
 $('#tooltip').on('change', function () {
