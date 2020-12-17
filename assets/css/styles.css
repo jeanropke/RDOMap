@@ -1624,3 +1624,8 @@ span.daily-checkbox {
     margin: 4px 0;
     padding-left: 30px;
 }
+
+button.reload-nazar {
+    margin: 10px 0;
+    width: 100%;
+}

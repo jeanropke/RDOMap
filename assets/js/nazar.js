@@ -27,15 +27,18 @@ class MadamNazar {
       .translate();
 
     return Loader.promises['nazar'].consumeJson(data => {
-      var _nazarParam = getParameterByName('nazar');
+      const _nazarParam = getParameterByName('nazar');
       if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam)
         this.currentLocation = _nazarParam;
       else
         this.currentLocation = this.possibleLocations.findIndex(({ key }) => key === data.nazar);
 
-      this.currentDate = new Date(data.date).toLocaleString(Settings.language, {
-        day: '2-digit', month: 'long', year: 'numeric',
-      });
+      this.currentDate = {
+        localeString: new Date(data.date).toLocaleString(Settings.language, {
+          day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
+        }),
+        isoString: data.date,
+      };
 
       MadamNazar.addMadamNazar();
       console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
@@ -50,7 +53,7 @@ class MadamNazar {
     const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
 
     const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
-    var tempMarker = L.marker([cl.x, cl.y], {
+    const tempMarker = L.marker([cl.x, cl.y], {
       opacity: Settings.markerOpacity,
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -63,18 +66,29 @@ class MadamNazar {
         `,
       }),
     });
-    tempMarker.bindPopup(`
-      <h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1>
-      <p style="text-align: center;">
-      ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
-      </p>
-    `, { minWidth: 300 });
+    tempMarker.bindPopup(this.popupContent(), { minWidth: 300 });
 
     MadamNazar.layer.addLayer(tempMarker);
     if (Settings.isMarkerClusterEnabled)
       Layers.oms.addMarker(tempMarker);
 
     this.onMap = this.onMap;
+  }
+  static popupContent() {
+    const $popup = $(`
+        <div>
+          <h1>${Language.get('menu.madam_nazar')} - ${this.currentDate.localeString}</h1>
+          <p style="text-align: center;">
+            ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
+          </p>
+          <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
+        </div>`)
+      .translate()
+      .find('button')
+      .on('click', () => this.reloadNazar())
+      .end();
+
+    return $popup[0];
   }
 
   static set onMap(state) {
@@ -92,5 +106,13 @@ class MadamNazar {
   }
   static get onMap() {
     return JSON.parse(localStorage.getItem('rdo:nazar')) || JSON.parse(localStorage.getItem('rdo:nazar')) == null;
+  }
+  static reloadNazar() {
+    const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
+    if (MadamNazar.currentDate.isoString === nazarDate) return;
+    MadamNazar.layer.clearLayers();
+    Loader.reloadData('nazar');
+    MadamNazar.init();
+    console.info('%c[Nazar] Reloaded!', 'color: #FF6969; background: #242424');
   }
 }
