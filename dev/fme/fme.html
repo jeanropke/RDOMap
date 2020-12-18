@@ -106,14 +106,6 @@
       text-overflow: ellipsis;
     }
 
-    #fme-container .fme-card #next-general-mobile,
-    #fme-container .fme-card #next-role-mobile {
-      display: none;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
     #fme-container .fme-card .fme-body {
       display: block;
       overflow: hidden;
@@ -123,35 +115,18 @@
 
 <body>
   <div id="fme-container">
-    <div id="next-general-event" class="fme-card">
-      <span class="fme-image" id="next-general-image"></span>
+    <div id="next-event" class="fme-card">
+      <span class="fme-image" id="next-image"></span>
       <div class="fme-body">
-        <h3 class="fme-title" id="next-general-name"></h3>
-        <p class="fme-text" id="next-general-eta"></p>
+        <h3 class="fme-title" id="next-name"></h3>
+        <p class="fme-text" id="next-eta"></p>
       </div>
-      <span id="next-general-mobile"></span>
-    </div>
-    <div id="next-role-event" class="fme-card">
-      <span class="fme-image" id="next-role-image"></span>
-      <div class="fme-body">
-        <h3 class="fme-title" id="next-role-name"></h3>
-        <p class="fme-text" id="next-role-eta"></p>
-      </div>
-      <span id="next-role-mobile"></span>
     </div>
   </div>
 
   <script src="../../assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="./fme.js"></script>
   <script>
-    Object.defineProperty(String.prototype, 'filename', {
-      value: function (extension) {
-        let s = this.replace(/\\/g, '/');
-        s = s.substring(s.lastIndexOf('/') + 1);
-        return extension ? s.replace(/[?#].+$/, '') : s.split('.')[0];
-      },
-    });
-
     function qs(key) {
       key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&");
       var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));

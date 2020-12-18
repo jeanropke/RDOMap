@@ -54,59 +54,21 @@ const FME = {
   _sentNotifications: [],
 
   /**
-   * A list of flags to use for the FME enabled settings
-   */
-  flags: {
-    none: 0,
-    fme_archery: 1,
-    fme_dead_drop: 2,
-    fme_fishing_challenge: 4,
-    fme_golden_hat: 8,
-    fme_hot_property: 16,
-    fme_king_of_the_castle: 32,
-    fme_king_of_the_rail: 64,
-    fme_random: 128,
-    fme_role_animal_tagging: 256,
-    fme_role_condor_egg: 512,
-    fme_role_greatest_bounty_hunter: 1024,
-    fme_role_protect_legendary_animal: 2048,
-    fme_role_round_up: 4096,
-    fme_role_supply_train: 8192,
-    fme_role_wildlife_photographer: 16384,
-    fme_role_wreckage: 32768,
-    fme_wild_animal_kills: 65536,
-  },
-
-  /**
    * DOM elements for the FME card
    */
   elements: {
-    general: {
-      nextEventImage: document.getElementById('next-general-image'),
-      nextEventName: document.getElementById('next-general-name'),
-      nextEventEta: document.getElementById('next-general-eta'),
-      nextEventBodyMobile: document.getElementById('next-general-mobile'),
-    },
-    role: {
-      nextEventImage: document.getElementById('next-role-image'),
-      nextEventName: document.getElementById('next-role-name'),
-      nextEventEta: document.getElementById('next-role-eta'),
-      nextEventBodyMobile: document.getElementById('next-role-mobile'),
-    },
+    nextEventImage: document.getElementById('next-image'),
+    nextEventName: document.getElementById('next-name'),
+    nextEventEta: document.getElementById('next-eta'),
   },
 
   /**
    * Update the FME data
    * @param {Array} schedule List of event times
    */
-  updateEvent: function (schedule, key) {
-    const frequencies = {
-      general: 45,
-      role: 45,
-    };
-
-    const elements = FME.elements[key];
-    const frequency = FME.minutesToMilliseconds(frequencies[key]);
+  updateEvent: function (schedule) {
+    const elements = FME.elements;
+    const frequency = FME.minutesToMilliseconds(45);
     let hasValidNext = false;
     let lastEta = null;
 
@@ -126,7 +88,7 @@ const FME = {
       }
     });
 
-    $(`#next-${key}-event`).toggle(hasValidNext);
+    $('#next-event').toggle(hasValidNext);
   },
 
   /**
@@ -168,8 +130,6 @@ const FME = {
       dateTime: dateTime,
       name: d[1],
       nameText: getString(`menu.fme.${d[1]}`),
-      image: `${d[1]}.png`,
-      imageSrc: `./assets/images/fme/${d[1]}.png`,
       eta: eta,
       etaText: FME.getEtaText(eta),
     };
@@ -203,18 +163,16 @@ const FME = {
    */
   update: function () {
     if (FME._eventsJson === null) return;
-
-    FME.updateEvent(FME._eventsJson.general, 'general');
-    FME.updateEvent(FME._eventsJson.role, 'role');
+    FME.updateEvent(FME._eventsJson);
   },
 
   /**
    * Retrieve the FME data from FME.json
    */
   init: async function () {
-    const data = await fetch('../../data/fme.json');
+    const data = await fetch('../../data/fme.json?v=' + Date.now());
     const json = await data.json();
-    FME._eventsJson = { 'general': [...json.general, ...json.role], 'role': [] };
+    FME._eventsJson = [...json.general, ...json.role];
     FME.update();
     window.setInterval(FME.update, 5000);
   },
