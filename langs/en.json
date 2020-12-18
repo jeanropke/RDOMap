@@ -1277,5 +1277,6 @@
     "mprc_bounty_target_photographed_alive": "Living bounty targets in a photograph",
     "map.condor_egg_san_luis_shore.name": "Condor Egg - San Luis Shore",
     "map.condor_egg_southern_roanoke.name": "Condor Egg - Southern Roanoke",
-    "map.condor_egg_west_hill_haven.name": "Condor Egg - West Hill Haven"
+    "map.condor_egg_west_hill_haven.name": "Condor Egg - West Hill Haven",
+    "menu.madam_nazar_reload_position": "Click to update position"
 }
