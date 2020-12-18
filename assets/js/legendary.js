@@ -74,12 +74,9 @@ class Legendary {
       iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
       iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
       time : (()=>{
-        var times=[];
-        const spawnTimes = [].concat(...this.spawn_time);
-        for(var i=0;i+1<spawnTimes.length;i+=2) {
-            times = [...times, ...timeRange(spawnTimes[i], spawnTimes[(i+1)])];
-        }
-        return times;
+        let hours=[];
+        this.spawn_time.forEach(timeArray =>hours=hours.concat(timeRange(timeArray[0],timeArray[1])));
+        return hours;
       })(),
     });
     this.locations.forEach(point =>
