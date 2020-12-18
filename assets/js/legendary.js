@@ -73,9 +73,9 @@ class Legendary {
       iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
       iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
       iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
-      time : (()=>{
-        let hours=[];
-        this.spawn_time.forEach(timeArray =>hours=hours.concat(timeRange(timeArray[0],timeArray[1])));
+      time: (() => {
+        const hours = [];
+        this.spawn_time.forEach(timeArray => hours.push(...timeRange(timeArray[0], timeArray[1])));
         return hours;
       })(),
     });
