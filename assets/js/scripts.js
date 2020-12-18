@@ -389,7 +389,7 @@ $('#open-delete-all-settings-modal').on('click', function () {
 });
 /* returns an Array with the range of all hours between from to to  */
 function timeRange(from, to) {
-  let times = [];
+  const times = [];
 
   let hour = from;
   while (hour !== to) {
@@ -435,13 +435,13 @@ L.LayerGroup.include({
 });
 
 const LaIcon = L.Icon.extend({
-        _setIconStyles: function (img, name) {
-            L.Icon.prototype._setIconStyles.call(this, img, name);
-            if (this.options.time && this.options.time !== []) {
-                img.dataset.time = this.options.time
-            }
-        }
-    });
+  _setIconStyles: function (img, name) {
+    L.Icon.prototype._setIconStyles.call(this, img, name);
+    if (this.options.time && this.options.time !== []) {
+      img.dataset.time = this.options.time;
+    }
+  },
+});
 
 $('#cookie-export').on('click', function () {
   try {
