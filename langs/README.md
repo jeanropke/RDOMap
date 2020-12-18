@@ -140,3 +140,6 @@ These are the people that helped translate the project using Crowdin. Please not
   - **grmaster5s** (5,664 words)
   - **warkoun** (293 words)
 
+### Vietnamese:
+  - **1751020005** (238 words)
+
