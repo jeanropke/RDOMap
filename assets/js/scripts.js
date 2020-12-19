@@ -434,7 +434,8 @@ L.LayerGroup.include({
   },
 });
 
-const LaIcon = L.Icon.extend({
+// Glowing icon (legendary animals)
+L.Icon.TimedData = L.Icon.extend({
   _setIconStyles: function (img, name) {
     L.Icon.prototype._setIconStyles.call(this, img, name);
     if (this.options.time && this.options.time !== []) {

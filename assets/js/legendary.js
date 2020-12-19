@@ -69,7 +69,7 @@ class Legendary {
     }
     const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
     const spawnIconSize = Settings.legendarySpawnIconSize;
-    this.spawnIcon = new LaIcon({
+    this.spawnIcon = new L.Icon.TimedData({
       iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
       iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
       iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
