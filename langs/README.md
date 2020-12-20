@@ -95,7 +95,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish:
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,002 words)
-  - **Michal__d** (1,809 words)
+  - **Michal__d** (1,863 words)
 
 ### Portuguese:
   - **FilipeLuk** (649 words)
