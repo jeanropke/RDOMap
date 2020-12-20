@@ -90,6 +90,7 @@
     "menu.read_trader-guide": "Przewodnik handlowca",
     "menu.sightseeing": "Miejsce widokowe",
     "menu.dailies": "Wyzwania dnia",
+    "menu.condor_egg": "Jajo Kondora",
     "help.clear_important_items": "Usuwa podświetlenie ze wszystkich znaczników oznaczonych jako ważne.",
     "help.collector_map": "Otwiera nową kartę z drugą mapą Jeana, w której można przeglądać znaczniki związane z rolą Kolekcjonera.",
     "help.cookie_export": "Eksportuje ustawienia do pliku.",
@@ -1184,5 +1185,15 @@
     "menu.legendary_icon_type.paw_prints": "Odciski łop",
     "menu.legendary_icon_type.head": "Głowy",
     "help.legendary_marker_size": "Pozwala na zmianę skali ikon miejsc pojawiania się legendarnych zwierząt.",
-    "menu.legendary_animal_marker_size": "Rozmiar znacznika legendarnych zwierząt"
+    "menu.legendary_animal_marker_size": "Rozmiar znacznika legendarnych zwierząt",
+    "map.gfh.missions.gfh_mt_assassination": "Płatne zabójstwo",
+    "map.dynamic_bounties.pirate_ship.name": "Statek Piracki",
+    "mprc_bounty_completed_no_kills": "Misje łowcy nagród ukończone bez zabijania wroga lub celu",
+    "mprc_bounty_completed_posse_member": "Misje łowcy nagród ukończone z co najmniej jednym członkiem gangu",
+    "mprc_bounty_completed_timed": "Misje łowcy nagród ukończone w godzinę",
+    "mprc_bounty_target_photographed_alive": "Sfotografowani żywi przestępcy",
+    "map.condor_egg_san_luis_shore.name": "Jajo kondora - Brzeg San Luis",
+    "map.condor_egg_southern_roanoke.name": "Jajo kondora - Południowe Roanoke",
+    "map.condor_egg_west_hill_haven.name": "Jajo kondora - Zachodnie Hill Haven",
+    "menu.madam_nazar_reload_position": "Kliknij, aby zaktualizować pozycję"
 }
