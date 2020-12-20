@@ -19,7 +19,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Chinese Simplified:
   - **578218087** (55 words)
-  - **akbcd** (131 words)
+  - **akbcd** (133 words)
   - **BHT256** (254 words)
   - **curryguru** (102 words)
   - **Jabaay** (496 words)
