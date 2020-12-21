@@ -29,7 +29,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **qiexiacn** (223 words)
 
 ### Chinese Traditional:
-  - **jurn0818** (516 words)
+  - **jurn0818** (548 words)
   - **L1Chung** (3,267 words)
   - **Megitsune** (21,002 words)
   - **pach318** (265 words)
