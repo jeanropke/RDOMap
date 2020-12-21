@@ -10,7 +10,12 @@ class Plants {
         this.onMap = !this.onMap; setTimeout(() => PlantsCollection.layer.redraw(), 40);
       })
       .append($(`<img src="./assets/images/icons/game/${this.key}.png" class="collectible-icon">`))
-      .append($('<p class="collectible">').attr('data-text', `map.plants.${this.key}.name`))
+      .append($('<p class="collectible">').attr('data-text', `map.plants.${this.key}.name`)).css('color', () => {
+        if (this.key === 'harrietum')
+          return '#fdc607';
+        else
+          return null;
+      })
       .translate();
 
     this.element.appendTo(PlantsCollection.context);
