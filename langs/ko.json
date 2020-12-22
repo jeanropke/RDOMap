@@ -868,5 +868,7 @@
     "mprc_bounty_completed_no_kills": "적이나 현상 수배범을 죽이지 않고 현상 수배 완료",
     "mprc_bounty_completed_posse_member": "최소 한 명의 갱단원과 함께 현상 수배 완료",
     "mprc_bounty_completed_timed": "현실 시간으로 1시간 이내에 현상 수배 완료",
-    "mprc_bounty_target_photographed_alive": "살아있는 현상 수배범 사진 촬영"
+    "mprc_bounty_target_photographed_alive": "살아있는 현상 수배범 사진 촬영",
+    "menu.fme": "유랑 모드 이벤트",
+    "menu.salvage": "잔해 수색"
 }
