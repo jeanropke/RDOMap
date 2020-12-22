@@ -50,6 +50,7 @@ class Menu {
       Pins.onMap = false;
       Treasure.treasuresOnMap = false;
       CondorEgg.condorEggOnMap = false;
+      Salvage.salvageOnMap = false;
     });
 
     $('.menu-show-all').on('click', function () {
@@ -79,6 +80,7 @@ class Menu {
       Pins.onMap = true;
       Treasure.treasuresOnMap = true;
       CondorEgg.condorEggOnMap = true;
+      Salvage.salvageOnMap = true;
     });
 
     $('.camps-small-btn').on('click', function () {
