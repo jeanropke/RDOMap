@@ -124,7 +124,7 @@ class Salvage {
             src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
       `,
     });
-    this.salvages.forEach(egg => egg.reinitMarker());
+    this.salvages.forEach(salvage => salvage.reinitMarker());
   }
 
   constructor(preliminary) {
