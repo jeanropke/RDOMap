@@ -1274,5 +1274,6 @@
     "mprc_bounty_target_photographed_alive": "Живых преступников сфотографировано",
     "map.condor_egg_san_luis_shore.name": "Яйцо Кондора - Вест-Элизабет",
     "map.condor_egg_southern_roanoke.name": "Яйцо Кондора - Нью-Ганновер",
-    "map.condor_egg_west_hill_haven.name": "Яйцо Кондора - Нью-Остин"
+    "map.condor_egg_west_hill_haven.name": "Яйцо Кондора - Нью-Остин",
+    "menu.salvage": "Обломки"
 }
