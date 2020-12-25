@@ -1275,5 +1275,7 @@
     "map.condor_egg_san_luis_shore.name": "Яйцо Кондора - Вест-Элизабет",
     "map.condor_egg_southern_roanoke.name": "Яйцо Кондора - Нью-Ганновер",
     "map.condor_egg_west_hill_haven.name": "Яйцо Кондора - Нью-Остин",
-    "menu.salvage": "Обломки"
+    "menu.madam_nazar_reload_position": "Нажмите, чтобы обновить местоположение",
+    "menu.salvage": "Обломки",
+    "map.salvage.pickups.desc": "Во время события на этом месте появляется случайный коллекционный предмет. Этот предмет можно подобрать без лопаты или металлоискателя."
 }
