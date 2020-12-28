@@ -1276,6 +1276,10 @@
     "map.condor_egg_southern_roanoke.name": "Яйцо Кондора - Нью-Ганновер",
     "map.condor_egg_west_hill_haven.name": "Яйцо Кондора - Нью-Остин",
     "menu.madam_nazar_reload_position": "Нажмите, чтобы обновить местоположение",
+    "menu.fme": "События свободного режима",
+    "map.salvage_roanoke_valley.name": "Обломки - Долина Роанок",
+    "map.salvage_flat_iron_lake.name": "Обломки - Озеро Флэт-Айрон",
+    "map.salvage_gaptooth_ridge.name": "Обломки - Щербатая гряда",
     "menu.salvage": "Обломки",
     "map.salvage.pickups.desc": "Во время события на этом месте появляется случайный коллекционный предмет. Этот предмет можно подобрать без лопаты или металлоискателя."
 }
