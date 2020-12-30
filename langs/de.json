@@ -1189,5 +1189,6 @@
     "map.gfh.missions.fetch_steal_boat": "Bootsdiebstahl",
     "map.gfh.missions.fetch_steal_horses": "Pferdediebstahl",
     "map.gfh.missions.fetch_steal_wagon": "Wagendiebstahl",
+    "mprc_bounty_completed_no_kills": "Kopfgeldjagd abgeschlossen, ohne einen Gegner oder eine Zielperson zu töten",
     "mprc_bounty_completed_timed": "Kopfgeldjagden innerhalb einer Stunde abgeschlossen [Echtzeit]"
 }
