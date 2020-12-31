@@ -90,7 +90,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **menbou** (182 words)
 
 ### Korean:
-  - **CoolBreeze-13s** (1,651 words)
+  - **CoolBreeze-13s** (1,653 words)
   - **Megitsune** (21,042 words)
 
 ### Norwegian:
