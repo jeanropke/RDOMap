@@ -20,7 +20,7 @@
     "menu.import_export_explanation": "설정을 가져오거나 내보내십시오. 설정을 가져오면 현재 설정이 모두 대체되고 페이지가 다시 로드됩니다. 이 기능은 핀을 포함하지 않는다",
     "menu.language": "언어",
     "menu.madam_nazar": "마담 나자르",
-    "menu.marker_cluster": "마커 모으기",
+    "menu.marker_cluster": "겹친 마커 그룹화",
     "menu.marker_opacity": "마커 불투명",
     "menu.modal_clear_important_items_body": "중요한 것으로 표시된 모든 마커의 하이라이트가 지워진다 복구 불가능",
     "menu.modal_clear_important_items_title": "중요한 마커를 지우시겠습니까?",
