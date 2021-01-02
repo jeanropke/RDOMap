@@ -107,7 +107,7 @@
     ]
   },
   {
-    "color": "darkred",
+    "color": "lightdarkred",
     "disabled": false,
     "key": "dynamic_bounties",
     "locations": [
