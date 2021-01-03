@@ -648,6 +648,9 @@
     "help.fme_display_role_period": "Permet de sélectionner le nombre maximal de minutes pour afficher les événements généraux du mode exploration. Tous les événements au dessus de ce nombre ne seront pas affichés.",
     "menu.fme_notification": "Activer les notifications d'événement",
     "help.fme_notification": "Envoyer une notification lorsqu'un événement du mode exploration est sur le point de démarrer.",
+    "help.fme_notification.denied": "Envoyez une notification lorsqu'un événement du mode exploration est sur le point de commencer. Désactivé parce que la permission requise du navigateur n'a pas été accordée.",
+    "help.fme_notification.no_support": "Envoyez une notification lorsqu'un événement du mode exploration est sur le point de commencer. Désactivé car le navigateur ne prend pas en charge cette fonctionnalité.",
+    "help.fme_notification_period": "Vous permet de choisir combien de minutes avant le début d'un événement du mode exploration la notification sera envoyée.",
     "menu.fme.time.starts_in": "Commence dans {time}.",
     "menu.fme.time.less_than_a_minute": "moins d'une minute",
     "menu.fme.time.minute": "{minutes} minute",
@@ -669,7 +672,10 @@
     "menu.fme.fme_role_wildlife_photographer": "Photographie d'Animaux Sauvages",
     "menu.fme.fme_role_wreckage": "Récupération",
     "menu.fme.fme_wild_animal_kills": "Défi \"Chasse aux animaux sauvages\"",
+    "notification.fme.body": "C'est pour vous prévenir que {name} commencera dans {time}.",
     "menu.fme_enabled_events": "Sélectionnez les événements activés",
+    "help.fme_enabled_events": "Vous permet de sélectionner les événements que vous souhaitez afficher sur la carte et/ou pour lesquels vous souhaitez recevoir des notifications.",
+    "menu.modal_fme_enabled_events_title": "Paramètres des événements du mode exploration",
     "menu.modal_fme_enabled_events_body": "Sélectionnez les événements que vous souhaitez afficher sur la carte et/ou pour lesquels vous souhaitez recevoir des notifications.",
     "menu.modal_fme_general_events_title": "Événements généraux",
     "menu.modal_fme_role_events_title": "Événements de rôle",
@@ -697,7 +703,6 @@
     "map.gfh.thomas_skiff_captain.name": "Tomas",
     "map.gfh.wallace_train_clerk.name": "Contrôlleur",
     "map.gfh.war_vet.name": "Hamish Sinclair",
-    "map.shops.musician.name": "Musicien",
     "map.shops.harriet.name": "Harriet",
     "map.shops.harriet.desc": "Harriet gère un magasin pour Naturalistes où vous pouvez acheter une gamme de toniques et d'articles pour aider vos études. Vous pouvez également vendre des échantillons d'animaux ici.",
     "map.shops.trapper.name": "Gus",
@@ -1167,5 +1172,6 @@
     "menu.legendary_icon_type.head": "Têtes",
     "help.legendary_marker_size": "Permet de changer l'échelle de l'icône de l'animal légendaire.",
     "menu.legendary_animal_marker_size": "Taille du marqueur animal légendaire",
-    "mpgc_gfh_bonnie_macfarlane_wins": "Missions de Bonnie MacFarlane terminées"
+    "mpgc_gfh_bonnie_macfarlane_wins": "Missions de Bonnie MacFarlane terminées",
+    "menu.madam_nazar_reload_position": "Cliquez pour mettre à jour la position"
 }
