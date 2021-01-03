@@ -66,11 +66,6 @@
   },
   {
     "color": "black",
-    "key": "musician",
-    "locations": [{"text": "shop_blk_pianist", "x": -83.9790, "y": 98.6417}, {"text": "shop_rho_pianist", "x": -84.8798, "y": 132.1947}, {"text": "shop_sdn_pianist", "x": -82.7253, "y": 152.1360}, {"text": "shop_sdn_pianist_slum", "x": -81.6704, "y": 154.7559}, {"text": "shop_tbl_pianist", "x": -108.8332, "y": 25.6817}, {"text": "shop_val_pianist", "x": -51.1994, "y": 106.4426}, {"text": "shop_van_pianist", "x": -55.3932, "y": 156.9832}, {"text": "shop_blk_musician_guitarist_first", "x": -83.7296, "y": 99.2015}, {"text": "shop_blk_musician_guitarist_second", "x": -85.4360, "y": 98.6930}, {"text": "shop_blk_musician_guitarist_third", "x": -84.4809, "y": 98.5062}, {"text": "shop_but_musician_banjo", "x": -51.5945, "y": 150.6625}, {"text": "shop_rho_musician_banjo", "x": -84.1508, "y": 132.2633}, {"text": "shop_sdn_musician_guitarist", "x": -80.6181, "y": 155.1523}, {"text": "shop_sdn_musician_banjo", "x": -78.4533, "y": 154.3894}, {"text": "shop_str_musician_banjo", "x": -69.3711, "y": 83.6438}, {"text": "shop_str_musician_guitarist", "x": -70.2305, "y": 83.2621}]
-  },
-  {
-    "color": "black",
     "key": "trapper",
     "locations": [{"text": "shop_sdn_trapper", "x": -82.5847, "y": 155.2034}, {"text": "shop_bgv_trapper_1", "x": -61.4731, "y": 67.2061}, {"text": "shop_bgv_trapper_2", "x": -72.0494, "y": 95.6559}, {"text": "shop_roa_trapper", "x": -48.0162, "y": 143.4887}, {"text": "shop_tal_trapper", "x": -93.2601, "y": 76.2895}, {"text": "shop_cho_trapper", "x": -109.2366, "y": 37.9045}]
   },
