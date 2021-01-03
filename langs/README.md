@@ -33,6 +33,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **L1Chung** (3,267 words)
   - **Megitsune** (21,042 words)
   - **pach318** (265 words)
+  - **Richard.C.Pirello** (506 words)
 
 ### Czech:
   - **avojta** (119 words)
