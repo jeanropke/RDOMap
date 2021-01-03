@@ -1101,6 +1101,36 @@ a.no-style:visited {
     padding: 20px 40px;
 }
 
+.modal-header::after,
+.modal-footer::before {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 28px;
+    display: block;
+}
+
+.modal-header {
+    padding-bottom: 10px;
+}
+
+.modal-footer {
+    padding-top: 10px;
+}
+
+.modal-header::after {
+    margin-top: 10px;
+    background: url(../../assets/images/modal-title.png) !important;
+    background-position: bottom center !important;
+}
+
+.modal-footer::before {
+    margin-top: -36px;
+    background: url(../../assets/images/modal-footer.png) !important;
+    background-position: top center !important;
+}
+
 .modal-header,
 .modal-body {
     color: #fff;
@@ -1110,10 +1140,13 @@ a.no-style:visited {
     font-family: RDRLino, serif;
     font-weight: normal;
     font-size: 24px;
+    line-height: 1;
 }
 
 .modal-body {
-    padding: 30px 40px;
+    padding: 40px;
+    max-height: 500px;
+    overflow-y: scroll;
 }
 
 .modal-body .settings-container {
