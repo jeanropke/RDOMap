@@ -1055,17 +1055,16 @@ a.no-style:visited {
 }
 
 /* Bootstrap modal styling */
-
 .modal {
     user-select: none;
 }
 
-.modal-dialog.modal-sm {
+.modal-dialog {
     position: relative;
     background-color: #000;
 }
 
-.modal-dialog.modal-sm::after {
+.modal-dialog::after {
     border-color: #d80419;
     border-image-repeat: round;
     border-image-slice: 10 10 10 10 fill;
@@ -1092,10 +1091,14 @@ a.no-style:visited {
 .modal-header,
 .modal-body,
 .modal-footer {
-    padding-left: 40px;
-    padding-right: 40px;
     text-align: center;
     border: none;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
 }
 
 .modal-header,
@@ -1103,20 +1106,22 @@ a.no-style:visited {
     color: #fff;
 }
 
-.modal-header {
-    padding-top: 40px;
+.modal-title {
+    font-family: RDRLino, serif;
+    font-weight: normal;
+    font-size: 24px;
 }
 
 .modal-body {
-    padding-top: 0;
+    padding: 30px 40px;
 }
 
 .modal-body .settings-container {
     margin-top: 15px;
 }
 
-.modal-footer {
-    padding-bottom: 60px;
+.modal-actions .btn {
+    margin: 5px;
 }
 
 @media (min-width: 768px) {
@@ -1126,7 +1131,7 @@ a.no-style:visited {
     }
 
     .modal:before {
-        content: "";
+        content: '';
         display: inline-block;
         height: 100%;
         vertical-align: middle;
@@ -1321,7 +1326,6 @@ a.no-style:visited {
 }
 
 /* Freemode Events */
-
 #fme-container {
     position: absolute;
     left: 5px;
@@ -1341,19 +1345,22 @@ a.no-style:visited {
     align-items: center;
     background-image: url(../../assets/images/fme_background.png);
     background-size: 100% 100%;
-    padding: 25px;
-    width: 400px;
-    max-width: 400px;
+    width: 432px;
+    max-width: 432px;
+    height: 96px;
+    max-height: 96px;
     color: #fff;
 }
 
 #fme-container .fme-card .fme-image {
+    margin-left: 16px;
     margin-right: 12px;
     height: 66px;
+    width: 66px;
 }
 
 #fme-container .fme-card .fme-body {
-    flex-grow: 1;
+flex-grow: 1;
 }
 
 #fme-container .fme-card .fme-body .fme-title {
@@ -1361,14 +1368,23 @@ a.no-style:visited {
     color: #7b66af;
     margin: 0;
     text-align: left;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 1;
+    font-weight: normal;
+    margin-right: 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
-    margin: 0;
     text-align: left;
     font-size: 18px;
+    margin: 0 !important;
+    margin-right: 35px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #fme-container .fme-card #next-general-mobile,
@@ -1381,6 +1397,7 @@ a.no-style:visited {
 
 #fme-container .fme-card .fme-body {
     display: block;
+    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -1390,6 +1407,7 @@ a.no-style:visited {
 
     #fme-container .fme-card {
         padding: 10px 20px 10px 10px;
+        height: auto;
         width: initial;
     }
 
@@ -1406,6 +1424,7 @@ a.no-style:visited {
     #fme-container .fme-card .fme-image {
         width: 32px;
         height: auto;
+        margin-left: 0;
         margin-right: 8px;
     }
 
@@ -1413,7 +1432,6 @@ a.no-style:visited {
         display: none !important;
     }
 }
-
 
 /* Dailies Styling */
 .dailies {
