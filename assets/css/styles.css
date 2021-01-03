@@ -1279,28 +1279,41 @@ a.no-style:visited {
 .leaflet-div-icon .overlay,
 .leaflet-div-icon .icon,
 .leaflet-div-icon .background,
+.leaflet-div-icon .marker-contour,
 .leaflet-div-icon .shadow {
     position: absolute;
     text-align: center;
 }
 
 .leaflet-div-icon .overlay {
-    z-index: 4;
+    z-index: 5;
     width: 100%;
     height: auto;
 }
 
 .leaflet-div-icon .icon {
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     height: auto;
     padding-top: 6px;
 }
 
 .leaflet-div-icon .background {
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     height: 100%;
+}
+
+.leaflet-div-icon .marker-contour {
+    z-index: 2;
+    width: 130%;
+    height: 130%;
+    left: -15%;
+    bottom: -15%;
+}
+
+.marker-contour {
+    opacity: 0.0;
 }
 
 .leaflet-div-icon .shadow {
@@ -1536,6 +1549,37 @@ span.daily-checkbox {
 /* End of dailies Styling */
 
 /* Dark mode styling */
+.btn.btn-info.remove-button,
+.save-button {
+    background-color: #008fbece;
+    border: 1px solid #15b4f3af;
+}
+
+.btn.btn-info.remove-button:hover,
+.save-button:hover {
+    background-color: #15b4f3af;
+}
+
+.remove-button,
+.btn.btn-danger {
+    background-color: #a50000ce;
+    border: 1px solid #bb0000ce;
+}
+
+.remove-button:hover,
+.btn.btn-danger:hover {
+    background-color: #bb0000ce;
+}
+
+.btn.btn-success {
+    background-color: #008800ce;
+    border: 1px solid #00aa00ce;
+}
+
+.btn.btn-success:hover {
+    background-color: #00aa00ce;
+}
+
 .leaflet-popup-content-wrapper {
     background: #222;
     color: #dadada;
@@ -1594,16 +1638,16 @@ span.daily-checkbox {
     color: #d4d4d4;
 }
 
-.btn.btn-info.remove-button,
-.save-button {
-    background-color: #008fbece;
-    border: 1px solid #15b4f3af;
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+    border: none;
+    border-radius: 4px;
 }
 
-.btn.btn-info.remove-button:hover,
-.save-button:hover {
-    background-color: #15b4f3af;
+.leaflet-control-layers-base label {
+    cursor: pointer;
 }
+
 /* end dark mode styling */
 
 .legendary-properties {
