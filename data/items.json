@@ -118,7 +118,6 @@
       { "text": "west_heartlands", "x": -60.8258, "y": 111.0268, "time": [22, 4] },
       { "text": "big_valley_south", "x": -80.4722, "y": 81.0674 },
       { "text": "lake_owanjila", "x": -68.0849, "y": 72.8013 },
-      { "text": "lenora_view", "x": -68.0849, "y": 72.8013 },
       { "text": "northern_west_elizabeth", "x": -56.1698, "y": 79.0712 },
       { "text": "bards_crossing", "x": -71.9499, "y": 100.2497 },
       { "text": "gaptooth_coach", "x": -116.6616, "y": 21.9348 },
@@ -135,10 +134,7 @@
       { "text": "compsons_stead", "x": -68.2853, "y": 129.8481 },
       { "text": "boat_in_tree", "x": -96.0738, "y": 136.9013 },
       { "text": "bolger_glade", "x": -91.8892, "y": 137.5028 },
-      { "text": "east_lakay", "x": -73.3922, "y": 153.2784 },
-      { "text": "bounty_board_known_target_grizzlies_east", "x": -30.1677, "y": 136.0825 },
-      { "text": "bounty_board_known_target_deadboot_creek", "x": -30.0639, "y": 80.8393 },
-      { "text": "bounty_hideout_colter", "x": -25.8037, "y": 90.4834 }
+      { "text": "east_lakay", "x": -73.3922, "y": 153.2784 }
     ]
   },
   {
