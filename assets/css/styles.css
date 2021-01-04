@@ -1136,7 +1136,7 @@ a.no-style:visited {
     color: #fff;
 }
 
-.modal-title {
+.modal h4 {
     font-family: RDRLino, serif;
     font-weight: normal;
     font-size: 24px;
@@ -1145,7 +1145,6 @@ a.no-style:visited {
 
 .modal-body {
     padding: 40px;
-    max-height: 500px;
     overflow-y: scroll;
 }
 
@@ -1169,7 +1168,10 @@ a.no-style:visited {
         height: 100%;
         vertical-align: middle;
         margin-right: -4px;
-        /* Adjusts for spacing */
+    }
+
+    .modal-body { 
+        max-height: 650px !important; 
     }
 
     .modal-dialog {
