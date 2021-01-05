@@ -74,6 +74,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (456 words)
   - **werhel** (11 words)
 
+### Greek:
+  - **dvagos7** (33 words)
+
 ### Hungarian:
   - **Balesz** (10 words)
 
