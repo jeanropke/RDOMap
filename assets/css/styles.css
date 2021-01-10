@@ -1691,6 +1691,10 @@ span.daily-checkbox {
     width: 100%;
 }
 
+.legendary-properties p {
+    max-width: 60%;
+}
+
 /*Legendary animals popup text color*/
 .legendary-spawn-time,
 .legendary-preferred-weather {
@@ -1720,6 +1724,17 @@ span.daily-checkbox {
 .missions-list {
     margin: 4px 0;
     padding-left: 30px;
+}
+
+.legendary-animal-popup-image {
+    width: 90%;
+    position: absolute;
+    bottom: 16%;
+    right: 0%;
+    opacity: .7;
+    margin: 0 -25%;
+    pointer-events: none;
+    user-select: none;
 }
 
 button.reload-nazar {

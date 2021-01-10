@@ -41,16 +41,20 @@ class Legendary {
     Object.assign(this, preliminary);
     this._shownKey = `shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
-      .attr('data-tippy-content', Language.get(this.text))
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
       .translate();
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
-    this.animalSpeciesKey = `rdo:Legendaries_category_time_${this.species}`;
+    this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
+    this.preferred_weather = Language.get(`map.weather.${this.preferred_weather}`);
+    this.trader_materials = this.trader_materials || Language.get('map.cant_be_picked_up');
+    this.trapper_value = this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up');
+    this.trapper_pelt_value = `$${this.trapper_pelt_value.toFixed(2)}`;
+    this.trapper_part_value = `$${this.trapper_part_value.toFixed(2)}`;
+    this.sample_value = `$${this.sample_value.toFixed(2)}`;
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
   }
-
   // auto remove marker? from map, recreate marker, auto add? marker
   reinitMarker() {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
@@ -59,12 +63,11 @@ class Legendary {
       this.marker.addLayer(L.circle([this.x, this.y], {
         color: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
         fillColor: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
-        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+        fillOpacity: linear(Settings.overlayOpacity, 0, 1, .1, .2),
         radius: this.radius,
+        opacity: linear(Settings.overlayOpacity, 0, 1, .2, .6),
       })
-        .bindPopup(this.popupContent.bind(this), {
-          minWidth: 400,
-        })
+        .bindPopup(this.popupContent.bind(this), { minWidth: 400 })
       );
     }
     const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
@@ -101,36 +104,16 @@ class Legendary {
     }
     this.onMap = this.onMap;
   }
-  getAnimalProperties() {
-    const spawnTime = (() => {
-      let timeString = '';
-      this.spawn_time.forEach(timeArray => timeString += `${convertToTime(timeArray[0])} - ${convertToTime(timeArray[1])}, `);
-      return timeString.replace(/,\s$/, '');
-    })();
-
-    return {
-      animalSpecies: this.species,
-      spawn_time: spawnTime,
-      preferred_weather: Language.get(`map.weather.${this.preferred_weather}`),
-      trader_materials: this.trader_materials ? this.trader_materials : Language.get('map.cant_be_picked_up'),
-      trader_pelt_materials: this.trader_pelt_materials,
-      trapper_value: this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up'),
-      trapper_pelt_value: `$${this.trapper_pelt_value.toFixed(2)}`,
-      trapper_part_value: `$${this.trapper_part_value.toFixed(2)}`,
-      sample_value: `$${this.sample_value.toFixed(2)}`,
-      animal_category: this.animal_category,
-    };
-  }
   popupContent() {
-    const properties = this.getAnimalProperties();
     const snippet = $(`
       <div class="handover-wrapper-with-no-influence">
+        <img class="legendary-animal-popup-image" src="assets/images/icons/game/animals/legendaries/${this.text}.svg" alt="Animal">
         <h1 data-text="${this.text}"></h1>
         <p class="legendary-cooldown-timer" data-text="map.legendary_animal_cooldown_end_time"></p>
         <p data-text="${Language.get(this.text + '.desc')}"></p>
         <br><p data-text="map.legendary_animal.desc"></p>
         <span class="legendary-properties">
-          <p class="legendary-spawn-time" data-text="map.legendary.spawn_time"></p>
+          <p class="legendary-spawn-time" data-text="map.legendary.spawn_time_string"></p>
           <p class="legendary-preferred-weather" data-text="map.legendary.preferred_weather"></p>
           <p class="legendary-trader-materials" data-text="map.legendary.trader_materials"></p>
           <p class="legendary-trader-pelt-materials" data-text="map.legendary.trader_pelt_materials"></p>
@@ -145,9 +128,15 @@ class Legendary {
       </div>`)
       .translate();
 
+    this.spawn_time_string = (() => {
+      let timeString = '';
+      this.spawn_time.forEach(timeArray => timeString += `${convertToTime(timeArray[0])} - ${convertToTime(timeArray[1])}, `);
+      return timeString.replace(/,\s$/, '');
+    })();
+
     const pElements = $('span > p', snippet);
     [...pElements].forEach(p => {
-      const propertyText = Language.get($(p).attr('data-text')).replace(/{([a-z_]+)}/, (full, key) => properties[key]);
+      const propertyText = Language.get($(p).attr('data-text')).replace(/{([a-z_]+)}/, (full, key) => this[key]);
       $(p).text(propertyText);
     });
 
@@ -185,16 +174,14 @@ class Legendary {
   }
   static toggleAnimalSpecies(animalSpecies) {
     Legendary.animals.forEach(animal => {
-      const _prop = animal.getAnimalProperties();
-      if (_prop.animalSpecies === animalSpecies)
+      if (animal.species === animalSpecies)
         animal.reinitMarker();
     });
   }
   static checkSpawnTime() {
     const animalSpeciesSet = new Set();
     Legendary.animals.forEach(animal => {
-      const _prop = animal.getAnimalProperties();
-      animalSpeciesSet.add(_prop.animalSpecies);
+      animalSpeciesSet.add(animal.species);
     });
 
     setInterval(() => {
