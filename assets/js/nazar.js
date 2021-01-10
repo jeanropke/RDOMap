@@ -1,18 +1,18 @@
 class MadamNazar {
   static init() {
     this.possibleLocations = [
-      { 'key': 'MPSW_LOCATION_00', 'x': -123.9039, 'y': 34.8213 },
-      { 'key': 'MPSW_LOCATION_01', 'x': -100.0742, 'y': 49.0765 },
-      { 'key': 'MPSW_LOCATION_02', 'x': -104.7679, 'y': 85.7222 },
-      { 'key': 'MPSW_LOCATION_03', 'x': -84.2973, 'y': 82.4512 },
-      { 'key': 'MPSW_LOCATION_04', 'x': -56.1619, 'y': 78.5000 },
-      { 'key': 'MPSW_LOCATION_05', 'x': -60.9622, 'y': 130.6067 },
-      { 'key': 'MPSW_LOCATION_06', 'x': -63.8927, 'y': 105.3496 },
-      { 'key': 'MPSW_LOCATION_07', 'x': -43.1046, 'y': 132.8263 },
-      { 'key': 'MPSW_LOCATION_08', 'x': -90.0802, 'y': 135.6969 },
-      { 'key': 'MPSW_LOCATION_09', 'x': -65.9688, 'y': 150.4468 },
-      { 'key': 'MPSW_LOCATION_10', 'x': -40.7817, 'y': 109.4863 },
-      { 'key': 'MPSW_LOCATION_11', 'x': -36.5097, 'y': 154.1859 }
+      { key: 'MPSW_LOCATION_00', x: -123.9039, y: 34.8213, id: 'rio' },
+      { key: 'MPSW_LOCATION_01', x: -100.0742, y: 49.0765, id: 'cho' },
+      { key: 'MPSW_LOCATION_02', x: -104.7679, y: 85.7222, id: 'hen' },
+      { key: 'MPSW_LOCATION_03', x: -84.2973, y: 82.4512, id: 'tal' },
+      { key: 'MPSW_LOCATION_04', x: -56.1619, y: 78.5000, id: 'bgv' },
+      { key: 'MPSW_LOCATION_05', x: -60.9622, y: 130.6067, id: 'hrt_e' },
+      { key: 'MPSW_LOCATION_06', x: -63.8927, y: 105.3496, id: 'hrt_w' },
+      { key: 'MPSW_LOCATION_07', x: -43.1046, y: 132.8263, id: 'grz' },
+      { key: 'MPSW_LOCATION_08', x: -90.0802, y: 135.6969, id: 'scm' },
+      { key: 'MPSW_LOCATION_09', x: -65.9688, y: 150.4468, id: 'blu' },
+      { key: 'MPSW_LOCATION_10', x: -40.7817, y: 109.4863, id: 'der' },
+      { key: 'MPSW_LOCATION_11', x: -36.5097, y: 154.1859, id: 'bbr' }
     ];
 
     this.currentLocation = null;
@@ -33,13 +33,7 @@ class MadamNazar {
       else
         this.currentLocation = this.possibleLocations.findIndex(({ key }) => key === data.nazar);
 
-      this.currentDate = {
-        localeString: new Date(data.date).toLocaleString(Settings.language, {
-          day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
-        }),
-        isoString: data.date,
-      };
-
+      this.currentDate = data.date;
       MadamNazar.addMadamNazar();
       console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
     });
@@ -66,7 +60,7 @@ class MadamNazar {
         `,
       }),
     });
-    tempMarker.bindPopup(this.popupContent(), { minWidth: 300 });
+    tempMarker.bindPopup(this.popupContent.bind(this), { minWidth: 300 });
 
     MadamNazar.layer.addLayer(tempMarker);
     if (Settings.isMarkerClusterEnabled)
@@ -75,9 +69,12 @@ class MadamNazar {
     this.onMap = this.onMap;
   }
   static popupContent() {
+    const nazarDate = new Date(this.currentDate).toLocaleString(Settings.language, {
+      day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
+    });
     const $popup = $(`
         <div>
-          <h1>${Language.get('menu.madam_nazar')} - ${this.currentDate.localeString}</h1>
+          <h1>${Language.get('menu.madam_nazar')} - ${nazarDate}</h1>
           <p style="text-align: center;">
             ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
           </p>
@@ -85,7 +82,8 @@ class MadamNazar {
         </div>`)
       .translate()
       .find('button')
-      .on('click', () => this.reloadNazar())
+      .on('click', this.reloadNazar)
+      .toggle(this.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString())
       .end();
 
     return $popup[0];
@@ -108,8 +106,6 @@ class MadamNazar {
     return JSON.parse(localStorage.getItem('rdo:nazar')) || JSON.parse(localStorage.getItem('rdo:nazar')) == null;
   }
   static reloadNazar() {
-    const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-    if (MadamNazar.currentDate.isoString === nazarDate) return;
     MadamNazar.layer.clearLayers();
     Loader.reloadData('nazar');
     MadamNazar.init();
