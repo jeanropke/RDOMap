@@ -558,7 +558,9 @@
       {
         "key": "animal_panther",
         "groups": ["ANIMALS_PANTHER"],
-        "data": []
+        "data": [
+		  { "lat": -73.4375, "lng": 148.6641 }
+		]
       },
       {
         "key": "animal_javelina",
