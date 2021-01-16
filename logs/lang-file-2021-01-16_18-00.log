@@ -34,3 +34,42 @@ Already up to date.
 ✔️  Extracted: 'vi.json'
 ✔️  Extracted: 'zh_Hans.json'
 ✔️  Extracted: 'zh_Hant.json'
+[master f17c1a62] Automatic language update.
+ 7 files changed, 118 insertions(+), 3 deletions(-)
+ create mode 100644 logs/lang-file-2021-01-16_18-00.log
+To github.com:jeanropke/RDOMap.git
+   9bd5faea..f17c1a62  master -> master
+[●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             [●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             [●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             ✔️  Fetching project info
+✔️  File 'en.json'
+[●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             [●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             [●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             [●∙∙∙∙] Fetching project info                             [∙●∙∙∙] Fetching project info                             [∙∙●∙∙] Fetching project info                             [∙∙∙●∙] Fetching project info                             [∙∙∙∙●] Fetching project info                             ✔️  Fetching project info
+✔️  Translation file 'pl.json' has been uploaded
+✔️  Translation file 'th.json' has been uploaded
+✔️  Translation file 'es.json' has been uploaded
+✔️  Translation file 'he.json' has been uploaded
+✔️  Translation file 'fi.json' has been uploaded
+✔️  Translation file 'sv.json' has been uploaded
+✔️  Translation file 'pt_BR.json' has been uploaded
+✔️  Translation file 'ru.json' has been uploaded
+✔️  Translation file 'pt.json' has been uploaded
+✔️  Translation file 'da.json' has been uploaded
+✔️  Translation file 'ro.json' has been uploaded
+✔️  Translation file 'cs.json' has been uploaded
+✔️  Translation file 'zh_Hant.json' has been uploaded
+✔️  Translation file 'it.json' has been uploaded
+✔️  Translation file 'en_GB.json' has been uploaded
+✔️  Translation file 'el.json' has been uploaded
+✔️  Translation file 'tr.json' has been uploaded
+✔️  Translation file 'ca.json' has been uploaded
+✔️  Translation file 'sr.json' has been uploaded
+✔️  Translation file 'de.json' has been uploaded
+✔️  Translation file 'ar.json' has been uploaded
+✔️  Translation file 'fr.json' has been uploaded
+✔️  Translation file 'ja.json' has been uploaded
+✔️  Translation file 'af.json' has been uploaded
+✔️  Translation file 'zh_Hans.json' has been uploaded
+✔️  Translation file 'no.json' has been uploaded
+✔️  Translation file 'hu.json' has been uploaded
+✔️  Translation file 'ko.json' has been uploaded
+✔️  Translation file 'uk.json' has been uploaded
+✔️  Translation file 'nl.json' has been uploaded
+✔️  Translation file 'vi.json' has been uploaded
