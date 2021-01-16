@@ -920,6 +920,8 @@
     "map.legendary.sample_value": "표본 판매: {sample_value}",
     "menu.enable_legendary_backgrounds": "전설의 동물 배경 사용",
     "map.sightseeing.hidden": "숨겨진 장소",
+    "map.shops.wardrobe.name": "옷장",
+    "map.shops.wardrobe.desc": "옷장에서 복장을 변경할 수 있습니다.",
     "map.remove.animal_category": "해당 카테고리의 동물을 72시간 동안 회색으로 표시합니다.",
     "map.legendary_animal_cooldown_end_time": "쿨타임 종료: {timer}",
     "map.reset_animal_timer": "해당 카테고리 동물의 쿨타임을 초기화 합니다.",
