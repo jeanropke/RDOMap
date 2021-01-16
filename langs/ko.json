@@ -910,7 +910,6 @@
     "menu.modal_remove_all_pins_title": "모든 핀을 제거합니까?",
     "menu.reload_map": "지도 다시 불러오기",
     "map.weather.preferred_weather": "날씨: {preferred_weather}",
-    "map.legendary.spawn_time": "스폰 시간대: {spawn_time}",
     "map.legendary.preferred_weather": "날씨: {preferred_weather}",
     "map.legendary.trader_materials": "상인 재료: {trader_materials}",
     "map.legendary.trader_pelt_materials": "상인 가죽 재료: {trader_pelt_materials}",

@@ -1,8 +1,25 @@
 {
+    "menu.madam_nazar": "Doamna Nazar",
+    "fasttravel.tumbleweed.name": "Tumbleweed",
+    "fasttravel.armadillo.name": "Armadillo",
+    "fasttravel.macfarlanes.name": "Ferma MacFarlane",
+    "fasttravel.manzanita.name": "Oficiul poștal Manzanita",
     "fasttravel.blackwater.name": "Blackwater",
     "fasttravel.strawberry.name": "Strawberry",
     "fasttravel.valentine.name": "Valentine",
+    "fasttravel.colter.name": "Colter",
+    "fasttravel.emerald.name": "Stația ferma Smarald",
     "fasttravel.rhodes.name": "Rhodes",
+    "fasttravel.wapiti.name": "Rezervația Indiană Wapiti",
+    "fasttravel.van_horn.name": "Postul comercial Van Horn",
     "fasttravel.annesburg.name": "Annesburg",
-    "fasttravel.lagras.name": "Lagras"
+    "fasttravel.saint_denis.name": "Sf. Denis",
+    "fasttravel.lagras.name": "Lagras",
+    "bards_crossing_treasure": "Trecătoarea Păsării",
+    "benedict_treasure": "Punctul Benedict",
+    "blackbone_forest_treasure": "Padurea Blackbone",
+    "blue_water_marsh_treasure": "Mlaștina Bluewater",
+    "calumet_ravine_treasure": "Râpa Calumet",
+    "cattail_pond_treasure": "Iazul Cattail",
+    "citadel_rock_treasure": "Bolovanul Citadel"
 }

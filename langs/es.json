@@ -598,6 +598,7 @@
     "mp_animal_wolf_legendary_01.desc": "Este lobo suele ser visto con frecuencia alrededor de O'Creagh's Run, y es fácil de reconocer por su pelaje marrón cobrizo y sus llamativos ojos verdes. Es sigiloso y sumamente astuto. No tiene miedo de atacar si se ve amenazado por otros animales o por algún viajero. Es una criatura nocturna capaz de cazar en las peores condiciones climatológicas.",
     "mp_animal_wolf_legendary_02.desc": "El lobo ónice legendario ha sido visto de paso por Wapiti. Es famoso por sus brillantes ojos amarillos, que destacan sobre su pelaje oscuro. Es reservado y territorial, y atacará a los humanos que se acerquen demasiado. Su pico de actividad es por la noche y prefiere cazar con tiempo seco.",
     "mp_animal_wolf_legendary_03.desc": "Una manada de lobos se ha hecho famosa al norte de Cumberland Forest. Tiene un líder bastante peculiar: un enorme lobo blanco. Se sabe que la manada ha atacado a viajeros en las carreteras cercanas, y ha llamado la atención tanto de naturalistas como de cazadores furtivos. Los compañeros del lobo piedra lunar legendario son muy leales. Si lo persigues, prepárate para enfrentarte a toda la manada.",
+    "map.gus_price": "Precio de Gus:",
     "menu.beggar": "Mendigo",
     "map.beggar.name": "Mendigo",
     "map.beggar.desc": "Este es un Encuentro Aleatorio. Un punto blanco en el mini mapa te indicara el encuentro.",
@@ -1104,6 +1105,19 @@
     "menu.dailies_loading": "Cargando los desafíos diarios de hoy...",
     "menu.dailies_not_found": "Vuelva a cargar el mapa para ver los desafios actuales",
     "map.remove": "Remover del mapa",
+    "menu.remove_all_pins": "Remover todos los indicadores",
+    "help.remove_all_pins": "Eliminar todos los marcadores del usuario.",
+    "menu.modal_remove_all_pins_title": "Remover todos los indicadores?",
+    "menu.modal_remove_all_pins_body": "Esto borrará todos tus indicadores. Esta acción no se puede deshacer.",
     "menu.reload_map": "Recargar el mapa ahora",
-    "help.reload_map": "Te permite recargar el mapa si hay algo malo con el sitio web."
+    "help.reload_map": "Te permite recargar el mapa si hay algo malo con el sitio web.",
+    "map.weather.preferred_weather": "Clima preferido: {preferred_weather}",
+    "map.weather.clear": "Clima despejado",
+    "map.weather.storm": "Clima tormentoso",
+    "map.weather.foggy": "Clima nebuloso",
+    "map.weather.rain": "Clima lluvioso",
+    "map.weather.any": "Cualquier clima",
+    "map.sightseeing.hidden": "Lugar Oculto",
+    "menu.legendary_animal_marker_type": "Tipos de Marcadores de Animales Legendarios",
+    "menu.legendary_icon_type.head": "Cabezas"
 }
