@@ -82,7 +82,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Italian:
   - **daveo979** (492 words)
-  - **Enrik014** (148 words)
+  - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
   - **Megitsune** (21,042 words)
