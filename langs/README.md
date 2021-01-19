@@ -81,7 +81,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Balesz** (10 words)
 
 ### Italian:
-  - **daveo979** (492 words)
+  - **daveo979** (662 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
