@@ -44,11 +44,11 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1502" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1503" />
   <link rel="stylesheet" href="assets/css/tippy.css" />
 
   <script>
-    var nocache = 1502;
+    var nocache = 1503;
   </script>
 </head>
 
@@ -273,97 +273,103 @@
       </div>
     </div>
 
-    <h2 data-text="menu.utils">Utilities</h2>
-    <div class="menu-option clickable" data-type="nazar" data-help="item_category">
-      <span>
-        <img class="icon" src="./assets/images/icons/nazar.png" alt="Category icon" />
-        <span class="menu-option-text" data-text="menu.madam_nazar">Madam Nazar</span>
-      </span>
-    </div>
-    <div class="menu-option clickable" data-type="fasttravel" data-help="item_category">
-      <span>
-        <img class="icon" src="./assets/images/icons/fasttravel.png" />
-        <span class="menu-option-text" data-text="menu.fast_travel">Fast Travel</span>
-      </span>
-    </div>
-    <div class="menu-option clickable" data-type="user_pins" data-help="item_category">
-      <span>
-        <img class="icon" src="./assets/images/icons/pins.png" />
-        <span class="menu-option-text" data-text="menu.user_pins">User Pins</span>
-      </span>
-    </div>
-    <div>
-      <div class="menu-option clickable" data-type="treasure" data-help="item_category">
+    <div id="utilities-container" class="opened">
+      <h2 data-text="menu.utils">Utilities</h2>
+      <div class="menu-option clickable" data-type="nazar" data-help="item_category">
         <span>
-          <img class="icon" src="./assets/images/icons/treasure.png" />
-          <span class="menu-option-text" data-text="menu.treasures">Treasures</span>
+          <img class="icon" src="./assets/images/icons/nazar.png" alt="Category icon" />
+          <span class="menu-option-text" data-text="menu.madam_nazar">Madam Nazar</span>
         </span>
-        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
-      <div class="menu-hidden two-column" data-type="treasure">
-        <div class="collection-value">
-          <a data-text="menu.hide_all" href="javascript:void(0);">Hide all</a>
-          <a data-text="menu.show_all" href="javascript:void(0);">Show all</a>
+      <div class="menu-option clickable" data-type="fasttravel" data-help="item_category">
+        <span>
+          <img class="icon" src="./assets/images/icons/fasttravel.png" />
+          <span class="menu-option-text" data-text="menu.fast_travel">Fast Travel</span>
+        </span>
+      </div>
+      <div class="menu-option clickable" data-type="user_pins" data-help="item_category">
+        <span>
+          <img class="icon" src="./assets/images/icons/pins.png" />
+          <span class="menu-option-text" data-text="menu.user_pins">User Pins</span>
+        </span>
+      </div>
+      <div>
+        <div class="menu-option clickable" data-type="treasure" data-help="item_category">
+          <span>
+            <img class="icon" src="./assets/images/icons/treasure.png" />
+            <span class="menu-option-text" data-text="menu.treasures">Treasures</span>
+          </span>
+          <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+        </div>
+        <div class="menu-hidden two-column" data-type="treasure">
+          <div class="collection-value">
+            <a data-text="menu.hide_all" href="javascript:void(0);">Hide all</a>
+            <a data-text="menu.show_all" href="javascript:void(0);">Show all</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <div class="menu-option clickable" data-type="daily_locations" data-help="item_category">
-        <span>
-          <img class="icon" src="./assets/images/icons/daily_locations.png" />
-          <span class="menu-option-text" data-text="menu.daily_locations.name">Daily Challenge Locations</span>
-        </span>
+      <div>
+        <div class="menu-option clickable" data-type="daily_locations" data-help="item_category">
+          <span>
+            <img class="icon" src="./assets/images/icons/daily_locations.png" />
+            <span class="menu-option-text" data-text="menu.daily_locations.name">Daily Challenge Locations</span>
+          </span>
+        </div>
+      </div>
+      <div>
+        <div class="menu-option clickable" data-type="harrietum_animals" data-help="item_category">
+          <span>
+            <img class="icon" src="./assets/images/icons/harrietum_animals.png" />
+            <span data-text="map.harrietum_animals.name">Animal Transform</span>
+          </span>
+        </div>
+      </div>
+      <div>
+        <div class="menu-option clickable" data-type="sightseeing" data-help="item_category">
+          <span>
+            <img class="icon" src="./assets/images/icons/sightseeing.png" />
+            <span class="menu-option-text" data-text="menu.sightseeing">Sightseeing</span>
+          </span>
+        </div>
+      </div>
+      <div>
+        <div class="menu-option submenu-only" data-type="discoverables" data-help="item_category_submenu">
+          <span>
+            <img class="icon" src="./assets/images/icons/discoverable.png">
+            <span class="menu-option-text" data-text="menu.discoverables">Iconography</span>
+          </span>
+          <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+        </div>
+        <div class="menu-hidden two-column" data-type="discoverables"></div>
       </div>
     </div>
-    <div>
-      <div class="menu-option clickable" data-type="harrietum_animals" data-help="item_category">
-        <span>
-          <img class="icon" src="./assets/images/icons/harrietum_animals.png" />
-          <span data-text="map.harrietum_animals.name">Animal Transform</span>
-        </span>
-      </div>
-    </div>
-    <div>
-      <div class="menu-option clickable" data-type="sightseeing" data-help="item_category">
-        <span>
-          <img class="icon" src="./assets/images/icons/sightseeing.png" />
-          <span class="menu-option-text" data-text="menu.sightseeing">Sightseeing</span>
-        </span>
-      </div>
-    </div>
-    <div>
-      <div class="menu-option submenu-only" data-type="discoverables" data-help="item_category_submenu">
-        <span>
-          <img class="icon" src="./assets/images/icons/discoverable.png">
-          <span class="menu-option-text" data-text="menu.discoverables">Iconography</span>
-        </span>
-        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
-      </div>
-      <div class="menu-hidden two-column" data-type="discoverables"></div>
-    </div>
-    <div>
-      <div class="header daily-challenges">
+
+    <div id="dailies-container" class="opened">
+      <div class="header">
         <span class="header-border"></span>
         <h2 class="header-title" data-text="menu.dailies">Daily Challenges</h2>
         <span class="header-border"></span>
       </div>
-      <div id="dailies-changer-container" class="dailies-changer daily-challenges" data-help="dailies_change_category">
-        <div id="dailies-prev" class="input-selection-arrow">
-          <img src="assets/images/selection_left.png" alt="arrow">
+      <div class="settings-container">
+        <div id="dailies-changer-container" class="dailies-changer" data-help="dailies_change_category">
+          <div id="dailies-prev" class="input-selection-arrow">
+            <img src="assets/images/selection_left.png" alt="arrow">
+          </div>
+          <span class="dailies-title" data-text="menu.dailies_general">General</span>
+          <div id="dailies-next" class="input-selection-arrow">
+            <img src="assets/images/selection_right.png" alt="arrow">
+          </div>
         </div>
-        <span class="dailies-title" data-text="menu.dailies_general">General</span>
-        <div id="dailies-next" class="input-selection-arrow">
-          <img src="assets/images/selection_right.png" alt="arrow">
+        <div class="dailies" data-type="dailies">
+          <div class="daily-status loading" data-text="menu.dailies_loading">Loading dailies...</div>
         </div>
-      </div>
-      <div class="dailies daily-challenges" data-type="dailies">
-        <div class="daily-status loading" data-text="menu.dailies_loading">Loading dailies...</div>
-      </div>
-      <div class="input-container-noflex daily-challenges">
-        <button id="sync-map-to-dailies" type="button" class="btn btn-default" data-text="menu.sync_map_to_dailies"
-          data-help="sync_map_to_dailies">Sync map to dailies</button>
+        <div class="input-container-noflex">
+          <button id="sync-map-to-dailies" type="button" class="btn btn-default" data-text="menu.sync_map_to_dailies"
+            data-help="sync_map_to_dailies">Sync map to dailies</button>
+        </div>
       </div>
     </div>
+
     <div class="header">
       <span class="header-border"></span>
       <h2 class="header-title" data-text="menu.settings">Settings</h2>
@@ -411,39 +417,6 @@
           <option value="vi">Tiếng Việt (Vietnamese)</option>
           <option value="zh-Hans">简体中文 (Chinese Simplified)</option>
           <option value="zh-Hant">繁体中文 (Chinese Traditional)</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="marker_size">
-        <label for="marker-size" data-text="menu.marker_size">Marker size</label>
-        <select class="input-text wide-select-menu" id="marker-size">
-          <option value="0.7" data-text="menu.marker_size.70">70%</option>
-          <option value="0.8" data-text="menu.marker_size.80">80%</option>
-          <option value="0.9" data-text="menu.marker_size.90">90%</option>
-          <option value="1" data-text="menu.marker_size.100" selected>100%</option>
-          <option value="1.25" data-text="menu.marker_size.125">125%</option>
-          <option value="1.5" data-text="menu.marker_size.150">150%</option>
-          <option value="1.75" data-text="menu.marker_size.175">175%</option>
-          <option value="2" data-text="menu.marker_size.200">200%</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="marker_opacity">
-        <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
-        <select class="input-text wide-select-menu" id="marker-opacity">
-          <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
-          <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
-          <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
-          <option value="0.8" data-text="menu.marker_opacity.80">80%</option>
-          <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="overlay_opacity">
-        <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
-        <select class="input-text wide-select-menu" id="overlay-opacity">
-          <option value="0" data-text="menu.overlay_opacity.0">Disabled</option>
-          <option value="0.25" data-text="menu.overlay_opacity.25">25%</option>
-          <option value="0.5" data-text="menu.overlay_opacity.50" selected>50%</option>
-          <option value="0.75" data-text="menu.overlay_opacity.75">75%</option>
-          <option value="1" data-text="menu.overlay_opacity.100">Opaque</option>
         </select>
       </div>
       <div class="input-container" data-help="tooltip_menu">
@@ -514,81 +487,11 @@
         <label data-text="menu.user_pins_place_new">Create new pin now</label>
         <div class="input-action"></div>
       </div>
+      <div id="open-remove-all-pins-modal" class="input-container clickable text-danger" data-help="remove_all_pins">
+        <label data-text="menu.remove_all_pins">Remove all pins</label>
+        <div class="input-action"></div>
+      </div>
       <hr class="menu-divider">
-      <div class="input-container" data-help="marker_cluster">
-        <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
-          <label class="input-checkbox-label" for="marker-cluster"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="enable_marker_popups_hover">
-        <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
-          hover</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
-            id="enable-marker-popups-hover" />
-          <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="enable_marker_shadows">
-        <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1"
-            id="enable-marker-shadows" />
-          <label class="input-checkbox-label" for="enable-marker-shadows"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="enable_legendary_backgrounds">
-        <label for="enable-legendary-backgrounds" data-text="menu.enable_legendary_backgrounds">Legendary Animal
-          backgrounds enabled</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-legendary-backgrounds" value="1"
-            id="enable-legendary-backgrounds" />
-          <label class="input-checkbox-label" for="enable-legendary-backgrounds"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="legendary_marker_type">
-        <label for="legendary-marker-type" data-text="menu.legendary_animal_marker_type">Legendary animals marker type</label>
-        <select class="input-text narrow-select-menu" id="legendary-animal-marker-type">
-          <option value="0" data-text="menu.legendary_icon_type.head" selected>Animal heads</option>
-          <option value="1" data-text="menu.legendary_icon_type.paw_prints">Animal paw prints</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="legendary_marker_size">
-        <label for="legendary-animal-marker-size" data-text="menu.legendary_animal_marker_size">Legendary animals marker size</label>
-        <select class="input-text narrow-select-menu" id="legendary-animal-marker-size">
-          <option value="0.7" data-text="menu.marker_size.70">70%</option>
-          <option value="0.8" data-text="menu.marker_size.80">80%</option>
-          <option value="0.9" data-text="menu.marker_size.90">90%</option>
-          <option value="1" data-text="menu.marker_size.100" selected>100%</option>
-          <option value="1.25" data-text="menu.marker_size.125">125%</option>
-          <option value="1.5" data-text="menu.marker_size.150">150%</option>
-          <option value="1.75" data-text="menu.marker_size.175">175%</option>
-          <option value="2" data-text="menu.marker_size.200">200%</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="enable_dclick_zoom">
-        <label for="enable-dclick-zoom" data-text="menu.enable_dclick_zoom">Double-click to zoom in</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-dclick-zoom" value="1" id="enable-dclick-zoom" />
-          <label class="input-checkbox-label" for="enable-dclick-zoom"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="show_help">
-        <label for="show-help" data-text="menu.show_help">Show help on hover</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="show-help" value="1" id="show-help" />
-          <label class="input-checkbox-label" for="show-help"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="timestamps_24">
-        <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
-          <label class="input-checkbox-label" for="timestamps-24"></label>
-        </div>
-      </div>
       <div class="input-container" data-help="show_dailies">
         <label for="show-dailies" data-text="menu.show_dailies">Show dailies</label>
         <div class="input-checkbox-wrapper">
@@ -596,20 +499,37 @@
           <label class="input-checkbox-label" for="show-dailies"></label>
         </div>
       </div>
-      <div class="input-container" data-help="show_coords">
-        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+      <div class="input-container" data-help="show_utilities">
+        <label for="show-utilities" data-text="menu.show_utilities">Show utility settings</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
-          <label class="input-checkbox-label" for="show-coordinates"></label>
+          <input class="input-checkbox" type="checkbox" name="show-utilities" value="1" id="show-utilities">
+          <label class="input-checkbox-label" for="show-utilities"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="show_customization">
+        <label for="show-customization" data-text="menu.show_customization">Show customization settings</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-customization" value="1" id="show-customization">
+          <label class="input-checkbox-label" for="show-customization"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="show_import_export">
+        <label for="show-import-export" data-text="menu.show_import_export">Show import/export settings</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-import-export" value="1" id="show-import-export">
+          <label class="input-checkbox-label" for="show-import-export"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="show_debug">
+        <label for="show-debug" data-text="menu.show_debug">Show debug settings</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-debug" value="1" id="show-debug">
+          <label class="input-checkbox-label" for="show-debug"></label>
         </div>
       </div>
       <hr class="menu-divider">
       <div id="reload-map" class="input-container clickable" data-help="reload_map">
         <label data-text="menu.reload_map">Reload the map now</label>
-        <div class="input-action"></div>
-      </div>
-      <div id="open-remove-all-pins-modal" class="input-container clickable text-danger" data-help="remove_all_pins">
-        <label data-text="menu.remove_all_pins">Remove all pins</label>
         <div class="input-action"></div>
       </div>
       <div id="open-delete-all-settings-modal" class="input-container clickable text-danger"
@@ -618,54 +538,188 @@
         <div class="input-action"></div>
       </div>
     </div>
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.import_export_title">Import/Export</h2>
-      <span class="header-border"></span>
+
+    <div id="customization-container" class="opened">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.customization_title">Customization</h2>
+        <span class="header-border"></span>
+      </div>
+
+      <div class="settings-container">
+        <div class="input-container" data-help="overlay_opacity">
+          <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
+          <select class="input-text wide-select-menu" id="overlay-opacity">
+            <option value="0" data-text="menu.overlay_opacity.0">Disabled</option>
+            <option value="0.25" data-text="menu.overlay_opacity.25">25%</option>
+            <option value="0.5" data-text="menu.overlay_opacity.50" selected>50%</option>
+            <option value="0.75" data-text="menu.overlay_opacity.75">75%</option>
+            <option value="1" data-text="menu.overlay_opacity.100">Opaque</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="marker_size">
+          <label for="marker-size" data-text="menu.marker_size">Marker size</label>
+          <select class="input-text wide-select-menu" id="marker-size">
+            <option value="0.7" data-text="menu.marker_size.70">70%</option>
+            <option value="0.8" data-text="menu.marker_size.80">80%</option>
+            <option value="0.9" data-text="menu.marker_size.90">90%</option>
+            <option value="1" data-text="menu.marker_size.100" selected>100%</option>
+            <option value="1.25" data-text="menu.marker_size.125">125%</option>
+            <option value="1.5" data-text="menu.marker_size.150">150%</option>
+            <option value="1.75" data-text="menu.marker_size.175">175%</option>
+            <option value="2" data-text="menu.marker_size.200">200%</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="marker_opacity">
+          <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
+          <select class="input-text wide-select-menu" id="marker-opacity">
+            <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
+            <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
+            <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
+            <option value="0.8" data-text="menu.marker_opacity.80">80%</option>
+            <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="marker_cluster">
+          <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
+            <label class="input-checkbox-label" for="marker-cluster"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_marker_shadows">
+          <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1"
+              id="enable-marker-shadows" />
+            <label class="input-checkbox-label" for="enable-marker-shadows"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_marker_popups_hover">
+          <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
+            hover</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
+              id="enable-marker-popups-hover" />
+            <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
+          </div>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container" data-help="enable_legendary_backgrounds">
+          <label for="enable-legendary-backgrounds" data-text="menu.enable_legendary_backgrounds">Legendary Animal
+            backgrounds enabled</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-legendary-backgrounds" value="1"
+              id="enable-legendary-backgrounds" />
+            <label class="input-checkbox-label" for="enable-legendary-backgrounds"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="legendary_marker_type">
+          <label for="legendary-marker-type" data-text="menu.legendary_animal_marker_type">Legendary animals marker type</label>
+          <select class="input-text narrow-select-menu" id="legendary-animal-marker-type">
+            <option value="0" data-text="menu.legendary_icon_type.head" selected>Animal heads</option>
+            <option value="1" data-text="menu.legendary_icon_type.paw_prints">Animal paw prints</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="legendary_marker_size">
+          <label for="legendary-animal-marker-size" data-text="menu.legendary_animal_marker_size">Legendary animals marker size</label>
+          <select class="input-text narrow-select-menu" id="legendary-animal-marker-size">
+            <option value="0.7" data-text="menu.marker_size.70">70%</option>
+            <option value="0.8" data-text="menu.marker_size.80">80%</option>
+            <option value="0.9" data-text="menu.marker_size.90">90%</option>
+            <option value="1" data-text="menu.marker_size.100" selected>100%</option>
+            <option value="1.25" data-text="menu.marker_size.125">125%</option>
+            <option value="1.5" data-text="menu.marker_size.150">150%</option>
+            <option value="1.75" data-text="menu.marker_size.175">175%</option>
+            <option value="2" data-text="menu.marker_size.200">200%</option>
+          </select>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container" data-help="enable_dclick_zoom">
+          <label for="enable-dclick-zoom" data-text="menu.enable_dclick_zoom">Double-click to zoom in</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-dclick-zoom" value="1" id="enable-dclick-zoom" />
+            <label class="input-checkbox-label" for="enable-dclick-zoom"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="show_help">
+          <label for="show-help" data-text="menu.show_help">Show help on hover</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-help" value="1" id="show-help" />
+            <label class="input-checkbox-label" for="show-help"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="show_coords">
+          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
+            <label class="input-checkbox-label" for="show-coordinates"></label>
+          </div>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container" data-help="timestamps_24">
+          <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
+            <label class="input-checkbox-label" for="timestamps-24"></label>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="settings-container">
-      <div class="input-container-noflex">
-        <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
+
+    <div id="import-export-container" class="opened">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.import_export_title">Import/Export</h2>
+        <span class="header-border"></span>
       </div>
-      <div class="input-container-noflex">
-        <p class="explain-text" data-text="menu.import_export_explanation">
-          This will import or export your settings. Importing settings will replace all current settings and reload the
-          page. This feature does not include pins.
-        </p>
-      </div>
-      <div class="input-container-noflex" data-help="cookie_import_file">
-        <input id="cookie-import-file" type="file" class="input-file" accept=".json" autocomplete="off">
-      </div>
-      <div class="input-container-noflex">
-        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.import_button" data-help="cookie_import">Import</button>
-        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.export_button" data-help="cookie_export">Export</button>
-      </div>
-      <div class="input-container-noflex">
-        <h4 data-text="menu.pins_import_export_title">User Pins</h4>
-      </div>
-      <div class="input-container-noflex">
-        <p class="explain-text" data-text="menu.pins_import_export_explanation">
-          This will import or export your pins. Importing pins will replace all current pins.
-        </p>
-      </div>
-      <div class="input-container-noflex" data-help="pins_import_file">
-        <input id="pins-import-file" type="file" class="input-file" accept=".txt" autocomplete="off">
-      </div>
-      <div class="input-container-noflex">
-        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
-        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
-          data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+  
+      <div class="settings-container">
+        <div class="input-container-noflex">
+          <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
+        </div>
+        <div class="input-container-noflex">
+          <p class="explain-text" data-text="menu.import_export_explanation">
+            This will import or export your settings. Importing settings will replace all current settings and reload the
+            page. This feature does not include pins.
+          </p>
+        </div>
+        <div class="input-container-noflex" data-help="cookie_import_file">
+          <input id="cookie-import-file" type="file" class="input-file" accept=".json" autocomplete="off">
+        </div>
+        <div class="input-container-noflex">
+          <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.import_button" data-help="cookie_import">Import</button>
+          <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.export_button" data-help="cookie_export">Export</button>
+        </div>
+        <div class="input-container-noflex">
+          <h4 data-text="menu.pins_import_export_title">User Pins</h4>
+        </div>
+        <div class="input-container-noflex">
+          <p class="explain-text" data-text="menu.pins_import_export_explanation">
+            This will import or export your pins. Importing pins will replace all current pins.
+          </p>
+        </div>
+        <div class="input-container-noflex" data-help="pins_import_file">
+          <input id="pins-import-file" type="file" class="input-file" accept=".txt" autocomplete="off">
+        </div>
+        <div class="input-container-noflex">
+          <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
+          <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+        </div>
       </div>
     </div>
+
     <div id="debug-container">
       <div class="header">
         <span class="header-border"></span>
         <h2 class="header-title">Debug</h2>
         <span class="header-border"></span>
       </div>
+
       <div class="settings-container">
         <div class="input-container-noflex">
           <p class="explain-text">
@@ -770,10 +824,6 @@
         </select>
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
-      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
-        <label data-text="menu.toggle_debug">Toggle debug features</label>
-        <div class="input-action"></div>
-      </div>
     </div>
 
     <div id="bottom-sticky">
@@ -915,7 +965,7 @@
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1502"></script>
+  <script src="assets/js/loader.js?nocache=1503"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -927,29 +977,29 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1502"></script>
-  <script src="assets/js/settings.js?nocache=1502"></script>
-  <script src="assets/js/nazar.js?nocache=1502"></script>
-  <script src="assets/js/marker.js?nocache=1502"></script>
-  <script src="assets/js/treasures.js?nocache=1502"></script>
-  <script src="assets/js/legendary.js?nocache=1502"></script>
-  <script src="assets/js/encounters.js?nocache=1502"></script>
-  <script src="assets/js/locations.js?nocache=1502"></script>
-  <script src="assets/js/plants.js?nocache=1502"></script>
-  <script src="assets/js/camps.js?nocache=1502"></script>
-  <script src="assets/js/shops.js?nocache=1502"></script>
-  <script src="assets/js/gfh.js?nocache=1502"></script>
-  <script src="assets/js/events.js?nocache=1502"></script>
-  <script src="assets/js/animals.js?nocache=1502"></script>
-  <script src="assets/js/discoverables.js?nocache=1502"></script>
-  <script src="assets/js/overlays.js?nocache=1502"></script>
-  <script src="assets/js/pins.js?nocache=1502"></script>
-  <script src="assets/js/map.js?nocache=1502"></script>
-  <script src="assets/js/language.js?nocache=1502"></script>
-  <script src="assets/js/menu.js?nocache=1502"></script>
-  <script src="assets/js/dailies.js?nocache=1502"></script>
-  <script src="assets/js/scripts.js?nocache=1502"></script>
-  <script src="assets/js/fme.js?nocache=1502"></script>
+  <script src="assets/js/layers.js?nocache=1503"></script>
+  <script src="assets/js/settings.js?nocache=1503"></script>
+  <script src="assets/js/nazar.js?nocache=1503"></script>
+  <script src="assets/js/marker.js?nocache=1503"></script>
+  <script src="assets/js/treasures.js?nocache=1503"></script>
+  <script src="assets/js/legendary.js?nocache=1503"></script>
+  <script src="assets/js/encounters.js?nocache=1503"></script>
+  <script src="assets/js/locations.js?nocache=1503"></script>
+  <script src="assets/js/plants.js?nocache=1503"></script>
+  <script src="assets/js/camps.js?nocache=1503"></script>
+  <script src="assets/js/shops.js?nocache=1503"></script>
+  <script src="assets/js/gfh.js?nocache=1503"></script>
+  <script src="assets/js/events.js?nocache=1503"></script>
+  <script src="assets/js/animals.js?nocache=1503"></script>
+  <script src="assets/js/discoverables.js?nocache=1503"></script>
+  <script src="assets/js/overlays.js?nocache=1503"></script>
+  <script src="assets/js/pins.js?nocache=1503"></script>
+  <script src="assets/js/map.js?nocache=1503"></script>
+  <script src="assets/js/language.js?nocache=1503"></script>
+  <script src="assets/js/menu.js?nocache=1503"></script>
+  <script src="assets/js/dailies.js?nocache=1503"></script>
+  <script src="assets/js/scripts.js?nocache=1503"></script>
+  <script src="assets/js/fme.js?nocache=1503"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

@@ -654,6 +654,7 @@ select {
 
 .side-menu .menu-hidden,
 #weekly-container,
+#dailies-container,
 #utilities-container,
 #customization-container,
 #routes-container,
@@ -675,6 +676,7 @@ select {
 
 .side-menu .menu-hidden.opened,
 #weekly-container.opened,
+#dailies-container.opened,
 #utilities-container.opened,
 #customization-container.opened,
 #routes-container.opened,

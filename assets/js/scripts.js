@@ -95,14 +95,23 @@ function init() {
   $('#enable-dclick-zoom').prop('checked', Settings.isDoubleClickZoomEnabled);
   $('#show-help').prop('checked', Settings.showHelp);
   $('#timestamps-24').prop('checked', Settings.isClock24Hour);
-  $('#show-dailies').prop('checked', Settings.showDailies);
   $('#show-coordinates').prop('checked', Settings.isCoordsOnClickEnabled);
-
   $('#enable-debug').prop('checked', Settings.isDebugEnabled);
   $('#enable-right-click').prop('checked', Settings.isRightClickEnabled);
 
   $('#help-container').toggle(Settings.showHelp);
-  $('.daily-challenges').toggle(Settings.showDailies);
+
+  $('#show-dailies').prop('checked', Settings.showDailies);
+  $('#show-utilities').prop('checked', Settings.showUtilitiesSettings);
+  $('#show-customization').prop('checked', Settings.showCustomizationSettings);
+  $('#show-import-export').prop('checked', Settings.showImportExportSettings);
+  $('#show-debug').prop('checked', Settings.showDebugSettings);
+
+  $('#dailies-container').toggleClass('opened', Settings.showDailies);
+  $('#utilities-container').toggleClass('opened', Settings.showUtilitiesSettings);
+  $('#customization-container').toggleClass('opened', Settings.showCustomizationSettings);
+  $('#import-export-container').toggleClass('opened', Settings.showImportExportSettings);
+  $('#debug-container').toggleClass('opened', Settings.showDebugSettings);
 }
 
 function isLocalHost() {
@@ -172,14 +181,10 @@ function clockTick() {
 
 setInterval(clockTick, 1000);
 
-$('#toggle-debug').on('click', function () {
-  $('#debug-container').toggleClass('opened');
-});
-
 $('.side-menu').on('scroll', function () {
   // These are not equality checks because of mobile weirdness.
   const atTop = $(this).scrollTop() <= 0;
-  const atBottom = $(this).scrollTop() + $(document).height() >= $(this).prop("scrollHeight");
+  const atBottom = $(this).scrollTop() + $(document).height() >= $(this).prop('scrollHeight');
   $('.scroller-line-tp').toggle(atTop);
   $('.scroller-arrow-tp').toggle(!atTop);
   $('.scroller-line-bt').toggle(atBottom);
@@ -193,6 +198,31 @@ $('#show-all-markers').on('change', function () {
 
 $('#enable-right-click').on('change', function () {
   Settings.isRightClickEnabled = $('#enable-right-click').prop('checked');
+});
+
+$('#show-dailies').on('change', function () {
+  Settings.showDailies = $('#show-dailies').prop('checked');
+  $('#dailies-container').toggleClass('opened', Settings.showDailies);
+});
+
+$('#show-utilities').on('change', function () {
+  Settings.showUtilitiesSettings = $('#show-utilities').prop('checked');
+  $('#utilities-container').toggleClass('opened', Settings.showUtilitiesSettings);
+});
+
+$('#show-customization').on('change', function () {
+  Settings.showCustomizationSettings = $('#show-customization').prop('checked');
+  $('#customization-container').toggleClass('opened', Settings.showCustomizationSettings);
+});
+
+$('#show-import-export').on('change', function () {
+  Settings.showImportExportSettings = $('#show-import-export').prop('checked');
+  $('#import-export-container').toggleClass('opened', Settings.showImportExportSettings);
+});
+
+$('#show-debug').on('change', function () {
+  Settings.showDebugSettings = $('#show-debug').prop('checked');
+  $('#debug-container').toggleClass('opened', Settings.showDebugSettings);
 });
 
 //Disable menu category when click on input
@@ -328,11 +358,6 @@ $('#timestamps-24').on('change', function () {
   Settings.isClock24Hour = $('#timestamps-24').prop('checked');
   clockTick();
   $('#language').triggerHandler('change');
-});
-
-$('#show-dailies').on('change', function () {
-  Settings.showDailies = $('#show-dailies').prop('checked');
-  $('.daily-challenges').toggle(Settings.showDailies);
 });
 
 $('#show-coordinates').on('change', function () {
