@@ -29,9 +29,9 @@
     border-radius: 3px;
 }
 
-html, body { 
-    height: 100%; 
-} 
+html, body {
+    height: 100%;
+}
 
 body {
     margin: 0;
@@ -95,7 +95,7 @@ select {
 
 #main-header {
     display: flex;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 #main-header::after {
@@ -847,7 +847,7 @@ a.wiki-page:visited {
     z-index: 1010; 
     padding: 5%; 
     color: #eee; 
-    display: none; 
+    display: none;
 }
 
 .help-container {
@@ -1072,6 +1072,7 @@ a.no-style:visited {
 }
 
 /* Bootstrap modal styling */
+
 .modal {
     user-select: none;
 }
@@ -1178,7 +1179,6 @@ a.no-style:visited {
         text-align: center;
         padding: 0 !important;
     }
-
     .modal:before {
         content: '';
         display: inline-block;
@@ -1186,17 +1186,14 @@ a.no-style:visited {
         vertical-align: middle;
         margin-right: -4px;
     }
-
-    .modal-body { 
-        max-height: 650px !important; 
+    .modal-body {
+        max-height: 650px !important;
     }
-
     .modal-dialog {
         display: inline-block;
         text-align: left;
         vertical-align: middle;
     }
-
     .modal-sm {
         width: 450px;
     }
@@ -1229,12 +1226,10 @@ a.no-style:visited {
     .top-widget-menu-opened {
         display: none !important;
     }
-
     .side-menu .menu-hidden .collectible,
     .input-container label {
         line-height: 38px;
     }
-
     .input-checkbox-wrapper .input-checkbox+.input-checkbox-label,
     .input-text,
     .input-action {
@@ -1248,19 +1243,15 @@ a.no-style:visited {
         left: -400px;
         top: 0;
     }
-
     .menu-opened {
         left: 0;
     }
-
     .timer-menu-opened {
         left: 410px;
     }
-
     .counter-menu-opened {
         left: 410px;
     }
-
     .top-widget-menu-opened {
         left: 405px;
     }
@@ -1268,76 +1259,82 @@ a.no-style:visited {
 
 /* Tutorial styling */
 
-#top-sticky, #bottom-sticky { 
-    position: relative; 
-    position: -webkit-sticky; 
-    position: sticky; 
-    z-index: 20; 
-    background-color: #000; 
-} 
- 
-#top-sticky { 
-    padding: 10px 10px 0 10px !important; 
-} 
- 
-#bottom-sticky { 
-    padding: 0 !important; 
-} 
- 
-#top-sticky { 
-    top: 0; 
-} 
- 
-#bottom-sticky { 
-    bottom: 0; 
-} 
- 
-.scroller { 
-    -ms-flex-pack: justify !important; 
-    justify-content: space-between !important; 
-    display: -ms-flexbox !important; 
-    display: flex !important; 
-    overflow: hidden; 
-    line-height: 0; 
-    margin: 0 -10px; 
-} 
- 
-.scroller-grow, .scroller-stat { 
-    position: relative; 
-    width: 100%; 
-    min-height: 10px; 
-    line-height: 0; 
-} 
- 
-.scroller-grow { 
-    -ms-flex-preferred-size: 0; 
-    flex-basis: 0; 
-    -ms-flex-positive: 1; 
-    flex-grow: 1; 
-    max-width: 100%; 
-} 
- 
-.scroller-stat { 
-    -ms-flex: 0 0 auto; 
-    flex: 0 0 auto; 
-    width: auto; 
-    max-width: none; 
-} 
- 
-.scroller-grow img { 
-    width: 100%; 
-    height: 10px; 
-} 
- 
-#help-container { 
-    min-height: 100px; 
-    background-image: url(../../assets/images/help_text_bg.png); 
-    background-repeat: no-repeat; 
-    background-size: 100% 100%; 
-    padding: 15px 25px; 
-    margin-top: 5px; 
-} 
- 
+#top-sticky,
+#bottom-sticky {
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 20;
+    padding: 0 !important;
+}
+
+#top-sticky {
+    top: 0;
+}
+
+#bottom-sticky {
+    bottom: 0;
+}
+
+.sticky-container {
+    background-color: #000;
+    padding: 5px;
+}
+
+#top-sticky .sticky-container {
+    padding-bottom: 0;
+}
+
+#bottom-sticky .sticky-container {
+    padding-top: 0;
+}
+
+.scroller {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    overflow: hidden;
+    line-height: 0;
+    margin: 0 -10px;
+}
+
+.scroller-grow,
+.scroller-stat {
+    position: relative;
+    width: 100%;
+    min-height: 10px;
+    line-height: 0;
+}
+
+.scroller-grow {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.scroller-stat {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+.scroller-grow img {
+    width: 100%;
+    height: 10px;
+}
+
+#help-container {
+    min-height: 100px;
+    background-image: url(../../assets/images/help_text_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 15px 25px;
+}
+
 /* Pathfinder styling */
 
 .pathfinder-control {
@@ -1465,6 +1462,7 @@ a.no-style:visited {
 }
 
 /* Freemode Events */
+
 #fme-container {
     position: absolute;
     left: 5px;
@@ -1499,7 +1497,7 @@ a.no-style:visited {
 }
 
 #fme-container .fme-card .fme-body {
-flex-grow: 1;
+    flex-grow: 1;
 }
 
 #fme-container .fme-card .fme-body .fme-title {
@@ -1544,33 +1542,28 @@ flex-grow: 1;
         bottom: 25px;
         right: 50px;
     }
-
     #fme-container .fme-card {
         padding: 10px 20px 10px 10px;
         height: auto;
         width: initial;
     }
-
     #fme-container .fme-card #next-general-mobile,
     #fme-container .fme-card #next-role-mobile {
         display: block;
         overflow: hidden;
     }
-
     #fme-container .fme-card .fme-body {
         display: none;
     }
-
     #fme-container .fme-card .fme-image {
         width: 32px;
         height: auto;
         margin-left: 0;
         margin-right: 8px;
     }
-
     #fme-container.fme-menu-opened {
         left: 5px;
-    }    
+    }
 }
 
 @media (min-width: 769px) {
@@ -1593,7 +1586,6 @@ flex-grow: 1;
         left: -7px;
         z-index: 10;
     }
-
     .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
         top: 1px;
@@ -1601,7 +1593,6 @@ flex-grow: 1;
         bottom: 1px;
         left: 2px;
     }
-
     .settings-container .input-container:not(.disabled):hover:after,
     .side-menu .menu-option:hover:after,
     .side-menu .collectible-wrapper:hover:after {
@@ -1610,6 +1601,7 @@ flex-grow: 1;
 }
 
 /* Dailies Styling */
+
 .dailies {
     margin: 20px 5px;
     font-size: 2rem;
@@ -1709,9 +1701,11 @@ span.daily-checkbox {
     font-family: RDRLino, serif;
     font-size: 19px;
 }
+
 /* End of dailies Styling */
 
 /* Dark mode styling */
+
 .btn.btn-info.remove-button,
 .save-button {
     background-color: #008fbece;
@@ -1777,6 +1771,7 @@ span.daily-checkbox {
 }
 
 /* Fix being able to select the overlays. */
+
 .leaflet-overlay-pane {
     user-select: none;
 }
@@ -1817,6 +1812,7 @@ span.daily-checkbox {
 }
 
 /* Leaflet Marker styling */
+
 .leaflet-div-icon {
     width: 36px;
     height: 45px;
@@ -1883,6 +1879,7 @@ span.daily-checkbox {
 }
 
 /*Legendary animals popup text color*/
+
 .legendary-spawn-time,
 .legendary-preferred-weather {
     color: #3abce5;

@@ -55,13 +55,15 @@
 <body>
   <div class="side-menu">
     <div id="top-sticky">
-      <h2 id="main-header">
-        <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
-        <div id="main-header-center">
-          <span class="menu-option-text" data-text="menu.rdo_map">RDO Map</span>
-        </div>
-        <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
-      </h2>
+      <div class="sticky-container">
+        <h2 id="main-header">
+          <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
+          <div id="main-header-center">
+            <span class="menu-option-text" data-text="menu.rdo_map">RDO Map</span>
+          </div>
+          <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
+        </h2>
+      </div>
       <div class="scroller">
         <div class="scroller-grow">
           <img src="./assets/images/scroller/scroller_left_top.png" alt="">
@@ -839,8 +841,10 @@
           <img src="./assets/images/scroller/scroller_right_bottom.png" alt="">
         </div>
       </div>
-      <div id="help-container">
-        <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+      <div class="sticky-container">
+        <div id="help-container">
+          <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+        </div>
       </div>
     </div>
   </div>
