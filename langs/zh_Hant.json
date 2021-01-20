@@ -55,9 +55,6 @@
     "menu.show_coords": "顯示點擊坐標",
     "menu.show_help": "在懸停時顯示幫助",
     "menu.toggle_debug": "切換至偵錯模式",
-    "menu.tooltip": "工具提示",
-    "menu.tooltip_disabled": "停用",
-    "menu.tooltip_enabled": "啟用",
     "menu.trains": "火車",
     "menu.treasure_hunter": "尋寶獵人",
     "menu.treasures": "藏寶圖",
@@ -118,7 +115,6 @@
     "help.show_coords": "切換單擊地圖上的某個位置時是否應顯示坐標。",
     "help.show_help": "切換在懸停或長按 (手機) 設定時是否應顯示此幫助對話框。",
     "help.toggle_debug": "切換至開發人員偵錯功能。不建議普通用戶使用。",
-    "help.tooltip": "顯示小工具提示(完整文字選單)",
     "help.user_pins_edit_mode": "切換標記是否應可編輯、可移動和可移除。",
     "help.user_pins_export": "將標記匯出成一個檔案。",
     "help.user_pins_import": "匯入標記檔案並顯示在地圖。",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "殘骸搜索",
     "map.salvage.pickups.desc": "此地點在活動間會生成一個隨機收藏品。此物品不需鏟子或金屬探測器便可撿起。",
     "map.salvage.mounds.desc": "此地點在活動間會生成一個泥土堆。當您使用鏟子挖掘這泥土堆將會獲得隨機獎勵。",
-    "map.salvage.chests.desc": "此地點在活動間會生成一個大或小箱子。當您開啟箱子將會獲得一個或以上的隨機獎勵。"
+    "map.salvage.chests.desc": "此地點在活動間會生成一個大或小箱子。當您開啟箱子將會獲得一個或以上的隨機獎勵。",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

@@ -55,9 +55,6 @@
     "menu.show_coords": "Afficher les coordonnées",
     "menu.show_help": "Afficher l'aide au survol",
     "menu.toggle_debug": "Activer/désactiver les fonctionnalités de débogage",
-    "menu.tooltip": "Infobulle",
-    "menu.tooltip_disabled": "Désactivé",
-    "menu.tooltip_enabled": "Activé",
     "menu.trains": "Trains",
     "menu.treasure_hunter": "Chasseur de trésors",
     "menu.treasures": "Trésors",
@@ -118,7 +115,6 @@
     "help.show_coords": "Bascule si les coordonnées doivent être affichées lorsque vous cliquez quelque part sur la carte.",
     "help.show_help": "Active/Désactive si cette boîte de dialogue d'aide doit apparaître lorsque vous survolez ou lorsque vous appuyez longuement (écrans tactiles) un paramètre.",
     "help.toggle_debug": "Ouvre les paramètres de débogage qui permettent certaines fonctionnalités de développeur. Les utiliser n'est pas recommandé pour les utilisateurs ordinaires.",
-    "help.tooltip": "Affiche une petite infobulle avec le texte du menu complet.",
     "help.user_pins_edit_mode": "Active/désactive si les épingles peuvent être modifiées, déplacées ou supprimées.",
     "help.user_pins_export": "Exporter vos notes vers un fichier.",
     "help.user_pins_import": "Importe un fichier d'épingles et affiche toutes celles-ci sur la carte.",
@@ -1177,7 +1173,7 @@
     "map.weather.foggy": "Temps brumeux",
     "map.weather.rain": "Temps pluvieux",
     "map.weather.any": "Tous les temps",
-    "map.legendary.spawn_time_string": "Preferred spawn time: {spawn_time_string}",
+    "map.legendary.spawn_time_string": "Temps d'apparition préféré : {spawn_time_string}",
     "map.legendary.preferred_weather": "Préférence météo: {preferred_weather}",
     "map.legendary.trader_materials": "Marchandises de marchand: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Morceaux d'animaux de marchand: {trader_pelt_materials}",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

@@ -55,9 +55,6 @@
     "menu.show_coords": "Zobrazit souřadnice při klepnutí",
     "menu.show_help": "Zobrazit nápovědu při události hover",
     "menu.toggle_debug": "Přepnout funkce ladění",
-    "menu.tooltip": "Popisek",
-    "menu.tooltip_disabled": "Deaktivováno",
-    "menu.tooltip_enabled": "Povoleno",
     "menu.trains": "Vlaky",
     "menu.treasure_hunter": "Lovec pokladů",
     "menu.treasures": "Mapy pokladů",
@@ -118,7 +115,6 @@
     "help.show_coords": "Přepíná, zda se mají při klepnutí na libovolné místo na mapě zobrazit souřadnice.",
     "help.show_help": "Přepíná, zda se má při přesunutí ukazatele myši nad nebo dlouhým stisknutím klávesy (mobilní) zobrazit toto dialogové okno nápovědy.",
     "help.toggle_debug": "Otevře nastavení ladění, které umožní určité funkce vývojáře. Použití nich se nedoporučuje pro běžné uživatele.",
-    "help.tooltip": "Zobrazuje malý popisek s úplným textem nabídky.",
     "help.user_pins_edit_mode": "Přepíná, zda mají být špendlíky upravitelné, pohyblivé a vyjímatelné.",
     "help.user_pins_export": "Exportuje kontakty do souboru.",
     "help.user_pins_import": "Importuje soubor piny a zobrazí všechny příchytky na mapě.",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

@@ -55,9 +55,6 @@
     "menu.show_coords": "Показувати координати при натисканні",
     "menu.show_help": "Показати довідку при наведенні",
     "menu.toggle_debug": "Функції відлагодження",
-    "menu.tooltip": "Підказка",
-    "menu.tooltip_disabled": "Вимкнено",
-    "menu.tooltip_enabled": "Ввімкнено",
     "menu.trains": "Потяги",
     "menu.treasure_hunter": "Мисливець за скарбами",
     "menu.treasures": "Карти скарбів",
@@ -118,7 +115,6 @@
     "help.show_coords": "Вмикає відображення координат при кліку на карті.",
     "help.show_help": "Визначає появу діалогового вікна довідки при наведенні курсору чи тривалому натисканні (мобільна версія) на параметр.",
     "help.toggle_debug": "Дозволяє відкрити параметри відлагодження, котрі дозволяють виконувати певні фунції розробника. Використовувати їх звичайним користувачам не рекомендується.",
-    "help.tooltip": "Покзує невелику підказку з повним текстом меню.",
     "help.user_pins_edit_mode": "Вказує, на доступність маркерів для редактування, переміщення чи видалення.",
     "help.user_pins_export": "Експортує Ваші відмітки в файл.",
     "help.user_pins_import": "Імпортує файл відміток та відображає їх на карті.",
@@ -1177,7 +1173,7 @@
     "map.weather.foggy": "Туманна погода",
     "map.weather.rain": "Дощова погода",
     "map.weather.any": "Будь-яка погода",
-    "map.legendary.spawn_time_string": "Preferred spawn time: {spawn_time_string}",
+    "map.legendary.spawn_time_string": "Рекомендований час: {spawn_time_string}",
     "map.legendary.preferred_weather": "Рекомендована погода: {preferred_weather}",
     "map.legendary.trader_materials": "Торговець, матеріалів з туші: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Торговець, матеріалів з шкіри: {trader_pelt_materials}",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

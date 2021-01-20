@@ -55,9 +55,6 @@
     "menu.show_coords": "Koordinaten bei Klick anzeigen",
     "menu.show_help": "Bei Maus-Berührung Hilfe anzeigen",
     "menu.toggle_debug": "Zeige Debug-Optionen",
-    "menu.tooltip": "Pop-up",
-    "menu.tooltip_disabled": "Deaktivieren",
-    "menu.tooltip_enabled": "Aktivieren",
     "menu.trains": "Züge",
     "menu.treasure_hunter": "Schatzjäger",
     "menu.treasures": "Schatzkarten",
@@ -118,7 +115,6 @@
     "help.show_coords": "Wenn du auf der Karte eine Postion anklickst werden die Koordinaten angezeigt.",
     "help.show_help": "Gibt an, ob dieser Hilfedialog angezeigt werden soll, wenn Sie den Mauszeiger über eine Einstellung oder über eine lange drücken (mobile).",
     "help.toggle_debug": "Zeigt die Debug-Optionen die für Entwickler gedacht sind. Das Verwenden wird nicht für normale Nutzer angeraten.",
-    "help.tooltip": "Zeigt ein kleines Pop-up mit dem kompletten Menü Text.",
     "help.user_pins_edit_mode": "Erlaubt es eigene Markierung zu ändern, zu verschieben oder zu löschen.",
     "help.user_pins_export": "Exportiert die eigenen Markierung in eine Datei.",
     "help.user_pins_import": "Importiert die eigenen Markierung und zeigt sie auf der Karte an.",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

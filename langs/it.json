@@ -55,9 +55,6 @@
     "menu.show_coords": "Mostra le coordinate al click",
     "menu.show_help": "Mostra aiuto al passaggio",
     "menu.toggle_debug": "Attiva/disattiva funzionalità di debug",
-    "menu.tooltip": "Suggerimento",
-    "menu.tooltip_disabled": "Disabilitato",
-    "menu.tooltip_enabled": "Abilitato",
     "menu.trains": "Treni",
     "menu.treasure_hunter": "Cacciatore di Tesori",
     "menu.treasures": "Mappe del tesoro",
@@ -118,7 +115,6 @@
     "help.show_coords": "Attiva/disattiva se le coordinate dovrebbero essere mostrate quando clicchi da qualche parte sulla mappa.",
     "help.show_help": "Attiva/disattiva se questa finestra di dialogo d'aiuto dovrebbe comparire quando passi su o premi a lungo (mobile) un'impostazione.",
     "help.toggle_debug": "Apre le impostazioni di debug che abilitano certe funzionalità da sviluppatore. Usarle non è raccomandato per gli utenti regolari.",
-    "help.tooltip": "Mostra un piccolo suggerimento con il testo completo del menu.",
     "help.user_pins_edit_mode": "Attiva/disattiva se i pin dovrebbero essere modificabili, mobili e rimovibili.",
     "help.user_pins_export": "Esporta i tuoi pin in un file.",
     "help.user_pins_import": "Importa un file di pin e mostra tutti questi pin sulla mappa.",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "Questo luogo genera collezionabili casuali durante l'evento. Questo oggetto può essere raccolto anche senza un metal detector o una pala.",
     "map.salvage.mounds.desc": "Questa location genera un mucchietto di terra durante l'evento. Un oggetto random ti sarà ricompensato quando scaverai questo mucchio di terra con una pala.",
-    "map.salvage.chests.desc": "Questo luogo genera casse grandi o piccole durante l'evento. Uno o più di questi oggetti casuali ti sarà ricompensato quanto aprirai la cassa."
+    "map.salvage.chests.desc": "Questo luogo genera casse grandi o piccole durante l'evento. Uno o più di questi oggetti casuali ti sarà ricompensato quanto aprirai la cassa.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }
