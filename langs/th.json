@@ -55,9 +55,6 @@
     "menu.show_coords": "แสดงพิกัดเมื่อคลิก",
     "menu.show_help": "แสดงตัวช่วยเมื่อชี้เมาส์",
     "menu.toggle_debug": "Toggle debug features",
-    "menu.tooltip": "Tooltip",
-    "menu.tooltip_disabled": "ปิดการใช้งาน",
-    "menu.tooltip_enabled": "Enabled",
     "menu.trains": "Trains",
     "menu.treasure_hunter": "Treasure Hunter",
     "menu.treasures": "Treasure Maps",
@@ -118,7 +115,6 @@
     "help.show_coords": "Toggles whether the coordinates should be displayed when you click somewhere on the map.",
     "help.show_help": "Toggles whether this help dialog should appear when you hover over or long-press (mobile) a setting.",
     "help.toggle_debug": "Opens the debug settings which enables certain developer functionality. Using them isn't recommended for regular users.",
-    "help.tooltip": "Shows a small tooltip with the complete menu text.",
     "help.user_pins_edit_mode": "Toggles whether pins should be editable, movable and removable.",
     "help.user_pins_export": "Exports your pins to a file.",
     "help.user_pins_import": "Imports a pins file and displays all those pins on the map.",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

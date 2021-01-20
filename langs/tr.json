@@ -55,9 +55,6 @@
     "menu.show_coords": "Koordinatları tıklatma ile göster",
     "menu.show_help": "Beliren yardım üzerinde yardımı göster",
     "menu.toggle_debug": "Hata ayıklama özelliklerini aç/kapa",
-    "menu.tooltip": "İpucu",
-    "menu.tooltip_disabled": "Geçersiz Kılındı",
-    "menu.tooltip_enabled": "Etkin",
     "menu.trains": "Trenler",
     "menu.treasure_hunter": "Hazine Avcısı",
     "menu.treasures": "Hazine Haritaları",
@@ -118,7 +115,6 @@
     "help.show_coords": "Haritadaki bir yeri tıklattığınızda koordinatların görüntülenip görüntülenmeyeceğini değiştirir.",
     "help.show_help": "Bu yardım iletişim kutusunun üzerinde dolaştığınızda ya da bir ayarın üzerinde dolaştığınızda (mobil) bu yardım iletişim kutusunun görünmesi gerekip gerekmediğini değiştirir.",
     "help.toggle_debug": "Belirli geliştirici işlevselliğini etkinleştiren hata ayıklama ayarlarını açar. Bu kullanıcıların kullanılması, normal kullanıcılar için önerilmez.",
-    "help.tooltip": "Menü metninin tamamını içeren küçük ipuçlarını gösterir.",
     "help.user_pins_edit_mode": "Pimlerin düzenlenebilir, taşınabilir ve çıkarılabilir olması gerekip gerekmediğini değiştirir.",
     "help.user_pins_export": "Pimlerinizi bir dosyaya aktarır.",
     "help.user_pins_import": "Bir iğneler dosyasını içe aktarır ve eşlemdeki tüm bu iğneleri görüntüler.",
@@ -1177,7 +1173,7 @@
     "map.weather.foggy": "Sisli Hava",
     "map.weather.rain": "Yağmurlu Hava",
     "map.weather.any": "Bir Hava Durumu",
-    "map.legendary.spawn_time_string": "Preferred spawn time: {spawn_time_string}",
+    "map.legendary.spawn_time_string": "Önerilen doğma süresi: {spawn_time_string}",
     "map.legendary.preferred_weather": "Önerilen hava durumu: {preferred_weather}",
     "map.legendary.trader_materials": "Tüccar malzemeleri: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Tüccar post malzemeleri: {trader_pelt_materials}",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

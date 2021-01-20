@@ -55,9 +55,6 @@
     "menu.show_coords": "显示点击坐标",
     "menu.show_help": "在悬停时显示帮助",
     "menu.toggle_debug": "切换至调试模式",
-    "menu.tooltip": "工具提示",
-    "menu.tooltip_disabled": "禁用",
-    "menu.tooltip_enabled": "已启用",
     "menu.trains": "火车",
     "menu.treasure_hunter": "宝藏猎人",
     "menu.treasures": "藏宝图",
@@ -118,7 +115,6 @@
     "help.show_coords": "切换单击地图上的某个位置时是否应显示坐标.",
     "help.show_help": "切换在悬停或长按（移动端）设置时是否应显示此帮助对话框.",
     "help.toggle_debug": "打开启用某些开发人员功能的调试设置.不建议普通用户使用",
-    "help.tooltip": "显示包含完整菜单文本的小工具提示.",
     "help.user_pins_edit_mode": "切换标记是否应可编辑、可移动和可移动.",
     "help.user_pins_export": "将您的标记导出到文件.",
     "help.user_pins_import": "导入标记文件并在地图上显示所有标记.",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

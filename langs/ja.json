@@ -55,9 +55,6 @@
     "menu.show_coords": "座標をクリックして表示",
     "menu.show_help": "吹き出しにヘルプを表示",
     "menu.toggle_debug": "デバッグ・フィーチャーの切り替え",
-    "menu.tooltip": "Tooltip",
-    "menu.tooltip_disabled": "無効",
-    "menu.tooltip_enabled": "有効",
     "menu.trains": "列車",
     "menu.treasure_hunter": "トレジャーハンター",
     "menu.treasures": "トレジャーマップ",
@@ -118,7 +115,6 @@
     "help.show_coords": "マップ上の任意の場所をクリックしたときに座標を表示するかどうかを切り替えます。",
     "help.show_help": "このヘルプ・ダイアログが表示されるのは、マウスの上にマウスを移動するか、または長時間押し ( モバイル) 設定するかを切り替えます。",
     "help.toggle_debug": "特定の開発者機能を有効にするデバッグ設定を開きます。 通常のユーザーには推奨されません。",
-    "help.tooltip": "完全なメニューテキストを含む小さなツールチップを表示します。",
     "help.user_pins_edit_mode": "ピンが編集可能、移動可能、および取り外し可能かどうかを切り替えます。",
     "help.user_pins_export": "ピンをファイルにエクスポートします。",
     "help.user_pins_import": "ピン・ファイルをインポートし、それらのピンをすべてマップ上に表示します。",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

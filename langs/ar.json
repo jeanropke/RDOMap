@@ -55,9 +55,6 @@
     "menu.show_coords": "عرض الإحداثيات عند النقر",
     "menu.show_help": "إظهار المساعدة عند التنفيس",
     "menu.toggle_debug": "تبديل خصائص التصحيح",
-    "menu.tooltip": "تلميح",
-    "menu.tooltip_disabled": "غير مُتاح",
-    "menu.tooltip_enabled": "متاح",
     "menu.trains": "قطارات",
     "menu.treasure_hunter": "صائد كنوز",
     "menu.treasures": "خرائط الكنز",
@@ -118,7 +115,6 @@
     "help.show_coords": "تبديل ما إذا كان يجب عرض الإحداثيات عند النقر فوق مكان ما على الخريطة.",
     "help.show_help": "اضغط طوالي لتظهر معلومات تساعدك عندما تمرر اصبعك عليها (يستخدم في الجوالات).",
     "help.toggle_debug": "يفتح إعدادات التصحيح التي تمكن بعض وظائف المطور. استخدامها ليس موصى به للمستخدمين العاديين.",
-    "help.tooltip": "يقوم بعرض نص توضيحي صغير باستخدام نص القائمة بالكامل.",
     "help.user_pins_edit_mode": "تبديل ما إذا كان يجب تعديل الدبوسات أو نقلها أو إزالتها.",
     "help.user_pins_export": "تصدير الإعدادات الخاصة بك إلى ملف.",
     "help.user_pins_import": "يستورد ملف دبابيس ويعرض كل الدبابيس المستوردة على الخريطة.",
@@ -1280,5 +1276,9 @@
     "menu.salvage": "Salvage",
     "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
     "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest."
+    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "menu.tooltip_menu": "Tooltips for menu items",
+    "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }
