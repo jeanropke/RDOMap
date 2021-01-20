@@ -6,6 +6,7 @@ const MapBase = {
   isDarkMode: false,
   interiors: false,
   updateLoopAvailable: true,
+  updateTippyTimer: null,
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
@@ -260,7 +261,7 @@ const MapBase = {
     }
 
     Menu.updateTippy();
-    MapBase.updateTippy();
+    MapBase.updateTippy('afterLoad');
   },
 
   disableAll: function (toShow = false) {
@@ -374,7 +375,7 @@ const MapBase = {
     });
     Layers.debugLayer.addLayer(marker);
 
-    MapBase.updateTippy();
+    MapBase.updateTippy('debugMarker');
   },
 
   testData: { data: [] },
@@ -425,28 +426,33 @@ const MapBase = {
     })();
   },
 
-  updateTippy: function () {
-    // Needs some more update points:
-    // - on marker update
-    // - on menu state change
-    // - on language state change
-    // Just debug for now.
-    if (!Settings.isDebugEnabled) return;
+  updateTippy: function (loc = '') {
+    if (Settings.isDebugEnabled)
+      console.log('UpdateTippy called from', loc);
 
-    MapBase.tippyInstances.forEach(instance => instance.destroy());
-    MapBase.tippyInstances = [];
+    // This is here to deal with stacked onMap updates (show all/hide all)
+    // TODO: Have a generic hook for "after update" in both all and single updates.
+    // TODO: See if we can't go ahead and filter based on marker cat.
+    clearTimeout(MapBase.updateTippyTimer);
+    MapBase.updateTippyTimer = setTimeout(function () {
+      if (Settings.isDebugEnabled)
+        console.log('Updating MapBase Tippy...');
 
-    if (!Settings.showTooltipsMap || Settings.isPopupsHoverEnabled) return;
+      MapBase.tippyInstances.forEach(instance => instance.destroy());
+      MapBase.tippyInstances = [];
 
-    MapBase.tippyInstances = tippy('[data-tippy]', {
-      theme: 'map-theme',
-      placement: 'right',
-      arrow: false,
-      distance: 0,
-      content(ref) {
-        return ref.getAttribute('data-tippy');
-      },
-    });
+      if (!Settings.showTooltipsMap || Settings.isPopupsHoverEnabled) return;
+
+      MapBase.tippyInstances = tippy('[data-tippy]', {
+        theme: 'map-theme',
+        placement: 'right',
+        arrow: false,
+        distance: 0,
+        content(ref) {
+          return ref.getAttribute('data-tippy');
+        },
+      });
+    }, 300);
   },
 
   // Rectangle for testing.

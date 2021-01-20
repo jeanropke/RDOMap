@@ -208,6 +208,7 @@ class Legendary {
   get isGreyedOut() {
     return !!localStorage.getItem(this.animalSpeciesKey);
   }
+
   set onMap(state) {
     if (!this.marker) return;
     if (state) {
@@ -222,6 +223,7 @@ class Legendary {
         localStorage.removeItem(`rdo:${this._shownKey}`);
     }
   }
+
   get onMap() {
     return !!localStorage.getItem(`rdo:${this._shownKey}`);
   }

@@ -44,11 +44,11 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1500" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1501" />
   <link rel="stylesheet" href="assets/css/tippy.css" />
 
   <script>
-    var nocache = 1500;
+    var nocache = 1501;
   </script>
 </head>
 
@@ -427,11 +427,18 @@
           <option value="1" data-text="menu.overlay_opacity.100">Opaque</option>
         </select>
       </div>
-      <div class="input-container" data-help="tooltip">
-        <label for="tooltip" data-text="menu.tooltip">Tooltip</label>
+      <div class="input-container" data-help="tooltip_menu">
+        <label for="tooltip" data-text="menu.tooltip_menu">Tooltips for menu items</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="tooltip" value="1" id="tooltip" />
           <label class="input-checkbox-label" for="tooltip"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="tooltip_map">
+        <label for="tooltip-map" data-text="menu.tooltip_map">Tooltips for map items</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="tooltip-map" value="1" id="tooltip-map" />
+          <label class="input-checkbox-label" for="tooltip-map"></label>
         </div>
       </div>
       <hr class="menu-divider">
@@ -668,13 +675,6 @@
             <label class="input-checkbox-label" for="show-all-markers"></label>
           </div>
         </div>
-        <div class="input-container" data-help="tooltip-map">
-          <label for="tooltip-map" data-text="menu.tooltip-map">Tooltip</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="tooltip-map" value="1" id="tooltip-map" />
-            <label class="input-checkbox-label" for="tooltip-map"></label>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -882,7 +882,7 @@
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1500"></script>
+  <script src="assets/js/loader.js?nocache=1501"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -894,29 +894,29 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1500"></script>
-  <script src="assets/js/settings.js?nocache=1500"></script>
-  <script src="assets/js/nazar.js?nocache=1500"></script>
-  <script src="assets/js/marker.js?nocache=1500"></script>
-  <script src="assets/js/treasures.js?nocache=1500"></script>
-  <script src="assets/js/legendary.js?nocache=1500"></script>
-  <script src="assets/js/encounters.js?nocache=1500"></script>
-  <script src="assets/js/locations.js?nocache=1500"></script>
-  <script src="assets/js/plants.js?nocache=1500"></script>
-  <script src="assets/js/camps.js?nocache=1500"></script>
-  <script src="assets/js/shops.js?nocache=1500"></script>
-  <script src="assets/js/gfh.js?nocache=1500"></script>
-  <script src="assets/js/events.js?nocache=1500"></script>
-  <script src="assets/js/animals.js?nocache=1500"></script>
-  <script src="assets/js/discoverables.js?nocache=1500"></script>
-  <script src="assets/js/overlays.js?nocache=1500"></script>
-  <script src="assets/js/pins.js?nocache=1500"></script>
-  <script src="assets/js/map.js?nocache=1500"></script>
-  <script src="assets/js/language.js?nocache=1500"></script>
-  <script src="assets/js/menu.js?nocache=1500"></script>
-  <script src="assets/js/dailies.js?nocache=1500"></script>
-  <script src="assets/js/scripts.js?nocache=1500"></script>
-  <script src="assets/js/fme.js?nocache=1500"></script>
+  <script src="assets/js/layers.js?nocache=1501"></script>
+  <script src="assets/js/settings.js?nocache=1501"></script>
+  <script src="assets/js/nazar.js?nocache=1501"></script>
+  <script src="assets/js/marker.js?nocache=1501"></script>
+  <script src="assets/js/treasures.js?nocache=1501"></script>
+  <script src="assets/js/legendary.js?nocache=1501"></script>
+  <script src="assets/js/encounters.js?nocache=1501"></script>
+  <script src="assets/js/locations.js?nocache=1501"></script>
+  <script src="assets/js/plants.js?nocache=1501"></script>
+  <script src="assets/js/camps.js?nocache=1501"></script>
+  <script src="assets/js/shops.js?nocache=1501"></script>
+  <script src="assets/js/gfh.js?nocache=1501"></script>
+  <script src="assets/js/events.js?nocache=1501"></script>
+  <script src="assets/js/animals.js?nocache=1501"></script>
+  <script src="assets/js/discoverables.js?nocache=1501"></script>
+  <script src="assets/js/overlays.js?nocache=1501"></script>
+  <script src="assets/js/pins.js?nocache=1501"></script>
+  <script src="assets/js/map.js?nocache=1501"></script>
+  <script src="assets/js/language.js?nocache=1501"></script>
+  <script src="assets/js/menu.js?nocache=1501"></script>
+  <script src="assets/js/dailies.js?nocache=1501"></script>
+  <script src="assets/js/scripts.js?nocache=1501"></script>
+  <script src="assets/js/fme.js?nocache=1501"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

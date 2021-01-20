@@ -72,10 +72,10 @@ class GunForHire {
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
           popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
           html: `<div>
-              <img class="icon" src="assets/images/icons/gfh.png" alt="Icon">
-              <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || this.color}.png" alt="Background">
-              ${shadow}
-            </div>`,
+            <img class="icon" src="assets/images/icons/gfh.png" alt="Icon">
+            <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || this.color}.png" alt="Background">
+            ${shadow}
+          </div>`,
           marker: this.key,
           tippy: marker.title,
         }),
@@ -101,7 +101,9 @@ class GunForHire {
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }
+    MapBase.updateTippy('gfh');
   }
+
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }

@@ -83,7 +83,9 @@ class Encounter {
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }
+    MapBase.updateTippy('encounters');
   }
+
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }

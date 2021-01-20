@@ -49,15 +49,16 @@ class MadamNazar {
     const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
     const tempMarker = L.marker([cl.x, cl.y], {
       opacity: Settings.markerOpacity,
-      icon: L.divIcon({
+      icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
-        html: `
+        html: `<div>
           <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
           ${shadow}
-        `,
+        </div>`,
+        tippy: Language.get('menu.madam_nazar'),
       }),
     });
     tempMarker.bindPopup(this.popupContent.bind(this), { minWidth: 300 });
@@ -101,10 +102,14 @@ class MadamNazar {
       if (!MapBase.isPreviewMode)
         localStorage.setItem('rdo:nazar', 'false');
     }
+    MapBase.updateTippy('nazar');
   }
+
   static get onMap() {
-    return JSON.parse(localStorage.getItem('rdo:nazar')) || JSON.parse(localStorage.getItem('rdo:nazar')) == null;
+    const value = JSON.parse(localStorage.getItem('rdo:nazar'));
+    return value || value == null;
   }
+
   static reloadNazar() {
     MadamNazar.layer.clearLayers();
     Loader.reloadData('nazar');

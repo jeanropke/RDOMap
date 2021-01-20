@@ -89,6 +89,7 @@ class Menu {
       Camp.locations.forEach(camp => {
         if (camp.layer['_map'] != null) camp.reinitMarker();
       });
+      MapBase.updateTippy('campsbtn');
     });
     $('.camps-large-btn').on('click', function () {
       $(this).toggleClass('disabled');
@@ -96,6 +97,7 @@ class Menu {
       Camp.locations.forEach(camp => {
         if (camp.layer['_map'] != null) camp.reinitMarker();
       });
+      MapBase.updateTippy('campsbtn');
     });
     $('.camps-wilderness-btn').on('click', function () {
       $(this).toggleClass('disabled');
@@ -103,6 +105,7 @@ class Menu {
       Camp.locations.forEach(camp => {
         if (camp.layer['_map'] != null) camp.reinitMarker();
       });
+      MapBase.updateTippy('campsbtn');
     });
 
     $('.shops-hide-btn').on('click', function () {

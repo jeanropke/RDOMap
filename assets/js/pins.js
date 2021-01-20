@@ -335,7 +335,9 @@ class Pins {
         localStorage.removeItem('rdo:pins-enabled');
       this.context.addClass('disabled');
     }
+    MapBase.updateTippy('pins');
   }
+
   static get onMap() {
     return !!localStorage.getItem('rdo:pins-enabled');
   }

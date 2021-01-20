@@ -73,6 +73,7 @@ class CondorEgg {
       </div>
     `).translate()[0];
   }
+
   static set condorEggOnMap(state) {
     if (state) {
       MapBase.map.addLayer(CondorEgg.layer);
@@ -83,6 +84,7 @@ class CondorEgg {
     }
     this.condorEggParentElement.toggleClass('disabled', !state);
   }
+
   static get condorEggOnMap() {
     return !!localStorage.getItem('rdo:condorEggs');
   }
@@ -190,6 +192,7 @@ class Salvage {
       </div>
     `).translate()[0];
   }
+
   static set salvageOnMap(state) {
     if (state) {
       MapBase.map.addLayer(Salvage.layer);
@@ -200,6 +203,7 @@ class Salvage {
     }
     this.salvageParentElement.toggleClass('disabled', !state);
   }
+
   static get salvageOnMap() {
     return !!localStorage.getItem('rdo:salvages');
   }

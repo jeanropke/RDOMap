@@ -48,14 +48,10 @@ class Plants {
           <span class="marker-content-wrapper">
             <p>${Language.get('map.plants.desc').replace(/{plant}/, Language.get(`map.plants.${this.key}.name`))}</p>
           </span>
-          `, {
-          minWidth: 300,
-          maxWidth: 400,
-        });
+        `, { minWidth: 300, maxWidth: 400 });
       this.markers.push(tempMarker);
     });
   }
-
 
   set onMap(state) {
     if (!MapBase.isPreviewMode && !PlantsCollection.onMap) return false;
@@ -83,6 +79,7 @@ class Plants {
       this.element.addClass('disabled');
     }
   }
+
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }
@@ -133,7 +130,6 @@ class PlantsCollection {
     PlantsCollection.locations.forEach(_plants => {
       if (_plants.onMap) _plants.onMap = state;
     });
-
   }
 
   static get onMap() {

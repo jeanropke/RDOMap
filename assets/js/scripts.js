@@ -205,6 +205,8 @@ $('#language').on('change', function () {
   Shop.locations.forEach(shop => shop.onLanguageChanged());
   MadamNazar.addMadamNazar();
   Legendary.onSettingsChanged();
+
+  MapBase.updateTippy('language');
 });
 
 $('#marker-size').on('change', function () {
@@ -250,7 +252,7 @@ $('#tooltip').on('change', function () {
 
 $('#tooltip-map').on('change', function () {
   Settings.showTooltipsMap = $('#tooltip-map').prop('checked');
-  MapBase.updateTippy();
+  MapBase.updateTippy('tooltip');
 });
 
 $('#marker-cluster').on('change', function () {

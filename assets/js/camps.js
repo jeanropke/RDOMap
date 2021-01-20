@@ -89,7 +89,9 @@ class Camp {
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }
+    MapBase.updateTippy('camps');
   }
+
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }

@@ -1,0 +1,1675 @@
+[
+  {
+    "text": "abe_farmhouse_int",
+    "x": "-64.9205",
+    "y": "139.0338",
+    "items": [
+      null
+    ]
+  },
+  {
+    "text": "adl_barn_int",
+    "x": "-22.1404",
+    "y": "102.9849",
+    "items": []
+  },
+  {
+    "text": "adl_cabin01_int",
+    "x": "-21.6313",
+    "y": "102.6532",
+    "items": []
+  },
+  {
+    "text": "ann_coalbreaker_int_main",
+    "x": "-41.8995",
+    "y": "156.1007",
+    "items": []
+  },
+  {
+    "text": "ann_coaltipple_int_main",
+    "x": "-42.1247",
+    "y": "156.8187",
+    "items": []
+  },
+  {
+    "text": "ann_depot_int",
+    "x": "-43.6793",
+    "y": "156.8446",
+    "items": []
+  },
+  {
+    "text": "ann_gunsmith_int",
+    "x": "-43.1239",
+    "y": "157.0638",
+    "items": []
+  },
+  {
+    "text": "ann_jail_int",
+    "x": "-43.2184",
+    "y": "156.4079",
+    "items": []
+  },
+  {
+    "text": "ann_mine_int_main",
+    "x": "-42.5274",
+    "y": "153.9248",
+    "items": []
+  },
+  {
+    "text": "ann_mineoffice_int_main",
+    "x": "-42.1870",
+    "y": "156.6527",
+    "items": []
+  },
+  {
+    "text": "ann_roomnbath_int",
+    "x": "-42.9259",
+    "y": "157.0768",
+    "items": []
+  },
+  {
+    "text": "ann_setlrs_reg_int",
+    "x": "-42.7510",
+    "y": "156.6324",
+    "items": []
+  },
+  {
+    "text": "ann_settlers_int",
+    "x": "-42.7510",
+    "y": "156.6324",
+    "items": []
+  },
+  {
+    "text": "arm_bank_int",
+    "x": "-104.4245",
+    "y": "54.3815",
+    "items": []
+  },
+  {
+    "text": "arm_genstore_int",
+    "x": "-104.3779",
+    "y": "54.0609",
+    "items": []
+  },
+  {
+    "text": "arm_saloon_int",
+    "x": "-103.8597",
+    "y": "53.8035",
+    "items": []
+  },
+  {
+    "text": "arm_sheriff_int",
+    "x": "-104.0095",
+    "y": "55.0746",
+    "items": []
+  },
+  {
+    "text": "arm_trainstation_int",
+    "x": "-104.0347",
+    "y": "53.3888",
+    "items": []
+  },
+  {
+    "text": "aur_shack01_int",
+    "x": "-85.0537",
+    "y": "71.2608",
+    "items": []
+  },
+  {
+    "text": "bea_01_int",
+    "x": "-40.8781",
+    "y": "146.9435",
+    "items": []
+  },
+  {
+    "text": "bee_barn_int",
+    "x": "-85.5279",
+    "y": "86.4269",
+    "items": []
+  },
+  {
+    "text": "bee_house_int",
+    "x": "-84.7191",
+    "y": "85.8219",
+    "items": []
+  },
+  {
+    "text": "ben_shack_int",
+    "x": "-117.7951",
+    "y": "30.4807",
+    "items": []
+  },
+  {
+    "text": "ben_train_int",
+    "x": "-117.4984",
+    "y": "30.1514",
+    "items": []
+  },
+  {
+    "text": "bgv_devilcave_int",
+    "x": "-52.8891",
+    "y": "69.9000",
+    "items": []
+  },
+  {
+    "text": "bgv_skinners01_int",
+    "x": "-86.0185",
+    "y": "79.3487",
+    "items": []
+  },
+  {
+    "text": "bla_bank_int",
+    "x": "-83.4158",
+    "y": "98.6415",
+    "items": []
+  },
+  {
+    "text": "bla_barber_int",
+    "x": "-84.8197",
+    "y": "98.6220",
+    "items": []
+  },
+  {
+    "text": "bla_carriagehouse_int",
+    "x": "-84.8071",
+    "y": "97.8095",
+    "items": []
+  },
+  {
+    "text": "bla_fenceshop_int",
+    "x": "-83.6086",
+    "y": "97.7718",
+    "items": []
+  },
+  {
+    "text": "bla_genstore_int",
+    "x": "-84.1521",
+    "y": "99.1421",
+    "items": []
+  },
+  {
+    "text": "bla_jail_int",
+    "x": "-83.3115",
+    "y": "99.4445",
+    "items": []
+  },
+  {
+    "text": "bla_photo_int",
+    "x": "-84.9326",
+    "y": "98.6525",
+    "items": []
+  },
+  {
+    "text": "bla_saloon_int",
+    "x": "-84.0434",
+    "y": "98.5910",
+    "items": []
+  },
+  {
+    "text": "bla_tailor_int",
+    "x": "-83.6714",
+    "y": "99.4052",
+    "items": []
+  },
+  {
+    "text": "bla_theater_int",
+    "x": "-84.7421",
+    "y": "99.2120",
+    "items": []
+  },
+  {
+    "text": "bla_train_int",
+    "x": "-84.2918",
+    "y": "97.7027",
+    "items": []
+  },
+  {
+    "text": "bpl_swampcabin_int",
+    "x": "-105.0733",
+    "y": "89.3583",
+    "items": []
+  },
+  {
+    "text": "bra_boathouse_int[",
+    "x": "-75.6416",
+    "y": "142.6694",
+    "items": [
+      [1, "premium_cig"],
+      [1, "gun_oil"]
+    ]
+  },
+  {
+    "text": "bra_boathouse_int",
+    "x": "-91.3873",
+    "y": "125.3114",
+    "items": []
+  },
+  {
+    "text": "bra_cornmill_int",
+    "x": "-95.0312",
+    "y": "126.5060",
+    "items": []
+  },
+  {
+    "text": "bra_mansion_int",
+    "x": "-91.0923",
+    "y": "126.9883",
+    "items": []
+  },
+  {
+    "text": "bra_stable_int",
+    "x": "-92.0210",
+    "y": "126.3090",
+    "items": []
+  },
+  {
+    "text": "bra_tre_house_int",
+    "x": "-94.4615",
+    "y": "128.6496",
+    "items": []
+  },
+  {
+    "text": "brb_dockhouse_int",
+    "x": "-110.6894",
+    "y": "79.8701",
+    "items": []
+  },
+  {
+    "text": "bur_calaboose_int",
+    "x": "-65.9453",
+    "y": "106.2226",
+    "items": []
+  },
+  {
+    "text": "but_shack_int",
+    "x": "-45.3630",
+    "y": "71.9777",
+    "items": []
+  },
+  {
+    "text": "but_shack_int",
+    "x": "-52.5697",
+    "y": "153.4791",
+    "items": []
+  },
+  {
+    "text": "cal_carriage_house_int",
+    "x": "-84.4471",
+    "y": "140.5581",
+    "items": []
+  },
+  {
+    "text": "cal_tobacco_int",
+    "x": "-83.4068",
+    "y": "139.7507",
+    "items": []
+  },
+  {
+    "text": "can_manor_int",
+    "x": "-70.1322",
+    "y": "150.0723",
+    "items": [
+      [1, "canned_vegetable"],
+      [2, "assorted_biscuits"],
+      [1, "premium_cig"],
+      [1, "ground_coffee"],
+      [1, "moonshine"]
+    ]
+  },
+  {
+    "text": "car_barn_int",
+    "x": "-49.9907",
+    "y": "123.2379",
+    "items": []
+  },
+  {
+    "text": "car_house_int",
+    "x": "-50.4478",
+    "y": "123.3596",
+    "items": []
+  },
+  {
+    "text": "cas_house_int",
+    "x": "-55.8779",
+    "y": "104.3992",
+    "items": []
+  },
+  {
+    "text": "cat_house_01_int",
+    "x": "-99.0107",
+    "y": "131.7703",
+    "items": []
+  },
+  {
+    "text": "cat_shack01_int",
+    "x": "-99.2256",
+    "y": "132.0441",
+    "items": []
+  },
+  {
+    "text": "che_barn_int",
+    "x": "-36.3796",
+    "y": "104.8475",
+    "items": []
+  },
+  {
+    "text": "che_cabin1",
+    "x": "-36.7400",
+    "y": "105.1124",
+    "items": []
+  },
+  {
+    "text": "che_shack1_int",
+    "x": "-36.6432",
+    "y": "104.7237",
+    "items": []
+  },
+  {
+    "text": "civ_cellar_int",
+    "x": "-59.0809",
+    "y": "149.2616",
+    "items": [
+      [3, "rifle_express"],
+      [1, "revolver_express"]
+    ]
+  },
+  {
+    "text": "col_barn_int",
+    "x": "-26.3495",
+    "y": "90.4708",
+    "items": []
+  },
+  {
+    "text": "col_bunkhouse_int",
+    "x": "-25.9299",
+    "y": "90.1767",
+    "items": []
+  },
+  {
+    "text": "col_cabin_int",
+    "x": "-25.7387",
+    "y": "90.2640",
+    "items": []
+  },
+  {
+    "text": "col_school_int",
+    "x": "-25.7341",
+    "y": "90.7786",
+    "items": []
+  },
+  {
+    "text": "com_muleshed_int",
+    "x": "-70.4276",
+    "y": "130.5011",
+    "items": [
+      null
+    ]
+  },
+  {
+    "text": "cor_factoryb_int",
+    "x": "-53.0399",
+    "y": "118.7476",
+    "items": []
+  },
+  {
+    "text": "cro_house_int",
+    "x": "-55.9985",
+    "y": "128.6479",
+    "items": []
+  },
+  {
+    "text": "dai_farmhouse01_int",
+    "x": "-77.1484",
+    "y": "132.5780",
+    "items": [
+      [1, "carrot"],
+      [1, "crackers"],
+      [1, "ground_coffee"],
+      [1, "canned_vegetable"],
+      [1, "kentucky_bourbon"],
+      [1, "jewelry"],
+      [2, "gun_oil"],
+      [1, "potent_bitters"],
+      [1, "opened_health_cure"],
+      [1, "bitters"],
+      [1, "hair_pomade"],
+      [2, "chewing_tobacco"]
+    ]
+  },
+  {
+    "text": "din_barn_int",
+    "x": "-48.2780",
+    "y": "114.3028",
+    "items": []
+  },
+  {
+    "text": "din_house_int",
+    "x": "-48.2890",
+    "y": "114.7466",
+    "items": []
+  },
+  {
+    "text": "dis_1rmchurch_int",
+    "x": "-75.0654",
+    "y": "148.7973",
+    "items": [
+      null
+    ]
+  },
+  {
+    "text": "dis_grz_preskull_int",
+    "x": "-36.9826",
+    "y": "116.3490",
+    "items": []
+  },
+  {
+    "text": "dis_grz_statue_int",
+    "x": "-33.7268",
+    "y": "123.8233",
+    "items": []
+  },
+  {
+    "text": "dis_stonehenge_int",
+    "x": "-37.2988",
+    "y": "148.2414",
+    "items": []
+  },
+  {
+    "text": "dis_tradepost_int",
+    "x": "-69.9994",
+    "y": "114.2603",
+    "items": []
+  },
+  {
+    "text": "dov_lab_int",
+    "x": "-28.0905",
+    "y": "150.2788",
+    "items": []
+  },
+  {
+    "text": "dow_barn_int",
+    "x": "-58.3475",
+    "y": "97.9233",
+    "items": []
+  },
+  {
+    "text": "dow_house_int",
+    "x": "-58.0931",
+    "y": "98.6037",
+    "items": []
+  },
+  {
+    "text": "eme_barn_int",
+    "x": "-59.3463",
+    "y": "133.1795",
+    "items": []
+  },
+  {
+    "text": "eme_depot_int",
+    "x": "-56.7173",
+    "y": "134.9184",
+    "items": []
+  },
+  {
+    "text": "eme_genstore_int",
+    "x": "-57.7265",
+    "y": "133.3385",
+    "items": []
+  },
+  {
+    "text": "eme_saloon_int",
+    "x": "-57.8041",
+    "y": "133.7732",
+    "items": []
+  },
+  {
+    "text": "gap_cartstop_int",
+    "x": "-114.2033",
+    "y": "17.4240",
+    "items": []
+  },
+  {
+    "text": "gap_mine_int",
+    "x": "-112.3490",
+    "y": "18.5071",
+    "items": []
+  },
+  {
+    "text": "grh_house_int",
+    "x": "-69.6867",
+    "y": "110.3363",
+    "items": []
+  },
+  {
+    "text": "gri_g1_shack_int",
+    "x": "-37.3280",
+    "y": "95.4216",
+    "items": []
+  },
+  {
+    "text": "gri_g2_shack_int",
+    "x": "-30.0793",
+    "y": "80.8364",
+    "items": []
+  },
+  {
+    "text": "han_barn_int",
+    "x": "-52.2103",
+    "y": "76.8540",
+    "items": []
+  },
+  {
+    "text": "han_house_int",
+    "x": "-52.4339",
+    "y": "77.4903",
+    "items": []
+  },
+  {
+    "text": "hea_tunnel_01",
+    "x": "-52.4388",
+    "y": "122.6135",
+    "items": []
+  },
+  {
+    "text": "hea_tunnel_02",
+    "x": "-52.6216",
+    "y": "121.8032",
+    "items": []
+  },
+  {
+    "text": "hrs_02_shop01_int",
+    "x": "-51.2415",
+    "y": "157.3188",
+    "items": []
+  },
+  {
+    "text": "j_10p_tunnel_1a_int",
+    "x": "-36.6343",
+    "y": "112.8726",
+    "items": []
+  },
+  {
+    "text": "j_14_cave01_int",
+    "x": "-36.2968",
+    "y": "148.8144",
+    "items": []
+  },
+  {
+    "text": "j_14_tunnel01_int",
+    "x": "-34.2751",
+    "y": "144.3407",
+    "items": []
+  },
+  {
+    "text": "jum_horseshop_int",
+    "x": "-72.2912",
+    "y": "83.0347",
+    "items": []
+  },
+  {
+    "text": "l_07_cave_int",
+    "x": "-52.1721",
+    "y": "87.7290",
+    "items": []
+  },
+  {
+    "text": "l_08_train_tunnel2_int",
+    "x": "-52.5672",
+    "y": "96.5734",
+    "items": []
+  },
+  {
+    "text": "l_14_cave",
+    "x": "-46.8525",
+    "y": "146.9494",
+    "items": []
+  },
+  {
+    "text": "lak_altar_int",
+    "x": "-75.3089",
+    "y": "146.2963",
+    "items": [
+      null
+    ]
+  },
+  {
+    "text": "lak_dockhouse_int",
+    "x": "-75.5506",
+    "y": "145.9146",
+    "items": [
+      [1, "canned_fish"],
+      [1, "gun_oil"],
+      [1, "opened_miracle_tonic"],
+      [1, "crackers"],
+      [1, "canned_fruit"],
+      [1, "cocaine_gum"]
+    ]
+  },
+  {
+    "text": "lak_hideout_int",
+    "x": "-75.8138",
+    "y": "146.2786",
+    "items": [
+      [1, "gin"],
+      [1, "gun_oil"],
+      [1, "potent_health_tonic"],
+      [1, "jewelry"],
+      [1, "potent_miracle_tonic"],
+      [1, "cig"],
+      [1, "canned_vegatables"],
+      [1, "canned_fish"]
+    ]
+  },
+  {
+    "text": "lak_houseruined_int",
+    "x": "-75.4238",
+    "y": "146.3868",
+    "items": [
+      [1, "salted_offal"],
+      [1, "assorted_biscuits"],
+      [1, "canned_fish"],
+      [1, "kentucky_bourbon"]
+    ]
+  },
+  {
+    "text": "lak_loveshack_int",
+    "x": "-75.7327",
+    "y": "146.4914",
+    "items": [
+      [1, "moonshine"]
+    ]
+  },
+  {
+    "text": "lar_house_int",
+    "x": "-59.5394",
+    "y": "125.2930",
+    "items": []
+  },
+  {
+    "text": "ldj_shack01_int",
+    "x": "-114.9155",
+    "y": "58.4930",
+    "items": []
+  },
+  {
+    "text": "lnn_lonnie_shack_int",
+    "x": "-69.2314",
+    "y": "136.4747",
+    "items": [
+      [1, "cheese"],
+      [1, "salted_meat"],
+      [1, "kentucky_bourbon"],
+      [1, "gin"],
+      [1, "guarma_rum"],
+      [1, "moonshine"],
+      [2, "revolver_regular"]
+    ]
+  },
+  {
+    "text": "lof_outpost_int",
+    "x": "-33.4038",
+    "y": "141.3369",
+    "items": []
+  },
+  {
+    "text": "lon_mule_int",
+    "x": "-75.1344",
+    "y": "97.9483",
+    "items": []
+  },
+  {
+    "text": "luc_serial_house_int",
+    "x": "-55.3976",
+    "y": "101.7583",
+    "items": []
+  },
+  {
+    "text": "m05_bearcave_main",
+    "x": "-62.1805",
+    "y": "78.4133",
+    "items": []
+  },
+  {
+    "text": "m05_mine_int",
+    "x": "-61.9205",
+    "y": "74.9203",
+    "items": []
+  },
+  {
+    "text": "mac_house01_int",
+    "x": "-65.8560",
+    "y": "146.0066",
+    "items": [
+      [4, "canned_vegetables"],
+      [2, "canned_fruit"],
+      [1, "ground_coffee"],
+      [1, "cheese"],
+      [1, "premium_cig"]
+    ]
+  },
+  {
+    "text": "maco_shack01_int",
+    "x": "-75.0541",
+    "y": "140.4390",
+    "items": [
+      null
+    ]
+  },
+  {
+    "text": "man_cabin01_int",
+    "x": "-89.5013",
+    "y": "80.5677",
+    "items": []
+  },
+  {
+    "text": "met_house01_int",
+    "x": "-32.5621",
+    "y": "149.7222",
+    "items": []
+  },
+  {
+    "text": "mfr_blacksmith01_int",
+    "x": "-100.5537",
+    "y": "74.0666",
+    "items": []
+  },
+  {
+    "text": "mfr_cottage01_int",
+    "x": "-100.7366",
+    "y": "74.5426",
+    "items": []
+  },
+  {
+    "text": "mic_hideout_int",
+    "x": "-44.2014",
+    "y": "88.1324",
+    "items": []
+  },
+  {
+    "text": "mil_mine_cave_int1",
+    "x": "-45.4050",
+    "y": "89.2365",
+    "items": []
+  },
+  {
+    "text": "mil_mine_cave_int2",
+    "x": "-45.1258",
+    "y": "88.9300",
+    "items": []
+  },
+  {
+    "text": "mil_mine_cave_int3",
+    "x": "-45.0035",
+    "y": "89.2633",
+    "items": []
+  },
+  {
+    "text": "mil_mine_cave_int4",
+    "x": "-45.2523",
+    "y": "89.6557",
+    "items": []
+  },
+  {
+    "text": "mil_shed_int",
+    "x": "-46.0067",
+    "y": "89.3232",
+    "items": []
+  },
+  {
+    "text": "new_art_int",
+    "x": "-82.2269",
+    "y": "153.1809",
+    "items": []
+  },
+  {
+    "text": "new_art_res",
+    "x": "-82.3681",
+    "y": "153.8285",
+    "items": []
+  },
+  {
+    "text": "new_barber_int",
+    "x": "-81.9163",
+    "y": "152.5132",
+    "items": []
+  },
+  {
+    "text": "new_carriagehouse_int",
+    "x": "-86.1124",
+    "y": "150.2333",
+    "items": []
+  },
+  {
+    "text": "new_com_bank_int",
+    "x": "-83.6761",
+    "y": "152.3379",
+    "items": []
+  },
+  {
+    "text": "new_com_tinycs_int",
+    "x": "-83.3326",
+    "y": "152.8648",
+    "items": []
+  },
+  {
+    "text": "new_exotic_int",
+    "x": "-79.2708",
+    "y": "151.4828",
+    "items": []
+  },
+  {
+    "text": "new_frn_03_alley_int",
+    "x": "-82.0542",
+    "y": "153.1895",
+    "items": []
+  },
+  {
+    "text": "new_gamble_int",
+    "x": "-83.5932",
+    "y": "153.4759",
+    "items": []
+  },
+  {
+    "text": "new_gang01_int",
+    "x": "-99.2637",
+    "y": "90.2516",
+    "items": []
+  },
+  {
+    "text": "new_grocery_int",
+    "x": "-84.0366",
+    "y": "155.1786",
+    "items": []
+  },
+  {
+    "text": "new_gunshop_int",
+    "x": "-83.5612",
+    "y": "153.4307",
+    "items": []
+  },
+  {
+    "text": "new_hotel_3rd_floor_int",
+    "x": "-84.4045",
+    "y": "154.1371",
+    "items": []
+  },
+  {
+    "text": "new_magic_es_int",
+    "x": "-84.6302",
+    "y": "153.1521",
+    "items": []
+  },
+  {
+    "text": "new_magic_int",
+    "x": "-84.6302",
+    "y": "153.1521",
+    "items": []
+  },
+  {
+    "text": "new_man_bronte",
+    "x": "-82.4753",
+    "y": "148.1193",
+    "items": []
+  },
+  {
+    "text": "new_man_gala_int",
+    "x": "-80.4248",
+    "y": "148.5896",
+    "items": []
+  },
+  {
+    "text": "new_pharmacy_int",
+    "x": "-82.7042",
+    "y": "153.5088",
+    "items": []
+  },
+  {
+    "text": "new_photo_int",
+    "x": "-80.9441",
+    "y": "153.7514",
+    "items": []
+  },
+  {
+    "text": "new_pie_tunnel_int",
+    "x": "-87.1201",
+    "y": "147.4264",
+    "items": []
+  },
+  {
+    "text": "new_police_int",
+    "x": "-83.9165",
+    "y": "150.1370",
+    "items": []
+  },
+  {
+    "text": "new_res_doctor_int",
+    "x": "-82.6989",
+    "y": "153.6078",
+    "items": []
+  },
+  {
+    "text": "new_saloon01_int_main",
+    "x": "-82.6476",
+    "y": "152.1869",
+    "items": []
+  },
+  {
+    "text": "new_saloon02_int",
+    "x": "-81.7478",
+    "y": "154.7458",
+    "items": []
+  },
+  {
+    "text": "new_shady_shop_int",
+    "x": "-82.2244",
+    "y": "155.6506",
+    "items": []
+  },
+  {
+    "text": "new_stairwell01_int",
+    "x": "-82.0181",
+    "y": "152.8674",
+    "items": []
+  },
+  {
+    "text": "new_tailor01_int_main",
+    "x": "-81.6731",
+    "y": "150.9239",
+    "items": []
+  },
+  {
+    "text": "new_theater_int",
+    "x": "-83.7447",
+    "y": "150.8209",
+    "items": []
+  },
+  {
+    "text": "new_traindepot_int",
+    "x": "-86.2439",
+    "y": "148.0464",
+    "items": []
+  },
+  {
+    "text": "new_trolleydepot",
+    "x": "-85.3194",
+    "y": "153.8265",
+    "items": []
+  },
+  {
+    "text": "old_jailsmth_int",
+    "x": "-40.7112",
+    "y": "116.6350",
+    "items": []
+  },
+  {
+    "text": "old_main_int",
+    "x": "-40.2148",
+    "y": "116.5653",
+    "items": []
+  },
+  {
+    "text": "old_stable_int",
+    "x": "-40.2181",
+    "y": "116.8345",
+    "items": []
+  },
+  {
+    "text": "old_storage_int",
+    "x": "-40.4489",
+    "y": "116.9612",
+    "items": []
+  },
+  {
+    "text": "old_tower02_int",
+    "x": "-40.7149",
+    "y": "116.9843",
+    "items": []
+  },
+  {
+    "text": "old_tower03_int",
+    "x": "-40.1430",
+    "y": "116.2779",
+    "items": []
+  },
+  {
+    "text": "old_tower04_int",
+    "x": "-40.0577",
+    "y": "116.9112",
+    "items": []
+  },
+  {
+    "text": "old_tower1_int",
+    "x": "-40.9439",
+    "y": "116.6779",
+    "items": []
+  },
+  {
+    "text": "ora_house_01_int",
+    "x": "-76.8175",
+    "y": "143.3971",
+    "items": [
+      [1, "premium_cig"],
+      [1, "fine_brandy"],
+      [2, "jewelry"],
+      [1, "potent_miracle_tonic"]
+    ]
+  },
+  {
+    "text": "pai_barn_int",
+    "x": "-64.6028",
+    "y": "101.5071",
+    "items": []
+  },
+  {
+    "text": "pai_house_int",
+    "x": "-64.0045",
+    "y": "101.7924",
+    "items": []
+  },
+  {
+    "text": "pho_houseboat_int",
+    "x": "-68.7262",
+    "y": "147.1496",
+    "items": [
+      [1, "premium_cig"]
+    ]
+  },
+  {
+    "text": "ple_house01_int",
+    "x": "-101.1149",
+    "y": "43.4600",
+    "items": []
+  },
+  {
+    "text": "privatearmoured_int",
+    "x": "-43.1609",
+    "y": "105.1692",
+    "items": []
+  },
+  {
+    "text": "pro_barn_int",
+    "x": "-57.3925",
+    "y": "71.7196",
+    "items": []
+  },
+  {
+    "text": "pro_mansion_int",
+    "x": "-58.1664",
+    "y": "71.3671",
+    "items": []
+  },
+  {
+    "text": "pro_worker_house_int",
+    "x": "-56.4999",
+    "y": "71.0010",
+    "items": []
+  },
+  {
+    "text": "pro_workshop_int",
+    "x": "-57.2540",
+    "y": "71.0340",
+    "items": []
+  },
+  {
+    "text": "qua_shack01_int",
+    "x": "-93.6988",
+    "y": "92.6617",
+    "items": []
+  },
+  {
+    "text": "qua_shack02_int",
+    "x": "-93.7378",
+    "y": "93.2069",
+    "items": []
+  },
+  {
+    "text": "rad_house_01_int",
+    "x": "-83.7994",
+    "y": "128.5866",
+    "items": []
+  },
+  {
+    "text": "rdl_house_01_int",
+    "x": "-117.4526",
+    "y": "57.1953",
+    "items": []
+  },
+  {
+    "text": "rho_bank_int",
+    "x": "-83.8309",
+    "y": "131.3032",
+    "items": []
+  },
+  {
+    "text": "rho_fenceshop_int",
+    "x": "-81.3507",
+    "y": "131.7328",
+    "items": []
+  },
+  {
+    "text": "rho_genstore_int",
+    "x": "-83.6497",
+    "y": "131.8844",
+    "items": []
+  },
+  {
+    "text": "rho_graysecret_int",
+    "x": "-82.9759",
+    "y": "132.3543",
+    "items": []
+  },
+  {
+    "text": "rho_gunsmith_int",
+    "x": "-84.1164",
+    "y": "131.8592",
+    "items": []
+  },
+  {
+    "text": "rho_saloon_int",
+    "x": "-84.9380",
+    "y": "132.1330",
+    "items": []
+  },
+  {
+    "text": "rho_sheriff_int",
+    "x": "-83.7813",
+    "y": "132.4039",
+    "items": []
+  },
+  {
+    "text": "rho_slum_player_int",
+    "x": "-81.1878",
+    "y": "131.4112",
+    "items": []
+  },
+  {
+    "text": "rho_train_int",
+    "x": "-83.6876",
+    "y": "130.4608",
+    "items": []
+  },
+  {
+    "text": "rig_station_int",
+    "x": "-72.5232",
+    "y": "94.2895",
+    "items": []
+  },
+  {
+    "text": "roc_house_int",
+    "x": "-29.5869",
+    "y": "157.7305",
+    "items": []
+  },
+  {
+    "text": "scr_shack_int",
+    "x": "-121.7242",
+    "y": "20.4596",
+    "items": []
+  },
+  {
+    "text": "sha_mansion_int",
+    "x": "-92.5207",
+    "y": "140.7444",
+    "items": []
+  },
+  {
+    "text": "shack_ai_int",
+    "x": "-35.9774",
+    "y": "158.3028",
+    "items": []
+  },
+  {
+    "text": "shack_b_a_int",
+    "x": "-59.6689",
+    "y": "87.2074",
+    "items": []
+  },
+  {
+    "text": "shack_b_b_int",
+    "x": "-88.0993",
+    "y": "133.8881",
+    "items": []
+  },
+  {
+    "text": "shack_b_c_int",
+    "x": "-56.4068",
+    "y": "139.0019",
+    "items": []
+  },
+  {
+    "text": "shack_bv_int",
+    "x": "-50.5343",
+    "y": "73.0989",
+    "items": []
+  },
+  {
+    "text": "shack_cwb_int",
+    "x": "-45.0897",
+    "y": "142.0818",
+    "items": []
+  },
+  {
+    "text": "shack_dr_int",
+    "x": "-40.4420",
+    "y": "108.8642",
+    "items": []
+  },
+  {
+    "text": "shack_hb_int",
+    "x": "-56.2515",
+    "y": "74.4944",
+    "items": []
+  },
+  {
+    "text": "shack_hf_int",
+    "x": "-58.9118",
+    "y": "140.6113",
+    "items": []
+  },
+  {
+    "text": "shack_it_01_int",
+    "x": "-37.4130",
+    "y": "155.3257",
+    "items": []
+  },
+  {
+    "text": "shack_it_02_int",
+    "x": "-37.2650",
+    "y": "152.0517",
+    "items": []
+  },
+  {
+    "text": "shack_lt_int",
+    "x": "-78.8031",
+    "y": "128.9068",
+    "items": []
+  },
+  {
+    "text": "shack_pl_int",
+    "x": "-52.7753",
+    "y": "150.7784",
+    "items": []
+  },
+  {
+    "text": "shack_rarefish_int",
+    "x": "-73.9522",
+    "y": "116.6035",
+    "items": []
+  },
+  {
+    "text": "shack_rc_int",
+    "x": "-67.4950",
+    "y": "77.5336",
+    "items": []
+  },
+  {
+    "text": "shack_sc_int",
+    "x": "-47.3906",
+    "y": "100.5780",
+    "items": []
+  },
+  {
+    "text": "shack_sk2_int",
+    "x": "-79.2055",
+    "y": "137.8004",
+    "items": []
+  },
+  {
+    "text": "shack_sp_int",
+    "x": "-95.9210",
+    "y": "132.8571",
+    "items": []
+  },
+  {
+    "text": "shack_sw_int",
+    "x": "-76.9882",
+    "y": "148.0996",
+    "items": [
+      [1, "pistol_regular"],
+      [1, "shotgun_regular"],
+      [1, "miracle_tonic"],
+      [1, "canned_vegetable"],
+      [1, "crackers"]
+    ]
+  },
+  {
+    "text": "shack_urr_int",
+    "x": "-65.1712",
+    "y": "129.6959",
+    "items": [
+      [2, "canned_vegetable"],
+      [1, "premium_cig"]
+    ]
+  },
+  {
+    "text": "sil_house_int",
+    "x": "-100.8399",
+    "y": "25.0770",
+    "items": []
+  },
+  {
+    "text": "six_cabin_int",
+    "x": "-44.3766",
+    "y": "110.3225",
+    "items": []
+  },
+  {
+    "text": "sod_house_int",
+    "x": "-54.5124",
+    "y": "140.2764",
+    "items": []
+  },
+  {
+    "text": "sol_basement_int",
+    "x": "-120.5589",
+    "y": "27.5150",
+    "items": []
+  },
+  {
+    "text": "str_doctor_int",
+    "x": "-70.3027",
+    "y": "83.2667",
+    "items": []
+  },
+  {
+    "text": "str_dressingroom_int",
+    "x": "-69.7196",
+    "y": "83.4430",
+    "items": []
+  },
+  {
+    "text": "str_frt_int",
+    "x": "-69.5419",
+    "y": "83.8877",
+    "items": []
+  },
+  {
+    "text": "str_genst_int",
+    "x": "-69.5986",
+    "y": "83.4705",
+    "items": []
+  },
+  {
+    "text": "str_jailpost_int",
+    "x": "-69.0451",
+    "y": "83.1735",
+    "items": []
+  },
+  {
+    "text": "str_mayorshouse_int",
+    "x": "-69.1559",
+    "y": "83.5813",
+    "items": []
+  },
+  {
+    "text": "str_nemi_int",
+    "x": "-70.3048",
+    "y": "83.8468",
+    "items": []
+  },
+  {
+    "text": "str_res02_int_main",
+    "x": "-69.7848",
+    "y": "83.6255",
+    "items": []
+  },
+  {
+    "text": "str_whore_int",
+    "x": "-69.3446",
+    "y": "83.1091",
+    "items": []
+  },
+  {
+    "text": "swa_depot01_int",
+    "x": "-69.1813",
+    "y": "106.1291",
+    "items": []
+  },
+  {
+    "text": "swc_shack01_int",
+    "x": "-100.7507",
+    "y": "83.1762",
+    "items": []
+  },
+  {
+    "text": "tan_house_int",
+    "x": "-88.2777",
+    "y": "74.3834",
+    "items": []
+  },
+  {
+    "text": "tax_house_int",
+    "x": "-68.8542",
+    "y": "85.1953",
+    "items": []
+  },
+  {
+    "text": "the_ticketoffice_int",
+    "x": "-99.2671",
+    "y": "89.5564",
+    "items": []
+  },
+  {
+    "text": "tum_barn_int",
+    "x": "-110.8811",
+    "y": "25.5999",
+    "items": []
+  },
+  {
+    "text": "tum_genstore_int",
+    "x": "-109.2001",
+    "y": "26.0944",
+    "items": []
+  },
+  {
+    "text": "tum_gunsmith_int",
+    "x": "-109.6414",
+    "y": "25.7788",
+    "items": []
+  },
+  {
+    "text": "tum_jail_int",
+    "x": "-109.0537",
+    "y": "25.4380",
+    "items": []
+  },
+  {
+    "text": "tum_roomnbath_int",
+    "x": "-109.7426",
+    "y": "25.6600",
+    "items": []
+  },
+  {
+    "text": "tum_saloon_int",
+    "x": "-108.8152",
+    "y": "25.7060",
+    "items": []
+  },
+  {
+    "text": "twi_shack01_int",
+    "x": "-96.5829",
+    "y": "49.8578",
+    "items": []
+  },
+  {
+    "text": "val_bank_int_main",
+    "x": "-51.6047",
+    "y": "106.5338",
+    "items": []
+  },
+  {
+    "text": "val_carriagehouse_int",
+    "x": "-52.8985",
+    "y": "107.0455",
+    "items": []
+  },
+  {
+    "text": "val_doctor_int",
+    "x": "-51.0297",
+    "y": "106.8476",
+    "items": []
+  },
+  {
+    "text": "val_genstore",
+    "x": "-51.1476",
+    "y": "106.2681",
+    "items": []
+  },
+  {
+    "text": "val_gunsmith_int_main",
+    "x": "-51.4495",
+    "y": "106.9493",
+    "items": []
+  },
+  {
+    "text": "val_hotel_int_main",
+    "x": "-51.6873",
+    "y": "106.2572",
+    "items": []
+  },
+  {
+    "text": "val_jail_int",
+    "x": "-51.0586",
+    "y": "107.0153",
+    "items": []
+  },
+  {
+    "text": "val_magiclantern_int",
+    "x": "-52.7927",
+    "y": "105.8737",
+    "items": []
+  },
+  {
+    "text": "val_res_01_f_int",
+    "x": "-52.1647",
+    "y": "107.2503",
+    "items": []
+  },
+  {
+    "text": "val_res_a_int",
+    "x": "-50.1482",
+    "y": "106.7987",
+    "items": []
+  },
+  {
+    "text": "val_saloon_int",
+    "x": "-51.0434",
+    "y": "106.4889",
+    "items": []
+  },
+  {
+    "text": "val_saloon2_int",
+    "x": "-51.6417",
+    "y": "107.5405",
+    "items": []
+  },
+  {
+    "text": "val_stable_int",
+    "x": "-51.3912",
+    "y": "105.5831",
+    "items": []
+  },
+  {
+    "text": "val_trainstn_int",
+    "x": "-53.8675",
+    "y": "108.4836",
+    "items": []
+  },
+  {
+    "text": "van_depot_int",
+    "x": "-54.7050",
+    "y": "157.5947",
+    "items": []
+  },
+  {
+    "text": "van_exoticgoods_int",
+    "x": "-54.8746",
+    "y": "158.2429",
+    "items": []
+  },
+  {
+    "text": "van_farmhse01_int",
+    "x": "-55.3009",
+    "y": "154.4899",
+    "items": [
+      [1, "potent_health_cure"],
+      [1, "potent_snake_oil"],
+      [1, "pocket_watch"],
+      [1, "???"],
+      [1, "???"]
+    ]
+  },
+  {
+    "text": "van_fenceshop_int",
+    "x": "-54.8990",
+    "y": "156.8296",
+    "items": []
+  },
+  {
+    "text": "van_hobo_int",
+    "x": "-55.8574",
+    "y": "157.4859",
+    "items": []
+  },
+  {
+    "text": "van_hotel_int",
+    "x": "-55.2087",
+    "y": "157.0525",
+    "items": []
+  },
+  {
+    "text": "van_lighthouse_int",
+    "x": "-56.8860",
+    "y": "158.4218",
+    "items": []
+  },
+  {
+    "text": "van_mansion_int",
+    "x": "-59.3347",
+    "y": "155.1333",
+    "items": [
+      [1, "premium_cig"],
+      [1, "crackers"],
+      [1, "guarma_rum"],
+      [1, "cocain_gum"],
+      [1, "ground_coffee"],
+      [1, "canned_vegetable"]
+    ]
+  },
+  {
+    "text": "van_roomnbath_int",
+    "x": "-54.6977",
+    "y": "157.5940",
+    "items": []
+  },
+  {
+    "text": "van_saloon_int",
+    "x": "-55.4691",
+    "y": "157.0379",
+    "items": []
+  },
+  {
+    "text": "ven_shack01_int",
+    "x": "-110.3276",
+    "y": "56.1398",
+    "items": []
+  },
+  {
+    "text": "vet_house_int",
+    "x": "-40.1311",
+    "y": "137.6998",
+    "items": []
+  },
+  {
+    "text": "wal_trainstation_int",
+    "x": "-57.4586",
+    "y": "91.0561",
+    "items": []
+  },
+  {
+    "text": "wat_cabin_int",
+    "x": "-53.3726",
+    "y": "83.0694",
+    "items": []
+  }
+]

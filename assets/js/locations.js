@@ -76,8 +76,11 @@ class Location {
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this.key}`, 'false');
     }
+    MapBase.updateTippy('location');
   }
+
   get onMap() {
-    return JSON.parse(localStorage.getItem(`rdo:${this.key}`)) || (JSON.parse(localStorage.getItem(`rdo:${this.key}`)) == null && !this.disabled);
+    const value = JSON.parse(localStorage.getItem(`rdo:${this.key}`));
+    return value || (value == null && !this.disabled);
   }
 }

@@ -84,6 +84,7 @@ class Shop {
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }
+    MapBase.updateTippy('shops');
   }
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
