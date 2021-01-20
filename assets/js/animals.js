@@ -4,12 +4,12 @@ class Animal {
 
     this.context = $(`.menu-hidden[data-type=${type}]`);
 
-    this.element = $(`<div class="animal-wrapper" data-help="item" data-type="${this.key}">`)
+    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`menu.cmpndm.${this.key}`))
       .on('click', () => this.isEnabled = !this.isEnabled)
-      .append($(`<img src="./assets/images/icons/game/animals/${this.key}.png" class="animal-icon">`))
-      .append($('<span class="animal-text disabled">')
-        .append($('<p class="animal">').attr('data-text', `menu.cmpndm.${this.key}`)))
+      .append($(`<img class="collectible-icon" src="./assets/images/icons/game/animals/${this.key}.png">`))
+      .append($('<span class="collectible-text disabled">')
+        .append($('<p class="collectible">').attr('data-text', `menu.cmpndm.${this.key}`)))
       .translate();
 
     this.markers = [];
@@ -49,10 +49,7 @@ class Animal {
             <span class="marker-content-wrapper">
               <p>${popupContent}</p>
             </span>
-            ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}`, {
-              minWidth: 300,
-              maxWidth: 400,
-            });
+            ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}`, { minWidth: 300, maxWidth: 400 });
           self.data.push(tempMarker._latlng);
           self.markers.push(tempMarker);
         }, function () {
@@ -64,7 +61,10 @@ class Animal {
   }
 
   set isEnabled(state) {
-    $('.animal-text').addClass('disabled');
+    $('[data-type="animals"] .collectible-text').addClass('disabled');
+    $('[data-type="birds"] .collectible-text').addClass('disabled');
+    $('[data-type="fish"] .collectible-text').addClass('disabled');
+
     if (state) {
       AnimalCollection.spawnLayer.clearLayers();
       AnimalCollection.heatmapLayer.setData({ data: this.data });

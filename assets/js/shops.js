@@ -23,10 +23,11 @@ class Shop {
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`map.shops.${this.key}.name`))
-      .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
-      .append($(`<img src="./assets/images/icons/${this.key}.png" class="collectible-icon">`))
-      .append($('<p class="collectible">').attr('data-text', `map.shops.${this.key}.name`))
+      .append($(`<img class="collectible-icon" src="./assets/images/icons/${this.key}.png">`))
+      .append($('<span class="collectible-text">')
+        .toggleClass('disabled', !this.onMap)
+        .append($('<p class="collectible">').attr('data-text', `map.shops.${this.key}.name`)))
       .translate();
 
     this.element.appendTo(Shop.context);
@@ -75,12 +76,12 @@ class Shop {
   set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.removeClass('disabled');
+      this.element.children('span').removeClass('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.addClass('disabled');
+      this.element.children('span').addClass('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
     }

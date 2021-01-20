@@ -44,23 +44,38 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1501" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1502" />
   <link rel="stylesheet" href="assets/css/tippy.css" />
 
   <script>
-    var nocache = 1501;
+    var nocache = 1502;
   </script>
 </head>
 
 <body>
   <div class="side-menu">
-    <h2 id="main-header">
-      <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
-      <div id="main-header-center">
-        <span data-text="menu.rdo_map">RDO Map</span>
+    <div id="top-sticky">
+      <h2 id="main-header">
+        <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
+        <div id="main-header-center">
+          <span class="menu-option-text" data-text="menu.rdo_map">RDO Map</span>
+        </div>
+        <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
+      </h2>
+      <div class="scroller">
+        <div class="scroller-grow">
+          <img src="./assets/images/scroller/scroller_left_top.png" alt="">
+        </div>
+        <div class="scroller-stat">
+          <img src="./assets/images/scroller/scroller_arrow_top.png" alt="" class="scroller-arrow-tp" style="display: none;">
+          <img src="./assets/images/scroller/scroller_line_top.png" alt="" class="scroller-line-tp">
+        </div>
+        <div class="scroller-grow">
+          <img src="./assets/images/scroller/scroller_right_top.png" alt="">
+        </div>
       </div>
-      <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
-    </h2>
+    </div>
+
     <div class="links-container">
       <a data-text="menu.hide_all" class="menu-hide-all" data-help="hide_all" href="javascript:void(0);">Hide all</a>
       <a data-text="menu.show_all" class="menu-show-all" data-help="show_all" href="javascript:void(0);">Show all</a>
@@ -70,7 +85,7 @@
       <div class="menu-option clickable" data-type="boats" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/boats.png" />
-          <span data-text="menu.boats">Boats</span>
+          <span class="menu-option-text" data-text="menu.boats">Boats</span>
         </span>
       </div>
     </div>
@@ -78,7 +93,7 @@
       <div class="menu-option clickable" data-type="trains" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/trains.png" />
-          <span data-text="menu.trains">Trains</span>
+          <span class="menu-option-text" data-text="menu.trains">Trains</span>
         </span>
       </div>
     </div>
@@ -86,7 +101,7 @@
       <div class="menu-option clickable" data-type="campfires" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/campfires.png" />
-          <span data-text="menu.campfires">Campfires</span>
+          <span class="menu-option-text" data-text="menu.campfires">Campfires</span>
         </span>
       </div>
     </div>
@@ -94,7 +109,7 @@
       <div class="menu-option clickable" data-type="hideouts" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/hideouts.png" />
-          <span data-text="menu.hideouts">Gang Hideouts</span>
+          <span class="menu-option-text" data-text="menu.hideouts">Gang Hideouts</span>
         </span>
       </div>
     </div>
@@ -102,7 +117,7 @@
       <div class="menu-option clickable" data-type="dynamic_bounties" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/dynamic_bounties.png" />
-          <span data-text="menu.dynamic_bounties">Dynamic Bounties</span>
+          <span class="menu-option-text" data-text="menu.dynamic_bounties">Dynamic Bounties</span>
         </span>
       </div>
     </div>
@@ -110,15 +125,15 @@
       <div class="menu-option submenu-only" data-type="camps" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/camps.png" />
-          <span data-text="menu.camps">Player Camps</span>
+          <span class="menu-option-text" data-text="menu.camps">Player Camps</span>
         </span>
         <div class="open-submenu"></div>
       </div>
       <div class="menu-hidden two-column" data-type="camps">
         <div class="collection-value">
-          <p data-text="menu.small_btn" class="camps-small-btn">Small</p>
-          <p data-text="menu.large_btn" class="camps-large-btn">Large</p>
-          <p data-text="menu.wilderness_btn" class="camps-wilderness-btn">Wilderness</p>
+          <a data-text="menu.small_btn" class="camps-small-btn" href="javascript:void(0);">Small</a>
+          <a data-text="menu.large_btn" class="camps-large-btn" href="javascript:void(0);">Large</a>
+          <a data-text="menu.wilderness_btn" class="camps-wilderness-btn" href="javascript:void(0);">Wilderness</a>
         </div>
       </div>
     </div>
@@ -126,14 +141,14 @@
       <div class="menu-option clickable" data-type="plants" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/plants.png" />
-          <span data-text="menu.plants">Plants</span>
+          <span class="menu-option-text" data-text="menu.plants">Plants</span>
         </span>
         <div class="open-submenu"></div>
       </div>
       <div class="menu-hidden two-column" data-type="plants">
         <div class="collection-value">
-          <p class="plants-hide-btn" data-text="menu.hide_all">Hide all</p>
-          <p class="plants-show-btn" data-text="menu.show_all">Show all</p>
+          <a class="plants-hide-btn" data-text="menu.hide_all" href="javascript:void(0);">Hide all</a>
+          <a class="plants-show-btn" data-text="menu.show_all" href="javascript:void(0);">Show all</a>
         </div>
       </div>
     </div>
@@ -141,14 +156,14 @@
       <div class="menu-option submenu-only" data-type="shops" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/fence.png" />
-          <span data-text="menu.shops">Shops</span>
+          <span class="menu-option-text" data-text="menu.shops">Shops</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden two-column" data-type="shops">
         <div class="collection-value">
-          <p data-text="menu.hide_all" class="shops-hide-btn">Hide all</p>
-          <p data-text="menu.show_all" class="shops-show-btn">Show all</p>
+          <a data-text="menu.hide_all" class="shops-hide-btn" href="javascript:void(0);">Hide all</a>
+          <a data-text="menu.show_all" class="shops-show-btn" href="javascript:void(0);">Show all</a>
         </div>
       </div>
     </div>
@@ -157,18 +172,22 @@
       <div class="menu-option submenu-only" data-type="fme" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/fme.png" />
-          <span data-text="menu.fme" style="color: #fdc607;">Free Roam events</span>
+          <span class="menu-option-text" data-text="menu.fme" style="color: #fdc607;">Free Roam events</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden" data-type="fme">
         <div class="collectible-wrapper" data-help="item" data-type="condor_egg">
-          <img src="./assets/images/icons/condor_egg.png" class="collectible-icon">
-          <p class="collectible" data-text="menu.condor_egg">Condor Egg</p>
+          <img class="collectible-icon" src="./assets/images/icons/condor_egg.png">
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.condor_egg">Condor Egg</p>
+          </span>
         </div>
         <div class="collectible-wrapper" data-help="item" data-type="salvage">
-          <img src="./assets/images/icons/salvage.png" class="collectible-icon">
-          <p class="collectible" data-text="menu.salvage">Salvage</p>
+          <img class="collectible-icon" src="./assets/images/icons/salvage.png">
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.salvage">Salvage</p>
+          </span>
         </div>
       </div>
     </div>
@@ -176,14 +195,14 @@
       <div class="menu-option submenu-only" data-type="gfh" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/gfh.png" />
-          <span data-text="menu.gfh">Missions</span>
+          <span class="menu-option-text" data-text="menu.gfh">Missions</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden two-column" data-type="gfh">
         <div class="collection-value">
-          <p data-text="menu.hide_all" class="gfh-hide-btn">Hide all</p>
-          <p data-text="menu.show_all" class="gfh-show-btn">Show all</p>
+          <a data-text="menu.hide_all" class="gfh-hide-btn" href="javascript:void(0);">Hide all</a>
+          <a data-text="menu.show_all" class="gfh-show-btn" href="javascript:void(0);">Show all</a>
         </div>
       </div>
     </div>
@@ -192,14 +211,14 @@
       <div class="menu-option submenu-only" data-type="encounters" data-help="item_category_submenu">
         <span>
           <img class="icon" src="./assets/images/icons/random_encounter.png">
-          <span data-text="menu.random_encounters">Random Encounters</span>
+          <span class="menu-option-text" data-text="menu.random_encounters">Random Encounters</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden two-column" data-type="encounters">
         <div class="collection-value">
-          <p data-text="menu.hide_all" class="encounters-hide-btn">Hide all</p>
-          <p data-text="menu.show_all" class="encounters-show-btn">Show all</p>
+          <a data-text="menu.hide_all" class="encounters-hide-btn" href="javascript:void(0);">Hide all</a>
+          <a data-text="menu.show_all" class="encounters-show-btn" href="javascript:void(0);">Show all</a>
         </div>
       </div>
     </div>
@@ -209,7 +228,7 @@
       <div class="menu-option submenu-only" data-type="legendary_animals" data-help="item_category_submenu">
         <span>
           <img class="icon" src="./assets/images/icons/legendary_animals.png">
-          <span data-text="menu.legendary_animals" style="color: #fdc607;">Legendary Animals</span>
+          <span class="menu-option-text" data-text="menu.legendary_animals" style="color: #fdc607;">Legendary Animals</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
@@ -224,7 +243,7 @@
       <div class="menu-option submenu-only" data-type="animals" data-help="item_category_submenu">
         <span>
           <img class="icon" src="./assets/images/icons/animals.png" />
-          <span data-text="menu.animals">Animals</span>
+          <span class="menu-option-text" data-text="menu.animals">Animals</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
@@ -235,7 +254,7 @@
       <div class="menu-option submenu-only" data-type="birds" data-help="item_category_submenu">
         <span>
           <img class="icon" src="./assets/images/icons/birds.png" />
-          <span data-text="menu.birds">Birds</span>
+          <span class="menu-option-text" data-text="menu.birds">Birds</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
@@ -246,7 +265,7 @@
       <div class="menu-option submenu-only" data-type="fish" data-help="item_category_submenu">
         <span>
           <img class="icon" src="./assets/images/icons/fish.png" />
-          <span data-text="menu.fish">Fish</span>
+          <span class="menu-option-text" data-text="menu.fish">Fish</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
@@ -264,20 +283,20 @@
     <div class="menu-option clickable" data-type="fasttravel" data-help="item_category">
       <span>
         <img class="icon" src="./assets/images/icons/fasttravel.png" />
-        <span data-text="menu.fast_travel">Fast Travel</span>
+        <span class="menu-option-text" data-text="menu.fast_travel">Fast Travel</span>
       </span>
     </div>
     <div class="menu-option clickable" data-type="user_pins" data-help="item_category">
       <span>
         <img class="icon" src="./assets/images/icons/pins.png" />
-        <span data-text="menu.user_pins">User Pins</span>
+        <span class="menu-option-text" data-text="menu.user_pins">User Pins</span>
       </span>
     </div>
     <div>
       <div class="menu-option clickable" data-type="treasure" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/treasure.png" />
-          <span data-text="menu.treasures">Treasures</span>
+          <span class="menu-option-text" data-text="menu.treasures">Treasures</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
@@ -292,7 +311,7 @@
       <div class="menu-option clickable" data-type="daily_locations" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/daily_locations.png" />
-          <span data-text="menu.daily_locations.name">Daily Challenge Locations</span>
+          <span class="menu-option-text" data-text="menu.daily_locations.name">Daily Challenge Locations</span>
         </span>
       </div>
     </div>
@@ -308,7 +327,7 @@
       <div class="menu-option clickable" data-type="sightseeing" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/sightseeing.png" />
-          <span data-text="menu.sightseeing">Sightseeing</span>
+          <span class="menu-option-text" data-text="menu.sightseeing">Sightseeing</span>
         </span>
       </div>
     </div>
@@ -316,7 +335,7 @@
       <div class="menu-option submenu-only" data-type="discoverables" data-help="item_category_submenu">
         <span>
           <img class="icon" src="./assets/images/icons/discoverable.png">
-          <span data-text="menu.discoverables">Iconography</span>
+          <span class="menu-option-text" data-text="menu.discoverables">Iconography</span>
         </span>
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
@@ -352,7 +371,7 @@
     </div>
     <div class="settings-container">
       <div class="explain-text">
-        <span data-text="menu.translate_body">Translations are made by the community for the community.</span>
+        <span class="menu-option-text" data-text="menu.translate_body">Translations are made by the community for the community.</span>
         <a data-text="menu.translate_link" href="https://crowdin.com/project/rdr2rdomap" target="_blank"
           rel="noopener noreferrer">Help us by translating on Crowdin.</a>
       </div>
@@ -757,8 +776,22 @@
       </div>
     </div>
 
-    <div id="help-container">
-      <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+    <div id="bottom-sticky">
+      <div class="scroller">
+        <div class="scroller-grow">
+          <img src="./assets/images/scroller/scroller_left_bottom.png" alt="">
+        </div>
+        <div class="scroller-stat">
+          <img src="./assets/images/scroller/scroller_arrow_bottom.png" alt="" class="scroller-arrow-bt">
+          <img src="./assets/images/scroller/scroller_line_bottom.png" alt="" class="scroller-line-bt" style="display: none;">
+        </div>
+        <div class="scroller-grow">
+          <img src="./assets/images/scroller/scroller_right_bottom.png" alt="">
+        </div>
+      </div>
+      <div id="help-container">
+        <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+      </div>
     </div>
   </div>
   <div class="menu-toggle">></div>
@@ -882,7 +915,7 @@
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1501"></script>
+  <script src="assets/js/loader.js?nocache=1502"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -894,29 +927,29 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1501"></script>
-  <script src="assets/js/settings.js?nocache=1501"></script>
-  <script src="assets/js/nazar.js?nocache=1501"></script>
-  <script src="assets/js/marker.js?nocache=1501"></script>
-  <script src="assets/js/treasures.js?nocache=1501"></script>
-  <script src="assets/js/legendary.js?nocache=1501"></script>
-  <script src="assets/js/encounters.js?nocache=1501"></script>
-  <script src="assets/js/locations.js?nocache=1501"></script>
-  <script src="assets/js/plants.js?nocache=1501"></script>
-  <script src="assets/js/camps.js?nocache=1501"></script>
-  <script src="assets/js/shops.js?nocache=1501"></script>
-  <script src="assets/js/gfh.js?nocache=1501"></script>
-  <script src="assets/js/events.js?nocache=1501"></script>
-  <script src="assets/js/animals.js?nocache=1501"></script>
-  <script src="assets/js/discoverables.js?nocache=1501"></script>
-  <script src="assets/js/overlays.js?nocache=1501"></script>
-  <script src="assets/js/pins.js?nocache=1501"></script>
-  <script src="assets/js/map.js?nocache=1501"></script>
-  <script src="assets/js/language.js?nocache=1501"></script>
-  <script src="assets/js/menu.js?nocache=1501"></script>
-  <script src="assets/js/dailies.js?nocache=1501"></script>
-  <script src="assets/js/scripts.js?nocache=1501"></script>
-  <script src="assets/js/fme.js?nocache=1501"></script>
+  <script src="assets/js/layers.js?nocache=1502"></script>
+  <script src="assets/js/settings.js?nocache=1502"></script>
+  <script src="assets/js/nazar.js?nocache=1502"></script>
+  <script src="assets/js/marker.js?nocache=1502"></script>
+  <script src="assets/js/treasures.js?nocache=1502"></script>
+  <script src="assets/js/legendary.js?nocache=1502"></script>
+  <script src="assets/js/encounters.js?nocache=1502"></script>
+  <script src="assets/js/locations.js?nocache=1502"></script>
+  <script src="assets/js/plants.js?nocache=1502"></script>
+  <script src="assets/js/camps.js?nocache=1502"></script>
+  <script src="assets/js/shops.js?nocache=1502"></script>
+  <script src="assets/js/gfh.js?nocache=1502"></script>
+  <script src="assets/js/events.js?nocache=1502"></script>
+  <script src="assets/js/animals.js?nocache=1502"></script>
+  <script src="assets/js/discoverables.js?nocache=1502"></script>
+  <script src="assets/js/overlays.js?nocache=1502"></script>
+  <script src="assets/js/pins.js?nocache=1502"></script>
+  <script src="assets/js/map.js?nocache=1502"></script>
+  <script src="assets/js/language.js?nocache=1502"></script>
+  <script src="assets/js/menu.js?nocache=1502"></script>
+  <script src="assets/js/dailies.js?nocache=1502"></script>
+  <script src="assets/js/scripts.js?nocache=1502"></script>
+  <script src="assets/js/fme.js?nocache=1502"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

@@ -176,6 +176,16 @@ $('#toggle-debug').on('click', function () {
   $('#debug-container').toggleClass('opened');
 });
 
+$('.side-menu').on('scroll', function () {
+  // These are not equality checks because of mobile weirdness.
+  const atTop = $(this).scrollTop() <= 0;
+  const atBottom = $(this).scrollTop() + $(document).height() >= $(this).prop("scrollHeight");
+  $('.scroller-line-tp').toggle(atTop);
+  $('.scroller-arrow-tp').toggle(!atTop);
+  $('.scroller-line-bt').toggle(atBottom);
+  $('.scroller-arrow-bt').toggle(!atBottom);
+});
+
 //TODO: re-implement this function
 $('#show-all-markers').on('change', function () {
   Settings.showAllMarkers = $('#show-all-markers').prop('checked');
