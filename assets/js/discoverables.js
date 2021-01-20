@@ -5,9 +5,6 @@ class Discoverable {
 
     return Loader.promises['discoverables'].consumeJson(data => {
       data.forEach(item => {
-        // TODO: Need to remove beta MP treasure iconography.
-        if (item.key === 'collectable_treasure_chest') return;
-
         this.locations.push(new Discoverable(item));
       });
 
