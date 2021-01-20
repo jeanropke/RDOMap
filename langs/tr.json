@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Single Player - Dinosaur Bones",
     "menu.discoverables.collectable_dreamcatcher": "Single Player - Dreamcatchers",
     "menu.discoverables.collectable_rock_carving": "Single Player - Rock Carvings",
-    "menu.discoverables.collectable_treasure_chest": "Single Player - Treasure Chests",
     "menu.discoverables.discoverable": "Discoverables",
     "menu.discoverables.grave": "Single Player - Graves",
     "menu.discoverables.sp_legendaries": "Single Player - Legendary Animals",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "Özelleştirme",
+    "menu.show_utilities": "Yardımcı ayarları göster",
+    "menu.show_customization": "Özelleştirme ayarlarını göster",
+    "menu.show_import_export": "İçe/Dışa aktarma ayarlarını göster.",
+    "menu.show_debug": "Onarım ayarlarını göster",
+    "help.show_utilities": "Araç ayarlarının menüde görünür olup olmayacağını belirler.",
+    "help.show_customization": "Özelleştirme ayarlarının menüde görünür olmasını açar/kapatır.",
+    "help.show_import_export": "İçe/dışa aktarma ayarlarının menüde görünür olmasını ayarlar.",
+    "help.show_debug": "Onarım ayarlarının menüde görünür olmasını ayarlar."
 }

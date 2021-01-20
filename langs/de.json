@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Einzelspieler - Dinosaurierknochen",
     "menu.discoverables.collectable_dreamcatcher": "Einzelspieler - Traumfänger",
     "menu.discoverables.collectable_rock_carving": "Single Player - Rock Carvings",
-    "menu.discoverables.collectable_treasure_chest": "Einzelspieler - Schatztruhen",
     "menu.discoverables.discoverable": "Discoverables",
     "menu.discoverables.grave": "Einzelspieler - Gräber",
     "menu.discoverables.sp_legendaries": "Einzelspieler - Legendäre Tiere",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "Anpassung",
+    "menu.show_utilities": "Grundeinstellungen anzeigen",
+    "menu.show_customization": "Anpassungsoptionen anzeigen",
+    "menu.show_import_export": "Import/Export-Einstellungen anzeigen",
+    "menu.show_debug": "Debug-Einstellungen anzeigen",
+    "help.show_utilities": "Gibt an, ob die Werkzeug Einstellungen im Menü sichtbar sein sollen.",
+    "help.show_customization": "Gibt an, ob die Anpassungseinstellungen im Menü sichtbar sein sollen.",
+    "help.show_import_export": "Gibt an, ob die Import/Export Einstellungen im Menü sichtbar sein sollen.",
+    "help.show_debug": "Gibt an, ob die Debug Einstellungen im Menü sichtbar sein sollen."
 }

@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Single Player - Dinosaur Bones",
     "menu.discoverables.collectable_dreamcatcher": "Single Player - Dreamcatchers",
     "menu.discoverables.collectable_rock_carving": "Single Player - Rock Carvings",
-    "menu.discoverables.collectable_treasure_chest": "Single Player - Treasure Chests",
     "menu.discoverables.discoverable": "Discoverables",
     "menu.discoverables.grave": "Single Player - Graves",
     "menu.discoverables.sp_legendaries": "Single Player - Legendary Animals",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "사용자 정의",
+    "menu.show_utilities": "유틸리티 설정 표시",
+    "menu.show_customization": "사용자 정의 설정 표시",
+    "menu.show_import_export": "가져오기/내보내기 설정 표시",
+    "menu.show_debug": "디버그 설정 표시",
+    "help.show_utilities": "Toggles whether the utilities settings should be visible in the menu.",
+    "help.show_customization": "Toggles whether the customization settings should be visible in the menu.",
+    "help.show_import_export": "Toggles whether the import/export settings should be visible in the menu.",
+    "help.show_debug": "Toggles whether the debug settings should be visible in the menu."
 }
