@@ -138,6 +138,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **JoseLopez95** (409 words)
   - **Megitsune** (21,042 words)
   - **Njordude** (1,614 words)
+  - **sandratormo20** (33 words)
   - **W10075343** (1,650 words)
 
 ### Swedish:
