@@ -4,233 +4,160 @@
     "x": "-64.9205",
     "y": "139.0338",
     "items": [
-      null
+      [2, "bitters"],
+      [1, "assorted_biscuits"],
+      [2, "canned_vegetable"]
+      [1, "canned_fruit"],
+      [1, "miracle_tonic"],
+      [1, "kentucky_bourbon"],
+      [1, "opened_snake_oil"],
+      [1, "cocaine_gum"],
+      [1, "premium_cig"]
     ]
   },
   {
     "text": "adl_barn_int",
     "x": "-22.1404",
     "y": "102.9849",
-    "items": []
-  },
-  {
-    "text": "adl_cabin01_int",
-    "x": "-21.6313",
-    "y": "102.6532",
-    "items": []
-  },
-  {
-    "text": "ann_coalbreaker_int_main",
-    "x": "-41.8995",
-    "y": "156.1007",
-    "items": []
-  },
-  {
-    "text": "ann_coaltipple_int_main",
-    "x": "-42.1247",
-    "y": "156.8187",
-    "items": []
+    "items": [
+      null
+    ]
   },
   {
     "text": "ann_depot_int",
     "x": "-43.6793",
     "y": "156.8446",
-    "items": []
-  },
-  {
-    "text": "ann_gunsmith_int",
-    "x": "-43.1239",
-    "y": "157.0638",
-    "items": []
+    "items": [
+      [1, "cocaine_gum"],
+      [1, "platinum_pocket_watch"]
+    ]
   },
   {
     "text": "ann_jail_int",
     "x": "-43.2184",
     "y": "156.4079",
-    "items": []
+    "items": [
+      [1, "premium_cig"]
+    ]
   },
   {
     "text": "ann_mine_int_main",
     "x": "-42.5274",
     "y": "153.9248",
-    "items": []
+    "items": [
+      [1, "moonshine"]
+    ]
   },
   {
     "text": "ann_mineoffice_int_main",
     "x": "-42.1870",
     "y": "156.6527",
-    "items": []
+    "items": [
+      [1, "jewelry"]
+    ]
   },
   {
     "text": "ann_roomnbath_int",
     "x": "-42.9259",
     "y": "157.0768",
-    "items": []
-  },
-  {
-    "text": "ann_setlrs_reg_int",
-    "x": "-42.7510",
-    "y": "156.6324",
-    "items": []
-  },
-  {
-    "text": "ann_settlers_int",
-    "x": "-42.7510",
-    "y": "156.6324",
-    "items": []
-  },
-  {
-    "text": "arm_bank_int",
-    "x": "-104.4245",
-    "y": "54.3815",
-    "items": []
-  },
-  {
-    "text": "arm_genstore_int",
-    "x": "-104.3779",
-    "y": "54.0609",
-    "items": []
+    "items": [
+      null
+    ]
   },
   {
     "text": "arm_saloon_int",
     "x": "-103.8597",
     "y": "53.8035",
-    "items": []
+    "items": [
+      [1, "cigar"]
+    ]
   },
   {
     "text": "arm_sheriff_int",
     "x": "-104.0095",
     "y": "55.0746",
-    "items": []
+    "items": [
+      [1, "silver_pocket_watch"],
+      [1, "potent_bitters"],
+      [1, "gun_oil"],
+      [1, "premium_cig"]
+    ]
   },
   {
     "text": "arm_trainstation_int",
     "x": "-104.0347",
     "y": "53.3888",
-    "items": []
+    "items": [
+      null
+    ]
   },
   {
     "text": "aur_shack01_int",
     "x": "-85.0537",
     "y": "71.2608",
-    "items": []
-  },
-  {
-    "text": "bea_01_int",
-    "x": "-40.8781",
-    "y": "146.9435",
-    "items": []
-  },
-  {
-    "text": "bee_barn_int",
-    "x": "-85.5279",
-    "y": "86.4269",
-    "items": []
-  },
-  {
-    "text": "bee_house_int",
-    "x": "-84.7191",
-    "y": "85.8219",
-    "items": []
+    "items": [
+      [1, "ground_coffee"],
+      [1, "opened_kentucky_bourbon"],
+      [1, "cigarettes"]
+    ]
   },
   {
     "text": "ben_shack_int",
     "x": "-117.7951",
     "y": "30.4807",
-    "items": []
+    "items": [
+      [1, "hair_pomade"],
+      [1, "cocaine_gum"],
+      [1, "crackers"],
+      [1, "ground_coffee"],
+      [1, "health_cure"],
+      [1, "money_clip"],
+      [1, "chewing_tobacco"],
+      [1, "moonshine"]
+    ]
   },
   {
     "text": "ben_train_int",
     "x": "-117.4984",
     "y": "30.1514",
-    "items": []
-  },
-  {
-    "text": "bgv_devilcave_int",
-    "x": "-52.8891",
-    "y": "69.9000",
-    "items": []
-  },
-  {
-    "text": "bgv_skinners01_int",
-    "x": "-86.0185",
-    "y": "79.3487",
-    "items": []
-  },
-  {
-    "text": "bla_bank_int",
-    "x": "-83.4158",
-    "y": "98.6415",
-    "items": []
-  },
-  {
-    "text": "bla_barber_int",
-    "x": "-84.8197",
-    "y": "98.6220",
-    "items": []
-  },
-  {
-    "text": "bla_carriagehouse_int",
-    "x": "-84.8071",
-    "y": "97.8095",
-    "items": []
+    "items": [
+      [2, "cigarettes"]
+    ]
   },
   {
     "text": "bla_fenceshop_int",
     "x": "-83.6086",
     "y": "97.7718",
-    "items": []
-  },
-  {
-    "text": "bla_genstore_int",
-    "x": "-84.1521",
-    "y": "99.1421",
-    "items": []
+    "items": [
+      [1, "gun_oil"]
+    ]
   },
   {
     "text": "bla_jail_int",
     "x": "-83.3115",
     "y": "99.4445",
-    "items": []
-  },
-  {
-    "text": "bla_photo_int",
-    "x": "-84.9326",
-    "y": "98.6525",
-    "items": []
+    "items": [
+      [1, "boar_tusk"]
+    ]
   },
   {
     "text": "bla_saloon_int",
     "x": "-84.0434",
     "y": "98.5910",
-    "items": []
-  },
-  {
-    "text": "bla_tailor_int",
-    "x": "-83.6714",
-    "y": "99.4052",
-    "items": []
-  },
-  {
-    "text": "bla_theater_int",
-    "x": "-84.7421",
-    "y": "99.2120",
-    "items": []
-  },
-  {
-    "text": "bla_train_int",
-    "x": "-84.2918",
-    "y": "97.7027",
-    "items": []
+    "items": [
+      [1, "jewelry"]
+    ]
   },
   {
     "text": "bpl_swampcabin_int",
     "x": "-105.0733",
     "y": "89.3583",
-    "items": []
+    "items": [
+      null
+    ]
   },
   {
-    "text": "bra_boathouse_int[",
+    "text": "bra_boathouse_int",
     "x": "-75.6416",
     "y": "142.6694",
     "items": [
@@ -242,13 +169,17 @@
     "text": "bra_boathouse_int",
     "x": "-91.3873",
     "y": "125.3114",
-    "items": []
+    "items": [
+      [1, "gun_oil"]
+    ]
   },
   {
     "text": "bra_cornmill_int",
     "x": "-95.0312",
     "y": "126.5060",
-    "items": []
+    "items": [
+      [1, "premium_cig"]
+    ]
   },
   {
     "text": "bra_mansion_int",
@@ -1593,35 +1524,46 @@
     "y": "154.4899",
     "items": [
       [1, "potent_health_cure"],
-      [1, "potent_snake_oil"],
+      [2, "potent_snake_oil"],
       [1, "pocket_watch"],
-      [1, "???"],
-      [1, "???"]
+      [1, "health_cure"]
     ]
   },
   {
     "text": "van_fenceshop_int",
     "x": "-54.8990",
     "y": "156.8296",
-    "items": []
+    "items": [
+      [1, "salted_meat"],
+    ]
   },
   {
     "text": "van_hobo_int",
     "x": "-55.8574",
     "y": "157.4859",
-    "items": []
+    "items": [
+      [1, "canned_vegetable"],
+      [1, "throwing_knife"]
+    ]
   },
   {
     "text": "van_hotel_int",
     "x": "-55.2087",
     "y": "157.0525",
-    "items": []
+    "items": [
+      [1, "snake_oil"],
+      [1, "money_clip"],
+      [1, "kentucky_bourbon"],
+      [1, "canned_vegetable"]
+    ]
   },
   {
     "text": "van_lighthouse_int",
     "x": "-56.8860",
     "y": "158.4218",
-    "items": []
+    "items": [
+      null
+    ]
   },
   {
     "text": "van_mansion_int",
@@ -1637,39 +1579,73 @@
     ]
   },
   {
-    "text": "van_roomnbath_int",
-    "x": "-54.6977",
-    "y": "157.5940",
-    "items": []
-  },
-  {
     "text": "van_saloon_int",
     "x": "-55.4691",
     "y": "157.0379",
-    "items": []
+    "items": [
+      [1, "premium_cig"],
+      [1, "gin"]
+    ]
   },
   {
     "text": "ven_shack01_int",
     "x": "-110.3276",
     "y": "56.1398",
-    "items": []
+    "items": [
+      [3, "canned_vegetable"],
+      [2, "premium_cig"]
+      [1, "ground_coffee"],
+      [1, "kentucky_bourbon"],
+      [1, "cocaine_gum"],
+      [1, "miracle_tonic"],
+      [1, "hair_pomade"],
+      [1, "assorted_biscuits"],
+      [1, "potent_snake_oil"]
+    ]
   },
   {
     "text": "vet_house_int",
     "x": "-40.1311",
     "y": "137.6998",
-    "items": []
+    "items": [
+      [1, "predator_bait"],
+      [1, "herbivore_bait"],
+      [2, "gun_oil"]
+      [1, "cover_scent_lotion"],
+      [1, "money_clip"],
+      [1, "gold_pocket_watch"],
+      [1, "fine_brandy"],
+      [1, "canned_fruit"],
+      [1, "assorted_biscuits"],
+      [1, "ground_coffee"],
+      [1, "canned_vegetable"],
+      [1, "gin"],
+      [1, "opened_health_cure"],
+      [1, "chewing_tobacco"],
+      [1, "potent_bitters"]
+    ]
   },
   {
     "text": "wal_trainstation_int",
     "x": "-57.4586",
     "y": "91.0561",
-    "items": []
+    "items": [
+      null
+    ]
   },
   {
     "text": "wat_cabin_int",
     "x": "-53.3726",
     "y": "83.0694",
-    "items": []
+    "items": [
+      [1, "moonshine"],
+      [1, "bread_chunk"],
+      [1, "canned_vegetable"],
+      [2, "jewelry"],
+      [2, "healthy_cure"],
+      [1, "coin_purse"],
+      [1, "potent_miracle_tonic"],
+      [1, "gun_oil"]
+    ]
   }
 ]

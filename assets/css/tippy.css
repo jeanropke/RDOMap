@@ -36,3 +36,9 @@
 .tippy-popper[x-placement^=top] .menu-theme .tippy-arrow {
   bottom: -6px
 }
+
+@media (max-width: 768px) {
+  .tippy-box[data-theme~='map-theme'] {
+    display: none !important;
+  }
+}
