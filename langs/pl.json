@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Pojedynczy gracz - Kości Dinozaurów",
     "menu.discoverables.collectable_dreamcatcher": "Pojedynczy gracz - łapacze snów",
     "menu.discoverables.collectable_rock_carving": "Pojedynczy gracz - Skalne Rzeźby",
-    "menu.discoverables.collectable_treasure_chest": "Pojedynczy gracz - Skrzynie Skarbów",
     "menu.discoverables.discoverable": "Znaleziska",
     "menu.discoverables.grave": "Pojedynczy gracz - groby",
     "menu.discoverables.sp_legendaries": "Pojedynczy gracz - Legendarne Zwierzęta",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "Ustawienia mapy",
+    "menu.show_utilities": "Pokaż menu innych znaczników",
+    "menu.show_customization": "Pokaż ustawienia mapy",
+    "menu.show_import_export": "Pokaż ustawienia import./ eksport.",
+    "menu.show_debug": "Pokaz narzędzia debugowania",
+    "help.show_utilities": "Włącza/ wyłącza menu przypadkowych zdarzeń, madam Nazar, szybkiej podróży itp.",
+    "help.show_customization": "Włącza/ wyłącza menu najistotniejszych ustawień mapy.",
+    "help.show_import_export": "Włącza/ wyłącza menu importowania i eksportowania ustawień/ znaczników użytkownika.",
+    "help.show_debug": "Włącza/ wyłącza menu narzędzi debugowania mapy (Używanie tych ustawień jest niezalecane)."
 }

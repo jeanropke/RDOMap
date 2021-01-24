@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Сюжет. Режим - Кости динозавров",
     "menu.discoverables.collectable_dreamcatcher": "Сюжет. Режим - Ловцы снов",
     "menu.discoverables.collectable_rock_carving": "Сюжет. Режим - Наскальные изображения",
-    "menu.discoverables.collectable_treasure_chest": "Сюжет. Режим - Сундуки с сокровищами",
     "menu.discoverables.discoverable": "Достопримечательности",
     "menu.discoverables.grave": "Сюжет. Режим - Могилы",
     "menu.discoverables.sp_legendaries": "Сюжет. Режим - Легендарные животные",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "Кастомизация",
+    "menu.show_utilities": "Показать дополнительные метки",
+    "menu.show_customization": "Показать меню кастомизации",
+    "menu.show_import_export": "Показать меню экспорта/импорта настроек",
+    "menu.show_debug": "Показать меню отладки",
+    "help.show_utilities": "Переключает отображение настроек утилит в меню.",
+    "help.show_customization": "Переключает отображение параметров настроек в меню.",
+    "help.show_import_export": "Указывает, должны ли параметры импорта/экспорта быть видимыми в меню.",
+    "help.show_debug": "Указывает, должны ли параметры отладки быть видимыми в меню."
 }

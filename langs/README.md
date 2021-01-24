@@ -16,6 +16,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Catalan:
   - **juandamanacor2013** (91 words)
+  - **zrubio** (365 words)
 
 ### Chinese Simplified:
   - **578218087** (55 words)
@@ -75,20 +76,20 @@ These are the people that helped translate the project using Crowdin. Please not
   - **werhel** (11 words)
 
 ### Greek:
-  - **dvagos7** (572 words)
+  - **dvagos7** (1,200 words)
 
 ### Hungarian:
   - **Balesz** (10 words)
 
 ### Italian:
-  - **daveo979** (662 words)
+  - **daveo979** (676 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
   - **Megitsune** (21,042 words)
   - **nellonenollen** (22 words)
   - **Raffox97** (273 words)
-  - **Tony_Bell** (128 words)
+  - **Tony_Bell** (134 words)
 
 ### Japanese:
   - **Megitsune** (21,042 words)
@@ -116,6 +117,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **msfern** (12 words)
   - **neohazukibr** (41 words)
 
+### Romanian:
+  - **pozitive95** (33 words)
+
 ### Russian:
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
@@ -134,6 +138,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **JoseLopez95** (409 words)
   - **Megitsune** (21,042 words)
   - **Njordude** (1,614 words)
+  - **sandratormo20** (33 words)
   - **W10075343** (1,650 words)
 
 ### Swedish:

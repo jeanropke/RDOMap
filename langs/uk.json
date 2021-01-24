@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Single Player - Dinosaur Bones",
     "menu.discoverables.collectable_dreamcatcher": "Single Player - Dreamcatchers",
     "menu.discoverables.collectable_rock_carving": "Single Player - Rock Carvings",
-    "menu.discoverables.collectable_treasure_chest": "Single Player - Treasure Chests",
     "menu.discoverables.discoverable": "Discoverables",
     "menu.discoverables.grave": "Single Player - Graves",
     "menu.discoverables.sp_legendaries": "Single Player - Legendary Animals",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "Налаштування",
+    "menu.show_utilities": "Показати додаткові мітки",
+    "menu.show_customization": "Показати меню налаштувань",
+    "menu.show_import_export": "Показати меню експорту/імпорту налаштувань",
+    "menu.show_debug": "Показати меню відлагодження",
+    "help.show_utilities": "Вказує, чи відображатимуться налаштування утиліт у меню.",
+    "help.show_customization": "Вказує, чи будуть видимими в меню параметри налаштувань.",
+    "help.show_import_export": "Вказує, чи будуть видимими в меню параметри імпорту/експорту.",
+    "help.show_debug": "Вказує, чи будуть видимими в меню параметри відлагодження."
 }

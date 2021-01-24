@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "Single Player - Dinosaur Bones",
     "menu.discoverables.collectable_dreamcatcher": "Single Player - Dreamcatchers",
     "menu.discoverables.collectable_rock_carving": "Single Player - Rock Carvings",
-    "menu.discoverables.collectable_treasure_chest": "Single Player - Treasure Chests",
     "menu.discoverables.discoverable": "Découvertes",
     "menu.discoverables.grave": "Histoire - Tombes",
     "menu.discoverables.sp_legendaries": "Histoire - Animaux légendaires",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "Personnalisations",
+    "menu.show_utilities": "Afficher les paramètres de base",
+    "menu.show_customization": "Afficher les options de personnalisation",
+    "menu.show_import_export": "Afficher les paramètres d'import/export",
+    "menu.show_debug": "Afficher les paramètres de débogage",
+    "help.show_utilities": "Active/désactive si cet ensemble doit être visible sur la carte.",
+    "help.show_customization": "Active/désactive si cet ensemble doit être visible sur la carte.",
+    "help.show_import_export": "Active/désactive si cet ensemble doit être visible sur la carte.",
+    "help.show_debug": "Active/désactive si cet ensemble doit être visible sur la carte."
 }

@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "單人（恐龍骨頭）",
     "menu.discoverables.collectable_dreamcatcher": "單人（捕夢網）",
     "menu.discoverables.collectable_rock_carving": "單人（幫派藏身處）",
-    "menu.discoverables.collectable_treasure_chest": "單人玩家 - 藏寶箱",
     "menu.discoverables.discoverable": "景點",
     "menu.discoverables.grave": "單人（墳墓）",
     "menu.discoverables.sp_legendaries": "單人（傳說動物）",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "客製化",
+    "menu.show_utilities": "顯示工具設定",
+    "menu.show_customization": "顯示客製化設定",
+    "menu.show_import_export": "顯示匯入 / 匯出設定",
+    "menu.show_debug": "顯示偵錯設定",
+    "help.show_utilities": "切換是否在菜單中顯示工具設定。",
+    "help.show_customization": "切換是否在菜單中顯示客製化設定。",
+    "help.show_import_export": "切換是否在菜單中顯示匯入/匯出設定。",
+    "help.show_debug": "切換是否在菜單中顯示偵錯設定。"
 }

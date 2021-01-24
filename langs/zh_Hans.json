@@ -1192,7 +1192,6 @@
     "menu.discoverables.collectable_dino_bones": "单机 - 恐龙骨头",
     "menu.discoverables.collectable_dreamcatcher": "单机 - 捕梦网",
     "menu.discoverables.collectable_rock_carving": "单机 - 岩雕",
-    "menu.discoverables.collectable_treasure_chest": "单机 - 宝箱",
     "menu.discoverables.discoverable": "探索",
     "menu.discoverables.grave": "单机 - 墓地",
     "menu.discoverables.sp_legendaries": "单机 - 传说动物",
@@ -1280,5 +1279,14 @@
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "Shows a tooltip for certain menu items displaying the full title.",
     "menu.tooltip_map": "Tooltips for map items",
-    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
+    "menu.customization_title": "自定义",
+    "menu.show_utilities": "显示工具设置",
+    "menu.show_customization": "显示自定义设置",
+    "menu.show_import_export": "显示导入/导出设置",
+    "menu.show_debug": "显示调试设置",
+    "help.show_utilities": "切换是否在菜单中显示工具设置.",
+    "help.show_customization": "切换自定义设置是否应该在菜单中可见.",
+    "help.show_import_export": "切换导入/导出设置在菜单中是否应可见。",
+    "help.show_debug": "切换调试设置是否应该在菜单中可见。"
 }
