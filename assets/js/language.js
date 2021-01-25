@@ -82,7 +82,7 @@ var Language = {
 
     if (Language.data[Settings.language] === undefined) {
       $.ajax({
-        url: `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}`,
+        url: `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`,
         async: false,
         dataType: 'json',
         success: function (json) {
