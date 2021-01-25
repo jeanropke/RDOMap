@@ -7,18 +7,18 @@ We'd like to also mention the people that helped translate before the project sw
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans:
+### Afrikaans (0%):
   - **eduardvlog** (23 words)
 
-### Arabic:
+### Arabic (30%):
   - **Aboodsaad27** (82 words)
   - **y_ksq** (1,748 words)
 
-### Catalan:
+### Catalan (6%):
   - **juandamanacor2013** (91 words)
   - **zrubio** (365 words)
 
-### Chinese Simplified:
+### Chinese Simplified (98%):
   - **578218087** (55 words)
   - **akbcd** (133 words)
   - **BHT256** (254 words)
@@ -29,27 +29,27 @@ These are the people that helped translate the project using Crowdin. Please not
   - **PeanutSlinger** (2,551 words)
   - **qiexiacn** (223 words)
 
-### Chinese Traditional:
+### Chinese Traditional (99%):
   - **jurn0818** (548 words)
   - **L1Chung** (3,267 words)
   - **Megitsune** (21,042 words)
   - **pach318** (265 words)
   - **Richard.C.Pirello** (564 words)
 
-### Czech:
+### Czech (30%):
   - **avojta** (119 words)
   - **Nydrail** (379 words)
 
-### Dutch:
+### Dutch (27%):
   - **ranforingus** (325 words)
 
-### English, United Kingdom:
+### English, United Kingdom (2%):
   - **W10075343** (1,650 words)
 
-### Finnish:
+### Finnish (24%):
   - **aksu.smal** (158 words)
 
-### French:
+### French (91%):
   - **escaliburos** (10 words)
   - **FRANCESCADOLORES** (401 words)
   - **JeanBankarbone** (87 words)
@@ -64,7 +64,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **starblunter** (72 words)
   - **YuYusS** (95 words)
 
-### German:
+### German (93%):
   - **Alexified** (152 words)
   - **djenerg** (33 words)
   - **Matityahuu** (78 words)
@@ -75,13 +75,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (456 words)
   - **werhel** (11 words)
 
-### Greek:
+### Greek (13%):
   - **dvagos7** (1,200 words)
 
-### Hungarian:
+### Hungarian (0%):
   - **Balesz** (10 words)
 
-### Italian:
+### Italian (49%):
   - **daveo979** (676 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
@@ -91,36 +91,36 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raffox97** (273 words)
   - **Tony_Bell** (134 words)
 
-### Japanese:
+### Japanese (74%):
   - **Megitsune** (21,042 words)
   - **menbou** (182 words)
 
-### Korean:
+### Korean (62%):
   - **CoolBreeze-13s** (1,663 words)
   - **Megitsune** (21,042 words)
 
-### Norwegian:
+### Norwegian (3%):
   - **petter.landsem.krogstad** (83 words)
 
-### Polish:
+### Polish (95%):
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,042 words)
   - **Michal__d** (1,863 words)
 
-### Portuguese:
+### Portuguese (8%):
   - **FilipeLuk** (649 words)
 
-### Portuguese, Brazilian:
+### Portuguese, Brazilian (84%):
   - **FilipFelipe** (13 words)
   - **jeanropke** (26,079 words)
   - **mgoebelm** (100 words)
   - **msfern** (12 words)
   - **neohazukibr** (41 words)
 
-### Romanian:
+### Romanian (0%):
   - **pozitive95** (33 words)
 
-### Russian:
+### Russian (98%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
   - **Megitsune** (21,042 words)
@@ -129,7 +129,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **poeblu85** (395 words)
   - **tegetron** (29 words)
 
-### Spanish:
+### Spanish (91%):
   - **a.equis23** (263 words)
   - **AshTurquoise** (27 words)
   - **Bruxes** (435 words)
@@ -141,22 +141,22 @@ These are the people that helped translate the project using Crowdin. Please not
   - **sandratormo20** (33 words)
   - **W10075343** (1,650 words)
 
-### Swedish:
+### Swedish (24%):
   - **Anvnamnet** (2,189 words)
   - **Shineberg** (141 words)
 
-### Thai:
+### Thai (3%):
   - **MrFermz** (39 words)
 
-### Turkish:
+### Turkish (43%):
   - **birseysoylicem** (134 words)
   - **Krykl** (406 words)
   - **tercumantanumut** (149 words)
 
-### Ukrainian:
+### Ukrainian (71%):
   - **grmaster5s** (5,664 words)
   - **warkoun** (293 words)
 
-### Vietnamese:
+### Vietnamese (2%):
   - **1751020005** (238 words)
 
