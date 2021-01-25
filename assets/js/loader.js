@@ -26,6 +26,9 @@ class Loader {
     const queryString = {};
     if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
     else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
+
+    if (['lang_progress'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
+
     this._json = $.getJSON(url, queryString);
   }
   // allow garbage collection of loaded data after use
@@ -42,6 +45,7 @@ class Loader {
 }
 
 const urls = [
+  'data/lang_progress.json',
   'data/animal_legendary.json',
   'data/animal_spawns.json',
   'data/camps.json',
