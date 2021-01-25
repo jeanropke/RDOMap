@@ -14,11 +14,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Aboodsaad27** (82 words)
   - **y_ksq** (1,748 words)
 
-### Catalan (6%):
+### Catalan (5%):
   - **juandamanacor2013** (91 words)
   - **zrubio** (365 words)
 
-### Chinese Simplified (98%):
+### Chinese Simplified (97%):
   - **578218087** (55 words)
   - **akbcd** (133 words)
   - **BHT256** (254 words)
@@ -29,7 +29,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **PeanutSlinger** (2,551 words)
   - **qiexiacn** (223 words)
 
-### Chinese Traditional (99%):
+### Chinese Traditional (98%):
   - **jurn0818** (548 words)
   - **L1Chung** (3,267 words)
   - **Megitsune** (21,042 words)
@@ -46,10 +46,10 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (2%):
   - **W10075343** (1,650 words)
 
-### Finnish (24%):
+### Finnish (23%):
   - **aksu.smal** (158 words)
 
-### French (91%):
+### French (90%):
   - **escaliburos** (10 words)
   - **FRANCESCADOLORES** (401 words)
   - **JeanBankarbone** (87 words)
@@ -64,7 +64,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **starblunter** (72 words)
   - **YuYusS** (95 words)
 
-### German (93%):
+### German (92%):
   - **Alexified** (152 words)
   - **djenerg** (33 words)
   - **Matityahuu** (78 words)
@@ -95,14 +95,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Megitsune** (21,042 words)
   - **menbou** (182 words)
 
-### Korean (62%):
+### Korean (61%):
   - **CoolBreeze-13s** (1,663 words)
   - **Megitsune** (21,042 words)
 
-### Norwegian (3%):
+### Norwegian (2%):
   - **petter.landsem.krogstad** (83 words)
 
-### Polish (95%):
+### Polish (94%):
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,042 words)
   - **Michal__d** (1,863 words)
@@ -110,7 +110,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Portuguese (8%):
   - **FilipeLuk** (649 words)
 
-### Portuguese, Brazilian (84%):
+### Portuguese, Brazilian (83%):
   - **FilipFelipe** (13 words)
   - **jeanropke** (26,079 words)
   - **mgoebelm** (100 words)
@@ -120,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (0%):
   - **pozitive95** (33 words)
 
-### Russian (98%):
+### Russian (97%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
   - **Megitsune** (21,042 words)
@@ -129,7 +129,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **poeblu85** (395 words)
   - **tegetron** (29 words)
 
-### Spanish (91%):
+### Spanish (90%):
   - **a.equis23** (263 words)
   - **AshTurquoise** (27 words)
   - **Bruxes** (435 words)
@@ -148,7 +148,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Thai (3%):
   - **MrFermz** (39 words)
 
-### Turkish (43%):
+### Turkish (42%):
   - **birseysoylicem** (134 words)
   - **Krykl** (406 words)
   - **tercumantanumut** (149 words)
