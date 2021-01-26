@@ -103,10 +103,10 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Norwegian (2%):
   - **petter.landsem.krogstad** (83 words)
 
-### Polish (94%):
+### Polish (95%):
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,042 words)
-  - **Michal__d** (1,863 words)
+  - **Michal__d** (1,960 words)
 
 ### Portuguese (8%):
   - **FilipeLuk** (649 words)
