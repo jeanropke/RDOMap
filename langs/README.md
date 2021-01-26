@@ -64,9 +64,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **starblunter** (72 words)
   - **YuYusS** (95 words)
 
-### German (92%):
+### German (93%):
   - **Alexified** (152 words)
   - **djenerg** (33 words)
+  - **ingoonline11** (19 words)
   - **Matityahuu** (78 words)
   - **Megitsune** (21,042 words)
   - **michaelahofer** (875 words)
