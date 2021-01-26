@@ -64,6 +64,7 @@ const urls = [
   'data/possible_dailies.json',
   'data/shops.json',
   'data/treasures.json',
+  'data/bounties.json',
   'https://pepegapi.jeanropke.net/v2/rdo/dailies',
   'https://pepegapi.jeanropke.net/v2/rdo/nazar'
 ];

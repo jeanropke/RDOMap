@@ -49,6 +49,7 @@ class Menu {
       MadamNazar.onMap = false;
       Pins.onMap = false;
       Treasure.treasuresOnMap = false;
+      Bounty.bountiesOnMap = false;
       CondorEgg.condorEggOnMap = false;
       Salvage.salvageOnMap = false;
     });
@@ -79,6 +80,7 @@ class Menu {
       MadamNazar.onMap = true;
       Pins.onMap = true;
       Treasure.treasuresOnMap = true;
+      Bounty.bountiesOnMap = true;
       CondorEgg.condorEggOnMap = true;
       Salvage.salvageOnMap = true;
     });

@@ -64,6 +64,7 @@ function init() {
   const locations = Location.init();
   const encounters = Encounter.init();
   const treasures = Treasure.init();
+  const bounties = Bounty.init();
   const fmeCondorEgg = CondorEgg.init();
   const fmeSalvage = Salvage.init();
   const plants = PlantsCollection.init();
@@ -74,7 +75,7 @@ function init() {
   const discoverables = Discoverable.init();
   const overlays = Overlay.init();
 
-  Promise.all([animals, locations, encounters, treasures, fmeCondorEgg, fmeSalvage, plants, camps, shops, gfh, legendary, discoverables, overlays])
+  Promise.all([animals, locations, encounters, treasures, bounties, fmeCondorEgg, fmeSalvage, plants, camps, shops, gfh, legendary, discoverables, overlays])
     .then(() => {
       Loader.resolveMapModelLoaded();
       MapBase.afterLoad();
@@ -235,6 +236,7 @@ $('#language').on('change', function () {
 
   Language.setMenuLanguage();
   Treasure.onLanguageChanged();
+  Bounty.onLanguageChanged();
   Dailies.sortDailies();
 
   // WIP: update markers without reload page
@@ -252,6 +254,7 @@ $('#language').on('change', function () {
 $('#marker-size').on('change', function () {
   Settings.markerSize = Number($('#marker-size').val());
   Treasure.onSettingsChanged();
+  Bounty.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Salvage.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
@@ -266,6 +269,7 @@ $('#marker-size').on('change', function () {
 $('#marker-opacity').on('change', function () {
   Settings.markerOpacity = Number($('#marker-opacity').val());
   Treasure.onSettingsChanged();
+  Bounty.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Salvage.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
@@ -316,6 +320,7 @@ $('#enable-marker-popups-hover').on('change', function () {
 $('#enable-marker-shadows').on('change', function () {
   Settings.isShadowsEnabled = $('#enable-marker-shadows').prop('checked');
   Treasure.onSettingsChanged();
+  Bounty.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
