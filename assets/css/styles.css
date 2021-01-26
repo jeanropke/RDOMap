@@ -1617,7 +1617,7 @@ a.no-style:visited {
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-gap: 5px;
-    margin: 10px 0;
+    margin: 10px -12px;
     justify-content: space-between;
     align-content: center;
     background-image: url(../../assets/images/menu_hover.png);
