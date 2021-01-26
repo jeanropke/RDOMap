@@ -10,7 +10,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Afrikaans (0%):
   - **eduardvlog** (23 words)
 
-### Arabic (30%):
+### Arabic (29%):
   - **Aboodsaad27** (82 words)
   - **y_ksq** (1,748 words)
 
@@ -36,7 +36,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **pach318** (265 words)
   - **RichardC.P.** (564 words)
 
-### Czech (30%):
+### Czech (29%):
   - **avojta** (119 words)
   - **Nydrail** (379 words)
 
@@ -49,7 +49,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (23%):
   - **aksu.smal** (158 words)
 
-### French (90%):
+### French (89%):
   - **escaliburos** (10 words)
   - **FRANCESCADOLORES** (401 words)
   - **JeanBankarbone** (87 words)
@@ -64,7 +64,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **starblunter** (72 words)
   - **YuYusS** (95 words)
 
-### German (93%):
+### German (92%):
   - **Alexified** (152 words)
   - **djenerg** (33 words)
   - **ingoonline11** (19 words)
@@ -92,7 +92,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raffox97** (273 words)
   - **Tony_Bell** (134 words)
 
-### Japanese (74%):
+### Japanese (73%):
   - **Megitsune** (21,042 words)
   - **menbou** (182 words)
 
@@ -103,7 +103,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Norwegian (2%):
   - **petter.landsem.krogstad** (83 words)
 
-### Polish (95%):
+### Polish (94%):
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,042 words)
   - **Michal__d** (1,960 words)
@@ -121,7 +121,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (0%):
   - **pozitive95** (33 words)
 
-### Russian (97%):
+### Russian (96%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
   - **Megitsune** (21,042 words)
@@ -130,7 +130,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **poeblu85** (395 words)
   - **tegetron** (29 words)
 
-### Spanish (90%):
+### Spanish (89%):
   - **a.equis23** (263 words)
   - **AshTurquoise** (27 words)
   - **Bruxes** (435 words)
@@ -142,9 +142,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **sandratormo20** (33 words)
   - **W10075343** (1,650 words)
 
-### Swedish (24%):
+### Swedish (27%):
   - **Anvnamnet** (2,189 words)
   - **Shineberg** (141 words)
+  - **wiiwil** (249 words)
 
 ### Thai (3%):
   - **MrFermz** (39 words)
