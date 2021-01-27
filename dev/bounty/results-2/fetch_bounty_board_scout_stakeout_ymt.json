@@ -1,0 +1,401 @@
+[
+  {
+    "text": "bounty_board_stakeout_saint_denis",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -83.5961,
+        "y": 143.5444
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -83.653,
+        "y": 145.1126
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -82.9298,
+        "y": 143.5597
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -84.0165,
+        "y": 143.7239
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -84.1642,
+        "y": 144.9562
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -84.5097,
+        "y": 144.8816
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_valentine",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -54.0374,
+        "y": 107.4337
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -53.1834,
+        "y": 108.0987
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -52.8305,
+        "y": 107.6854
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -52.5777,
+        "y": 106.4315
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -54.3856,
+        "y": 106.72
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -52.3645,
+        "y": 106.7294
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_downes_ranch",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -57.41,
+        "y": 98.0239
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -59.3124,
+        "y": 98.9207
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -57.6371,
+        "y": 99.358
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -57.6291,
+        "y": 99.2631
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -59.3098,
+        "y": 98.9029
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -59.3384,
+        "y": 98.9762
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_solomons_folly",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -121.3859,
+        "y": 27.3514
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -121.2182,
+        "y": 28.0754
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -120.0487,
+        "y": 29.0367
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -119.2481,
+        "y": 29.0408
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -119.2661,
+        "y": 28.4836
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -118.4045,
+        "y": 26.6757
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_rathskeller_fork",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -97.4187,
+        "y": 31.6264
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -95.8677,
+        "y": 30.9776
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -96.5574,
+        "y": 29.9836
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -97.6515,
+        "y": 30.8249
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -97.5249,
+        "y": 31.0042
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -98.0823,
+        "y": 30.0322
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_thieves_landing",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -100.8899,
+        "y": 88.7663
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -100.342,
+        "y": 88.2258
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -99.895,
+        "y": 87.817
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -98.6317,
+        "y": 87.7101
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -97.8966,
+        "y": 88.9675
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -97.9157,
+        "y": 90.3226
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_lannahechee_river",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -88.7749,
+        "y": 141.7389
+      },
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -88.0036,
+        "y": 141.7913
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -88.62,
+        "y": 143.1899
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -88.6539,
+        "y": 141.7197
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -88.1975,
+        "y": 142.3737
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -89.3506,
+        "y": 142.8903
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_rhodes_woolen_mill",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -84.0172,
+        "y": 132.501
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -84.3949,
+        "y": 133.8483
+      },
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -83.048,
+        "y": 132.879
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -84.6255,
+        "y": 133.6317
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -84.1054,
+        "y": 133.7817
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -83.7085,
+        "y": 133.6937
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_heartlands_oil_fields",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "bounty_scout_stakeout_target_mounted",
+        "x": -53.9222,
+        "y": 118.3538
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -53.9337,
+        "y": 118.5887
+      },
+      {
+        "config": "bounty_scout_stakeout_target",
+        "x": -53.7498,
+        "y": 118.9814
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -53.6511,
+        "y": 119.4206
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -53.1573,
+        "y": 120.0304
+      },
+      {
+        "config": "bounty_scout_stakeout_target_repeater",
+        "x": -52.5879,
+        "y": 119.2798
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_van_horn",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_fight_lantern",
+        "x": -58.9956,
+        "y": 154.8179
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_blackwater",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_blk_mounted_surrender",
+        "x": -96.4296,
+        "y": 89.9711
+      },
+      {
+        "config": "objective_bounty_target_blk_mounted_flee",
+        "x": -96.4125,
+        "y": 89.9907
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_tumbleweed_fort_mercer",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_combat_mounted_named",
+        "x": -115.1485,
+        "y": 49.2714
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_stakeout_valentine_gill",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_combat_mounted_named",
+        "x": -72.1961,
+        "y": 118.7014
+      }
+    ]
+  }
+]

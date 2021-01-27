@@ -1,0 +1,54 @@
+[
+  {
+    "text": "bounty_board_caged_target_saint_denis",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_ai_bounty_target_flee_unarmed",
+        "x": -86.5831,
+        "y": 147.716
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_caged_target_strawberry",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_ai_bounty_target_flee_unarmed",
+        "x": -85.3263,
+        "y": 76.3774
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_caged_target_tumbleweed",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_ai_bounty_target_flee_unarmed",
+        "x": -107.1394,
+        "y": 64.0166
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_caged_target_wallace_station",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_ai_bounty_target_flee_unarmed",
+        "x": -35.3486,
+        "y": 79.4964
+      }
+    ]
+  }
+]

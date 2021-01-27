@@ -1,0 +1,449 @@
+[
+  {
+    "text": "bounty_board_known_target_heartlands",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -66.9833,
+        "y": 119.6944
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -66.9416,
+        "y": 119.6233
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -66.9371,
+        "y": 119.8189
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -66.9351,
+        "y": 119.9095
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_bolger_glade",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -92.2528,
+        "y": 135.923
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -92.173,
+        "y": 135.8146
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -92.2296,
+        "y": 135.9317
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -92.4077,
+        "y": 135.8704
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_old_bacchus_place",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -105.0706,
+        "y": 89.3733
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -105.2907,
+        "y": 89.2415
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -104.9715,
+        "y": 89.3525
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -104.9916,
+        "y": 89.3382
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_two_crows",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -110.0183,
+        "y": 51.7998
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -110.0357,
+        "y": 51.7219
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -110.2942,
+        "y": 51.5921
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -110.2614,
+        "y": 52.0154
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_gaptooth_ridge_camp",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -103.4421,
+        "y": 26.6258
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -103.4573,
+        "y": 26.7533
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -103.6,
+        "y": 26.7876
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -103.3729,
+        "y": 26.636
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_tall_trees",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -79.2339,
+        "y": 73.5928
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -79.2075,
+        "y": 73.5451
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -79.0289,
+        "y": 73.5946
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -79.3142,
+        "y": 73.5548
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_big_valley_cave",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -52.5142,
+        "y": 87.8283
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -52.3364,
+        "y": 87.7366
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -52.3288,
+        "y": 87.6699
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -52.4331,
+        "y": 87.8582
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_deadboot_creek",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -30.0772,
+        "y": 80.8458
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -30.1087,
+        "y": 80.8352
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -30.1503,
+        "y": 80.9113
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -30.0908,
+        "y": 80.7641
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_ellie_ann_cave",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -58.9466,
+        "y": 93.0217
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -58.5657,
+        "y": 92.9096
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -58.2328,
+        "y": 93.3829
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -58.6055,
+        "y": 93.1735
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_elysian_pool_cave",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_ai_bounty_target_combat",
+        "x": -47.0841,
+        "y": 146.9497
+      },
+      {
+        "config": "objective_ai_bounty_target_combat",
+        "x": -47.1015,
+        "y": 146.9777
+      },
+      {
+        "config": "objective_ai_bounty_target_combat",
+        "x": -47.131,
+        "y": 146.5961
+      },
+      {
+        "config": "objective_ai_bounty_target_combat",
+        "x": -46.8727,
+        "y": 147.0548
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_hanis_bethel",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -50.9464,
+        "y": 133.9628
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -51.0039,
+        "y": 134.0343
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -50.947,
+        "y": 134.0559
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -50.8782,
+        "y": 133.946
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_grizzlies_east",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target",
+        "x": -29.962,
+        "y": 136.1916
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -30.0358,
+        "y": 136.1691
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -29.881,
+        "y": 136.1433
+      },
+      {
+        "config": "objective_bounty_target",
+        "x": -29.5391,
+        "y": 135.9698
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_rhodes_03",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_surrender_named",
+        "x": -82.9081,
+        "y": 123.6102
+      },
+      {
+        "config": "objective_bounty_target_no_flee_shotgun_named",
+        "x": -82.741,
+        "y": 123.6135
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_annesburg_03",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_combat_shotgun_named",
+        "x": -43.2393,
+        "y": 153.4051
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_saint_denis_01",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_flee_named",
+        "x": -82.1013,
+        "y": 152.2738
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_emerald_ranch_01",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_named",
+        "x": -69.8411,
+        "y": 138.9915
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_benedicts_point_01",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_combat_shotgun_named",
+        "x": -111.4677,
+        "y": 43.6285
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_riggs_03",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_hide_named",
+        "x": -79.6432,
+        "y": 148.5752
+      },
+      {
+        "config": "objective_bounty_target_flee_named",
+        "x": -80.1135,
+        "y": 148.5361
+      },
+      {
+        "config": "objective_bounty_target_no_flee_named",
+        "x": -80.3915,
+        "y": 148.7998
+      },
+      {
+        "config": "objective_bounty_target_no_flee_shotgun_named",
+        "x": -80.4953,
+        "y": 148.4245
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_known_target_valentine_02",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_knife_named",
+        "x": -33.728,
+        "y": 124.1736
+      }
+    ]
+  }
+]

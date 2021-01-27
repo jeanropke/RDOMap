@@ -1,0 +1,126 @@
+[
+  {
+    "text": "bounty_board_track_multi_braithwaite",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_window_rock",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_plainview",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_rileys_charge",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_blackwater",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_graveyard",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_butcher_creek",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_carmody_dell",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_old_toms",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_cholla_springs",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": []
+  },
+  {
+    "text": "bounty_board_track_multi_riggs_station",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_named",
+        "x": -89.0842,
+        "y": 97.6353
+      },
+      {
+        "config": "objective_bounty_target_named",
+        "x": -89.0738,
+        "y": 97.5798
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_track_multi_wallace_station",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_named",
+        "x": -48.5872,
+        "y": 88.1826
+      },
+      {
+        "config": "objective_bounty_target_named",
+        "x": -48.7021,
+        "y": 88.1747
+      },
+      {
+        "config": "objective_bounty_target_named",
+        "x": -48.7272,
+        "y": 88.2525
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_track_multi_armadillo",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_no_flee_named",
+        "x": -94.2944,
+        "y": 51.0559
+      }
+    ]
+  }
+]

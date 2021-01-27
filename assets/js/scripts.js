@@ -64,7 +64,7 @@ function init() {
   const locations = Location.init();
   const encounters = Encounter.init();
   const treasures = Treasure.init();
-  const bounties = Bounty.init();
+  const bounties = BountyCollection.init();
   const fmeCondorEgg = CondorEgg.init();
   const fmeSalvage = Salvage.init();
   const plants = PlantsCollection.init();

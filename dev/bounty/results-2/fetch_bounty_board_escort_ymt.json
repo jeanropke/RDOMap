@@ -1,0 +1,41 @@
+[
+  {
+    "text": "bounty_board_escort_blackwater",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_escort",
+        "x": -94.9322,
+        "y": 83.6002
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_escort_riggs_station",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_escort",
+        "x": -64.7491,
+        "y": 104.1705
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_escort_valentine",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_bounty_target_escort",
+        "x": -65.3502,
+        "y": 129.532
+      }
+    ]
+  }
+]

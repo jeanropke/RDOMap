@@ -1,47 +1,5 @@
 class Bounty {
 
-  // requires MapBase.map, Menu.reorderMenu, Settings.some and DOM ready
-  // not idempotent
-  static init() {
-    this.bountiesParentElement = $('.menu-option.clickable[data-type=bounty]')
-      .toggleClass('disabled', !this.bountiesOnMap)
-      .on('click', () => this.bountiesOnMap = !this.bountiesOnMap);
-    this.bounties = [];
-    this.quickParams = [];
-    this.layer = L.layerGroup();
-    this.layer.addTo(MapBase.map);
-    const pane = MapBase.map.createPane('bountyX');
-    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
-    pane.style.pointerEvents = 'none';
-    this.context = $('.menu-hidden[data-type=bounty]').toggleClass('disabled', !this.bountiesOnMap);
-    this.bountyTarget = L.icon({
-      iconUrl: './assets/images/icons/bounty-target.png',
-      iconSize: [18, 18],
-      iconAnchor: [9, 9],
-    });
-    this.bountyTargetPlus = L.icon({
-      iconUrl: './assets/images/icons/bounty-target-plus.png',
-      iconSize: [18, 18],
-      iconAnchor: [9, 9],
-    });
-    this.onSettingsChanged();
-    $('.menu-hidden[data-type="bounty"] > *:first-child a').click(e => {
-      e.preventDefault();
-      const showAll = $(e.target).attr('data-text') === 'menu.show_all';
-      Bounty.bounties.forEach(bounty => bounty.onMap = showAll);
-    });
-    return Loader.promises['bounties'].consumeJson(data => {
-      data.forEach(item => {
-        // TODO: At some point, this will need to be fixed to account for other types of bounties.
-        item.locations.forEach(loc => {
-          this.bounties.push(new Bounty(loc));
-          this.quickParams.push(loc.text);
-        });
-      });
-      this.onLanguageChanged();
-      console.info('%c[Bounties] Loaded!', 'color: #bada55; background: #242424');
-    });
-  }
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
@@ -50,22 +8,30 @@ class Bounty {
   }
 
   // not idempotent (on the environment)
-  constructor(preliminary) {
+  constructor(preliminary, type) {
     Object.assign(this, preliminary);
-    this._shownKey = `shown.${this.text}`;
-    this.element = $('<div class="collectible-wrapper" data-help="item">')
-      .attr('data-tippy-content', Language.get(this.text))
+    this.type = type;
+
+    this.layer = L.layerGroup();
+    this._shownKey = `shown.${type}.${this.text}`;
+
+    this.context = $(`.menu-hidden[data-type=${type}]`);
+    this.element = $(`<div class="collectible-wrapper disabled" data-help="item" data-type="${this.text}">`)
+      .attr('data-tippy-content', Language.get(`menu.${type}.${this.text}`))
       .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', this.text))
+      .append($('<span class="collectible-text">')
+        .append($('<p class="collectible">').attr('data-text', `menu.${type}.${this.text}`)))
       .translate();
+
     this.reinitMarker();
-    this.element.appendTo(Bounty.context);
+
+    this.element.appendTo(this.context);
   }
 
   // auto remove marker? from map, recreate marker, auto add? marker
   // idempotent
   reinitMarker() {
-    if (this.marker) Bounty.layer.removeLayer(this.marker);
+    if (this.marker) BountyCollection.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
     this.marker.addLayer(L.circle([this.x, this.y], {
       color: '#f02828',
@@ -73,26 +39,36 @@ class Bounty {
       fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
       radius: this.radius,
     }));
-    this.locations.forEach(bounty =>
+    this.locations.forEach(bounty => {
+      let iconUrl = './assets/images/icons/bounty-target.png';
+      if (bounty.min > 1) {
+        iconUrl = './assets/images/icons/bounty-target-plus.png';
+      }
       this.marker.addLayer(L.marker([bounty.x, bounty.y], {
-        icon: bounty.min > 1 ? Bounty.bountyTargetPlus : Bounty.bountyTarget,
+        icon: L.icon({
+          iconUrl: iconUrl,
+          iconSize: [18, 18],
+          iconAnchor: [9, 9],
+        }),
         pane: 'bountyX',
-      }).bindPopup(this.popupContent(this, bounty), { minWidth: 300 }))
-    );
+      }).bindPopup(this.popupContent(this, bounty), { minWidth: 300 }));
+    });
     this.onMap = this.onMap;
   }
   popupContent(marker, bounty) {
     const snippet = $(`<div class="handover-wrapper-with-no-influence">
-        <h1 data-text="${marker.text}"></h1>
-        <p data-text="menu.bounties_desc"></p>
+        <h1 data-text="menu.${marker.type}.${marker.text}"></h1>
+        <p data-text="menu.${marker.type}.desc"></p>
         <span class="properties">
-          <p class="properties-min" data-text="menu.bounties_track_min"></p>
+          <p class="property" data-text="menu.${marker.type}.min" data-property="min"></p>
         </span>
       </div>`).translate();
 
-    const pElements = $('span > p', snippet);
-    [...pElements].forEach(p => {
-      const propertyText = Language.get($(p).attr('data-text')).replace(/{([a-z_]+)}/, (_, key) => bounty[key]);
+    const props = $('[data-property]', snippet);
+    [...props].forEach(p => {
+      const property = $(p).attr('data-property');
+      if (!bounty[property]) $(p).remove();
+      const propertyText = Language.get($(p).attr('data-text')).replace(`{${property}}`, bounty[property]);
       $(p).text(propertyText);
     });
 
@@ -100,14 +76,12 @@ class Bounty {
   }
   set onMap(state) {
     if (state) {
-      if (MapBase.isPreviewMode || Bounty.bountiesOnMap)
-        Bounty.layer.addLayer(this.marker);
+      BountyCollection.layer.addLayer(this.marker);
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo:${this._shownKey}`, 'true');
       this.element.removeClass('disabled');
     } else {
-      if (Bounty.bountiesOnMap)
-        Bounty.layer.removeLayer(this.marker);
+      BountyCollection.layer.removeLayer(this.marker);
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this._shownKey}`);
       this.element.addClass('disabled');
@@ -116,27 +90,46 @@ class Bounty {
   get onMap() {
     return !!localStorage.getItem(`rdo:${this._shownKey}`);
   }
+}
 
-  static set bountiesOnMap(state) {
-    if (state) {
-      MapBase.map.addLayer(Bounty.layer);
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo:bounties', 'true');
+class BountyCollection {
 
-      this.bounties.forEach(_t => {
-        if (_t.onMap) _t.onMap = state;
+  static init() {
+    this.layer = L.layerGroup();
+    this.collection = {};
+    this.collectionsData = [];
+    this.quickParams = [];
+
+    const pane = MapBase.map.createPane('bountyX');
+    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
+
+    this.layer.addTo(MapBase.map);
+    const bounties = Loader.promises['bounties'].consumeJson(data => this.collectionsData = data);
+
+    return Promise.all([bounties]).then(() => {
+      console.info('%c[Bounties] Loaded!', 'color: #bada55; background: #242424');
+      this.collectionsData.forEach(collection => {
+        this.collection[collection.key] = new BountyCollection(collection);
       });
-    } else {
-      Bounty.layer.remove();
-      if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdo:bounties');
-    }
-
-    this.bountiesParentElement.toggleClass('disabled', !state);
-    this.context.toggleClass('disabled', !state);
+    });
   }
 
-  static get bountiesOnMap() {
-    return !!localStorage.getItem('rdo:bounties');
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+
+    this.bounties = [];
+    this.locations.forEach(bounty => {
+      this.bounties.push(new Bounty(bounty, this.key));
+      BountyCollection.quickParams.push(bounty.key);
+    });
+
+    Menu.reorderMenu($(`.menu-hidden[data-type=${this.key}]`));
+
+    $(`.menu-hidden[data-type=${this.key}] .bounty-btn`).click(e => {
+      e.preventDefault();
+      const showAll = $(e.target).attr('data-text') === 'menu.show_all';
+      this.bounties.forEach(bounty => bounty.onMap = showAll);
+    });
   }
 }

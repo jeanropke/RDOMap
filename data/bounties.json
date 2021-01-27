@@ -276,5 +276,855 @@
         ]
       }
     ]
+  },
+  {
+    "color": "red",
+    "key": "bounty_board_stakeout",
+    "locations": [
+      {
+        "text": "saint_denis",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -83.5961, "y": 143.5444},
+          {"x": -84.3736, "y": 144.7884},
+          {"x": -83.9409, "y": 144.3327},
+          {"x": -84.3146, "y": 145.1771}
+        ]
+      },
+      {
+        "text": "valentine",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -54.0374, "y": 107.4337},
+          {"x": -53.7516, "y": 107.0641},
+          {"x": -53.42, "y": 106.8251},
+          {"x": -53.21, "y": 106.3457}
+        ]
+      },
+      {
+        "text": "downes_ranch",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -58.8051, "y": 99.3292},
+          {"x": -58.1336, "y": 99.6603},
+          {"x": -57.475, "y": 98.6596},
+          {"x": -57.41, "y": 98.0239}
+        ]
+      },
+      {
+        "text": "solomons_folly",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -120.8378, "y": 27.4835},
+          {"x": -119.5502, "y": 26.9592},
+          {"x": -119.7797, "y": 27.4455},
+          {"x": -120.4775, "y": 26.9499}
+        ]
+      },
+      {
+        "text": "rathskeller_fork",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -97.4187, "y": 31.6264},
+          {"x": -96.4259, "y": 31.4118},
+          {"x": -96.9846, "y": 30.5629},
+          {"x": -97.5632, "y": 29.9021}
+        ]
+      },
+      {
+        "text": "thieves_landing",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -100.2151, "y": 88.6822},
+          {"x": -98.0029, "y": 89.4276},
+          {"x": -99.4892, "y": 87.9465},
+          {"x": -98.2578, "y": 90.062}
+        ]
+      },
+      {
+        "text": "lannahechee_river",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -88.7749, "y": 141.7389},
+          {"x": -88.3262, "y": 142.6351},
+          {"x": -88.9647, "y": 142.1144},
+          {"x": -89.0364, "y": 142.5909}
+        ]
+      },
+      {
+        "text": "rhodes_woolen_mill",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -84.0172, "y": 132.501},
+          {"x": -83.6433, "y": 133.8521},
+          {"x": -83.3385, "y": 133.4145},
+          {"x": -83.453, "y": 132.9179}
+        ]
+      },
+      {
+        "text": "heartlands_oil_fields",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"x": -53.9222, "y": 118.3538},
+          {"x": -52.3789, "y": 118.6193},
+          {"x": -52.9828, "y": 118.1781},
+          {"x": -52.6587, "y": 119.9957}
+        ]
+      }
+    ]
+  },
+  {
+    "color": "red",
+    "key": "bounty_hideout",
+    "locations": [
+      {
+        "text": "colter",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -25.7586, "y": 90.7374},
+          {"config": "no_flee", "x": -25.7293, "y": 90.3725},
+          {"config": "no_flee_repeater", "x": -25.5347, "y": 90.6695},
+          {"config": "no_flee", "x": -25.8427, "y": 90.8206},
+          {"config": "no_flee", "x": -26.3889, "y": 90.5813},
+          {"config": "no_flee_repeater", "x": -25.5709, "y": 90.6546}
+        ]
+      },
+      {
+        "text": "ewing_basin",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -42.613, "y": 82.0448},
+          {"config": "no_flee_shotgun", "x": -42.8799, "y": 82.0469},
+          {"config": "no_flee_repeater", "x": -42.4365, "y": 81.6141},
+          {"config": "no_flee", "x": -42.8638, "y": 81.8206},
+          {"config": "no_flee_repeater", "x": -43.0731, "y": 81.7295},
+          {"config": "no_flee", "x": -42.8844, "y": 81.8743}
+        ]
+      },
+      {
+        "text": "gaptooth_breach",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -113.5483, "y": 18.657},
+          {"config": "no_flee_shotgun", "x": -112.7208, "y": 18.4255},
+          {"config": "no_flee", "x": -112.9654, "y": 18.8604},
+          {"config": "no_flee_repeater", "x": -113.497, "y": 18.371},
+          {"config": "no_flee_repeater", "x": -113.9789, "y": 18.7674},
+          {"config": "no_flee_repeater", "x": -114.3059, "y": 18.3497}
+        ]
+      },
+      {
+        "text": "hanging_dog",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -52.3228, "y": 77.4802},
+          {"config": "no_flee_repeater", "x": -52.0091, "y": 77.1412},
+          {"config": "no_flee", "x": -52.4472, "y": 77.4166},
+          {"config": "no_flee_repeater", "x": -52.7701, "y": 77.6906},
+          {"config": "no_flee", "x": -52.0375, "y": 77.2541},
+          {"config": "no_flee", "x": -52.5524, "y": 77.027}
+        ]
+      },
+      {
+        "text": "lakay",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -75.5594, "y": 145.9639},
+          {"config": "no_flee_repeater", "x": -75.634, "y": 146.3015},
+          {"config": "no_flee_repeater", "x": -75.507, "y": 146.3363},
+          {"config": "no_flee_repeater", "x": -75.332, "y": 146.2149},
+          {"config": "no_flee", "x": -75.7079, "y": 146.1657},
+          {"config": "no_flee", "x": -75.7547, "y": 146.3001}
+        ]
+      },
+      {
+        "text": "millesani_claim",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -45.2679, "y": 89.7431},
+          {"config": "no_flee", "x": -45.231, "y": 89.6745},
+          {"config": "no_flee", "x": -44.7769, "y": 89.3666},
+          {"config": "no_flee", "x": -45.2646, "y": 89.1183},
+          {"config": "no_flee", "x": -45.681, "y": 89.7056},
+          {"config": "no_flee_repeater", "x": -45.6034, "y": 89.4704}
+        ]
+      },
+      {
+        "text": "quakers_cove",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -93.7586, "y": 93.2087},
+          {"config": "no_flee", "x": -94.2449, "y": 93.0413},
+          {"config": "no_flee_repeater", "x": -93.8427, "y": 92.6786},
+          {"config": "no_flee", "x": -93.6291, "y": 93.1221},
+          {"config": "no_flee_repeater", "x": -93.3679, "y": 93.3811},
+          {"config": "no_flee", "x": -93.4642, "y": 92.7006}
+        ]
+      },
+      {
+        "text": "six_point",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -44.3322, "y": 110.3427},
+          {"config": "no_flee", "x": -44.4215, "y": 110.8513},
+          {"config": "no_flee_repeater", "x": -44.4526, "y": 110.8541},
+          {"config": "no_flee", "x": -44.6837, "y": 110.8346},
+          {"config": "no_flee_repeater", "x": -44.6396, "y": 110.954},
+          {"config": "no_flee", "x": -44.3849, "y": 110.275}
+        ]
+      },
+      {
+        "text": "the_loft",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -33.4068, "y": 141.3723},
+          {"config": "no_flee", "x": -33.0918, "y": 141.2595},
+          {"config": "no_flee_shotgun", "x": -33.1308, "y": 141.2853},
+          {"config": "no_flee", "x": -33.3965, "y": 141.3022},
+          {"config": "no_flee", "x": -33.3357, "y": 141.2798},
+          {"config": "no_flee_shotgun", "x": -33.4635, "y": 141.3434}
+        ]
+      },
+      {
+        "text": "twin_rocks",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -96.5527, "y": 49.8036},
+          {"config": "no_flee", "x": -96.5329, "y": 49.8176},
+          {"config": "no_flee", "x": -96.85, "y": 49.9273},
+          {"config": "no_flee", "x": -96.8795, "y": 49.9296},
+          {"config": "no_flee_repeater", "x": -96.4589, "y": 49.6768},
+          {"config": "no_flee_shotgun", "x": -96.8501, "y": 49.4822}
+        ]
+      },
+      {
+        "text": "willards_rest",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee", "x": -29.7205, "y": 157.7007},
+          {"config": "no_flee_repeater", "x": -29.6708, "y": 157.8826},
+          {"config": "no_flee_shotgun", "x": -29.4363, "y": 157.8674},
+          {"config": "no_flee_repeater", "x": -29.3924, "y": 157.5984},
+          {"config": "no_flee", "x": -29.4038, "y": 157.6095},
+          {"config": "no_flee", "x": -29.701, "y": 157.627}
+        ]
+      },
+      {
+        "text": "fort_mercer",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "fight_surrender_named", "x": -117.079, "y": 46.3102},
+          {"config": "flee_named", "x": -117.749, "y": 45.4552},
+          {"config": "fight_repeater_named", "x": -116.9467, "y": 46.1132},
+          {"config": "fight_repeater_named", "x": -116.6988, "y": 46.5431}
+        ]
+      },
+      {
+        "text": "elysian_cave",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_named", "x": -47.0841, "y": 146.9497},
+          {"config": "combat_named", "x": -46.8727, "y": 147.0548},
+          {"config": "combat_named", "x": -47.131, "y": 146.5961},
+          {"config": "combat_named", "x": -47.0356, "y": 146.7615}
+        ]
+      }
+    ]
+  },
+  {
+    "color": "red",
+    "key": "bounty_board_known_target",
+    "locations": [
+      {
+        "text": "heartlands",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -66.9833, "y": 119.6944},
+          {"config": "none", "x": -66.9416, "y": 119.6233},
+          {"config": "none", "x": -66.9371, "y": 119.8189},
+          {"config": "none", "x": -66.9351, "y": 119.9095}
+        ]
+      },
+      {
+        "text": "bolger_glade",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -92.2528, "y": 135.923},
+          {"config": "none", "x": -92.173, "y": 135.8146},
+          {"config": "none", "x": -92.2296, "y": 135.9317},
+          {"config": "none", "x": -92.4077, "y": 135.8704}
+        ]
+      },
+      {
+        "text": "old_bacchus_place",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -105.0706, "y": 89.3733},
+          {"config": "none", "x": -105.2907, "y": 89.2415},
+          {"config": "none", "x": -104.9715, "y": 89.3525},
+          {"config": "none", "x": -104.9916, "y": 89.3382}
+        ]
+      },
+      {
+        "text": "two_crows",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -110.0183, "y": 51.7998},
+          {"config": "none", "x": -110.0357, "y": 51.7219},
+          {"config": "none", "x": -110.2942, "y": 51.5921},
+          {"config": "none", "x": -110.2614, "y": 52.0154}
+        ]
+      },
+      {
+        "text": "gaptooth_ridge_camp",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -103.4421, "y": 26.6258},
+          {"config": "none", "x": -103.4573, "y": 26.7533},
+          {"config": "none", "x": -103.6, "y": 26.7876},
+          {"config": "none", "x": -103.3729, "y": 26.636}
+        ]
+      },
+      {
+        "text": "tall_trees",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -79.2339, "y": 73.5928},
+          {"config": "none", "x": -79.2075, "y": 73.5451},
+          {"config": "none", "x": -79.0289, "y": 73.5946},
+          {"config": "none", "x": -79.3142, "y": 73.5548}
+        ]
+      },
+      {
+        "text": "big_valley_cave",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -52.5142, "y": 87.8283},
+          {"config": "none", "x": -52.3364, "y": 87.7366},
+          {"config": "none", "x": -52.3288, "y": 87.6699},
+          {"config": "none", "x": -52.4331, "y": 87.8582}
+        ]
+      },
+      {
+        "text": "deadboot_creek",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -30.0772, "y": 80.8458},
+          {"config": "none", "x": -30.1087, "y": 80.8352},
+          {"config": "none", "x": -30.1503, "y": 80.9113},
+          {"config": "none", "x": -30.0908, "y": 80.7641}
+        ]
+      },
+      {
+        "text": "ellie_ann_cave",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -58.9466, "y": 93.0217},
+          {"config": "none", "x": -58.5657, "y": 92.9096},
+          {"config": "none", "x": -58.2328, "y": 93.3829},
+          {"config": "none", "x": -58.6055, "y": 93.1735}
+        ]
+      },
+      {
+        "text": "elysian_pool_cave",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat", "x": -47.0841, "y": 146.9497},
+          {"config": "combat", "x": -47.1015, "y": 146.9777},
+          {"config": "combat", "x": -47.131, "y": 146.5961},
+          {"config": "combat", "x": -46.8727, "y": 147.0548}
+        ]
+      },
+      {
+        "text": "hanis_bethel",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -50.9464, "y": 133.9628},
+          {"config": "none", "x": -51.0039, "y": 134.0343},
+          {"config": "none", "x": -50.947, "y": 134.0559},
+          {"config": "none", "x": -50.8782, "y": 133.946}
+        ]
+      },
+      {
+        "text": "grizzlies_east",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "none", "x": -29.962, "y": 136.1916},
+          {"config": "none", "x": -30.0358, "y": 136.1691},
+          {"config": "none", "x": -29.881, "y": 136.1433},
+          {"config": "none", "x": -29.5391, "y": 135.9698}
+        ]
+      },
+      {
+        "text": "rhodes_03",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "surrender_named", "x": -82.9081, "y": 123.6102},
+          {"config": "no_flee_shotgun_named", "x": -82.741, "y": 123.6135}
+        ]
+      },
+      {
+        "text": "annesburg_03",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_shotgun_named", "x": -43.2393, "y": 153.4051}
+        ]
+      },
+      {
+        "text": "saint_denis_01",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "flee_named", "x": -82.1013, "y": 152.2738}]
+      },
+      {
+        "text": "emerald_ranch_01",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "named", "x": -69.8411, "y": 138.9915}]
+      },
+      {
+        "text": "benedicts_point_01",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_shotgun_named", "x": -111.4677, "y": 43.6285}
+        ]
+      },
+      {
+        "text": "riggs_03",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "hide_named", "x": -79.6432, "y": 148.5752},
+          {"config": "flee_named", "x": -80.1135, "y": 148.5361},
+          {"config": "no_flee_named", "x": -80.3915, "y": 148.7998},
+          {"config": "no_flee_shotgun_named", "x": -80.4953, "y": 148.4245}
+        ]
+      },
+      {
+        "text": "valentine_02",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "knife_named", "x": -33.728, "y": 124.1736}]
+      }
+    ]
+  },
+  {
+    "color": "red",
+    "key": "bounty_board_lure",
+    "locations": [
+      {
+        "text": "annesburg_mines",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "only_fight", "x": -41.921, "y": 154.3179},
+          {"config": "only_fight", "x": -46.4869, "y": 72.2903}
+        ]
+      },
+      {
+        "text": "big_valley_shack",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "only_fight", "x": -46.8872, "y": 71.3517},
+          {"config": "only_fight", "x": -46.4869, "y": 72.2903}
+        ]
+      },
+      {
+        "text": "caliga_hall",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight", "x": -83.2744, "y": 139.8804},
+          {"config": "mounted_only_fight", "x": -83.817, "y": 138.5059}
+        ]
+      },
+      {
+        "text": "catfish_jackson",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight", "x": -97.4815, "y": 131.0314},
+          {"config": "mounted_only_fight", "x": -97.4307, "y": 130.9948}
+        ]
+      },
+      {
+        "text": "firwood_rise",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight", "x": -46.7267, "y": 114.5435},
+          {"config": "mounted_only_fight", "x": -47.2478, "y": 115.2397}
+        ]
+      },
+      {
+        "text": "larned_sod",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight", "x": -60.7973, "y": 125.7218},
+          {"config": "mounted_only_fight", "x": -59.1832, "y": 123.3529}
+        ]
+      },
+      {
+        "text": "painted_sky",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "only_fight", "x": -63.1168, "y": 101.2057},
+          {"config": "only_fight", "x": -64.2822, "y": 100.162}
+        ]
+      },
+      {
+        "text": "ridgewood_farm",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight", "x": -106.976, "y": 38.7887},
+          {"config": "mounted_only_fight", "x": -104.8242, "y": 38.4708}
+        ]
+      },
+      {
+        "text": "silent_stead",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight", "x": -103.4926, "y": 24.8771},
+          {"config": "mounted_only_fight", "x": -103.3409, "y": 23.2252}
+        ]
+      },
+      {
+        "text": "thieves_landing",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "only_fight", "x": -99.8272, "y": 89.528},
+          {"config": "only_fight", "x": -99.8202, "y": 89.4986}
+        ]
+      },
+      {
+        "text": "wallace_station",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "caged_animal", "x": -55.2228, "y": 82.4434},
+          {"config": "caged_animal", "x": -54.4556, "y": 79.7576},
+          {"config": "caged_animal", "x": -57.1568, "y": 80.232},
+          {"config": "mounted_only_fight_named", "x": -57.0798, "y": 81.5326}
+        ]
+      },
+      {
+        "text": "rhodes",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "objective", "x": -91.7697, "y": 143.727},
+          {"config": "objective", "x": -92.2019, "y": 143.2547},
+          {"config": "objective", "x": -91.7174, "y": 143.7779},
+          {"config": "objective", "x": -91.8208, "y": 143.5133},
+          {"config": "only_fight_named", "x": -92.615, "y": 142.7641}
+        ]
+      },
+      {
+        "text": "strawberry",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "objective", "x": -84.2901, "y": 80.1469},
+          {"config": "objective", "x": -84.2432, "y": 80.105},
+          {"config": "objective", "x": -84.4899, "y": 80.3812},
+          {"config": "mounted_only_fight_named", "x": -83.5955, "y": 79.8945}
+        ]
+      },
+      {
+        "text": "benedicts_point_rleys_charge",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "mounted_only_fight_named", "x": -115.3784, "y": 52.6157}
+        ]
+      }
+    ]
+  },
+  {
+    "color": "red",
+    "key": "bounty_timed",
+    "locations": [
+      {
+        "text": "beaver_hollow",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -38.1449, "y": 148.4967},
+          {"config": "combat_mounted", "x": -38.0874, "y": 148.4827},
+          {"config": "no_flee", "x": -40.6602, "y": 146.9284},
+          {"config": "no_flee_shotgun", "x": -40.6278, "y": 147.0794},
+          {"config": "no_flee", "x": -40.9803, "y": 146.9991},
+          {"config": "no_flee", "x": -41.8643, "y": 147.5815}
+        ]
+      },
+      {
+        "text": "chez_porter",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -45.6092, "y": 99.8346},
+          {"config": "combat_mounted", "x": -35.4898, "y": 109.3603},
+          {"config": "no_flee", "x": -36.7564, "y": 105.2049},
+          {"config": "no_flee_shotgun", "x": -36.7776, "y": 105.1216},
+          {"config": "no_flee", "x": -36.9538, "y": 104.8833},
+          {"config": "no_flee", "x": -36.72, "y": 104.9851}
+        ]
+      },
+      {
+        "text": "cueva_seca",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -102.3689, "y": 23.7737},
+          {"config": "no_flee_repeater", "x": -106.3922, "y": 20.3413},
+          {"config": "no_flee", "x": -106.5008, "y": 20.4909},
+          {"config": "no_flee", "x": -106.2874, "y": 20.3013},
+          {"config": "no_flee_shotgun", "x": -106.6226, "y": 20.3217},
+          {"config": "combat_mounted", "x": -63.7552, "y": 111.3676}
+        ]
+      },
+      {
+        "text": "fort_brennand",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -65.4867, "y": 144.9172},
+          {"config": "no_flee", "x": -59.0134, "y": 149.4232},
+          {"config": "no_flee", "x": -59.1043, "y": 149.444},
+          {"config": "no_flee_repeater", "x": -58.977, "y": 149.1999},
+          {"config": "no_flee_repeater", "x": -58.9331, "y": 149.556},
+          {"config": "combat_mounted", "x": -61.382, "y": 153.2789}
+        ]
+      },
+      {
+        "text": "fort_mercer",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -120.6936, "y": 38.491},
+          {"config": "combat_mounted", "x": -63.7552, "y": 111.3676},
+          {"config": "no_flee_rifle", "x": -116.6375, "y": 46.0944},
+          {"config": "no_flee_rifle", "x": -117.3703, "y": 45.5657},
+          {"config": "no_flee_shotgun", "x": -117.2757, "y": 45.6661},
+          {"config": "no_flee", "x": -116.9433, "y": 45.6199}
+        ]
+      },
+      {
+        "text": "fort_riggs",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -80.6642, "y": 91.0243},
+          {"config": "no_flee_shotgun", "x": -77.6722, "y": 86.8397},
+          {"config": "no_flee", "x": -78.2575, "y": 87.0781},
+          {"config": "no_flee_repeater", "x": -77.6552, "y": 86.892},
+          {"config": "no_flee_repeater", "x": -78.2388, "y": 87.0303},
+          {"config": "no_flee", "x": -77.8218, "y": 87.2506}
+        ]
+      },
+      {
+        "text": "fort_wallace",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -45.0371, "y": 115.8161},
+          {"config": "no_flee_shotgun", "x": -40.2605, "y": 116.6277},
+          {"config": "no_flee", "x": -40.6002, "y": 116.4038},
+          {"config": "no_flee", "x": -40.4285, "y": 116.6204},
+          {"config": "combat_mounted", "x": -63.7552, "y": 111.2124},
+          {"config": "no_flee", "x": -40.3656, "y": 116.4802}
+        ]
+      },
+      {
+        "text": "macombs_end",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -72.9595, "y": 136.1339},
+          {"config": "combat_mounted", "x": -63.7552, "y": 111.3676},
+          {"config": "no_flee", "x": -75.0453, "y": 140.4103},
+          {"config": "no_flee_repeater", "x": -75.3522, "y": 140.5436},
+          {"config": "no_flee", "x": -75.0454, "y": 140.6609},
+          {"config": "no_flee_repeater", "x": -75.6008, "y": 140.3501}
+        ]
+      },
+      {
+        "text": "mount_hagen",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -44.7341, "y": 85.5936},
+          {"config": "no_flee_shotgun", "x": -44.2559, "y": 88.1493},
+          {"config": "no_flee_shotgun", "x": -44.2292, "y": 87.9228},
+          {"config": "no_flee", "x": -44.1866, "y": 87.867},
+          {"config": "no_flee", "x": -44.193, "y": 87.9874},
+          {"config": "no_flee", "x": -44.261, "y": 87.9094}
+        ]
+      },
+      {
+        "text": "mount_shann_mine",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "combat_mounted", "x": -66.6599, "y": 68.4171},
+          {"config": "no_flee", "x": -61.894, "y": 74.81},
+          {"config": "combat_mounted", "x": -63.7552, "y": 111.3676},
+          {"config": "no_flee_repeater", "x": -62.3392, "y": 75.2733},
+          {"config": "no_flee_repeater", "x": -62.2727, "y": 75.0823},
+          {"config": "no_flee_shotgun", "x": -62.3012, "y": 75.1364}
+        ]
+      },
+      {
+        "text": "emerald_ranch",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [
+          {"config": "no_flee_shotgun_named", "x": -66.6438, "y": 141.5964}
+        ]
+      }
+    ]
+  },
+  {
+    "color": "red",
+    "key": "bounty_board_caged_target",
+    "locations": [
+      {
+        "text": "saint_denis",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "flee_unarmed", "x": -86.5831, "y": 147.716}]
+      },
+      {
+        "text": "strawberry",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "flee_unarmed", "x": -85.3263, "y": 76.3774}]
+      },
+      {
+        "text": "tumbleweed",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "flee_unarmed", "x": -107.1394, "y": 64.0166}]
+      },
+      {
+        "text": "wallace_station",
+        "x": 0,
+        "y": 0,
+        "radius": 0,
+        "locations": [{"config": "flee_unarmed", "x": -35.3486, "y": 79.4964}]
+      }
+    ]
   }
 ]

@@ -1,0 +1,284 @@
+[
+  {
+    "text": "bounty_board_lure_annesburg_mines",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -41.921,
+        "y": 154.3179
+      },
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -46.4869,
+        "y": 72.2903
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_big_valley_shack",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -46.8872,
+        "y": 71.3517
+      },
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -46.4869,
+        "y": 72.2903
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_caliga_hall",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -83.2744,
+        "y": 139.8804
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -83.817,
+        "y": 138.5059
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_catfish_jackson",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -97.4815,
+        "y": 131.0314
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -97.4307,
+        "y": 130.9948
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_firwood_rise",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -46.7267,
+        "y": 114.5435
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -47.2478,
+        "y": 115.2397
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_larned_sod",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -60.7973,
+        "y": 125.7218
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -59.1832,
+        "y": 123.3529
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_painted_sky",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -63.1168,
+        "y": 101.2057
+      },
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -64.2822,
+        "y": 100.162
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_ridgewood_farm",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -106.976,
+        "y": 38.7887
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -104.8242,
+        "y": 38.4708
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_silent_stead",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -103.4926,
+        "y": 24.8771
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight",
+        "x": -103.3409,
+        "y": 23.2252
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_thieves_landing",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -99.8272,
+        "y": 89.528
+      },
+      {
+        "config": "obj_bb_target_male_only_fight",
+        "x": -99.8202,
+        "y": 89.4986
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_wallace_station",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "caged_animal_non_reward",
+        "x": -55.2228,
+        "y": 82.4434
+      },
+      {
+        "config": "caged_animal_non_reward",
+        "x": -54.4556,
+        "y": 79.7576
+      },
+      {
+        "config": "caged_animal_non_reward",
+        "x": -57.1568,
+        "y": 80.232
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight_named",
+        "x": -57.0798,
+        "y": 81.5326
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_rhodes",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_moonshine_still_02_destroy_deliver_non_reward",
+        "x": -91.7697,
+        "y": 143.727
+      },
+      {
+        "config": "objective_destroy_moonshine_wagon_deliver_team_non_reward",
+        "x": -92.2019,
+        "y": 143.2547
+      },
+      {
+        "config": "objective_moonshine_supplies_01_destroy_deliver_non_reward",
+        "x": -91.7174,
+        "y": 143.7779
+      },
+      {
+        "config": "objective_moonshine_barrel_destroy_deliver_non_reward",
+        "x": -91.8208,
+        "y": 143.5133
+      },
+      {
+        "config": "obj_bb_target_male_only_fight_named",
+        "x": -92.615,
+        "y": 142.7641
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_strawberry",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "objective_destroy_moonshine_wagon_deliver_team_non_reward",
+        "x": -84.2901,
+        "y": 80.1469
+      },
+      {
+        "config": "objective_destroy_moonshine_wagon_deliver_team_02_non_reward",
+        "x": -84.2432,
+        "y": 80.105
+      },
+      {
+        "config": "objective_destroy_wagon_deliver_team_non_reward",
+        "x": -84.4899,
+        "y": 80.3812
+      },
+      {
+        "config": "obj_bb_target_male_mounted_only_fight_named",
+        "x": -83.5955,
+        "y": 79.8945
+      }
+    ]
+  },
+  {
+    "text": "bounty_board_lure_benedicts_point_rleys_charge",
+    "x": 0,
+    "y": 0,
+    "radius": 0,
+    "locations": [
+      {
+        "config": "obj_bb_target_male_mounted_only_fight_named",
+        "x": -115.3784,
+        "y": 52.6157
+      }
+    ]
+  }
+]
