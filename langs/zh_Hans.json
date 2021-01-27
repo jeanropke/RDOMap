@@ -1231,7 +1231,7 @@
     "map.gfh.missions.gfh_mt_coach_holdup_robbery": "抢劫客运马车",
     "map.gfh.missions.gfh_mt_on_the_hunt": "狩猎",
     "menu.dynamic_bounties": "动态赏金目标",
-    "map.dynamic_bounties.desc": "这是一个随机生成的赏金目标，购买了赏金职业扩展之后才会刷出，目前所知不多。",
+    "map.dynamic_bounties.desc": "这是一个随机生成的赏金目标，仅在购买了威望赏金猎人证后才会刷出。地图上会出现一片红色区域。一个赏金目标会在这片区域中出现。将他们带到警局以换取微薄的报酬。",
     "map.dynamic_bounties.annesburg_outskirts.name": "安内斯堡郊区",
     "map.dynamic_bounties.cumberland_forest.name": "坎伯兰森林",
     "map.dynamic_bounties.guthrie_farm.name": "Guthrie Farm",
@@ -1273,9 +1273,9 @@
     "map.salvage_flat_iron_lake.name": "抢救物品 - 烙铁湖",
     "map.salvage_gaptooth_ridge.name": "抢救物品 - 豁牙岭",
     "menu.salvage": "抢救物品",
-    "map.salvage.pickups.desc": "This location spawns a random collectible during the event. This item can be picked up without having a shovel or metal detector.",
-    "map.salvage.mounds.desc": "This location spawns a dirt mound during the event. A random item will be awarded when you dig up this dirt mount using a shovel.",
-    "map.salvage.chests.desc": "This location spawns a big or small chest during the event. One or more random items will be awarded when you upen the chest.",
+    "map.salvage.pickups.desc": "此位置会在活动刷出随机收藏品。 该物品不需要借助铁锹或金属探测器就能获得。",
+    "map.salvage.mounds.desc": "此位置会在活动期间刷出一个土堆。 用铁锹去挖这个土堆，你将会获得一个随机的物品作为奖励。",
+    "map.salvage.chests.desc": "此位置会在活动期间刷出一个大的或小的箱子。 你将在打开箱子后获得一个或多个随机物品作为奖励。",
     "menu.tooltip_menu": "Tooltips for menu items",
     "help.tooltip_menu": "当鼠标光标放在地图标记上时会弹出显示完整标题的提示条。",
     "menu.tooltip_map": "收藏品项目提示条",
@@ -1344,5 +1344,5 @@
     "lake_isabella": "伊莎贝拉湖",
     "menu.bounties": "Tracking Bounties",
     "menu.bounties_desc": "These missions prompt you to go to a certain area and search for clues in a certain radius. After inspecting the clues, you are then told to follow the different trails to potentially find a bounty target.",
-    "menu.bounties_track_min": "此隐藏刷新点会在玩家人数达到或超过 {min} 时触发。"
+    "menu.bounties_track_min": "此隐藏刷新点会在玩家总数达到或超过 {min} 人时触发。"
 }
