@@ -380,182 +380,37 @@
     "color": "blue",
     "key": "rescue",
     "locations": [
-      {
-        "text": "bayou_gators",
-        "type": "mission_giver",
-        "x": -70.9317,
-        "y": 146.5354
-      },
-      {
-        "text": "canoe_escape",
-        "type": "mission_giver",
-        "x": -39.6887,
-        "y": 111.2546
-      },
-      {
-        "text": "colter_bandits",
-        "type": "mission_giver",
-        "x": -26.8274,
-        "y": 90.5397
-      },
-      {
-        "text": "colter_bandits",
-        "type": "objective",
-        "x": -25.7447,
-        "y": 90.3493
-      },
-      {
-        "text": "grizzlies_prisoner_rescue",
-        "type": "mission_giver",
-        "x": -42.057,
-        "y": 97.9634
-      },
-      {
-        "text": "grizzlies_prisoner_rescue",
-        "type": "objective",
-        "x": -41.482,
-        "y": 98.0289
-      },
-      {
-        "text": "highway_robbery",
-        "type": "mission_giver",
-        "x": -42.9833,
-        "y": 123.5868
-      },
-      {
-        "text": "mining_town",
-        "type": "mission_giver",
-        "x": -44.5451,
-        "y": 81.8769
-      },
+      {"text": "bayou_gators", "type": "mission_giver", "x": -70.9317, "y": 146.5354},
+      {"text": "canoe_escape", "type": "mission_giver", "x": -39.6887, "y": 111.2546},
+      {"text": "colter_bandits", "type": "mission_giver", "x": -26.8274, "y": 90.5397},
+      {"text": "colter_bandits", "type": "objective", "x": -25.7447, "y": 90.3493},
+      {"text": "grizzlies_prisoner_rescue", "type": "mission_giver", "x": -42.057, "y": 97.9634},
+      {"text": "grizzlies_prisoner_rescue", "type": "objective", "x": -41.482, "y": 98.0289},
+      {"text": "highway_robbery", "type": "mission_giver", "x": -42.9833, "y": 123.5868},
+      {"text": "mining_town", "type": "mission_giver", "x": -44.5451, "y": 81.8769},
       {"text": "mining_town", "type": "objective", "x": -42.4571, "y": 81.6237},
-      {
-        "text": "pikes_basin",
-        "type": "mission_giver",
-        "x": -102.2258,
-        "y": 66.6477
-      },
-      {
-        "text": "pikes_basin",
-        "type": "objective",
-        "x": -102.7444,
-        "y": 68.1286
-      },
-      {
-        "text": "plague_town",
-        "type": "mission_giver",
-        "x": -73.8154,
-        "y": 136.3702
-      },
+      {"text": "pikes_basin", "type": "mission_giver", "x": -102.2258, "y": 66.6477},
+      {"text": "pikes_basin", "type": "objective", "x": -102.7444, "y": 68.1286},
+      {"text": "plague_town", "type": "mission_giver", "x": -73.8154, "y": 136.3702},
       {"text": "plague_town", "type": "objective", "x": -69.88, "y": 138.8},
-      {
-        "text": "quakers_cove",
-        "type": "mission_giver",
-        "x": -91.7635,
-        "y": 94.389
-      },
-      {
-        "text": "quakers_cove",
-        "type": "objective",
-        "x": -94.2342,
-        "y": 93.0126
-      },
-      {
-        "text": "roanoke_standoff",
-        "type": "mission_giver",
-        "x": -57.3664,
-        "y": 151.3451
-      },
-      {
-        "text": "saint_denis_graveyard",
-        "type": "mission_giver",
-        "x": -81.6816,
-        "y": 148.5406
-      },
-      {
-        "text": "saint_denis_graveyard",
-        "type": "objective",
-        "x": -80.0216,
-        "y": 153.5881
-      },
-      {
-        "text": "saint_denis_mugging",
-        "type": "mission_giver",
-        "x": -83.2187,
-        "y": 153.0763
-      },
-      {
-        "text": "saint_denis_mugging",
-        "type": "objective",
-        "x": -83.867,
-        "y": 152.6315
-      },
-      {
-        "text": "tracking_big_valley_cave",
-        "type": "mission_giver",
-        "x": -65.8471,
-        "y": 78.1443
-      },
-      {
-        "text": "tracking_big_valley_cave",
-        "type": "objective",
-        "x": -61.6521,
-        "y": 78.2431
-      },
-      {
-        "text": "tracking_bluewater_kidnap",
-        "type": "mission_giver",
-        "x": -59.1473,
-        "y": 146.7385
-      },
-      {
-        "text": "tracking_bluewater_kidnap",
-        "type": "objective",
-        "x": -70.122,
-        "y": 150.0768
-      },
-      {
-        "text": "tracking_cliff_edge",
-        "type": "mission_giver",
-        "x": -59.2606,
-        "y": 94.4889
-      },
-      {
-        "text": "tracking_cliff_edge",
-        "type": "objective",
-        "x": -64.5452,
-        "y": 90.7468
-      },
-      {
-        "text": "tracking_missing_fisherman",
-        "type": "mission_giver",
-        "x": -37.6153,
-        "y": 153.5267
-      },
-      {
-        "text": "tracking_missing_fisherman",
-        "type": "objective",
-        "x": -36.3318,
-        "y": 148.8486
-      },
-      {
-        "text": "tracking_mistaken_bounties",
-        "type": "mission_giver",
-        "x": -82.7368,
-        "y": 77.3041
-      },
-      {
-        "text": "tracking_mistaken_bounties",
-        "type": "objective",
-        "x": -80.0312,
-        "y": 88.4344
-      },
-      {
-        "text": "west_heartlands_bridge",
-        "type": "mission_giver",
-        "x": -57.1772,
-        "y": 101.8965
-      }
+      {"text": "quakers_cove", "type": "mission_giver", "x": -91.7635, "y": 94.389},
+      {"text": "quakers_cove", "type": "objective", "x": -94.2342, "y": 93.0126},
+      {"text": "roanoke_standoff", "type": "mission_giver", "x": -57.3664, "y": 151.3451},
+      {"text": "saint_denis_graveyard", "type": "mission_giver", "x": -81.6816, "y": 148.5406},
+      {"text": "saint_denis_graveyard", "type": "objective", "x": -80.0216, "y": 153.5881},
+      {"text": "saint_denis_mugging", "type": "mission_giver", "x": -83.2187, "y": 153.0763},
+      {"text": "saint_denis_mugging", "type": "objective", "x": -83.867, "y": 152.6315},
+      {"text": "tracking_big_valley_cave", "type": "mission_giver", "x": -65.8471, "y": 78.1443},
+      {"text": "tracking_big_valley_cave", "type": "objective", "x": -61.6521, "y": 78.2431},
+      {"text": "tracking_bluewater_kidnap", "type": "mission_giver", "x": -59.1473, "y": 146.7385},
+      {"text": "tracking_bluewater_kidnap", "type": "objective", "x": -70.122, "y": 150.0768},
+      {"text": "tracking_cliff_edge", "type": "mission_giver", "x": -59.2606, "y": 94.4889},
+      {"text": "tracking_cliff_edge", "type": "objective", "x": -64.5452, "y": 90.7468},
+      {"text": "tracking_missing_fisherman", "type": "mission_giver", "x": -37.6153, "y": 153.5267},
+      {"text": "tracking_missing_fisherman", "type": "objective", "x": -36.3318, "y": 148.8486},
+      {"text": "tracking_mistaken_bounties", "type": "mission_giver", "x": -82.7368, "y": 77.3041},
+      {"text": "tracking_mistaken_bounties", "type": "objective", "x": -80.0312, "y": 88.4344},
+      {"text": "west_heartlands_bridge", "type": "mission_giver", "x": -57.1772, "y": 101.8965}
     ]
   },
   {
