@@ -33,12 +33,14 @@ class Bounty {
   reinitMarker() {
     if (this.marker) BountyCollection.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
-    this.marker.addLayer(L.circle([this.x, this.y], {
-      color: '#f02828',
-      fillColor: '#f02828',
-      fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
-      radius: this.radius,
-    }));
+    if (this.radius > 0) {
+      this.marker.addLayer(L.circle([this.x, this.y], {
+        color: '#f02828',
+        fillColor: '#f02828',
+        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+        radius: this.radius,
+      }));
+    }
     this.locations.forEach(bounty => {
       let iconUrl = './assets/images/icons/bounty-target.png';
       if (bounty.min > 1) {
@@ -61,6 +63,7 @@ class Bounty {
         <p data-text="menu.${marker.type}.desc"></p>
         <span class="properties">
           <p class="property" data-text="menu.${marker.type}.min" data-property="min"></p>
+          <!-- <p class="property" data-text="menu.${marker.type}.config" data-property="config"></p> -->
         </span>
       </div>`).translate();
 
