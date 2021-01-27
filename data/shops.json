@@ -2,57 +2,130 @@
   {
     "color": "black",
     "key": "barber",
-    "locations": [{"text": "shop_blk_barber", "x": -84.7851, "y": 98.6281}, {"text": "shop_sdn_barber", "x": -81.9138, "y": 152.5173}, {"text": "shop_val_barber", "x": -50.9947, "y": 106.5070}]
+    "locations": [
+      {"text": "shop_blk_barber", "x": -84.7851, "y": 98.6281},
+      {"text": "shop_sdn_barber", "x": -81.9138, "y": 152.5173},
+      {"text": "shop_val_barber", "x": -50.9947, "y": 106.507}
+    ]
   },
   {
     "color": "black",
     "key": "butcher",
-    "locations": [{"text": "shop_blk_butcher", "x": -83.5389, "y": 99.6020}, {"text": "shop_rho_butcher", "x": -83.4288, "y": 131.4299}, {"text": "shop_sdn_butcher", "x": -84.2624, "y": 155.0488}, {"text": "shop_str_butcher", "x": -69.7065, "y": 84.1000}, {"text": "shop_tbl_butcher", "x": -109.3269, "y": 25.7909}, {"text": "shop_val_butcher", "x": -51.7067, "y": 106.0184}]
+    "locations": [
+      {"text": "shop_blk_butcher", "x": -83.5389, "y": 99.602},
+      {"text": "shop_rho_butcher", "x": -83.4288, "y": 131.4299},
+      {"text": "shop_sdn_butcher", "x": -84.2624, "y": 155.0488},
+      {"text": "shop_str_butcher", "x": -69.7065, "y": 84.1},
+      {"text": "shop_tbl_butcher", "x": -109.3269, "y": 25.7909},
+      {"text": "shop_val_butcher", "x": -51.7067, "y": 106.0184}
+    ]
   },
   {
     "color": "black",
     "key": "doctor",
-    "locations": [{"text": "shop_sdn_doctor", "x": -82.7154, "y": 153.5226}, {"text": "shop_val_doctor", "x": -51.1196, "y": 106.8218}]
+    "locations": [
+      {"text": "shop_sdn_doctor", "x": -82.7154, "y": 153.5226},
+      {"text": "shop_val_doctor", "x": -51.1196, "y": 106.8218}
+    ]
   },
   {
     "color": "black",
     "key": "fence",
-    "locations": [{"text": "shop_emr_fence", "x": -59.3531, "y": 133.2871}, {"text": "shop_rho_fence", "x": -81.3251, "y": 131.7676}, {"text": "shop_sdn_fence", "x": -82.2569, "y": 155.6695}, {"text": "shop_van_fence", "x": -54.8719, "y": 158.2492}, {"text": "shop_thl_fence", "x": -99.5624, "y": 89.5357}]
+    "locations": [
+      {"text": "shop_emr_fence", "x": -59.3531, "y": 133.2871},
+      {"text": "shop_rho_fence", "x": -81.3251, "y": 131.7676},
+      {"text": "shop_sdn_fence", "x": -82.2569, "y": 155.6695},
+      {"text": "shop_van_fence", "x": -54.8719, "y": 158.2492},
+      {"text": "shop_thl_fence", "x": -99.5624, "y": 89.5357}
+    ]
   },
   {
     "color": "black",
     "key": "general_store",
-    "locations": [{"text": "shop_amd_general_store", "x": -104.3150, "y": 54.0631}, {"text": "shop_blk_general_store", "x": -84.1215, "y": 99.1149}, {"text": "shop_rho_general_store", "x": -83.6887, "y": 131.9255}, {"text": "shop_sdn_general_store", "x": -84.0779, "y": 155.1300}, {"text": "shop_str_general_store", "x": -69.6263, "y": 83.5089}, {"text": "shop_tbl_general_store", "x": -109.1998, "y": 26.1486}, {"text": "shop_val_general_store", "x": -51.1262, "y": 106.2615}, {"text": "shop_wal_general_store", "x": -57.4932, "y": 91.0859}]
+    "locations": [
+      {"text": "shop_amd_general_store", "x": -104.315, "y": 54.0631},
+      {"text": "shop_blk_general_store", "x": -84.1215, "y": 99.1149},
+      {"text": "shop_rho_general_store", "x": -83.6887, "y": 131.9255},
+      {"text": "shop_sdn_general_store", "x": -84.0779, "y": 155.13},
+      {"text": "shop_str_general_store", "x": -69.6263, "y": 83.5089},
+      {"text": "shop_tbl_general_store", "x": -109.1998, "y": 26.1486},
+      {"text": "shop_val_general_store", "x": -51.1262, "y": 106.2615},
+      {"text": "shop_wal_general_store", "x": -57.4932, "y": 91.0859}
+    ]
   },
   {
     "color": "black",
     "key": "gunsmith",
-    "locations": [{"text": "shop_asb_gunsmith", "x": -43.1219, "y": 157.0465}, {"text": "shop_rho_gunsmith", "x": -84.1323, "y": 131.8113}, {"text": "shop_sdn_gunsmith", "x": -83.5753, "y": 153.4529}, {"text": "shop_tbl_gunsmith", "x": -109.5996, "y": 25.8280}, {"text": "shop_val_gunsmith", "x": -51.5090, "y": 106.9164}]
+    "locations": [
+      {"text": "shop_asb_gunsmith", "x": -43.1219, "y": 157.0465},
+      {"text": "shop_rho_gunsmith", "x": -84.1323, "y": 131.8113},
+      {"text": "shop_sdn_gunsmith", "x": -83.5753, "y": 153.4529},
+      {"text": "shop_tbl_gunsmith", "x": -109.5996, "y": 25.828},
+      {"text": "shop_val_gunsmith", "x": -51.509, "y": 106.9164}
+    ]
   },
   {
     "color": "black",
     "key": "honor",
-    "locations": [{"text": "shop_amd_honor_mp", "x": -106.7246, "y": 54.8181}, {"text": "shop_boj_honor_mp", "x": -73.0241, "y": 91.9031}, {"text": "shop_roj_honor_mp", "x": -42.9806, "y": 152.0385}]
+    "locations": [
+      {"text": "shop_amd_honor_mp", "x": -106.7246, "y": 54.8181},
+      {"text": "shop_boj_honor_mp", "x": -73.0241, "y": 91.9031},
+      {"text": "shop_roj_honor_mp", "x": -42.9806, "y": 152.0385}
+    ]
   },
   {
     "color": "black",
     "key": "photo_studio",
-    "locations": [{"text": "shop_blk_photo_studio", "x": -84.8898, "y": 98.6651}, {"text": "shop_sdn_photo_studio", "x": -80.9913, "y": 153.7010}]
+    "locations": [
+      {"text": "shop_blk_photo_studio", "x": -84.8898, "y": 98.6651},
+      {"text": "shop_sdn_photo_studio", "x": -80.9913, "y": 153.701}
+    ]
   },
   {
     "color": "black",
     "key": "post_office",
-    "locations": [{"text": "shop_amd_post_office", "x": -103.9225, "y": 53.3600}, {"text": "shop_asb_post_office", "x": -43.6248, "y": 156.9046}, {"text": "shop_ben_post_office", "x": -117.4410, "y": 30.1614}, {"text": "shop_blk_post_office", "x": -84.1992, "y": 97.7092}, {"text": "shop_emr_post_office", "x": -56.7534, "y": 134.9101}, {"text": "shop_rgg_post_office", "x": -72.5347, "y": 94.3286}, {"text": "shop_rho_post_office", "x": -83.6995, "y": 130.3280}, {"text": "shop_sdn_post_office", "x": -85.3004, "y": 153.9512}, {"text": "shop_str_post_office", "x": -69.5770, "y": 83.9140}, {"text": "shop_val_post_office", "x": -53.8518, "y": 108.5275}, {"text": "shop_van_post_office", "x": -54.7517, "y": 157.6365}, {"text": "shop_wal_post_office", "x": -57.3786, "y": 91.1170}]
+    "locations": [
+      {"text": "shop_amd_post_office", "x": -103.9225, "y": 53.36},
+      {"text": "shop_asb_post_office", "x": -43.6248, "y": 156.9046},
+      {"text": "shop_ben_post_office", "x": -117.441, "y": 30.1614},
+      {"text": "shop_blk_post_office", "x": -84.1992, "y": 97.7092},
+      {"text": "shop_emr_post_office", "x": -56.7534, "y": 134.9101},
+      {"text": "shop_rgg_post_office", "x": -72.5347, "y": 94.3286},
+      {"text": "shop_rho_post_office", "x": -83.6995, "y": 130.328},
+      {"text": "shop_sdn_post_office", "x": -85.3004, "y": 153.9512},
+      {"text": "shop_str_post_office", "x": -69.577, "y": 83.914},
+      {"text": "shop_val_post_office", "x": -53.8518, "y": 108.5275},
+      {"text": "shop_van_post_office", "x": -54.7517, "y": 157.6365},
+      {"text": "shop_wal_post_office", "x": -57.3786, "y": 91.117}
+    ]
   },
   {
     "color": "black",
     "key": "saloon",
-    "locations": [{"text": "shop_amd_bartender", "x": -103.8825, "y": 53.8813}, {"text": "shop_blk_bartender", "x": -84.0895, "y": 98.5976}, {"text": "shop_rho_bartender", "x": -84.9446, "y": 132.0747}, {"text": "shop_sdn_bartender", "x": -82.5800, "y": 152.2615}, {"text": "shop_sdn_bartender_slum", "x": -81.7083, "y": 154.6410}, {"text": "shop_tbl_bartender", "x": -108.7077, "y": 25.6365}, {"text": "shop_val_bartender", "x": -51.0648, "y": 106.4184}, {"text": "shop_val_bartender_keane", "x": -51.6639, "y": 107.5886}, {"text": "shop_van_bartender", "x": -55.3890, "y": 157.0379}]
+    "locations": [
+      {"text": "shop_amd_bartender", "x": -103.8825, "y": 53.8813},
+      {"text": "shop_blk_bartender", "x": -84.0895, "y": 98.5976},
+      {"text": "shop_rho_bartender", "x": -84.9446, "y": 132.0747},
+      {"text": "shop_sdn_bartender", "x": -82.58, "y": 152.2615},
+      {"text": "shop_sdn_bartender_slum", "x": -81.7083, "y": 154.641},
+      {"text": "shop_tbl_bartender", "x": -108.7077, "y": 25.6365},
+      {"text": "shop_val_bartender", "x": -51.0648, "y": 106.4184},
+      {"text": "shop_val_bartender_keane", "x": -51.6639, "y": 107.5886},
+      {"text": "shop_van_bartender", "x": -55.389, "y": 157.0379}
+    ]
   },
   {
     "color": "black",
     "key": "stable",
-    "locations": [{"text": "shop_blk_horse_shop", "x": -84.8035, "y": 97.8134}, {"text": "shop_sdn_horse_shop", "x": -86.0986, "y": 150.2184}, {"text": "shop_str_horse_shop", "x": -72.3542, "y": 83.0894}, {"text": "shop_tbl_horse_shop", "x": -110.8427, "y": 25.5937}, {"text": "shop_val_horse_shop", "x": -51.3717, "y": 105.5549}, {"text": "shop_van_horse_shop", "x": -51.2464, "y": 157.2936}, {"text": "shop_scm_horse_shop", "x": -66.5982, "y": 130.0545}]
+    "locations": [
+      {"text": "shop_blk_horse_shop", "x": -84.8035, "y": 97.8134},
+      {"text": "shop_sdn_horse_shop", "x": -86.0986, "y": 150.2184},
+      {"text": "shop_str_horse_shop", "x": -72.3542, "y": 83.0894},
+      {"text": "shop_tbl_horse_shop", "x": -110.8427, "y": 25.5937},
+      {"text": "shop_val_horse_shop", "x": -51.3717, "y": 105.5549},
+      {"text": "shop_van_horse_shop", "x": -51.2464, "y": 157.2936},
+      {"text": "shop_scm_horse_shop", "x": -66.5982, "y": 130.0545}
+    ]
   },
   {
     "color": "black",
@@ -62,21 +135,45 @@
   {
     "color": "black",
     "key": "tailor",
-    "locations": [{"text": "shop_blk_tailor", "x": -83.6750, "y": 99.4618}, {"text": "shop_sdn_tailor", "x": -81.7125, "y": 150.9470}]
+    "locations": [
+      {"text": "shop_blk_tailor", "x": -83.675, "y": 99.4618},
+      {"text": "shop_sdn_tailor", "x": -81.7125, "y": 150.947}
+    ]
   },
   {
     "color": "black",
     "key": "trapper",
-    "locations": [{"text": "shop_sdn_trapper", "x": -82.5847, "y": 155.2034}, {"text": "shop_bgv_trapper_1", "x": -61.4731, "y": 67.2061}, {"text": "shop_bgv_trapper_2", "x": -72.0494, "y": 95.6559}, {"text": "shop_roa_trapper", "x": -48.0162, "y": 143.4887}, {"text": "shop_tal_trapper", "x": -93.2601, "y": 76.2895}, {"text": "shop_cho_trapper", "x": -109.2366, "y": 37.9045}]
+    "locations": [
+      {"text": "shop_sdn_trapper", "x": -82.5847, "y": 155.2034},
+      {"text": "shop_bgv_trapper_1", "x": -61.4731, "y": 67.2061},
+      {"text": "shop_bgv_trapper_2", "x": -72.0494, "y": 95.6559},
+      {"text": "shop_roa_trapper", "x": -48.0162, "y": 143.4887},
+      {"text": "shop_tal_trapper", "x": -93.2601, "y": 76.2895},
+      {"text": "shop_cho_trapper", "x": -109.2366, "y": 37.9045}
+    ]
   },
   {
     "color": "black",
     "key": "harriet",
-    "locations": [{"text": "shop_hen_harriet", "x": -96.6940, "y": 77.3690}, {"text": "shop_bgv_harriet", "x": -56.0618, "y": 86.8562}, {"text": "shop_bay_harriet", "x": -71.7883, "y": 141.8129}]
+    "locations": [
+      {"text": "shop_hen_harriet", "x": -96.694, "y": 77.369},
+      {"text": "shop_bgv_harriet", "x": -56.0618, "y": 86.8562},
+      {"text": "shop_bay_harriet", "x": -71.7883, "y": 141.8129}
+    ]
   },
   {
     "color": "black",
     "key": "wardrobe",
-    "locations": [{"text": "shop_bay_wardrobe_saint_denis", "x": -81.6223, "y": 150.9340}, {"text": "shop_bgv_wardrobe_strawberry", "x": -69.6771, "y": 83.4655}, {"text": "shop_bgv_wardrobe_wallace_station", "x": -57.4342, "y": 91.1293}, {"text": "shop_cho_wardrobe_armadillo", "x": -104.4427, "y": 54.0344}, {"text": "shop_gap_wardrobe_tumbleweed", "x": -109.1634, "y": 26.1907}, {"text": "shop_grt_wardrobe_blackwater", "x": -83.6750, "y": 99.3898}, {"text": "shop_hrt_wardrobe_valentine", "x": -51.0725, "y": 106.2308}, {"text": "shop_roa_wardrobe_vanhornpost", "x": -54.8857, "y": 158.2338}, {"text": "shop_scm_wardrobe_rhodes", "x": -83.6465, "y": 131.8298}]
+    "locations": [
+      {"text": "shop_bay_wardrobe_saint_denis", "x": -81.6223, "y": 150.934},
+      {"text": "shop_bgv_wardrobe_strawberry", "x": -69.6771, "y": 83.4655},
+      {"text": "shop_bgv_wardrobe_wallace_station", "x": -57.4342, "y": 91.1293},
+      {"text": "shop_cho_wardrobe_armadillo", "x": -104.4427, "y": 54.0344},
+      {"text": "shop_gap_wardrobe_tumbleweed", "x": -109.1634, "y": 26.1907},
+      {"text": "shop_grt_wardrobe_blackwater", "x": -83.675, "y": 99.3898},
+      {"text": "shop_hrt_wardrobe_valentine", "x": -51.0725, "y": 106.2308},
+      {"text": "shop_roa_wardrobe_vanhornpost", "x": -54.8857, "y": 158.2338},
+      {"text": "shop_scm_wardrobe_rhodes", "x": -83.6465, "y": 131.8298}
+    ]
   }
 ]

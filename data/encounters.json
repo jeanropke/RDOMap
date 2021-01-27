@@ -3,23 +3,23 @@
     "color": "yellow",
     "key": "tree_map",
     "locations": [
-      {"text": "beechers_1", "x": -89.3111, "y": 86.7360},
+      {"text": "beechers_1", "x": -89.3111, "y": 86.736},
       {"text": "blackwater_1", "x": -80.9622, "y": 92.0965},
       {"text": "cumberland_1", "x": -47.7045, "y": 112.2815},
-      {"text": "dakota_river_1", "x": -64.6880, "y": 103.7643},
-      {"text": "del_lobo_1", "x": -119.4001, "y": 53.7870},
+      {"text": "dakota_river_1", "x": -64.688, "y": 103.7643},
+      {"text": "del_lobo_1", "x": -119.4001, "y": 53.787},
       {"text": "dreamcatcher_tree_1", "x": -63.2301, "y": 122.3729},
       {"text": "emerald_ranch_1", "x": -63.2266, "y": 128.2084},
       {"text": "emerald_ranch_2", "x": -57.1118, "y": 126.8195},
       {"text": "flatneck_1", "x": -68.9763, "y": 104.1713},
       {"text": "fort_wallace_1", "x": -41.7242, "y": 116.9843},
-      {"text": "hanging_rock_1", "x": -98.7210, "y": 57.6270},
+      {"text": "hanging_rock_1", "x": -98.721, "y": 57.627},
       {"text": "kamasa_river_1", "x": -60.3719, "y": 143.9965},
       {"text": "macfarlanes_1", "x": -102.3045, "y": 79.3365},
       {"text": "montana_river_1", "x": -75.6004, "y": 91.6644},
-      {"text": "montos_rest_1", "x": -67.2318, "y": 89.3280},
+      {"text": "montos_rest_1", "x": -67.2318, "y": 89.328},
       {"text": "moonstone_pond_1", "x": -45.5123, "y": 131.1504},
-      {"text": "ocreaghs_run_1", "x": -39.9643, "y": 139.0200},
+      {"text": "ocreaghs_run_1", "x": -39.9643, "y": 139.02},
       {"text": "theives_landing_1", "x": -99.8431, "y": 87.3601},
       {"text": "van_horn_1", "x": -60.8012, "y": 152.8323},
       {"text": "watsons_1", "x": -55.0001, "y": 84.5646}
@@ -32,12 +32,12 @@
       {"text": "big_valley_0", "x": -57.4301, "y": 93.2948},
       {"text": "big_valley_1", "x": -59.0707, "y": 91.4434},
       {"text": "big_valley_2", "x": -59.1951, "y": 90.0007},
-      {"text": "big_valley_3", "x": -57.2812, "y": 93.9380},
+      {"text": "big_valley_3", "x": -57.2812, "y": 93.938},
       {"text": "big_valley_4", "x": -61.2897, "y": 91.2887},
       {"text": "big_valley_5", "x": -65.3787, "y": 85.6973},
       {"text": "big_valley_6", "x": -69.8842, "y": 94.5047},
       {"text": "heartlands_0", "x": -66.2405, "y": 114.5028},
-      {"text": "heartlands_1", "x": -60.6944, "y": 101.6460},
+      {"text": "heartlands_1", "x": -60.6944, "y": 101.646},
       {"text": "heartlands_2", "x": -57.5676, "y": 111.9804},
       {"text": "heartlands_3", "x": -64.4977, "y": 122.9823},
       {"text": "heartlands_4", "x": -54.8022, "y": 123.9874}
@@ -54,9 +54,9 @@
       {"text": "bluewater_marsh_2", "x": -68.5377, "y": 145.3322},
       {"text": "bluewater_marsh_3", "x": -71.2103, "y": 148.6852},
       {"text": "great_plains_1", "x": -77.9488, "y": 96.9052},
-      {"text": "great_plains_2", "x": -90.2820, "y": 100.0667},
+      {"text": "great_plains_2", "x": -90.282, "y": 100.0667},
       {"text": "great_plains_3", "x": -93.3998, "y": 94.6911},
-      {"text": "grizzlies_1", "x": -41.2369, "y": 137.2770},
+      {"text": "grizzlies_1", "x": -41.2369, "y": 137.277},
       {"text": "grizzlies_2", "x": -41.1563, "y": 135.5499},
       {"text": "grizzlies_3", "x": -45.3171, "y": 130.6202},
       {"text": "heartlands_1", "x": -54.6555, "y": 128.8443},
@@ -66,7 +66,7 @@
       {"text": "new_austin_2", "x": -109.0739, "y": 84.1981},
       {"text": "new_austin_3", "x": -100.5223, "y": 84.3524},
       {"text": "roanoke_ridge_1", "x": -42.7482, "y": 146.2567},
-      {"text": "roanoke_ridge_2", "x": -38.6170, "y": 146.7018},
+      {"text": "roanoke_ridge_2", "x": -38.617, "y": 146.7018},
       {"text": "roanoke_ridge_3", "x": -48.6853, "y": 149.1536}
     ]
   },
@@ -80,8 +80,8 @@
       {"text": "old_toms_blind_1", "x": -67.2904, "y": 83.9325},
       {"text": "pleasance_1", "x": -70.1595, "y": 138.2426},
       {"text": "rhodes_1", "x": -82.5108, "y": 131.0806},
-      {"text": "ringneck_creek_1", "x": -73.5815, "y": 132.9680},
-      {"text": "saint_denis_1", "x": -80.3430, "y": 154.1124},
+      {"text": "ringneck_creek_1", "x": -73.5815, "y": 132.968},
+      {"text": "saint_denis_1", "x": -80.343, "y": 154.1124},
       {"text": "shady_belle_1", "x": -93.1363, "y": 142.0098},
       {"text": "tumbleweed_1", "x": -108.6914, "y": 26.7898},
       {"text": "valentine_1", "x": -50.7989, "y": 107.7402}
@@ -96,12 +96,12 @@
       {"text": "bayou_1", "x": -76.8295, "y": 151.3316},
       {"text": "bolger_1", "x": -91.7444, "y": 133.4753},
       {"text": "cumberland_1", "x": -46.3422, "y": 110.8458},
-      {"text": "don_julio_1", "x": -112.7596, "y": 63.2700},
+      {"text": "don_julio_1", "x": -112.7596, "y": 63.27},
       {"text": "emerald_1", "x": -55.4197, "y": 130.5974},
       {"text": "flatneck_1", "x": -68.2254, "y": 102.8046},
       {"text": "macfarlene_1", "x": -101.2774, "y": 72.9415},
       {"text": "plainview_1", "x": -121.1483, "y": 38.7999},
-      {"text": "quaker_1", "x": -93.3375, "y": 88.6270},
+      {"text": "quaker_1", "x": -93.3375, "y": 88.627},
       {"text": "strawberry_1", "x": -77.3178, "y": 87.8451},
       {"text": "tumbleweed_1", "x": -108.3717, "y": 30.6411},
       {"text": "van_horn_1", "x": -56.4005, "y": 154.4109},
@@ -112,15 +112,15 @@
     "color": "lightgray",
     "key": "fame_seeker",
     "locations": [
-      {"text": "big_valley_1", "x": -62.0820, "y": 91.5386},
+      {"text": "big_valley_1", "x": -62.082, "y": 91.5386},
       {"text": "big_valley_2", "x": -69.1768, "y": 74.7916},
       {"text": "big_valley_3", "x": -58.8401, "y": 84.3262},
-      {"text": "cholla_springs_1", "x": -105.5385, "y": 39.8220},
+      {"text": "cholla_springs_1", "x": -105.5385, "y": 39.822},
       {"text": "heartlands_cliff_1", "x": -62.6625, "y": 118.5683},
       {"text": "heartlands_river_1", "x": -61.2032, "y": 104.9456},
       {"text": "hennigans_stead_1", "x": -106.7424, "y": 77.2456},
       {"text": "rio_bravo_1", "x": -116.3828, "y": 34.2119},
-      {"text": "tall_trees_1", "x": -84.5300, "y": 81.3313},
+      {"text": "tall_trees_1", "x": -84.53, "y": 81.3313},
       {"text": "tall_trees_2", "x": -97.1031, "y": 80.1779}
     ]
   },
@@ -129,22 +129,22 @@
     "key": "wounded_animal",
     "locations": [
       {"text": "bayou_1", "x": -80.9497, "y": 138.4918},
-      {"text": "bolger_1", "x": -90.2290, "y": 136.3259},
-      {"text": "cholla_1", "x": -106.1137, "y": 39.3890},
+      {"text": "bolger_1", "x": -90.229, "y": 136.3259},
+      {"text": "cholla_1", "x": -106.1137, "y": 39.389},
       {"text": "cumberland_1", "x": -45.1532, "y": 116.0752},
       {"text": "emerald_1", "x": -55.1121, "y": 138.8596},
       {"text": "gaptooth_1", "x": -113.0144, "y": 23.1299},
       {"text": "grizzlies_1", "x": -50.2297, "y": 97.1511},
       {"text": "grizzlies_2", "x": -38.3155, "y": 86.1092},
-      {"text": "grizzlies_3", "x": -32.2183, "y": 117.8180},
+      {"text": "grizzlies_3", "x": -32.2183, "y": 117.818},
       {"text": "heartlands_1", "x": -63.0466, "y": 113.4075},
-      {"text": "hennigans_1", "x": -102.7451, "y": 68.9910},
+      {"text": "hennigans_1", "x": -102.7451, "y": 68.991},
       {"text": "macfarlanes", "x": -96.5007, "y": 81.3982},
       {"text": "plains_1", "x": -81.9039, "y": 91.2564},
-      {"text": "rio_1", "x": -114.3890, "y": 42.0155},
+      {"text": "rio_1", "x": -114.389, "y": 42.0155},
       {"text": "roanoke_1", "x": -46.8692, "y": 154.5903},
       {"text": "scarlett_1", "x": -76.5866, "y": 131.3268},
-      {"text": "strawberry_1", "x": -67.2501, "y": 83.6620},
+      {"text": "strawberry_1", "x": -67.2501, "y": 83.662},
       {"text": "tall_trees_1", "x": -87.6022, "y": 75.4743},
       {"text": "thieves_1", "x": -98.8724, "y": 85.0697},
       {"text": "valentine_1", "x": -55.6687, "y": 103.2572}
@@ -160,7 +160,7 @@
       {"text": "cumberland_1", "x": -44.2978, "y": 114.9992},
       {"text": "cumberland_2", "x": -43.3348, "y": 121.3213},
       {"text": "heartlands_1", "x": -50.6914, "y": 118.1068},
-      {"text": "heartlands_2", "x": -57.4840, "y": 102.8178},
+      {"text": "heartlands_2", "x": -57.484, "y": 102.8178},
       {"text": "heartlands_3", "x": -47.1016, "y": 127.0872},
       {"text": "roanoke_1", "x": -67.4562, "y": 145.8558},
       {"text": "roanoke_2", "x": -64.6993, "y": 151.1453},
@@ -261,14 +261,14 @@
     "color": "purple",
     "key": "rival_collector",
     "locations": [
-      {"text": "aurora_basin_1", "x": -86.2317, "y": 73.2670},
+      {"text": "aurora_basin_1", "x": -86.2317, "y": 73.267},
       {"text": "beartooth_1", "x": -37.4141, "y": 88.7651},
       {"text": "benedict_point_1", "x": -118.9113, "y": 26.5664},
       {"text": "blackwater_1", "x": -83.2768, "y": 90.1433},
       {"text": "bolger_glade_1", "x": -89.9141, "y": 133.8392},
       {"text": "cotorra_springs_1", "x": -35.4454, "y": 111.9278},
       {"text": "cumberland_1", "x": -43.6868, "y": 112.9983},
-      {"text": "eris_field_1", "x": -68.6260, "y": 129.3568},
+      {"text": "eris_field_1", "x": -68.626, "y": 129.3568},
       {"text": "flatneck_1", "x": -70.5135, "y": 112.3303},
       {"text": "fort_mercer_1", "x": -114.4291, "y": 43.4015},
       {"text": "gaptooth_ridge_1", "x": -104.7421, "y": 21.2984},
@@ -279,7 +279,7 @@
       {"text": "macfarlanes_ranch_1", "x": -97.7575, "y": 77.2807},
       {"text": "manteca_falls_1", "x": -105.7921, "y": 83.8963},
       {"text": "moonstone_pond_1", "x": -45.2134, "y": 131.6513},
-      {"text": "roanoke_ridge_1", "x": -50.2670, "y": 152.9341},
+      {"text": "roanoke_ridge_1", "x": -50.267, "y": 152.9341},
       {"text": "san_luis_1", "x": -112.3833, "y": 67.7675},
       {"text": "upper_montana_1", "x": -77.7179, "y": 79.9851}
     ]
@@ -296,15 +296,15 @@
       {"text": "lemoyne_1", "x": -76.3429, "y": 134.0451},
       {"text": "riggs_station_1", "x": -74.4134, "y": 94.4869},
       {"text": "rio_bravo_1", "x": -124.1841, "y": 33.8424},
-      {"text": "scarlett_1", "x": -72.6750, "y": 123.7589},
-      {"text": "strawberry_1", "x": -72.6150, "y": 84.7883}
+      {"text": "scarlett_1", "x": -72.675, "y": 123.7589},
+      {"text": "strawberry_1", "x": -72.615, "y": 84.7883}
     ]
   },
   {
     "color": "blue",
     "key": "hogtied_lawman",
     "locations": [
-      {"text": "scarlett_meadows_1", "x": -95.3840, "y": 135.5470},
+      {"text": "scarlett_meadows_1", "x": -95.384, "y": 135.547},
       {"text": "scarlett_meadows_2", "x": -89.9317, "y": 132.7166},
       {"text": "scarlett_meadows_3", "x": -89.2194, "y": 136.4702},
       {"text": "scarlett_meadows_4", "x": -86.4193, "y": 134.6561},
@@ -380,37 +380,182 @@
     "color": "blue",
     "key": "rescue",
     "locations": [
-      {"text": "bayou_gators", "type": "mission_giver", "x": -70.9317, "y": 146.5354},
-      {"text": "canoe_escape", "type": "mission_giver", "x": -39.6887, "y": 111.2546},
-      {"text": "colter_bandits", "type": "mission_giver", "x": -26.8274, "y": 90.5397},
-      {"text": "colter_bandits", "type": "objective", "x": -25.7447, "y": 90.3493},
-      {"text": "grizzlies_prisoner_rescue", "type": "mission_giver", "x": -42.057, "y": 97.9634},
-      {"text": "grizzlies_prisoner_rescue", "type": "objective", "x": -41.482, "y": 98.0289},
-      {"text": "highway_robbery", "type": "mission_giver", "x": -42.9833, "y": 123.5868},
-      {"text": "mining_town", "type": "mission_giver", "x": -44.5451, "y": 81.8769},
+      {
+        "text": "bayou_gators",
+        "type": "mission_giver",
+        "x": -70.9317,
+        "y": 146.5354
+      },
+      {
+        "text": "canoe_escape",
+        "type": "mission_giver",
+        "x": -39.6887,
+        "y": 111.2546
+      },
+      {
+        "text": "colter_bandits",
+        "type": "mission_giver",
+        "x": -26.8274,
+        "y": 90.5397
+      },
+      {
+        "text": "colter_bandits",
+        "type": "objective",
+        "x": -25.7447,
+        "y": 90.3493
+      },
+      {
+        "text": "grizzlies_prisoner_rescue",
+        "type": "mission_giver",
+        "x": -42.057,
+        "y": 97.9634
+      },
+      {
+        "text": "grizzlies_prisoner_rescue",
+        "type": "objective",
+        "x": -41.482,
+        "y": 98.0289
+      },
+      {
+        "text": "highway_robbery",
+        "type": "mission_giver",
+        "x": -42.9833,
+        "y": 123.5868
+      },
+      {
+        "text": "mining_town",
+        "type": "mission_giver",
+        "x": -44.5451,
+        "y": 81.8769
+      },
       {"text": "mining_town", "type": "objective", "x": -42.4571, "y": 81.6237},
-      {"text": "pikes_basin", "type": "mission_giver", "x": -102.2258, "y": 66.6477},
-      {"text": "pikes_basin", "type": "objective", "x": -102.7444, "y": 68.1286},
-      {"text": "plague_town", "type": "mission_giver", "x": -73.8154, "y": 136.3702},
+      {
+        "text": "pikes_basin",
+        "type": "mission_giver",
+        "x": -102.2258,
+        "y": 66.6477
+      },
+      {
+        "text": "pikes_basin",
+        "type": "objective",
+        "x": -102.7444,
+        "y": 68.1286
+      },
+      {
+        "text": "plague_town",
+        "type": "mission_giver",
+        "x": -73.8154,
+        "y": 136.3702
+      },
       {"text": "plague_town", "type": "objective", "x": -69.88, "y": 138.8},
-      {"text": "quakers_cove", "type": "mission_giver", "x": -91.7635, "y": 94.389},
-      {"text": "quakers_cove", "type": "objective", "x": -94.2342, "y": 93.0126},
-      {"text": "roanoke_standoff", "type": "mission_giver", "x": -57.3664, "y": 151.3451},
-      {"text": "saint_denis_graveyard", "type": "mission_giver", "x": -81.6816, "y": 148.5406},
-      {"text": "saint_denis_graveyard", "type": "objective", "x": -80.0216, "y": 153.5881},
-      {"text": "saint_denis_mugging", "type": "mission_giver", "x": -83.2187, "y": 153.0763},
-      {"text": "saint_denis_mugging", "type": "objective", "x": -83.867, "y": 152.6315},
-      {"text": "tracking_big_valley_cave", "type": "mission_giver", "x": -65.8471, "y": 78.1443},
-      {"text": "tracking_big_valley_cave", "type": "objective", "x": -61.6521, "y": 78.2431},
-      {"text": "tracking_bluewater_kidnap", "type": "mission_giver", "x": -59.1473, "y": 146.7385},
-      {"text": "tracking_bluewater_kidnap", "type": "objective", "x": -70.122, "y": 150.0768},
-      {"text": "tracking_cliff_edge", "type": "mission_giver", "x": -59.2606, "y": 94.4889},
-      {"text": "tracking_cliff_edge", "type": "objective", "x": -64.5452, "y": 90.7468},
-      {"text": "tracking_missing_fisherman", "type": "mission_giver", "x": -37.6153, "y": 153.5267},
-      {"text": "tracking_missing_fisherman", "type": "objective", "x": -36.3318, "y": 148.8486},
-      {"text": "tracking_mistaken_bounties", "type": "mission_giver", "x": -82.7368, "y": 77.3041},
-      {"text": "tracking_mistaken_bounties", "type": "objective", "x": -80.0312, "y": 88.4344},
-      {"text": "west_heartlands_bridge", "type": "mission_giver", "x": -57.1772, "y": 101.8965}
+      {
+        "text": "quakers_cove",
+        "type": "mission_giver",
+        "x": -91.7635,
+        "y": 94.389
+      },
+      {
+        "text": "quakers_cove",
+        "type": "objective",
+        "x": -94.2342,
+        "y": 93.0126
+      },
+      {
+        "text": "roanoke_standoff",
+        "type": "mission_giver",
+        "x": -57.3664,
+        "y": 151.3451
+      },
+      {
+        "text": "saint_denis_graveyard",
+        "type": "mission_giver",
+        "x": -81.6816,
+        "y": 148.5406
+      },
+      {
+        "text": "saint_denis_graveyard",
+        "type": "objective",
+        "x": -80.0216,
+        "y": 153.5881
+      },
+      {
+        "text": "saint_denis_mugging",
+        "type": "mission_giver",
+        "x": -83.2187,
+        "y": 153.0763
+      },
+      {
+        "text": "saint_denis_mugging",
+        "type": "objective",
+        "x": -83.867,
+        "y": 152.6315
+      },
+      {
+        "text": "tracking_big_valley_cave",
+        "type": "mission_giver",
+        "x": -65.8471,
+        "y": 78.1443
+      },
+      {
+        "text": "tracking_big_valley_cave",
+        "type": "objective",
+        "x": -61.6521,
+        "y": 78.2431
+      },
+      {
+        "text": "tracking_bluewater_kidnap",
+        "type": "mission_giver",
+        "x": -59.1473,
+        "y": 146.7385
+      },
+      {
+        "text": "tracking_bluewater_kidnap",
+        "type": "objective",
+        "x": -70.122,
+        "y": 150.0768
+      },
+      {
+        "text": "tracking_cliff_edge",
+        "type": "mission_giver",
+        "x": -59.2606,
+        "y": 94.4889
+      },
+      {
+        "text": "tracking_cliff_edge",
+        "type": "objective",
+        "x": -64.5452,
+        "y": 90.7468
+      },
+      {
+        "text": "tracking_missing_fisherman",
+        "type": "mission_giver",
+        "x": -37.6153,
+        "y": 153.5267
+      },
+      {
+        "text": "tracking_missing_fisherman",
+        "type": "objective",
+        "x": -36.3318,
+        "y": 148.8486
+      },
+      {
+        "text": "tracking_mistaken_bounties",
+        "type": "mission_giver",
+        "x": -82.7368,
+        "y": 77.3041
+      },
+      {
+        "text": "tracking_mistaken_bounties",
+        "type": "objective",
+        "x": -80.0312,
+        "y": 88.4344
+      },
+      {
+        "text": "west_heartlands_bridge",
+        "type": "mission_giver",
+        "x": -57.1772,
+        "y": 101.8965
+      }
     ]
   },
   {
@@ -444,14 +589,14 @@
     "color": "darkred",
     "key": "animal_attack",
     "locations": [
-      {"text": "big_valley_1", "x": -75.9280, "y": 94.8963},
+      {"text": "big_valley_1", "x": -75.928, "y": 94.8963},
       {"text": "big_valley_2", "x": -66.0037, "y": 93.3109},
       {"text": "big_valley_3", "x": -71.6029, "y": 90.0095},
       {"text": "big_valley_4", "x": -71.2406, "y": 95.3077},
       {"text": "great_plains_1", "x": -84.8939, "y": 92.1218},
       {"text": "grizzlies_west_1", "x": -36.8459, "y": 87.6114},
-      {"text": "heartlands_1", "x": -60.4304, "y": 106.3300},
-      {"text": "heartlands_2", "x": -58.2357, "y": 103.3140},
+      {"text": "heartlands_1", "x": -60.4304, "y": 106.33},
+      {"text": "heartlands_2", "x": -58.2357, "y": 103.314},
       {"text": "roanoke_ridge_1", "x": -36.7627, "y": 144.6783},
       {"text": "roanoke_ridge_2", "x": -63.9893, "y": 145.1244}
     ]
@@ -463,17 +608,17 @@
       {"text": "bayou_nwa_1", "x": -77.5442, "y": 146.9985},
       {"text": "bayou_nwa_2", "x": -74.0576, "y": 148.0773},
       {"text": "bluewater_marsh_1", "x": -70.4351, "y": 146.5629},
-      {"text": "bluewater_marsh_2", "x": -71.3440, "y": 142.3526},
+      {"text": "bluewater_marsh_2", "x": -71.344, "y": 142.3526},
       {"text": "cumberland_forest_1", "x": -45.0994, "y": 119.0377},
       {"text": "cumberland_forest_2", "x": -46.5524, "y": 113.0748},
       {"text": "great_plains_1", "x": -85.7252, "y": 86.6096},
       {"text": "great_plains_2", "x": -91.7871, "y": 97.1574},
-      {"text": "grizzlies_east_1", "x": -39.0820, "y": 135.0670},
+      {"text": "grizzlies_east_1", "x": -39.082, "y": 135.067},
       {"text": "grizzlies_east_2", "x": -45.8561, "y": 125.9682},
       {"text": "grizzlies_west_1", "x": -50.9356, "y": 93.8016},
       {"text": "grizzlies_west_2", "x": -49.0734, "y": 79.2483},
-      {"text": "hennigans_stead_1", "x": -108.5070, "y": 69.5244},
-      {"text": "hennigans_stead_2", "x": -103.3265, "y": 66.0400},
+      {"text": "hennigans_stead_1", "x": -108.507, "y": 69.5244},
+      {"text": "hennigans_stead_2", "x": -103.3265, "y": 66.04},
       {"text": "rio_bravo_1", "x": -120.6377, "y": 40.7132},
       {"text": "rio_bravo_2", "x": -115.7169, "y": 37.9949}
     ]
@@ -483,15 +628,15 @@
     "key": "beggar",
     "locations": [
       {"text": "blackwater_0", "x": -83.9518, "y": 98.9975},
-      {"text": "blackwater_1", "x": -83.1600, "y": 99.1971},
+      {"text": "blackwater_1", "x": -83.16, "y": 99.1971},
       {"text": "blackwater_2", "x": -83.5103, "y": 98.1907},
       {"text": "st_denis_0", "x": -82.5832, "y": 155.0115},
-      {"text": "st_denis_1", "x": -83.5710, "y": 151.6972},
+      {"text": "st_denis_1", "x": -83.571, "y": 151.6972},
       {"text": "st_denis_2", "x": -82.2672, "y": 152.6103},
       {"text": "st_denis_3", "x": -82.3246, "y": 153.9964},
       {"text": "st_denis_4", "x": -81.4408, "y": 150.5862},
       {"text": "st_denis_5", "x": -82.7411, "y": 153.4353},
-      {"text": "st_denis_6", "x": -85.5980, "y": 152.2771},
+      {"text": "st_denis_6", "x": -85.598, "y": 152.2771},
       {"text": "st_denis_7", "x": -81.9934, "y": 153.2626},
       {"text": "st_denis_8", "x": -83.4483, "y": 154.4776},
       {"text": "st_denis_9", "x": -82.3431, "y": 151.5532},
@@ -505,30 +650,30 @@
     "locations": [
       {"text": "big_valley_0", "x": -67.7026, "y": 71.1264},
       {"text": "big_valley_1", "x": -57.5562, "y": 71.2622},
-      {"text": "big_valley_2", "x": -56.3161, "y": 77.1870},
-      {"text": "great_plains_0", "x": -87.0902, "y": 85.8720},
+      {"text": "big_valley_2", "x": -56.3161, "y": 77.187},
+      {"text": "great_plains_0", "x": -87.0902, "y": 85.872},
       {"text": "great_plains_1", "x": -91.6195, "y": 98.4775},
       {"text": "grz_east_0", "x": -38.9254, "y": 139.0352},
       {"text": "grz_east_1", "x": -42.0566, "y": 141.7209},
       {"text": "grz_east_2", "x": -30.9988, "y": 121.1907},
       {"text": "grz_east_3", "x": -45.5588, "y": 131.4182},
       {"text": "tall_trees_0", "x": -84.9111, "y": 78.6826},
-      {"text": "tall_trees_1", "x": -88.1912, "y": 77.0560}
+      {"text": "tall_trees_1", "x": -88.1912, "y": 77.056}
     ]
   },
   {
     "color": "darkgreen",
     "key": "slumped_hunter",
     "locations": [
-      {"text": "annesburg_1", "x": -45.1269, "y": 152.4820},
-      {"text": "bolger_glade_1", "x": -96.2230, "y": 134.7219},
+      {"text": "annesburg_1", "x": -45.1269, "y": 152.482},
+      {"text": "bolger_glade_1", "x": -96.223, "y": 134.7219},
       {"text": "cairn_lake_1", "x": -30.9173, "y": 94.0617},
       {"text": "cholla_springs_1", "x": -102.2947, "y": 50.8099},
       {"text": "cumberland_1", "x": -55.2756, "y": 97.3551},
       {"text": "hennigans_1", "x": -108.1125, "y": 77.2812},
       {"text": "o_creagh_1", "x": -42.5559, "y": 135.3271},
       {"text": "rio_bravo_1", "x": -117.0926, "y": 44.5171},
-      {"text": "tall_trees_1", "x": -85.5270, "y": 78.9365},
+      {"text": "tall_trees_1", "x": -85.527, "y": 78.9365},
       {"text": "twin_stack_1", "x": -59.4971, "y": 115.6498}
     ]
   },

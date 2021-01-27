@@ -14,10 +14,15 @@ class Bounty {
     pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
     pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=bounty]').toggleClass('disabled', !this.bountiesOnMap);
-    this.bountyIcon = L.icon({
+    this.bountyTarget = L.icon({
       iconUrl: './assets/images/icons/bounty-target.png',
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
+    });
+    this.bountyTargetPlus = L.icon({
+      iconUrl: './assets/images/icons/bounty-target-plus.png',
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
     });
     this.onSettingsChanged();
     $('.menu-hidden[data-type="bounty"] > *:first-child a').click(e => {
@@ -70,7 +75,7 @@ class Bounty {
     }));
     this.locations.forEach(bounty =>
       this.marker.addLayer(L.marker([bounty.x, bounty.y], {
-        icon: Bounty.bountyIcon,
+        icon: bounty.min > 1 ? Bounty.bountyTargetPlus : Bounty.bountyTarget,
         pane: 'bountyX',
       }).bindPopup(this.popupContent(this, bounty), { minWidth: 300 }))
     );

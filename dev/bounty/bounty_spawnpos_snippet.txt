@@ -1,0 +1,17 @@
+const results = {};
+x.forEach(i => {
+    const baseId = i.Attributes.find(j => j.Type === "ID").Name;
+    const objectives = i.Children.find(j => j.Name === "OBJECTIVES").Children;
+    if (!results[baseId]) results[baseId] = [];
+    objectives.forEach(objective => {
+        const spawns = objective.Children.find(j => j.Name === "POTENTIAL_SPAWN_POSITIONS");
+        if (!spawns) return;
+        const spawnChildren = spawns.Children.map(child => {
+            let pos = child.Attributes.find(j => j.Type === "SPAWN_POSITION").Coordinate;
+            let min = child.Attributes.find(j => j.Type === "MIN_POSSE_MEMBERS");
+            min = min ? Number.parseInt(min.Value) : 0;
+            return { pos, min };
+        });
+        results[baseId].push(spawnChildren);
+    });
+})
