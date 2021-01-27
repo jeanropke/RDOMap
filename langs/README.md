@@ -10,11 +10,11 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Afrikaans (0%):
   - **eduardvlog** (23 words)
 
-### Arabic (29%):
+### Arabic (30%):
   - **Aboodsaad27** (82 words)
   - **y_ksq** (1,748 words)
 
-### Catalan (5%):
+### Catalan (6%):
   - **juandamanacor2013** (91 words)
   - **zrubio** (365 words)
 
@@ -36,7 +36,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **pach318** (265 words)
   - **RichardC.P.** (685 words)
 
-### Czech (29%):
+### Czech (30%):
   - **avojta** (119 words)
   - **Nydrail** (379 words)
 
@@ -79,7 +79,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Greek (13%):
   - **dvagos7** (1,200 words)
 
-### Hungarian (0%):
+### Hungarian (1%):
   - **Balesz** (10 words)
 
 ### Italian (49%):
@@ -100,10 +100,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **CoolBreeze-13s** (1,663 words)
   - **Megitsune** (21,042 words)
 
-### Norwegian (2%):
+### Norwegian (3%):
   - **petter.landsem.krogstad** (83 words)
 
-### Polish (94%):
+### Polish (95%):
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,042 words)
   - **Michal__d** (1,960 words)
@@ -111,14 +111,14 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Portuguese (8%):
   - **FilipeLuk** (649 words)
 
-### Portuguese, Brazilian (83%):
+### Portuguese, Brazilian (87%):
   - **FilipFelipe** (13 words)
   - **jeanropke** (26,079 words)
   - **mgoebelm** (100 words)
   - **msfern** (12 words)
   - **neohazukibr** (41 words)
 
-### Romanian (0%):
+### Romanian (1%):
   - **pozitive95** (33 words)
 
 ### Russian (97%):
@@ -149,7 +149,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Shineberg** (141 words)
   - **wiiwil** (249 words)
 
-### Thai (3%):
+### Thai (4%):
   - **MrFermz** (39 words)
 
 ### Turkish (42%):
@@ -161,6 +161,6 @@ These are the people that helped translate the project using Crowdin. Please not
   - **grmaster5s** (5,664 words)
   - **warkoun** (293 words)
 
-### Vietnamese (2%):
+### Vietnamese (3%):
   - **1751020005** (238 words)
 
