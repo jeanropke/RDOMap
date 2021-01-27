@@ -65,6 +65,7 @@ class Bounty {
           <p class="property" data-text="menu.${marker.type}.min" data-property="min"></p>
           <!-- <p class="property" data-text="menu.${marker.type}.config" data-property="config"></p> -->
         </span>
+        <button type="button" class="btn btn-info remove-button remove-bounty" data-text="map.remove"></button>
       </div>`).translate();
 
     const props = $('[data-property]', snippet);
@@ -74,6 +75,11 @@ class Bounty {
       const propertyText = Language.get($(p).attr('data-text')).replace(`{${property}}`, bounty[property]);
       $(p).text(propertyText);
     });
+
+    snippet
+      .find('button.remove-bounty')
+      .on('click', () => this.onMap = false)
+      .end();
 
     return snippet[0];
   }
