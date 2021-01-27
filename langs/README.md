@@ -18,12 +18,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **juandamanacor2013** (91 words)
   - **zrubio** (365 words)
 
-### Chinese Simplified (98%):
+### Chinese Simplified (99%):
   - **578218087** (55 words)
   - **akbcd** (133 words)
   - **BHT256** (254 words)
   - **curryguru** (102 words)
-  - **Jabaay** (550 words)
+  - **Jabaay** (665 words)
   - **kagurazakakotori** (16 words)
   - **Megitsune** (21,042 words)
   - **PeanutSlinger** (2,551 words)
