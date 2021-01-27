@@ -18,12 +18,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **juandamanacor2013** (91 words)
   - **zrubio** (365 words)
 
-### Chinese Simplified (97%):
+### Chinese Simplified (98%):
   - **578218087** (55 words)
   - **akbcd** (133 words)
   - **BHT256** (254 words)
   - **curryguru** (102 words)
-  - **Jabaay** (499 words)
+  - **Jabaay** (550 words)
   - **kagurazakakotori** (16 words)
   - **Megitsune** (21,042 words)
   - **PeanutSlinger** (2,551 words)
@@ -121,10 +121,11 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (0%):
   - **pozitive95** (33 words)
 
-### Russian (96%):
+### Russian (97%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
   - **Megitsune** (21,042 words)
+  - **mrsanze6** (49 words)
   - **Nacuman.exe** (142 words)
   - **Overnoes** (430 words)
   - **poeblu85** (395 words)
