@@ -1342,7 +1342,7 @@
     "cholla_springs": "仙人掌泉",
     "benedict_point": "班尼迪克岬",
     "lake_isabella": "伊莎貝拉湖",
-    "menu.bounties": "懸賞目標蹤跡",
+    "menu.bounties": "懸賞蹤跡",
     "menu.bounties_desc": "這些任務提示您前往指定地點並在指定區域內搜尋線索。在探索線索後, 您會被告知需要跟從不同的路線以找出潛在的懸賞目標。",
-    "menu.bounties_track_min": "這個潛在生成位置是當任務開始了{min} 分鐘或更多玩家一同遊玩才會生效。"
+    "menu.bounties_track_min": "此潛在生成位置會在任務裡當玩家總數達到 {min} 或更多時觸發。"
 }
