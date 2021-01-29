@@ -10,8 +10,9 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Afrikaans (0%):
   - **eduardvlog** (23 words)
 
-### Arabic (28%):
+### Arabic (29%):
   - **Aboodsaad27** (82 words)
+  - **i_NaifKhaldi** (72 words)
   - **y_ksq** (1,748 words)
 
 ### Catalan (5%):
