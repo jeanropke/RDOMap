@@ -101,6 +101,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **CoolBreeze-13s** (1,663 words)
   - **Megitsune** (21,042 words)
   - **ssh2** (70 words)
+  - **vega7621** (33 words)
 
 ### Norwegian (2%):
   - **petter.landsem.krogstad** (83 words)
