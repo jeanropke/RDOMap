@@ -101,6 +101,8 @@
     "map.mark_important": "중요한 마커로 표시",
     "map.remove_add": "지도로부터 지우기/추가하기",
     "map.user_pins.default_title": "사용자 핀",
+    "map.user_pins.color.lightgray": "밝은회색",
+    "map.user_pins.color.lightorange": "밝은 오렌지색",
     "map.user_pins.icon": "아이콘",
     "map.user_pins.icon.pin": "핀",
     "map.user_pins.icon.random": "랜덤",
