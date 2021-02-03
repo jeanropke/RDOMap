@@ -162,8 +162,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Krykl** (406 words)
   - **tercumantanumut** (149 words)
 
-### Ukrainian (75%):
-  - **beskorjake2332** (534 words)
+### Ukrainian (76%):
+  - **beskorjake2332** (598 words)
   - **grmaster5s** (5,664 words)
   - **warkoun** (293 words)
 
