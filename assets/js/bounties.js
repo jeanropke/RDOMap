@@ -3,9 +3,6 @@ class Bounty {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  static onSettingsChanged() {
-    this.bounties.forEach(bounty => bounty.reinitMarker());
-  }
 
   // not idempotent (on the environment)
   constructor(preliminary, type) {

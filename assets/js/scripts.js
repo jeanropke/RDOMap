@@ -254,7 +254,6 @@ $('#language').on('change', function () {
 $('#marker-size').on('change', function () {
   Settings.markerSize = Number($('#marker-size').val());
   Treasure.onSettingsChanged();
-  Bounty.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Salvage.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
@@ -269,7 +268,6 @@ $('#marker-size').on('change', function () {
 $('#marker-opacity').on('change', function () {
   Settings.markerOpacity = Number($('#marker-opacity').val());
   Treasure.onSettingsChanged();
-  Bounty.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Salvage.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
@@ -320,7 +318,6 @@ $('#enable-marker-popups-hover').on('change', function () {
 $('#enable-marker-shadows').on('change', function () {
   Settings.isShadowsEnabled = $('#enable-marker-shadows').prop('checked');
   Treasure.onSettingsChanged();
-  Bounty.onSettingsChanged();
   Camp.locations.forEach(camp => camp.reinitMarker());
   Encounter.locations.forEach(encounter => encounter.reinitMarker());
   GunForHire.locations.forEach(gfh => gfh.reinitMarker());
