@@ -80,6 +80,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Greek (13%):
   - **dvagos7** (1,200 words)
+  - **libidosiemens** (23 words)
 
 ### Hungarian (0%):
   - **Balesz** (10 words)
