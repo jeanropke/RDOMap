@@ -126,9 +126,10 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (0%):
   - **pozitive95** (33 words)
 
-### Russian (94%):
+### Russian (97%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
+  - **MEE5RUS** (312 words)
   - **Megitsune** (21,042 words)
   - **mrsanze6** (49 words)
   - **Nacuman.exe** (142 words)
