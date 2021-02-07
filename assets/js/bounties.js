@@ -50,7 +50,7 @@ class Bounty {
           iconAnchor: [9, 9],
         }),
         pane: 'bountyX',
-      }).bindPopup(this.popupContent(this, bounty), { minWidth: 300 }));
+      }).bindPopup(this.popupContent.bind(null, this, bounty), { minWidth: 300 }));
     });
     this.onMap = this.onMap;
   }
