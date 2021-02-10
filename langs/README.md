@@ -169,6 +169,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Ukrainian (76%):
   - **beskorjake2332** (598 words)
   - **grmaster5s** (5,664 words)
+  - **h_p_38** (15 words)
   - **warkoun** (293 words)
 
 ### Vietnamese (2%):
