@@ -1333,6 +1333,12 @@
     "menu.bounty_board_track.montos_rest": "Отдых Монтоса",
     "menu.bounty_board_track.cholla_springs": "Холла-Спрингс",
     "menu.bounty_board_track.benedict_point": "Бенедикт-Пойнт",
+    "menu.bounty_board_stakeout.saint_denis": "Сен-Дени",
+    "menu.bounty_board_stakeout.valentine": "Валентайн",
+    "menu.bounty_board_stakeout.thieves_landing": "Пристань разбойников",
+    "menu.bounty_hideout.colter": "Колтер",
+    "menu.bounty_hideout.fort_mercer": "Форт Мерсер",
+    "menu.bounty_board_known_target.tall_trees": "Толл-Триз",
     "menu.bounty_board_known_target.elysian_pool_cave": "Элизианская пещера",
     "menu.bounty_board_known_target.hanis_bethel": "Бетел, Ханис",
     "menu.bounty_board_known_target.grizzlies_east": "Восточные Гризли",
@@ -1365,5 +1371,10 @@
     "menu.bounty_timed.fort_brennand": "Логово - Fort Brennand",
     "menu.bounty_timed.fort_mercer": "Форт Мерсер",
     "menu.bounty_timed.fort_riggs": "Форт Риггс",
-    "menu.bounty_timed.fort_wallace": "Форт Уолес"
+    "menu.bounty_timed.fort_wallace": "Форт Уолес",
+    "menu.bounty_timed.mount_hagen": "Гора Хаген",
+    "menu.bounty_timed.emerald_ranch": "Ранчо Эмеральд",
+    "menu.bounty_board_caged_target.saint_denis": "Сен-Дени",
+    "menu.bounty_board_caged_target.strawberry": "Строберри",
+    "menu.bounty_board_caged_target.tumbleweed": "Тамблвид"
 }
