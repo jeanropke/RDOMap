@@ -47,8 +47,9 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (2%):
   - **W10075343** (1,650 words)
 
-### Finnish (22%):
+### Finnish (28%):
   - **aksu.smal** (158 words)
+  - **esj.h** (465 words)
 
 ### French (86%):
   - **escaliburos** (10 words)
