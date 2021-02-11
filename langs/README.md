@@ -47,9 +47,9 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (2%):
   - **W10075343** (1,650 words)
 
-### Finnish (28%):
+### Finnish (29%):
   - **aksu.smal** (158 words)
-  - **esj.h** (465 words)
+  - **esj.h** (1,095 words)
 
 ### French (86%):
   - **escaliburos** (10 words)
@@ -117,6 +117,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Pabeu** (49 words)
 
 ### Portuguese (8%):
+  - **1Jay1** (57 words)
   - **FilipeLuk** (649 words)
 
 ### Portuguese, Brazilian (99%):
@@ -132,6 +133,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Russian (97%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
+  - **ilyuas73** (18 words)
   - **MEE5RUS** (312 words)
   - **Megitsune** (21,042 words)
   - **mrsanze6** (49 words)
