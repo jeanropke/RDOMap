@@ -49,7 +49,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Finnish (29%):
   - **aksu.smal** (158 words)
-  - **esj.h** (1,095 words)
+  - **esj.h** (1,101 words)
 
 ### French (86%):
   - **escaliburos** (10 words)
@@ -142,11 +142,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **poeblu85** (395 words)
   - **tegetron** (29 words)
 
-### Spanish (92%):
+### Spanish (94%):
   - **a.equis23** (263 words)
   - **AshTurquoise** (27 words)
   - **Bruxes** (435 words)
   - **chanito86** (10 words)
+  - **ethandaxps4** (219 words)
   - **idiot.rejected** (102 words)
   - **JoseLopez95** (409 words)
   - **Megitsune** (21,042 words)
