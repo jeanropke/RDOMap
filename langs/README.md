@@ -91,6 +91,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
+  - **Mattablatta** (18 words)
   - **Megitsune** (21,042 words)
   - **nellonenollen** (22 words)
   - **raffouk40** (33 words)
