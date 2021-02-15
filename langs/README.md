@@ -168,6 +168,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Turkish (41%):
   - **birseysoylicem** (134 words)
+  - **esershnr** (52 words)
   - **Krykl** (406 words)
   - **tercumantanumut** (149 words)
 
