@@ -128,6 +128,11 @@ class AnimalCollection {
       this.animals.push(new Animal(animal, this.key));
       AnimalCollection.quickParams.push(animal.key);
     });
-    Menu.reorderMenu($(`.menu-hidden[data-type=${this.key}]`));
+
+    AnimalCollection.onLanguageChanged();
+  }
+
+  static onLanguageChanged() {
+    AnimalCollection.collection.forEach(group => Menu.reorderMenu($(`.menu-hidden[data-type=${group.key}]`)));
   }
 }

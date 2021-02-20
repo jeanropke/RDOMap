@@ -247,7 +247,7 @@ $('#language').on('change', function () {
   Shop.locations.forEach(shop => shop.onLanguageChanged());
   MadamNazar.addMadamNazar();
   Legendary.onSettingsChanged();
-
+  AnimalCollection.onLanguageChanged();
   MapBase.updateTippy('language');
 });
 
