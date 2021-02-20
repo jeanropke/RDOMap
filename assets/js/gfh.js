@@ -80,7 +80,7 @@ class GunForHire {
           tippy: marker.title,
         }),
       });
-      tempMarker.bindPopup(this.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
+      tempMarker.bindPopup(this.updateMarkerContent.bind(this, marker), { minWidth: 300, maxWidth: 400 });
 
       this.layer.addLayer(tempMarker);
       if (Settings.isMarkerClusterEnabled)
