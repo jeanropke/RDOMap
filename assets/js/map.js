@@ -150,6 +150,8 @@ const MapBase = {
       MapBase.map.closePopup();
     });
 
+    MapBase.map.on('resize', MapBase.map.invalidateSize);
+
     Layers.debugLayer.addTo(MapBase.map);
 
     // Enable this and disable the above to see cool stuff.

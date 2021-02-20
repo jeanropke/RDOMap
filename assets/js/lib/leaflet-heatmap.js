@@ -1,23 +1,33 @@
 /*
-* Leaflet Heatmap Overlay
-*
-* Copyright (c) 2014, Patrick Wied (http://www.patrick-wied.at)
-* Dual-licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
-* and the Beerware (http://en.wikipedia.org/wiki/Beerware) license.
-*/
+ * Leaflet Heatmap Overlay
+ *
+ * Copyright (c) 2008-2016, Patrick Wied (https://www.patrick-wied.at)
+ * Dual-licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+ * and the Beerware (http://en.wikipedia.org/wiki/Beerware) license.
+ */
 
 (function (name, context, factory) {
-
   // Supports UMD. AMD, CommonJS/Node.js and browser context
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = factory();
+    module.exports = factory(
+      require('heatmap.js'),
+      require('leaflet')
+    );
   } else if (typeof define === "function" && define.amd) {
-    define(factory);
+    define(['heatmap.js', 'leaflet'], factory);
   } else {
-    context[name] = factory();
+    // browser globals
+    if (typeof window.h337 === 'undefined') {
+      throw new Error('heatmap.js must be loaded before the leaflet heatmap plugin');
+    }
+    if (typeof window.L === 'undefined') {
+      throw new Error('Leaflet must be loaded before the leaflet heatmap plugin');
+    }
+    context[name] = factory(window.h337, window.L);
   }
 
-})("HeatmapOverlay", this, function () {
+})("HeatmapOverlay", this, function (h337, L) {
+  'use strict';
 
   // Leaflet < 0.8 compatibility
   if (typeof L.Layer === 'undefined') {
@@ -37,7 +47,6 @@
 
     onAdd: function (map) {
       var size = map.getSize();
-      var h337 = typeof require !== 'undefined' ? require('heatmap.js') : window.h337;
 
       this._map = map;
 
@@ -48,7 +57,7 @@
       this._el.style.height = size.y + 'px';
       this._el.style.position = 'absolute';
 
-      this._resetOrigin();
+      this._origin = this._map.layerPointToLatLng(new L.Point(0, 0));
 
       map.getPanes().overlayPane.appendChild(this._el);
 
@@ -58,7 +67,7 @@
 
       // this resets the origin and redraws whenever
       // the zoom changed or the map has been moved
-      map.on('moveend', this._resetOrigin, this);
+      map.on('moveend', this._reset, this);
       this._draw();
     },
 
@@ -71,10 +80,12 @@
       // remove layer's DOM elements and listeners
       map.getPanes().overlayPane.removeChild(this._el);
 
-      map.off('moveend', this._resetOrigin, this);
+      map.off('moveend', this._reset, this);
     },
     _draw: function () {
-      if (!this._map) { return; }
+      if (!this._map) {
+        return;
+      }
 
       var mapPane = this._map.getPanes().mapPane;
       var point = mapPane._leaflet_pos;
@@ -86,10 +97,13 @@
 
       this._update();
     },
-    _onAnimZoom: function (ev) { },
     _update: function () {
       var bounds, zoom, scale;
-      var generatedData = { max: this._max, min: this._min, data: [] };
+      var generatedData = {
+        max: this._max,
+        min: this._min,
+        data: []
+      };
 
       bounds = this._map.getBounds();
       zoom = this._map.getZoom();
@@ -117,15 +131,18 @@
 
 
         // we don't wanna render points that are not even on the map ;-)
-        //if (!bounds.contains(latlng)) {
-        //  continue;
-        //}
+        if (!bounds.contains(latlng)) {
+          continue;
+        }
         // local max is the maximum within current bounds
         localMax = Math.max(value, localMax);
         localMin = Math.min(value, localMin);
 
         var point = this._map.latLngToContainerPoint(latlng);
-        var latlngPoint = { x: Math.round(point.x), y: Math.round(point.y) };
+        var latlngPoint = {
+          x: Math.round(point.x),
+          y: Math.round(point.y)
+        };
         latlngPoint[valueField] = value;
 
         var radius;
@@ -162,7 +179,9 @@
       while (len--) {
         var entry = data[len];
         var latlng = new L.LatLng(entry[latField], entry[lngField]);
-        var dataObj = { latlng: latlng };
+        var dataObj = {
+          latlng: latlng
+        };
         dataObj[valueField] = entry[valueField];
         if (entry.radius) {
           dataObj.radius = entry.radius;
@@ -186,7 +205,9 @@
         var valueField = this.cfg.valueField || 'value';
         var entry = pointOrArray;
         var latlng = new L.LatLng(entry[latField], entry[lngField]);
-        var dataObj = { latlng: latlng };
+        var dataObj = {
+          latlng: latlng
+        };
 
         dataObj[valueField] = entry[valueField];
         this._max = Math.max(this._max, dataObj[valueField]);
@@ -199,7 +220,7 @@
         this._draw();
       }
     },
-    _resetOrigin: function () {
+    _reset: function () {
       this._origin = this._map.layerPointToLatLng(new L.Point(0, 0));
 
       var size = this._map.getSize();
@@ -209,6 +230,8 @@
 
         this._el.style.width = this._width + 'px';
         this._el.style.height = this._height + 'px';
+
+        this._heatmap._renderer.setDimensions(this._width, this._height);
       }
       this._draw();
     }
@@ -230,7 +253,6 @@
         return prop;
       }
     }
-
     return props[0];
   })();
 
