@@ -45,16 +45,29 @@ class Plants {
           shadowAnchor: [10 * Settings.markerSize, 10 * Settings.markerSize],
         }),
       });
-      tempMarker.bindPopup(
-        `<h1>${Language.get(`map.plants.${this.key}.name`)}</h1>
-          <span class="marker-content-wrapper">
-            <p>${Language.get('map.plants.desc').replace(/{plant}/, Language.get(`map.plants.${this.key}.name`))}</p>
-          </span>
-        `, { minWidth: 300, maxWidth: 400 });
+      tempMarker.bindPopup(this.popupContent.bind(this, _marker), { minWidth: 300, maxWidth: 400 });
       this.markers.push(tempMarker);
     });
   }
 
+  popupContent(_marker) {
+    const description = Language.get('map.plants.desc').replace(/{plant}/, Language.get(`map.plants.${this.key}.name`));
+    const popup = $(`
+        <div>
+          <h1 data-text="map.plants.${this.key}.name"></h1>
+          <span class="marker-content-wrapper">
+            <p>${description}</p>
+          </span>
+          <small>Latitude: ${_marker.x} / Longitude: ${_marker.y}</small>
+        </div>
+      `)
+      .translate()
+      .find('small')
+      .toggle(Settings.isDebugEnabled)
+      .end();
+
+    return popup[0];
+  }
   set onMap(state) {
     if (!MapBase.isPreviewMode && !PlantsCollection.onMap) return false;
     if (state) {
