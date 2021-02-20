@@ -121,9 +121,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **1Jay1** (57 words)
   - **FilipeLuk** (649 words)
 
-### Portuguese, Brazilian (99%):
+### Portuguese, Brazilian (100%):
   - **FilipFelipe** (13 words)
-  - **jeanropke** (27,452 words)
+  - **jeanropke** (27,459 words)
   - **mgoebelm** (100 words)
   - **msfern** (12 words)
   - **neohazukibr** (41 words)
