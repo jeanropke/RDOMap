@@ -150,4 +150,8 @@ class PlantsCollection {
   static get onMap() {
     return !!localStorage.getItem('rdo:plants');
   }
+
+  static onLanguageChanged() {
+    Menu.reorderMenu(PlantsCollection.context);
+  }
 }

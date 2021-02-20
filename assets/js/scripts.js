@@ -241,13 +241,14 @@ $('#language').on('change', function () {
 
   // WIP: update markers without reload page
   Camp.locations.forEach(camp => camp.onLanguageChanged());
-  Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
+  Encounter.onLanguageChanged();
   GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
   Location.locations.forEach(location => location.onLanguageChanged());
   Shop.locations.forEach(shop => shop.onLanguageChanged());
   MadamNazar.addMadamNazar();
   Legendary.onSettingsChanged();
   AnimalCollection.onLanguageChanged();
+  PlantsCollection.onLanguageChanged();
   MapBase.updateTippy('language');
 });
 

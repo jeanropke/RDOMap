@@ -90,4 +90,9 @@ class Encounter {
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }
+
+  static onLanguageChanged() {
+    Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
+    Menu.reorderMenu(Encounter.context);
+  }
 }
