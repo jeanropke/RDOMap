@@ -93,6 +93,6 @@ class Encounter {
 
   static onLanguageChanged() {
     Encounter.locations.forEach(encounter => encounter.onLanguageChanged());
-    Menu.reorderMenu(Encounter.context);
+    Menu.reorderMenu(this.context);
   }
 }

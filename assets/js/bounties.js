@@ -1,9 +1,4 @@
 class Bounty {
-
-  static onLanguageChanged() {
-    Menu.reorderMenu(this.context);
-  }
-
   // not idempotent (on the environment)
   constructor(preliminary, type) {
     Object.assign(this, preliminary);
@@ -95,6 +90,10 @@ class Bounty {
   }
   get onMap() {
     return !!localStorage.getItem(`rdo:${this._shownKey}`);
+  }
+
+  static onLanguageChanged() {
+    Menu.reorderMenu(this.context);
   }
 }
 

@@ -233,22 +233,21 @@ $('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
 
 $('#language').on('change', function () {
   Settings.language = $('#language').val();
-
   Language.setMenuLanguage();
-  Treasure.onLanguageChanged();
-  Bounty.onLanguageChanged();
-  Dailies.sortDailies();
 
-  // WIP: update markers without reload page
-  Camp.locations.forEach(camp => camp.onLanguageChanged());
-  Encounter.onLanguageChanged();
-  GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
-  Location.locations.forEach(location => location.onLanguageChanged());
-  Shop.locations.forEach(shop => shop.onLanguageChanged());
-  MadamNazar.addMadamNazar();
-  Legendary.onSettingsChanged();
   AnimalCollection.onLanguageChanged();
+  Bounty.onLanguageChanged();
+  Camp.onLanguageChanged();
+  Encounter.onLanguageChanged();
+  GunForHire.onLanguageChanged();
+  Legendary.onLanguageChanged();
+  Location.onLanguageChanged();
   PlantsCollection.onLanguageChanged();
+  Shop.onLanguageChanged();
+  Treasure.onLanguageChanged();
+
+  Dailies.sortDailies();
+  MadamNazar.addMadamNazar();
   MapBase.updateTippy('language');
 });
 

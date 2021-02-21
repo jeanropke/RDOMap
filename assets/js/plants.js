@@ -24,7 +24,6 @@ class Plants {
 
     this.reinitMarker();
 
-
     if (this.onMap) {
       this.onMap = this.onMap;
     }
@@ -152,6 +151,6 @@ class PlantsCollection {
   }
 
   static onLanguageChanged() {
-    Menu.reorderMenu(PlantsCollection.context);
+    Menu.reorderMenu(this.context);
   }
 }

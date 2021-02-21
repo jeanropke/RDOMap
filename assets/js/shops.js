@@ -90,4 +90,9 @@ class Shop {
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }
+
+  static onLanguageChanged() {
+    Shop.locations.forEach(shop => shop.onLanguageChanged());
+    Menu.reorderMenu(this.context);
+  }
 }

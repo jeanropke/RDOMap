@@ -95,4 +95,9 @@ class Camp {
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }
+
+  static onLanguageChanged() {
+    Camp.locations.forEach(camp => camp.onLanguageChanged());
+    Menu.reorderMenu(this.context);
+  }
 }

@@ -31,6 +31,7 @@ class Legendary {
   }
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
+    this.onSettingsChanged();
   }
   static onSettingsChanged() {
     this.animals.forEach(animal => animal.reinitMarker());

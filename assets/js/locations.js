@@ -83,4 +83,8 @@ class Location {
     const value = JSON.parse(localStorage.getItem(`rdo:${this.key}`));
     return value || (value == null && !this.disabled);
   }
+
+  static onLanguageChanged() {
+    Location.locations.forEach(location => location.onLanguageChanged());
+  }
 }

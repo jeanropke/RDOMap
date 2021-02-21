@@ -107,4 +107,9 @@ class GunForHire {
   get onMap() {
     return !!localStorage.getItem(`rdo:${this.key}`);
   }
+
+  static onLanguageChanged() {
+    GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
+    Menu.reorderMenu(this.context);
+  }
 }
