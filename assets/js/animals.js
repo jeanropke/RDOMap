@@ -144,6 +144,6 @@ class AnimalCollection {
   }
 
   static onLanguageChanged() {
-    AnimalCollection.collection.forEach(group => Menu.reorderMenu($(`.menu-hidden[data-type=${group.key}]`)));
+    AnimalCollection.collectionsData.forEach(group => Menu.reorderMenu($(`.menu-hidden[data-type=${group.key}]`)));
   }
 }
