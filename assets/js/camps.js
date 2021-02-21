@@ -100,4 +100,8 @@ class Camp {
     Camp.locations.forEach(camp => camp.onLanguageChanged());
     Menu.reorderMenu(this.context);
   }
+
+  static onSettingsChanged() {
+    Camp.locations.forEach(camp => camp.reinitMarker());
+  }
 }

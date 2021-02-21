@@ -95,4 +95,8 @@ class Shop {
     Shop.locations.forEach(shop => shop.onLanguageChanged());
     Menu.reorderMenu(this.context);
   }
+
+  static onSettingsChanged() {
+    Shop.locations.forEach(shop => shop.reinitMarker());
+  }
 }

@@ -112,4 +112,8 @@ class GunForHire {
     GunForHire.locations.forEach(gfh => gfh.onLanguageChanged());
     Menu.reorderMenu(this.context);
   }
+
+  static onSettingsChanged() {
+    GunForHire.locations.forEach(gfh => gfh.reinitMarker());
+  }
 }

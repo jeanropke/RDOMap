@@ -248,28 +248,32 @@ $('#language').on('change', function () {
 
 $('#marker-size').on('change', function () {
   Settings.markerSize = Number($('#marker-size').val());
-  Treasure.onSettingsChanged();
+
+  Camp.onSettingsChanged();
   CondorEgg.onSettingsChanged();
+  Encounter.onSettingsChanged();
+  GunForHire.onSettingsChanged();
+  Location.onSettingsChanged();
   Salvage.onSettingsChanged();
-  Camp.locations.forEach(camp => camp.reinitMarker());
-  Encounter.locations.forEach(encounter => encounter.reinitMarker());
-  GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker());
-  Shop.locations.forEach(shop => shop.reinitMarker());
+  Shop.onSettingsChanged();
+  Treasure.onSettingsChanged();
+
   MadamNazar.addMadamNazar();
   Pins.loadPins();
 });
 
 $('#marker-opacity').on('change', function () {
   Settings.markerOpacity = Number($('#marker-opacity').val());
-  Treasure.onSettingsChanged();
+
+  Camp.onSettingsChanged();
   CondorEgg.onSettingsChanged();
+  Encounter.onSettingsChanged();
+  GunForHire.onSettingsChanged();
+  Location.onSettingsChanged();
   Salvage.onSettingsChanged();
-  Camp.locations.forEach(camp => camp.reinitMarker());
-  Encounter.locations.forEach(encounter => encounter.reinitMarker());
-  GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker());
-  Shop.locations.forEach(shop => shop.reinitMarker());
+  Shop.onSettingsChanged();
+  Treasure.onSettingsChanged();
+
   MadamNazar.addMadamNazar();
   Pins.loadPins();
 });
@@ -297,11 +301,12 @@ $('#marker-cluster').on('change', function () {
 
   Layers.oms.clearMarkers();
 
-  Camp.locations.forEach(camp => camp.reinitMarker());
-  Encounter.locations.forEach(encounter => encounter.reinitMarker());
-  GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker());
-  Shop.locations.forEach(shop => shop.reinitMarker());
+  Camp.onSettingsChanged();
+  Encounter.onSettingsChanged();
+  GunForHire.onSettingsChanged();
+  Location.onSettingsChanged();
+  Shop.onSettingsChanged();
+
   MadamNazar.addMadamNazar();
   Pins.loadPins();
 });
@@ -312,14 +317,14 @@ $('#enable-marker-popups-hover').on('change', function () {
 
 $('#enable-marker-shadows').on('change', function () {
   Settings.isShadowsEnabled = $('#enable-marker-shadows').prop('checked');
+  Camp.onSettingsChanged();
+  Encounter.onSettingsChanged();
+  GunForHire.onSettingsChanged();
+  Location.onSettingsChanged();
+  Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
-  Camp.locations.forEach(camp => camp.reinitMarker());
-  Encounter.locations.forEach(encounter => encounter.reinitMarker());
-  GunForHire.locations.forEach(gfh => gfh.reinitMarker());
-  Location.locations.forEach(location => location.reinitMarker());
   Pins.loadPins();
   MadamNazar.addMadamNazar();
-  Shop.locations.forEach(shop => shop.reinitMarker());
 });
 
 $('#enable-legendary-backgrounds').on('change', function () {

@@ -87,4 +87,8 @@ class Location {
   static onLanguageChanged() {
     Location.locations.forEach(location => location.onLanguageChanged());
   }
+
+  static onSettingsChanged() {
+    Location.locations.forEach(location => location.reinitMarker());
+  }
 }
