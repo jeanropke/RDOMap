@@ -226,11 +226,6 @@ $('#show-debug').on('change', function () {
   $('#debug-container').toggleClass('opened', Settings.showDebugSettings);
 });
 
-//Disable menu category when click on input
-$('.menu-option.clickable input, #submit-new-herb').on('click', function (e) {
-  e.stopPropagation();
-});
-
 $('#language').on('change', function () {
   Settings.language = $('#language').val();
   Language.setMenuLanguage();
