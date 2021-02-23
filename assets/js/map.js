@@ -105,7 +105,7 @@ const MapBase = {
     MapBase.map.addControl(
       L.control.attribution({
         position: 'bottomright',
-        prefix: '<a target="_blank" href="https://github.com/jeanropke/RDR2CollectorsMap/blob/master/CONTRIBUTORS.md" data-text="map.attribution_prefix">Collectors Map Contributors</a>',
+        prefix: '<a target="_blank" href="https://github.com/jeanropke/RDOMap/blob/master/CONTRIBUTORS.md" data-text="map.attribution_prefix">RDOMap Contributors</a>',
       })
     );
 

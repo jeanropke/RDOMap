@@ -29,14 +29,14 @@ These are the people that provided the locations of the different items on the m
 
 ## Service credits
 These are the people or services that make the dynamic content of the map work.
-- Daily Challenges provided by [alloc8or](https://github.com/alloc8or/) and the [RDO Dailies API](https://rdodailies.com/).
-- Madam Nazar provided by [alloc8or](https://github.com/alloc8or/) and the [MadamNazar.io API](https://madamnazar.io/).
+- Daily Challenges provided by [alloc8or](https://github.com/alloc8or/) adapted to the map by [Michal__d](https://github.com/MichalD96).
+- Madam Nazar location provided by [alloc8or](https://github.com/alloc8or/) and the [MadamNazar.io](https://madamnazar.io/).
 - Freeroam events display by [Richard Westenra](https://www.richardwestenra.com/rdr2-free-roam-event-schedule), adapted to the map by [Senexis](https://github.com/Senexis).
 
 ## Assets credits
 These are the people that provided assets for the map.
 
-- Icons by [Game Icons](https://game-icons.net/) and Rockstar Games.
+- Icons by [Game Icons](https://game-icons.net/), Rockstar Games and [Michal__d](https://github.com/MichalD96).
 - Map tiles by:
     * Default tiles by Rockstar Games.
     * Detailed tiles by [RDR2Map](https://rdr2map.com/).
