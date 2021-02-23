@@ -130,24 +130,23 @@ class PlantsCollection {
   static set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.removeClass('disabled');
-      this.context.removeClass('disabled');
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo:plants', 'true');
     } else {
       this.layer.remove();
-      this.element.addClass('disabled');
-      this.context.addClass('disabled');
-      if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdo:plants');
     }
+    this.element.toggleClass('disabled', !state);
+    this.context.toggleClass('disabled', !state);
+
+    if (!MapBase.isPreviewMode)
+      localStorage.setItem('rdo:plants', JSON.stringify(state));
+
     PlantsCollection.locations.forEach(_plants => {
       if (_plants.onMap) _plants.onMap = state;
     });
   }
 
   static get onMap() {
-    return !!localStorage.getItem('rdo:plants');
+    const value = JSON.parse(localStorage.getItem('rdo:plants'));
+    return value || value == null;
   }
 
   static onLanguageChanged() {
