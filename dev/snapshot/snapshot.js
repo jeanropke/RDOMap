@@ -217,6 +217,55 @@ for (let i = 0; i < 12; i++) {
   });
 }
 
+/**
+ * CONDOR EGGS
+ * Condor Eggs has 3 locations, just use a for loop to add them all.
+ */
+let condorItems = downloadFileSync('http://localhost/rdo/data/fme_condor_egg.json');
+condorItems = JSON.parse(condorItems);
+
+condorItems.forEach(item => {
+  sites.push({
+    name: item.text,
+    type: 'short',
+    url: `${rdoMapBase}&q=${item.text}`,
+  });
+});
+
+/**
+ * SALVAGE
+ * Salvage has 3 locations, just use a for loop to add them all.
+ */
+let salvageItems = downloadFileSync('http://localhost/rdo/data/fme_salvage.json');
+salvageItems = JSON.parse(salvageItems);
+
+salvageItems.forEach(item => {
+  sites.push({
+    name: item.text,
+    type: 'short',
+    url: `${rdoMapBase}&q=${item.text}`,
+  });
+});
+
+/**
+ * BOUNTIES
+ * Bounties are split into multiple categories, just use a for loop to add them all.
+ */
+let bountyItems = downloadFileSync('http://localhost/rdo/data/bounties.json');
+bountyItems = JSON.parse(bountyItems);
+
+bountyItems.forEach(item => {
+  item.locations.forEach(bounty => {
+    const full = `${item.key}_${bounty.text}`;
+    console.log(full);
+    sites.push({
+      name: full,
+      type: 'short',
+      url: `${rdoMapBase}&q=${full}`,
+    });
+  });
+});
+
 sites.sort((a, b) => a.name.localeCompare(b.name, 'en-US', { numeric: true, ignorePunctuation: true }));
 
 /** @type {ProgressBar} The ProgressBar instance to use for displaying the progress bar in console. */

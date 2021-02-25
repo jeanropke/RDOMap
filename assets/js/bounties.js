@@ -126,7 +126,7 @@ class BountyCollection {
     this.bounties = [];
     this.locations.forEach(bounty => {
       this.bounties.push(new Bounty(bounty, this.key));
-      BountyCollection.quickParams.push(bounty.key);
+      BountyCollection.quickParams.push(`${this.key}_${bounty.text}`);
     });
 
     Menu.reorderMenu($(`.menu-hidden[data-type=${this.key}]`));

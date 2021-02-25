@@ -4,6 +4,7 @@ class CondorEgg {
       .toggleClass('disabled', !this.condorEggOnMap)
       .on('click', () => this.condorEggOnMap = !this.condorEggOnMap);
     this.condorEggs = [];
+    this.quickParams = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
     const pane = MapBase.map.createPane('condorEggX');
@@ -18,6 +19,7 @@ class CondorEgg {
     return Loader.promises['fme_condor_egg'].consumeJson(data => {
       data.forEach(item => {
         this.condorEggs.push(new CondorEgg(item));
+        this.quickParams.push(item.text);
       });
       console.info('%c[Event Condor Egg] Loaded!', 'color: #bada55; background: #242424');
     });
@@ -53,9 +55,11 @@ class CondorEgg {
     })
       .bindPopup(this.popupContent.bind(this), { minWidth: 300 }));
 
-    this.marker.addLayer(L.marker([this.x, this.y], { icon: CondorEgg.mainIcon })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
-    );
+    if (!MapBase.isPreviewMode)
+      this.marker.addLayer(L.marker([this.x, this.y], { icon: CondorEgg.mainIcon })
+        .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
+      );
+
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
         icon: CondorEgg.eggIcon,
@@ -65,6 +69,7 @@ class CondorEgg {
     );
     CondorEgg.layer.addLayer(this.marker);
     CondorEgg.condorEggOnMap = CondorEgg.condorEggOnMap;
+    this.onMap = true;
   }
   popupContent() {
     return $(`
@@ -74,13 +79,22 @@ class CondorEgg {
     `).translate()[0];
   }
 
+  set onMap(state) {
+    if (state)
+      CondorEgg.layer.addLayer(this.marker);
+    else
+      CondorEgg.layer.removeLayer(this.marker);
+  }
+
   static set condorEggOnMap(state) {
     if (state) {
       MapBase.map.addLayer(CondorEgg.layer);
-      localStorage.setItem('rdo:condorEggs', 'true');
+      if (!MapBase.isPreviewMode)
+        localStorage.setItem('rdo:condorEggs', 'true');
     } else {
       CondorEgg.layer.remove();
-      localStorage.removeItem('rdo:condorEggs');
+      if (!MapBase.isPreviewMode)
+        localStorage.removeItem('rdo:condorEggs');
     }
     this.condorEggParentElement.toggleClass('disabled', !state);
   }
@@ -96,6 +110,7 @@ class Salvage {
       .toggleClass('disabled', !this.salvageOnMap)
       .on('click', () => this.salvageOnMap = !this.salvageOnMap);
     this.salvages = [];
+    this.quickParams = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
 
@@ -110,6 +125,7 @@ class Salvage {
     return Loader.promises['fme_salvage'].consumeJson(data => {
       data.forEach(item => {
         this.salvages.push(new Salvage(item));
+        this.quickParams.push(item.text);
       });
       console.info('%c[Event Salvage] Loaded!', 'color: #bada55; background: #242424');
     });
@@ -144,9 +160,10 @@ class Salvage {
       radius: this.radius,
     }));
 
-    this.marker.addLayer(L.marker([this.x, this.y], { icon: Salvage.mainIcon })
-      .bindPopup(this.popupContent.bind(this, null), { minWidth: 300 })
-    );
+    if (!MapBase.isPreviewMode)
+      this.marker.addLayer(L.marker([this.x, this.y], { icon: Salvage.mainIcon })
+        .bindPopup(this.popupContent.bind(this, null), { minWidth: 300 })
+      );
 
     this.pickups.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
@@ -180,9 +197,9 @@ class Salvage {
         pane: 'salvageMounds',
       }).bindPopup(this.popupContent.bind(this, 'mounds'), { minWidth: 300, maxWidth: 400 }))
     );
-
     Salvage.layer.addLayer(this.marker);
     Salvage.salvageOnMap = Salvage.salvageOnMap;
+    this.onMap = true;
   }
   popupContent(type) {
     return $(`
@@ -193,13 +210,22 @@ class Salvage {
     `).translate()[0];
   }
 
+  set onMap(state) {
+    if (state)
+      Salvage.layer.addLayer(this.marker);
+    else
+      Salvage.layer.removeLayer(this.marker);
+  }
+
   static set salvageOnMap(state) {
     if (state) {
       MapBase.map.addLayer(Salvage.layer);
-      localStorage.setItem('rdo:salvages', 'true');
+      if (!MapBase.isPreviewMode)
+        localStorage.setItem('rdo:salvages', 'true');
     } else {
       Salvage.layer.remove();
-      localStorage.removeItem('rdo:salvages');
+      if (!MapBase.isPreviewMode)
+        localStorage.removeItem('rdo:salvages');
     }
     this.salvageParentElement.toggleClass('disabled', !state);
   }

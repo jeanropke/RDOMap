@@ -277,6 +277,34 @@ const MapBase = {
           item.onMap = true;
           MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
         });
+      } else if (BountyCollection.quickParams.indexOf(quickParam) !== -1) {
+        Object.keys(BountyCollection.collection).filter(item => {
+          BountyCollection.collection[item].bounties.filter(bounty => {
+            if (`${bounty.type}_${bounty.text}` !== quickParam) return;
+            bounty.onMap = true;
+            MapBase.map.setView({ lat: bounty.x, lng: bounty.y }, 5);
+          });
+        });
+      } else if (CondorEgg.quickParams.indexOf(quickParam) !== -1) {
+        CondorEgg.condorEggOnMap = true;
+        CondorEgg.condorEggs.filter(item => {
+          if (item.text !== quickParam) {
+            item.onMap = false;
+            return;
+          }
+          item.onMap = true;
+          MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
+        });
+      } else if (Salvage.quickParams.indexOf(quickParam) !== -1) {
+        Salvage.salvageOnMap = true;
+        Salvage.salvages.filter(item => {
+          if (item.text !== quickParam) {
+            item.onMap = false;
+            return;
+          }
+          item.onMap = true;
+          MapBase.map.setView({ lat: item.x, lng: item.y }, 5);
+        });
       }
     }
 
@@ -290,11 +318,13 @@ const MapBase = {
 
   disableAll: function (toShow = false) {
     Camp.locations.forEach(camp => camp.onMap = toShow);
+    CondorEgg.condorEggOnMap = toShow;
     Encounter.locations.forEach(encounter => encounter.onMap = toShow);
     GunForHire.locations.forEach(gfh => gfh.onMap = toShow);
     Location.locations.forEach(location => location.onMap = toShow);
     Legendary.animals.forEach(animal => animal.onMap = toShow);
     MadamNazar.onMap = toShow;
+    Salvage.salvageOnMap = toShow;
     Shop.locations.forEach(shop => shop.onMap = toShow);
     PlantsCollection.locations.forEach(plants => plants.onMap = toShow);
   },
