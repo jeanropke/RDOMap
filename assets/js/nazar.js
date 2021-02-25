@@ -63,9 +63,12 @@ class MadamNazar {
     });
     tempMarker.bindPopup(this.popupContent.bind(this), { minWidth: 300 });
 
-    MadamNazar.layer.addLayer(tempMarker);
-    if (Settings.isMarkerClusterEnabled)
-      Layers.oms.addMarker(tempMarker);
+    // Fix occasional race condition with preview mode.
+    if (!MapBase.isPreviewMode || getParameterByName('q') === 'nazar') {
+      MadamNazar.layer.addLayer(tempMarker);
+      if (Settings.isMarkerClusterEnabled)
+        Layers.oms.addMarker(tempMarker);
+    }
 
     this.onMap = this.onMap;
   }
