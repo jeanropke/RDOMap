@@ -234,42 +234,59 @@ const bar = new ProgressBar('[:bar] :current/:total (:percent)', {
  * @param {string} siteName Used to determine the name of the image.
  */
 async function doScreenCapture(url, siteType, siteName) {
+  // Specifically outside of the try catch to prevent retries on "hard" crashes.
   const browser = await puppeteer.launch({
     defaultViewport: {
       width: 3840,
       height: 2160,
     },
   });
+
   const page = await browser.newPage();
   const writeDir = path.join(__dirname, `_${siteType}`);
   const fileDir = path.join(writeDir, `${siteName}.jpg`);
 
   if (!fs.existsSync(writeDir)) fs.mkdirSync(writeDir);
 
-  await page.goto(url, {
-    waitUntil: 'networkidle2',
-  });
+  try {
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
 
-  // Wait for our app to finish loading.
-  const hasLoaded = page.waitForFunction('window.loaded === true');
-  await hasLoaded;
+    // Wait for our app to finish loading.
+    await page.waitForFunction('window.loaded === true');
 
-  // Some extra sleep for safety.
-  await sleep(1000 * 3);
+    // Some extra sleep for safety.
+    await sleep(1000 * 3);
 
-  await page.screenshot({
-    fullPage: true,
-    type: 'jpeg',
-    quality: 100,
-    path: fileDir,
-  });
+    // Set up contrast for the app. This Puppeteer evaluate method is pretty neat.
+    await page.evaluate(() => {
+      $('#map').css('background-color', '#202020');
+      $('.leaflet-pane.leaflet-tile-pane').css('filter', 'contrast(0.75)');
+    });
 
-  await browser.close();
+    // Take the screenshot. :-)
+    await page.screenshot({
+      fullPage: true,
+      type: 'jpeg',
+      quality: 100,
+      path: fileDir,
+    });
+
+    await browser.close();
+  } catch (error) {
+    console.error(`Page ${siteName} (at ${url}) failed to load, retrying...`);
+
+    // Properly dispose of the current browser to not clog memory.
+    // If this throws, just throw out of this catch and crash.
+    await browser.close();
+
+    // Try again. Reached when Puppeteer throws timeout (>30000ms).
+    await doScreenCapture(url, siteType, siteName);
+  }
 }
 
-const valid = sites.map(i => i.name);
-const data = JSON.stringify(valid, null, 2);
-fs.writeFileSync('_manifest.json', data);
+fs.writeFileSync('_manifest.json', JSON.stringify(sites.map(i => i.name)));
 
 /**
  * The main thread logic. This spawns 8 instances of screenshotting at a time to speed up the process.
