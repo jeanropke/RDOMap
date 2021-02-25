@@ -19,8 +19,8 @@ function sleep(ms) {
 }
 
 // Set up the URL bases.
-const mapOneBase = 'http://localhost/?z=4&ft=-75,110&c=red';
-const mapTwoBase = 'http://localhost/rdo/?z=4&ft=-75,110&c=red';
+const collectorBase = 'http://localhost/?z=4&ft=-75,110&c=red&theme=black';
+const rdoMapBase = 'http://localhost/rdo/?z=4&ft=-75,110&c=red&theme=black';
 
 /**
  * COLLECTOR ITEMS
@@ -37,7 +37,7 @@ Object.keys(collectorItems).forEach(k => {
     sites.push({
       name: `${k}_${ck}`,
       type: 'long',
-      url: `${mapOneBase}&q=${k}&cycles=${ck}`,
+      url: `${collectorBase}&q=${k}&cycles=${ck}`,
     });
 
     // Individual items.
@@ -51,13 +51,13 @@ Object.keys(collectorItems).forEach(k => {
         sites.push({
           name: `${name}_${ck}`,
           type: 'long',
-          url: `${mapOneBase}&q=${name}&cycles=${ck}`,
+          url: `${collectorBase}&q=${name}&cycles=${ck}`,
         });
       } else {
         sites.push({
           name: `${item.text}_${ck}`,
           type: 'short',
-          url: `${mapOneBase}&q=${item.text}&cycles=${ck}`,
+          url: `${collectorBase}&q=${item.text}&cycles=${ck}`,
         });
       }
     });
@@ -76,7 +76,7 @@ animalItems.forEach(category => {
     sites.push({
       name: animal.key,
       type: 'long',
-      url: `${mapTwoBase}&q=${animal.key}`,
+      url: `${rdoMapBase}&q=${animal.key}`,
     });
   });
 });
@@ -93,7 +93,7 @@ encounterItems.forEach(item => {
   sites.push({
     name: item.key,
     type: item.locations.length !== 1 ? 'long' : 'short',
-    url: `${mapTwoBase}&q=${item.key}`,
+    url: `${rdoMapBase}&q=${item.key}`,
   });
 });
 
@@ -109,7 +109,7 @@ campItems.forEach(item => {
   sites.push({
     name: item.key,
     type: item.locations.length !== 1 ? 'long' : 'short',
-    url: `${mapTwoBase}&q=${item.key}`,
+    url: `${rdoMapBase}&q=${item.key}`,
   });
 });
 
@@ -125,7 +125,7 @@ miscItems.forEach(item => {
   sites.push({
     name: item.key,
     type: item.locations.length !== 1 ? 'long' : 'short',
-    url: `${mapTwoBase}&q=${item.key}`,
+    url: `${rdoMapBase}&q=${item.key}`,
   });
 });
 
@@ -141,7 +141,7 @@ plantItems.forEach(item => {
   sites.push({
     name: item.key,
     type: item.locations.length !== 1 ? 'long' : 'short',
-    url: `${mapTwoBase}&q=${item.key}`,
+    url: `${rdoMapBase}&q=${item.key}`,
   });
 });
 
@@ -156,7 +156,7 @@ shopItems.forEach(item => {
   sites.push({
     name: item.key,
     type: item.locations.length !== 1 ? 'long' : 'short',
-    url: `${mapTwoBase}&q=${item.key}`,
+    url: `${rdoMapBase}&q=${item.key}`,
   });
 });
 
@@ -171,7 +171,7 @@ treasureItems.forEach(item => {
   sites.push({
     name: item.text,
     type: 'short',
-    url: `${mapTwoBase}&q=${item.text}`,
+    url: `${rdoMapBase}&q=${item.text}`,
   });
 });
 
@@ -186,7 +186,7 @@ gfhItems.forEach(item => {
   sites.push({
     name: item.key,
     type: item.locations.length !== 1 ? 'long' : 'short',
-    url: `${mapTwoBase}&q=${item.key}`,
+    url: `${rdoMapBase}&q=${item.key}`,
   });
 });
 
@@ -201,7 +201,7 @@ legendaryItems.forEach(item => {
   sites.push({
     name: item.text,
     type: 'short',
-    url: `${mapTwoBase}&q=${item.text}`,
+    url: `${rdoMapBase}&q=${item.text}`,
   });
 });
 
@@ -213,7 +213,7 @@ for (let i = 0; i < 12; i++) {
   sites.push({
     name: `nazar_${i}`,
     type: 'short',
-    url: `${mapTwoBase}&q=nazar&nazar=${i}`,
+    url: `${rdoMapBase}&q=nazar&nazar=${i}`,
   });
 }
 

@@ -58,8 +58,6 @@ function init() {
   Dailies.init();
   MadamNazar.init();
 
-  MapBase.beforeLoad();
-
   const animals = AnimalCollection.init();
   const locations = Location.init();
   const encounters = Encounter.init();
