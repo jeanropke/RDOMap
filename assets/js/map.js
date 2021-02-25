@@ -282,6 +282,10 @@ const MapBase = {
 
     Menu.updateTippy();
     MapBase.updateTippy('afterLoad');
+
+    // Puppeteer hack and utility for other extensions.
+    // Allows utilities to wait for this global to then do their stuff.
+    window.loaded = true;
   },
 
   disableAll: function (toShow = false) {

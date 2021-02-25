@@ -250,6 +250,11 @@ async function doScreenCapture(url, siteType, siteName) {
     waitUntil: 'networkidle2',
   });
 
+  // Wait for our app to finish loading.
+  const hasLoaded = page.waitForFunction('window.loaded === true');
+  await hasLoaded;
+
+  // Some extra sleep for safety.
   await sleep(1000 * 3);
 
   await page.screenshot({
