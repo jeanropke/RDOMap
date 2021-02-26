@@ -156,7 +156,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ethandaxps4** (219 words)
   - **idiot.rejected** (102 words)
   - **JoseLopez95** (409 words)
-  - **julianforce** (165 words)
+  - **julianforce** (175 words)
   - **Megitsune** (21,048 words)
   - **Njordude** (1,614 words)
   - **Pocholo95** (160 words)
