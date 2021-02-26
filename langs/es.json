@@ -124,7 +124,7 @@
     "help.marker_size": "Te permite cambiar el tamaño de los marcadores de los coleccionables en el mapa.",
     "help.overlay_opacity": "Te permite cambiar la opacidad de las diferentes capas que aparecen en las cuevas, edificios, minas, etc.",
     "help.read_trader-guide": "Abre una nueva pestaña con la guía del comerciante, ahí puedes encontrar toda la información acerca de carne y animales.",
-    "map.attribution_prefix": "Contribuidores del Mapa RDO",
+    "map.attribution_prefix": "Colaboradores del Mapa RDO",
     "map.copy_link": "Copiar el vínculo del marcador",
     "map.layers.dark": "Oscuro",
     "map.layers.default": "Predeterminado",
@@ -1305,7 +1305,10 @@
     "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)",
     "menu.bounties": "Tracking Bounties",
     "menu.bounty_board_lure.desc": "En estas misiones te ir a una ubicación concreta y elimines a los guardias u otras propiedades para poder atraer al Objetivo de Recompensa.",
+    "menu.bounty_board_lure.wallace_station": "Comisaría de Policía",
+    "menu.bounty_board_lure.strawberry": "Strawberry",
     "menu.bounty_timed": "Recompensas con Tiempo",
     "menu.bounty_timed.desc": "En estas misiones te piden ir a una ubicación concreta para encontrar al objetivo.",
+    "menu.bounty_timed.beaver_hollow": "Hondonada de los castores",
     "menu.bounty_board_caged_target.desc": "En estas misiones te piden ir a una ubicación concreta para encontrar al objetivo."
 }
