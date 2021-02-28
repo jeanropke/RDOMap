@@ -3,80 +3,79 @@
     "text": "bounty_board_track_ringneck_creek",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_heartland_overflow",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_armadillo",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_stillwater",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_viking_tomb",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_aurora_basin",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_montos_rest",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_cholla_springs",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_benedict_point",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_lake_isabella",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_rhodes",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -70.9466,
+    "y": 122.7046,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_flee_named",
         "x": -70.9466,
         "y": 122.7046
       }
@@ -86,17 +85,16 @@
     "text": "bounty_board_track_saint_denis",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_track_annesburg",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -55.4607,
+    "y": 156.8889,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee_named",
         "x": -55.4607,
         "y": 156.8889
       }
@@ -104,12 +102,11 @@
   },
   {
     "text": "bounty_board_track_van_horn",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -49.2139,
+    "y": 141.6168,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_named",
         "x": -49.2139,
         "y": 141.6168
       }

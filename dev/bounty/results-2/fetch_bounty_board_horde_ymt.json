@@ -1,12 +1,11 @@
 [
   {
     "text": "bounty_board_horde_tumbleweed",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -109.2165,
+    "y": 27.4496,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_fight_only_shotgun_mounted",
         "x": -109.2165,
         "y": 27.4496
       }
@@ -14,17 +13,11 @@
   },
   {
     "text": "bounty_board_horde_benedicts_point",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -103.6518,
+    "y": 53.7751,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_train_named",
-        "x": -63.6155,
-        "y": 111.29
-      },
-      {
-        "config": "robbery_oilwagon01x",
         "x": -103.6518,
         "y": 53.7751
       }

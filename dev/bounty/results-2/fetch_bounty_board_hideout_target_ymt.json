@@ -1,37 +1,31 @@
 [
   {
     "text": "bounty_hideout_colter",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -25.8042,
+    "y": 90.6393,
+    "radius": 0.921,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -25.7586,
         "y": 90.7374
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -25.7293,
         "y": 90.3725
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -25.5347,
         "y": 90.6695
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -25.8427,
         "y": 90.8206
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -26.3889,
         "y": 90.5813
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -25.5709,
         "y": 90.6546
       }
@@ -39,37 +33,31 @@
   },
   {
     "text": "bounty_hideout_ewing_basin",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -42.7918,
+    "y": 81.855,
+    "radius": 0.7627,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -42.613,
         "y": 82.0448
       },
       {
-        "config": "objective_bounty_target_no_flee_shotgun",
         "x": -42.8799,
         "y": 82.0469
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -42.4365,
         "y": 81.6141
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -42.8638,
         "y": 81.8206
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -43.0731,
         "y": 81.7295
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -42.8844,
         "y": 81.8743
       }
@@ -77,37 +65,31 @@
   },
   {
     "text": "bounty_hideout_gaptooth_breach",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -113.5027,
+    "y": 18.5718,
+    "radius": 1.1667,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -113.5483,
         "y": 18.657
       },
       {
-        "config": "objective_bounty_target_no_flee_shotgun",
         "x": -112.7208,
         "y": 18.4255
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -112.9654,
         "y": 18.8604
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -113.497,
         "y": 18.371
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -113.9789,
         "y": 18.7674
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -114.3059,
         "y": 18.3497
       }
@@ -115,37 +97,31 @@
   },
   {
     "text": "bounty_hideout_hanging_dog",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -52.3565,
+    "y": 77.335,
+    "radius": 0.8789,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -52.3228,
         "y": 77.4802
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -52.0091,
         "y": 77.1412
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -52.4472,
         "y": 77.4166
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -52.7701,
         "y": 77.6906
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -52.0375,
         "y": 77.2541
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -52.5524,
         "y": 77.027
       }
@@ -153,37 +129,31 @@
   },
   {
     "text": "bounty_hideout_lakay",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -75.5825,
+    "y": 146.2137,
+    "radius": 0.5843,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -75.5594,
         "y": 145.9639
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -75.634,
         "y": 146.3015
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -75.507,
         "y": 146.3363
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -75.332,
         "y": 146.2149
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -75.7079,
         "y": 146.1657
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -75.7547,
         "y": 146.3001
       }
@@ -191,37 +161,31 @@
   },
   {
     "text": "bounty_hideout_millesani_claim",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -45.3041,
+    "y": 89.5131,
+    "radius": 0.8806,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -45.2679,
         "y": 89.7431
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -45.231,
         "y": 89.6745
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -44.7769,
         "y": 89.3666
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -45.2646,
         "y": 89.1183
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -45.681,
         "y": 89.7056
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -45.6034,
         "y": 89.4704
       }
@@ -229,37 +193,31 @@
   },
   {
     "text": "bounty_hideout_quakers_cove",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -93.7179,
+    "y": 93.0221,
+    "radius": 0.8608,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -93.7586,
         "y": 93.2087
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -94.2449,
         "y": 93.0413
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -93.8427,
         "y": 92.6786
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -93.6291,
         "y": 93.1221
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -93.3679,
         "y": 93.3811
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -93.4642,
         "y": 92.7006
       }
@@ -267,37 +225,31 @@
   },
   {
     "text": "bounty_hideout_six_point",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -44.4858,
+    "y": 110.6853,
+    "radius": 0.7559,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -44.3322,
         "y": 110.3427
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -44.4215,
         "y": 110.8513
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -44.4526,
         "y": 110.8541
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -44.6837,
         "y": 110.8346
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -44.6396,
         "y": 110.954
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -44.3849,
         "y": 110.275
       }
@@ -305,37 +257,31 @@
   },
   {
     "text": "bounty_hideout_the_loft",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -33.3042,
+    "y": 141.3071,
+    "radius": 0.551,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -33.4068,
         "y": 141.3723
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -33.0918,
         "y": 141.2595
       },
       {
-        "config": "objective_bounty_target_no_flee_shotgun",
         "x": -33.1308,
         "y": 141.2853
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -33.3965,
         "y": 141.3022
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -33.3357,
         "y": 141.2798
       },
       {
-        "config": "objective_bounty_target_no_flee_shotgun",
         "x": -33.4635,
         "y": 141.3434
       }
@@ -343,37 +289,31 @@
   },
   {
     "text": "bounty_hideout_twin_rocks",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -96.6873,
+    "y": 49.7729,
+    "radius": 0.6665,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -96.5527,
         "y": 49.8036
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -96.5329,
         "y": 49.8176
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -96.85,
         "y": 49.9273
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -96.8795,
         "y": 49.9296
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -96.4589,
         "y": 49.6768
       },
       {
-        "config": "objective_bounty_target_no_flee_shotgun",
         "x": -96.8501,
         "y": 49.4822
       }
@@ -381,37 +321,31 @@
   },
   {
     "text": "bounty_hideout_willards_rest",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -29.5541,
+    "y": 157.7143,
+    "radius": 0.5382,
     "locations": [
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -29.7205,
         "y": 157.7007
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -29.6708,
         "y": 157.8826
       },
       {
-        "config": "objective_bounty_target_no_flee_shotgun",
         "x": -29.4363,
         "y": 157.8674
       },
       {
-        "config": "objective_bounty_target_no_flee_repeater",
         "x": -29.3924,
         "y": 157.5984
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -29.4038,
         "y": 157.6095
       },
       {
-        "config": "objective_bounty_target_no_flee",
         "x": -29.701,
         "y": 157.627
       }
@@ -419,27 +353,23 @@
   },
   {
     "text": "bounty_hideout_fort_mercer",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -117.1184,
+    "y": 46.1054,
+    "radius": 1.2392,
     "locations": [
       {
-        "config": "objective_bounty_target_fight_surrender_named",
         "x": -117.079,
         "y": 46.3102
       },
       {
-        "config": "objective_bounty_target_flee_named",
         "x": -117.749,
         "y": 45.4552
       },
       {
-        "config": "objective_bounty_target_fight_repeater_named",
         "x": -116.9467,
         "y": 46.1132
       },
       {
-        "config": "objective_bounty_target_fight_repeater_named",
         "x": -116.6988,
         "y": 46.5431
       }
@@ -447,27 +377,23 @@
   },
   {
     "text": "bounty_hideout_elysian_cave",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -47.0309,
+    "y": 146.8405,
+    "radius": 0.5997,
     "locations": [
       {
-        "config": "objective_ai_bounty_target_combat_named",
         "x": -47.0841,
         "y": 146.9497
       },
       {
-        "config": "objective_ai_bounty_target_combat_named",
         "x": -46.8727,
         "y": 147.0548
       },
       {
-        "config": "objective_ai_bounty_target_combat_named",
         "x": -47.131,
         "y": 146.5961
       },
       {
-        "config": "objective_ai_bounty_target_combat_named",
         "x": -47.0356,
         "y": 146.7615
       }

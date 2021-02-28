@@ -15,6 +15,30 @@ function getAllFiles(directory, files = []) {
   return files;
 }
 
+function pointsProperties(points, precision = 4, extendBounds = 0.3334) {
+  const center = (points => {
+    const avg = [[], []];
+    const averageValue = arr => arr.reduce((acc, amount, index, array) => amount / array.length + acc, 0);
+
+    points.forEach(({ x, y }) => {
+      avg[0].push(x);
+      avg[1].push(y);
+    });
+
+    return avg.map(averageValue);
+  })(points);
+
+  const maxDist = points.reduce((acc, { x, y }) => {
+    const [a, b] = [center[0] - x, center[1] - y];
+    return Math.max(acc, Math.sqrt(a * a + b * b));
+  }, 0);
+
+  return {
+    radius: (maxDist + extendBounds).toFixed(precision),
+    center: center,
+  };
+}
+
 function snippet1(x) {
   const results = [];
   x.forEach(i => {
@@ -27,12 +51,14 @@ function snippet1(x) {
       if (!spawns) return;
       const spawnChildren = spawns.Children.map(child => {
         let pos = child.Attributes.find(j => j.Type === 'SPAWN_POSITION').Coordinate;
+        if (Number.parseFloat(pos.X) == 0 || Number.parseFloat(pos.Y) == 0 || Number.parseFloat(pos.Z) == 0) return;
         let min = child.Attributes.find(j => j.Type === 'MIN_POSSE_MEMBERS');
-        min = min ? Number.parseInt(min.Value) : 0;
+        min = min ? Number.parseInt(min.Value) : 1;
         // (0.01552 * y + -63.6), (0.01552 * x + 111.29)
         return { 'min': min, 'x': Number.parseFloat((0.01552 * Number.parseFloat(pos.Y) + -63.6).toFixed(4)), 'y': Number.parseFloat((0.01552 * Number.parseFloat(pos.X) + 111.29).toFixed(4)) };
       });
-      results.push({ 'text': baseId, 'x': 0, 'y': 0, 'radius': 0, 'locations': spawnChildren });
+      const points = pointsProperties(spawnChildren);
+      results.push({ 'text': baseId, 'x': Number.parseFloat(points.center[0].toFixed(4)), 'y': Number.parseFloat(points.center[1].toFixed(4)), 'radius': Number.parseFloat(points.radius), 'locations': spawnChildren });
     });
     // results = results[0];
   });
@@ -51,11 +77,13 @@ function snippet2(x) {
       const config = objective.Attributes.find(j => j.Type === 'CONFIG');
       if (!spawns) return;
       const pos = spawns.Coordinate;
+      if (Number.parseFloat(pos.X) == 0 || Number.parseFloat(pos.Y) == 0 || Number.parseFloat(pos.Z) == 0) return;
       let str = null;
       if (config) str = config.String.Value;
-      locs.push({ 'config': str, 'x': Number.parseFloat((0.01552 * Number.parseFloat(pos.Y) + -63.6).toFixed(4)), 'y': Number.parseFloat((0.01552 * Number.parseFloat(pos.X) + 111.29).toFixed(4)) });
+      locs.push({ 'x': Number.parseFloat((0.01552 * Number.parseFloat(pos.Y) + -63.6).toFixed(4)), 'y': Number.parseFloat((0.01552 * Number.parseFloat(pos.X) + 111.29).toFixed(4)) });
     });
-    results.push({ 'text': baseId, 'x': 0, 'y': 0, 'radius': 0, 'locations': locs });
+    const points = pointsProperties(locs);
+    results.push({ 'text': baseId, 'x': Number.parseFloat(points.center[0].toFixed(4)), 'y': Number.parseFloat(points.center[1].toFixed(4)), 'radius': Number.parseFloat(points.radius), 'locations': locs });
     // results = results[0];
   });
   return results;

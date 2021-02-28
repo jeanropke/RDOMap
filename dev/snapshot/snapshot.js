@@ -218,6 +218,24 @@ for (let i = 0; i < 12; i++) {
 }
 
 /**
+ * BOUNTIES
+ * Bounties are split into multiple categories, just use a for loop to add them all.
+ */
+let bountyItems = downloadFileSync('http://localhost/rdo/data/bounties.json');
+bountyItems = JSON.parse(bountyItems);
+
+bountyItems.forEach(item => {
+  item.locations.forEach(bounty => {
+    const full = `${item.key}_${bounty.text}`;
+    sites.push({
+      name: full,
+      type: 'short',
+      url: `${rdoMapBase}&q=${full}`,
+    });
+  });
+});
+
+/**
  * CONDOR EGGS
  * Condor Eggs has 3 locations, just use a for loop to add them all.
  */
@@ -244,25 +262,6 @@ salvageItems.forEach(item => {
     name: item.text,
     type: 'short',
     url: `${rdoMapBase}&q=${item.text}`,
-  });
-});
-
-/**
- * BOUNTIES
- * Bounties are split into multiple categories, just use a for loop to add them all.
- */
-let bountyItems = downloadFileSync('http://localhost/rdo/data/bounties.json');
-bountyItems = JSON.parse(bountyItems);
-
-bountyItems.forEach(item => {
-  item.locations.forEach(bounty => {
-    const full = `${item.key}_${bounty.text}`;
-    console.log(full);
-    sites.push({
-      name: full,
-      type: 'short',
-      url: `${rdoMapBase}&q=${full}`,
-    });
   });
 });
 
@@ -312,6 +311,12 @@ async function doScreenCapture(url, siteType, siteName) {
     await page.evaluate(() => {
       $('#map').css('background-color', '#202020');
       $('.leaflet-pane.leaflet-tile-pane').css('filter', 'contrast(0.75)');
+
+      // Hacks to make the icons more visible.
+      $('[src="./assets/images/icons/condor_egg_small.png"]').css('filter', 'brightness(0) invert(10%) sepia(95%) saturate(5895%) hue-rotate(21deg) brightness(97%) contrast(132%) drop-shadow(black 0px 0px 2px)');
+      $('[src="./assets/images/icons/salvagemounds.png"]').css('filter', 'brightness(0) invert(10%) sepia(95%) saturate(5895%) hue-rotate(21deg) brightness(97%) contrast(132%) drop-shadow(black 0px 0px 2px)');
+      $('[src="./assets/images/icons/salvagepickups.png"]').css('filter', 'brightness(0) invert(10%) sepia(95%) saturate(5895%) hue-rotate(21deg) brightness(97%) contrast(132%) drop-shadow(black 0px 0px 2px)');
+      $('[src="./assets/images/icons/salvagechests.png"]').css('filter', 'drop-shadow(red 0px 0px 2px)');
     });
 
     // Take the screenshot. :-)

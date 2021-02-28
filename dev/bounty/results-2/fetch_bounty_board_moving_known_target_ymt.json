@@ -1,73 +1,47 @@
 [
   {
     "text": "bounty_board_moving_known_target_rhodes",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -72.5643,
+    "y": 123.2587,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_coach",
         "x": -72.5643,
         "y": 123.2587
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.3055
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.2745
       }
     ]
   },
   {
     "text": "bounty_board_moving_known_target_gaptooth_ridge",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -121.6804,
+    "y": 18.6531,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_coach",
         "x": -121.6804,
         "y": 18.6531
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.3055
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.2745
       }
     ]
   },
   {
     "text": "bounty_board_moving_known_target_grizzlies_west",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -63.5984,
+    "y": 111.2841,
+    "radius": 0.4207,
     "locations": [
       {
-        "config": "objective_bounty_target_train",
         "x": -63.6517,
         "y": 111.2843
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.5859,
         "y": 111.2872
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.6443,
         "y": 111.2717
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.5116,
         "y": 111.2932
       }
@@ -77,48 +51,28 @@
     "text": "bounty_board_moving_known_target_twin_stack_pass",
     "x": 0,
     "y": 0,
-    "radius": 0,
-    "locations": [
-      {
-        "config": "objective_bounty_target_coach",
-        "x": -63.8794,
-        "y": 111.29
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.3055
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.2745
-      }
-    ]
+    "radius": 0.3334,
+    "locations": []
   },
   {
     "text": "bounty_board_moving_known_target_cholla_springs",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -63.623,
+    "y": 111.2864,
+    "radius": 0.3796,
     "locations": [
       {
-        "config": "objective_bounty_target_train",
         "x": -63.6517,
         "y": 111.2843
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.647,
         "y": 111.2719
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.577,
         "y": 111.2915
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.6161,
         "y": 111.298
       }
@@ -126,27 +80,23 @@
   },
   {
     "text": "bounty_board_moving_known_target_roanoke_ridge",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -58.4929,
+    "y": 136.5524,
+    "radius": 26.1747,
     "locations": [
       {
-        "config": "objective_bounty_target_coach",
         "x": -56.6161,
         "y": 145.1968
       },
       {
-        "config": "mounted_bounty_target",
         "x": -63.7862,
         "y": 111.259
       },
       {
-        "config": "objective_bounty_target_coach",
         "x": -56.953,
         "y": 144.5569
       },
       {
-        "config": "objective_bounty_target_coach",
         "x": -56.6161,
         "y": 145.1968
       }
@@ -154,24 +104,13 @@
   },
   {
     "text": "bounty_board_moving_known_target_big_valley",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -68.0519,
+    "y": 72.1055,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_coach",
-        "x": -63.7862,
-        "y": 111.29
-      },
-      {
-        "config": "objective_bounty_target_coach",
         "x": -68.0519,
         "y": 72.1055
-      },
-      {
-        "config": "objective_bounty_target_coach",
-        "x": -63.7862,
-        "y": 111.29
       }
     ]
   },
@@ -179,53 +118,28 @@
     "text": "bounty_board_moving_known_target_tall_trees",
     "x": 0,
     "y": 0,
-    "radius": 0,
-    "locations": [
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.6776,
-        "y": 111.3055
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.7552,
-        "y": 111.2745
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.7552,
-        "y": 111.3055
-      },
-      {
-        "config": "mounted_bounty_target",
-        "x": -63.8328,
-        "y": 111.3055
-      }
-    ]
+    "radius": 0.3334,
+    "locations": []
   },
   {
     "text": "bounty_board_moving_known_target_hennigans_stead",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -111.058,
+    "y": 73.7007,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_coach",
         "x": -111.058,
         "y": 73.7007
       },
       {
-        "config": "objective_bounty_target_coach",
         "x": -111.058,
         "y": 73.7007
       },
       {
-        "config": "objective_bounty_target_coach",
         "x": -111.058,
         "y": 73.7007
       },
       {
-        "config": "objective_bounty_target_coach",
         "x": -111.058,
         "y": 73.7007
       }
@@ -233,27 +147,23 @@
   },
   {
     "text": "bounty_board_moving_known_target_grizzlies_east",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -63.5984,
+    "y": 111.2841,
+    "radius": 0.4207,
     "locations": [
       {
-        "config": "objective_bounty_target_train",
         "x": -63.6517,
         "y": 111.2843
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.5859,
         "y": 111.2872
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.6443,
         "y": 111.2717
       },
       {
-        "config": "objective_bounty_target_train",
         "x": -63.5116,
         "y": 111.2932
       }
@@ -263,17 +173,16 @@
     "text": "bounty_board_moving_known_target_roanoke_ridge_2",
     "x": 0,
     "y": 0,
-    "radius": 0,
+    "radius": 0.3334,
     "locations": []
   },
   {
     "text": "bounty_board_moving_known_target_blackwater",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -63.6517,
+    "y": 111.2843,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_train_named",
         "x": -63.6517,
         "y": 111.2843
       }
@@ -281,30 +190,23 @@
   },
   {
     "text": "bounty_board_moving_known_target_strawberry",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -74.1193,
+    "y": 83.9144,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_coach_named",
         "x": -74.1193,
         "y": 83.9144
-      },
-      {
-        "config": "objective_bounty_target_mounted_escort",
-        "x": -63.7242,
-        "y": 111.259
       }
     ]
   },
   {
     "text": "bounty_board_moving_known_target_armadillo",
-    "x": 0,
-    "y": 0,
-    "radius": 0,
+    "x": -111.8906,
+    "y": 48.3687,
+    "radius": 0.3334,
     "locations": [
       {
-        "config": "objective_bounty_target_coach_named",
         "x": -111.8906,
         "y": 48.3687
       }
