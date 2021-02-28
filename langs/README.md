@@ -26,14 +26,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **curryguru** (102 words)
   - **Jabaay** (1,018 words)
   - **kagurazakakotori** (16 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **PeanutSlinger** (2,551 words)
   - **qiexiacn** (223 words)
 
 ### Chinese Traditional (98%):
   - **jurn0818** (548 words)
   - **L1Chung** (3,267 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **pach318** (265 words)
   - **RichardC.P.** (984 words)
 
@@ -66,12 +66,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **starblunter** (72 words)
   - **YuYusS** (110 words)
 
-### German (90%):
+### German (94%):
   - **Alexified** (152 words)
   - **djenerg** (33 words)
+  - **DrNuts** (347 words)
   - **ingoonline11** (19 words)
   - **Matityahuu** (78 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **michaelahofer** (875 words)
   - **mojan66** (335 words)
   - **paeulchen.j** (274 words)
@@ -89,7 +90,8 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Hungarian (0%):
   - **Balesz** (10 words)
 
-### Italian (68%):
+### Italian (69%):
+  - **Atarufox** (102 words)
   - **daveo979** (1,232 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
@@ -97,19 +99,19 @@ These are the people that helped translate the project using Crowdin. Please not
   - **lorenzoitalia** (134 words)
   - **LucaBa** (1,138 words)
   - **Mattablatta** (18 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **nellonenollen** (22 words)
   - **raffouk40** (33 words)
   - **Raffox97** (273 words)
   - **Tony_Bell** (137 words)
 
 ### Japanese (71%):
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **menbou** (182 words)
 
 ### Korean (60%):
   - **CoolBreeze-13s** (1,665 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **ssh2** (70 words)
   - **vega7621** (33 words)
 
@@ -118,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Polish (92%):
   - **FrankTVPL** (506 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **Michal__d** (1,960 words)
   - **Pabeu** (49 words)
 
@@ -136,12 +138,12 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (0%):
   - **pozitive95** (33 words)
 
-### Russian (97%):
+### Russian (98%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
   - **ilyuas73** (18 words)
   - **MEE5RUS** (312 words)
-  - **Megitsune** (21,048 words)
+  - **Megitsune** (21,064 words)
   - **mrsanze6** (49 words)
   - **Nacuman.exe** (142 words)
   - **Overnoes** (430 words)
@@ -156,8 +158,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ethandaxps4** (219 words)
   - **idiot.rejected** (102 words)
   - **JoseLopez95** (409 words)
-  - **julianforce** (165 words)
-  - **Megitsune** (21,048 words)
+  - **julianforce** (175 words)
+  - **Megitsune** (21,064 words)
   - **Njordude** (1,614 words)
   - **Pocholo95** (160 words)
   - **sandratormo20** (33 words)
