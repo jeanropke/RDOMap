@@ -79,6 +79,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Scotmanhands** (131 words)
   - **viliri** (456 words)
   - **werhel** (11 words)
+  - **windharp** (25 words)
 
 ### Greek (13%):
   - **dvagos7** (1,200 words)
