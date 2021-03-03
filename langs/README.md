@@ -91,14 +91,14 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Hungarian (0%):
   - **Balesz** (10 words)
 
-### Italian (69%):
+### Italian (70%):
   - **Atarufox** (102 words)
   - **daveo979** (1,232 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
   - **lorenzoitalia** (134 words)
-  - **LucaBa** (1,138 words)
+  - **LucaBa** (1,190 words)
   - **Mattablatta** (18 words)
   - **Megitsune** (21,064 words)
   - **nellonenollen** (22 words)
@@ -175,8 +175,9 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Thai (3%):
   - **MrFermz** (39 words)
 
-### Turkish (41%):
+### Turkish (42%):
   - **birseysoylicem** (134 words)
+  - **Doringl** (79 words)
   - **esershnr** (52 words)
   - **Krykl** (406 words)
   - **tercumantanumut** (149 words)
