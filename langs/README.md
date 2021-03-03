@@ -111,7 +111,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **menbou** (182 words)
 
 ### Korean (60%):
-  - **CoolBreeze-13s** (1,665 words)
+  - **CoolBreeze-13s** (1,667 words)
   - **Megitsune** (21,064 words)
   - **ssh2** (70 words)
   - **vega7621** (33 words)
