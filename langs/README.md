@@ -85,8 +85,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **dvagos7** (1,200 words)
   - **libidosiemens** (23 words)
 
-### Hebrew (0%):
+### Hebrew (1%):
   - **dudiv5674** (67 words)
+  - **tharchangl** (66 words)
 
 ### Hungarian (0%):
   - **Balesz** (10 words)
