@@ -66,7 +66,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **starblunter** (72 words)
   - **YuYusS** (110 words)
 
-### German (94%):
+### German (95%):
   - **Alexified** (152 words)
   - **djenerg** (33 words)
   - **DrNuts** (347 words)
@@ -77,6 +77,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **mojan66** (335 words)
   - **paeulchen.j** (274 words)
   - **Scotmanhands** (131 words)
+  - **TheBango** (36 words)
   - **viliri** (456 words)
   - **werhel** (11 words)
   - **windharp** (25 words)
