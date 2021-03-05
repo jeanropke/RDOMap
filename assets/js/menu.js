@@ -46,6 +46,9 @@ class Menu {
       Legendary.animals.forEach(animal => {
         if (animal.onMap) animal.onMap = !animal.onMap;
       });
+      AnimalCollection.collection.forEach(collection => {
+        collection.animals.forEach(animal => animal.isEnabled = false);
+      });
       MadamNazar.onMap = false;
       Pins.onMap = false;
       Treasure.treasuresOnMap = false;

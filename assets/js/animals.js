@@ -146,4 +146,7 @@ class AnimalCollection {
   static onLanguageChanged() {
     AnimalCollection.collectionsData.forEach(group => Menu.reorderMenu($(`.menu-hidden[data-type=${group.key}]`)));
   }
+  static hideAllAnimals() {
+    AnimalCollection.collection.forEach(collection => collection.animals.forEach(animal => animal.isEnabled = false));
+  }
 }
