@@ -45,7 +45,7 @@ class Dailies {
           roleData.challenges.forEach(({ desiredGoal, id, displayType, description: { label } }) => {
             const activeCategory = this.jsonData[role].find(({ key }) => key === label.toLowerCase()).category;
             if (activeCategory)
-              this.markersCategories.push(activeCategory);
+              this.markersCategories.push([`${role}_${id}`, activeCategory]);
             SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
 
             switch (displayType) {
@@ -142,18 +142,22 @@ class Dailies {
 
 // Still looking for a better way than trigger handlers, if you have any better idea feel free to modify it
 class SynchronizeDailies {
-  constructor(category, marker) {
+  constructor(category, marker, challengeKey) {
     this.category = category;
     this.markers = marker;
+    this.challengeKey = challengeKey.toLowerCase();
   }
   static init() {
     $('.menu-hide-all').trigger('click');
-    Dailies.markersCategories.forEach(([category, marker]) => {
-      const newSyncedCategory = new SynchronizeDailies(category, marker);
+    Dailies.markersCategories.forEach(([challengeKey, [category, marker]]) => {
+      const newSyncedCategory = new SynchronizeDailies(category, marker, challengeKey);
       newSyncedCategory.sync();
     });
   }
   sync() {
+    if (!!DailyChallenges[this.challengeKey])
+      return;
+
     this.key = (() => {
       switch (this.category) {
         case 'animal':
