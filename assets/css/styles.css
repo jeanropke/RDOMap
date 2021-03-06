@@ -1928,3 +1928,8 @@ button.reload-nazar {
     margin: 10px 0;
     width: 100%;
 }
+
+#sync-map-to-dailies {
+    white-space: normal;
+    word-wrap: break-word;
+}
