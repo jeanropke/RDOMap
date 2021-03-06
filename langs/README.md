@@ -77,7 +77,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **mojan66** (335 words)
   - **paeulchen.j** (274 words)
   - **Scotmanhands** (131 words)
-  - **TheBango** (36 words)
+  - **TheBango** (48 words)
   - **viliri** (456 words)
   - **werhel** (11 words)
   - **windharp** (25 words)
