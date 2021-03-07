@@ -132,6 +132,7 @@
     "menu.fish": "어류",
     "menu.plants": "식물",
     "map.plants": "식물",
+    "map.plants.desc": "이글 아이를 사용하면 {plant}을(를) 더 쉽게 볼 수 있습니다.",
     "map.plants.alaskan_ginseng.name": "인삼 - 알래스카",
     "map.plants.american_ginseng.name": "인삼 - 아메리카",
     "map.plants.bay_bolete.name": "갈색 그물 버섯",
