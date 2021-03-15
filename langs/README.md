@@ -41,6 +41,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Czech (29%):
   - **avojta** (119 words)
   - **Nydrail** (379 words)
+  - **Srandokan** (55 words)
 
 ### Dutch (26%):
   - **ranforingus** (325 words)
@@ -91,8 +92,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **dudiv5674** (67 words)
   - **tharchangl** (66 words)
 
-### Hungarian (0%):
+### Hungarian (4%):
   - **Balesz** (10 words)
+  - **tabandi** (299 words)
 
 ### Italian (81%):
   - **Atarufox** (102 words)
