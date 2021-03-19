@@ -96,14 +96,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Balesz** (10 words)
   - **tabandi** (299 words)
 
-### Italian (81%):
+### Italian (83%):
   - **Atarufox** (102 words)
   - **daveo979** (1,232 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
   - **lorenzoitalia** (134 words)
-  - **LucaBa** (2,483 words)
+  - **LucaBa** (2,660 words)
   - **Mattablatta** (18 words)
   - **Megitsune** (21,064 words)
   - **nellonenollen** (22 words)
