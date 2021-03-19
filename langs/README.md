@@ -53,10 +53,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **aksu.smal** (158 words)
   - **esj.h** (1,101 words)
 
-### French (86%):
+### French (88%):
   - **escaliburos** (10 words)
   - **FRANCESCADOLORES** (401 words)
   - **JeanBankarbone** (87 words)
+  - **k4makazy** (126 words)
   - **kaeporatheglitcha** (403 words)
   - **L2** (97 words)
   - **L4** (13 words)
