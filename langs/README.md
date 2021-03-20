@@ -36,12 +36,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Megitsune** (21,064 words)
   - **pach318** (265 words)
   - **RichardC.P.** (984 words)
-  - **Vinnie5412** (147 words)
+  - **Vinnie5412** (151 words)
 
 ### Czech (29%):
   - **avojta** (119 words)
   - **Nydrail** (379 words)
-  - **Srandokan** (55 words)
+  - **Srandokan** (60 words)
 
 ### Dutch (26%):
   - **ranforingus** (325 words)
