@@ -36,7 +36,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Megitsune** (21,064 words)
   - **pach318** (265 words)
   - **RichardC.P.** (984 words)
-  - **Vinnie5412** (159 words)
+  - **Vinnie5412** (167 words)
 
 ### Czech (29%):
   - **avojta** (119 words)
@@ -47,6 +47,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ranforingus** (325 words)
 
 ### English, United Kingdom (2%):
+  - **Aronsfeld** (11 words)
   - **W10075343** (1,650 words)
 
 ### Finnish (29%):
@@ -126,6 +127,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petter.landsem.krogstad** (83 words)
 
 ### Polish (98%):
+  - **Aronsfeld** (11 words)
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,064 words)
   - **Michal__d** (2,196 words)
