@@ -13,7 +13,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Arabic (29%):
   - **Aboodsaad27** (82 words)
   - **i_NaifKhaldi** (72 words)
-  - **y_ksq** (1,748 words)
+  - **y_ksq** (1,750 words)
 
 ### Catalan (5%):
   - **juandamanacor2013** (91 words)
