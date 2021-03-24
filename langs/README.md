@@ -130,7 +130,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Aronsfeld** (11 words)
   - **FrankTVPL** (506 words)
   - **Megitsune** (21,064 words)
-  - **Michal__d** (2,196 words)
+  - **Michal__d** (2,262 words)
   - **mixsiarz** (299 words)
   - **Pabeu** (49 words)
 
