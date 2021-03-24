@@ -84,7 +84,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheBango** (517 words)
   - **viliri** (456 words)
   - **werhel** (11 words)
-  - **windharp** (25 words)
+  - **windharp** (27 words)
 
 ### Greek (13%):
   - **dvagos7** (1,200 words)
