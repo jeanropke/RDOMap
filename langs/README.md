@@ -133,7 +133,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Michal__d** (2,262 words)
   - **mixsiarz** (299 words)
   - **Pabeu** (49 words)
-  - **PLTytus** (119 words)
+  - **PLTytus** (120 words)
 
 ### Portuguese (8%):
   - **1Jay1** (57 words)
