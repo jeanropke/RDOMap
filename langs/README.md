@@ -43,6 +43,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Nydrail** (379 words)
   - **Srandokan** (60 words)
 
+### Danish (23%):
+  - **SwinHulk** (76 words)
+
 ### Dutch (26%):
   - **ranforingus** (325 words)
 
