@@ -44,7 +44,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Srandokan** (60 words)
 
 ### Danish (23%):
-  - **SwinHulk** (76 words)
+  - **SwinHulk** (109 words)
 
 ### Dutch (26%):
   - **ranforingus** (325 words)
