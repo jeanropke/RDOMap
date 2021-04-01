@@ -336,7 +336,7 @@ $('#enable-legendary-backgrounds').on('change', function () {
 });
 
 $('#legendary-animal-marker-type').on('change', function () {
-  Settings.legendarySpawnIconType = Number($('#legendary-animal-marker-type').val());
+  Settings.legendarySpawnIconType = $('#legendary-animal-marker-type').val();
   Legendary.onSettingsChanged();
 });
 
@@ -441,8 +441,8 @@ function timeRange(from, to) {
   while (hour !== to) {
     times.push(hour);
     hour = (hour + 1) % 24;
+    if (times.length >= 24) break;
   }
-
   return times;
 }
 /**

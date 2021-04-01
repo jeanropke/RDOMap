@@ -71,17 +71,15 @@ class Legendary {
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 })
       );
     }
-    const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
+    const iconType = Settings.legendarySpawnIconType;
     const spawnIconSize = Settings.legendarySpawnIconSize;
+    const isGold = MapBase.isDarkMode ? 'gold_' : '';
+
     this.spawnIcon = new L.Icon.TimedData({
-      iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
+      iconUrl: `./assets/images/icons/game/animals/legendaries/small/${iconType}_${isGold}${this.species}.png?nocache=${nocache}`,
       iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
       iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
-      time: (() => {
-        const hours = [];
-        this.spawn_time.forEach(timeArray => hours.push(...timeRange(timeArray[0], timeArray[1])));
-        return hours;
-      })(),
+      time: this.spawn_time.reduce((acc, [start, end]) => [...acc, ...timeRange(start, end)], []),
     });
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {
@@ -129,11 +127,7 @@ class Legendary {
       </div>`)
       .translate();
 
-    this.spawn_time_string = (() => {
-      let timeString = '';
-      this.spawn_time.forEach(timeArray => timeString += `${convertToTime(timeArray[0])} - ${convertToTime(timeArray[1])}, `);
-      return timeString.replace(/,\s$/, '');
-    })();
+    this.spawn_time_string = this.spawn_time.map(timeRange => timeRange.map(hour => convertToTime(hour)).join(' - ')).join(', ');
 
     const pElements = $('span > p', snippet);
     [...pElements].forEach(p => {

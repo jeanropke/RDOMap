@@ -139,6 +139,7 @@ const MapBase = {
 
       Discoverable.updateLayers();
       Overlay.onSettingsChanged();
+      Legendary.onSettingsChanged();
     });
 
     MapBase.map.on('click', function (e) {
