@@ -30,7 +30,8 @@ class Animal {
             }),
           });
 
-          tempMarker.bindPopup(this.popupContent.bind(this), { minWidth: 300, maxWidth: 400 });
+          // exception from `.bind(this)` to show correct data in marker popup
+          tempMarker.bindPopup(this.popupContent(), { minWidth: 300, maxWidth: 400 });
           this.data.push(tempMarker._latlng);
           this.markers.push(tempMarker);
         }, function () { });
