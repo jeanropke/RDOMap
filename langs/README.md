@@ -58,7 +58,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **esj.h** (1,101 words)
 
 ### French (88%):
-  - **bruno.jacquin** (17 words)
+  - **bruno.jacquin** (75 words)
   - **escaliburos** (10 words)
   - **FRANCESCADOLORES** (401 words)
   - **JeanBankarbone** (87 words)
@@ -132,12 +132,12 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Polish (98%):
   - **Aronsfeld** (11 words)
-  - **FrankTVPL** (506 words)
+  - **FrankTVPL** (530 words)
   - **Megitsune** (21,106 words)
   - **Michal__d** (2,262 words)
   - **mixsiarz** (299 words)
   - **Pabeu** (49 words)
-  - **PLTytus** (148 words)
+  - **PLTytus** (159 words)
 
 ### Portuguese (8%):
   - **1Jay1** (57 words)
