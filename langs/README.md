@@ -99,8 +99,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **dudiv5674** (67 words)
   - **tharchangl** (66 words)
 
-### Hungarian (4%):
+### Hungarian (6%):
   - **Balesz** (10 words)
+  - **nahov91** (173 words)
   - **tabandi** (299 words)
 
 ### Italian (88%):
