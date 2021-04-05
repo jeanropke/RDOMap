@@ -9,7 +9,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Afrikaans (1%):
   - **eduardvlog** (23 words)
-  - **HeadShot557** (96 words)
+  - **HeadShot557** (156 words)
 
 ### Arabic (29%):
   - **Aboodsaad27** (82 words)
@@ -104,12 +104,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **nahov91** (173 words)
   - **tabandi** (299 words)
 
-### Italian (88%):
+### Italian (90%):
   - **Atarufox** (102 words)
   - **daveo979** (1,232 words)
   - **Enrik014** (344 words)
   - **GiorgioHerbie** (5,266 words)
   - **harleyhawke** (48 words)
+  - **Korax94** (130 words)
   - **lorenzoitalia** (134 words)
   - **LucaBa** (3,138 words)
   - **Mattablatta** (18 words)
