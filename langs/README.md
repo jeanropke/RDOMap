@@ -102,7 +102,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Hungarian (9%):
   - **Balesz** (10 words)
-  - **nahov91** (439 words)
+  - **nahov91** (502 words)
   - **tabandi** (299 words)
 
 ### Italian (90%):
