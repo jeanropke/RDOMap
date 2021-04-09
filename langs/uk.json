@@ -900,6 +900,7 @@
     "map.gfh.missions.fetch_rescue_ped": "Порятунок",
     "menu.madam_nazar_reload_position": "Натисніть щоб оновити позицію",
     "menu.tooltip_map": "Підказки для елементів на карті",
+    "help.tooltip_map": "Показує підказку для міток на карті з повним заголовком.",
     "menu.customization_title": "Налаштування",
     "menu.show_utilities": "Показати додаткові мітки",
     "menu.show_customization": "Показати меню налаштувань",
