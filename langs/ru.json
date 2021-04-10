@@ -684,6 +684,8 @@
     "menu.fme.fme_role_wildlife_photographer": "Фотоохотник",
     "menu.fme.fme_role_wreckage": "Обломки",
     "menu.fme.fme_wild_animal_kills": "Охота на диких зверей",
+    "menu.fme.fme_challenge_bow_kills": "Испытание: Убийство с лука",
+    "menu.fme.fme_challenge_headshot_kills": "Испытание: Убийства с лука в голову",
     "notification.fme.body": "Это ваше уведомление о том, что {name} начнется через {time}.",
     "menu.fme_enabled_events": "Выбрать события",
     "help.fme_enabled_events": "Позволяет выбрать события, которые должны быть показаны на карте и/или уведомления для них.",
