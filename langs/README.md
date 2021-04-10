@@ -88,6 +88,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **mojan66** (335 words)
   - **paeulchen.j** (274 words)
   - **Scotmanhands** (131 words)
+  - **Tharek_Tolemac** (17 words)
   - **TheBango** (517 words)
   - **viliri** (456 words)
   - **werhel** (11 words)
@@ -158,7 +159,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (1%):
   - **pozitive95** (33 words)
 
-### Russian (98%):
+### Russian (99%):
   - **dramatic_prophet** (262 words)
   - **hellcat_tail** (164 words)
   - **ilyuas73** (18 words)
@@ -168,6 +169,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Nacuman.exe** (142 words)
   - **Overnoes** (430 words)
   - **poeblu85** (395 words)
+  - **SkyFisherGames** (61 words)
   - **tegetron** (29 words)
 
 ### Spanish (95%):
