@@ -7,9 +7,9 @@ We'd like to also mention the people that helped translate before the project sw
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (19%):
+### Afrikaans (23%):
   - **eduardvlog** (23 words)
-  - **HeadShot557** (1,610 words)
+  - **HeadShot557** (1,989 words)
   - **shar13f4** (68 words)
 
 ### Arabic (29%):
@@ -197,7 +197,8 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Thai (3%):
   - **MrFermz** (39 words)
 
-### Turkish (49%):
+### Turkish (50%):
+  - **abdulkadiraktas** (49 words)
   - **birseysoylicem** (134 words)
   - **Doringl** (102 words)
   - **emrullahsimsar** (535 words)
