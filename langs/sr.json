@@ -8,5 +8,8 @@
     "fasttravel.van_horn.name": "Ван Хорн трговачка пошта",
     "map.daily_locations.colter.name": "Цолтер",
     "menu.cmpndm.animal_armadillo": "армадилло",
-    "menu.bounties": "Tracking Bounties"
+    "menu.bounties": "Tracking Bounties",
+    "menu.bounty_board_track.armadillo": "армадилло",
+    "menu.bounty_hideout.colter": "Цолтер",
+    "menu.bounty_board_caged_target.tumbleweed": "Тумблевеед"
 }
