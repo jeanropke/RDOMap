@@ -7,17 +7,17 @@ We'd like to also mention the people that helped translate before the project sw
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (32%):
+### Afrikaans (37%):
   - **eduardvlog** (23 words)
-  - **HeadShot557** (2,568 words)
+  - **HeadShot557** (3,006 words)
   - **shar13f4** (350 words)
 
-### Arabic (29%):
+### Arabic (30%):
   - **Aboodsaad27** (82 words)
   - **i_NaifKhaldi** (72 words)
   - **y_ksq** (1,750 words)
 
-### Catalan (5%):
+### Catalan (6%):
   - **juandamanacor2013** (91 words)
   - **zrubio** (365 words)
 
@@ -40,7 +40,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **RichardC.P.** (1,002 words)
   - **Vinnie5412** (187 words)
 
-### Czech (29%):
+### Czech (30%):
   - **avojta** (119 words)
   - **Nydrail** (379 words)
   - **Srandokan** (60 words)
@@ -55,7 +55,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Aronsfeld** (11 words)
   - **W10075343** (1,650 words)
 
-### Finnish (29%):
+### Finnish (30%):
   - **aksu.smal** (158 words)
   - **esj.h** (1,101 words)
 
@@ -94,7 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **werhel** (11 words)
   - **windharp** (27 words)
 
-### Greek (13%):
+### Greek (14%):
   - **dvagos7** (1,200 words)
   - **libidosiemens** (23 words)
 
@@ -102,7 +102,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **dudiv5674** (67 words)
   - **tharchangl** (66 words)
 
-### Hungarian (12%):
+### Hungarian (13%):
   - **Balesz** (10 words)
   - **nahov91** (502 words)
   - **tabandi** (299 words)
@@ -124,17 +124,17 @@ These are the people that helped translate the project using Crowdin. Please not
   - **re4k117** (156 words)
   - **Tony_Bell** (137 words)
 
-### Japanese (77%):
+### Japanese (78%):
   - **Megitsune** (21,106 words)
   - **menbou** (182 words)
 
-### Korean (63%):
+### Korean (64%):
   - **CoolBreeze-13s** (1,677 words)
   - **Megitsune** (21,106 words)
   - **ssh2** (70 words)
   - **vega7621** (33 words)
 
-### Norwegian (2%):
+### Norwegian (3%):
   - **petter.landsem.krogstad** (83 words)
 
 ### Polish (98%):
@@ -146,7 +146,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Pabeu** (49 words)
   - **PLTytus** (161 words)
 
-### Portuguese (8%):
+### Portuguese (9%):
   - **1Jay1** (57 words)
   - **FilipeLuk** (649 words)
 
@@ -189,7 +189,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tuwangi** (279 words)
   - **W10075343** (1,650 words)
 
-### Swedish (26%):
+### Swedish (27%):
   - **Anvnamnet** (2,189 words)
   - **Shineberg** (141 words)
   - **wiiwil** (249 words)
@@ -206,7 +206,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Krykl** (406 words)
   - **tercumantanumut** (149 words)
 
-### Ukrainian (76%):
+### Ukrainian (77%):
   - **beskorjake2332** (598 words)
   - **grmaster5s** (5,664 words)
   - **h_p_38** (15 words)
