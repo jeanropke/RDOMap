@@ -4,10 +4,10 @@
 cd ..
 {
   git pull
-  crowdin download -b Main
+  crowdin download -b RDO
   git add .
   git commit -m "Automatic language update."
   git push
-  crowdin upload sources -b Main
-  crowdin upload translations -b Main
+  crowdin upload sources -b RDO
+  crowdin upload translations -b RDO
 } >"logs/lang-file-$(date +"%Y-%m-%d_%H-%M").log" 2>&1
