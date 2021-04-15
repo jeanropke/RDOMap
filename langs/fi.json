@@ -237,9 +237,9 @@
     "map.hideouts.ewing_basin.name": "Grizzlies Kaivos",
     "map.hideouts.fort_mercer.name": "Mercerin Linnake",
     "map.hideouts.fort_riggs.name": "Riggs'in Linnake",
-    "map.hideouts.gaptooth_breach.name": "Gaptooth Breach",
+    "map.hideouts.gaptooth_breach.name": "Gaphampaan Breach",
     "map.hideouts.hanging_dog_ranch.name": "Hanging Dog Ranch",
-    "map.hideouts.kamassa_river.name": "Kamassa River",
+    "map.hideouts.kamassa_river.name": "Kjokijoki",
     "map.hideouts.lakay.name": "Lakay",
     "map.hideouts.manteca_falls.name": "Manteca Falls",
     "map.hideouts.millisani_claim.name": "Millesani Claim",
@@ -257,7 +257,7 @@
     "map.hideouts.tall_trees.name": "Bear Claw",
     "map.hideouts.the_loft.name": "The Loft",
     "map.hideouts.twin_rocks.name": "Twin Rocks",
-    "fasttravel.tumbleweed.name": "Tumbleweed",
+    "fasttravel.tumbleweed.name": "Tumbleweediä",
     "fasttravel.armadillo.name": "Armadillo",
     "fasttravel.macfarlanes.name": "MacFarlanen maatila",
     "fasttravel.manzanita.name": "Manzanita Post",
@@ -554,7 +554,7 @@
     "menu.bounty_board_stakeout.saint_denis": "Saint Denis",
     "menu.bounty_board_stakeout.valentine": "Valentine.",
     "menu.bounty_hideout.colter": "Colter",
-    "menu.bounty_hideout.gaptooth_breach": "Gaptooth Breach",
+    "menu.bounty_hideout.gaptooth_breach": "Gaphampaan Breach",
     "menu.bounty_hideout.lakay": "Lakay",
     "menu.bounty_hideout.millesani_claim": "Millesani Claim",
     "menu.bounty_hideout.the_loft": "The Loft",
@@ -576,5 +576,5 @@
     "menu.bounty_timed.fort_wallace": "Fort Wallace.",
     "menu.bounty_board_caged_target.saint_denis": "Saint Denis",
     "menu.bounty_board_caged_target.strawberry": "Mansikka",
-    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed"
+    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweediä"
 }
