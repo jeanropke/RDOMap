@@ -56,7 +56,6 @@ const urls = [
   'data/discoverables.json',
   'data/encounters.json',
   'data/fasttravels.json',
-  'data/fme.json',
   'data/gfh.json',
   'data/hm.json',
   'data/items.json',
