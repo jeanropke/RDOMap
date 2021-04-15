@@ -7,9 +7,9 @@ We'd like to also mention the people that helped translate before the project sw
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (38%):
+### Afrikaans (46%):
   - **eduardvlog** (23 words)
-  - **HeadShot557** (3,072 words)
+  - **HeadShot557** (3,774 words)
   - **shar13f4** (350 words)
 
 ### Arabic (30%):
@@ -59,7 +59,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **aksu.smal** (158 words)
   - **esj.h** (1,101 words)
 
-### French (90%):
+### French (91%):
   - **bruno.jacquin** (75 words)
   - **escaliburos** (10 words)
   - **FRANCESCADOLORES** (401 words)
@@ -102,7 +102,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **dudiv5674** (67 words)
   - **tharchangl** (66 words)
 
-### Hungarian (13%):
+### Hungarian (14%):
   - **Balesz** (10 words)
   - **nahov91** (502 words)
   - **tabandi** (299 words)
@@ -173,7 +173,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **SkyFisherGames** (61 words)
   - **tegetron** (29 words)
 
-### Spanish (95%):
+### Spanish (96%):
   - **a.equis23** (263 words)
   - **AshTurquoise** (27 words)
   - **Bruxes** (435 words)
@@ -194,10 +194,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Shineberg** (141 words)
   - **wiiwil** (249 words)
 
-### Thai (3%):
+### Thai (4%):
   - **MrFermz** (39 words)
 
-### Turkish (50%):
+### Turkish (51%):
   - **abdulkadiraktas** (49 words)
   - **birseysoylicem** (134 words)
   - **Doringl** (102 words)
