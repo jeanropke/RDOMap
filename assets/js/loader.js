@@ -24,7 +24,9 @@ class Loader {
   }
   constructor(name, url, customNoCache = null) {
     const queryString = {};
-    if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
+
+    if (['updates', 'fme'].includes(name)) queryString.nocache = Date.now();
+    else if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
     else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
 
     if (['lang_progress'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();

@@ -9,6 +9,8 @@ _short/
 _manifest.json
 
 # Used to make development easier.
+cycles_update/
+fme/
 rdo/
 
 # Our credentials, don't bother removing this, you won't get our stuff. ;-)
