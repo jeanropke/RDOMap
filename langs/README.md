@@ -105,12 +105,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
   - **davidcooper73760** (86 words)
+  - **deragent007** (28 words)
   - **FreeAsABird** (325 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
-  - **Tharek_Tolemac** (15 words)
+  - **Tharek_Tolemac** (28 words)
   - **TheBango** (12 words)
   - **Tolpelbold** (39 words)
   - **viliri** (1,470 words)
@@ -191,14 +192,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (90%):
+### Portuguese, Brazilian (91%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,135 words)
+  - **jeanropke** (7,214 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
@@ -261,6 +262,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **emeliris** (636 words)
   - **idaerika** (30 words)
   - **JohanLiljegren** (430 words)
+  - **k_imq** (217 words)
   - **LilleJah** (10 words)
   - **lychothroat** (114 words)
   - **niklase005** (27 words)
@@ -284,10 +286,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,348 words)
 
-### Ukrainian (72%):
+### Ukrainian (73%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (10,816 words)
+  - **grmaster5s** (10,934 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
