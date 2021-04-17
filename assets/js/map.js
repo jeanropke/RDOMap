@@ -467,6 +467,7 @@ const MapBase = {
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {
+    if (MapBase.isPreviewMode) chunksize = count;
     var i = 0;
     (function chunk() {
       var end = Math.min(i + chunksize, count);
@@ -503,6 +504,7 @@ const MapBase = {
         placement: 'right',
         arrow: false,
         distance: 0,
+        zIndex: 910,
         content(ref) {
           return ref.getAttribute('data-tippy');
         },

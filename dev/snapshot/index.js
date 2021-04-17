@@ -347,29 +347,26 @@ fs.writeFileSync('_manifest.json', JSON.stringify(sites.map(i => i.name)));
  * TODO: Clean this up at some point, no rush.
  */
 async function run() {
-  for (var i = 0; i < sites.length; i++) {
-    let p1 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p2 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p3 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p4 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p5 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p6 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p7 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
-    i++;
-    let p8 = sites[i] ? doScreenCapture(sites[i].url, sites[i].type, sites[i].name) : () => { };
+  let i, j, chunk = 8;
 
-    await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8]);
-    bar.tick(8);
-    if (bar.complete) {
-      console.log('\nDone!\n');
+  for (i = 0, j = sites.length; i < j; i += chunk) {
+    const thisChunk = sites.slice(i, i + chunk);
+    const workArray = [];
+
+    for (let k = 0; k < thisChunk.length; k++) {
+      const thisItem = thisChunk[k];
+      if (!thisItem) continue;
+      workArray.push(doScreenCapture(thisItem.url, thisItem.type, thisItem.name));
     }
+
+    await Promise.all(workArray);
+    bar.tick(workArray.length);
   }
+
+  if (bar.complete)
+    console.log('\nDone!\n');
+  else
+    console.error('\nSomething went wrong.\n');
 }
 
 console.log('Starting the screenshotting process...');
