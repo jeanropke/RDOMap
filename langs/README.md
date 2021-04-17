@@ -84,7 +84,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HGNitro** (30 words)
   - **iGuuunz** (225 words)
   - **Indessis** (20 words)
-  - **JeanBankarbone** (593 words)
+  - **JeanBankarbone** (598 words)
   - **jipsu31** (43 words)
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
@@ -129,6 +129,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **klain123** (2,363 words)
 
 ### Hungarian (29%):
+  - **GoP** (84 words)
   - **Hutty98** (2,199 words)
   - **jjameska** (26 words)
   - **laszlo2033** (678 words)
