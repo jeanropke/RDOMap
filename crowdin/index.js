@@ -121,6 +121,7 @@ async function getTopMembers() {
         var replacements = {
           'en-GB': 'en_GB',
           'es-ES': 'es',
+          'es-MX': 'es_MX',
           'pt-BR': 'pt_BR',
           'pt-PT': 'pt',
           'sv-SE': 'sv',

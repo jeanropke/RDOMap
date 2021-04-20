@@ -68,7 +68,7 @@ const urls = [
   'data/bounties.json',
   'https://pepegapi.jeanropke.net/v2/rdo/dailies',
   'https://pepegapi.jeanropke.net/v2/rdo/nazar',
-  'https://senexis.github.io/Red-Dead-Redemption-2-Tunables/fme.json',
+  'https://tunables.rdo.gg/fme.json',
   'data/fme_keys.json',
 ];
 Loader.init(urls);
