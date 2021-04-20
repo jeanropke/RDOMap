@@ -94,7 +94,7 @@
     "mpgc_egret_skinned": "Garcetas desplumadas",
     "mpgc_elk_skinned": "Wapitíes despellejados",
     "mpgc_emote_npc": "Gesto dirigido a un habitante",
-    "mpgc_emote_player": "Gesto dirigido a un jugador en el Modo Libre",
+    "mpgc_emote_player": "Gesto dirigido a un jugador",
     "mpgc_enemies_grappled_to_ground": "Enemigos embestidos y tirados al suelo (no jugadores)",
     "mpgc_enemies_killed_cover": "Enemigos asesinados a cubierto (no jugadores)",
     "mpgc_enemies_killed_deadeye": "Enemigos asesinados usando el Dead Eye (no jugadores)",
@@ -400,5 +400,12 @@
     "mprc_trader_supplies_donated_animal_small": "Cadáveres de animales pequeños donados a Cripps",
     "mprc_trader_supplies_donated_carcass_perfect": "Cadáveres en perfecto estado donados a Cripps",
     "mprc_trader_supplies_donated_predator": "Cadáveres o pieles de depredadores letales donadas",
-    "mprc_trader_travel_wagon": "Distancia recorrida con el carro de reparto en misiones"
+    "mprc_trader_travel_wagon": "Distancia recorrida con el carro de reparto en misiones",
+    "mpgc_gfh_bonnie_macfarlane_wins": "Misiones de Bonnie MacFarlane completadas",
+    "mpgc_gfh_sadie_adler_wins": "Misiones de Sadie Adler completadas",
+    "mpgc_gfh_train_clerk_wins": "Misiones del empleado de la estación completadas",
+    "mprc_bounty_completed_no_kills": "Objetivo atrapado sin matar a un enemigo o a un objetivo",
+    "mprc_bounty_completed_posse_member": "Objetivos atrapados con mínimo un miembro del clan",
+    "mprc_bounty_completed_timed": "Objetivos atrapados en 1 hora real",
+    "mprc_bounty_target_photographed_alive": "Objetivos con vida en una fotografía"
 }

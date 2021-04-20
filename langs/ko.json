@@ -635,7 +635,7 @@
     "mpgc_egret_skinned": "가죽 벗긴 백로",
     "mpgc_elk_skinned": "가죽 벗긴 엘크",
     "mpgc_emote_npc": "주민에게 사용한 감정 표현",
-    "mpgc_emote_player": "유랑 모드에서 플레이어에게 사용한 감정 표현",
+    "mpgc_emote_player": "플레이어에게 사용한 감정 표현",
     "mpgc_enemies_grappled_to_ground": "땅에 넘어뜨린 적 NPC",
     "mpgc_enemies_killed_cover": "엄폐 상태에서 처치한 적 NPC",
     "mpgc_enemies_killed_deadeye": "데드아이 상태에서 처치한 적 NPC",
