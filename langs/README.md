@@ -11,7 +11,7 @@ The following people helped translate the RDO Map specifically but are possibly 
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
 ### Afrikaans (27%):
-  - **HeadShot557** (836 words)
+  - **HeadShot557** (909 words)
   - **R36za** (101 words)
 
 ### Arabic (42%):
@@ -125,7 +125,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
 
 ### Hebrew (19%):
-  - **dudiv5674** (2,855 words)
+  - **dudiv5674** (2,863 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
