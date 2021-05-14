@@ -6,13 +6,12 @@ Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
 
 class Loader {
   static init(urls) {
-    this.urls = urls;
+    this.urls = new Map();
     this.promises = {};
     urls.forEach(url => {
-      let name = null;
-      const array = url.split('/');
-      while (!name) name = array.pop().split('.', 1)[0];
-      this.promises[name] = new Loader(name, url);
+        const name = url.split('/').filter(e => e).pop().split('.', 1)[0];
+        this.promises[name] = new Loader(name, url);
+        this.urls.set(name, url);
     });
 
     /*
@@ -44,8 +43,7 @@ class Loader {
   }
   static reloadData(name) {
     delete this.promises[name];
-    const url = this.urls.find(url => url.split('/').pop().split('.', 1)[0] === name);
-    this.promises[name] = new Loader(name, url, Date.now());
+    this.promises[name] = new Loader(name, this.urls.get(name), Date.now());
   }
 }
 
