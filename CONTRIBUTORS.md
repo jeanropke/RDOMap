@@ -21,7 +21,7 @@ These are the people that provided the locations of the different items on the m
 - Player camp positions by [Senexis](https://github.com/Senexis).
 - Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 - Shop locations by [Senexis](https://github.com/Senexis).
-- Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase).
+- Sightseeing locations by [Impossible_Phase](https://reddit.com/u/Impossible_Phase) and [Senexis](https://github.com/Senexis).
 - Legendary Animal locations by [Senexis](https://github.com/Senexis), [alloc8or](https://github.com/alloc8or/) and [IronJeff80](https://github.com/IronJeff80).
 - Legendary Animal parts prices by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96) special thanks to [IronJeff80](https://github.com/IronJeff80) for collected data.
 - Condor Egg locations by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96).
