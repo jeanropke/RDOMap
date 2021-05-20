@@ -183,10 +183,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **martinbruh** (212 words)
   - **Rilfus** (156 words)
 
-### Polish (79%):
+### Polish (80%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (2,990 words)
+  - **PLTytus** (97 words)
   - **Quahox** (39 words)
 
 ### Portuguese (26%):
