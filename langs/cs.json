@@ -321,6 +321,7 @@
     "map.fame_seeker.name": "Frame Seeker",
     "map.fame_seeker.desc": "Tohle je Random Encounter. Bílé blity na minimapě bude indikovat setkání. Udělej úkol, který se o tebe žádá o odměnu, abys získal odměnu.",
     "map.grave_robber.desc": "Tohle je Random Encounter. Bílé blity na minimapě bude indikovat setkání. Přistupte k hrobce, aby přijal misi. Máte omezený čas na vyhledávání až 7 umístění pro shromážditelné položky před tím, než zákonodárci přicházejí.",
+    "map.hideouts.name": "Úkryt",
     "map.hideouts.desc": "Tato lokace má šanci být úkrytem s několika nepřáteli. Červený kruh indikuje, že se takový úkryt objevil.",
     "map.hogtied_lawman.name": "Svázal Lawman",
     "map.hogtied_lawman.desc": "Tohle je Random Encounter. Bílé blity na minimapě bude indikovat setkání. Porazit nepřátele pak přistupovat k hanobení zločinec a osvobodit je získat odměnu.",
