@@ -159,7 +159,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raffox97** (33 words)
   - **REMOVED_USER** (1,189 words)
   - **TheSgrash** (282 words)
-  - **Tony_Bell** (192 words)
+  - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
 ### Japanese (72%):
