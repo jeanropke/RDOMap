@@ -116,6 +116,8 @@ function init() {
   $('#customization-container').toggleClass('opened', Settings.showCustomizationSettings);
   $('#import-export-container').toggleClass('opened', Settings.showImportExportSettings);
   $('#debug-container').toggleClass('opened', Settings.showDebugSettings);
+
+  setInterval(clockTick, 1000);
 }
 
 function isLocalHost() {
@@ -182,8 +184,6 @@ function clockTick() {
     }
   });
 }
-
-setInterval(clockTick, 1000);
 
 $('.side-menu').on('scroll', function () {
   // These are not equality checks because of mobile weirdness.
