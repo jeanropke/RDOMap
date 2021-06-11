@@ -10,8 +10,8 @@ The following people helped translate the RDO Map specifically but are possibly 
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (33%):
-  - **HeadShot557** (1,567 words)
+### Afrikaans (34%):
+  - **HeadShot557** (1,632 words)
   - **R36za** (101 words)
 
 ### Arabic (41%):
@@ -35,7 +35,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Chinese Simplified (79%):
   - **akbcd** (409 words)
   - **Approach** (12 words)
-  - **BHT256** (7,717 words)
+  - **BHT256** (7,750 words)
   - **curryguru** (47 words)
   - **Jabaay** (52 words)
   - **labrary** (238 words)
@@ -129,12 +129,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
   - **ToX1cRanG3r** (363 words)
 
-### Hebrew (20%):
+### Hebrew (21%):
   - **dudiv5674** (2,863 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
-  - **Vasili_Koulakov** (479 words)
+  - **Vasili_Koulakov** (596 words)
 
 ### Hungarian (30%):
   - **emperger** (174 words)
@@ -236,7 +236,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (1,987 words)
+  - **Megitsune** (1,992 words)
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
@@ -265,13 +265,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **mmmateo** (1,952 words)
   - **MrMike** (135 words)
   - **Njordude** (1,228 words)
+  - **REMOVED_USER** (70 words)
   - **rrico2545** (12 words)
   - **shaeone** (24 words)
   - **smauri** (105 words)
   - **Straks1668** (34 words)
   - **tomyloly.11** (698 words)
   - **ulises_hdz22** (361 words)
-  - **W10075343** (70 words)
 
 ### Swedish (20%):
   - **...---...** (431 words)
