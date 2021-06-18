@@ -75,8 +75,13 @@ class CondorEgg {
     return $(`
       <div class="handover-wrapper-with-no-influence">
         <h1 data-text="map.${this.text}.name"></h1>
+        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
       </div>
-    `).translate()[0];
+    `)
+      .translate()
+      .find('button')
+      .on('click', () => CondorEgg.condorEggOnMap = false)
+      .end()[0];
   }
 
   set onMap(state) {
@@ -95,6 +100,7 @@ class CondorEgg {
       CondorEgg.layer.remove();
       if (!MapBase.isPreviewMode)
         localStorage.removeItem('rdo:condorEggs');
+      MapBase.map.closePopup();
     }
     this.condorEggParentElement.toggleClass('disabled', !state);
   }
@@ -158,7 +164,7 @@ class Salvage {
       fillColor: '#f4e98a',
       fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
       radius: this.radius,
-    }));
+    }).bindPopup(this.popupContent.bind(this, null), { minWidth: 300 }));
 
     if (!MapBase.isPreviewMode)
       this.marker.addLayer(L.marker([this.x, this.y], { icon: Salvage.mainIcon })
@@ -206,8 +212,13 @@ class Salvage {
       <div class="handover-wrapper-with-no-influence">
         <h1 data-text="map.${this.text}.name"></h1>
         ${type ? `<p data-text="map.salvage.${type}.desc"></p>` : ''}
+        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
       </div>
-    `).translate()[0];
+    `)
+      .translate()
+      .find('button')
+      .on('click', () => Salvage.salvageOnMap = false)
+      .end()[0];
   }
 
   set onMap(state) {
@@ -226,6 +237,7 @@ class Salvage {
       Salvage.layer.remove();
       if (!MapBase.isPreviewMode)
         localStorage.removeItem('rdo:salvages');
+      MapBase.map.closePopup();
     }
     this.salvageParentElement.toggleClass('disabled', !state);
   }

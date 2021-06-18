@@ -44,20 +44,30 @@ class GunForHire {
 
   updateMarkerContent(marker) {
     let missionsElement = $('<ul>').addClass('missions-list');
-    marker.size.map(m => Language.get(`map.gfh.missions.${m}`)).sort().forEach(mission => {
-      missionsElement.append(`<li>${mission}</li>`);
-    });
-    $(missionsElement).sort();
-    let debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
-    return `<h1>${marker.title}</h1>
-        <span class="marker-content-wrapper">
-        <p>${marker.description}</p>
-        </span>
-        <br>
-        <p>${Language.get('map.gfh.missions_header')}</p>
-        ${missionsElement.prop('outerHTML')}
-        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        `;
+    marker.size
+      .map(m => Language.get(`map.gfh.missions.${m}`))
+      .sort((a, b) => a.localeCompare(b, {sensitivity: 'base'}))
+      .forEach(mission => {
+        missionsElement.append(`<li>${mission}</li>`);
+      });
+    const debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
+    return $(`
+        <div>
+          <h1>${marker.title}</h1>
+          <span class="marker-content-wrapper">
+            <p>${marker.description}</p>
+          </span>
+          <br>
+          <p data-text="map.gfh.missions_header"></p>
+          ${missionsElement.prop('outerHTML')}
+          <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+          ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
+        </div>
+      `)
+      .translate()
+      .find('button')
+      .on('click', () => this.onMap = false)
+      .end()[0];
   }
 
   reinitMarker() {

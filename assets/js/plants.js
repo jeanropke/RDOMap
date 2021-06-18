@@ -57,12 +57,16 @@ class Plants {
           <span class="marker-content-wrapper">
             <p>${description}</p>
           </span>
+          <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
           <small>Latitude: ${_marker.x} / Longitude: ${_marker.y}</small>
         </div>
       `)
       .translate()
       .find('small')
       .toggle(Settings.isDebugEnabled)
+      .end()
+      .find('button')
+      .on('click', () => this.onMap = false)
       .end();
 
     return popup[0];
@@ -91,6 +95,7 @@ class Plants {
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo:${this.key}`);
       this.element.children('span').addClass('disabled');
+      MapBase.map.closePopup();
     }
   }
 

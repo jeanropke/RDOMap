@@ -1932,8 +1932,9 @@ span.daily-checkbox {
     user-select: none;
 }
 
+button.full-popup-width,
 button.reload-nazar {
-    margin: 10px 0;
+    margin: 10px 0 5px 0;
     width: 100%;
 }
 

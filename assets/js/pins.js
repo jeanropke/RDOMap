@@ -262,7 +262,7 @@ class Pins {
       id: marker.id,
       draggable: Settings.isPinsEditingEnabled,
     });
-    tempMarker.bindPopup(marker.updateMarkerContent.bind(marker), { minWidth: 300, maxWidth: 400 });
+    tempMarker.bindPopup(marker.updateMarkerContent.bind(marker, () => this.onMap = false), { minWidth: 300, maxWidth: 400 });
 
     Pins.layer.addLayer(tempMarker);
     if (Settings.isMarkerClusterEnabled && !Settings.isPinsEditingEnabled)

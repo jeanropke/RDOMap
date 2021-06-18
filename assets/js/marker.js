@@ -16,14 +16,14 @@ class Marker {
         case 'gfh':
           return Language.get(`map.${this.category}.${this.subdata}.name`);
         case 'hideouts':
-          return Language.get(`map.${this.category}.${this.text}.name`) + ' - ' + `[${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
+          return `${Language.get(`map.${this.category}.${this.text}.name`)} - [${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
         case 'camps':
-          return Language.get(`map.${this.category}.${this.subdata}.name`) + ' - ' + Language.get(`map.camps.sizes.${this.size}`);
+          return `${Language.get(`map.${this.category}.${this.subdata}.name`)} - ${Language.get(`map.camps.sizes.${this.size}`)}`;
         case 'daily_locations':
         case 'dynamic_bounties':
           return Language.get(`map.${this.category}.${this.text}.name`);
         case 'harrietum_animals':
-          return Language.get('map.harrietum_animals.name') + ' - ' + Language.get(`menu.cmpndm.${this.text}`);
+          return `${Language.get('map.harrietum_animals.name')} - ${Language.get(`menu.cmpndm.${this.text}`)}`;
         case 'sightseeing':
           return Language.get('map.sightseeing.name') + (this.text === 'hidden' ? ' - ' + Language.get('map.sightseeing.hidden') : '');
         default:
@@ -42,15 +42,25 @@ class Marker {
       }
     })();
   }
-  updateMarkerContent() {
-    let linksElement = $('<p>');
-    let debugDisplayLatLng = $('<small>').text(`Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}`);
-    return `<h1>${this.title}</h1>
+  updateMarkerContent(removeFromMapCallback) {
+    const linksElement = $('<p>');
+    return $(`
+      <div>
+        <h1>${this.title}</h1>
         <span class="marker-content-wrapper">
-        <p>${this.description}</p>
+          <p>${this.description}</p>
         </span>
         ${linksElement.prop('outerHTML')}
-        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        `;
+        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+        <small>Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}</small>
+      </div>
+    `)
+      .translate()
+      .find('button')
+      .on('click', removeFromMapCallback)
+      .end()
+      .find('small')
+      .toggle(Settings.isDebugEnabled)
+      .end()[0];
   }
 }

@@ -67,7 +67,7 @@ class Camp {
             marker: this.key,
             tippy: marker.title,
           }),
-        }).bindPopup(marker.updateMarkerContent.bind(marker), { minWidth: 300, maxWidth: 400 });
+        }).bindPopup(marker.updateMarkerContent.bind(marker, () => this.onMap = false), { minWidth: 300, maxWidth: 400 });
 
         this.layer.addLayer(tempMarker);
         if (Settings.isMarkerClusterEnabled)

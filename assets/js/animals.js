@@ -61,12 +61,16 @@ class Animal {
           <span class="marker-content-wrapper">
             <p>${description}</p>
           </span>
+          <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
           <small>Latitude: ${this.marker.x} / Longitude: ${this.marker.y} / Start: ${this.marker.start} / End: ${this.marker.end}</small>
         </div>
       `)
       .translate()
       .find('small')
       .toggle(Settings.isDebugEnabled)
+      .end()
+      .find('button')
+      .on('click', () => this.isEnabled = false)
       .end();
 
     return snippet[0];
@@ -87,6 +91,7 @@ class Animal {
       AnimalCollection.heatmapLayer.setData({ data: [] });
       AnimalCollection.spawnLayer.clearLayers();
       this.element.children('span').addClass('disabled');
+      MapBase.map.closePopup();
     }
   }
 

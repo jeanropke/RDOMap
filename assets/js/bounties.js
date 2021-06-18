@@ -50,15 +50,19 @@ class Bounty {
     this.onMap = this.onMap;
   }
   popupContent(marker, bounty) {
-    const snippet = $(`<div class="handover-wrapper-with-no-influence">
+    const snippet = $(`
+      <div class="handover-wrapper-with-no-influence">
         <h1 data-text="menu.${marker.type}.${marker.text}"></h1>
         <p data-text="menu.${marker.type}.desc"></p>
         <span class="properties">
           <p class="property" data-text="menu.${marker.type}.min" data-property="min"></p>
           <!-- <p class="property" data-text="menu.${marker.type}.config" data-property="config"></p> -->
         </span>
-        <button type="button" class="btn btn-info remove-button remove-bounty" data-text="map.remove"></button>
-      </div>`).translate();
+        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+        <small>Latitude: ${bounty.x} / Longitude: ${bounty.y} / Type: ${marker.type} / Text: ${marker.text}</small>
+      </div>
+      `)
+        .translate();
 
     const props = $('[data-property]', snippet);
     [...props].forEach(p => {
@@ -69,8 +73,11 @@ class Bounty {
     });
 
     snippet
-      .find('button.remove-bounty')
+      .find('button')
       .on('click', () => this.onMap = false)
+      .end()
+      .find('small')
+      .toggle(Settings.isDebugEnabled)
       .end();
 
     return snippet[0];

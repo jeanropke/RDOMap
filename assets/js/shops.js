@@ -64,7 +64,7 @@ class Shop {
             tippy: marker.title,
           }),
         });
-        tempMarker.bindPopup(marker.updateMarkerContent.bind(marker), { minWidth: 300, maxWidth: 400 });
+        tempMarker.bindPopup(marker.updateMarkerContent.bind(marker, () => this.onMap = false), { minWidth: 300, maxWidth: 400 });
 
         this.layer.addLayer(tempMarker);
         if (Settings.isMarkerClusterEnabled)
