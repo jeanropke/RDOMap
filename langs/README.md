@@ -69,7 +69,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### English, United Kingdom (1%):
   - **AdamNortonUK** (12 words)
-  - **Michal__d** (2,993 words)
+  - **Michal__d** (2,997 words)
   - **MrSmithr** (290 words)
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
@@ -92,7 +92,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (2,993 words)
+  - **Michal__d** (2,997 words)
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
   - **pamplemousse.web** (351 words)
@@ -134,7 +134,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
-  - **Vasili_Koulakov** (596 words)
+  - **Vasili_Koulakov** (829 words)
 
 ### Hungarian (32%):
   - **emperger** (631 words)
@@ -194,7 +194,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish (81%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Michal__d** (2,993 words)
+  - **Michal__d** (2,997 words)
   - **PLTytus** (515 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
