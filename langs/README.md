@@ -236,7 +236,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (1,992 words)
+  - **Megitsune** (2,036 words)
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
@@ -274,7 +274,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ulises_hdz22** (361 words)
 
 ### Spanish, Mexico (89%):
-  - **bloobhy** (30 words)
+  - **bloobhy** (152 words)
 
 ### Swedish (20%):
   - **...---...** (431 words)
