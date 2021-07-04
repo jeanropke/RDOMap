@@ -35,7 +35,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Chinese Simplified (79%):
   - **akbcd** (409 words)
   - **Approach** (12 words)
-  - **BHT256** (7,750 words)
+  - **BHT256** (7,811 words)
   - **curryguru** (47 words)
   - **Jabaay** (52 words)
   - **labrary** (238 words)
@@ -130,7 +130,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToX1cRanG3r** (363 words)
 
 ### Hebrew (21%):
-  - **dudiv5674** (2,863 words)
+  - **dudiv5674** (2,867 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
@@ -178,7 +178,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (59%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (495 words)
+  - **CoolBreeze-13s** (532 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
