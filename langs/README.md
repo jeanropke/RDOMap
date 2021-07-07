@@ -171,7 +171,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Japanese (72%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
-  - **moku3** (38 words)
+  - **moku3** (331 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **redredrom** (159 words)
