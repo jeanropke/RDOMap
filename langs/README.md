@@ -209,7 +209,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (90%):
+### Portuguese, Brazilian (91%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
@@ -217,7 +217,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **borba72** (23 words)
   - **bortoluzzibernardo** (16 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,214 words)
+  - **jeanropke** (7,524 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
