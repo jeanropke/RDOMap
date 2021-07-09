@@ -14,11 +14,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HeadShot557** (2,363 words)
   - **R36za** (101 words)
 
-### Arabic (41%):
+### Arabic (42%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
   - **alichakra.9** (92 words)
+  - **DrAbdulilah** (108 words)
   - **fhyyd** (293 words)
   - **JokerUAE** (77 words)
   - **madhatterxk** (15 words)
@@ -180,7 +181,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (59%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (532 words)
+  - **CoolBreeze-13s** (568 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
