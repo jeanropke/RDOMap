@@ -1232,6 +1232,9 @@ a.no-style:visited {
     .input-action {
         margin-top: 5px;
     }
+    .daily-checkbox .input-checkbox+.input-checkbox-label {
+        margin-top: 0;
+    }
 }
 
 @media (min-width: 769px) {
