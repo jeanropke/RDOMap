@@ -138,4 +138,8 @@ var Language = {
     if (!thisProg) thisProg = 0;
     $('#translation-progress').text(Language.get('menu.translate_progress').replace('{progress}', thisProg));
   },
+
+  hasTranslation: function (string) {
+    return this.get(string) !== string;
+  }
 };
