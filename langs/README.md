@@ -14,12 +14,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (42%):
+### Arabic (43%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
   - **alichakra.9** (92 words)
-  - **DrAbdulilah** (108 words)
+  - **DrAbdulilah** (348 words)
   - **fhyyd** (293 words)
   - **JokerUAE** (77 words)
   - **madhatterxk** (15 words)
@@ -131,7 +131,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToX1cRanG3r** (363 words)
 
 ### Hebrew (21%):
-  - **dudiv5674** (2,867 words)
+  - **dudiv5674** (2,871 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
@@ -186,13 +186,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
-### Norwegian (8%):
+### Norwegian (9%):
   - **camillgh** (724 words)
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
   - **henrietteg95** (830 words)
   - **martinbruh** (212 words)
-  - **Rilfus** (156 words)
+  - **Rilfus** (283 words)
 
 ### Polish (82%):
   - **Baltazaro** (209 words)
@@ -228,9 +228,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raphael_** (39 words)
   - **vierim** (33 words)
 
-### Romanian (6%):
+### Romanian (8%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
+  - **proximacentaurib** (764 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
@@ -277,8 +278,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tomyloly.11** (698 words)
   - **ulises_hdz22** (361 words)
 
-### Spanish, Mexico (89%):
+### Spanish, Mexico (90%):
   - **bloobhy** (152 words)
+  - **juanestevez** (453 words)
 
 ### Swedish (20%):
   - **...---...** (431 words)
