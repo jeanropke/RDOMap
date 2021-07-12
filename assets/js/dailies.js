@@ -45,7 +45,7 @@ class Dailies {
           roleData.challenges.forEach(({ desiredGoal, id, displayType, description: { label, localized } }) => {
             label = label.toLowerCase();
             const daily = allDailies[role].find(({ key }) => key === label);
-            if (daily.category) {
+            if (daily && daily.category) {
               this.markersCategories.push([`${role}_${id}`, daily.category]);
             }
 
