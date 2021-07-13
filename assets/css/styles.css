@@ -610,7 +610,7 @@ select {
     padding: 0;
     user-select: none;
     cursor: pointer;
-    line-height: 36px;
+    line-height: 42px;
 }
 
 .side-menu .disabled {
@@ -637,7 +637,7 @@ select {
 
 .side-menu .menu-option .icon {
     width: 35px;
-    margin: 6px 0 -3px 2px;
+    margin: 0 0 3px 2px;
 }
 
 .side-menu .open-submenu {
@@ -1235,6 +1235,9 @@ a.no-style:visited {
     .daily-checkbox .input-checkbox+.input-checkbox-label {
         margin-top: 0;
     }
+    .collectible-icon {
+        margin-top: 7px;
+    }
 }
 
 @media (min-width: 769px) {
@@ -1418,7 +1421,6 @@ a.no-style:visited {
     z-index: 4;
     width: 100%;
     height: auto;
-    padding-top: 6px;
 }
 
 .leaflet-div-icon .background {
@@ -1850,7 +1852,6 @@ span.daily-checkbox {
     z-index: 4;
     width: 100%;
     height: auto;
-    padding-top: 6px;
 }
 
 .leaflet-div-icon .background {
