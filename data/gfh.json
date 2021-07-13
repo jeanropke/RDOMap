@@ -70,6 +70,7 @@
   {
     "color": "lightorange",
     "key": "anthony_foreman",
+    "type": "blood_money",
     "locations": [
       {
         "text": "gfh_radleys_pasture",
@@ -212,6 +213,7 @@
   {
     "color": "lightorange",
     "key": "joe",
+    "type": "blood_money",
     "locations": [
       {
         "text": "gfh_happy_family_shack",
@@ -252,6 +254,7 @@
   {
     "color": "lightorange",
     "key": "langton",
+    "type": "blood_money",
     "locations": [
       {
         "text": "gfh_don_julio_lake",
@@ -326,6 +329,7 @@
   {
     "color": "lightorange",
     "key": "sean_macquire",
+    "type": "blood_money",
     "locations": [
       {
         "text": "gfh_south_great_plains",

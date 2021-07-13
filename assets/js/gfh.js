@@ -24,9 +24,11 @@ class GunForHire {
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`map.gfh.${this.key}.name`))
-      .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', `map.gfh.${this.key}.name`))
+      .append($(`<img class="collectible-icon" src="./assets/images/icons/${this.type ? this.type : 'gfh'}.png">`))
+      .append($('<span class="collectible-text">')
+        .toggleClass('disabled', !this.onMap)
+        .append($('<p class="collectible">').attr('data-text', `map.gfh.${this.key}.name`)))
       .translate();
 
     this.element.appendTo(GunForHire.context);
@@ -82,7 +84,7 @@ class GunForHire {
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
           popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
           html: `<div>
-            <img class="icon" src="assets/images/icons/gfh.png" alt="Icon">
+            <img class="icon" src="assets/images/icons/${this.type ? this.type : 'gfh'}.png" alt="Icon">
             <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || this.color}.png" alt="Background">
             ${shadow}
           </div>`,
