@@ -81,6 +81,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### French (93%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
+  - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
@@ -172,7 +173,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Japanese (72%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
-  - **moku3** (331 words)
+  - **moku3** (393 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **redredrom** (159 words)
@@ -228,10 +229,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raphael_** (39 words)
   - **vierim** (33 words)
 
-### Romanian (8%):
+### Romanian (14%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (764 words)
+  - **proximacentaurib** (2,330 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
