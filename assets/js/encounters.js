@@ -22,7 +22,7 @@ class Encounter {
     this.onLanguageChanged();
 
     const imgKey = this.key === 'rescue' ? 'rescue_objective' : this.key;
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
+    this.element = $(`<div class="collectible-wrapper ${this.new ? 'new' : ''}" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`menu.${this.key}`))
       .on('click', () => this.onMap = !this.onMap)
       .append($(`<img class="collectible-icon" src="./assets/images/icons/${imgKey}.png">`))

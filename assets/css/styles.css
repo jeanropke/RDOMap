@@ -613,6 +613,26 @@ select {
     line-height: 42px;
 }
 
+.side-menu .menu-option.new::before {
+    background: url(../images/star.png) no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 40px;
+    top: 7px;
+    content: '';
+}
+.side-menu .collectible-wrapper.new::before {
+    background: url(../images/star.png) no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    content: '';
+}
 .side-menu .disabled {
     opacity: .5;
 }
@@ -1237,6 +1257,10 @@ a.no-style:visited {
     }
     .collectible-icon {
         margin-top: 7px;
+    }
+    .side-menu .collectible-wrapper.new::before {
+        top: 16px;
+        right: 0;
     }
 }
 

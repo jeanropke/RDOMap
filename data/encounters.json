@@ -575,6 +575,7 @@
   {
     "color": "darkred",
     "key": "outlaw_dynamic_homestead",
+    "new": true,
     "locations": [
       {"text": "outlaw_homestead_robbery_0", "x": -59.3021, "y": 155.1062},
       {"text": "outlaw_homestead_robbery_1", "x": -50.4214, "y": 123.3485},
@@ -589,6 +590,7 @@
   {
     "color": "darkred",
     "key": "outlaw_dynamic_camp",
+    "new": true,
     "locations": [
       {"text": "outlaw_camp_robbery_0", "x": -37.3859, "y": 84.0021},
       {"text": "outlaw_camp_robbery_1", "x": -69.0209, "y": 69.309},
