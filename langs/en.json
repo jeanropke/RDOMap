@@ -1441,5 +1441,26 @@
     "menu.bounty_board_caged_target.strawberry": "Strawberry",
     "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
     "menu.bounty_board_caged_target.wallace_station": "Wallace Station",
-    "menu.sponsors": "Sponsors"
+    "menu.sponsors": "Sponsors",
+    "menu.outlaw_dynamic_homestead": "Outlaw - Homestead Robbery",
+    "menu.outlaw_dynamic_camp": "Outlaw - Camp Robbery",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_0.name": "Homestead Robbery - Van Horn Mansion",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_1.name": "Homestead Robbery - Carmody Dell",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_2.name": "Homestead Robbery - Catfish Jacksons",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_3.name": "Homestead Robbery - Chez Porter",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_4.name": "Homestead Robbery - Silent Stead",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_5.name": "Homestead Robbery - Venter's Place",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_6.name": "Homestead Robbery - Painted Sky",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_7.name": "Homestead Robbery - Lonnie's Shack",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_0.name": "Camp Robbery - Lake Isabella",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_1.name": "Camp Robbery - Owanjila",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_2.name": "Camp Robbery - Lagras",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_3.name": "Camp Robbery - Cumberland Forest",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_4.name": "Camp Robbery - Lower Montana River",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_5.name": "Camp Robbery - San Luis River",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "Camp Robbery - Stillwater",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Camp Robbery - Flat Iron Lake",
+    "map.outlaw_dynamic_homestead.desc": " ",
+    "map.outlaw_dynamic_camp.desc": " "
+
 }

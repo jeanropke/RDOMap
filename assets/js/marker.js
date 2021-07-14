@@ -27,7 +27,10 @@ class Marker {
         case 'sightseeing':
           return Language.get('map.sightseeing.name') + (this.text === 'hidden' ? ' - ' + Language.get('map.sightseeing.hidden') : '');
         default:
-          return Language.get(`map.${this.category}.name`);
+          if(this.category.startsWith('outlaw_'))
+            return Language.get(`map.${this.category}.${this.text}.name`);
+          else
+            return Language.get(`map.${this.category}.name`);
       }
     })();
     this.description = (() => {
