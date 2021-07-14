@@ -21,15 +21,14 @@ class Marker {
           return `${Language.get(`map.${this.category}.${this.subdata}.name`)} - ${Language.get(`map.camps.sizes.${this.size}`)}`;
         case 'daily_locations':
         case 'dynamic_bounties':
+        case 'outlaw_dynamic_homestead':
+        case 'outlaw_dynamic_camp':
           return Language.get(`map.${this.category}.${this.text}.name`);
         case 'harrietum_animals':
           return `${Language.get('map.harrietum_animals.name')} - ${Language.get(`menu.cmpndm.${this.text}`)}`;
         case 'sightseeing':
           return Language.get('map.sightseeing.name') + (this.text === 'hidden' ? ' - ' + Language.get('map.sightseeing.hidden') : '');
         default:
-          if(this.category.startsWith('outlaw_'))
-            return Language.get(`map.${this.category}.${this.text}.name`);
-          else
             return Language.get(`map.${this.category}.name`);
       }
     })();
