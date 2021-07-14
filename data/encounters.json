@@ -576,108 +576,28 @@
     "color": "darkred",
     "key": "outlaw_dynamic_homestead",
     "locations": [
-      {
-        "text": "outlaw_homestead_robbery_0",
-        "name": "Van Horn Mansion",
-        "x": -59.3021,
-        "y": 155.1062
-      },
-      {
-        "text": "outlaw_homestead_robbery_1",
-        "name": "Carmody Dell",
-        "x": -50.4214,
-        "y": 123.3485
-      },
-      {
-        "text": "outlaw_homestead_robbery_2",
-        "name": "Catfish Jacksons",
-        "x": -98.9682,
-        "y": 131.8728
-      },
-      {
-        "text": "outlaw_homestead_robbery_3",
-        "name": "Chez Porter",
-        "x": -36.6975,
-        "y": 104.9472
-      },
-      {
-        "text": "outlaw_homestead_robbery_4",
-        "name": "Silent Stead",
-        "x": -100.9336,
-        "y": 25.1546
-      },
-      {
-        "text": "outlaw_homestead_robbery_5",
-        "name": "Venter's Place",
-        "x": -110.6634,
-        "y": 56.1489
-      },
-      {
-        "text": "outlaw_homestead_robbery_6",
-        "name": "Painted Sky",
-        "x": -64.1115,
-        "y": 101.6881
-      },
-      {
-        "text": "outlaw_homestead_robbery_7",
-        "name": "Lonnie's Shack",
-        "x": -69.272,
-        "y": 136.4873
-      }
+      {"text": "outlaw_homestead_robbery_0", "x": -59.3021, "y": 155.1062},
+      {"text": "outlaw_homestead_robbery_1", "x": -50.4214, "y": 123.3485},
+      {"text": "outlaw_homestead_robbery_2", "x": -98.9682, "y": 131.8728},
+      {"text": "outlaw_homestead_robbery_3", "x": -36.6975, "y": 104.9472},
+      {"text": "outlaw_homestead_robbery_4", "x": -100.9336, "y": 25.1546},
+      {"text": "outlaw_homestead_robbery_5", "x": -110.6634, "y": 56.1489},
+      {"text": "outlaw_homestead_robbery_6", "x": -64.1115, "y": 101.6881},
+      {"text": "outlaw_homestead_robbery_7", "x": -69.272, "y": 136.4873}
     ]
   },
   {
     "color": "darkred",
     "key": "outlaw_dynamic_camp",
     "locations": [
-      {
-        "text": "outlaw_camp_robbery_0",
-        "name": "Camp Robbery - Lake Isabella",
-        "x": -37.3859,
-        "y": 84.0021
-      },
-      {
-        "text": "outlaw_camp_robbery_1",
-        "name": "Camp Robbery - Owanjila",
-        "x": -69.0209,
-        "y": 69.309
-      },
-      {
-        "text": "outlaw_camp_robbery_2",
-        "name": "Camp Robbery - Lagras",
-        "x": -72.289,
-        "y": 148.3959
-      },
-      {
-        "text": "outlaw_camp_robbery_3",
-        "name": "Camp Robbery - Cumberland Forest",
-        "x": -46.6502,
-        "y": 121.5866
-      },
-      {
-        "text": "outlaw_camp_robbery_4",
-        "name": "Camp Robbery - Lower Montana River",
-        "x": -95.9238,
-        "y": 76.2048
-      },
-      {
-        "text": "outlaw_camp_robbery_5",
-        "name": "Camp Robbery - San Luis River",
-        "x": -126.0989,
-        "y": 33.904
-      },
-      {
-        "text": "outlaw_camp_robbery_6",
-        "name": "Camp Robbery - Stillwater",
-        "x": -100.8162,
-        "y": 84.9334
-      },
-      {
-        "text": "outlaw_camp_robbery_7",
-        "name": "Camp Robbery - Flat Iron Lake",
-        "x": -73.741,
-        "y": 111.4377
-      }
+      {"text": "outlaw_camp_robbery_0", "x": -37.3859, "y": 84.0021},
+      {"text": "outlaw_camp_robbery_1", "x": -69.0209, "y": 69.309},
+      {"text": "outlaw_camp_robbery_2", "x": -72.289,  "y": 148.3959},
+      {"text": "outlaw_camp_robbery_3", "x": -46.6502, "y": 121.5866},
+      {"text": "outlaw_camp_robbery_4", "x": -95.9238, "y": 76.2048},
+      {"text": "outlaw_camp_robbery_5", "x": -126.0989, "y": 33.904},
+      {"text": "outlaw_camp_robbery_6", "x": -100.8162, "y": 84.9334},
+      {"text": "outlaw_camp_robbery_7", "x": -73.741, "y": 111.4377}
     ]
   }
 ]
