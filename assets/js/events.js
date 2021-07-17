@@ -95,18 +95,18 @@ class CondorEgg {
     if (state) {
       MapBase.map.addLayer(CondorEgg.layer);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo:condorEggs', 'true');
+        localStorage.setItem('rdo.condorEggs', 'true');
     } else {
       CondorEgg.layer.remove();
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdo:condorEggs');
+        localStorage.removeItem('rdo.condorEggs');
       MapBase.map.closePopup();
     }
     this.condorEggParentElement.toggleClass('disabled', !state);
   }
 
   static get condorEggOnMap() {
-    return !!localStorage.getItem('rdo:condorEggs');
+    return !!localStorage.getItem('rdo.condorEggs');
   }
 }
 
@@ -232,17 +232,17 @@ class Salvage {
     if (state) {
       MapBase.map.addLayer(Salvage.layer);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo:salvages', 'true');
+        localStorage.setItem('rdo.salvages', 'true');
     } else {
       Salvage.layer.remove();
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdo:salvages');
+        localStorage.removeItem('rdo.salvages');
       MapBase.map.closePopup();
     }
     this.salvageParentElement.toggleClass('disabled', !state);
   }
 
   static get salvageOnMap() {
-    return !!localStorage.getItem('rdo:salvages');
+    return !!localStorage.getItem('rdo.salvages');
   }
 }

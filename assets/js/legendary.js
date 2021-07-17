@@ -46,7 +46,7 @@ class Legendary {
       .append($('<p class="collectible">').attr('data-text', this.text))
       .translate();
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
-    this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
+    this.animalSpeciesKey = `rdo.Legendaries_category_time_${this.species}`;
     this.preferred_weather = Language.get(`map.weather.${this.preferred_weather}`);
     this.trader_materials = this.trader_materials || Language.get('map.cant_be_picked_up');
     this.trapper_value = this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up');
@@ -181,7 +181,7 @@ class Legendary {
 
     setInterval(() => {
       animalSpeciesSet.forEach(animalSpecies => {
-        const key = `rdo:Legendaries_category_time_${animalSpecies}`;
+        const key = `rdo.Legendaries_category_time_${animalSpecies}`;
         if (!(key in localStorage)) return;
 
         const time = localStorage.getItem(key);
@@ -210,17 +210,17 @@ class Legendary {
       Legendary.layer.addLayer(this.marker);
       this.element.removeClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this._shownKey}`, 'true');
+        localStorage.setItem(`rdo.${this._shownKey}`, 'true');
     } else {
       Legendary.layer.removeLayer(this.marker);
       this.element.addClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo:${this._shownKey}`);
+        localStorage.removeItem(`rdo.${this._shownKey}`);
     }
   }
 
   get onMap() {
-    return !!localStorage.getItem(`rdo:${this._shownKey}`);
+    return !!localStorage.getItem(`rdo.${this._shownKey}`);
   }
   static onCategoryToggle() {
     Legendary.animals.forEach(animal => animal.onMap = animal.onMap);

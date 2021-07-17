@@ -106,18 +106,18 @@ class GunForHire {
       this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'true');
+        localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo:${this.key}`);
+        localStorage.removeItem(`rdo.${this.key}`);
     }
     MapBase.updateTippy('gfh');
   }
 
   get onMap() {
-    return !!localStorage.getItem(`rdo:${this.key}`);
+    return !!localStorage.getItem(`rdo.${this.key}`);
   }
 
   static onLanguageChanged() {

@@ -15,7 +15,7 @@ class Dailies {
 
     if (localStorage.getItem('lastDailiesDate') !== currentDate) {
       for (const setting in localStorage) {
-        if (setting.startsWith('rdo:dailies.'))
+        if (setting.startsWith('rdo.dailies.'))
           localStorage.removeItem(setting);
       }
       localStorage.setItem('lastDailiesDate', currentDate);

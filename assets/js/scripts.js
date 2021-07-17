@@ -49,6 +49,26 @@ function init() {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en',
   });
 
+  //Convert old settings if any
+  Object.keys(localStorage).forEach(key => {
+    if(key.startsWith('rdo:')) {
+      localStorage.setItem(`rdo.${key.split(':')[1]}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+     //Get rdr2collectors map legendary timers (first time only)
+    else if(key.startsWith('rdr2collector:Legendaries_')) {
+      let _key = `rdo.${key.split(':')[1]}`;
+      if(localStorage.getItem(_key) == null)
+        localStorage.setItem(_key, localStorage.getItem(key));
+    }
+    else if(key.startsWith('rdr2collector:shown.mp_animal_')) {
+      let _key = `rdo.${key.split(':')[1]}`;
+      if(localStorage.getItem(_key) == null)
+        localStorage.setItem(_key, localStorage.getItem(key));
+    }
+  });
+ 
+
   Menu.init();
   MapBase.init();
   Language.init();
@@ -406,7 +426,8 @@ $(document).on('contextmenu', function (e) {
 
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
-    localStorage.removeItem(key);
+    if(key.startsWith('rdo.'))
+      localStorage.removeItem(key);
   });
 
   location.reload(true);
@@ -504,12 +525,13 @@ $('#cookie-export').on('click', function () {
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
     storage = $.extend(true, {}, localStorage);
     delete storage['pinned-items'];
+    delete storage['rdo.pinned-items'];
     delete storage['routes.customRoute'];
     delete storage['importantItems'];
     delete storage['enabled-categories'];
 
     for (var key in storage) {
-      if (storage.hasOwnProperty(key) && key.includesOneOf('collected.', 'routes.', 'shown.', 'amount.')) {
+      if (!key.startsWith('rdo.')) {
         delete storage[key];
       }
     }

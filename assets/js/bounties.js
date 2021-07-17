@@ -86,17 +86,17 @@ class Bounty {
     if (state) {
       BountyCollection.layer.addLayer(this.marker);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this._shownKey}`, 'true');
+        localStorage.setItem(`rdo.${this._shownKey}`, 'true');
       this.element.removeClass('disabled');
     } else {
       BountyCollection.layer.removeLayer(this.marker);
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo:${this._shownKey}`);
+        localStorage.removeItem(`rdo.${this._shownKey}`);
       this.element.addClass('disabled');
     }
   }
   get onMap() {
-    return !!localStorage.getItem(`rdo:${this._shownKey}`);
+    return !!localStorage.getItem(`rdo.${this._shownKey}`);
   }
 
   static onLanguageChanged() {

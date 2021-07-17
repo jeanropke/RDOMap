@@ -81,7 +81,7 @@ class Plants {
       PlantsCollection.layer.clearLayers();
       PlantsCollection.layer.addLayers(PlantsCollection.markers);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'true');
+        localStorage.setItem(`rdo.${this.key}`, 'true');
       this.element.children('span').removeClass('disabled');
     } else {
 
@@ -93,14 +93,14 @@ class Plants {
         PlantsCollection.layer.addLayers(PlantsCollection.markers);
 
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo:${this.key}`);
+        localStorage.removeItem(`rdo.${this.key}`);
       this.element.children('span').addClass('disabled');
       MapBase.map.closePopup();
     }
   }
 
   get onMap() {
-    return !!localStorage.getItem(`rdo:${this.key}`);
+    return !!localStorage.getItem(`rdo.${this.key}`);
   }
 }
 
@@ -142,7 +142,7 @@ class PlantsCollection {
     this.context.toggleClass('disabled', !state);
 
     if (!MapBase.isPreviewMode)
-      localStorage.setItem('rdo:plants', JSON.stringify(state));
+      localStorage.setItem('rdo.plants', JSON.stringify(state));
 
     PlantsCollection.locations.forEach(_plants => {
       if (_plants.onMap) _plants.onMap = state;
@@ -150,7 +150,7 @@ class PlantsCollection {
   }
 
   static get onMap() {
-    const value = JSON.parse(localStorage.getItem('rdo:plants'));
+    const value = JSON.parse(localStorage.getItem('rdo.plants'));
     return value || value == null;
   }
 

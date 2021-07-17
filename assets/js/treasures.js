@@ -90,25 +90,25 @@ class Treasure {
       if (MapBase.isPreviewMode || Treasure.treasuresOnMap)
         Treasure.layer.addLayer(this.marker);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this._shownKey}`, 'true');
+        localStorage.setItem(`rdo.${this._shownKey}`, 'true');
       this.element.removeClass('disabled');
     } else {
       if (Treasure.treasuresOnMap)
         Treasure.layer.removeLayer(this.marker);
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo:${this._shownKey}`);
+        localStorage.removeItem(`rdo.${this._shownKey}`);
       this.element.addClass('disabled');
     }
   }
   get onMap() {
-    return !!localStorage.getItem(`rdo:${this._shownKey}`);
+    return !!localStorage.getItem(`rdo.${this._shownKey}`);
   }
 
   static set treasuresOnMap(state) {
     if (state) {
       MapBase.map.addLayer(Treasure.layer);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo:treasures', 'true');
+        localStorage.setItem('rdo.treasures', 'true');
 
       this.treasures.forEach(_t => {
         if (_t.onMap) _t.onMap = state;
@@ -116,7 +116,7 @@ class Treasure {
     } else {
       Treasure.layer.remove();
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdo:treasures');
+        localStorage.removeItem('rdo.treasures');
     }
 
     this.treasuresParentElement.toggleClass('disabled', !state);
@@ -124,6 +124,6 @@ class Treasure {
   }
 
   static get treasuresOnMap() {
-    return !!localStorage.getItem('rdo:treasures');
+    return !!localStorage.getItem('rdo.treasures');
   }
 }

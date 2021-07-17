@@ -232,8 +232,8 @@ class Pins {
       });
     }
 
-    if (Pins.isValidJSON(localStorage.getItem('rdo:pinned-items'))) {
-      JSON.parse(localStorage.getItem('rdo:pinned-items')).forEach(pinnedItem => {
+    if (Pins.isValidJSON(localStorage.getItem('rdo.pinned-items'))) {
+      JSON.parse(localStorage.getItem('rdo.pinned-items')).forEach(pinnedItem => {
         this.addPin(pinnedItem);
       });
     }
@@ -284,13 +284,13 @@ class Pins {
 
   static save() {
     localStorage.removeItem('pinned-items');
-    localStorage.setItem('rdo:pinned-items', JSON.stringify(this.pinsList));
+    localStorage.setItem('rdo.pinned-items', JSON.stringify(this.pinsList));
   }
 
   static importPins(text) {
     if (Pins.isValidJSON(text)) {
       console.log(text);
-      localStorage.setItem('rdo:pinned-items', text);
+      localStorage.setItem('rdo.pinned-items', text);
       this.loadPins();
     } else {
       alert(Language.get('alerts.file_not_valid'));
@@ -299,7 +299,7 @@ class Pins {
   }
 
   static exportPins() {
-    const text = localStorage.getItem('rdo:pinned-items');
+    const text = localStorage.getItem('rdo.pinned-items');
     const filename = 'pinned-items.txt';
 
     if (text === null) {
@@ -334,19 +334,19 @@ class Pins {
     if (state) {
       this.layer.addTo(MapBase.map);
       if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo:pins-enabled', 'true');
+        localStorage.setItem('rdo.pins-enabled', 'true');
       this.context.removeClass('disabled');
     } else {
       this.layer.remove();
       if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdo:pins-enabled');
+        localStorage.removeItem('rdo.pins-enabled');
       this.context.addClass('disabled');
     }
     MapBase.updateTippy('pins');
   }
 
   static get onMap() {
-    return !!localStorage.getItem('rdo:pins-enabled');
+    return !!localStorage.getItem('rdo.pins-enabled');
   }
 
   static removeAllPins() {

@@ -79,16 +79,16 @@ class Discoverable {
       if (MapBase.map.getZoom() > 5) this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'true');
+        localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'false');
+        localStorage.setItem(`rdo.${this.key}`, 'false');
     }
   }
   get onMap() {
     if (MapBase.isPreviewMode) return false;
-    return JSON.parse(localStorage.getItem(`rdo:${this.key}`)) || (JSON.parse(localStorage.getItem(`rdo:${this.key}`)) == null && !this.disabled);
+    return JSON.parse(localStorage.getItem(`rdo.${this.key}`)) || (JSON.parse(localStorage.getItem(`rdo.${this.key}`)) == null && !this.disabled);
   }
 }

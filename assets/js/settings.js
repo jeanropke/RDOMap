@@ -134,7 +134,7 @@ const SettingProxy = (function () {
 })();
 
 // General settings
-const Settings = SettingProxy.createSettingProxy('main');
+const Settings = SettingProxy.createSettingProxy('rdo');
 Object.entries({
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
@@ -176,4 +176,4 @@ Object.entries({
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Completed daily challenges settings (file dailies.js)
-const DailyChallenges = SettingProxy.createSettingProxy('rdo:dailies');
+const DailyChallenges = SettingProxy.createSettingProxy('rdo.dailies');

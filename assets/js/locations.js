@@ -69,18 +69,18 @@ class Location {
       this.layer.addTo(MapBase.map);
       this.element.removeClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'true');
+        localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
       this.element.addClass('disabled');
       if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo:${this.key}`, 'false');
+        localStorage.setItem(`rdo.${this.key}`, 'false');
     }
     MapBase.updateTippy('location');
   }
 
   get onMap() {
-    const value = JSON.parse(localStorage.getItem(`rdo:${this.key}`));
+    const value = JSON.parse(localStorage.getItem(`rdo.${this.key}`));
     return value || (value == null && !this.disabled);
   }
 
