@@ -13,12 +13,12 @@ class Dailies {
 
     const currentDate = new Date(Date.now() - 216e5).toISOUTCDateString(); // 21600000ms = 6 hours
 
-    if (localStorage.getItem('lastDailiesDate') !== currentDate) {
+    if (localStorage.getItem('rdo.lastDailiesDate') !== currentDate) {
       for (const setting in localStorage) {
         if (setting.startsWith('rdo.dailies.'))
           localStorage.removeItem(setting);
       }
-      localStorage.setItem('lastDailiesDate', currentDate);
+      localStorage.setItem('rdo.lastDailiesDate', currentDate);
     }
 
     return Promise.all([

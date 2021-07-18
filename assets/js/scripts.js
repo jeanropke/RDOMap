@@ -55,7 +55,7 @@ function init() {
       localStorage.setItem(`rdo.${key.split(':')[1]}`, localStorage.getItem(key));
       localStorage.removeItem(key);
     }
-     //Get rdr2collectors map legendary timers (first time only)
+     //Get rdr2collectors map legendary timers only when rdo keys does not exists
     else if(key.startsWith('rdr2collector:Legendaries_')) {
       let _key = `rdo.${key.split(':')[1]}`;
       if(localStorage.getItem(_key) == null)
@@ -65,6 +65,10 @@ function init() {
       let _key = `rdo.${key.split(':')[1]}`;
       if(localStorage.getItem(_key) == null)
         localStorage.setItem(_key, localStorage.getItem(key));
+    }
+    else if(key == 'lastDailiesDate') {
+        localStorage.setItem('rdo.lastDailiesDate', localStorage.getItem('lastDailiesDate'));
+        localStorage.removeItem('lastDailiesDate');
     }
   });
  
