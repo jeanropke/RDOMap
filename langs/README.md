@@ -139,10 +139,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **klain123** (2,363 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (33%):
+### Hungarian (34%):
   - **emperger** (631 words)
   - **GoP** (85 words)
-  - **Hutty98** (2,249 words)
+  - **Hutty98** (2,395 words)
   - **jjameska** (26 words)
   - **laszlo2033** (678 words)
   - **m1esautopalya** (103 words)
