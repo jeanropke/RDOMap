@@ -51,27 +51,22 @@ function init() {
 
   //Convert old settings if any
   Object.keys(localStorage).forEach(key => {
-    if(key.startsWith('rdo:')) {
+    if (key.startsWith('rdo:')) {
       localStorage.setItem(`rdo.${key.split(':')[1]}`, localStorage.getItem(key));
       localStorage.removeItem(key);
     }
-     //Get rdr2collectors map legendary timers only when rdo keys does not exists
-    else if(key.startsWith('rdr2collector:Legendaries_')) {
+    // Get rdr2collectors map legendary timers only when rdo keys does not exists
+    // Do not enable legendary animals base on collectors map because it cause an issue that are always enabled on RDO map on load ;)
+    else if (key.startsWith('rdr2collector:Legendaries_')) {
       let _key = `rdo.${key.split(':')[1]}`;
-      if(localStorage.getItem(_key) == null)
+      if (localStorage.getItem(_key) == null)
         localStorage.setItem(_key, localStorage.getItem(key));
     }
-    else if(key.startsWith('rdr2collector:shown.mp_animal_')) {
-      let _key = `rdo.${key.split(':')[1]}`;
-      if(localStorage.getItem(_key) == null)
-        localStorage.setItem(_key, localStorage.getItem(key));
-    }
-    else if(key == 'lastDailiesDate') {
-        localStorage.setItem('rdo.lastDailiesDate', localStorage.getItem('lastDailiesDate'));
-        localStorage.removeItem('lastDailiesDate');
+    else if (key == 'lastDailiesDate') {
+      localStorage.setItem('rdo.lastDailiesDate', localStorage.getItem('lastDailiesDate'));
+      localStorage.removeItem('lastDailiesDate');
     }
   });
- 
 
   Menu.init();
   MapBase.init();
