@@ -117,7 +117,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **FreeAsABird** (330 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
-  - **s.pantermueller** (114 words)
+  - **s.pantermueller** (137 words)
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
@@ -154,7 +154,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tabandi** (239 words)
   - **YaBoiRichard614** (375 words)
 
-### Italian (85%):
+### Italian (87%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,841 words)
@@ -165,6 +165,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Jarsha1311** (500 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
+  - **MattSini912** (503 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
   - **REMOVED_USER** (1,189 words)
@@ -172,10 +173,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
-### Japanese (81%):
+### Japanese (82%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
-  - **moku3** (3,207 words)
+  - **moku3** (3,536 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **redredrom** (243 words)
@@ -184,7 +185,8 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (59%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (791 words)
+  - **CoolBreeze-13s** (799 words)
+  - **jinwoo.jeon** (19 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
@@ -250,9 +252,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
+  - **rokamalen** (78 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
   - **sleyxz** (134 words)
+  - **sniperruslan** (18 words)
   - **tomvsxvi** (563 words)
   - **UluMulu** (217 words)
 
