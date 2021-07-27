@@ -877,10 +877,12 @@
     "mpgc_fme_wins": "Podios habiendo puntuado en eventos del Modo Libre",
     "mpgc_foxes_skinned": "Zorros despellejados",
     "mpgc_gators_killed": "Caimanes abatidos",
+    "mpgc_general_meta": "Desafíos Diarios Generales",
     "mpgc_gfh_anthony_foreman_wins": "Misiones de Anthony Foreman completadas",
     "mpgc_gfh_bonnie_macfarlane_wins": "Misiones de Bonnie MacFarlane completadas",
     "mpgc_gfh_hamish_sinclair_wins": "Misiones de Hamish Sinclair completadas",
     "mpgc_gfh_james_langton_wins": "Misiones de James Langton completadas",
+    "mpgc_gfh_joe_wins": "Misiones completadas de Joe",
     "mpgc_gfh_sadie_adler_wins": "Misiones de Sadie Adler completadas",
     "mpgc_gfh_sean_macquire_wins": "Misiones de Sean Macguire completadas",
     "mpgc_gfh_shaky_wins": "Misiones de Shaky completadas",
@@ -1290,6 +1292,7 @@
     "menu.lang_el": "ελληνικά (Greek)",
     "menu.lang_en_GB": "English (UK)",
     "menu.lang_es": "Español (Español)",
+    "menu.lang_es_MX": "Español (Español Mexicano)",
     "menu.lang_fi": "Suomi (finés)",
     "menu.lang_fr": "Français (Francés)",
     "menu.lang_he": "עברית (Hebreo)",
@@ -1313,6 +1316,8 @@
     "menu.lang_zh_Hans": "简体中文 (Chinese Simplified)",
     "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)",
     "menu.bounties": "Tracking Bounties",
+    "menu.bounty_board_track": "Rastrear Recompensas",
+    "menu.bounty_board_track.desc": "Estas misiones te incitan a ir a un área determinada y buscar pistas en cierto radio. Después de inspeccionar las pistas, se te indica que debes seguir los diferentes caminos para potencialmente encontrar a el objetivo con la recompensa.",
     "menu.bounty_board_track.multi_braithwaite": "Multi - Braithwaite",
     "menu.bounty_board_track.multi_window_rock": "Multi - Window Rock",
     "menu.bounty_board_track.multi_plainview": "Multi - Plainview",
@@ -1369,5 +1374,6 @@
     "menu.bounty_board_caged_target.saint_denis": "San Denis",
     "menu.bounty_board_caged_target.strawberry": "Strawberry",
     "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
-    "menu.bounty_board_caged_target.wallace_station": "Comisaría de Policía"
+    "menu.bounty_board_caged_target.wallace_station": "Comisaría de Policía",
+    "menu.sponsors": "Patrocinadores"
 }
