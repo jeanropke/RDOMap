@@ -1052,6 +1052,7 @@
     "map.gfh.missions.fetch_resupply": "보급 마차",
     "map.gfh.missions.fetch_steal_boat": "보트 절도",
     "map.gfh.missions.fetch_steal_horses": "말 절도",
+    "map.gfh.missions.fetch_steal_wagon": "마차 절도",
     "map.gfh.missions.fetch_wagon_break": "이른 출소",
     "map.gfh.missions.fetch_wagon_thieves": "도난 당한 마차",
     "map.gfh.missions.gfh_mt_assassination": "청부 살인",
