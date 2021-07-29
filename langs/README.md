@@ -264,7 +264,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (0%):
   - **UluMulu** (217 words)
 
-### Spanish (90%):
+### Spanish (91%):
   - **23.jonathantadeoleiva** (13 words)
   - **avillamizar71** (5,456 words)
   - **BabyAir** (41 words)
@@ -275,7 +275,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Deepnight** (83 words)
   - **drcx00** (13 words)
   - **emilyhewsonh** (206 words)
-  - **gabriel.ferrer.arias** (156 words)
+  - **gabriel.ferrer.arias** (453 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
   - **mmmateo** (1,952 words)
