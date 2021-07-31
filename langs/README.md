@@ -253,7 +253,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
-  - **rokamalen** (78 words)
+  - **rokamalen** (92 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
   - **sleyxz** (134 words)
