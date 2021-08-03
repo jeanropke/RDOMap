@@ -97,6 +97,7 @@
     "help.donate": "후원은 맵의 유지와 개발과정에 도움이 됩니다!",
     "help.hide_all": "지도에서 모든 마커를 숨깁니다.",
     "help.item_category": "이 세트를 지도에 표시한다.",
+    "help.item": "지도에 이 세트를 표시하거나 숨긴다.",
     "help.language": "표시되는 언어를 설정할 수 있습니다.",
     "help.read_wiki": "더 많은 정보가 필요한 경우, 해당 위키가 있는 페이지로 이동합니다.",
     "help.report_issues": "문제를 보고하거나 새 기능을 제안할 수 있는 GitHub 페이지로 이동합니다.",
