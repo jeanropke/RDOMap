@@ -353,7 +353,7 @@
     "map.wounded_animal.name": "Zranione zwierzę",
     "map.wounded_animal.desc": "To jest Losowe Spotkanie. Biały punkt na mini mapie wskazuje spotkanie. Zabij zwierzę a następnie podejdź do niego, by zebrać grot strzały.",
     "map.sightseeing.name": "Miejsce widokowe",
-    "map.sightseeing.desc": "usiądź i podziwiaj widoki.",
+    "map.sightseeing.desc": "Bez względu na to, czy jesteś w akcji, czy nie, czasami każdy potrzebuje trochę odpoczynku. Odwiedź tę lokalizację, aby usiąść na krawędzi urwiska lub ławki i podziwiać widoki.",
     "map.legendary_animal.desc": "Legendarne Zwierzęta są losowe spotkania, takie jak inne przypadkowe spotkania, ale z możliwymi ograniczeniami środowiskowymi, takimi jak pogoda i pora dnia. Możesz spróbować użyć feromonów, aby je wyciągnąć, jeśli warunki temu sprzyjają.",
     "menu.delete_all_settings": "Usuń wszystkie ustawienia",
     "menu.modal_delete_all_settings_title": "Usunąć wszystkie ustawienia?",
@@ -1441,5 +1441,16 @@
     "menu.bounty_board_caged_target.strawberry": "Strawberry",
     "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
     "menu.bounty_board_caged_target.wallace_station": "Wallace Station",
-    "menu.sponsors": "Sponsorzy"
+    "menu.sponsors": "Sponsorzy",
+    "menu.outlaw_dynamic_homestead": "Rabunek - Gospodarstwo",
+    "menu.outlaw_dynamic_camp": "Rabunek - Obóz",
+    "map.outlaw_dynamic_homestead.outlaw_homestead_robbery_0.name": "Rabunek Gospodarstwa - Van Horn Mansion",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_0.name": "Rabunek Obozu - Jezioro Isabella",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_1.name": "Rabunek Obozu - Owanjila",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_2.name": "Rabunek Obozu - Lagras",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_3.name": "Rabunek Obozu - Las Cumberland",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_4.name": "Rabunek Obozu - Rzeka Montana",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_5.name": "Rabunek Obozu - Rzeka San Luis",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "Rabunek Obozu - Stillwater",
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Rabunek Obozu - Jezioro Flat Iron"
 }
