@@ -209,7 +209,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (3,085 words)
-  - **PLTytus** (555 words)
+  - **PLTytus** (556 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
 
