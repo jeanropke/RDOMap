@@ -187,7 +187,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (61%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (897 words)
+  - **CoolBreeze-13s** (905 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -216,7 +216,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Portuguese (27%):
   - **badaro42** (53 words)
   - **daniel.of.monteiro** (138 words)
-  - **DaSilva___** (520 words)
+  - **DaSilva___** (528 words)
   - **indigonature** (71 words)
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
