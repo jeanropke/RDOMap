@@ -129,7 +129,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
-  - **Tharek_Tolemac** (53 words)
+  - **Tharek_Tolemac** (65 words)
   - **TheBango** (12 words)
   - **Tolpelbold** (39 words)
   - **viliri** (1,470 words)
