@@ -151,7 +151,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Hungarian (45%):
   - **Barackvirag** (1,123 words)
-  - **DannyTI** (416 words)
+  - **DannyTI** (697 words)
   - **emperger** (745 words)
   - **GoP** (85 words)
   - **Hutty98** (3,609 words)
