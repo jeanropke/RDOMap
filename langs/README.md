@@ -19,6 +19,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
   - **alichakra.9** (92 words)
+  - **anwar_442233** (68 words)
   - **DrAbdulilah** (348 words)
   - **fhyyd** (293 words)
   - **JokerUAE** (77 words)
@@ -149,7 +150,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (45%):
+### Hungarian (46%):
   - **Barackvirag** (1,123 words)
   - **DannyTI** (697 words)
   - **emperger** (745 words)
@@ -162,7 +163,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **OdinsEyeTeam** (36 words)
   - **Ottilia** (2,400 words)
   - **SzKrJ** (1,429 words)
-  - **tabandi** (239 words)
+  - **tabandi** (287 words)
   - **YaBoiRichard614** (375 words)
 
 ### Italian (89%):
@@ -252,10 +253,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (2,756 words)
   - **vierim** (33 words)
 
-### Romanian (53%):
+### Romanian (57%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (17,064 words)
+  - **proximacentaurib** (17,627 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
