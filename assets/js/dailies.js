@@ -31,8 +31,8 @@ class Dailies {
           return Promise.reject();
         }
 
-        console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
         this.dailiesLoaded();
+        console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
 
         allDailies.category_order.forEach(category => {
           $('.dailies')
@@ -55,11 +55,11 @@ class Dailies {
 
               const daily = allDailies[role].find(({ key }) => key === label);
               if (daily && daily.category) {
-                this.markersCategories.push([`${role}_${id}`, daily.category]);
+                this.markersCategories.push([role, id, daily.category, categoryType]);
               }
-  
+
               SettingProxy.addSetting(DailyChallenges, `${role}_${id.toLowerCase()}`, {});
-  
+
               switch (displayType) {
                 case 'DISPLAY_CASH':
                   desiredGoal /= 100;
@@ -76,7 +76,7 @@ class Dailies {
                 default:
                   desiredGoal = Math.trunc(desiredGoal);
               }
-  
+
               const translationKey = Language.hasTranslation(label) ? label : localized;
               const newDaily = new Dailies(role, translationKey, desiredGoal, id, categoryType);
               newDaily.appendToMenu();
@@ -88,12 +88,9 @@ class Dailies {
         this.sortDailies();
       })
       .then(this.activateHandlers)
-      //.catch(this.dailiesNotUpdated);
+      .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
-    if (this.categoryType !== this.role) {
-      //console.log(this.role, this.categoryType, DailyChallenges[`${this.role}_difficulty`]);
-    }
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container" data-type="${this.role}-${this.categoryType}">
@@ -134,7 +131,7 @@ class Dailies {
       $(element).toggleClass('hidden', element.id !== activeRole);
       Dailies.switchDifficulty();
     });
-    const textKey = `menu.dailies_${Dailies.categories[Dailies.categoryOffset]}`;
+    const textKey = `menu.dailies_${activeRole}`;
     $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
     const difficultySelectors = $('.dailies-difficulty-selection').children();
     [...difficultySelectors].forEach(selector => {
@@ -168,13 +165,6 @@ class Dailies {
       const offset = event.currentTarget.id === 'dailies-next' ? 1 : -1;
       Dailies.switchCategory(offset);
     });
-    // SettingProxy.addListener(DailyChallenges, [
-    //   'trader_difficulty',
-    //   'bounty_hunter_difficulty',
-    //   'collector_difficulty',
-    //   'moonshiner_difficulty',
-    //   'naturalist_difficulty',
-    // ], Dailies.switchDifficulty);
 
     ['trader', 'bounty_hunter', 'collector', 'moonshiner', 'naturalist'].forEach(role => {
       $(`#${role}-dailies-difficulty-selection`)
@@ -188,20 +178,25 @@ class Dailies {
 }
 
 class SynchronizeDailies {
-  constructor(category, marker, challengeKey) {
+  constructor(category, marker, challengeKey, role, categoryType) {
     this.category = category;
     this.markers = marker;
     this.challengeKey = challengeKey.toLowerCase();
+    this.role = role;
+    this.categoryType = categoryType;
   }
   static init() {
     $('.menu-hide-all').trigger('click');
-    Dailies.markersCategories.forEach(([challengeKey, [category, marker]]) => {
-      const newSyncedCategory = new SynchronizeDailies(category, marker, challengeKey);
+
+    Dailies.markersCategories.forEach(([role, id, [category, marker], categoryType]) => {
+      const newSyncedCategory = new SynchronizeDailies(category, marker, `${role}_${id}`, role, categoryType);
       newSyncedCategory.sync();
     });
   }
   sync() {
     if (!!DailyChallenges[this.challengeKey])
+      return;
+    if (this.categoryType !== 'general' && this.categoryType !== DailyChallenges[`${this.role}_difficulty`])
       return;
 
     this.key = (() => {
