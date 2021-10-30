@@ -1739,6 +1739,11 @@ span.daily-checkbox {
     font-size: 19px;
 }
 
+.dailies-difficulty-selection {
+    margin: 10px 5px;
+    padding: 5px;
+}
+
 /* End of dailies Styling */
 
 /* Dark mode styling */

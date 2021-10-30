@@ -67,7 +67,7 @@ const urls = [
   'data/shops.json',
   'data/treasures.json',
   'data/bounties.json',
-  'https://pepegapi.jeanropke.net/v2/rdo/dailies',
+  'https://pepegapi.jeanropke.net/v3/rdo/dailies',
   'https://pepegapi.jeanropke.net/v2/rdo/nazar',
   'https://api.rdo.gg/fme/',
   'data/fme_keys.json',

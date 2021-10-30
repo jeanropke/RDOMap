@@ -124,7 +124,10 @@ const SettingProxy = (function () {
     },
     addListener: function (settingProxy, names, callback) {
       const proxyConfig = settingProxy[_proxyConfig];
-      names.split(' ').forEach(name => {
+      if (!Array.isArray(names)) {
+        names = names.split(' ');
+      }
+      names.forEach(name => {
         settingHandler._checkAndGetSettingConfig(proxyConfig, name, ReferenceError)
           .listeners.push(callback);
       });
@@ -177,3 +180,11 @@ Object.entries({
 
 // Completed daily challenges settings (file dailies.js)
 const DailyChallenges = SettingProxy.createSettingProxy('rdo.dailies');
+
+Object.entries({
+  trader_difficulty: { default: 'hard' },
+  bounty_hunter_difficulty: { default: 'hard' },
+  collector_difficulty: { default: 'hard' },
+  moonshiner_difficulty: { default: 'hard' },
+  naturalist_difficulty: { default: 'hard' },
+}).forEach(([name, config]) => SettingProxy.addSetting(DailyChallenges, name, config));
