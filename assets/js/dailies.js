@@ -7,7 +7,6 @@ class Dailies {
     this.categoryType = categoryType;
   }
   static init() {
-    this.categories = [];
     this.categoryOffset = 0;
     this.markersCategories = [];
     this.challengeStructure = Language.get('menu.daily_challenge_structure').match(/\{(.+?)\}.*?\{(.+?)\}/);
@@ -31,14 +30,15 @@ class Dailies {
           return Promise.reject();
         }
 
-        this.dailiesLoaded();
         console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
+        this.dailiesLoaded();
 
-        allDailies.category_order.forEach(category => {
+        this.categories = allDailies.category_order;
+        this.categories.forEach(category => {
           $('.dailies')
             .append($(`<div id="${category}" class="daily-role"></div>`)
               .toggleClass('hidden', category !== 'general'));
-        })
+        });
 
         Object.entries(currentDailies.data).forEach(([categoryType, challengesSets]) => {
           if (!Array.isArray(challengesSets)) {
@@ -47,8 +47,6 @@ class Dailies {
 
           challengesSets.forEach(({ role, challenges }) => {
             role = role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
-            const categoryIndex = allDailies.category_order.findIndex(category => category === role);
-            this.categories[categoryIndex] = role;
 
             challenges.forEach(({ desiredGoal, id, displayType, description: { label, localized } }) => {
               label = label.toLowerCase();
@@ -82,7 +80,6 @@ class Dailies {
               newDaily.appendToMenu();
             });
           });
-
         });
 
         this.sortDailies();
@@ -110,8 +107,8 @@ class Dailies {
       .end()
       .find(`#checkbox-${this.role}-${this.challengeId}`)
       .prop('checked', DailyChallenges[`${this.role}_${this.challengeId}`])
-      .on('change', () => {
-        DailyChallenges[`${this.role}_${this.challengeId}`] = $(`#checkbox-${this.role}-${this.challengeId}`).prop('checked');
+      .on('change', (event) => {
+        DailyChallenges[`${this.role}_${this.challengeId}`] = $(`#${event.target.id}`).prop('checked');
       })
       .end();
   }
@@ -166,7 +163,7 @@ class Dailies {
       Dailies.switchCategory(offset);
     });
 
-    ['trader', 'bounty_hunter', 'collector', 'moonshiner', 'naturalist'].forEach(role => {
+    Dailies.categories.slice(1).forEach(role => {
       $(`#${role}-dailies-difficulty-selection`)
         .val(DailyChallenges[`${role}_difficulty`])
         .on('change', function() {
