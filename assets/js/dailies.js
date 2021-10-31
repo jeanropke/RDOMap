@@ -124,10 +124,10 @@ class Dailies {
     const roles = $('.daily-role');
     [...roles].forEach(element => {
       $(element).toggleClass('hidden', element.id !== activeRole);
-      Dailies.switchDifficulty();
     });
     const textKey = `menu.dailies_${activeRole}`;
     $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
+    Dailies.switchDifficulty();
     const difficultySelectors = $('.dailies-difficulty-selection').children();
     [...difficultySelectors].forEach(selector => {
       const $selector = $(selector);
@@ -138,9 +138,10 @@ class Dailies {
     const activeRole = Dailies.categories[Dailies.categoryOffset];
     if (activeRole === 'general') return;
     const dailiesGroup = $(`#${activeRole} .one-daily-container`);
+    const selectedDifficulty = DailyChallenges[`${activeRole}_difficulty`];
     [...dailiesGroup].forEach(daily => {
       const $daily = $(daily);
-      $daily.toggleClass('hidden', $daily.attr('data-type') !== `${activeRole}-${DailyChallenges[`${activeRole}_difficulty`]}`);
+      $daily.toggleClass('hidden', $daily.attr('data-type') !== `${activeRole}-${selectedDifficulty}`);
     });
   }
   static sortDailies() {
