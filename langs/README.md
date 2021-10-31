@@ -26,6 +26,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **madhatterxk** (15 words)
   - **moed99** (340 words)
   - **mohammad.khaled594** (92 words)
+  - **n945841** (50 words)
   - **noo7jri** (693 words)
   - **osm4reaper** (15 words)
   - **razzer.tube** (47 words)
@@ -198,7 +199,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (61%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (983 words)
+  - **CoolBreeze-13s** (989 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
