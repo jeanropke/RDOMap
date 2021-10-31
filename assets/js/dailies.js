@@ -1,10 +1,8 @@
 class Dailies {
-  constructor(role, translationKey, target, challengeId, categoryType) {
-    this.role = role;
-    this.translationKey = translationKey;
-    this.target = target;
-    this.challengeId = challengeId.toLowerCase();
-    this.categoryType = categoryType;
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+    this.target = preliminary.desiredGoal;
+    this.challengeId = preliminary.id.toLowerCase();
   }
   static init() {
     this.categoryOffset = 0;
@@ -27,7 +25,7 @@ class Dailies {
     ])
       .then(([currentDailies, allDailies]) => {
         if (currentDailies.date.indexOf(currentDate) === -1) {
-          return Promise.reject();
+          return Promise.reject(`Incorrect date [${currentDailies.date}, ${currentDate}]`);
         }
 
         console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
@@ -47,7 +45,6 @@ class Dailies {
 
           challengesSets.forEach(({ role, challenges }) => {
             role = role.replace(/CHARACTER_RANK_?/, '').toLowerCase() || 'general';
-
             challenges.forEach(({ desiredGoal, id, displayType, description: { label, localized } }) => {
               label = label.toLowerCase();
 
@@ -76,7 +73,7 @@ class Dailies {
               }
 
               const translationKey = Language.hasTranslation(label) ? label : localized;
-              const newDaily = new Dailies(role, translationKey, desiredGoal, id, categoryType);
+              const newDaily = new Dailies({ role, translationKey, desiredGoal, id, categoryType });
               newDaily.appendToMenu();
             });
           });
@@ -115,7 +112,8 @@ class Dailies {
   static dailiesLoaded() {
     $('.dailies .daily-status.loading').addClass('hidden');
   }
-  static dailiesNotUpdated() {
+  static dailiesNotUpdated(err) {
+    console.info(`%c[Dailies] ${err}`, 'color: #FF6969; background: #242424');
     const textKey = 'menu.dailies_not_found';
     $('.dailies').append($('<div class="daily-status not-found"></div>').attr('data-text', textKey).text(Language.get(textKey)));
     $('#dailies-changer-container, #sync-map-to-dailies, .dailies .daily-status.loading').addClass('hidden');
@@ -132,17 +130,17 @@ class Dailies {
     $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
     const difficultySelectors = $('.dailies-difficulty-selection').children();
     [...difficultySelectors].forEach(selector => {
-      $(selector).toggleClass('hidden', !$(selector).hasClass(`${activeRole}-dailies-difficulty-selection`));
-    })
+      const $selector = $(selector);
+      $selector.toggleClass('hidden', !$selector.hasClass(`${activeRole}-dailies-difficulty-selection`));
+    });
   }
   static switchDifficulty() {
     const activeRole = Dailies.categories[Dailies.categoryOffset];
     if (activeRole === 'general') return;
     const dailiesGroup = $(`#${activeRole} .one-daily-container`);
     [...dailiesGroup].forEach(daily => {
-      $(daily).toggleClass('hidden', (() => {
-        return $(daily).attr('data-type') !== `${activeRole}-${DailyChallenges[`${activeRole}_difficulty`]}`;
-      })());
+      const $daily = $(daily);
+      $daily.toggleClass('hidden', $daily.attr('data-type') !== `${activeRole}-${DailyChallenges[`${activeRole}_difficulty`]}`);
     });
   }
   static sortDailies() {
