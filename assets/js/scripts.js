@@ -61,8 +61,7 @@ function init() {
       let _key = `rdo.${key.split(':')[1]}`;
       if (localStorage.getItem(_key) == null)
         localStorage.setItem(_key, localStorage.getItem(key));
-    }
-    else if (key == 'lastDailiesDate') {
+    } else if (key === 'lastDailiesDate') {
       localStorage.setItem('rdo.lastDailiesDate', localStorage.getItem('lastDailiesDate'));
       localStorage.removeItem('lastDailiesDate');
     }
@@ -415,17 +414,13 @@ $('.menu-toggle').on('click', function () {
   $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
 });
 
-$('#sync-map-to-dailies').on('click', function () {
-  SynchronizeDailies.init();
-});
-
 $(document).on('contextmenu', function (e) {
   if (!Settings.isRightClickEnabled) e.preventDefault();
 });
 
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
-    if(key.startsWith('rdo.'))
+    if (key.startsWith('rdo.'))
       localStorage.removeItem(key);
   });
 

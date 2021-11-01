@@ -170,6 +170,8 @@ class Dailies {
           Dailies.switchDifficulty();
         });
     });
+
+    $('#sync-map-to-dailies').on('click', SynchronizeDailies.init);
   }
 }
 
