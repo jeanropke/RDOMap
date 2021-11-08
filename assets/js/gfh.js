@@ -1,5 +1,4 @@
 class GunForHire {
-
   static init() {
     this.locations = [];
     this.quickParams = [];
@@ -24,10 +23,10 @@ class GunForHire {
 
     this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
       .attr('data-tippy-content', Language.get(`map.gfh.${this.key}.name`))
+      .toggleClass('disabled', !this.onMap)
       .on('click', () => this.onMap = !this.onMap)
       .append($(`<img class="collectible-icon" src="./assets/images/icons/${this.type ? this.type : 'gfh'}.png">`))
       .append($('<span class="collectible-text">')
-        .toggleClass('disabled', !this.onMap)
         .append($('<p class="collectible">').attr('data-text', `map.gfh.${this.key}.name`)))
       .translate();
 
@@ -45,10 +44,10 @@ class GunForHire {
   }
 
   updateMarkerContent(marker) {
-    let missionsElement = $('<ul>').addClass('missions-list');
+    const missionsElement = $('<ul>').addClass('missions-list');
     marker.size
       .map(m => Language.get(`map.gfh.missions.${m}`))
-      .sort((a, b) => a.localeCompare(b, {sensitivity: 'base'}))
+      .sort((a, b) => a.localeCompare(b, { sensitivity: 'base' }))
       .forEach(mission => {
         missionsElement.append(`<li>${mission}</li>`);
       });
@@ -74,15 +73,16 @@ class GunForHire {
 
   reinitMarker() {
     this.layer.clearLayers();
+    const markerSize = Settings.markerSize;
     this.markers.forEach(marker => {
       const shadow = Settings.isShadowsEnabled ?
-        `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
+        `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
       var tempMarker = L.marker([marker.lat, marker.lng], {
         opacity: Settings.markerOpacity,
         icon: new L.DivIcon.DataMarkup({
-          iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-          iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-          popupAnchor: [1 * Settings.markerSize, -29 * Settings.markerSize],
+          iconSize: [35 * markerSize, 45 * markerSize],
+          iconAnchor: [17 * markerSize, 42 * markerSize],
+          popupAnchor: [1 * markerSize, -29 * markerSize],
           html: `<div>
             <img class="icon" src="assets/images/icons/${this.type ? this.type : 'gfh'}.png" alt="Icon">
             <img class="background" src="assets/images/icons/marker_${MapBase.colorOverride || this.color}.png" alt="Background">
