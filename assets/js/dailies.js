@@ -1,7 +1,6 @@
 class Dailies {
   constructor(preliminary) {
     Object.assign(this, preliminary);
-    this.target = preliminary.desiredGoal;
     this.challengeId = preliminary.id.toLowerCase();
   }
   static init() {
@@ -88,7 +87,7 @@ class Dailies {
     $(`.dailies > #${this.role}`)
       .append($(`
           <div class="one-daily-container" data-type="${this.role}-${this.categoryType}">
-            <span class="counter" data-text="${this.target}"></span>
+            <span class="counter" data-text="${this.desiredGoal}"></span>
             <label class="daily" data-text="${this.translationKey}" for="checkbox-${this.role}-${this.challengeId}"></label>
             <span class="daily-checkbox">
               <div class="input-checkbox-wrapper">
