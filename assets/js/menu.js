@@ -9,7 +9,7 @@ class Menu {
       return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
     }).appendTo(menu);
 
-    if($(menu).children('.new').length > 0)
+    if ($(menu).children('.new').length > 0)
       $(`[data-type=${$(menu).attr('data-type')}]`).toggleClass('new', true);
 
   }

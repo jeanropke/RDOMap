@@ -31,17 +31,18 @@ class Plants {
 
   reinitMarker() {
     this.markers = [];
+    const markerSize = Settings.markerSize;
     this.locations.forEach(_marker => {
       var tempMarker = L.marker([_marker.x, _marker.y], {
         opacity: Settings.markerOpacity,
         icon: L.divIcon({
           iconUrl: `assets/images/markers/${this.key}.png`,
-          iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-          iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-          popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+          iconSize: [35 * markerSize, 45 * markerSize],
+          iconAnchor: [17 * markerSize, 42 * markerSize],
+          popupAnchor: [0 * markerSize, -28 * markerSize],
           shadowUrl: 'assets/images/markers-shadow.png',
-          shadowSize: [35 * Settings.markerSize, 16 * Settings.markerSize],
-          shadowAnchor: [10 * Settings.markerSize, 10 * Settings.markerSize],
+          shadowSize: [35 * markerSize, 16 * markerSize],
+          shadowAnchor: [10 * markerSize, 10 * markerSize],
         }),
       });
       tempMarker.bindPopup(this.popupContent.bind(this, _marker), { minWidth: 300, maxWidth: 400 });
@@ -50,7 +51,7 @@ class Plants {
   }
 
   popupContent(_marker) {
-    const description = Language.get('map.plants.desc').replace(/{plant}/, Language.get(`map.plants.${this.key}.name`));
+    const description = Language.get('map.plants.desc').replace(/{plant}/, Language.get(`map.plants.${this.key}.name`).toLowerCase());
     const popup = $(`
         <div>
           <h1 data-text="map.plants.${this.key}.name"></h1>
