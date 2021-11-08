@@ -221,7 +221,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (3,241 words)
-  - **PLTytus** (559 words)
+  - **PLTytus** (590 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
 
@@ -254,10 +254,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (2,756 words)
   - **vierim** (33 words)
 
-### Romanian (65%):
+### Romanian (66%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (18,988 words)
+  - **proximacentaurib** (19,390 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
@@ -270,7 +270,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **maxdavinci** (40 words)
   - **Megitsune** (2,116 words)
   - **noiracero693** (27 words)
-  - **Overnoes** (85 words)
+  - **Overnoes** (156 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
   - **rokamalen** (92 words)
