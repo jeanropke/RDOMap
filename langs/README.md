@@ -79,7 +79,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (7%):
   - **AdamNortonUK** (12 words)
   - **JRSC01** (2,157 words)
-  - **Michal__d** (3,241 words)
+  - **Michal__d** (3,243 words)
   - **MrSmithr** (290 words)
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
@@ -104,7 +104,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (3,241 words)
+  - **Michal__d** (3,243 words)
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
   - **pamplemousse.web** (351 words)
@@ -220,7 +220,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Baltazaro** (209 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Michal__d** (3,241 words)
+  - **Michal__d** (3,243 words)
   - **PLTytus** (590 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
@@ -260,7 +260,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **proximacentaurib** (19,390 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (90%):
+### Russian (91%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
@@ -270,7 +270,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **maxdavinci** (40 words)
   - **Megitsune** (2,116 words)
   - **noiracero693** (27 words)
-  - **Overnoes** (156 words)
+  - **Overnoes** (373 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
   - **rokamalen** (92 words)
