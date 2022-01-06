@@ -80,7 +80,7 @@ class Dailies {
 
         this.sortDailies();
       })
-      .then(this.activateHandlers)
+      .then(this.activateHandlers.bind(this))
       .catch(this.dailiesNotUpdated);
   }
   appendToMenu() {
@@ -118,15 +118,15 @@ class Dailies {
     $('#dailies-changer-container, #sync-map-to-dailies, .dailies .daily-status.loading').addClass('hidden');
   }
   static switchCategory(offset) {
-    Dailies.categoryOffset = (Dailies.categoryOffset + offset).mod(Dailies.categories.length);
-    const activeRole = Dailies.categories[Dailies.categoryOffset];
+    this.categoryOffset = (this.categoryOffset + offset).mod(this.categories.length);
+    const activeRole = this.categories[this.categoryOffset];
     const roles = $('.daily-role');
     [...roles].forEach(element => {
       $(element).toggleClass('hidden', element.id !== activeRole);
     });
     const textKey = `menu.dailies_${activeRole}`;
     $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
-    Dailies.switchDifficulty();
+    this.switchDifficulty();
     const difficultySelectors = $('.dailies-difficulty-selection').children();
     [...difficultySelectors].forEach(selector => {
       const $selector = $(selector);
@@ -134,7 +134,7 @@ class Dailies {
     });
   }
   static switchDifficulty() {
-    const activeRole = Dailies.categories[Dailies.categoryOffset];
+    const activeRole = this.categories[this.categoryOffset];
     if (activeRole === 'general') return;
     const dailiesGroup = $(`#${activeRole} .one-daily-container`);
     const selectedDifficulty = DailyChallenges[`${activeRole}_difficulty`];
@@ -161,7 +161,7 @@ class Dailies {
       Dailies.switchCategory(offset);
     });
 
-    Dailies.categories.slice(1).forEach(role => {
+    this.categories.slice(1).forEach(role => {
       $(`#${role}-dailies-difficulty-selection`)
         .val(DailyChallenges[`${role}_difficulty`])
         .on('change', function() {
