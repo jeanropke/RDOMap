@@ -42,13 +42,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
-          cache: 'npm'
-          cache-dependency-path: ".github/package-lock.json"
 
       - name: Update README
         run: |
+          cd .github
           npm ci
-          node .github/update.js
+          node update.js
         env:
           CROWDIN_PROJECT_ID: ${{secrets.CROWDIN_PROJECT_ID}}
           CROWDIN_PERSONAL_TOKEN: ${{secrets.CROWDIN_PERSONAL_TOKEN}}
