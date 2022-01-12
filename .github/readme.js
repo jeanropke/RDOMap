@@ -1,14 +1,17 @@
 const { TranslationStatus, Reports } = require('@crowdin/crowdin-api-client');
 const fetch = require('node-fetch');
 const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 
+const basepath = path.join(__dirname, '..');
+
 const status = new TranslationStatus({
-  token: process.env.API_TOKEN,
+  token: process.env.CROWDIN_PERSONAL_TOKEN,
 });
 
 const api = new Reports({
-  token: process.env.API_TOKEN,
+  token: process.env.CROWDIN_PERSONAL_TOKEN,
 });
 
 function sleep(ms) {
@@ -17,7 +20,7 @@ function sleep(ms) {
 
 async function getTopMembers() {
   try {
-    const projectId = process.env.PROJECT_ID;
+    const projectId = process.env.CROWDIN_PROJECT_ID;
     const apiMaxTryCount = 5;
 
     const projectProgress = {};
@@ -135,7 +138,7 @@ async function getTopMembers() {
           delete projectProgress[key];
         });
 
-        fs.writeFileSync('data/lang_progress.json', JSON.stringify(projectProgress));
+        fs.writeFileSync(path.join(basepath, 'data', 'lang_progress.json'), JSON.stringify(projectProgress));
       } catch (error) {
         console.error('langProgress', JSON.stringify(error));
       }
@@ -162,14 +165,14 @@ async function updateReadme() {
     let result = '';
 
     result += '# Localisation contributors\n';
-    result += `Thanks to the following people for helping translate the project! If you are savvy in a language and feel like you want to help out, we'd greatly appreciate it! You can contribute by translating on our [Crowdin project](${process.env.PROJECT_URL}).\n\n`;
+    result += "Thanks to the following people for helping translate the project! If you are savvy in a language and feel like you want to help out, we'd greatly appreciate it! You can contribute by translating on our [Crowdin project](https://translate.rdo.gg/).\n\n";
 
     result += '## Pre-Crowdin Contributors\n';
     result += "We'd like to also mention the people that helped translate before the project switched to Crowdin, namely **Asya**, **flameango**, **githb123**, **glaseca**, **Gromino**, **iliggalodin**, **jeanropke**, **Kaffe97**, **Kiddamned**, **Klinorin**, **Korfeeeezy**, **Michal__d**, **MSSatari**, **Nopitch**, **Overnoes**, **pb29**, **qiexia**, **Raffox97**, **Rakmarok**, **rbcunhadesign**, **Senexis**, **sporb**, **Tiax**, **Vitor-Borba72**, **yamazakitouma**, and **yeradd12**.\n\n";
 
     result += '## RDO Map Contributors\n';
     result += "The following people helped translate the RDO Map specifically but are possibly not included on the list below: **1751020005**, **1Jay1**, **578218087**, **a.equis23**, **abdulkadiraktas**, **Aboodsaad27**, **akbcd**, **aksu.smal**, **Alexified**, **Anvnamnet**, **Aronsfeld**, **AshTurquoise**, **Atarufox**, **avojta**, **Balesz**, **beskorjake2332**, **BHT256**, **birseysoylicem**, **bruno.jacquin**, **Bruxes**, **chanito86**, **CoolBreeze-13s**, **curryguru**, **daveo979**, **djenerg**, **Doringl**, **dramatic_prophet**, **DrNuts**, **dudiv5674**, **dvagos7**, **eduardvlog**, **emrullahsimsar**, **Enrik014**, **escaliburos**, **esershnr**, **esj.h**, **ethandaxps4**, **FilipeLuk**, **FilipFelipe**, **FRANCESCADOLORES**, **FrankTVPL**, **GiorgioHerbie**, **grmaster5s**, **h_p_38**, **harleyhawke**, **HeadShot557**, **hellcat_tail**, **i_NaifKhaldi**, **idiot.rejected**, **ilyuas73**, **ingoonline11**, **Jabaay**, **JeanBankarbone**, **jeanropke**, **jeremymm1538**, **JoseLopez95**, **juandamanacor2013**, **julianforce**, **jurn0818**, **k4makazy**, **kaeporatheglitcha**, **kagurazakakotori**, **Korax94**, **Krykl**, **L1Chung**, **L2**, **L4**, **libidosiemens**, **lorenzoitalia**, **Ltf007**, **LucaBa**, **Matityahuu**, **Mattablatta**, **MEE5RUS**, **Megitsune**, **menbou**, **mgoebelm**, **michaelahofer**, **Michal__d**, **mixsiarz**, **mojan66**, **MrFermz**, **mrsanze6**, **msfern**, **Nacuman.exe**, **nahov91**, **nellonenollen**, **neohazukibr**, **Njordude**, **Nydrail**, **Overnoes**, **Pabeu**, **pach318**, **paeulchen.j**, **PeanutSlinger**, **petter.landsem.krogstad**, **PLTytus**, **Pocholo95**, **poeblu85**, **pozitive95**, **qiexiacn**, **raffouk40**, **Raffox97**, **ranforingus**, **re4k117**, **RichardC.P.**, **romuald.vanrock**, **sandratormo20**, **sayt_itoxiikoz**, **Scotmanhands**, **shar13f4**, **Shineberg**, **skonky**, **SkyFisherGames**, **SoSuz**, **Srandokan**, **ssh2**, **starblunter**, **SwinHulk**, **tabandi**, **tegetron**, **tercumantanumut**, **tharchangl**, **Tharek_Tolemac**, **TheBango**, **Tony_Bell**, **tuwangi**, **vega7621**, **viliri**, **Vinnie5412**, **W10075343**, **warkoun**, **werhel**, **wiiwil**, **windharp**, **y_ksq**, **YuYusS**, and **zrubio**\n\n"
-    
+
     result += '## Crowdin Contributors\n';
     result += 'These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.\n\n';
 
@@ -184,7 +187,7 @@ async function updateReadme() {
       result += '\n';
     });
 
-    fs.writeFileSync('langs/README.md', result);
+    fs.writeFileSync(path.join(basepath, 'langs', 'README.md'), result);
 
     console.log('README updated.');
   } catch (error) {

@@ -12,7 +12,3 @@ _manifest.json
 cycles_update/
 fme/
 rdo/
-
-# Our credentials, don't bother removing this, you won't get our stuff. ;-)
-.env
-crowdin.yml
