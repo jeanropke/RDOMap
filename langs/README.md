@@ -33,8 +33,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
-### Catalan (11%):
-  - **ElTellito** (2,764 words)
+### Catalan (12%):
+  - **ElTellito** (2,950 words)
   - **Muahahas** (51 words)
 
 ### Chinese Simplified (80%):
