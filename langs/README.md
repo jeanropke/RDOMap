@@ -94,6 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
   - **drthomasgeek** (24 words)
+  - **EternalEagle** (10 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
   - **george37** (20 words)
@@ -117,11 +118,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,537 words)
 
-### German (90%):
+### German (91%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
+  - **daekybbx.contact** (78 words)
   - **davidcooper73760** (86 words)
   - **deragent007** (28 words)
   - **djenerg** (12 words)
@@ -219,6 +221,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Persian (6%):
   - **amirhoseindavat** (1,281 words)
+  - **lostman2000** (77 words)
 
 ### Polish (85%):
   - **Baltazaro** (209 words)
