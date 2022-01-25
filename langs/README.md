@@ -34,7 +34,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **younessmouhid** (160 words)
 
 ### Catalan (12%):
-  - **ElTellito** (2,950 words)
+  - **ElTellito** (3,181 words)
   - **Muahahas** (51 words)
 
 ### Chinese Simplified (80%):
@@ -94,7 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
   - **drthomasgeek** (24 words)
-  - **EternalEagle** (10 words)
+  - **EternalEagle** (79 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
   - **george37** (20 words)
@@ -221,7 +221,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Persian (6%):
   - **amirhoseindavat** (1,281 words)
-  - **lostman2000** (77 words)
+  - **lostman2000** (219 words)
 
 ### Polish (85%):
   - **Baltazaro** (209 words)
