@@ -1171,6 +1171,10 @@
     "help.show_dailies": "在菜单中显示每日挑战",
     "help.dailies_change_category": "允许您在常规和职业挑战之间进行更改。",
     "menu.daily_challenge_structure": "{counter}{daily-checkbox}",
+    "menu.dailies_difficulty.bounty_hunter": "赏金猎人排名",
+    "menu.dailies_difficulty.collector": "收藏家排名",
+    "menu.dailies_difficulty.moonshiner": "私酒贩排名",
+    "menu.dailies_difficulty.naturalist": "博物学家排名",
     "menu.harrietum": "哈莉特花",
     "map.harrietum.desc": "收集3或5个哈莉特花以变成动物。",
     "map.remove": "从地图中移除",
@@ -1429,5 +1433,6 @@
     "menu.bounty_board_caged_target.strawberry": "草莓镇",
     "menu.bounty_board_caged_target.tumbleweed": "风滚草镇",
     "menu.bounty_board_caged_target.wallace_station": "华莱士车站",
-    "menu.sponsors": "赞助商"
+    "menu.sponsors": "赞助商",
+    "menu.outlaw_dynamic_camp": "不法之徒-营地劫掠"
 }
