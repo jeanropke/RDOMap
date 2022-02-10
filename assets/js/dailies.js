@@ -19,11 +19,11 @@ class Dailies {
     }
 
     return Promise.all([
-      Loader.promises['dailies'].consumeJson(data => data),
-      Loader.promises['possible_dailies'].consumeJson(data => data),
+      Loader.promises['dailies'].consumeJson(),
+      Loader.promises['possible_dailies'].consumeJson(),
     ])
       .then(([currentDailies, allDailies]) => {
-        if (currentDailies.date.indexOf(currentDate) === -1) {
+        if (!currentDailies.date.includes(currentDate)) {
           return Promise.reject(`Incorrect date [${currentDailies.date}, ${currentDate}]`);
         }
 
@@ -31,10 +31,10 @@ class Dailies {
         this.dailiesLoaded();
 
         this.categories = allDailies.category_order;
-        this.categories.forEach(category => {
+        this.categories.forEach((category, index) => {
           $('.dailies')
             .append($(`<div id="${category}" class="daily-role"></div>`)
-              .toggleClass('hidden', category !== 'general'));
+              .toggleClass('hidden', !!index));
         });
 
         Object.entries(currentDailies.data).forEach(([categoryType, challengesSets]) => {
