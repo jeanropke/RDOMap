@@ -611,7 +611,3 @@ function linear(value, iMin, iMax, oMin, oMax) {
   };
   return clamp((((value - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin), oMin, oMax);
 }
-
-function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
