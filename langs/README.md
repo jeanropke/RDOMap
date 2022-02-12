@@ -53,7 +53,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (28 words)
 
-### Czech (48%):
+### Czech (49%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
