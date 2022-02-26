@@ -341,6 +341,7 @@
     "map.legendary_animal.desc": "전설적인 동물은 랜덤, 날씨와 시간 같은 환경적 제약이 있을 수 있다. 조건이 맞으면 전설의 동물 페로몬을 사용해 지도에 표시할 수 있다.",
     "menu.delete_all_settings": "전체 초기화",
     "menu.modal_delete_all_settings_title": "전체 초기화를 하시겠습니까?",
+    "menu.modal_delete_all_settings_body": "이렇게 하면 모든 설정, 핀 및 인벤토리 항목이 기본값으로 재설정되고 페이지가 다시 로드됩니다.",
     "menu.enable_marker_popups_hover": "마커 팝업 열기",
     "help.enable_marker_popups_hover": "마커 위에 마우스를 놀려 놓거나 마커를 클릭할 때 팝업을 열 것인지 여부를 설정합니다. 터치스크린 환경에서는 작동하지 않습니다.",
     "menu.shops": "상점",
