@@ -292,6 +292,7 @@
     "help.tooltip_map": "Mostra un tooltip pels marcadors en el mapa mostrant el títol sencer.",
     "menu.customization_title": "Personalització",
     "menu.show_import_export": "Mostrar la configuració de la importació i l'exportació",
+    "menu.translate_progress": "El procés de traducció d'aquest llenguatge és {progress}%.",
     "menu.lang_en": "English (anglès)",
     "menu.lang_af": "Afrikaans (afrikaans)",
     "menu.lang_ar": "العربية (àrab)",
