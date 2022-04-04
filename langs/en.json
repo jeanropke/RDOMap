@@ -1550,7 +1550,17 @@
     "singleplayer.sp_orchid_sparrows.name": "Sparrow's Orchid",
     "map.singleplayer.sp_orchid_spider.name": "Exotics - Spider Orchid",
     "singleplayer.sp_orchid_spider.name": "Spider Orchid",
-
     "map.singleplayer.sp_alligator_eggs.name": "Exotics - Alligator Eggs",
-    "singleplayer.sp_alligator_egg.name": "Alligator Egg"
+    "singleplayer.sp_alligator_egg.name": "Alligator Egg",
+    "map.singleplayer.sp_rock_carvings.name": "Rock Carvings",
+    "singleplayer.sp_rock_carving_01.name": "Rock Carving Coordinates 1",
+    "singleplayer.sp_rock_carving_02.name": "Rock Carving Coordinates 2",
+    "singleplayer.sp_rock_carving_03.name": "Rock Carving Coordinates 3",
+    "singleplayer.sp_rock_carving_04.name": "Rock Carving Coordinates 4",
+    "singleplayer.sp_rock_carving_05.name": "Rock Carving Coordinates 5",
+    "singleplayer.sp_rock_carving_06.name": "Rock Carving Coordinates 6",
+    "singleplayer.sp_rock_carving_07.name": "Rock Carving Coordinates 7",
+    "singleplayer.sp_rock_carving_08.name": "Rock Carving Coordinates 8",
+    "singleplayer.sp_rock_carving_09.name": "Rock Carving Coordinates 9",
+    "singleplayer.sp_rock_carving_10.name": "Rock Carving Coordinates 10"
 }

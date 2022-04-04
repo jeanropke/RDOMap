@@ -64,6 +64,23 @@
     ]
   },
   {
+    "hash": "0x1EA29059",
+    "color": "lightgray",
+    "key": "sp_rock_carvings",
+    "locations": [
+      {"text": "sp_rock_carving_01", "x": -43.3984, "y": 85.8799},
+      {"text": "sp_rock_carving_02", "x": -35.7239, "y": 107.6262},
+      {"text": "sp_rock_carving_03", "x": -38.1907, "y": 117.7932},
+      {"text": "sp_rock_carving_04", "x": -42.9703, "y": 107.7751},
+      {"text": "sp_rock_carving_05", "x": -70.5005, "y": 71.1607},
+      {"text": "sp_rock_carving_06", "x": -64.3845, "y": 81.9471},
+      {"text": "sp_rock_carving_07", "x": -67.5218, "y": 104.7164},
+      {"text": "sp_rock_carving_08", "x": -48.7506, "y": 131.842},	  
+	  {"text": "sp_rock_carving_09", "x": -37.2633, "y": 152.8391},
+      {"text": "sp_rock_carving_10", "x": -48.5793, "y": 149.6362}
+    ]
+  },
+  {
     "hash": "0x54C0CCD3",
     "color": "purple",
     "key": "sp_orchid_lady_of_the_night",
