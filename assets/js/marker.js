@@ -9,6 +9,7 @@ class Marker {
     this.title = (() => {
       switch (category) {
         case 'fasttravel':
+        case 'singleplayer':
           return Language.get(`${this.category}.${this.text}.name`);
         case 'rescue':
           return Language.get(`map.${this.category}.${this.subdata}.name`);
@@ -38,6 +39,7 @@ class Marker {
           return '';
         case 'shops':
         case 'gfh':
+        case 'singleplayer':
           return Language.get(`map.${this.category}.${this.subdata}.desc`);
         default:
           return Language.get(`map.${this.category}.desc`);

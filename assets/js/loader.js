@@ -65,6 +65,7 @@ const urls = [
   'data/plants.json',
   'data/possible_dailies.json',
   'data/shops.json',
+  'data/singleplayer.json',
   'data/treasures.json',
   'data/bounties.json',
   'https://pepegapi.jeanropke.net/v3/rdo/dailies',
