@@ -35,5 +35,32 @@
       {"text": "sp_dino_bone_29", "x": -105.3898, "y": 29.3375},
       {"text": "sp_dino_bone_30", "x": -110.9844, "y": 27.5867}
     ]
+  },
+  {
+    "hash": "0x516D0D7C",
+    "color": "red",
+    "key": "sp_dreamcatchers",
+    "locations": [
+      {"text": "sp_dreamcatcher_01", "x": -35.7346, "y": 115.9319},
+      {"text": "sp_dreamcatcher_02", "x": -33.6818, "y": 140.5428},
+      {"text": "sp_dreamcatcher_03", "x": -47.8982, "y": 96.6686},
+      {"text": "sp_dreamcatcher_04", "x": -42.5491, "y": 103.6751},
+      {"text": "sp_dreamcatcher_05", "x": -67.8894, "y": 103.144},
+      {"text": "sp_dreamcatcher_06", "x": -63.6177, "y": 136.5295},
+      {"text": "sp_dreamcatcher_07", "x": -63.2518, "y": 122.3659},
+      {"text": "sp_dreamcatcher_08", "x": -60.2147, "y": 110.9696},
+      {"text": "sp_dreamcatcher_09", "x": -59.6029, "y": 102.9185},
+      {"text": "sp_dreamcatcher_10", "x": -54.9358, "y": 102.7631},
+      {"text": "sp_dreamcatcher_11", "x": -55.4058, "y": 130.9038},
+      {"text": "sp_dreamcatcher_12", "x": -53.6959, "y": 113.0114},
+      {"text": "sp_dreamcatcher_13", "x": -52.4104, "y": 137.6598},
+      {"text": "sp_dreamcatcher_14", "x": -66.8315, "y": 142.1169},
+      {"text": "sp_dreamcatcher_15", "x": -50.4941, "y": 147.6526},
+      {"text": "sp_dreamcatcher_16", "x": -45.5681, "y": 151.2952},
+      {"text": "sp_dreamcatcher_17", "x": -42.2588, "y": 149.9328},
+      {"text": "sp_dreamcatcher_18", "x": -43.6248, "y": 152.5394},
+      {"text": "sp_dreamcatcher_19", "x": -38.4002, "y": 150.8465},
+      {"text": "sp_dreamcatcher_20", "x": -67.022, "y": 135.553}
+    ]
   }
 ]
