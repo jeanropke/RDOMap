@@ -91,12 +91,13 @@ function init() {
   const plants = PlantsCollection.init();
   const camps = Camp.init();
   const shops = Shop.init();
+  const singleplayer = Singleplayer.init();
   const gfh = GunForHire.init();
   const legendary = Legendary.init();
   const discoverables = Discoverable.init();
   const overlays = Overlay.init();
 
-  Promise.all([animals, locations, encounters, treasures, bounties, fmeCondorEgg, fmeSalvage, plants, camps, shops, gfh, legendary, discoverables, overlays])
+  Promise.all([animals, locations, encounters, treasures, bounties, fmeCondorEgg, fmeSalvage, plants, camps, shops, gfh, legendary, discoverables, overlays, singleplayer])
     .then(() => {
       Loader.resolveMapModelLoaded();
       MapBase.afterLoad();
@@ -261,6 +262,7 @@ $('#language').on('change', function () {
   PlantsCollection.onLanguageChanged();
   Shop.onLanguageChanged();
   Treasure.onLanguageChanged();
+  Singleplayer.onLanguageChanged();
 
   Dailies.sortDailies();
   MadamNazar.addMadamNazar();
@@ -278,6 +280,7 @@ $('#marker-size').on('change', function () {
   Salvage.onSettingsChanged();
   Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
+  Singleplayer.onSettingsChanged();
 
   MadamNazar.addMadamNazar();
   Pins.loadPins();
@@ -294,6 +297,7 @@ $('#marker-opacity').on('change', function () {
   Salvage.onSettingsChanged();
   Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
+  Singleplayer.onSettingsChanged();
 
   MadamNazar.addMadamNazar();
   Pins.loadPins();
@@ -327,6 +331,7 @@ $('#marker-cluster').on('change', function () {
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
   Shop.onSettingsChanged();
+  Singleplayer.onSettingsChanged();
 
   MadamNazar.addMadamNazar();
   Pins.loadPins();
@@ -343,6 +348,7 @@ $('#enable-marker-shadows').on('change', function () {
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
   Shop.onSettingsChanged();
+  Singleplayer.onSettingsChanged();
   Treasure.onSettingsChanged();
   Pins.loadPins();
   MadamNazar.addMadamNazar();

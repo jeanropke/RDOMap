@@ -1,0 +1,39 @@
+[
+  {
+    "hash": "0x99CC84E5",
+    "color": "orange",
+    "key": "sp_dino_bones",
+    "locations": [
+      {"text": "sp_dino_bone_01", "x": -63.8404, "y": 116.9697},
+      {"text": "sp_dino_bone_02", "x": -67.3385, "y": 125.5006},
+      {"text": "sp_dino_bone_03", "x": -70.3555, "y": 124.6707},
+      {"text": "sp_dino_bone_04", "x": -70.3704, "y": 115.7132},
+      {"text": "sp_dino_bone_05", "x": -58.5431, "y": 74.153},
+      {"text": "sp_dino_bone_06", "x": -48.7295, "y": 102.3986},
+      {"text": "sp_dino_bone_07", "x": -61.6991, "y": 96.3072},
+      {"text": "sp_dino_bone_08", "x": -51.0793, "y": 136.6822},
+      {"text": "sp_dino_bone_09", "x": -98.0007, "y": 42.4426},
+      {"text": "sp_dino_bone_10", "x": -108.3817, "y": 45.9171},
+      {"text": "sp_dino_bone_11", "x": -99.0856, "y": 64.0211},
+      {"text": "sp_dino_bone_12", "x": -113.1349, "y": 69.4857},
+      {"text": "sp_dino_bone_13", "x": -45.6077, "y": 109.0607},
+      {"text": "sp_dino_bone_14", "x": -32.19, "y": 122.631},
+      {"text": "sp_dino_bone_15", "x": -38.9968, "y": 113.6017},
+      {"text": "sp_dino_bone_16", "x": -31.9702, "y": 136.0134},
+      {"text": "sp_dino_bone_17", "x": -41.0918, "y": 132.2637},
+      {"text": "sp_dino_bone_18", "x": -37.0943, "y": 143.4257},
+      {"text": "sp_dino_bone_19", "x": -38.498, "y": 118.1597},
+      {"text": "sp_dino_bone_20", "x": -35.0044, "y": 154.5735},
+      {"text": "sp_dino_bone_21", "x": -46.5038, "y": 147.6645},
+      {"text": "sp_dino_bone_22", "x": -52.2816, "y": 154.7989},
+      {"text": "sp_dino_bone_23", "x": -50.3517, "y": 101.837},
+      {"text": "sp_dino_bone_24", "x": -63.836, "y": 75.3738},
+      {"text": "sp_dino_bone_25", "x": -66.1352, "y": 118.1353},
+      {"text": "sp_dino_bone_26", "x": -52.0561, "y": 87.7332},
+      {"text": "sp_dino_bone_27", "x": -119.5557, "y": 55.8674},
+      {"text": "sp_dino_bone_28", "x": -120.4585, "y": 42.3901},
+      {"text": "sp_dino_bone_29", "x": -105.3898, "y": 29.3375},
+      {"text": "sp_dino_bone_30", "x": -110.9844, "y": 27.5867}
+    ]
+  }
+]
