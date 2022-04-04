@@ -65,7 +65,7 @@
   },
   {
     "hash": "0x1EA29059",
-    "color": "lightgray",
+    "color": "cadetblue",
     "key": "sp_rock_carvings",
     "locations": [
       {"text": "sp_rock_carving_01", "x": -43.3984, "y": 85.8799},
