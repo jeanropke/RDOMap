@@ -81,6 +81,22 @@
     ]
   },
   {
+    "hash": "0x1EA29059",
+    "color": "darkblue",
+    "key": "sp_graves",
+    "locations": [
+      {"text": "sp_grave_am", "x": -36.0469, "y": 123.6172},
+      {"text": "sp_grave_dc", "x": -25.2835, "y": 90.998},
+      {"text": "sp_grave_ef", "x": -33.626, "y": 119.1704},
+      {"text": "sp_grave_hm", "x": -73.2588, "y": 151.1953},
+      {"text": "sp_grave_jc", "x": -18.6587, "y": 91.461},
+      {"text": "sp_grave_kd", "x": -93.0079, "y": 138.2207},
+      {"text": "sp_grave_ls", "x": -73.3544, "y": 151.3022},
+      {"text": "sp_grave_sg", "x": -51.2592, "y": 144.7747},  
+	  {"text": "sp_grave_sm", "x": -78.7264, "y": 121.7453}
+    ]
+  },
+  {
     "hash": "0x54C0CCD3",
     "color": "purple",
     "key": "sp_orchid_lady_of_the_night",

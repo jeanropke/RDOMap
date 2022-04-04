@@ -1562,5 +1562,15 @@
     "singleplayer.sp_rock_carving_07.name": "Rock Carving Coordinates 7",
     "singleplayer.sp_rock_carving_08.name": "Rock Carving Coordinates 8",
     "singleplayer.sp_rock_carving_09.name": "Rock Carving Coordinates 9",
-    "singleplayer.sp_rock_carving_10.name": "Rock Carving Coordinates 10"
+    "singleplayer.sp_rock_carving_10.name": "Rock Carving Coordinates 10",
+    "map.singleplayer.sp_graves.name": "Graves",
+    "singleplayer.sp_grave_am.name": "Arthur Morgan",
+	"singleplayer.sp_grave_dc.name": "Davey Callander",
+	"singleplayer.sp_grave_ef.name": "Eagle Flies",
+	"singleplayer.sp_grave_hm.name": "Hosea Matthews",
+	"singleplayer.sp_grave_jc.name": "Jenny Kirk",
+	"singleplayer.sp_grave_kd.name": "Kieran Duffy",
+	"singleplayer.sp_grave_ls.name": "Lenny Summers",
+	"singleplayer.sp_grave_sg.name": "Susan Grimshaw",
+	"singleplayer.sp_grave_sm.name": "Sean Macguire"
 }
