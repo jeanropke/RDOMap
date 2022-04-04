@@ -53,6 +53,9 @@ class Menu {
       AnimalCollection.collection.forEach(collection => {
         collection.animals.forEach(animal => animal.isEnabled = false);
       });
+      Singleplayer.locations.forEach(sp => {
+        if (sp.onMap) sp.onMap = !sp.onMap;
+      });
       MadamNazar.onMap = false;
       Pins.onMap = false;
       Treasure.treasuresOnMap = false;
@@ -83,6 +86,9 @@ class Menu {
       });
       Legendary.animals.forEach(animal => {
         if (!animal.onMap) animal.onMap = !animal.onMap;
+      });
+      Singleplayer.locations.forEach(sp => {
+        if (!sp.onMap) sp.onMap = !sp.onMap;
       });
       MadamNazar.onMap = true;
       Pins.onMap = true;
