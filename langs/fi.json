@@ -622,5 +622,7 @@
     "menu.bounty_timed.fort_wallace": "Fort Wallace.",
     "menu.bounty_board_caged_target.saint_denis": "Saint Denis",
     "menu.bounty_board_caged_target.strawberry": "Mansikka",
-    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweediä"
+    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweediä",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Kalliomahdollisuudet"
 }

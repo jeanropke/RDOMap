@@ -1502,7 +1502,6 @@
     "singleplayer.sp_dino_bone_29.name": "Osso no Norte de Tumbleweed - Serra Gaptooth",
     "singleplayer.sp_dino_bone_30.name": "Osso no Sul de Tumbleweed - Serra Gaptooth",
     "map.singleplayer.sp_dreamcatchers.name": "Apanhadores de Sonhos",
-    "map.singleplayer.sp_dreamcatchers.desc": " ",
     "singleplayer.sp_dreamcatcher_01.name": "Apanhador de Sonhos #1",
     "singleplayer.sp_dreamcatcher_02.name": "Apanhador de Sonhos #2",
     "singleplayer.sp_dreamcatcher_03.name": "Apanhador de Sonhos #3",
@@ -1576,13 +1575,5 @@
     "singleplayer.sp_rock_carving_09.name": "Coordenadas das Rochas Entalhadas 9",
     "singleplayer.sp_rock_carving_10.name": "Coordenadas das Rochas Entalhadas 10",
     "map.singleplayer.sp_graves.name": "Túmulos",
-    "singleplayer.sp_grave_am.name": "Arthur Morgan",
-	"singleplayer.sp_grave_dc.name": "Davey Callander",
-	"singleplayer.sp_grave_ef.name": "Eagle Flies",
-	"singleplayer.sp_grave_hm.name": "Hosea Matthews",
-	"singleplayer.sp_grave_jc.name": "Jenny Kirk",
-	"singleplayer.sp_grave_kd.name": "Kieran Duffy",
-	"singleplayer.sp_grave_ls.name": "Lenny Summers",
-	"singleplayer.sp_grave_sg.name": "Susan Grimshaw",
-	"singleplayer.sp_grave_sm.name": "Sean Macguire"
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

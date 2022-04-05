@@ -715,5 +715,7 @@
     "menu.bounty_timed.fort_riggs": "Fort Riggs",
     "menu.bounty_board_caged_target.saint_denis": "Saint Denis",
     "menu.bounty_board_caged_target.strawberry": "Jahodová",
-    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed"
+    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Kámen, řezání"
 }

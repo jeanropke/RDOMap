@@ -1468,5 +1468,8 @@
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_4.name": "Rabunek Obozu - Rzeka Montana",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_5.name": "Rabunek Obozu - Rzeka San Luis",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "Rabunek Obozu - Stillwater",
-    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Rabunek Obozu - Jezioro Flat Iron"
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Rabunek Obozu - Jezioro Flat Iron",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Skalne Rzeźby",
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

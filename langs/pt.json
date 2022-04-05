@@ -401,5 +401,7 @@
     "menu.bounty_timed.beaver_hollow": "Beaver Hollow",
     "menu.bounty_board_caged_target.saint_denis": "São Denis",
     "menu.bounty_board_caged_target.strawberry": "Morango",
-    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed"
+    "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Desenhos de Rocha"
 }

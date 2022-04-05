@@ -1429,5 +1429,9 @@
     "menu.bounty_board_caged_target.strawberry": "Strawberry",
     "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
     "menu.bounty_board_caged_target.wallace_station": "Wallace Station",
-    "menu.sponsors": "Sponsoren"
+    "menu.sponsors": "Sponsoren",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_dreamcatchers.name": "Traumfänger",
+    "map.singleplayer.sp_rock_carvings.name": "Felsenschnitzereien",
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

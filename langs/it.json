@@ -1468,5 +1468,9 @@
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_4.name": "Rapina Accampamento - Lower Montana River",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_5.name": "Rapina Accampamento - San Luis River",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "Rapina Accampamento - Stillwater",
-    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Rapina Accampamento - Flat Iron Lake"
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Rapina Accampamento - Flat Iron Lake",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_dreamcatchers.name": "Acchiappasogni",
+    "map.singleplayer.sp_rock_carvings.name": "Scolpi Di Roccia",
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

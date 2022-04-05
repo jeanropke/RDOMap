@@ -367,7 +367,12 @@
     "map.shops.butcher.name": "Măcelar",
     "map.shops.butcher.desc": "Vizitați standul măcelarului pentru toate nevoile dumneavoastră legate de carne. De asemmenea, puteți vinde orice vânat sau pește pe care l-ați prins aici.",
     "map.shops.doctor.name": "Doctor",
+    "map.shops.doctor.desc": "Acest medic local vinde diverse remedii, tonice și fortifiante, și va cumpăra orice ariticol legat de sănătate de care aveți în plus.",
+    "map.shops.fence.name": "Vânzător",
+    "map.shops.fence.desc": "Acest vânzător operează o afacere dubioasă, care se ocupă de marfă cu reputație proastă.",
     "map.shops.general_store.name": "Magazin general",
+    "map.shops.general_store_03.desc": "Acest magazin nu vinde haine, vizitați croitorul din apropiere.",
+    "map.shops.general_store_08.desc": "Acest magazin nu vinde haine, vizitați croitorul din apropiere.",
     "map.shops.gunsmith.name": "Armurier",
     "map.shops.honor.name": "Bătrânul Jones",
     "map.shops.photo_studio.name": "Studio foto",
@@ -437,6 +442,8 @@
     "menu.cmpndm.animal_crab": "Crab",
     "menu.cmpndm.animal_deer": "Căprioară",
     "menu.cmpndm.animal_dog_street": "Câine",
+    "menu.cmpndm.animal_elk_rocky": "Elan (elk) - Mascul",
+    "menu.cmpndm.animal_mountain_cow_elk": "Elan (elk) - Femelă",
     "menu.cmpndm.animal_fox_red": "Vulpe - Roșie",
     "menu.cmpndm.animal_fox_grey": "Vulpe - Grizzlies",
     "menu.cmpndm.animal_gilamonster": "Monstrul Gila",
@@ -888,5 +895,9 @@
     "menu.bounty_board_caged_target.strawberry": "Strawberry",
     "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
     "menu.sponsors": "Sponsori",
-    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Jaf tabără - Lacul Flat Iron"
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Jaf tabără - Lacul Flat Iron",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_dreamcatchers.name": "Prinzătoare de vise",
+    "map.singleplayer.sp_rock_carvings.name": "Cârlige de Rock",
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

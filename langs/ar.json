@@ -630,5 +630,7 @@
     "menu.bounty_timed.fort_wallace": "حصن والس",
     "menu.bounty_board_caged_target.saint_denis": "مدينة Saint Denis",
     "menu.bounty_board_caged_target.strawberry": "مدينة Strawberry",
-    "menu.bounty_board_caged_target.tumbleweed": "مدينة Tumbleweed"
+    "menu.bounty_board_caged_target.tumbleweed": "مدينة Tumbleweed",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "حمامات الصخور"
 }

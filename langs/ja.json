@@ -1317,5 +1317,8 @@
     "menu.bounty_board_caged_target.strawberry": "ストロベリー",
     "menu.bounty_board_caged_target.tumbleweed": "タンブルウィード",
     "menu.bounty_board_caged_target.wallace_station": "ウォレス駅",
-    "menu.sponsors": "スポンサー"
+    "menu.sponsors": "スポンサー",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "岩の彫刻",
+    "singleplayer.sp_grave_sm.name": "ショーン"
 }

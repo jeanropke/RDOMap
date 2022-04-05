@@ -1468,5 +1468,9 @@
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_4.name": "Ограбление Лагеря - Река Нижняя Монтана",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_5.name": "Ограбление Лагеря - Река Сан-Луис",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "Ограбление лагеря - Стиллуотер",
-    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Ограбление Лагеря - Озеро Флат Айрон"
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Ограбление Лагеря - Озеро Флат Айрон",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_dreamcatchers.name": "За ловцов снов",
+    "map.singleplayer.sp_rock_carvings.name": "Каменная резьба",
+    "singleplayer.sp_grave_sm.name": "Шон Макгуайр"
 }

@@ -1436,5 +1436,8 @@
     "menu.bounty_board_caged_target.strawberry": "Strawberry",
     "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
     "menu.bounty_board_caged_target.wallace_station": "Wallace Station",
-    "menu.sponsors": "Sponsors"
+    "menu.sponsors": "Sponsors",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Sculptures de Roche",
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

@@ -550,5 +550,7 @@
     "menu.bounty_timed.fort_mercer": "Fort Mercer",
     "menu.bounty_timed.fort_riggs": "Fort Riggs",
     "menu.bounty_board_caged_target.saint_denis": "Sankt Denis",
-    "menu.bounty_board_caged_target.strawberry": "Jordbær"
+    "menu.bounty_board_caged_target.strawberry": "Jordbær",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Rock Carvings"
 }

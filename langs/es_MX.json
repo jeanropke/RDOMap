@@ -1459,5 +1459,8 @@
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_4.name": "Robo de campamento - Lower Montana River",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_5.name": "Robo de campamento - Rio San Luis",
     "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "Robo de campamento - Stillwater",
-    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Robo de campamento - Flat iron lake"
+    "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "Robo de campamento - Flat iron lake",
+    "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+    "map.singleplayer.sp_rock_carvings.name": "Talleres de roca",
+    "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }
