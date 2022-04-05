@@ -16,3 +16,6 @@ Donations are always appreciated. Find the donations link at the bottom of the m
 Lots of thanks to the community for contributing to the menu either by providing locations or working on developing the menu into something great.
 
 [A full list of contributors can be found here.](https://github.com/jeanropke/RDOMap/blob/master/CONTRIBUTORS.md)
+
+## Map Tiles
+[Download Webp](https://map-tiles.b-cdn.net/files/rdr3%20tiles%20-%20webp.zip) | [Download Jpg](https://map-tiles.b-cdn.net/files/rdr3%20tiles%20-%20jpg.zip)
