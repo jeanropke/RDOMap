@@ -12,3 +12,6 @@ _manifest.json
 cycles_update/
 fme/
 rdo/
+
+# Remove map tiles from Github
+assets/maps
