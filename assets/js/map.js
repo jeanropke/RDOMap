@@ -249,6 +249,8 @@ const MapBase = {
         Encounter.locations.filter(locationMarkerFilter);
       } else if (GunForHire.quickParams.indexOf(quickParam) !== -1) {
         GunForHire.locations.filter(locationMarkerFilter);
+      } else if (Singleplayer.quickParams.indexOf(quickParam) !== -1) {
+        Singleplayer.locations.filter(locationMarkerFilter);
       } else if (AnimalCollection.quickParams.indexOf(quickParam) !== -1) {
         AnimalCollection.collection.filter(collection => {
           collection.animals.filter(animal => {
