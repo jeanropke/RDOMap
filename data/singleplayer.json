@@ -488,5 +488,28 @@
       {"text": "sp_wilderness_chest_81", "x": -41.6808, "y": 166.8643},
       {"text": "sp_wilderness_chest_82", "x": -113.7039, "y": 18.1303}
     ]
+  },
+  {
+    "color": "lightblue",
+    "key": "sp_crayfish_holes",
+    "locations": [
+      {"text": "sp_crayfish_hole", "x": -92.8699, "y": 142.9852},
+      {"text": "sp_crayfish_hole", "x": -92.4638, "y": 143.6816},
+      {"text": "sp_crayfish_hole", "x": -92.5708, "y": 143.2334},
+      {"text": "sp_crayfish_hole", "x": -91.3148, "y": 143.0333},
+      {"text": "sp_crayfish_hole", "x": -91.3709, "y": 142.661},
+      {"text": "sp_crayfish_hole", "x": -90.3311, "y": 142.7535},
+      {"text": "sp_crayfish_hole", "x": -79.3963, "y": 138.5493},
+      {"text": "sp_crayfish_hole", "x": -78.2305, "y": 137.5784},
+      {"text": "sp_crayfish_hole", "x": -76.8015, "y": 137.8362},
+      {"text": "sp_crayfish_hole", "x": -76.4342, "y": 137.243},
+      {"text": "sp_crayfish_hole", "x": -74.7788, "y": 146.3461},
+      {"text": "sp_crayfish_hole", "x": -74.1416, "y": 145.6834},
+      {"text": "sp_crayfish_hole", "x": -74.3676, "y": 145.0667},
+      {"text": "sp_crayfish_hole", "x": -73.5407, "y": 146.6944},
+      {"text": "sp_crayfish_hole", "x": -72.1347, "y": 146.2693},
+      {"text": "sp_crayfish_hole", "x": -71.6028, "y": 147.0169},
+      {"text": "sp_crayfish_hole", "x": -72.0485, "y": 147.5978}
+    ]
   }
 ]

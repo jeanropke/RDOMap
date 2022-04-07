@@ -330,6 +330,7 @@ const MapBase = {
     Salvage.salvageOnMap = toShow;
     Shop.locations.forEach(shop => shop.onMap = toShow);
     PlantsCollection.locations.forEach(plants => plants.onMap = toShow);
+    Singleplayer.locations.filter(locationMarkerFilter);
   },
 
   loadOverlaysBeta: function () {
