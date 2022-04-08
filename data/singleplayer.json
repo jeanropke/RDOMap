@@ -490,7 +490,7 @@
     ]
   },
   {
-    "color": "lightblue",
+    "color": "darkred",
     "key": "sp_crayfish_holes",
     "locations": [
       {"text": "sp_crayfish_hole", "x": -92.8699, "y": 142.9852},
