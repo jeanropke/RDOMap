@@ -432,7 +432,7 @@
   "map.animal_spawns.desc": "这是一个 {animal} 的固定刷新点。24小时都会刷新，但不一定刷出。",
   "map.animal_spawns_timed.desc": "这是一个 {animal} 的固定刷新点。只在 {start} 到 {end} 期间刷新，且不一定刷出。",
   "menu.translate_body": "翻译由社区成员提供。",
-  "menu.translate_link": "在Crowdin帮助我们翻译。",
+  "menu.translate_link": "在 Crowdin 上帮助我们进行翻译。",
   "menu.legendary_animals": "传说动物",
   "menu.cmpndm.animal_alligator_medium": "短吻鳄",
   "menu.cmpndm.animal_alligator_little": "短吻鳄（小）",
