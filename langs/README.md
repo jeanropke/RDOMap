@@ -50,7 +50,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (503 words)
+  - **ToxicMagisk** (544 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (80%):
@@ -72,7 +72,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (43%):
+### Dutch (44%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (781 words)
   - **Helmond1989** (2,058 words)
@@ -80,7 +80,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **jopiejooow** (1,186 words)
   - **MrGrivixer** (20 words)
   - **nielsb2004** (50 words)
-  - **pangurjan** (323 words)
+  - **pangurjan** (756 words)
   - **rp.lameris** (196 words)
   - **xvilo** (426 words)
 
