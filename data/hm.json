@@ -668,6 +668,16 @@
         "data": []
       },
       {
+        "key": "animal_pronghorn_sonoran",
+        "groups": ["ANIMALS_PRONGHORN_SONORAN_BUCK"],
+        "data": []
+      },
+      {
+        "key": "animal_pronghorn_sonoran_f",
+        "groups": ["ANIMALS_PRONGHORN_SONORAN_DOE"],
+        "data": []
+      },
+      {
         "key": "animal_squirrel_grey",
         "groups": ["ANIMALS_SQUIRREL", "ANIMALS_SQUIRREL_POISON"],
         "data": []
@@ -748,7 +758,7 @@
           {"lat": -86.16, "lng": 77.9 }
         ]
       }
-  ]
+    ]
   },
   {
     "key": "birds",
