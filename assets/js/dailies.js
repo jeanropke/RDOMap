@@ -27,7 +27,6 @@ class Dailies {
           return Promise.reject(`Incorrect date [${currentDailies.date}, ${currentDate}]`);
         }
 
-        console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
         this.dailiesLoaded();
 
         this.categories = allDailies.category_order;
@@ -109,6 +108,7 @@ class Dailies {
       .end();
   }
   static dailiesLoaded() {
+    console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
     $('.dailies .daily-status.loading').addClass('hidden');
   }
   static dailiesNotUpdated(err) {
