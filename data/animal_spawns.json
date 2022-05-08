@@ -19476,12 +19476,8 @@
     {"x": -71.8736, "y": 102.9898, "start": 4, "end": 23},
     {"x": -71.7878, "y": 103.0229, "start": 4, "end": 23}
   ],
-  "ANIMALS_PRONGHORN_SONORAN_BUCK": [
-    {"TODO": "THIS IS DUMMY DATA", "x": -90.875, "y": 107.125}
-  ],
-  "ANIMALS_PRONGHORN_SONORAN_DOE": [
-    {"TODO": "THIS IS DUMMY DATA", "x": -97.5, "y": 104.625}
-  ],
+  "ANIMALS_PRONGHORN_SONORAN_BUCK": [],
+  "ANIMALS_PRONGHORN_SONORAN_DOE": [],
   "ANIMALS_QUAIL": [
     {"x": -75.9081, "y": 97.4282},
     {"x": -75.9134, "y": 97.4878},
