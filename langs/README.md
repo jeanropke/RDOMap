@@ -38,7 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (86%):
+### Chinese Simplified (97%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -50,7 +50,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (4,745 words)
+  - **ToxicMagisk** (11,069 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (80%):
@@ -92,10 +92,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
 
-### Finnish (52%):
+### Finnish (51%):
   - **seevimi** (283 words)
 
-### French (88%):
+### French (89%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
@@ -110,6 +110,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Indessis** (20 words)
   - **JeanBankarbone** (598 words)
   - **jipsu31** (43 words)
+  - **Jules_** (43 words)
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
@@ -275,13 +276,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (3,425 words)
   - **vierim** (33 words)
 
-### Romanian (76%):
+### Romanian (78%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (22,055 words)
+  - **proximacentaurib** (23,001 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (94%):
+### Russian (96%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
@@ -289,7 +290,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (2,141 words)
+  - **Megitsune** (3,001 words)
   - **noiracero693** (27 words)
   - **Overnoes** (1,860 words)
   - **platonomania** (15 words)
