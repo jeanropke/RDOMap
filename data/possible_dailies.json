@@ -174,7 +174,7 @@
     {"name": "Non-player enemies killed from the hip", "key": "mpgc_enemies_killed_from_hip"},
     {"name": "Non-player enemies killed while in Dead Eye", "key": "mpgc_enemies_killed_deadeye"},
     {"name": "Non-player enemies killed while not seen", "key": "mpgc_enemies_killed_stealth"},
-    {"name": "Non-player enemies killed with a Maxim Gun", "key": "mpgc_enemies_killed_gatling_maxim"},
+    {"name": "Non-player enemies killed with a Maxim Gun", "key": "mpgc_enemies_killed_gatling_maxim", "category": ["menu", "hideouts"]},
     {"name": "Non-player enemies knocked out", "key": "mpgc_enemies_knocked_out"},
     {"name": "Non-player enemies lassoed from horseback", "key": "mpgc_lasso_enemy_horseback"},
     {"name": "Non-player enemies looted", "key": "mpgc_enemies_looted"},
