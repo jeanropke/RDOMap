@@ -962,5 +962,7 @@
   "menu.bounty_board_caged_target.strawberry": "Strawberry",
   "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
   "menu.sponsors": "Szponzorok",
+  "map.singleplayer.sp_dino_bones.name": "Dinoszaurusz Csontok",
+  "map.singleplayer.sp_rock_carvings.name": "Rock Carvings",
   "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }

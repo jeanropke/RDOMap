@@ -218,5 +218,7 @@
   "menu.bounty_board_lure.strawberry": "Strawberry",
   "menu.bounty_board_caged_target.saint_denis": "Saint Denis",
   "menu.bounty_board_caged_target.strawberry": "Strawberry",
-  "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed"
+  "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
+  "map.singleplayer.sp_dino_bones.name": "โบนส์ไดโนเสาร์",
+  "map.singleplayer.sp_rock_carvings.name": "การแกะสลักหิน"
 }
