@@ -601,7 +601,10 @@
   "map.slumped_hunter.desc": "이것은 랜덤 인카운터입니다. 미니 지도에 흰색 블롭이 표시되면 만날 수 있습니다.",
   "menu.crashed_wagon": "마차 - 파괴된 마차",
   "map.crashed_wagon.name": "마차 - 파괴된 마차",
+  "map.crashed_wagon.desc": "이것은 랜덤 인카운터입니다. 미니 지도에 흰색 블롭이 표시되면 만날 수 있습니다.",
   "menu.suspension_trap": "덫 (찰코)",
+  "map.suspension_trap.name": "덫 (찰코)",
+  "map.suspension_trap.desc": "이것은 랜덤 인카운터입니다. 미니 지도에 흰색 블롭이 표시되면 만날 수 있습니다.",
   "map.generic_not_released": "이 내용은 아직 게임에 나오지 않았다.",
   "menu.small_btn": "작은",
   "menu.large_btn": "큰",
@@ -1311,6 +1314,7 @@
   "map.outlaw_dynamic_camp.outlaw_camp_robbery_6.name": "캠프 강도 - 스틸워터",
   "map.outlaw_dynamic_camp.outlaw_camp_robbery_7.name": "캠프 강도 - 플랫 아이언 호수",
   "map.singleplayer.sp_dino_bones.name": "공룡의 뼈",
+  "map.singleplayer.sp_dreamcatchers.name": "드림캐쳐",
   "map.singleplayer.sp_rock_carvings.name": "록 캐링",
   "singleplayer.sp_grave_sm.name": "션 맥과이어"
 }

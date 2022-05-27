@@ -361,7 +361,7 @@
   "menu.enable_marker_popups_hover": "Open markeringspopups bij zweven",
   "help.enable_marker_popups_hover": "Bepaalt of de pop-ups moeten worden geopend wanneer u de muisaanwijzer over een markering beweegt of wanneer u op een markering klikt. Werkt niet goed op touchscreens.",
   "menu.shops": "Winkels",
-  "map.shops": "Shops",
+  "map.shops": "Winkels",
   "map.shops.barber.name": "Barber",
   "map.shops.barber.desc": "There is a small Barber store here, where men and women can freshen up their look to impress the crowd.",
   "map.shops.butcher.name": "Butcher",
@@ -598,6 +598,7 @@
   "menu.slumped_hunter": "Jager - ineengezakt",
   "map.slumped_hunter.name": "Jager - ineengezakt",
   "menu.crashed_wagon": "Gecrashte wagen",
+  "map.crashed_wagon.name": "Gecrashte wagen",
   "menu.small_btn": "Klein",
   "menu.large_btn": "Groot",
   "menu.wilderness_btn": "Wildernis",
@@ -776,6 +777,7 @@
   "menu.bounty_board_caged_target.strawberry": "Strawberry",
   "menu.bounty_board_caged_target.tumbleweed": "Tumbleweed",
   "map.singleplayer.sp_dino_bones.name": "Dinosaur Bones",
+  "map.singleplayer.sp_dreamcatchers.name": "Droomvangers",
   "map.singleplayer.sp_rock_carvings.name": "Rots wortels",
   "singleplayer.sp_grave_sm.name": "Sean Macguire"
 }
