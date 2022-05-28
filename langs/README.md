@@ -38,7 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (99%):
+### Chinese Simplified (100%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -50,16 +50,16 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (15,787 words)
+  - **ToxicMagisk** (16,733 words)
   - **user670839245** (224 words)
 
-### Chinese Traditional (94%):
+### Chinese Traditional (95%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (28 words)
 
-### Czech (68%):
+### Czech (69%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
@@ -162,11 +162,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (74%):
+### Hungarian (76%):
   - **Barackvirag** (1,123 words)
   - **BMX** (237 words)
   - **DannyTI** (703 words)
-  - **emperger** (903 words)
+  - **emperger** (1,522 words)
   - **GoP** (85 words)
   - **Hutty98** (3,609 words)
   - **jjameska** (26 words)
@@ -223,7 +223,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **spagheeetti** (1,258 words)
   - **wlfogb** (11 words)
 
-### Norwegian (34%):
+### Norwegian (35%):
   - **camillgh** (724 words)
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
@@ -309,7 +309,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (27%):
   - **UluMulu** (217 words)
 
-### Spanish (95%):
+### Spanish (96%):
   - **23.jonathantadeoleiva** (13 words)
   - **Arisgo** (1,009 words)
   - **avillamizar71** (5,456 words)
