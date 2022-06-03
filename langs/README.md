@@ -38,7 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (100%):
+### Chinese Simplified (99%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -50,16 +50,16 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (16,752 words)
+  - **ToxicMagisk** (17,015 words)
   - **user670839245** (224 words)
 
-### Chinese Traditional (95%):
+### Chinese Traditional (94%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (28 words)
 
-### Czech (69%):
+### Czech (68%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
@@ -164,7 +164,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (76%):
+### Hungarian (77%):
   - **Barackvirag** (1,123 words)
   - **BMX** (237 words)
   - **DannyTI** (703 words)
@@ -231,6 +231,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **camillgh** (724 words)
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
+  - **forstendra** (47 words)
   - **henrietteg95** (830 words)
   - **martinbruh** (212 words)
   - **Rilfus** (283 words)
@@ -260,7 +261,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (100%):
+### Portuguese, Brazilian (99%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
@@ -288,7 +289,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **proximacentaurib** (23,001 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (100%):
+### Russian (99%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
