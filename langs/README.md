@@ -10,11 +10,11 @@ The following people helped translate the RDO Map specifically but are possibly 
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (34%):
+### Afrikaans (32%):
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (63%):
+### Arabic (60%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
@@ -34,7 +34,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
-### Catalan (16%):
+### Catalan (15%):
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
@@ -50,16 +50,16 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (17,015 words)
+  - **ToxicMagisk** (18,956 words)
   - **user670839245** (224 words)
 
-### Chinese Traditional (94%):
+### Chinese Traditional (90%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (28 words)
 
-### Czech (68%):
+### Czech (65%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
@@ -68,11 +68,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Srandokan** (24 words)
   - **wooder0403** (19 words)
 
-### Danish (61%):
+### Danish (58%):
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (55%):
+### Dutch (52%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (781 words)
   - **Helmond1989** (2,058 words)
@@ -84,7 +84,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rp.lameris** (196 words)
   - **xvilo** (426 words)
 
-### English, United Kingdom (9%):
+### English, United Kingdom (8%):
   - **AdamNortonUK** (12 words)
   - **JRSC01** (2,869 words)
   - **Michal__d** (3,363 words)
@@ -92,10 +92,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
 
-### Finnish (64%):
+### Finnish (61%):
   - **seevimi** (283 words)
 
-### French (96%):
+### French (91%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
@@ -114,7 +114,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
   - **Michal__d** (3,363 words)
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
@@ -127,7 +127,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,537 words)
 
-### German (96%):
+### German (91%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
@@ -137,7 +137,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **deragent007** (28 words)
   - **djenerg** (12 words)
   - **FreeAsABird** (330 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
   - **s.pantermueller** (230 words)
@@ -150,13 +150,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (1,470 words)
   - **werhel** (443 words)
 
-### Greek (38%):
+### Greek (36%):
   - **Arsenis** (277 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
   - **ToX1cRanG3r** (363 words)
 
-### Hebrew (46%):
+### Hebrew (44%):
   - **dudiv5674** (3,039 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
@@ -164,7 +164,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (77%):
+### Hungarian (74%):
   - **Barackvirag** (1,123 words)
   - **BMX** (237 words)
   - **DannyTI** (703 words)
@@ -182,7 +182,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **YaBoiRichard614** (375 words)
   - **zsnkn_** (2,674 words)
 
-### Italian (96%):
+### Italian (91%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (3,281 words)
@@ -203,10 +203,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
-### Japanese (93%):
+### Japanese (89%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
   - **moku3** (3,536 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
@@ -214,20 +214,20 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (88%):
+### Korean (84%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,031 words)
   - **Garudia** (111 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
   - **nikelhard** (4,892 words)
   - **Seogi** (570 words)
   - **sksk2943** (1,376 words)
   - **spagheeetti** (1,258 words)
   - **wlfogb** (11 words)
 
-### Norwegian (35%):
+### Norwegian (33%):
   - **camillgh** (724 words)
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
@@ -241,7 +241,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Barmak88** (2,018 words)
   - **lostman2000** (309 words)
 
-### Polish (96%):
+### Polish (91%):
   - **Baltazaro** (209 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
@@ -252,7 +252,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **THE_MALOTEK** (422 words)
   - **tkwitak** (638 words)
 
-### Portuguese (40%):
+### Portuguese (38%):
   - **badaro42** (53 words)
   - **daniel.of.monteiro** (138 words)
   - **daniel.teixeira** (706 words)
@@ -261,7 +261,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (99%):
+### Portuguese, Brazilian (95%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
@@ -270,7 +270,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bortoluzzibernardo** (16 words)
   - **DrCrimsonCrow** (253 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,907 words)
+  - **jeanropke** (7,940 words)
   - **jgnobrega** (68 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
@@ -283,13 +283,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **victorpxavier** (593 words)
   - **vierim** (33 words)
 
-### Romanian (94%):
+### Romanian (89%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
   - **proximacentaurib** (23,001 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (99%):
+### Russian (95%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
@@ -297,7 +297,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
   - **noiracero693** (27 words)
   - **Overnoes** (1,860 words)
   - **platonomania** (15 words)
@@ -311,10 +311,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tomvsxvi** (563 words)
   - **UluMulu** (217 words)
 
-### Serbian (Cyrillic) (27%):
+### Serbian (Cyrillic) (26%):
   - **UluMulu** (217 words)
 
-### Spanish (96%):
+### Spanish (91%):
   - **23.jonathantadeoleiva** (13 words)
   - **Arisgo** (1,009 words)
   - **avillamizar71** (5,456 words)
@@ -329,7 +329,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **gabriel.ferrer.arias** (453 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
   - **mmmateo** (1,952 words)
   - **MrMike** (135 words)
   - **Njordude** (1,228 words)
@@ -342,12 +342,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToshyExS** (1,272 words)
   - **ulises_hdz22** (361 words)
 
-### Spanish, Mexico (79%):
+### Spanish, Mexico (76%):
   - **bloobhy** (152 words)
   - **juanestevez** (911 words)
-  - **Megitsune** (4,341 words)
+  - **Megitsune** (4,374 words)
 
-### Swedish (47%):
+### Swedish (45%):
   - **...---...** (431 words)
   - **emeliris** (636 words)
   - **idaerika** (30 words)
@@ -360,7 +360,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Swedish_Chef69** (140 words)
   - **swiff** (134 words)
 
-### Thai (37%):
+### Thai (35%):
   - **Brieffish** (10 words)
   - **kittipat_2011** (18 words)
   - **MrFermz** (2,495 words)
@@ -372,13 +372,13 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Turkish (88%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
-  - **EmreKLC** (1,137 words)
+  - **EmreKLC** (8,289 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,722 words)
   - **TitanHaxz** (289 words)
 
-### Ukrainian (93%):
+### Ukrainian (88%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
   - **grmaster5s** (14,651 words)
@@ -389,7 +389,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **UluMulu** (217 words)
   - **warkoun** (290 words)
 
-### Vietnamese (29%):
+### Vietnamese (27%):
   - **gautruc2002_2003** (72 words)
   - **khahdihdz** (110 words)
   - **khoadang1211** (260 words)
