@@ -330,7 +330,7 @@
   "map.duel.name": "决斗",
   "map.duel.desc": "这是一次随机事件。小地图上的白色光点将指示遭遇。有几个人会在这里进行决斗，此事件结束后并无奖励。",
   "map.moonshiner_camp.name": "营地（私酒贩）",
-  "map.moonshiner_camp.desc": "这是一次随机事件。小地图上的白色光点将指示遭遇。杀死私酒贩后搜刮营地，有可能获得古董酒或一个私酒配方。",
+  "map.moonshiner_camp.desc": "这是一次随机事件。小地图上的白色光点将指示遭遇，从远处亦可看到缕缕炊烟。杀死私酒贩（两名）后搜刮营地，在箱子中（非锁箱）有可能获得古董酒或毒罂粟私酒配方。",
   "map.moonshiner_destroy.name": "摧毁（私酒贩）",
   "map.moonshiner_destroy.desc": "这是一个私酒贩走私者任务。地图上会有一个红色圆圈指示。杀死所有私酒贩并摧毁所有设备以获得经验并降低 $20 的麦芽浆成本。",
   "map.moonshiner_roadblock.name": "路障（私酒贩）",
