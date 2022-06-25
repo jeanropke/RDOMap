@@ -353,7 +353,7 @@
   "map.wounded_animal.name": "受伤的动物事件",
   "map.wounded_animal.desc": "这是一次随机事件。小地图上的白色光点将指示遭遇。杀死动物或等它挂掉，走过去收集箭头。",
   "map.sightseeing.name": "观景台位置",
-  "map.sightseeing.desc": "别光拉货蹭货挂竞速挂埃塔肝收藏肝每日了。您可以坐在这个位置欣赏一下风景，靠近这个位置时右下角会显示 “坐” 选项，长按 E 键即可坐下。注意：位置有所偏差",
+  "map.sightseeing.desc": "不管你是否会真的这么做，大家都需要一点儿闲暇时间来休息。访问此位置会出现交互选项 “坐” 让您坐在平台或长椅上，然后，享受美景吧。",
   "map.legendary_animal.desc": "传说动物也属于随机事件，不过可能会有天气和时间之类的环境限制。如果条件满足，您可以尝试用传说动物信息素引出它们。",
   "menu.delete_all_settings": "重置所有设置",
   "menu.modal_delete_all_settings_title": "是否重置所有设置？",
