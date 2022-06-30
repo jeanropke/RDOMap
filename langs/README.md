@@ -51,7 +51,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (20,329 words)
+  - **ToxicMagisk** (20,416 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (95%):
@@ -83,6 +83,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **nielsb2004** (50 words)
   - **pangurjan** (1,021 words)
   - **rp.lameris** (196 words)
+  - **VDM0598** (176 words)
   - **xvilo** (426 words)
 
 ### English, United Kingdom (8%):
@@ -165,11 +166,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (79%):
+### Hungarian (84%):
   - **Barackvirag** (1,123 words)
   - **BMX** (237 words)
   - **DannyTI** (703 words)
-  - **emperger** (1,522 words)
+  - **emperger** (3,361 words)
   - **GoP** (85 words)
   - **Hutty98** (3,609 words)
   - **jjameska** (26 words)
@@ -370,10 +371,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (92%):
+### Turkish (93%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
-  - **dubelnaz** (1,342 words)
+  - **dubelnaz** (1,719 words)
   - **EmreKLC** (9,330 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
