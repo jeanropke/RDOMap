@@ -48,7 +48,7 @@
   "menu.rescue": "营救",
   "menu.rival_collector": "敌对收藏家",
   "menu.runaway_wagon": "失控马车",
-  "menu.search_placeholder": "搜索物品。用 ; 号隔开（英文分号）",
+  "menu.search_placeholder": "搜索物品。多个物品需以“;”隔开（英文分号）",
   "menu.settings": "设置",
   "menu.settings_import_export_title": "设置",
   "menu.show_all": "显示全部",
