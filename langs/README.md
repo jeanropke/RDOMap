@@ -183,13 +183,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **meezalena** (27 words)
   - **OdinsEyeTeam** (36 words)
   - **Ottilia** (2,400 words)
-  - **reddeadvaqueros** (1,827 words)
+  - **reddeadvaqueros** (1,855 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (287 words)
   - **YaBoiRichard614** (375 words)
   - **zsnkn_** (2,674 words)
 
-### Italian (95%):
+### Italian (96%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (3,281 words)
@@ -202,7 +202,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kyek** (569 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
-  - **MattSini912** (547 words)
+  - **MattSini912** (629 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
   - **REMOVED_USER** (1,189 words)
