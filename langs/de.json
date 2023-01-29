@@ -1495,6 +1495,10 @@
   "singleplayer.sp_dreamcatcher_14.name": "Traumfänger #14",
   "singleplayer.sp_dreamcatcher_15.name": "Traumfänger #15",
   "singleplayer.sp_dreamcatcher_16.name": "Traumfänger #16",
+  "singleplayer.sp_dreamcatcher_17.name": "Traumfänger #17",
+  "singleplayer.sp_dreamcatcher_18.name": "Traumfänger #18",
+  "singleplayer.sp_dreamcatcher_19.name": "Traumfänger #19",
+  "singleplayer.sp_dreamcatcher_20.name": "Traumfänger #20",
   "map.singleplayer.sp_rock_carvings.name": "Felsenschnitzereien",
   "map.singleplayer.sp_graves.name": "Gräber",
   "singleplayer.sp_grave_am.name": "Arthur Morgan",
@@ -1506,5 +1510,7 @@
   "singleplayer.sp_grave_ls.name": "Lenny Summers",
   "singleplayer.sp_grave_sg.name": "Susan Grimshaw",
   "singleplayer.sp_grave_sm.name": "Sean Macguire",
+  "map.singleplayer.sp_crayfish_holes.name": "Flusskrebslöcher",
+  "map.singleplayer.sp_crayfish_holes.desc": "Wenn du das Loch im Boden durchsuchst, kannst du hier einen Flusskrebs finden.",
   "singleplayer.sp_crayfish_hole.name": "Flusskrebsloch"
 }
