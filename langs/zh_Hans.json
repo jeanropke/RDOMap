@@ -109,7 +109,7 @@
   "help.pins_place_new": "在当前地图的显示范围中心新建图钉。",
   "help.read_wiki": "在新标签页中打开此地图的 Wiki 以获取更多信息。",
   "help.report_issues": "在新标签页中打开 Github 页面，您可以反馈问题或对新功能提出建议。",
-  "help.search_copy_link": "将当前搜索链接复制到剪贴板，以便您可以使用该搜索查询浏览到地图。",
+  "help.search_copy_link": "将当前搜索链接复制到剪贴板，以便您可以使用该搜索查询在地图中直接查阅。",
   "help.search": "允许您搜索要显示的物品。所有其它物品都将隐藏。",
   "help.show_all": "显示地图上的所有标记。",
   "help.show_coords": "切换在地图上单击某个位置时是否显示坐标。",
