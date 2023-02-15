@@ -40,7 +40,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (100%):
+### Chinese Simplified (99%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -52,14 +52,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (24,166 words)
+  - **ToxicMagisk** (24,347 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (95%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
-  - **Vinnie5412** (316 words)
+  - **Vinnie5412** (801 words)
 
 ### Czech (70%):
   - **avojta** (581 words)
@@ -99,7 +99,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (66%):
   - **seevimi** (283 words)
 
-### French (96%):
+### French (95%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
@@ -132,7 +132,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,537 words)
 
-### German (96%):
+### German (95%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
@@ -293,13 +293,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **victorpxavier** (593 words)
   - **vierim** (33 words)
 
-### Romanian (97%):
+### Romanian (96%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
   - **proximacentaurib** (24,201 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (99%):
+### Russian (98%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
@@ -379,7 +379,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (93%):
+### Turkish (92%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
   - **dubelnaz** (2,441 words)
@@ -389,7 +389,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Krykl** (12,722 words)
   - **TitanHaxz** (289 words)
 
-### Ukrainian (93%):
+### Ukrainian (92%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
   - **grmaster5s** (14,651 words)
