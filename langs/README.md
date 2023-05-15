@@ -260,6 +260,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **piszczel24** (57 words)
   - **PLTytus** (789 words)
   - **Quahox** (39 words)
+  - **skalski.jas** (12 words)
   - **THE_MALOTEK** (422 words)
   - **tkwitak** (638 words)
 
@@ -354,8 +355,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToshyExS** (1,519 words)
   - **ulises_hdz22** (361 words)
 
-### Spanish, Mexico (73%):
+### Spanish, Mexico (75%):
   - **bloobhy** (152 words)
+  - **jorgex94** (681 words)
   - **juanestevez** (911 words)
   - **Lopezpatricio3** (14 words)
   - **Megitsune** (4,440 words)
