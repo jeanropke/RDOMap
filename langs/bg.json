@@ -1,4 +1,13 @@
 {
+  "menu.ambush": "Засада",
+  "menu.boats": "Лодки",
+  "menu.campfires": "Лагерен огън",
+  "menu.defend_campsite": "Защита на лагера",
+  "menu.enable_dclick_zoom": "Двойно кликване за увеличение",
+  "menu.escort": "Ескорт",
+  "map.ambush.name": "Засада",
+  "map.defend_campsite.name": "Защита на лагера",
+  "map.escort.name": "Ескорт",
   "map.singleplayer.sp_dino_bones.name": "Динозавър кости",
   "map.singleplayer.sp_dreamcatchers.name": "Ловци на сънища.",
   "map.singleplayer.sp_rock_carvings.name": "Скални рисунки."
