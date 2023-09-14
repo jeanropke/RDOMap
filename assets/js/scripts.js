@@ -45,8 +45,17 @@ function init() {
   }
 
   const navLang = navigator.language;
+  const langCodesMap = {
+    'zh-CN': 'zh-Hans',
+    'zh-SG': 'zh-Hans',
+    'zh-HK': 'zh-Hant',
+    'zh-TW': 'zh-Hant',
+  };
+  const mappedLanguage = langCodesMap[navLang] || navLang;
   SettingProxy.addSetting(Settings, 'language', {
-    default: Language.availableLanguages.includes(navLang) ? navLang : 'en',
+    default: Language.availableLanguages.includes(mappedLanguage)
+      ? mappedLanguage
+      : 'en',
   });
 
   //Convert old settings if any
