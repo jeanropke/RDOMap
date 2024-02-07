@@ -383,6 +383,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **lychothroat** (114 words)
   - **mollyyy** (3,674 words)
   - **niklase005** (27 words)
+  - **Spookook** (124 words)
   - **Swedish_Chef69** (140 words)
   - **swiff** (134 words)
 
