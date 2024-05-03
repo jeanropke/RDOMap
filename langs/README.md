@@ -55,7 +55,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
   - **SeaBreeze33** (52 words)
-  - **ToxicMagisk** (25,109 words)
+  - **ToxicMagisk** (25,110 words)
   - **User670** (224 words)
 
 ### Chinese Traditional (98%):
@@ -109,7 +109,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
-  - **cedricool39** (788 words)
+  - **cedricool39** (791 words)
   - **drthomasgeek** (24 words)
   - **EternalEagle** (83 words)
   - **FRANCESCADOLORES** (1,005 words)
