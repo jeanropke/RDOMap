@@ -218,10 +218,12 @@ const FME = {
    * Retrieve the FME data from FME.json
    */
   init: function () {
+    const openFmeModal = document.getElementById('open-fme-enabled-events-modal');
+
     $('#fme-display').on("change", function () {
       Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
       $('#fme-display-general-period, #fme-display-role-period').parent().toggle(Settings.isFmeDisplayEnabled);
-      $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+      openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
       FME.update();
     });
 
@@ -251,7 +253,7 @@ const FME = {
       });
 
       $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-      $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+      openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
     });
 
     $('#fme-notification-period').on("change", function () {
@@ -273,15 +275,16 @@ const FME = {
     $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
     $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
     $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-    $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+    openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
 
     $("input[name='fme-enabled-events[]']").each(function (i, v) {
       const id = $(this).attr('id');
       $(this).prop('checked', (Settings.fmeEnabledEvents & FME.flags[id]));
     });
 
-    $('#open-fme-enabled-events-modal').on('click', function () {
-      $('#fme-enabled-events-modal').modal();
+    const fmeModal = new bootstrap.Modal(document.getElementById('fme-enabled-events-modal'));
+    openFmeModal.addEventListener('click', function () {
+      fmeModal.show();
     });
 
     const events = Loader.promises['fme'].consumeJson(data => data);

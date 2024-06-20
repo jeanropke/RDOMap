@@ -3,7 +3,6 @@
     src: url(../fonts/hapna.woff2) format("woff2"), url(../fonts/hapna.woff) format("woff"), url(../fonts/hapna.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -11,7 +10,6 @@
     src: url(../fonts/RDRLino-Regular.woff2) format("woff2"), url(../fonts/RDRLino-Regular.woff) format("woff"), url(../fonts/RDRLino-Regular.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 *,
@@ -37,6 +35,13 @@ body {
     margin: 0;
     font-size: 16px;
     font-family: Hapna, serif;
+    line-height: 1.42857143;
+    text-rendering: optimizeLegibility;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+    line-height: 1.42857143;
 }
 
 h1 {
@@ -44,6 +49,7 @@ h1 {
 }
 
 h2 {
+    font-size: 1.5em;
     margin: 0 0 5px;
     text-align: center;
 }
@@ -116,6 +122,7 @@ select {
     font-weight: normal;
     font-size: 36px;
     line-height: 64px;
+    text-rendering: optimizeLegibility;
 }
 
 #main-header-left,
@@ -226,6 +233,7 @@ select {
     height: 100%;
     font-family: Hapna, serif;
     font-size: 13px;
+    text-rendering: optimizeLegibility;
 }
 
 #map h1 {
@@ -323,12 +331,14 @@ select {
 
 .marker-popup-pin-input-name,
 .marker-popup-pin-input-desc {
+    color: inherit;
     border: none;
     width: 100%;
     background-color: #222;
 }
 
 .marker-popup-pin-input-name {
+    font-weight: inherit;
     text-align: center;
 }
 
@@ -348,6 +358,7 @@ select {
 
 .marker-popup-pin-input-icon,
 .marker-popup-pin-input-color {
+    color: inherit;
     background: #eee;
     border: none;
     padding: 5px 10px;
@@ -1151,19 +1162,25 @@ a.no-style:visited {
 
 .modal-header {
     padding-bottom: 10px;
+    height: 54px;
 }
 
 .modal-footer {
     padding-top: 10px;
+    height: 63.6px;
 }
 
 .modal-header::after {
+    content: '';
+    top: 44px;
     margin-top: 10px;
     background: url(../../assets/images/modal-title.png) !important;
     background-position: bottom center !important;
 }
 
 .modal-footer::before {
+    content: '';
+    bottom: 53.6px;
     margin-top: -36px;
     background: url(../../assets/images/modal-footer.png) !important;
     background-position: top center !important;
@@ -1179,6 +1196,7 @@ a.no-style:visited {
     font-weight: normal;
     font-size: 24px;
     line-height: 1;
+    text-rendering: optimizeLegibility;
 }
 
 .modal-body {
@@ -1198,6 +1216,7 @@ a.no-style:visited {
     .modal {
         text-align: center;
         padding: 0 !important;
+        --bs-modal-width: 600px;
     }
     .modal:before {
         content: '';
@@ -1207,6 +1226,7 @@ a.no-style:visited {
         margin-right: -4px;
     }
     .modal-body {
+        font-size: 16px;
         max-height: 650px !important;
     }
     .modal-dialog {
@@ -1215,7 +1235,7 @@ a.no-style:visited {
         vertical-align: middle;
     }
     .modal-sm {
-        width: 450px;
+        --bs-modal-width: 450px;
     }
 }
 
@@ -1405,6 +1425,7 @@ a.no-style:visited {
     left: 0.1em;
     font-family: "Courier New", Courier, monospace;
     text-transform: uppercase;
+    text-rendering: optimizeLegibility;
 }
 
 /* Fix being able to select the overlays. */
@@ -1469,6 +1490,7 @@ a.no-style:visited {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+    box-shadow: none !important;
 }
 
 /* Donate form */
@@ -1538,6 +1560,7 @@ a.no-style:visited {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-rendering: optimizeLegibility;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
@@ -1650,7 +1673,7 @@ a.no-style:visited {
 }
 
 .one-daily-container {
-    font-size: 1.5rem;
+    font-size: 15px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-gap: 5px;
@@ -1664,7 +1687,7 @@ a.no-style:visited {
 }
 
 span.counter {
-    font-size: 1.9rem;
+    font-size: 19px;
     grid-area: counter;
     font-weight: bold;
     display: grid;
@@ -1737,6 +1760,7 @@ span.daily-checkbox {
     margin: 0 6px;
     font-family: RDRLino, serif;
     font-size: 19px;
+    text-rendering: optimizeLegibility;
 }
 
 .dailies-difficulty-selection {
@@ -1747,6 +1771,33 @@ span.daily-checkbox {
 /* End of dailies Styling */
 
 /* Dark mode styling */
+
+/* Override Bootstrap && Leaflet buttons color styling */
+
+.btn {
+    font-size: 14px;
+}
+
+.btn-default {
+    --bs-btn-hover-color: #333;
+    --bs-btn-hover-bg: #e6e6e6;
+}
+
+.btn-primary {
+    --bs-btn-bg: #337ab7;
+    --bs-btn-hover-bg: #286090;
+}
+
+.btn-secondary {
+    --bs-btn-color: #333;
+    --bs-btn-bg: #f0f0f0;
+}
+
+.btn-info {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #222;
+}
 
 .btn.btn-info.remove-button,
 .save-button {
@@ -1905,6 +1956,7 @@ span.daily-checkbox {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+    box-shadow: none !important;
 }
 
 /* end dark mode styling */

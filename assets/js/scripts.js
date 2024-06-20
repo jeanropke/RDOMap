@@ -456,12 +456,10 @@ function convertToTime(hours = '00', minutes = '00') {
 /**
  * Modals
  */
-$('#open-clear-important-items-modal').on('click', function () {
-  $('#clear-important-items-modal').modal();
-});
 
-$('#open-delete-all-settings-modal').on('click', function () {
-  $('#delete-all-settings-modal').modal();
+const deleteAllSettingsModal = new bootstrap.Modal(document.getElementById('delete-all-settings-modal'));
+document.getElementById('open-delete-all-settings-modal').addEventListener('click', function () {
+  deleteAllSettingsModal.show();
 });
 /* returns an Array with the range of all hours between from to to  */
 function timeRange(from, to) {

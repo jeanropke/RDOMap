@@ -153,8 +153,9 @@ class Pins {
       Pins.save();
     });
 
-    $('#open-remove-all-pins-modal').on('click', function () {
-      $('#remove-all-pins-modal').modal();
+    const removeAllPinsModal = new bootstrap.Modal(document.getElementById('remove-all-pins-modal'));
+    document.getElementById('open-remove-all-pins-modal').addEventListener('click', function () {
+      removeAllPinsModal.show();
     });
 
     $('#remove-all-pins').on('click', function () {
