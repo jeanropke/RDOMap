@@ -1094,6 +1094,11 @@ a.no-style:visited {
     color: #fff !important;
 }
 
+.leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-scale {
+	font-size: 11px;
+}
+
 .text-danger {
     color: #f95050 !important;
 }
@@ -1462,9 +1467,16 @@ a.no-style:visited {
     height: auto;
 }
 
+.leaflet-container .leaflet-marker-pane img {
+    width: auto;
+}
+
+.leaflet-container .leaflet-marker-pane img.overlay {
+    width: 100%;
+}
 .leaflet-div-icon .icon {
     z-index: 4;
-    width: 100%;
+    width: 100% !important;
     height: auto;
 }
 
@@ -1875,6 +1887,18 @@ span.daily-checkbox {
     user-select: none;
 }
 
+.leaflet-control-layers label {
+	font-size: inherit;
+}
+
+.leaflet-control-layers-toggle {
+	background-image: url(../images/layers.png);
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(../images/layers-2x.png);
+}
+
 .leaflet-control-layers-expanded {
     color: #d4d4d4;
     background: #333;
@@ -1902,61 +1926,6 @@ span.daily-checkbox {
 
 .leaflet-control-layers-base label {
     cursor: pointer;
-}
-
-/* Leaflet Marker styling */
-
-.leaflet-div-icon {
-    width: 36px;
-    height: 45px;
-    background-color: transparent;
-    border: none;
-}
-
-.leaflet-div-icon .overlay,
-.leaflet-div-icon .icon,
-.leaflet-div-icon .background,
-.leaflet-div-icon .marker-contour,
-.leaflet-div-icon .shadow {
-    position: absolute;
-    text-align: center;
-}
-
-.leaflet-div-icon .overlay {
-    z-index: 5;
-    width: 100%;
-    height: auto;
-}
-
-.leaflet-div-icon .icon {
-    z-index: 4;
-    width: 100%;
-    height: auto;
-}
-
-.leaflet-div-icon .background {
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-}
-
-.leaflet-div-icon .marker-contour {
-    z-index: 2;
-    width: 130%;
-    height: 130%;
-    left: -15%;
-    bottom: -15%;
-}
-
-.marker-contour {
-    opacity: 0.0;
-}
-
-.leaflet-div-icon .shadow {
-    z-index: 1;
-    bottom: -2px;
-    left: 9px;
-    box-shadow: none !important;
 }
 
 /* end dark mode styling */

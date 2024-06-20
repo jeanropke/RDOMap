@@ -109,11 +109,6 @@ var Language = {
     const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
     $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
 
-    $('.leaflet-control-layers-base label span').each((key, value) => {
-      var $this = $(value);
-      $this.text(' ' + Language.get($this.text().trim()));
-    });
-
     this.translateDom();
 
     $('#search').attr('placeholder', Language.get('menu.search_placeholder'));
