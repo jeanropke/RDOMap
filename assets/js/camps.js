@@ -5,7 +5,7 @@ class Camp {
     this.isWilderness = true;
     this.locations = [];
     this.quickParams = [];
-    this.context = $('.menu-hidden[data-type=camps]');
+    this.context = document.querySelector('.menu-hidden[data-type=camps]');
 
     return Loader.promises['camps'].consumeJson(data => {
       data.forEach(item => {
@@ -24,13 +24,17 @@ class Camp {
 
     this.onLanguageChanged();
 
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .toggleClass('disabled', !this.onMap)
-      .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', `map.camps.${this.key}.name`))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key });
+    this.element.innerHTML = `
+      <p class="collectible" data-text="map.camps.${this.key}.name"></p>
+    `;    
+    this.element.classList.toggle('disabled', !this.onMap);
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
 
-    this.element.appendTo(Camp.context);
+    Camp.context.appendChild(this.element);
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);
@@ -53,7 +57,7 @@ class Camp {
 
         const shadow = Settings.isShadowsEnabled ?
           `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
-        var tempMarker = L.marker([marker.lat, marker.lng], {
+        const tempMarker = L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
             iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -80,12 +84,12 @@ class Camp {
     this.reinitMarker();
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.removeClass('disabled');
+      this.element.classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.addClass('disabled');
+      this.element.classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo.${this.key}`);
     }

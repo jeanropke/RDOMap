@@ -3,6 +3,7 @@ class Dailies {
     Object.assign(this, preliminary);
     this.challengeId = preliminary.id.toLowerCase();
   }
+
   static init() {
     this.categoryOffset = 0;
     this.markersCategories = [];
@@ -31,9 +32,10 @@ class Dailies {
 
         this.categories = allDailies.category_order;
         this.categories.forEach((category, index) => {
-          $('.dailies')
-            .append($(`<div id="${category}" class="daily-role"></div>`)
-              .toggleClass('hidden', !!index));
+          const div = document.createElement('div');
+          div.id = category;
+          div.className = `daily-role${index ? ' hidden' : ''}`;
+          document.querySelector('.dailies').appendChild(div);
         });
 
         Object.entries(currentDailies.data).forEach(([categoryType, challengesSets]) => {
@@ -82,10 +84,12 @@ class Dailies {
       .then(this.activateHandlers.bind(this))
       .catch(this.dailiesNotUpdated);
   }
+
   appendToMenu() {
-    $(`.dailies > #${this.role}`)
-      .append($(`
-          <div class="one-daily-container" data-type="${this.role}-${this.categoryType}">
+    const container = document.createElement('div');
+    container.className = 'one-daily-container';
+    container.setAttribute('data-type', `${this.role}-${this.categoryType}`);
+    container.innerHTML = `
             <span class="counter" data-text="${this.desiredGoal}"></span>
             <label class="daily" data-text="${this.translationKey}" for="checkbox-${this.role}-${this.challengeId}"></label>
             <span class="daily-checkbox">
@@ -95,82 +99,106 @@ class Dailies {
                 <label class="input-checkbox-label" for="checkbox-${this.role}-${this.challengeId}"></label>
               </div>
             </span>
-          </div>`))
-      .translate()
-      .find('.one-daily-container')
-      .css('grid-template-areas', `"${Dailies.challengeStructure[1]} daily-challenge ${Dailies.challengeStructure[2]}"`)
-      .end()
-      .find(`#checkbox-${this.role}-${this.challengeId}`)
-      .prop('checked', DailyChallenges[`${this.role}_${this.challengeId}`])
-      .on('change', (event) => {
-        DailyChallenges[`${this.role}_${this.challengeId}`] = $(`#${event.target.id}`).prop('checked');
-      })
-      .end();
+    `;
+
+    document.querySelector(`.dailies > #${this.role}`).appendChild(container);
+    Language.translateDom(container);
+
+    container.style.gridTemplateAreas = `"${Dailies.challengeStructure[1]} daily-challenge ${Dailies.challengeStructure[2]}"`;
+    const checkbox = document.getElementById(`checkbox-${this.role}-${this.challengeId}`);
+    checkbox.checked = DailyChallenges[`${this.role}_${this.challengeId}`];
+    checkbox.addEventListener('change', event => {
+      DailyChallenges[`${this.role}_${this.challengeId}`] = event.target.checked;
+    });
   }
+
   static dailiesLoaded() {
     console.info('%c[Dailies] Loaded!', 'color: #bada55; background: #242424');
-    $('.dailies .daily-status.loading').addClass('hidden');
+    document.querySelector('.dailies .daily-status.loading').classList.add('hidden');
   }
+
   static dailiesNotUpdated(err) {
     console.info(`%c[Dailies] ${err}`, 'color: #FF6969; background: #242424');
     const textKey = 'menu.dailies_not_found';
-    $('.dailies').append($('<div class="daily-status not-found"></div>').attr('data-text', textKey).text(Language.get(textKey)));
-    $('#dailies-changer-container, #sync-map-to-dailies, .dailies .daily-status.loading').addClass('hidden');
+    const div = document.createElement('div');
+    div.className = 'daily-status not-found';
+    div.setAttribute('data-text', textKey);
+    div.textContent = Language.get(textKey);
+    document.querySelector('.dailies').appendChild(div);
+    document.querySelector('#dailies-changer-container').classList.add('hidden');
+    document.querySelector('#sync-map-to-dailies').classList.add('hidden');
+    document.querySelector('.dailies .daily-status.loading').classList.add('hidden');
   }
+
   static switchCategory(offset) {
     this.categoryOffset = (this.categoryOffset + offset).mod(this.categories.length);
     const activeRole = this.categories[this.categoryOffset];
-    const roles = $('.daily-role');
-    [...roles].forEach(element => {
-      $(element).toggleClass('hidden', element.id !== activeRole);
+    const roles = document.querySelectorAll('.daily-role');
+    roles.forEach(element => {
+      element.classList.toggle('hidden', element.id !== activeRole);
     });
     const textKey = `menu.dailies_${activeRole}`;
-    $('.dailies-title').attr('data-text', textKey).text(Language.get(textKey));
+    const dailiesTitle = document.querySelector('.dailies-title');
+    dailiesTitle.setAttribute('data-text', textKey);
+    dailiesTitle.textContent = Language.get(textKey);
+    
     this.switchDifficulty();
-    const difficultySelectors = $('.dailies-difficulty-selection').children();
-    [...difficultySelectors].forEach(selector => {
-      const $selector = $(selector);
-      $selector.toggleClass('hidden', !$selector.hasClass(`${activeRole}-dailies-difficulty-selection`));
+    const difficultySelectors = document.querySelector('.dailies-difficulty-selection').children;
+    Array.from(difficultySelectors).forEach(selector => {
+      selector.classList.toggle(
+        'hidden',
+        !selector.classList.contains(
+          `${activeRole}-dailies-difficulty-selection`
+        )
+      );
     });
   }
+  
   static switchDifficulty() {
     const activeRole = this.categories[this.categoryOffset];
     if (activeRole === 'general') return;
-    const dailiesGroup = $(`#${activeRole} .one-daily-container`);
+    const dailiesGroup = document.querySelectorAll(`#${activeRole} .one-daily-container`);
     const selectedDifficulty = DailyChallenges[`${activeRole}_difficulty`];
-    [...dailiesGroup].forEach(daily => {
-      const $daily = $(daily);
-      $daily.toggleClass('hidden', $daily.attr('data-type') !== `${activeRole}-${selectedDifficulty}`);
+    dailiesGroup.forEach((daily) => {
+      daily.classList.toggle(
+        'hidden',
+        daily.getAttribute('data-type') !==
+          `${activeRole}-${selectedDifficulty}`
+      );
     });
   }
+
   static sortDailies() {
-    const $roleContainers = $('.daily-role');
-    [...$roleContainers].forEach(roleContainer => {
-      const dailies = $(roleContainer).children('.one-daily-container');
-      const sortedDailies = [...dailies].sort((...args) => {
-        const [a, b] = args.map(dailyContainer =>
-          Language.get($(dailyContainer).find('label.daily').attr('data-text')));
-        return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
+    const roleContainers = document.querySelectorAll('.daily-role');
+    roleContainers.forEach(roleContainer => {
+      const dailies = [...roleContainer.children].filter(child => child.classList.contains('one-daily-container'));
+      dailies.sort((a, b) => {
+        const textA = Language.get(a.querySelector('label.daily').getAttribute('data-text'));
+        const textB = Language.get(b.querySelector('label.daily').getAttribute('data-text'));
+        return textA.localeCompare(textB, Settings.language, { sensitivity: 'base' });
       });
-      $(roleContainer).append(sortedDailies);
+      dailies.forEach(daily => roleContainer.appendChild(daily));
     });
   }
+
   static activateHandlers() {
-    $('#dailies-prev, #dailies-next').on('click', event => {
-      const offset = event.currentTarget.id === 'dailies-next' ? 1 : -1;
-      Dailies.switchCategory(offset);
+    document.querySelectorAll('#dailies-prev, #dailies-next').forEach(btn => {
+      btn.addEventListener('click', event => {
+        const offset = event.currentTarget.id === 'dailies-next' ? 1 : -1;
+        Dailies.switchCategory(offset);
+      });
     });
 
     this.categories.slice(1).forEach(role => {
-      $(`#${role}-dailies-difficulty-selection`)
-        .val(DailyChallenges[`${role}_difficulty`])
-        .on('change', function() {
-          DailyChallenges[`${role}_difficulty`] = $(this).val();
-          Dailies.switchDifficulty();
-        });
+      const selector = document.getElementById(`${role}-dailies-difficulty-selection`);
+      selector.value = DailyChallenges[`${role}_difficulty`];
+      selector.addEventListener('change', function() {
+        DailyChallenges[`${role}_difficulty`] = this.value;
+        Dailies.switchDifficulty();
+      });
     });
 
-    $('#sync-map-to-dailies').on('click', SynchronizeDailies.init);
+    document.getElementById('sync-map-to-dailies').addEventListener('click', SynchronizeDailies.init);
   }
 }
 
@@ -182,14 +210,16 @@ class SynchronizeDailies {
     this.role = role;
     this.categoryType = categoryType;
   }
+
   static init() {
-    $('.menu-hide-all').trigger('click');
+    document.querySelectorAll('.menu-hide-all').forEach(el => el.click());
 
     Dailies.markersCategories.forEach(([role, id, [category, marker], categoryType]) => {
       const newSyncedCategory = new SynchronizeDailies(category, marker, `${role}_${id}`, role, categoryType);
       newSyncedCategory.sync();
     });
   }
+
   sync() {
     if (!!DailyChallenges[this.challengeKey])
       return;
@@ -216,8 +246,12 @@ class SynchronizeDailies {
       }
     })();
 
-    if ($(`[data-text="${this.key}"]`).parent().hasClass('disabled') ||
-      $(`[data-text="${this.key}"]`).parent().parent().hasClass('disabled'))
-      $(`[data-text="${this.key}"]`).trigger('click');
+    const targetEl = document.querySelector(`[data-text="${this.key}"]`);
+    if (
+      targetEl.parentElement.classList.contains('disabled') ||
+      targetEl.parentElement.parentElement.classList.contains('disabled')
+    ) {
+      targetEl.click();
+    }
   }
 }

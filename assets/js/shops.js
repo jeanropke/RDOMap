@@ -2,7 +2,7 @@ class Shop {
   static init() {
     this.locations = [];
     this.quickParams = [];
-    this.context = $('.menu-hidden[data-type=shops]');
+    this.context = document.querySelector('.menu-hidden[data-type=shops]');
 
     return Loader.promises['shops'].consumeJson(data => {
       data.forEach(item => {
@@ -21,16 +21,19 @@ class Shop {
 
     this.onLanguageChanged();
 
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`map.shops.${this.key}.name`))
-      .on('click', () => this.onMap = !this.onMap)
-      .append($(`<img class="collectible-icon" src="./assets/images/icons/${this.key}.png">`))
-      .append($('<span class="collectible-text">')
-        .toggleClass('disabled', !this.onMap)
-        .append($('<p class="collectible">').attr('data-text', `map.shops.${this.key}.name`)))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key, tippyContent: Language.get(`map.shops.${this.key}.name`) });
+    this.element.innerHTML = `
+      <img class="collectible-icon" src="./assets/images/icons/${this.key}.png">
+      <span class="collectible-text ${!this.onMap ? 'disabled' : ''}">
+        <p class="collectible" data-text="map.shops.${this.key}.name"></p>
+      </span>
+    `;
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
 
-    this.element.appendTo(Shop.context);
+    Shop.context.appendChild(this.element);
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);
@@ -76,12 +79,12 @@ class Shop {
   set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.children('span').removeClass('disabled');
+      this.element.querySelector('span').classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.children('span').addClass('disabled');
+      this.element.querySelector('span').classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo.${this.key}`);
     }

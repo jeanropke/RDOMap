@@ -23,6 +23,7 @@ class Loader {
     */
     this.mapModelLoaded = new Promise(resolve => this.resolveMapModelLoaded = resolve);
   }
+
   constructor(name, url, customNoCache = null) {
     const queryString = {};
 
@@ -33,14 +34,24 @@ class Loader {
 
     if (['lang_progress'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
 
-    this._json = $.getJSON(url, queryString);
+    this._json = fetch(
+      `${url}?${new URLSearchParams(queryString).toString()}`
+    ).then((response) => {
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText} on ${response.url}`)
+      }
+      return response.json()
+    })
   }
+
   // allow garbage collection of loaded data after use
   consumeJson(...args) {
-    const json = this._json;
-    delete this._json;
-    return json.then(...args);
+    return this._json.then(json => {
+      delete this._json;
+      return json;
+    }).then(...args);
   }
+
   static reloadData(name) {
     delete this.promises[name];
     this.promises[name] = new Loader(name, this.urls.get(name), Date.now());

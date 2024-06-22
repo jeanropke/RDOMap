@@ -91,9 +91,11 @@ const MapBase = {
             that.closePopup();
           }, 100);
 
-          $('.leaflet-popup').on('mouseover', function (e) {
-            clearTimeout(timeout);
-            $('.leaflet-popup').off('mouseover');
+          document.querySelectorAll('.leaflet-popup').forEach(el => {
+            el.addEventListener('mouseover', function mouseOverHandler(e) {
+              clearTimeout(timeout);
+              el.removeEventListener('mouseover', mouseOverHandler);
+            });
           });
         });
 
@@ -109,8 +111,8 @@ const MapBase = {
       zoomControl: false,
       crs: L.CRS.Simple,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
-      zoomSnap: false,
-      zoomDelta: (this.maxZoom - this.minZoom) / ((this.maxZoom - this.minZoom) * 2),
+      zoomSnap: 0,
+      zoomDelta: 0.5,
       wheelPxPerZoomLevel: 140,
       wheelDebounceTime: 150,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
@@ -129,12 +131,12 @@ const MapBase = {
     L.control.layers(mapLayers).addTo(MapBase.map);
 
     // Leaflet leaves the layer names here, with a space in front of them.
-    $('.leaflet-control-layers-list span span').each(function (index, node) {
+    document.querySelectorAll('.leaflet-control-layers-list span span').forEach(node => {
       // changes: Apply double span selector here using Leaflet 1.8.0+
       // Move the layer name (which is chosen to be our language key) into a
       // new tightly fitted span for use with our localization.
       const langKey = node.textContent.trim();
-      $(node).html([' ', $('<span>').attr('data-text', langKey).text(langKey)]);
+      node.innerHTML = ` <span data-text="${langKey}">${langKey}</span>`;
     });
 
     MapBase.map.on('baselayerchange', function (e) {
@@ -176,12 +178,16 @@ const MapBase = {
   setMapBackground: function () {
     'use strict';
     MapBase.isDarkMode = ['map.layers.dark', 'map.layers.black'].includes(this.themeOverride || Settings.baseLayer) ? true : false;
-    $('#map').css('background-color', (() => {
-      if (MapBase.isDarkMode)
-        return (this.themeOverride || Settings.baseLayer) === 'map.layers.black' ? '#000' : '#3d3d3d';
-      else
-        return '#d2b790';
-    }));
+
+    const mapEl = document.getElementById('map');
+    if (MapBase.isDarkMode) {
+      mapEl.style.backgroundColor =
+        (this.themeOverride || Settings.baseLayer) === 'map.layers.black'
+          ? '#000'
+          : '#3d3d3d';
+    } else {
+      mapEl.style.backgroundColor = '#d2b790';
+    }
   },
 
   beforeLoad: function () {
@@ -228,11 +234,11 @@ const MapBase = {
     if (quickParam) {
       MapBase.isPreviewMode = true;
 
-      $('.menu-toggle').remove();
-      $('.top-widget').remove();
-      $('#fme-container').remove();
-      $('.side-menu').removeClass('menu-opened');
-      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+      document.querySelector('.menu-toggle').remove();
+      document.querySelector('.top-widget').remove();
+      document.getElementById('fme-container').remove();
+      document.querySelector('.side-menu').classList.remove('menu-opened');
+      document.querySelector('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
       this.disableAll();
 
@@ -338,12 +344,11 @@ const MapBase = {
   },
 
   loadOverlaysBeta: function () {
-    $.getJSON('data/overlays_beta.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.overlaysBeta = data;
-        MapBase.setOverlaysBeta(Settings.overlayOpacity);
-        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
-      });
+    return Loader.promises['overlays_beta'].consumeJson(data => {
+      MapBase.overlaysBeta = data;
+      MapBase.setOverlaysBeta(Settings.overlayOpacity);
+      console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+    });
   },
 
   setOverlaysBeta: function (opacity = 0.5) {
@@ -351,13 +356,13 @@ const MapBase = {
 
     if (opacity === 0) return;
 
-    $.each(MapBase.overlaysBeta, function (key, value) {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/game/${value.name}.png?nocache=${nocache}`;
+    MapBase.overlaysBeta.forEach(value => {
+      const overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/game/${value.name}.png?nocache=${nocache}`;
 
-      var x = (value.width / 2);
-      var y = (value.height / 2);
-      var scaleX = 0.00076;
-      var scaleY = scaleX;
+      const x = (value.width / 2);
+      const y = (value.height / 2);
+      const scaleX = 0.00076;
+      const scaleY = scaleX;
 
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
         [(parseFloat(value.lat) + (y * scaleY)), (parseFloat(value.lng) - (x * scaleX))],
@@ -370,34 +375,37 @@ const MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  onSearch: function (searchString) {
-    searchTerms = [];
-    $.each(searchString.split(';'), function (key, value) {
-      if ($.inArray(value.trim(), searchTerms) === -1) {
-        if (value.length > 0)
-          searchTerms.push(value.trim());
-      }
-    });
+  onSearch: function(searchString) {
+    'use strict';
 
+    let searchTerms = [];
+    searchString.split(';').forEach(value => {
+      const trimmedValue = value.trim();
+      if (!searchTerms.includes(trimmedValue) && trimmedValue.length > 0)
+        searchTerms.push(trimmedValue);
+    });
+  
+    let uniqueSearchMarkers = [];
     if (searchTerms.length === 0) {
       uniqueSearchMarkers = MapBase.markers;
     } else {
       Layers.itemMarkersLayer.clearLayers();
       Layers.plantsLayer.clearLayers();
-      var searchMarkers = [];
-      uniqueSearchMarkers = [];
-      $.each(searchTerms, function (id, term) {
-        searchMarkers = searchMarkers.concat(MapBase.markers.filter(function (_marker) {
-          if (_marker.title != null)
-            return _marker.title.toLowerCase().includes(term.toLowerCase());
-        }));
-
-        $.each(searchMarkers, function (i, el) {
-          if ($.inArray(el, uniqueSearchMarkers) === -1) uniqueSearchMarkers.push(el);
+  
+      searchTerms.forEach(term => {
+        const searchMarkers = MapBase.markers.filter(function (_marker) {
+          return _marker.title != null && _marker.title.toLowerCase().includes(term.toLowerCase())
+        }
+          
+        );
+  
+        searchMarkers.forEach(marker => {
+          if (!uniqueSearchMarkers.includes(marker))
+            uniqueSearchMarkers.push(marker);
         });
       });
     }
-
+  
     MapBase.addMarkers();
   },
 
@@ -409,8 +417,9 @@ const MapBase = {
   },
 
   submitDebugForm: function () {
-    var lat = $('input[name=debug-marker-lat]').val();
-    var lng = $('input[name=debug-marker-lng]').val();
+    const lat = parseFloat(document.querySelector('input[name="debug-marker-lat"]').value);
+    const lng = parseFloat(document.querySelector('input[name="debug-marker-lng"]').value);
+  
     if (!isNaN(lat) && !isNaN(lng))
       MapBase.debugMarker(lat, lng);
   },
@@ -418,7 +427,7 @@ const MapBase = {
   debugMarker: function (lat, long, name = 'Debug Marker') {
     const shadow = Settings.isShadowsEnabled ?
       `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
-    var marker = L.marker([lat, long], {
+    const marker = L.marker([lat, long], {
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
@@ -445,15 +454,16 @@ const MapBase = {
 
     // Show clicked coordinates (like google maps)
     if (Settings.isCoordsOnClickEnabled) {
-      $('.lat-lng-container').css('display', 'block');
-
-      $('.lat-lng-container p').html(`
-          Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}
-          <br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}
-        `);
-
-      $('#lat-lng-container-close-button').click(function () {
-        $('.lat-lng-container').css('display', 'none');
+      const container = document.querySelector('.lat-lng-container');
+      container.style.display = 'block';
+    
+      container.querySelector('p').innerHTML = `
+        Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}
+        <br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}
+      `;
+    
+      document.getElementById('lat-lng-container-close-button').addEventListener('click', function() {
+        container.style.display = 'none';
       });
     }
 
@@ -521,15 +531,15 @@ const MapBase = {
 
   // Rectangle for testing.
   _rectangle: function (x, y, width, height) {
-    var currentPoint = this.map.latLngToContainerPoint([x, y]);
+    const currentPoint = this.map.latLngToContainerPoint([x, y]);
 
-    var xDifference = width / 2;
-    var yDifference = height / 2;
+    const xDifference = width / 2;
+    const yDifference = height / 2;
 
-    var southWest = L.point((currentPoint.x - xDifference), (currentPoint.y - yDifference));
-    var northEast = L.point((currentPoint.x + xDifference), (currentPoint.y + yDifference));
+    const southWest = L.point((currentPoint.x - xDifference), (currentPoint.y - yDifference));
+    const northEast = L.point((currentPoint.x + xDifference), (currentPoint.y + yDifference));
 
-    var bounds = L.latLngBounds(this.map.containerPointToLatLng(southWest), this.map.containerPointToLatLng(northEast));
+    const bounds = L.latLngBounds(this.map.containerPointToLatLng(southWest), this.map.containerPointToLatLng(northEast));
     L.rectangle(bounds).addTo(this.map);
   },
 

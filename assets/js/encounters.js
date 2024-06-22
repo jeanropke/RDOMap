@@ -2,7 +2,7 @@ class Encounter {
   static init() {
     this.locations = [];
     this.quickParams = [];
-    this.context = $('.menu-hidden[data-type=encounters]');
+    this.context = document.querySelector('.menu-hidden[data-type=encounters]');
 
     return Loader.promises['encounters'].consumeJson(data => {
       data.forEach(item => {
@@ -22,16 +22,20 @@ class Encounter {
     this.onLanguageChanged();
 
     const imgKey = this.key === 'rescue' ? 'rescue_objective' : this.key;
-    this.element = $(`<div class="collectible-wrapper ${this.new ? 'new' : ''}" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`menu.${this.key}`))
-      .on('click', () => this.onMap = !this.onMap)
-      .append($(`<img class="collectible-icon" src="./assets/images/icons/${imgKey}.png">`))
-      .append($('<span class="collectible-text">')
-        .toggleClass('disabled', !this.onMap)
-        .append($('<p class="collectible">').attr('data-text', `menu.${this.key}`)))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    if (this.new) this.element.classList.add('new');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key, tippyContent: Language.get(`menu.${this.key}`) });
+    this.element.innerHTML = `
+      <img class="collectible-icon" src="./assets/images/icons/${imgKey}.png">
+      <span class="collectible-text ${!this.onMap ? 'disabled' : ''}">
+        <p data-text="menu.${this.key}"></p>
+      </span>
+    `;
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
 
-    this.element.appendTo(Encounter.context);
+    Encounter.context.appendChild(this.element);
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);
@@ -49,7 +53,7 @@ class Encounter {
     this.markers.forEach(marker => {
       const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
       const imgKey = this.key === 'rescue' ? `${this.key}_${marker.subdata}` : this.key;
-      var tempMarker = L.marker([marker.lat, marker.lng], {
+      const tempMarker = L.marker([marker.lat, marker.lng], {
         opacity: Settings.markerOpacity,
         icon: new L.DivIcon.DataMarkup({
           iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -75,12 +79,12 @@ class Encounter {
   set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.children('span').removeClass('disabled');
+      this.element.querySelector('span').classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.children('span').addClass('disabled');
+      this.element.querySelector('span').classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo.${this.key}`);
     }

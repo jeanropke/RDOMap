@@ -15,7 +15,7 @@ class Overlay {
   static onSettingsChanged() {
     this.layer.clearLayers();
     this.locations.forEach(item => {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${item.key}.png?nocache=${nocache}`;
+      const overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${item.key}.png?nocache=${nocache}`;
       Overlay.layer.addLayer(L.imageOverlay(overlay, item.locations, {
         opacity: Settings.overlayOpacity,
       }));

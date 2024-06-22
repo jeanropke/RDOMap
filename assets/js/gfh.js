@@ -2,7 +2,7 @@ class GunForHire {
   static init() {
     this.locations = [];
     this.quickParams = [];
-    this.context = $('.menu-hidden[data-type=gfh]');
+    this.context = document.querySelector('.menu-hidden[data-type=gfh]');
 
     return Loader.promises['gfh'].consumeJson(data => {
       data.forEach(item => {
@@ -21,16 +21,20 @@ class GunForHire {
 
     this.onLanguageChanged();
 
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`map.gfh.${this.key}.name`))
-      .toggleClass('disabled', !this.onMap)
-      .on('click', () => this.onMap = !this.onMap)
-      .append($(`<img class="collectible-icon" src="./assets/images/icons/${this.type ? this.type : 'gfh'}.png">`))
-      .append($('<span class="collectible-text">')
-        .append($('<p class="collectible">').attr('data-text', `map.gfh.${this.key}.name`)))
-      .translate();
-
-    this.element.appendTo(GunForHire.context);
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key, tippyContent: Language.get(`map.gfh.${this.key}.name`) });
+    this.element.classList.toggle('disabled', !this.onMap);
+    this.element.innerHTML = `
+      <img class="collectible-icon" src="./assets/images/icons/${this.type ? this.type : 'gfh'}.png">
+      <span class="collectible-text">
+        <p class="collectible" data-text="map.gfh.${this.key}.name"></p>
+      </span>
+    `;
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
+    
+    GunForHire.context.appendChild(this.element);
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);
@@ -44,31 +48,35 @@ class GunForHire {
   }
 
   updateMarkerContent(marker) {
-    const missionsElement = $('<ul>').addClass('missions-list');
+    const missionsEl = document.createElement('ul');
+    missionsEl.classList.add('missions-list');
     marker.size
       .map(m => Language.get(`map.gfh.missions.${m}`))
       .sort((a, b) => a.localeCompare(b, { sensitivity: 'base' }))
       .forEach(mission => {
-        missionsElement.append(`<li>${mission}</li>`);
+        const li = document.createElement('li');
+        li.textContent = mission;
+        missionsEl.appendChild(li);
       });
-    const debugDisplayLatLng = $('<small>').text(`Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
-    return $(`
-        <div>
+    const debugDisplayLatLng = document.createElement('small');
+    debugDisplayLatLng.textContent = `Text: ${marker.text} / Latitude: ${marker.lat} / Longitude: ${marker.lng}`;
+
+    const snippet = document.createElement('div');
+    snippet.innerHTML = `
           <h1>${marker.title}</h1>
           <span class="marker-content-wrapper">
             <p>${marker.description}</p>
           </span>
           <br>
           <p data-text="map.gfh.missions_header"></p>
-          ${missionsElement.prop('outerHTML')}
+          ${missionsEl.outerHTML}
           <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
-          ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        </div>
-      `)
-      .translate()
-      .find('button')
-      .on('click', () => this.onMap = false)
-      .end()[0];
+          ${Settings.isDebugEnabled ? debugDisplayLatLng.outerHTML : ''}
+    `;
+    Language.translateDom(snippet);
+    snippet.querySelector('button').addEventListener('click', () => this.onMap = false);
+
+    return snippet;
   }
 
   reinitMarker() {
@@ -77,7 +85,7 @@ class GunForHire {
     this.markers.forEach(marker => {
       const shadow = Settings.isShadowsEnabled ?
         `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
-      var tempMarker = L.marker([marker.lat, marker.lng], {
+      const tempMarker = L.marker([marker.lat, marker.lng], {
         opacity: Settings.markerOpacity,
         icon: new L.DivIcon.DataMarkup({
           iconSize: [35 * markerSize, 45 * markerSize],
@@ -104,12 +112,12 @@ class GunForHire {
     this.reinitMarker();
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.removeClass('disabled');
+      this.element.classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.addClass('disabled');
+      this.element.classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo.${this.key}`);
     }
