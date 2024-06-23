@@ -125,8 +125,9 @@ const MapBase = {
       })
     );
 
-    L.control.zoom({
-      position: 'bottomright',
+    new L.Control.ZoomEx({
+      position: "bottomright",
+      className: "leaflet-zoomex-rightbottom",
     }).addTo(MapBase.map);
 
     L.control.layers(mapLayers).addTo(MapBase.map);
@@ -284,7 +285,7 @@ const MapBase = {
       document.querySelector('.top-widget').remove();
       document.getElementById('fme-container').remove();
       sideMenu.classList.remove('menu-opened');
-      document.querySelector('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+      document.querySelector('.leaflet-top.leaflet-right, .leaflet-zoomex').remove();
 
       this.disableAll();
 
