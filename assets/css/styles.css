@@ -1,3 +1,10 @@
+:root {
+    --default-content-font: Hapna;
+    --default-title-font: RDRLino;
+    --content-font: var(--default-content-font), serif;
+    --title-font: var(--default-title-font), serif;
+}
+
 @font-face {
     font-family: Hapna;
     src: url(../fonts/hapna.woff2) format("woff2"), url(../fonts/hapna.woff) format("woff"), url(../fonts/hapna.ttf) format("truetype");
@@ -34,7 +41,7 @@ html, body {
 body {
     margin: 0;
     font-size: 16px;
-    font-family: Hapna, serif;
+    font-family: var(--content-font);
     line-height: 1.42857143;
     text-rendering: optimizeLegibility;
 }
@@ -118,7 +125,7 @@ select {
 }
 
 #main-header-center>span {
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     font-weight: normal;
     font-size: 36px;
     line-height: 64px;
@@ -231,7 +238,7 @@ select {
     width: 100%;
     width: 100vw;
     height: 100%;
-    font-family: Hapna, serif;
+    font-family: var(--content-font);
     font-size: 13px;
     text-rendering: optimizeLegibility;
 }
@@ -1212,7 +1219,7 @@ a.no-style:visited {
 }
 
 .modal h4 {
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     font-weight: normal;
     font-size: 24px;
     line-height: 1;
@@ -1576,7 +1583,7 @@ a.no-style:visited {
 }
 
 #fme-container .fme-card .fme-body .fme-title {
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     color: #7b66af;
     margin: 0;
     text-align: left;
@@ -1785,7 +1792,7 @@ span.daily-checkbox {
     align-items: center;
     min-width: 170px;
     margin: 0 6px;
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     font-size: 19px;
     text-rendering: optimizeLegibility;
 }

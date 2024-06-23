@@ -10,6 +10,7 @@ const MapBase = {
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
+  loadedFallbackFonts: [],
 
   // Query adjustable parameters
   isPreviewMode: false,
@@ -187,6 +188,51 @@ const MapBase = {
           : '#3d3d3d';
     } else {
       mapEl.style.backgroundColor = '#d2b790';
+    }
+  },
+
+  setFallbackFonts: async function () {
+    const fontsData = {
+      ja: {
+        content: 'MotoyaExGothic',
+        contentUrls: { woff2: 'assets/fonts/fallback/MotoyaExGothic-W4-KP.woff2' },
+        title: 'MotoyaAporo',
+        titleUrls: { woff2: 'assets/fonts/fallback/MotoyaAporo-Std-W7.woff2' }
+      },
+      ko: {
+        content: 'YDMyungjo240Pro',
+        contentUrls: { woff2: 'assets/fonts/fallback/YDMyungjo-240-Pro.woff2' },
+        title: 'Yoon-GogooryoM',
+        titleUrls: { woff2: 'assets/fonts/fallback/Yoon-GogooryoM.woff2' }
+      },
+      'zh-Hans': {
+        content: 'LXGWNeoZhiSong',
+        contentUrls: { woff2: 'assets/fonts/fallback/LXGWNeoZhiSong.woff2' },
+        title: 'MLiPRC',
+        titleUrls: { woff2: 'assets/fonts/fallback/MLiPRC-Bold.woff2' }
+      },
+      'zh-Hant': {
+        content: 'MSungHK',
+        contentUrls: { woff2: 'assets/fonts/fallback/MSungHK-Medium.woff2' },
+        title: 'YaYuanGuYin',
+        titleUrls: { woff2: 'assets/fonts/fallback/YaYuanGuYin.woff2' }
+      }
+    };
+
+    this.loadedFallbackFonts.forEach(font => document.fonts.delete(font));
+    this.loadedFallbackFonts = [];
+    const rootStyles = document.documentElement.style;
+
+    if (fontsData[Settings.language]) {
+      const { content, contentUrls, title, titleUrls } = fontsData[Settings.language];
+      const [contentFontFace, titleFontFace] = await Promise.all([
+        loadFont(content, contentUrls),
+        loadFont(title, titleUrls)
+      ]);
+      this.loadedFallbackFonts.push(contentFontFace, titleFontFace);
+
+      rootStyles.setProperty('--content-font', `var(--default-content-font), ${content}, serif`);
+      rootStyles.setProperty('--title-font', `var(--default-title-font), ${title}, serif`);     
     }
   },
 
