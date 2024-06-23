@@ -237,7 +237,7 @@ const MapBase = {
       document.querySelector('.menu-toggle').remove();
       document.querySelector('.top-widget').remove();
       document.getElementById('fme-container').remove();
-      document.querySelector('.side-menu').classList.remove('menu-opened');
+      sideMenu.classList.remove('menu-opened');
       document.querySelector('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
       this.disableAll();

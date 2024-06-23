@@ -218,7 +218,9 @@ function clockTick() {
   });
 }
 
-document.querySelector('.side-menu').addEventListener('scroll', function () {
+const sideMenu = document.querySelector('.side-menu');
+
+sideMenu.addEventListener('scroll', function () {
   // These are not equality checks because of mobile weirdness.
   const atTop = this.scrollTop <= 0;
   const atBottom = this.scrollTop + this.clientHeight >= this.scrollHeight;
@@ -226,6 +228,12 @@ document.querySelector('.side-menu').addEventListener('scroll', function () {
   document.querySelector('.scroller-arrow-tp').style.display = atTop ? 'none' : '';
   document.querySelector('.scroller-line-bt').style.display = atBottom ? '' : 'none';
   document.querySelector('.scroller-arrow-bt').style.display = atBottom ? 'none' : '';
+});
+
+sideMenu.addEventListener('touchend', e => {
+  if (e.target.classList.contains('btn-light'))
+    e.target.style.setProperty('--bs-btn-hover-bg', 'transparent');
+  e.stopImmediatePropagation();
 });
 
 //TODO: re-implement this function
@@ -429,9 +437,8 @@ document.querySelectorAll('.submenu-only').forEach(el => {
 
 //Open & close side menu
 document.querySelector('.menu-toggle').addEventListener('click', function () {
-  const menu = document.querySelector('.side-menu');
-  menu.classList.toggle('menu-opened');
-  Settings.isMenuOpened = menu.classList.contains('menu-opened');
+  sideMenu.classList.toggle('menu-opened');
+  Settings.isMenuOpened = sideMenu.classList.contains('menu-opened');
   this.textContent = Settings.isMenuOpened ? 'X' : '>';
   document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', Settings.isMenuOpened);
   document.getElementById('fme-container').classList.toggle('fme-menu-opened', Settings.isMenuOpened);

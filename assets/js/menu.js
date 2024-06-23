@@ -114,18 +114,15 @@ class Menu {
     });
 
     document.querySelector('.camps-small-btn').addEventListener('click', function() {
-      this.classList.toggle('disabled');
       CampCollection.isSmall = !CampCollection.isSmall;
       CampCollection.refresh();
     });
     
     document.querySelector('.camps-large-btn').addEventListener('click', function() {
-      this.classList.toggle('disabled');
       CampCollection.isLarge = !CampCollection.isLarge;
       CampCollection.refresh();
     });
     document.querySelector('.camps-wilderness-btn').addEventListener('click', function() {
-      this.classList.toggle('disabled');
       CampCollection.isWilderness = !CampCollection.isWilderness;
       CampCollection.refresh();
     });
