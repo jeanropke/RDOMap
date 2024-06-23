@@ -58,7 +58,7 @@ class Menu {
         GunForHire.locations,
         Encounter.locations,
         PlantsCollection.locations,
-        Camp.locations,
+        CampCollection.locations,
         Location.locations,
         Legendary.animals,
         Singleplayer.locations,
@@ -88,7 +88,7 @@ class Menu {
         GunForHire.locations,
         Encounter.locations,
         PlantsCollection.locations,
-        Camp.locations,
+        CampCollection.locations,
         Location.locations,
         Legendary.animals,
         Singleplayer.locations,
@@ -102,6 +102,7 @@ class Menu {
 
       setTimeout(() => {
         PlantsCollection.layer.redraw();
+        CampCollection.layer.redraw();
       }, 40);
 
       MadamNazar.onMap = true;
@@ -114,28 +115,19 @@ class Menu {
 
     document.querySelector('.camps-small-btn').addEventListener('click', function() {
       this.classList.toggle('disabled');
-      Camp.isSmall = !Camp.isSmall;
-      Camp.locations.forEach(camp => {
-        if (camp.layer['_map'] != null) camp.reinitMarker();
-      });
-      MapBase.updateTippy('campsbtn');
+      CampCollection.isSmall = !CampCollection.isSmall;
+      CampCollection.refresh();
     });
     
     document.querySelector('.camps-large-btn').addEventListener('click', function() {
       this.classList.toggle('disabled');
-      Camp.isLarge = !Camp.isLarge;
-      Camp.locations.forEach(camp => {
-        if (camp.layer['_map'] != null) camp.reinitMarker();
-      });
-      MapBase.updateTippy('campsbtn');
+      CampCollection.isLarge = !CampCollection.isLarge;
+      CampCollection.refresh();
     });
     document.querySelector('.camps-wilderness-btn').addEventListener('click', function() {
       this.classList.toggle('disabled');
-      Camp.isWilderness = !Camp.isWilderness;
-      Camp.locations.forEach(camp => {
-        if (camp.layer['_map'] != null) camp.reinitMarker();
-      });
-      MapBase.updateTippy('campsbtn');
+      CampCollection.isWilderness = !CampCollection.isWilderness;
+      CampCollection.refresh();
     });
 
     document.querySelector('.shops-hide-btn').addEventListener('click', function() {

@@ -92,7 +92,7 @@ function init() {
     const fmeCondorEgg = CondorEgg.init();
     const fmeSalvage = Salvage.init();
     const plants = PlantsCollection.init();
-    const camps = Camp.init();
+    const camps = CampCollection.init();
     const shops = Shop.init();
     const singleplayer = Singleplayer.init();
     const gfh = GunForHire.init();
@@ -268,7 +268,7 @@ document.getElementById('language').addEventListener('change', function () {
 
   AnimalCollection.onLanguageChanged();
   Bounty.onLanguageChanged();
-  Camp.onLanguageChanged();
+  CampCollection.onLanguageChanged();
   Encounter.onLanguageChanged();
   GunForHire.onLanguageChanged();
   Legendary.onLanguageChanged();
@@ -286,11 +286,12 @@ document.getElementById('language').addEventListener('change', function () {
 document.getElementById('marker-size').addEventListener('change', function () {
   Settings.markerSize = Number(this.value);
 
-  Camp.onSettingsChanged();
+  CampCollection.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
+  PlantsCollection.onSettingsChanged();
   Salvage.onSettingsChanged();
   Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
@@ -303,7 +304,6 @@ document.getElementById('marker-size').addEventListener('change', function () {
 document.getElementById('marker-opacity').addEventListener('change', function () {
   Settings.markerOpacity = Number(this.value);
 
-  Camp.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
@@ -340,7 +340,6 @@ document.getElementById('marker-cluster').addEventListener('change', function ()
 
   Layers.oms.clearMarkers();
 
-  Camp.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
@@ -357,7 +356,6 @@ document.getElementById('enable-marker-popups-hover').addEventListener('change',
 
 document.getElementById('enable-marker-shadows').addEventListener('change', function () {
   Settings.isShadowsEnabled = this.checked;
-  Camp.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();

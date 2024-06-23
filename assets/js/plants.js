@@ -77,7 +77,8 @@ class Plants {
         PlantsCollection.enabledCategories.push(this.key);
       }
       PlantsCollection.layer.clearLayers();
-      PlantsCollection.layer.addLayers(PlantsCollection.markers);
+      if (PlantsCollection.markers.length > 0)
+        PlantsCollection.layer.addLayers(PlantsCollection.markers);
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
       this.element.querySelector('span').classList.remove('disabled');
@@ -131,7 +132,8 @@ class PlantsCollection {
 
   static set onMap(state) {
     if (state) {
-      this.layer.addTo(MapBase.map);
+      if (this.markers.length > 0)
+        this.layer.addTo(MapBase.map);
     } else {
       this.layer.remove();
     }
@@ -153,5 +155,21 @@ class PlantsCollection {
 
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
+  }
+  
+  static onSettingsChanged() {
+    this.refresh();
+  }
+
+  static refresh() {
+    this.markers = [];
+    this.locations.forEach(plants => {
+      plants.reinitMarker();
+      if (plants.onMap)
+        this.markers = this.markers.concat(plants.markers);
+    });
+    this.layer.clearLayers();
+    if (this.markers.length > 0)
+      this.layer.addLayers(this.markers);
   }
 }
