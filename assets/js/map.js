@@ -114,7 +114,7 @@ const MapBase = {
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
       zoomSnap: 0,
       zoomDelta: 0.5,
-      wheelPxPerZoomLevel: 140,
+      wheelPxPerZoomLevel: 70,
       wheelDebounceTime: 150,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
 
@@ -285,7 +285,8 @@ const MapBase = {
       document.querySelector('.top-widget').remove();
       document.getElementById('fme-container').remove();
       sideMenu.classList.remove('menu-opened');
-      document.querySelector('.leaflet-top.leaflet-right, .leaflet-zoomex').remove();
+      document.querySelector('.leaflet-top.leaflet-right').remove();
+      document.querySelector('.leaflet-zoomex.leaflet-zoomex-rightbottom.leaflet-control').remove();
 
       this.disableAll();
 
@@ -298,8 +299,8 @@ const MapBase = {
 
       if (Location.quickParams.indexOf(quickParam) !== -1) {
         Location.locations.filter(locationMarkerFilter);
-      } else if (Camp.quickParams.indexOf(quickParam) !== -1) {
-        Camp.locations.filter(locationMarkerFilter);
+      } else if (CampCollection.quickParams.indexOf(quickParam) !== -1) {
+        CampCollection.locations.filter(locationMarkerFilter);
       } else if (Shop.quickParams.indexOf(quickParam) !== -1) {
         Shop.locations.filter(locationMarkerFilter);
       } else if (Encounter.quickParams.indexOf(quickParam) !== -1) {
@@ -377,7 +378,7 @@ const MapBase = {
   },
 
   disableAll: function (toShow = false) {
-    Camp.locations.forEach(camp => camp.onMap = toShow);
+    CampCollection.locations.forEach(camp => camp.onMap = toShow);
     CondorEgg.condorEggOnMap = toShow;
     Encounter.locations.forEach(encounter => encounter.onMap = toShow);
     GunForHire.locations.forEach(gfh => gfh.onMap = toShow);

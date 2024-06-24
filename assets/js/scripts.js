@@ -208,7 +208,9 @@ function clockTick() {
   if (timeInGame)
     timeInGame.textContent = gameTime.toLocaleString(Settings.language, clockFormat);
 
-  document.querySelector('.day-cycle').style.background = `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`;
+  const dayCycle = document.querySelector('.day-cycle');
+  if (dayCycle)
+    dayCycle.style.background = `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`;
 
   document.querySelectorAll('.leaflet-marker-icon[data-time]').forEach(marker => {
     let time = marker.dataset.time || '';

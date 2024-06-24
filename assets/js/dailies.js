@@ -246,12 +246,18 @@ class SynchronizeDailies {
       }
     })();
 
-    const targetEl = document.querySelector(`[data-text="${this.key}"]`);
-    if (
-      targetEl.parentElement.classList.contains('disabled') ||
-      targetEl.parentElement.parentElement.classList.contains('disabled')
-    ) {
-      targetEl.click();
+    try {
+      const syncedItem = document.querySelector(`[data-text="${this.key}"]`);
+      if (!syncedItem)
+        throw new Error(`Item with data-text="${this.key}" not found.`);
+      if (
+        syncedItem.parentElement.classList.contains('disabled') ||
+        syncedItem.parentElement.parentElement.classList.contains('disabled')
+      ) {
+        syncedItem.click();
+      }
+    } catch (error) {
+      console.error(`Error interacting with the element. ${error}`);
     }
   }
 }
