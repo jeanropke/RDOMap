@@ -318,10 +318,12 @@ document.getElementById('marker-size').addEventListener('change', function () {
 document.getElementById('marker-opacity').addEventListener('change', function () {
   Settings.markerOpacity = Number(this.value);
 
+  CampCollection.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
+  PlantsCollection.onSettingsChanged();
   Salvage.onSettingsChanged();
   Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
@@ -370,12 +372,16 @@ document.getElementById('enable-marker-popups-hover').addEventListener('change',
 
 document.getElementById('enable-marker-shadows').addEventListener('change', function () {
   Settings.isShadowsEnabled = this.checked;
+
+  CampCollection.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
+  PlantsCollection.onSettingsChanged();
   Shop.onSettingsChanged();
   Singleplayer.onSettingsChanged();
   Treasure.onSettingsChanged();
+
   Pins.loadPins();
   MadamNazar.addMadamNazar();
 });

@@ -39,7 +39,7 @@ class Camp {
           iconSize: [35 * markerSize, 45 * markerSize],
           iconAnchor: [17 * markerSize, 42 * markerSize],
           popupAnchor: [0 * markerSize, -28 * markerSize],
-          shadowUrl: 'assets/images/markers-shadow.png',
+          shadowUrl: Settings.isShadowsEnabled ? 'assets/images/markers-shadow.png' : '',
           shadowSize: [35 * markerSize, 16 * markerSize],
           shadowAnchor: [10 * markerSize, 10 * markerSize],
         }),
