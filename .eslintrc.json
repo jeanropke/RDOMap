@@ -1,7 +1,6 @@
 {
     "env": {
         "browser": true,
-        "jquery": true,
         "node": true
     },
     "parserOptions": {

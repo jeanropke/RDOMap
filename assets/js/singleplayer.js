@@ -2,7 +2,7 @@ class Singleplayer {
   static init() {
     this.locations = [];
     this.quickParams = [];
-    this.context = $('.menu-hidden[data-type=singleplayer]');
+    this.context = document.querySelector('.menu-hidden[data-type=singleplayer]');
 
     return Loader.promises['singleplayer'].consumeJson(data => {
       data.forEach(item => {
@@ -21,16 +21,19 @@ class Singleplayer {
 
     this.onLanguageChanged();
 
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`map.singleplayer.${this.key}.name`))
-      .on('click', () => this.onMap = !this.onMap)
-      .append($(`<img class="collectible-icon" src="./assets/images/icons/${this.key}.png">`))
-      .append($('<span class="collectible-text">')
-        .toggleClass('disabled', !this.onMap)
-        .append($('<p class="collectible">').attr('data-text', `map.singleplayer.${this.key}.name`)))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key, tippyContent: Language.get(`map.singleplayer.${this.key}.name`) });
+    this.element.innerHTML = `
+      <img class="collectible-icon" src="./assets/images/icons/${this.key}.png">
+      <span class="collectible-text ${!this.onMap ? 'disabled' : ''}">
+        <p class="collectible" data-text="map.singleplayer.${this.key}.name"></p>
+      </span>
+    `;
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
 
-    this.element.appendTo(Singleplayer.context);
+    Singleplayer.context.appendChild(this.element);
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);
@@ -49,7 +52,7 @@ class Singleplayer {
       marker => {
         const shadow = Settings.isShadowsEnabled ?
           `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
-        var tempMarker = L.marker([marker.lat, marker.lng], {
+        const tempMarker = L.marker([marker.lat, marker.lng], {
           opacity: Settings.markerOpacity,
           icon: new L.DivIcon.DataMarkup({
             iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -76,12 +79,12 @@ class Singleplayer {
   set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      this.element.children('span').removeClass('disabled');
+      this.element.querySelector('span').classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.children('span').addClass('disabled');
+      this.element.querySelector('span').classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo.${this.key}`);
     }

@@ -7,17 +7,22 @@ class Bounty {
     this.layer = L.layerGroup();
     this._shownKey = `shown.${type}.${this.text}`;
 
-    this.context = $(`.menu-hidden[data-type=${type}]`);
-    this.element = $(`<div class="collectible-wrapper disabled" data-help="item" data-type="${this.text}">`)
-      .attr('data-tippy-content', Language.get(`menu.${type}.${this.text}`))
-      .on('click', () => this.onMap = !this.onMap)
-      .append($('<span class="collectible-text">')
-        .append($('<p class="collectible">').attr('data-text', `menu.${type}.${this.text}`)))
-      .translate();
+    this.context = document.querySelector(`.menu-hidden[data-type=${type}]`);
+    
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper', 'disabled');
+    Object.assign(this.element.dataset, { help: 'item', type: this.text, tippyContent: Language.get(`menu.${type}.${this.text}`) });
+    this.element.innerHTML = `
+      <span class="collectible-text">
+        <p class="collectible" data-text="menu.${type}.${this.text}"></p>
+      </span>
+    `;
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
 
     this.reinitMarker();
 
-    this.element.appendTo(this.context);
+    this.context.appendChild(this.element);
   }
 
   // auto remove marker? from map, recreate marker, auto add? marker
@@ -49,9 +54,11 @@ class Bounty {
     });
     this.onMap = this.onMap;
   }
+
   popupContent(marker, bounty) {
-    const snippet = $(`
-      <div class="handover-wrapper-with-no-influence">
+    const snippet = document.createElement('div');
+    snippet.className = 'handover-wrapper-with-no-influence';
+    snippet.innerHTML = `
         <h1 data-text="menu.${marker.type}.${marker.text}"></h1>
         <p data-text="menu.${marker.type}.desc"></p>
         <span class="properties">
@@ -60,39 +67,33 @@ class Bounty {
         </span>
         <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
         <small>Latitude: ${bounty.x} / Longitude: ${bounty.y} / Type: ${marker.type} / Text: ${marker.text}</small>
-      </div>
-      `)
-        .translate();
+    `;
+    Language.translateDom(snippet);
 
-    const props = $('[data-property]', snippet);
-    [...props].forEach(p => {
-      const property = $(p).attr('data-property');
-      if (!bounty[property]) $(p).remove();
-      const propertyText = Language.get($(p).attr('data-text')).replace(`{${property}}`, bounty[property]);
-      $(p).text(propertyText);
+    snippet.querySelectorAll('[data-property]').forEach(p => {
+      const property = p.getAttribute('data-property');
+      if (!bounty[property]) p.remove(); 
+      const propertyText = Language.get(p.getAttribute('data-text')).replace(`{${property}}`, bounty[property]);
+      p.textContent = propertyText;
     });
 
-    snippet
-      .find('button')
-      .on('click', () => this.onMap = false)
-      .end()
-      .find('small')
-      .toggle(Settings.isDebugEnabled)
-      .end();
+    snippet.querySelector('button').addEventListener('click', () => this.onMap = false);
+    snippet.querySelector('small').style.display = Settings.isDebugEnabled ? '' : 'none';
 
-    return snippet[0];
+    return snippet;
   }
+
   set onMap(state) {
     if (state) {
       BountyCollection.layer.addLayer(this.marker);
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this._shownKey}`, 'true');
-      this.element.removeClass('disabled');
+      this.element.classList.remove('disabled');
     } else {
       BountyCollection.layer.removeLayer(this.marker);
       if (!MapBase.isPreviewMode)
         localStorage.removeItem(`rdo.${this._shownKey}`);
-      this.element.addClass('disabled');
+      this.element.classList.add('disabled');
     }
   }
   get onMap() {
@@ -105,7 +106,6 @@ class Bounty {
 }
 
 class BountyCollection {
-
   static init() {
     this.layer = L.layerGroup();
     this.collection = {};
@@ -136,12 +136,15 @@ class BountyCollection {
       BountyCollection.quickParams.push(`${this.key}_${bounty.text}`);
     });
 
-    Menu.reorderMenu($(`.menu-hidden[data-type=${this.key}]`));
+    Menu.reorderMenu(document.querySelector(`.menu-hidden[data-type=${this.key}]`));
 
-    $(`.menu-hidden[data-type=${this.key}] .bounty-btn`).click(e => {
-      e.preventDefault();
-      const showAll = $(e.target).attr('data-text') === 'menu.show_all';
-      this.bounties.forEach(bounty => bounty.onMap = showAll);
-    });
+    document.querySelectorAll(`.menu-hidden[data-type=${this.key}] .bounty-btn`)
+      .forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const showAll = e.target.getAttribute('data-text') === 'menu.show_all';
+          this.bounties.forEach((bounty) => (bounty.onMap = showAll));
+        })
+      })
   }
 }

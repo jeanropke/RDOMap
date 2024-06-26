@@ -1,7 +1,7 @@
 class Discoverable {
   static init() {
     this.locations = [];
-    this.context = $('.menu-hidden[data-type=discoverables]');
+    this.context = document.querySelector('.menu-hidden[data-type=discoverables]');
 
     return Loader.promises['discoverables'].consumeJson(data => {
       data.forEach(item => {
@@ -46,14 +46,17 @@ class Discoverable {
 
     this.createOverlays();
 
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`menu.discoverables.${this.key}`))
-      .toggleClass('disabled', !this.onMap)
-      .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', `menu.discoverables.${this.key}`))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key, tippyContent: Language.get(`menu.discoverables.${this.key}`) });
+    this.element.innerHTML = `
+    <p class="collectible" data-text="menu.discoverables.${this.key}"></p>
+    `;
+    this.element.classList.toggle('disabled', !this.onMap);
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    Language.translateDom(this.element);
 
-    this.element.appendTo(Discoverable.context);
+    Discoverable.context.appendChild(this.element);
 
     if (this.onMap && MapBase.map.getZoom() > 5)
       this.layer.addTo(MapBase.map);
@@ -62,9 +65,9 @@ class Discoverable {
   createOverlays() {
     this.layer.clearLayers();
     this.locations.forEach(item => {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/discoveries/${item.name}.svg?nocache=${nocache}`;
-      let offset = 130;
-      var tempMarker = L.imageOverlay(overlay, [
+      const overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/discoveries/${item.name}.svg?nocache=${nocache}`;
+      const offset = 130;
+      const tempMarker = L.imageOverlay(overlay, [
         [item.lat - item.height / offset, item.lng - item.width / offset],
         [item.lat + item.height / offset, item.lng + item.width / offset]
       ], {
@@ -77,12 +80,12 @@ class Discoverable {
   set onMap(state) {
     if (state) {
       if (MapBase.map.getZoom() > 5) this.layer.addTo(MapBase.map);
-      this.element.removeClass('disabled');
+      this.element.classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'true');
     } else {
       this.layer.remove();
-      this.element.addClass('disabled');
+      this.element.classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem(`rdo.${this.key}`, 'false');
     }

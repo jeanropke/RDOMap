@@ -19,7 +19,6 @@ class Marker {
         case 'hideouts':
           return `${Language.get(`map.${this.category}.${this.text}.name`)} - [${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
         case 'camps':
-          return `${Language.get(`map.${this.category}.${this.subdata}.name`)} - ${Language.get(`map.camps.sizes.${this.size}`)}`;
         case 'daily_locations':
         case 'dynamic_bounties':
         case 'outlaw_dynamic_homestead':
@@ -47,24 +46,22 @@ class Marker {
     })();
   }
   updateMarkerContent(removeFromMapCallback) {
-    const linksElement = $('<p>');
-    return $(`
-      <div>
+    const container = document.createElement('div');
+    container.innerHTML = `
         <h1>${this.title}</h1>
         <span class="marker-content-wrapper">
           <p>${this.description}</p>
         </span>
-        ${linksElement.prop('outerHTML')}
+        <p></p>
         <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
         <small>Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}</small>
-      </div>
-    `)
-      .translate()
-      .find('button')
-      .on('click', removeFromMapCallback)
-      .end()
-      .find('small')
-      .toggle(Settings.isDebugEnabled)
-      .end()[0];
+    `;
+  
+    container.querySelector('button').addEventListener('click', removeFromMapCallback);
+    if (!Settings.isDebugEnabled)
+      container.querySelector('small').style.display = 'none';
+    Language.translateDom(container);
+    
+    return container;
   }
 }

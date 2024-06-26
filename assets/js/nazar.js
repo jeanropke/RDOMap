@@ -20,11 +20,11 @@ class MadamNazar {
 
     this.layer = L.layerGroup();
 
-    this.context = $('.menu-option[data-type=nazar]');
+    this.context = document.querySelector('.menu-option[data-type=nazar]');
 
-    this.context.toggleClass('disabled', !MadamNazar.onMap)
-      .on('click', () => MadamNazar.onMap = !MadamNazar.onMap)
-      .translate();
+    this.context.classList.toggle('disabled', !MadamNazar.onMap);
+    this.context.addEventListener('click', () => MadamNazar.onMap = !MadamNazar.onMap);
+    Language.translateDom(this.context);
 
     return Loader.promises['nazar'].consumeJson(data => {
       const _nazarParam = getParameterByName('nazar');
@@ -76,32 +76,31 @@ class MadamNazar {
     const nazarDate = new Date(this.currentDate).toLocaleString(Settings.language, {
       day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
     });
-    const $popup = $(`
-        <div>
+    const popup = document.createElement('div');
+    popup.innerHTML = `
           <h1>${Language.get('menu.madam_nazar')} - ${nazarDate}</h1>
           <p style="text-align: center;">
             ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
           </p>
           <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
-        </div>`)
-      .translate()
-      .find('button')
-      .on('click', this.reloadNazar)
-      .toggle(this.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString())
-      .end();
+    `;
+    Language.translateDom(popup);
+    const buttonEl = popup.querySelector('button');
+    buttonEl.addEventListener('click', this.reloadNazar.bind(this));
+    buttonEl.style.display = this.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString() ? '' : 'none';
 
-    return $popup[0];
+    return popup;
   }
 
   static set onMap(state) {
     if (state) {
       MadamNazar.layer.addTo(MapBase.map);
-      this.context.removeClass('disabled');
+      this.context.classList.remove('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem('rdo.nazar', 'true');
     } else {
       MadamNazar.layer.remove();
-      this.context.addClass('disabled');
+      this.context.classList.add('disabled');
       if (!MapBase.isPreviewMode)
         localStorage.setItem('rdo.nazar', 'false');
     }

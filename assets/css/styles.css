@@ -1,9 +1,15 @@
+:root {
+    --default-content-font: Hapna;
+    --default-title-font: RDRLino;
+    --content-font: var(--default-content-font), serif;
+    --title-font: var(--default-title-font), serif;
+}
+
 @font-face {
     font-family: Hapna;
     src: url(../fonts/hapna.woff2) format("woff2"), url(../fonts/hapna.woff) format("woff"), url(../fonts/hapna.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -11,7 +17,6 @@
     src: url(../fonts/RDRLino-Regular.woff2) format("woff2"), url(../fonts/RDRLino-Regular.woff) format("woff"), url(../fonts/RDRLino-Regular.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 *,
@@ -36,7 +41,14 @@ html, body {
 body {
     margin: 0;
     font-size: 16px;
-    font-family: Hapna, serif;
+    font-family: var(--content-font);
+    line-height: 1.42857143;
+    text-rendering: optimizeLegibility;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+    line-height: 1.42857143;
 }
 
 h1 {
@@ -44,6 +56,7 @@ h1 {
 }
 
 h2 {
+    font-size: 1.5em;
     margin: 0 0 5px;
     text-align: center;
 }
@@ -112,10 +125,11 @@ select {
 }
 
 #main-header-center>span {
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     font-weight: normal;
     font-size: 36px;
     line-height: 64px;
+    text-rendering: optimizeLegibility;
 }
 
 #main-header-left,
@@ -224,8 +238,9 @@ select {
     width: 100%;
     width: 100vw;
     height: 100%;
-    font-family: Hapna, serif;
+    font-family: var(--content-font);
     font-size: 13px;
+    text-rendering: optimizeLegibility;
 }
 
 #map h1 {
@@ -323,12 +338,14 @@ select {
 
 .marker-popup-pin-input-name,
 .marker-popup-pin-input-desc {
+    color: inherit;
     border: none;
     width: 100%;
     background-color: #222;
 }
 
 .marker-popup-pin-input-name {
+    font-weight: inherit;
     text-align: center;
 }
 
@@ -348,6 +365,7 @@ select {
 
 .marker-popup-pin-input-icon,
 .marker-popup-pin-input-color {
+    color: inherit;
     background: #eee;
     border: none;
     padding: 5px 10px;
@@ -453,17 +471,13 @@ select {
 }
 
 .links-container {
+    height: 44.45px;
     display: flex;
     justify-content: space-around;
     border-top: 1px solid #b0b0b0;
     border-bottom: 1px solid #b0b0b0;
     padding: 10px 0;
     margin: 15px 0;
-}
-
-.links-container a {
-    color: #eee;
-    text-decoration: none;
 }
 
 .settings-container {
@@ -708,6 +722,7 @@ select {
 }
 
 .side-menu .collection-value {
+    height: 34.45px;
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
@@ -717,6 +732,7 @@ select {
 }
 
 .side-menu .collection-value-bottom {
+    height: 33.65px;
     text-align: center;
     border-bottom: 1px white solid;
     padding: 5px 0;
@@ -728,8 +744,25 @@ select {
     margin-bottom: 6px;
 }
 
-.side-menu .collection-value a {
-    color: #fff;
+.side-menu .btn-light {
+    font-size: 16px;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #383838;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #aca9a9;
+    --bs-btn-line-height: 0.4; 
+}
+
+.side-menu .collection-value .camps-small-btn,
+.side-menu .collection-value .camps-large-btn,
+.side-menu .collection-value .camps-wilderness-btn {
+    --bs-btn-active-color: #777;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
 }
 
 .side-menu .collection-sell,
@@ -1083,6 +1116,11 @@ a.no-style:visited {
     color: #fff !important;
 }
 
+.leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-scale {
+	font-size: 11px;
+}
+
 .text-danger {
     color: #f95050 !important;
 }
@@ -1151,19 +1189,25 @@ a.no-style:visited {
 
 .modal-header {
     padding-bottom: 10px;
+    height: 54px;
 }
 
 .modal-footer {
     padding-top: 10px;
+    height: 63.6px;
 }
 
 .modal-header::after {
+    content: '';
+    top: 44px;
     margin-top: 10px;
     background: url(../../assets/images/modal-title.png) !important;
     background-position: bottom center !important;
 }
 
 .modal-footer::before {
+    content: '';
+    bottom: 53.6px;
     margin-top: -36px;
     background: url(../../assets/images/modal-footer.png) !important;
     background-position: top center !important;
@@ -1175,10 +1219,11 @@ a.no-style:visited {
 }
 
 .modal h4 {
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     font-weight: normal;
     font-size: 24px;
     line-height: 1;
+    text-rendering: optimizeLegibility;
 }
 
 .modal-body {
@@ -1198,6 +1243,7 @@ a.no-style:visited {
     .modal {
         text-align: center;
         padding: 0 !important;
+        --bs-modal-width: 600px;
     }
     .modal:before {
         content: '';
@@ -1207,6 +1253,7 @@ a.no-style:visited {
         margin-right: -4px;
     }
     .modal-body {
+        font-size: 16px;
         max-height: 650px !important;
     }
     .modal-dialog {
@@ -1215,7 +1262,7 @@ a.no-style:visited {
         vertical-align: middle;
     }
     .modal-sm {
-        width: 450px;
+        --bs-modal-width: 450px;
     }
 }
 
@@ -1405,6 +1452,7 @@ a.no-style:visited {
     left: 0.1em;
     font-family: "Courier New", Courier, monospace;
     text-transform: uppercase;
+    text-rendering: optimizeLegibility;
 }
 
 /* Fix being able to select the overlays. */
@@ -1441,9 +1489,16 @@ a.no-style:visited {
     height: auto;
 }
 
+.leaflet-container .leaflet-marker-pane img {
+    width: auto;
+}
+
+.leaflet-container .leaflet-marker-pane img.overlay {
+    width: 100%;
+}
 .leaflet-div-icon .icon {
     z-index: 4;
-    width: 100%;
+    width: 100% !important;
     height: auto;
 }
 
@@ -1469,6 +1524,7 @@ a.no-style:visited {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+    box-shadow: none !important;
 }
 
 /* Donate form */
@@ -1527,7 +1583,7 @@ a.no-style:visited {
 }
 
 #fme-container .fme-card .fme-body .fme-title {
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     color: #7b66af;
     margin: 0;
     text-align: left;
@@ -1538,6 +1594,7 @@ a.no-style:visited {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-rendering: optimizeLegibility;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
@@ -1650,7 +1707,7 @@ a.no-style:visited {
 }
 
 .one-daily-container {
-    font-size: 1.5rem;
+    font-size: 15px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-gap: 5px;
@@ -1664,7 +1721,7 @@ a.no-style:visited {
 }
 
 span.counter {
-    font-size: 1.9rem;
+    font-size: 19px;
     grid-area: counter;
     font-weight: bold;
     display: grid;
@@ -1735,8 +1792,9 @@ span.daily-checkbox {
     align-items: center;
     min-width: 170px;
     margin: 0 6px;
-    font-family: RDRLino, serif;
+    font-family: var(--title-font);
     font-size: 19px;
+    text-rendering: optimizeLegibility;
 }
 
 .dailies-difficulty-selection {
@@ -1747,6 +1805,33 @@ span.daily-checkbox {
 /* End of dailies Styling */
 
 /* Dark mode styling */
+
+/* Override Bootstrap && Leaflet buttons color styling */
+
+.btn {
+    font-size: 14px;
+}
+
+.btn-default {
+    --bs-btn-hover-color: #333;
+    --bs-btn-hover-bg: #e6e6e6;
+}
+
+.btn-primary {
+    --bs-btn-bg: #337ab7;
+    --bs-btn-hover-bg: #286090;
+}
+
+.btn-secondary {
+    --bs-btn-color: #333;
+    --bs-btn-bg: #f0f0f0;
+}
+
+.btn-info {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #222;
+}
 
 .btn.btn-info.remove-button,
 .save-button {
@@ -1824,18 +1909,21 @@ span.daily-checkbox {
     user-select: none;
 }
 
+.leaflet-control-layers label {
+	font-size: inherit;
+}
+
+.leaflet-control-layers-toggle {
+	background-image: url(../images/layers.png);
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(../images/layers-2x.png);
+}
+
 .leaflet-control-layers-expanded {
     color: #d4d4d4;
     background: #333;
-}
-
-.leaflet-control-zoom {
-    background-color: #333;
-    color: #d4d4d4;
-}
-
-.leaflet-control-zoom a {
-    background-color: #333;
 }
 
 .leaflet-popup-tip {
@@ -1851,60 +1939,6 @@ span.daily-checkbox {
 
 .leaflet-control-layers-base label {
     cursor: pointer;
-}
-
-/* Leaflet Marker styling */
-
-.leaflet-div-icon {
-    width: 36px;
-    height: 45px;
-    background-color: transparent;
-    border: none;
-}
-
-.leaflet-div-icon .overlay,
-.leaflet-div-icon .icon,
-.leaflet-div-icon .background,
-.leaflet-div-icon .marker-contour,
-.leaflet-div-icon .shadow {
-    position: absolute;
-    text-align: center;
-}
-
-.leaflet-div-icon .overlay {
-    z-index: 5;
-    width: 100%;
-    height: auto;
-}
-
-.leaflet-div-icon .icon {
-    z-index: 4;
-    width: 100%;
-    height: auto;
-}
-
-.leaflet-div-icon .background {
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-}
-
-.leaflet-div-icon .marker-contour {
-    z-index: 2;
-    width: 130%;
-    height: 130%;
-    left: -15%;
-    bottom: -15%;
-}
-
-.marker-contour {
-    opacity: 0.0;
-}
-
-.leaflet-div-icon .shadow {
-    z-index: 1;
-    bottom: -2px;
-    left: 9px;
 }
 
 /* end dark mode styling */
@@ -1974,4 +2008,147 @@ button.reload-nazar {
 #sync-map-to-dailies {
     white-space: normal;
     word-wrap: break-word;
+}
+
+/* Leaflet.ZoomEx */
+ @-moz-document url-prefix() {
+    .leaflet-zoomex-out .fa,
+    .leaflet-zoomex-out .fab,
+    .leaflet-zoomex-out .far,
+    .leaflet-zoomex-out .fas,
+    .leaflet-zoomex-in .fa,
+    .leaflet-zoomex-in .fab,
+    .leaflet-zoomex-in .far,
+    .leaflet-zoomex-in .fas {
+        margin-top: .05rem;
+        margin-bottom: -.05rem;
+    }
+}
+
+.leaflet-zoomex {
+    display: flex;
+    align-items: center;
+    /* to simplify the rules for adjusting positions with translate */
+    box-sizing: border-box;
+    padding: .375rem .375rem;
+    background-color: rgba(255, 255, 255, .67);
+    border: .125rem solid rgba(255, 255, 255, 1);
+    border-radius: 2.5rem;
+    box-shadow: rgba(0, 0, 0, .33) 0 .125rem .375rem;
+    opacity: .5;
+    transition: opacity .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -khtml-text-size-adjust: none;
+}
+
+.leaflet-zoomex:hover {
+    opacity: 1;
+}
+
+.leaflet-zoomex-slider-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 .125rem;
+}
+
+.leaflet-zoomex-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: .75rem;
+    padding: 0;
+    margin: 0;
+    border-radius: .75rem;
+    background: rgba(var(--primary-rgb), .5) !important;
+    outline: none;
+    cursor: pointer;
+}
+
+.leaflet-zoomex-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /* to make webkit and moz consistent */
+    box-sizing: content-box;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: .1875rem solid rgba(255, 255, 255, 1);
+    border-radius: 1.125rem;
+    background: rgba(var(--primary-rgb), 1) !important;
+    cursor: grab;
+}
+
+.leaflet-zoomex-slider:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 .375rem rgba(var(--primary-rgb), .25);
+}
+
+.leaflet-zoomex-slider:focus-visible::-webkit-slider-thumb {
+    border: .1875rem solid rgba(0, 0, 0, 1);
+}
+
+.leaflet-zoomex-slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /* to make webkit and moz consistent */
+    box-sizing: content-box;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: .1875rem solid rgba(255, 255, 255, 1);
+    border-radius: 1.125rem;
+    background: rgba(var(--primary-rgb), 1) !important;
+    cursor: grab;
+}
+
+.leaflet-zoomex-slider:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 .375rem rgba(var(--primary-rgb), .25);
+}
+
+.leaflet-zoomex-slider:focus-visible::-moz-range-thumb {
+    border: .1875rem solid rgba(0, 0, 0, 1);
+}
+
+.leaflet-zoomex-out,
+.leaflet-zoomex-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 1.5rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: rgba(var(--primary-rgb), 1);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.leaflet-zoomex-out svg,
+.leaflet-zoomex-in svg {
+    fill: rgba(var(--primary-rgb), 1);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.leaflet-zoomex-rightbottom {
+    position: absolute;
+    margin: 0 !important;
+    right: .5rem;
+    bottom: 2.5rem;
+    width: calc(var(--vh, 1vh) * 25);
+    /* elem size: 25vh x 2.5rem  */
+    transform: translateX(calc(50% - 2.5rem / 2)) translateY(calc(50% - var(--vh, 1vh) * 25 / 2)) rotate(-90deg);
+    box-shadow: rgba(0, 0, 0, .33) -.125rem 0 .375rem;
+}
+
+.leaflet-zoomex-rightbottom .leaflet-zoomex-out,
+.leaflet-zoomex-rightbottom .leaflet-zoomex-in {
+    transform: rotate(90deg);
 }

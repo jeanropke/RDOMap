@@ -26,7 +26,7 @@ Object.defineProperty(Number.prototype, 'mod', {
 });
 
 
-$(function () {
+document.addEventListener('DOMContentLoaded', function() {
   try {
     init();
   } catch (e) {
@@ -45,18 +45,16 @@ function init() {
   }
 
   const navLang = navigator.language;
-  const langCodesMap = {
-    'zh-CN': 'zh-Hans',
-    'zh-SG': 'zh-Hans',
-    'zh-HK': 'zh-Hant',
-    'zh-TW': 'zh-Hant',
-  };
+  const langCodesMap = { 'zh-CN': 'zh-Hans', 'zh-SG': 'zh-Hans', 'zh-HK': 'zh-Hant', 'zh-TW': 'zh-Hant' };
   const mappedLanguage = langCodesMap[navLang] || navLang;
   SettingProxy.addSetting(Settings, 'language', {
     default: Language.availableLanguages.includes(mappedLanguage)
       ? mappedLanguage
       : 'en',
   });
+
+  if (['ja', 'ko', 'zh-Hans', 'zh-Hant'].includes(Settings.language))
+    MapBase.setFallbackFonts();
 
   //Convert old settings if any
   Object.keys(localStorage).forEach(key => {
@@ -78,72 +76,73 @@ function init() {
 
   Menu.init();
   MapBase.init();
-  Language.init();
-  Language.setMenuLanguage();
 
-  changeCursor();
-  Pins.init();
-  FME.init();
+  Language.init().then(() => {
+    changeCursor();
+    Pins.init();
+    FME.init();
+  
+    // Prevent blocks by external services. Sometimes these requests took >6 seconds.
+    // Bonus: If either of these fail to load, it doesn't block the map from working properly.
+    Dailies.init();
+    MadamNazar.init();
+  
+    const animals = AnimalCollection.init();
+    const locations = Location.init();
+    const encounters = Encounter.init();
+    const treasures = Treasure.init();
+    const bounties = BountyCollection.init();
+    const fmeCondorEgg = CondorEgg.init();
+    const fmeSalvage = Salvage.init();
+    const plants = PlantsCollection.init();
+    const camps = CampCollection.init();
+    const shops = Shop.init();
+    const singleplayer = Singleplayer.init();
+    const gfh = GunForHire.init();
+    const legendary = Legendary.init();
+    const discoverables = Discoverable.init();
+    const overlays = Overlay.init();
 
-  // Prevent blocks by external services. Sometimes these requests took >6 seconds.
-  // Bonus: If either of these fail to load, it doesn't block the map from working properly.
-  Dailies.init();
-  MadamNazar.init();
-
-  const animals = AnimalCollection.init();
-  const locations = Location.init();
-  const encounters = Encounter.init();
-  const treasures = Treasure.init();
-  const bounties = BountyCollection.init();
-  const fmeCondorEgg = CondorEgg.init();
-  const fmeSalvage = Salvage.init();
-  const plants = PlantsCollection.init();
-  const camps = Camp.init();
-  const shops = Shop.init();
-  const singleplayer = Singleplayer.init();
-  const gfh = GunForHire.init();
-  const legendary = Legendary.init();
-  const discoverables = Discoverable.init();
-  const overlays = Overlay.init();
-
-  Promise.all([animals, locations, encounters, treasures, bounties, fmeCondorEgg, fmeSalvage, plants, camps, shops, gfh, legendary, discoverables, overlays, singleplayer])
-    .then(() => {
-      Loader.resolveMapModelLoaded();
-      MapBase.afterLoad();
-    });
+    return Promise.all([animals, locations, encounters, treasures, bounties, fmeCondorEgg, fmeSalvage, plants, camps, shops, gfh, legendary, discoverables, overlays, singleplayer]);
+  }).then(() => {
+    Loader.resolveMapModelLoaded();
+    MapBase.afterLoad();
+  });
 
   if (Settings.isMenuOpened)
-    $('.menu-toggle').click();
+    document.querySelector('.menu-toggle').click();
 
-  $('#language').val(Settings.language);
-  $('#marker-opacity').val(Settings.markerOpacity);
-  $('#marker-size').val(Settings.markerSize);
-  $('#marker-cluster').prop('checked', Settings.isMarkerClusterEnabled);
-  $('#tooltip').prop('checked', Settings.showTooltips);
-  $('#tooltip-map').prop('checked', Settings.showTooltipsMap);
-  $('#enable-marker-popups-hover').prop('checked', Settings.isPopupsHoverEnabled);
-  $('#enable-marker-shadows').prop('checked', Settings.isShadowsEnabled);
-  $('#enable-legendary-backgrounds').prop('checked', Settings.isLaBgEnabled);
-  $('#enable-dclick-zoom').prop('checked', Settings.isDoubleClickZoomEnabled);
-  $('#show-help').prop('checked', Settings.showHelp);
-  $('#timestamps-24').prop('checked', Settings.isClock24Hour);
-  $('#show-coordinates').prop('checked', Settings.isCoordsOnClickEnabled);
-  $('#enable-debug').prop('checked', Settings.isDebugEnabled);
-  $('#enable-right-click').prop('checked', Settings.isRightClickEnabled);
+  document.getElementById('language').value = Settings.language;
+  document.getElementById('marker-opacity').value = Settings.markerOpacity;
+  document.getElementById('marker-size').value = Settings.markerSize;
+  document.getElementById('marker-cluster').checked = Settings.isMarkerClusterEnabled;
+  document.getElementById('tooltip').checked = Settings.showTooltips;
+  document.getElementById('tooltip-map').checked = Settings.showTooltipsMap;
+  document.getElementById('enable-marker-popups-hover').checked = Settings.isPopupsHoverEnabled;
+  document.getElementById('enable-marker-shadows').checked = Settings.isShadowsEnabled;
+  document.getElementById('enable-legendary-backgrounds').checked = Settings.isLaBgEnabled;
+  document.getElementById('legendary-animal-marker-type').value = Settings.legendarySpawnIconType;
+  document.getElementById('legendary-animal-marker-size').value = Settings.legendarySpawnIconSize;
+  document.getElementById('enable-dclick-zoom').checked = Settings.isDoubleClickZoomEnabled;
+  document.getElementById('show-help').checked = Settings.showHelp;
+  document.getElementById('timestamps-24').checked = Settings.isClock24Hour;
+  document.getElementById('show-coordinates').checked = Settings.isCoordsOnClickEnabled;
+  document.getElementById('enable-debug').checked = Settings.isDebugEnabled;
+  document.getElementById('enable-right-click').checked = Settings.isRightClickEnabled;
 
-  $('#help-container').toggle(Settings.showHelp);
+  document.getElementById("help-container").style.display = Settings.showHelp ? '' : 'none';
 
-  $('#show-dailies').prop('checked', Settings.showDailies);
-  $('#show-utilities').prop('checked', Settings.showUtilitiesSettings);
-  $('#show-customization').prop('checked', Settings.showCustomizationSettings);
-  $('#show-import-export').prop('checked', Settings.showImportExportSettings);
-  $('#show-debug').prop('checked', Settings.showDebugSettings);
+  document.getElementById('show-dailies').checked = Settings.showDailies;
+  document.getElementById('show-utilities').checked = Settings.showUtilitiesSettings;
+  document.getElementById('show-customization').checked = Settings.showCustomizationSettings;
+  document.getElementById('show-import-export').checked = Settings.showImportExportSettings;
+  document.getElementById('show-debug').checked = Settings.showDebugSettings;
 
-  $('#dailies-container').toggleClass('opened', Settings.showDailies);
-  $('#utilities-container').toggleClass('opened', Settings.showUtilitiesSettings);
-  $('#customization-container').toggleClass('opened', Settings.showCustomizationSettings);
-  $('#import-export-container').toggleClass('opened', Settings.showImportExportSettings);
-  $('#debug-container').toggleClass('opened', Settings.showDebugSettings);
+  document.getElementById('dailies-container').classList.toggle('opened', Settings.showDailies);
+  document.getElementById('utilities-container').classList.toggle('opened', Settings.showUtilitiesSettings);
+  document.getElementById('customization-container').classList.toggle('opened', Settings.showCustomizationSettings);
+  document.getElementById('import-export-container').classList.toggle('opened', Settings.showImportExportSettings);
+  document.getElementById('debug-container').classList.toggle('opened', Settings.showDebugSettings);
 
   setInterval(clockTick, 1000);
 }
@@ -153,12 +152,10 @@ function isLocalHost() {
 }
 
 function changeCursor() {
-  if (Settings.isCoordsOnClickEnabled)
-    $('.leaflet-grab').css('cursor', 'pointer');
-  else {
-    $('.leaflet-grab').css('cursor', 'grab');
-    $('.lat-lng-container').css('display', 'none');
-  }
+  const cursorStyle = Settings.isCoordsOnClickEnabled ? 'pointer' : 'grab';
+  const displayStyle = (cursorStyle === 'pointer') ? '' : 'none';
+  document.querySelectorAll('.leaflet-grab').forEach(el => el.style.cursor = cursorStyle);
+  document.querySelectorAll('.lat-lng-container').forEach(ctn => ctn.style.display = displayStyle);
 }
 
 function getParameterByName(name, url) {
@@ -169,6 +166,15 @@ function getParameterByName(name, url) {
   if (!results) return null;
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function getCookies() {
+  var cookies = {};
+  document.cookie.split(';').forEach(function(cookie) {
+    var [name, ...rest] = cookie.split('=');
+    cookies[name.trim()] = rest.join('=').trim();
+  });
+  return cookies;
 }
 
 // Simple download function
@@ -198,72 +204,85 @@ function clockTick() {
     hourCycle: Settings.isClock24Hour ? 'h23' : 'h12',
   };
 
-  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
+  const timeInGame = document.getElementById('time-in-game');
+  if (timeInGame)
+    timeInGame.textContent = gameTime.toLocaleString(Settings.language, clockFormat);
 
-  $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
+  const dayCycle = document.querySelector('.day-cycle');
+  if (dayCycle)
+    dayCycle.style.background = `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`;
 
-  $('.leaflet-marker-icon[data-time]').each(function () {
-    let time = $(this).data('time') + '';
-    if (time === null || time === '') return;
+  document.querySelectorAll('.leaflet-marker-icon[data-time]').forEach(marker => {
+    let time = marker.dataset.time || '';
+    if (time === '') return;
     if (time.split(',').includes(gameHour + '') && !MapBase.isPreviewMode) {
-      $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+      marker.style.filter = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)';
     } else {
-      $(this).css('filter', 'none');
+      marker.style.filter = 'none';
     }
   });
 }
 
-$('.side-menu').on('scroll', function () {
+const sideMenu = document.querySelector('.side-menu');
+
+sideMenu.addEventListener('scroll', function () {
   // These are not equality checks because of mobile weirdness.
-  const atTop = $(this).scrollTop() <= 0;
-  const atBottom = $(this).scrollTop() + $(document).height() >= $(this).prop('scrollHeight');
-  $('.scroller-line-tp').toggle(atTop);
-  $('.scroller-arrow-tp').toggle(!atTop);
-  $('.scroller-line-bt').toggle(atBottom);
-  $('.scroller-arrow-bt').toggle(!atBottom);
+  const atTop = this.scrollTop <= 0;
+  const atBottom = this.scrollTop + this.clientHeight >= this.scrollHeight;
+  document.querySelector('.scroller-line-tp').style.display = atTop ? '' : 'none';
+  document.querySelector('.scroller-arrow-tp').style.display = atTop ? 'none' : '';
+  document.querySelector('.scroller-line-bt').style.display = atBottom ? '' : 'none';
+  document.querySelector('.scroller-arrow-bt').style.display = atBottom ? 'none' : '';
+});
+
+sideMenu.addEventListener('touchend', e => {
+  if (e.target.classList.contains('btn-light'))
+    e.target.style.setProperty('--bs-btn-hover-bg', 'transparent');
+  e.stopImmediatePropagation();
 });
 
 //TODO: re-implement this function
-$('#show-all-markers').on('change', function () {
-  Settings.showAllMarkers = $('#show-all-markers').prop('checked');
+document.getElementById('show-all-markers').addEventListener('change', function () {
+  Settings.showAllMarkers = this.checked;
 });
 
-$('#enable-right-click').on('change', function () {
-  Settings.isRightClickEnabled = $('#enable-right-click').prop('checked');
+document.getElementById('enable-right-click').addEventListener('change', function () {
+  Settings.isRightClickEnabled = this.checked;
 });
 
-$('#show-dailies').on('change', function () {
-  Settings.showDailies = $('#show-dailies').prop('checked');
-  $('#dailies-container').toggleClass('opened', Settings.showDailies);
+document.getElementById('show-dailies').addEventListener('change', function () {
+  Settings.showDailies = this.checked;
+  document.getElementById('dailies-container').classList.toggle('opened', Settings.showDailies);
 });
 
-$('#show-utilities').on('change', function () {
-  Settings.showUtilitiesSettings = $('#show-utilities').prop('checked');
-  $('#utilities-container').toggleClass('opened', Settings.showUtilitiesSettings);
+document.getElementById('show-utilities').addEventListener('change', function () {
+  Settings.showUtilitiesSettings = this.checked;
+  document.getElementById('utilities-container').classList.toggle('opened', Settings.showUtilitiesSettings);
 });
 
-$('#show-customization').on('change', function () {
-  Settings.showCustomizationSettings = $('#show-customization').prop('checked');
-  $('#customization-container').toggleClass('opened', Settings.showCustomizationSettings);
+document.getElementById('show-customization').addEventListener('change', function () {
+  Settings.showCustomizationSettings = this.checked;
+  document.getElementById('customization-container').classList.toggle('opened', Settings.showCustomizationSettings);
 });
 
-$('#show-import-export').on('change', function () {
-  Settings.showImportExportSettings = $('#show-import-export').prop('checked');
-  $('#import-export-container').toggleClass('opened', Settings.showImportExportSettings);
+document.getElementById('show-import-export').addEventListener('change', function () {
+  Settings.showImportExportSettings = this.checked;
+  document.getElementById('import-export-container').classList.toggle('opened', Settings.showImportExportSettings);
 });
 
-$('#show-debug').on('change', function () {
-  Settings.showDebugSettings = $('#show-debug').prop('checked');
-  $('#debug-container').toggleClass('opened', Settings.showDebugSettings);
+document.getElementById('show-debug').addEventListener('change', function () {
+  Settings.showDebugSettings = this.checked;
+  document.getElementById('debug-container').classList.toggle('opened', Settings.showDebugSettings);
 });
 
-$('#language').on('change', function () {
-  Settings.language = $('#language').val();
+document.getElementById('language').addEventListener('change', function () {
+  Settings.language = this.value;
   Language.setMenuLanguage();
+  MapBase.setFallbackFonts();
 
   AnimalCollection.onLanguageChanged();
   Bounty.onLanguageChanged();
-  Camp.onLanguageChanged();
+  CampCollection.onLanguageChanged();
   Encounter.onLanguageChanged();
   GunForHire.onLanguageChanged();
   Legendary.onLanguageChanged();
@@ -278,14 +297,15 @@ $('#language').on('change', function () {
   MapBase.updateTippy('language');
 });
 
-$('#marker-size').on('change', function () {
-  Settings.markerSize = Number($('#marker-size').val());
+document.getElementById('marker-size').addEventListener('change', function () {
+  Settings.markerSize = Number(this.value);
 
-  Camp.onSettingsChanged();
+  CampCollection.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
+  PlantsCollection.onSettingsChanged();
   Salvage.onSettingsChanged();
   Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
@@ -295,14 +315,15 @@ $('#marker-size').on('change', function () {
   Pins.loadPins();
 });
 
-$('#marker-opacity').on('change', function () {
-  Settings.markerOpacity = Number($('#marker-opacity').val());
+document.getElementById('marker-opacity').addEventListener('change', function () {
+  Settings.markerOpacity = Number(this.value);
 
-  Camp.onSettingsChanged();
+  CampCollection.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
+  PlantsCollection.onSettingsChanged();
   Salvage.onSettingsChanged();
   Shop.onSettingsChanged();
   Treasure.onSettingsChanged();
@@ -312,30 +333,29 @@ $('#marker-opacity').on('change', function () {
   Pins.loadPins();
 });
 
-$('#overlay-opacity').on('change', function () {
-  Settings.overlayOpacity = Number($('#overlay-opacity').val());
+document.getElementById('overlay-opacity').addEventListener('change', function () {
+  Settings.overlayOpacity = Number(this.value);
   Legendary.onSettingsChanged();
   Overlay.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Salvage.onSettingsChanged();
 });
 
-$('#tooltip').on('change', function () {
-  Settings.showTooltips = $('#tooltip').prop('checked');
+document.getElementById('tooltip').addEventListener('change', function () {
+  Settings.showTooltips = this.checked;
   Menu.updateTippy();
 });
 
-$('#tooltip-map').on('change', function () {
-  Settings.showTooltipsMap = $('#tooltip-map').prop('checked');
+document.getElementById('tooltip-map').addEventListener('change', function () {
+  Settings.showTooltipsMap = this.checked;
   MapBase.updateTippy('tooltip');
 });
 
-$('#marker-cluster').on('change', function () {
-  Settings.isMarkerClusterEnabled = $('#marker-cluster').prop('checked');
+document.getElementById('marker-cluster').addEventListener('change', function () {
+  Settings.isMarkerClusterEnabled = this.checked;
 
   Layers.oms.clearMarkers();
 
-  Camp.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
@@ -346,40 +366,43 @@ $('#marker-cluster').on('change', function () {
   Pins.loadPins();
 });
 
-$('#enable-marker-popups-hover').on('change', function () {
-  Settings.isPopupsHoverEnabled = $('#enable-marker-popups-hover').prop('checked');
+document.getElementById('enable-marker-popups-hover').addEventListener('change', function () {
+  Settings.isPopupsHoverEnabled = this.checked;
 });
 
-$('#enable-marker-shadows').on('change', function () {
-  Settings.isShadowsEnabled = $('#enable-marker-shadows').prop('checked');
-  Camp.onSettingsChanged();
+document.getElementById('enable-marker-shadows').addEventListener('change', function () {
+  Settings.isShadowsEnabled = this.checked;
+
+  CampCollection.onSettingsChanged();
   Encounter.onSettingsChanged();
   GunForHire.onSettingsChanged();
   Location.onSettingsChanged();
+  PlantsCollection.onSettingsChanged();
   Shop.onSettingsChanged();
   Singleplayer.onSettingsChanged();
   Treasure.onSettingsChanged();
+
   Pins.loadPins();
   MadamNazar.addMadamNazar();
 });
 
-$('#enable-legendary-backgrounds').on('change', function () {
-  Settings.isLaBgEnabled = $('#enable-legendary-backgrounds').prop('checked');
+document.getElementById('enable-legendary-backgrounds').addEventListener('change', function () {
+  Settings.isLaBgEnabled = this.checked;
   Legendary.onSettingsChanged();
 });
 
-$('#legendary-animal-marker-type').on('change', function () {
-  Settings.legendarySpawnIconType = $('#legendary-animal-marker-type').val();
+document.getElementById('legendary-animal-marker-type').addEventListener('change', function () {
+  Settings.legendarySpawnIconType = this.value;
   Legendary.onSettingsChanged();
 });
 
-$('#legendary-animal-marker-size').on('change', function () {
-  Settings.legendarySpawnIconSize = Number($('#legendary-animal-marker-size').val());
+document.getElementById('legendary-animal-marker-size').addEventListener('change', function () {
+  Settings.legendarySpawnIconSize = Number(this.value);
   Legendary.onSettingsChanged();
 });
 
-$('#enable-dclick-zoom').on('change', function () {
-  Settings.isDoubleClickZoomEnabled = $('#enable-dclick-zoom').prop('checked');
+document.getElementById('enable-dclick-zoom').addEventListener('change', function () {
+  Settings.isDoubleClickZoomEnabled = this.checked;
   if (Settings.isDoubleClickZoomEnabled) {
     MapBase.map.doubleClickZoom.enable();
   } else {
@@ -387,62 +410,66 @@ $('#enable-dclick-zoom').on('change', function () {
   }
 });
 
-$('#show-help').on('change', function () {
-  Settings.showHelp = $('#show-help').prop('checked');
-  $('#help-container').toggle(Settings.showHelp);
+document.getElementById('show-help').addEventListener('change', function () {
+  Settings.showHelp = this.checked;
+  document.getElementById('help-container').style.display = Settings.showHelp ? '' : 'none';
 });
 
-$('#timestamps-24').on('change', function () {
-  Settings.isClock24Hour = $('#timestamps-24').prop('checked');
+document.getElementById('timestamps-24').addEventListener('change', function () {
+  Settings.isClock24Hour = this.checked;
   clockTick();
-  $('#language').triggerHandler('change');
+  document.getElementById('language').dispatchEvent(new Event('change'));
 });
 
-$('#show-coordinates').on('change', function () {
-  Settings.isCoordsOnClickEnabled = $('#show-coordinates').prop('checked');
+document.getElementById('show-coordinates').addEventListener('change', function () {
+  Settings.isCoordsOnClickEnabled = this.checked;
   changeCursor();
 });
 
-$('#enable-debug').on('change', function () {
-  Settings.isDebugEnabled = $('#enable-debug').prop('checked');
+document.getElementById('enable-debug').addEventListener('change', function () {
+  Settings.isDebugEnabled = this.checked;
 });
 
 //Open collection submenu
-$('.open-submenu').on('click', function (e) {
-  e.stopPropagation();
-  $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
-  $(this).toggleClass('rotate');
+document.querySelectorAll('.open-submenu').forEach(el => {
+  el.addEventListener('click', function (e) {
+    e.stopPropagation();
+    this.parentElement.parentElement.querySelector('.menu-hidden').classList.toggle('opened');
+    this.classList.toggle('rotate');
+  })
 });
 
-$('.submenu-only').on('click', function (e) {
-  e.stopPropagation();
-  $(this).parent().children('.menu-hidden').toggleClass('opened');
-  $(this).children('.open-submenu').toggleClass('rotate');
+document.querySelectorAll('.submenu-only').forEach(el => {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.parentElement.querySelector('.menu-hidden').classList.toggle('opened');
+    this.querySelector('.open-submenu').classList.toggle('rotate');
+  });
 });
 
 //Open & close side menu
-$('.menu-toggle').on('click', function () {
-  $('.side-menu').toggleClass('menu-opened');
-  Settings.isMenuOpened = $('.side-menu').hasClass('menu-opened');
-  $('.menu-toggle').text(Settings.isMenuOpened ? 'X' : '>');
-  $('.top-widget').toggleClass('top-widget-menu-opened', Settings.isMenuOpened);
-  $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+  sideMenu.classList.toggle('menu-opened');
+  Settings.isMenuOpened = sideMenu.classList.contains('menu-opened');
+  this.textContent = Settings.isMenuOpened ? 'X' : '>';
+  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', Settings.isMenuOpened);
+  document.getElementById('fme-container').classList.toggle('fme-menu-opened', Settings.isMenuOpened);
 });
 
-$(document).on('contextmenu', function (e) {
+document.addEventListener('contextmenu', function (e) {
   if (!Settings.isRightClickEnabled) e.preventDefault();
 });
 
-$('#delete-all-settings').on('click', function () {
-  $.each(localStorage, function (key) {
+document.getElementById('delete-all-settings').addEventListener('click', function () {
+  for (const key in localStorage) {
     if (key.startsWith('rdo.'))
       localStorage.removeItem(key);
-  });
+  };
 
   location.reload(true);
 });
 
-$('#reload-map').on('click', function () {
+document.getElementById('reload-map').addEventListener('click', function () {
   location.reload(true);
 });
 
@@ -456,12 +483,10 @@ function convertToTime(hours = '00', minutes = '00') {
 /**
  * Modals
  */
-$('#open-clear-important-items-modal').on('click', function () {
-  $('#clear-important-items-modal').modal();
-});
 
-$('#open-delete-all-settings-modal').on('click', function () {
-  $('#delete-all-settings-modal').modal();
+const deleteAllSettingsModal = new bootstrap.Modal(document.getElementById('delete-all-settings-modal'));
+document.getElementById('open-delete-all-settings-modal').addEventListener('click', function () {
+  deleteAllSettingsModal.show();
 });
 /* returns an Array with the range of all hours between from to to  */
 function timeRange(from, to) {
@@ -520,9 +545,9 @@ L.Icon.TimedData = L.Icon.extend({
   },
 });
 
-$('#cookie-export').on('click', function () {
+document.getElementById('cookie-export').addEventListener('click', function () {
   try {
-    var cookies = $.cookie();
+    var cookies = getCookies();
     var storage = localStorage;
 
     // Remove irrelevant properties (permanently from localStorage):
@@ -532,7 +557,7 @@ $('#cookie-export').on('click', function () {
 
     // TODO: Need to more differentiate settings form RDO and Collectors map, to don't add hundreds of settings to this list (add prefix or sth)
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
-    storage = $.extend(true, {}, localStorage);
+    storage = Object.assign({}, localStorage);
     delete storage['pinned-items'];
     delete storage['rdo.pinned-items'];
     delete storage['routes.customRoute'];
@@ -561,22 +586,22 @@ $('#cookie-export').on('click', function () {
 });
 
 function setSettings(settings) {
-  $.each(settings.cookies, function (key, value) {
-    $.cookie(key, value, { expires: 999 });
-  });
+  for (const [key, value] of Object.entries(settings.cookies)) {
+    document.cookie = `${key}=${value}; max-age=${60 * 60 * 24 * 999}; path=/`;
+  }
 
-  $.each(settings.local, function (key, value) {
+  for (const [key, value] of Object.entries(settings.local)) {
     localStorage.setItem(key, value);
-  });
+  }
 
   location.reload();
 }
 
-$('#cookie-import').on('click', function () {
+document.getElementById('cookie-import').addEventListener('click', function() {
   try {
-    var settings = null;
-    var file = $('#cookie-import-file').prop('files')[0];
-    var fallback = false;
+    let settings = null;
+    const file = document.getElementById('cookie-import-file').files[0];
+    let fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
@@ -598,10 +623,10 @@ $('#cookie-import').on('click', function () {
     }
 
     if (fallback) {
-      var reader = new FileReader();
-
-      reader.addEventListener('loadend', (e) => {
-        var text = e.srcElement.result;
+      const reader = new FileReader();
+      
+      reader.addEventListener('loadend', e => {
+        const text = e.target.result;
 
         try {
           settings = JSON.parse(text);
@@ -625,4 +650,44 @@ function linear(value, iMin, iMax, oMin, oMax) {
     return num <= min ? min : num >= max ? max : num;
   };
   return clamp((((value - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin), oMin, oMax);
+}
+
+function isEmptyObject(obj) {
+  if (obj == null) return true;
+  if (typeof obj !== 'object') return false;
+  return Object.keys(obj).length === 0;
+}
+
+/**
+ * Loads a specified font and adds it to the document's font set.
+ *
+ * @param {string} name - The name of the font.
+ * @param {Object} urls - An object containing URLs for different font formats.
+ * @param {string} [urls.woff2] - The URL for the WOFF2 font format.
+ * @param {string} [urls.woff] - The URL for the WOFF font format.
+ * @param {string} [urls.ttf] - The URL for the TTF font format.
+ * @returns {Promise<FontFace>} A promise that resolves to the loaded FontFace object.
+ * 
+ * @example
+ * const urls = {
+ *   woff2: '/assets/fonts/font.woff2',
+ *   woff: '/assets/fonts/font.woff',
+ *   ttf: '/assets/fonts/font.ttf'
+ * };
+ */
+function loadFont(name, urls = {}) {
+  const sources = [
+    { url: urls.woff2, format: 'woff2' },
+    { url: urls.woff, format: 'woff' },
+    { url: urls.ttf, format: 'truetype' }
+  ]
+    .filter(({ url }) => url)
+    .map(({ url, format }) => `url(${url}) format('${format}')`)
+    .join(', ');
+
+  const fontFace = new FontFace(name, sources, { style: 'normal', weight: '400' });
+  return fontFace.load().then(() => {
+    document.fonts.add(fontFace);
+    return fontFace;
+  });
 }

@@ -163,9 +163,6 @@ function layerFactory(L) {
             if (!pointPos) {
                 pointPos = self._map.latLngToContainerPoint(marker.getLatLng());
             }
-            //Plants shadows. 🤔
-            //self._drawShadow(marker, pointPos);
-
             var iconUrl = marker.options.icon.options.iconUrl;
             if (typeof iconUrl != 'undefined') {
                 if (marker.canvas_img) {
@@ -195,54 +192,22 @@ function layerFactory(L) {
                 }
             }
         },
-        _drawShadow: function (marker, pointPos) {
-            var self = this;
-            var shadowUrl = marker.options.icon.options.shadowUrl;
-            if (typeof shadowUrl != 'undefined') {
-                if (marker.shadow_img) {
-                    self._drawImageShadow(marker, pointPos);
-                } else {
-                    if (self._imageLookup[shadowUrl]) {
-                        marker.shadow_img = self._imageLookup[shadowUrl][0];
-                        if (self._imageLookup[shadowUrl][1] === false) {
-                            self._imageLookup[shadowUrl][2].push([marker, pointPos]);
-                        }
-                        else {
-                            self._drawImageShadow(marker, pointPos);
-                        }
-                    } else {
-                        var i = new Image();
-                        i.src = shadowUrl;
-                        marker.shadow_img = i;
-                        //Image,isLoaded,marker\pointPos ref
-                        self._imageLookup[shadowUrl] = [i, false, [[marker, pointPos]]];
-                        i.onload = function () {
-                            self._imageLookup[shadowUrl][1] = true;
-                            self._imageLookup[shadowUrl][2].forEach(function (e) {
-                                self._drawImageShadow(e[0], e[1]);
-                            });
-                        }
-                    }
-                }
-            }
-        },
-        _drawImageShadow: function (marker, pointPos) {
+        _drawImage: function (marker, pointPos) {
             try {
                 var options = marker.options.icon.options;
-                this._context.drawImage(
-                    marker.shadow_img,
+                this._context.save();
+                this._context.globalAlpha = marker.options.opacity || 1.0;
+                if (options.shadowUrl) {
+                    var shadowImg = new Image();
+                    shadowImg.src = options.shadowUrl;
+                    this._context.drawImage(
+                    shadowImg,
                     pointPos.x - options.shadowAnchor[0],
                     pointPos.y - options.shadowAnchor[1],
                     options.shadowSize[0],
                     options.shadowSize[1]
-                );
-            } catch (error) {
-                // console.error(error);
-            }
-        },
-        _drawImage: function (marker, pointPos) {
-            try {
-                var options = marker.options.icon.options;
+                    );
+                } 
                 this._context.drawImage(
                     marker.canvas_img,
                     pointPos.x - options.iconAnchor[0],
@@ -250,6 +215,7 @@ function layerFactory(L) {
                     options.iconSize[0],
                     options.iconSize[1]
                 );
+                this._context.restore();
             } catch (error) {
                 // console.error(error);
             }

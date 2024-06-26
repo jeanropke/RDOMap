@@ -245,7 +245,7 @@
     {"name": "Provisions cooked at campfires", "key": "mpgc_craft_food", "category": ["menu", "campfires"]},
     {"name": "Put a mask on your horse", "key": "mpgc_customization_horse_mask", "category": ["shops", "stable"]},
     {"name": "Ram's Head picked", "key": "mpgc_rams_head_picked", "category": ["plants", "rams_head"]},
-    {"name": "Rams skinned", "key": "mpgc_rams_skinned", "category": ["animal", "ram"]},
+    {"name": "Rams skinned", "key": "mpgc_rams_skinned", "category": ["animal", "bighornram_desert"]},
     {"name": "Raspberries picked", "key": "mpgc_red_raspberry_picked", "category": ["plants", "red_raspberry"]},
     {"name": "Rats collected", "key": "mpgc_rats_skinned", "category": ["animal", "rat_black"]},
     {"name": "Red Sage picked", "key": "mpgc_red_sage_picked", "category": ["plants", "red_sage"]},

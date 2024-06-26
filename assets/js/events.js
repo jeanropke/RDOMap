@@ -1,8 +1,8 @@
 class CondorEgg {
   static init() {
-    this.condorEggParentElement = $('.collectible-wrapper[data-type=condor_egg]')
-      .toggleClass('disabled', !this.condorEggOnMap)
-      .on('click', () => this.condorEggOnMap = !this.condorEggOnMap);
+    this.condorEggParentElement = document.querySelector('.collectible-wrapper[data-type=condor_egg]');
+    this.condorEggParentElement.classList.toggle('disabled', !this.condorEggOnMap);
+    this.condorEggParentElement.addEventListener('click', () => this.condorEggOnMap = !this.condorEggOnMap);
     this.condorEggs = [];
     this.quickParams = [];
     this.layer = L.layerGroup();
@@ -72,16 +72,16 @@ class CondorEgg {
     this.onMap = true;
   }
   popupContent() {
-    return $(`
-      <div class="handover-wrapper-with-no-influence">
+    const popup = document.createElement('div');
+    popup.classList.add('handover-wrapper-with-no-influence');
+    popup.innerHTML = `
         <h1 data-text="map.${this.text}.name"></h1>
         <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
-      </div>
-    `)
-      .translate()
-      .find('button')
-      .on('click', () => CondorEgg.condorEggOnMap = false)
-      .end()[0];
+    `;
+    Language.translateDom(popup);
+    popup.querySelector('button').addEventListener('click', () => CondorEgg.condorEggOnMap = false);
+
+    return popup;
   }
 
   set onMap(state) {
@@ -102,7 +102,7 @@ class CondorEgg {
         localStorage.removeItem('rdo.condorEggs');
       MapBase.map.closePopup();
     }
-    this.condorEggParentElement.toggleClass('disabled', !state);
+    this.condorEggParentElement.classList.toggle('disabled', !state);
   }
 
   static get condorEggOnMap() {
@@ -112,9 +112,9 @@ class CondorEgg {
 
 class Salvage {
   static init() {
-    this.salvageParentElement = $('.collectible-wrapper[data-type=salvage]')
-      .toggleClass('disabled', !this.salvageOnMap)
-      .on('click', () => this.salvageOnMap = !this.salvageOnMap);
+    this.salvageParentElement = document.querySelector('.collectible-wrapper[data-type=salvage]');
+    this.salvageParentElement.classList.toggle('disabled', !this.salvageOnMap);
+    this.salvageParentElement.addEventListener('click', () => this.salvageOnMap = !this.salvageOnMap);
     this.salvages = [];
     this.quickParams = [];
     this.layer = L.layerGroup();
@@ -208,17 +208,17 @@ class Salvage {
     this.onMap = true;
   }
   popupContent(type) {
-    return $(`
-      <div class="handover-wrapper-with-no-influence">
+    const popup = document.createElement('div');
+    popup.classList.add('handover-wrapper-with-no-influence');
+    popup.innerHTML = `
         <h1 data-text="map.${this.text}.name"></h1>
         ${type ? `<p data-text="map.salvage.${type}.desc"></p>` : ''}
         <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
-      </div>
-    `)
-      .translate()
-      .find('button')
-      .on('click', () => Salvage.salvageOnMap = false)
-      .end()[0];
+    `;
+    Language.translateDom(popup);
+    popup.querySelector('button').addEventListener('click', () => Salvage.salvageOnMap = false);
+
+    return popup;
   }
 
   set onMap(state) {
@@ -239,7 +239,7 @@ class Salvage {
         localStorage.removeItem('rdo.salvages');
       MapBase.map.closePopup();
     }
-    this.salvageParentElement.toggleClass('disabled', !state);
+    this.salvageParentElement.classList.toggle('disabled', !state);
   }
 
   static get salvageOnMap() {

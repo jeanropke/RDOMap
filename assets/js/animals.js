@@ -2,15 +2,19 @@ class Animal {
   constructor(preliminary, type) {
     Object.assign(this, preliminary);
 
-    this.context = $(`.menu-hidden[data-type=${type}]`);
+    this.context = document.querySelector(`.menu-hidden[data-type=${type}]`);
 
-    this.element = $(`<div class="collectible-wrapper" data-help="item" data-type="${this.key}">`)
-      .attr('data-tippy-content', Language.get(`menu.cmpndm.${this.key}`))
-      .on('click', () => this.isEnabled = !this.isEnabled)
-      .append($(`<img class="collectible-icon" src="./assets/images/icons/game/animals/${this.key}.png">`))
-      .append($('<span class="collectible-text disabled">')
-        .append($('<p class="collectible">').attr('data-text', `menu.cmpndm.${this.key}`)))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    Object.assign(this.element.dataset, { help: 'item', type: this.key, tippyContent: Language.get(`menu.cmpndm.${this.key}`) });
+    this.element.innerHTML = `
+      <img class="collectible-icon" src="./assets/images/icons/game/animals/${this.key}.png">
+      <span class="collectible-text disabled">
+        <p class="collectible" data-text="menu.cmpndm.${this.key}"></p>
+      </span>
+    `;
+    this.element.addEventListener('click', () => this.isEnabled = !this.isEnabled);
+    Language.translateDom(this.element);
 
     this.markers = [];
 
@@ -38,7 +42,7 @@ class Animal {
       });
     }
 
-    this.element.appendTo(this.context);
+    this.context.appendChild(this.element);
   }
 
   popupContent() {
@@ -55,48 +59,44 @@ class Animal {
         .replace('{end}', endTime);
     }
 
-    const snippet = $(`
-        <div>
+    const snippet = document.createElement('div');
+    snippet.innerHTML = `
           <h1>${animalName}</h1>
           <span class="marker-content-wrapper">
             <p>${description}</p>
           </span>
           <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
           <small>Latitude: ${this.marker.x} / Longitude: ${this.marker.y} / Start: ${this.marker.start} / End: ${this.marker.end}</small>
-        </div>
-      `)
-      .translate()
-      .find('small')
-      .toggle(Settings.isDebugEnabled)
-      .end()
-      .find('button')
-      .on('click', () => this.isEnabled = false)
-      .end();
+    `;
+    Language.translateDom(snippet);
+    snippet.querySelector('small').style.display = Settings.isDebugEnabled ? '' : 'none';
+    snippet.querySelector('button').addEventListener('click', () => this.isEnabled = false);
 
-    return snippet[0];
+    return snippet;
   }
 
   set isEnabled(state) {
-    $('[data-type="animals"] .collectible-text').addClass('disabled');
-    $('[data-type="birds"] .collectible-text').addClass('disabled');
-    $('[data-type="fish"] .collectible-text').addClass('disabled');
+    document.querySelectorAll(
+        '[data-type="animals"] .collectible-text, [data-type="birds"] .collectible-text, [data-type="fish"] .collectible-text'
+      )
+      .forEach(el => el.classList.add('disabled'));
 
     if (state) {
       AnimalCollection.spawnLayer.clearLayers();
       AnimalCollection.heatmapLayer.setData({ data: this.data });
       if (this.markers.length > 0)
         AnimalCollection.spawnLayer.addLayers(this.markers);
-      this.element.children('span').removeClass('disabled');
+      this.element.querySelector('span').classList.remove('disabled');
     } else {
       AnimalCollection.heatmapLayer.setData({ data: [] });
       AnimalCollection.spawnLayer.clearLayers();
-      this.element.children('span').addClass('disabled');
+      this.element.querySelector('span').classList.add('disabled');
       MapBase.map.closePopup();
     }
   }
 
   get isEnabled() {
-    return !this.element.children('span').hasClass('disabled');
+    return !this.element.querySelector('span').classList.contains('disabled');
   }
 }
 
@@ -150,8 +150,13 @@ class AnimalCollection {
   }
 
   static onLanguageChanged() {
-    AnimalCollection.collectionsData.forEach(group => Menu.reorderMenu($(`.menu-hidden[data-type=${group.key}]`)));
+    AnimalCollection.collectionsData.forEach(group =>
+      Menu.reorderMenu(
+        document.querySelector(`.menu-hidden[data-type=${group.key}]`)
+      )
+    );
   }
+
   static hideAllAnimals() {
     AnimalCollection.collection.forEach(collection => collection.animals.forEach(animal => animal.isEnabled = false));
   }
