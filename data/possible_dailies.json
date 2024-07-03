@@ -262,7 +262,7 @@
     {"name": "Small bird carcasses collected", "key": "mpgc_songbirds_collected"},
     {"name": "Smallmouth Bass caught", "key": "mpgc_fish_caught_smallmouth_bass", "category": ["fish", "smallmouthbass"]},
     {"name": "Snakes skinned", "key": "mpgc_snakes_skinned", "category": ["animal", "snake"]},
-    {"name": "Sockeye Salmon caught", "key": "mpgc_fish_caught_sockeye_salmon", "category": ["fish", "sockeyesalmon"]},
+    {"name": "Sockeye Salmon caught", "key": "mpgc_fish_caught_sockeye_salmon", "category": ["fish", "salmon_sockeye"]},
     {"name": "Spoonbills skinned", "key": "mpgc_spoonbill_skinned", "category": ["animal", "roseatespoonbill"]},
     {"name": "Squirrels collected", "key": "mpgc_squirrel_skinned", "category": ["animal", "squirrel_grey"]},
     {"name": "Steelhead Trout caught", "key": "mpgc_fish_caught_steelhead_trout", "category": ["fish", "steelheadtrout"]},
