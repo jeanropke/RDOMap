@@ -116,11 +116,6 @@ class CampCollection {
     this.markers = [];
     this.quickParams = [];
 
-    this.element = document.querySelector('.menu-option.submenu-only[data-type=camps]');
-    this.element.classList.toggle('disabled', !CampCollection.onMap);
-    this.element.addEventListener('click', () => CampCollection.onMap = !CampCollection.onMap);
-    Language.translateDom(this.element);
-
     CampCollection.layer.addTo(MapBase.map);
 
     this.locations = [];
@@ -144,7 +139,6 @@ class CampCollection {
     } else {
       this.layer.remove();
     }
-    this.element.classList.toggle('disabled', !state);
     this.context.classList.toggle('disabled', !state);
 
     if (!MapBase.isPreviewMode)
