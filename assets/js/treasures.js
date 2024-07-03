@@ -104,7 +104,7 @@ class Treasure {
 
     return snippet;
   }
-  
+
   set onMap(state) {
     if (state) {
       if (MapBase.isPreviewMode || Treasure.treasuresOnMap)

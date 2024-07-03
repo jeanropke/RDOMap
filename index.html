@@ -134,6 +134,10 @@
       </div>
       <div class="menu-hidden two-column" data-type="camps">
         <div class="collection-value">
+          <button data-text="menu.hide_all" class="btn btn-light camps-hide-btn">Hide all</button>
+          <button data-text="menu.show_all" class="btn btn-light camps-show-btn">Show all</button>
+        </div>
+        <div class="collection-value">
           <button data-text="menu.small_btn" class="btn btn-light camps-small-btn" data-bs-toggle="button">Small</button>
           <button data-text="menu.large_btn" class="btn btn-light camps-large-btn" data-bs-toggle="button">Large</button>
           <button data-text="menu.wilderness_btn" class="btn btn-light camps-wilderness-btn" data-bs-toggle="button">Wilderness</button>
@@ -141,7 +145,7 @@
       </div>
     </div>
     <div>
-      <div class="menu-option clickable" data-type="plants" data-help="item_category">
+      <div class="menu-option submenu-only" data-type="plants" data-help="item_category">
         <span>
           <img class="icon" src="./assets/images/icons/plants.png" />
           <span class="menu-option-text" data-text="menu.plants">Plants</span>
@@ -450,7 +454,12 @@
           </span>
           <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
         </div>
-        <div class="menu-hidden two-column" data-type="discoverables"></div>
+        <div class="menu-hidden two-column" data-type="discoverables">
+          <div class="collection-value">
+            <button data-text="menu.hide_all" class="btn btn-light discoverables-hide-btn">Hide all</button>
+            <button data-text="menu.show_all" class="btn btn-light discoverables-show-btn">Show all</button>
+          </div>
+        </div>
       </div>
       <div>
         <div class="menu-option submenu-only" data-type="singleplayer" data-help="item_category_submenu">
@@ -460,7 +469,12 @@
           </span>
           <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
         </div>
-        <div class="menu-hidden two-column" data-type="singleplayer"></div>
+        <div class="menu-hidden two-column" data-type="singleplayer">
+          <div class="collection-value">
+            <button data-text="menu.hide_all" class="btn btn-light singleplayer-hide-btn">Hide all</button>
+            <button data-text="menu.show_all" class="btn btn-light singleplayer-show-btn">Show all</button>
+          </div>
+        </div>
       </div>
     </div>
 

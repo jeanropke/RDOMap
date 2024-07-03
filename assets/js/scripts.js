@@ -48,9 +48,9 @@ function init() {
   const langCodesMap = { 'zh-CN': 'zh-Hans', 'zh-SG': 'zh-Hans', 'zh-HK': 'zh-Hant', 'zh-TW': 'zh-Hant' };
   const mappedLanguage = langCodesMap[navLang] || navLang;
   SettingProxy.addSetting(Settings, 'language', {
-    default: Language.availableLanguages.includes(mappedLanguage)
-      ? mappedLanguage
-      : 'en',
+    default: Language.availableLanguages.includes(mappedLanguage) ?
+      mappedLanguage :
+      'en',
   });
 
   if (['ja', 'ko', 'zh-Hans', 'zh-Hant'].includes(Settings.language))
@@ -81,12 +81,12 @@ function init() {
     changeCursor();
     Pins.init();
     FME.init();
-  
+
     // Prevent blocks by external services. Sometimes these requests took >6 seconds.
     // Bonus: If either of these fail to load, it doesn't block the map from working properly.
     Dailies.init();
     MadamNazar.init();
-  
+
     const animals = AnimalCollection.init();
     const locations = Location.init();
     const encounters = Encounter.init();
@@ -130,7 +130,7 @@ function init() {
   document.getElementById('enable-debug').checked = Settings.isDebugEnabled;
   document.getElementById('enable-right-click').checked = Settings.isRightClickEnabled;
 
-  document.getElementById("help-container").style.display = Settings.showHelp ? '' : 'none';
+  document.getElementById('help-container').style.display = Settings.showHelp ? '' : 'none';
 
   document.getElementById('show-dailies').checked = Settings.showDailies;
   document.getElementById('show-utilities').checked = Settings.showUtilitiesSettings;
@@ -436,7 +436,7 @@ document.querySelectorAll('.open-submenu').forEach(el => {
     e.stopPropagation();
     this.parentElement.parentElement.querySelector('.menu-hidden').classList.toggle('opened');
     this.classList.toggle('rotate');
-  })
+  });
 });
 
 document.querySelectorAll('.submenu-only').forEach(el => {
@@ -464,7 +464,7 @@ document.getElementById('delete-all-settings').addEventListener('click', functio
   for (const key in localStorage) {
     if (key.startsWith('rdo.'))
       localStorage.removeItem(key);
-  };
+  }
 
   location.reload(true);
 });
@@ -624,7 +624,7 @@ document.getElementById('cookie-import').addEventListener('click', function() {
 
     if (fallback) {
       const reader = new FileReader();
-      
+
       reader.addEventListener('loadend', e => {
         const text = e.target.result;
 
@@ -667,7 +667,7 @@ function isEmptyObject(obj) {
  * @param {string} [urls.woff] - The URL for the WOFF font format.
  * @param {string} [urls.ttf] - The URL for the TTF font format.
  * @returns {Promise<FontFace>} A promise that resolves to the loaded FontFace object.
- * 
+ *
  * @example
  * const urls = {
  *   woff2: '/assets/fonts/font.woff2',
@@ -679,7 +679,7 @@ function loadFont(name, urls = {}) {
   const sources = [
     { url: urls.woff2, format: 'woff2' },
     { url: urls.woff, format: 'woff' },
-    { url: urls.ttf, format: 'truetype' }
+    { url: urls.ttf, format: 'truetype' },
   ]
     .filter(({ url }) => url)
     .map(({ url, format }) => `url(${url}) format('${format}')`)

@@ -126,8 +126,8 @@ const MapBase = {
     );
 
     new L.Control.ZoomEx({
-      position: "bottomright",
-      className: "leaflet-zoomex-rightbottom",
+      position: 'bottomright',
+      className: 'leaflet-zoomex-rightbottom',
     }).addTo(MapBase.map);
 
     L.control.layers(mapLayers).addTo(MapBase.map);
@@ -184,9 +184,9 @@ const MapBase = {
     const mapEl = document.getElementById('map');
     if (MapBase.isDarkMode) {
       mapEl.style.backgroundColor =
-        (this.themeOverride || Settings.baseLayer) === 'map.layers.black'
-          ? '#000'
-          : '#3d3d3d';
+        (this.themeOverride || Settings.baseLayer) === 'map.layers.black' ?
+          '#000' :
+          '#3d3d3d';
     } else {
       mapEl.style.backgroundColor = '#d2b790';
     }
@@ -198,26 +198,26 @@ const MapBase = {
         content: 'MotoyaExGothic',
         contentUrls: { woff2: 'assets/fonts/fallback/MotoyaExGothic-W4-KP.woff2' },
         title: 'MotoyaAporo',
-        titleUrls: { woff2: 'assets/fonts/fallback/MotoyaAporo-Std-W7.woff2' }
+        titleUrls: { woff2: 'assets/fonts/fallback/MotoyaAporo-Std-W7.woff2' },
       },
       ko: {
         content: 'YDMyungjo240Pro',
         contentUrls: { woff2: 'assets/fonts/fallback/YDMyungjo-240-Pro.woff2' },
         title: 'Yoon-GogooryoM',
-        titleUrls: { woff2: 'assets/fonts/fallback/Yoon-GogooryoM.woff2' }
+        titleUrls: { woff2: 'assets/fonts/fallback/Yoon-GogooryoM.woff2' },
       },
       'zh-Hans': {
         content: 'LXGWNeoZhiSong',
         contentUrls: { woff2: 'assets/fonts/fallback/LXGWNeoZhiSong.woff2' },
         title: 'MLiPRC',
-        titleUrls: { woff2: 'assets/fonts/fallback/MLiPRC-Bold.woff2' }
+        titleUrls: { woff2: 'assets/fonts/fallback/MLiPRC-Bold.woff2' },
       },
       'zh-Hant': {
         content: 'MSungHK',
         contentUrls: { woff2: 'assets/fonts/fallback/MSungHK-Medium.woff2' },
         title: 'YaYuanGuYin',
-        titleUrls: { woff2: 'assets/fonts/fallback/YaYuanGuYin.woff2' }
-      }
+        titleUrls: { woff2: 'assets/fonts/fallback/YaYuanGuYin.woff2' },
+      },
     };
 
     this.loadedFallbackFonts.forEach(font => document.fonts.delete(font));
@@ -228,12 +228,12 @@ const MapBase = {
       const { content, contentUrls, title, titleUrls } = fontsData[Settings.language];
       const [contentFontFace, titleFontFace] = await Promise.all([
         loadFont(content, contentUrls),
-        loadFont(title, titleUrls)
+        loadFont(title, titleUrls),
       ]);
       this.loadedFallbackFonts.push(contentFontFace, titleFontFace);
 
       rootStyles.setProperty('--content-font', `var(--default-content-font), ${content}, serif`);
-      rootStyles.setProperty('--title-font', `var(--default-title-font), ${title}, serif`);     
+      rootStyles.setProperty('--title-font', `var(--default-title-font), ${title}, serif`);
     }
   },
 
@@ -268,7 +268,7 @@ const MapBase = {
       const validColors = [
         'aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple',
         'darkred', 'gray', 'green', 'lightblue', 'lightdarkred', 'lightgray', 'lightgreen', 'lightorange', 'lightred',
-        'orange', 'pink', 'purple', 'red', 'white', 'yellow'
+        'orange', 'pink', 'purple', 'red', 'white', 'yellow',
       ];
 
       if (validColors.includes(colorParam)) this.colorOverride = colorParam;
@@ -414,7 +414,7 @@ const MapBase = {
 
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
         [(parseFloat(value.lat) + (y * scaleY)), (parseFloat(value.lng) - (x * scaleX))],
-        [(parseFloat(value.lat) - (y * scaleY)), (parseFloat(value.lng) + (x * scaleX))]
+        [(parseFloat(value.lat) - (y * scaleY)), (parseFloat(value.lng) + (x * scaleX))],
       ], {
         opacity: opacity,
       }));
@@ -432,28 +432,28 @@ const MapBase = {
       if (!searchTerms.includes(trimmedValue) && trimmedValue.length > 0)
         searchTerms.push(trimmedValue);
     });
-  
+
     let uniqueSearchMarkers = [];
     if (searchTerms.length === 0) {
       uniqueSearchMarkers = MapBase.markers;
     } else {
       Layers.itemMarkersLayer.clearLayers();
       Layers.plantsLayer.clearLayers();
-  
+
       searchTerms.forEach(term => {
         const searchMarkers = MapBase.markers.filter(function (_marker) {
-          return _marker.title != null && _marker.title.toLowerCase().includes(term.toLowerCase())
+          return _marker.title != null && _marker.title.toLowerCase().includes(term.toLowerCase());
         }
-          
+
         );
-  
+
         searchMarkers.forEach(marker => {
           if (!uniqueSearchMarkers.includes(marker))
             uniqueSearchMarkers.push(marker);
         });
       });
     }
-  
+
     MapBase.addMarkers();
   },
 
@@ -467,7 +467,7 @@ const MapBase = {
   submitDebugForm: function () {
     const lat = parseFloat(document.querySelector('input[name="debug-marker-lat"]').value);
     const lng = parseFloat(document.querySelector('input[name="debug-marker-lng"]').value);
-  
+
     if (!isNaN(lat) && !isNaN(lng))
       MapBase.debugMarker(lat, lng);
   },
@@ -504,12 +504,12 @@ const MapBase = {
     if (Settings.isCoordsOnClickEnabled) {
       const container = document.querySelector('.lat-lng-container');
       container.style.display = 'block';
-    
+
       container.querySelector('p').innerHTML = `
         Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}
         <br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}
       `;
-    
+
       document.getElementById('lat-lng-container-close-button').addEventListener('click', function() {
         container.style.display = 'none';
       });

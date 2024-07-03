@@ -9,9 +9,9 @@ class Loader {
     this.urls = new Map();
     this.promises = {};
     urls.forEach(url => {
-        const name = url.split('/').filter(e => e).pop().split('.', 1)[0];
-        this.promises[name] = new Loader(name, url);
-        this.urls.set(name, url);
+      const name = url.split('/').filter(e => e).pop().split('.', 1)[0];
+      this.promises[name] = new Loader(name, url);
+      this.urls.set(name, url);
     });
 
     /*
@@ -34,14 +34,13 @@ class Loader {
 
     if (['lang_progress'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
 
-    this._json = fetch(
-      `${url}?${new URLSearchParams(queryString).toString()}`
-    ).then((response) => {
-      if (!response.ok) {
-        throw new Error(`${response.status} ${response.statusText} on ${response.url}`)
-      }
-      return response.json()
-    })
+    this._json = fetch(`${url}?${new URLSearchParams(queryString).toString()}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`${response.status} ${response.statusText} on ${response.url}`);
+        }
+        return response.json();
+      });
   }
 
   // allow garbage collection of loaded data after use

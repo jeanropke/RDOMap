@@ -33,7 +33,7 @@ class GunForHire {
     `;
     this.element.addEventListener('click', () => this.onMap = !this.onMap);
     Language.translateDom(this.element);
-    
+
     GunForHire.context.appendChild(this.element);
 
     if (this.onMap)

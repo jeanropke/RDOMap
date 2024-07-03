@@ -13,32 +13,36 @@ class Animal {
         <p class="collectible" data-text="menu.cmpndm.${this.key}"></p>
       </span>
     `;
-    this.element.addEventListener('click', () => this.isEnabled = !this.isEnabled);
+    this.element.addEventListener('click', () => (this.isEnabled = !this.isEnabled));
     Language.translateDom(this.element);
 
     this.markers = [];
 
     if (this.groups != null) {
-      this.groups.forEach(_group => {
-        if (!AnimalCollection.groups[_group])
-          return console.error(`The animal spawns group for ${_group} could not be found.`);
-        MapBase.yieldingLoop(AnimalCollection.groups[_group].length, 50, index => {
-          this.marker = AnimalCollection.groups[_group][index];
-          const tempMarker = L.marker([this.marker.x, this.marker.y], {
-            opacity: .75,
-            icon: new L.divIcon({
-              iconUrl: 'assets/images/icons/animal.png',
-              iconSize: [32, 32],
-              iconAnchor: [16, 16],
-              popupAnchor: [0, -8],
-            }),
-          });
+      this.groups.forEach((_group) => {
+        if (!AnimalCollection.groups[_group]) return console.error(`The animal spawns group for ${_group} could not be found.`);
+        MapBase.yieldingLoop(
+          AnimalCollection.groups[_group].length,
+          50,
+          (index) => {
+            this.marker = AnimalCollection.groups[_group][index];
+            const tempMarker = L.marker([this.marker.x, this.marker.y], {
+              opacity: 0.75,
+              icon: new L.divIcon({
+                iconUrl: 'assets/images/icons/animal.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                popupAnchor: [0, -8],
+              }),
+            });
 
-          // exception from `.bind(this)` to show correct data in marker popup
-          tempMarker.bindPopup(this.popupContent(), { minWidth: 300, maxWidth: 400 });
-          this.data.push(tempMarker._latlng);
-          this.markers.push(tempMarker);
-        }, function () { });
+            // exception from `.bind(this)` to show correct data in marker popup
+            tempMarker.bindPopup(this.popupContent(), { minWidth: 300, maxWidth: 400 });
+            this.data.push(tempMarker._latlng);
+            this.markers.push(tempMarker);
+          },
+          function () {}
+        );
       });
     }
 
@@ -47,8 +51,7 @@ class Animal {
 
   popupContent() {
     const animalName = Language.get('map.animal_spawns.name').replace('{animal}', Language.get(`menu.cmpndm.${this.key}`));
-    let description = Language.get('map.animal_spawns.desc')
-      .replace('{animal}', Language.get(`menu.cmpndm.${this.key}`));
+    let description = Language.get('map.animal_spawns.desc').replace('{animal}', Language.get(`menu.cmpndm.${this.key}`));
 
     if (this.marker.start && this.marker.end) {
       const startTime = convertToTime(this.marker.start);
@@ -70,22 +73,20 @@ class Animal {
     `;
     Language.translateDom(snippet);
     snippet.querySelector('small').style.display = Settings.isDebugEnabled ? '' : 'none';
-    snippet.querySelector('button').addEventListener('click', () => this.isEnabled = false);
+    snippet.querySelector('button').addEventListener('click', () => (this.isEnabled = false));
 
     return snippet;
   }
 
   set isEnabled(state) {
-    document.querySelectorAll(
-        '[data-type="animals"] .collectible-text, [data-type="birds"] .collectible-text, [data-type="fish"] .collectible-text'
-      )
-      .forEach(el => el.classList.add('disabled'));
+    document
+      .querySelectorAll('[data-type="animals"] .collectible-text, [data-type="birds"] .collectible-text, [data-type="fish"] .collectible-text')
+      .forEach((el) => el.classList.add('disabled'));
 
     if (state) {
       AnimalCollection.spawnLayer.clearLayers();
       AnimalCollection.heatmapLayer.setData({ data: this.data });
-      if (this.markers.length > 0)
-        AnimalCollection.spawnLayer.addLayers(this.markers);
+      if (this.markers.length > 0) AnimalCollection.spawnLayer.addLayers(this.markers);
       this.element.querySelector('span').classList.remove('disabled');
     } else {
       AnimalCollection.heatmapLayer.setData({ data: [] });
@@ -101,7 +102,6 @@ class Animal {
 }
 
 class AnimalCollection {
-
   static init() {
     this.heatmapLayer = new HeatmapOverlay({
       radius: 2.5,
@@ -128,12 +128,12 @@ class AnimalCollection {
     AnimalCollection.heatmapLayer.addTo(MapBase.map);
     AnimalCollection.spawnLayer.addTo(MapBase.map);
 
-    const animalSpawns = Loader.promises['animal_spawns'].consumeJson(data => this.groups = data);
-    const animalHeatmap = Loader.promises['hm'].consumeJson(data => this.collectionsData = data);
+    const animalSpawns = Loader.promises['animal_spawns'].consumeJson((data) => (this.groups = data));
+    const animalHeatmap = Loader.promises['hm'].consumeJson((data) => (this.collectionsData = data));
 
     return Promise.all([animalSpawns, animalHeatmap]).then(() => {
       console.info('%c[Animals] Loaded!', 'color: #bada55; background: #242424');
-      this.collectionsData.forEach(collection => this.collection.push(new AnimalCollection(collection)));
+      this.collectionsData.forEach((collection) => this.collection.push(new AnimalCollection(collection)));
     });
   }
 
@@ -141,7 +141,7 @@ class AnimalCollection {
     Object.assign(this, preliminary);
 
     this.animals = [];
-    this.data.forEach(animal => {
+    this.data.forEach((animal) => {
       this.animals.push(new Animal(animal, this.key));
       AnimalCollection.quickParams.push(animal.key);
     });
@@ -150,14 +150,10 @@ class AnimalCollection {
   }
 
   static onLanguageChanged() {
-    AnimalCollection.collectionsData.forEach(group =>
-      Menu.reorderMenu(
-        document.querySelector(`.menu-hidden[data-type=${group.key}]`)
-      )
-    );
+    AnimalCollection.collectionsData.forEach((group) => Menu.reorderMenu(document.querySelector(`.menu-hidden[data-type=${group.key}]`)));
   }
 
   static hideAllAnimals() {
-    AnimalCollection.collection.forEach(collection => collection.animals.forEach(animal => animal.isEnabled = false));
+    AnimalCollection.collection.forEach((collection) => collection.animals.forEach((animal) => (animal.isEnabled = false)));
   }
 }

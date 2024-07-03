@@ -29,7 +29,7 @@ class Marker {
         case 'sightseeing':
           return Language.get('map.sightseeing.name') + (this.text === 'hidden' ? ' - ' + Language.get('map.sightseeing.hidden') : '');
         default:
-            return Language.get(`map.${this.category}.name`);
+          return Language.get(`map.${this.category}.name`);
       }
     })();
     this.description = (() => {
@@ -48,20 +48,20 @@ class Marker {
   updateMarkerContent(removeFromMapCallback) {
     const container = document.createElement('div');
     container.innerHTML = `
-        <h1>${this.title}</h1>
-        <span class="marker-content-wrapper">
-          <p>${this.description}</p>
-        </span>
-        <p></p>
-        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
-        <small>Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}</small>
+      <h1>${this.title}</h1>
+      <span class="marker-content-wrapper">
+        <p>${this.description}</p>
+      </span>
+      <p></p>
+      <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+      <small>Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}</small>
     `;
-  
+
     container.querySelector('button').addEventListener('click', removeFromMapCallback);
     if (!Settings.isDebugEnabled)
       container.querySelector('small').style.display = 'none';
     Language.translateDom(container);
-    
+
     return container;
   }
 }

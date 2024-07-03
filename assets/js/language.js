@@ -20,7 +20,7 @@ const Language = {
       }
       const json = await response.json();
       let result = {};
-      
+
       for (const propName in json) {
         if (
           json[propName] !== '' &&
@@ -47,7 +47,7 @@ const Language = {
     'GitHub': ['https://github.com/jeanropke/RDOMap/issues', 'GitHub'],
     'Discord': ['https://discord.gg/WWru8cP', 'Discord'],
     'int.nazar.link': ['https://twitter.com/MadamNazarIO', '@MadamNazarIO'],
-    'int.rdo.overview': ['https://socialclub.rockstargames.com/games/rdo/overview']
+    'int.rdo.overview': ['https://socialclub.rockstargames.com/games/rdo/overview'],
   },
 
   _externalLink: function (key) {
@@ -55,7 +55,7 @@ const Language = {
     const [url, text] = Language._links[key];
     return `<a href="${url}" target="_blank">${text ? `${text}</a>` : ''}`;
   },
-  
+
   get: function (transKey, optional) {
     'use strict';
     let translation = false;
@@ -168,5 +168,5 @@ const Language = {
 
   hasTranslation: function (string) {
     return this.get(string) !== string;
-  }
+  },
 };

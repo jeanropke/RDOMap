@@ -8,7 +8,7 @@ class Bounty {
     this._shownKey = `shown.${type}.${this.text}`;
 
     this.context = document.querySelector(`.menu-hidden[data-type=${type}]`);
-    
+
     this.element = document.createElement('div');
     this.element.classList.add('collectible-wrapper', 'disabled');
     Object.assign(this.element.dataset, { help: 'item', type: this.text, tippyContent: Language.get(`menu.${type}.${this.text}`) });
@@ -17,7 +17,7 @@ class Bounty {
         <p class="collectible" data-text="menu.${type}.${this.text}"></p>
       </span>
     `;
-    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    this.element.addEventListener('click', () => (this.onMap = !this.onMap));
     Language.translateDom(this.element);
 
     this.reinitMarker();
@@ -31,26 +31,30 @@ class Bounty {
     if (this.marker) BountyCollection.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
     if (this.radius > 0) {
-      this.marker.addLayer(L.circle([this.x, this.y], {
-        color: '#f02828',
-        fillColor: '#f02828',
-        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
-        radius: this.radius,
-      }));
+      this.marker.addLayer(
+        L.circle([this.x, this.y], {
+          color: '#f02828',
+          fillColor: '#f02828',
+          fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+          radius: this.radius,
+        })
+      );
     }
-    this.locations.forEach(bounty => {
+    this.locations.forEach((bounty) => {
       let iconUrl = './assets/images/icons/bounty-target.png';
       if (bounty.min > 1) {
         iconUrl = './assets/images/icons/bounty-target-plus.png';
       }
-      this.marker.addLayer(L.marker([bounty.x, bounty.y], {
-        icon: L.icon({
-          iconUrl: iconUrl,
-          iconSize: [18, 18],
-          iconAnchor: [9, 9],
-        }),
-        pane: 'bountyX',
-      }).bindPopup(this.popupContent.bind(this, this, bounty), { minWidth: 300 }));
+      this.marker.addLayer(
+        L.marker([bounty.x, bounty.y], {
+          icon: L.icon({
+            iconUrl: iconUrl,
+            iconSize: [18, 18],
+            iconAnchor: [9, 9],
+          }),
+          pane: 'bountyX',
+        }).bindPopup(this.popupContent.bind(this, this, bounty), { minWidth: 300 }),
+      );
     });
     this.onMap = this.onMap;
   }
@@ -70,14 +74,14 @@ class Bounty {
     `;
     Language.translateDom(snippet);
 
-    snippet.querySelectorAll('[data-property]').forEach(p => {
+    snippet.querySelectorAll('[data-property]').forEach((p) => {
       const property = p.getAttribute('data-property');
-      if (!bounty[property]) p.remove(); 
+      if (!bounty[property]) p.remove();
       const propertyText = Language.get(p.getAttribute('data-text')).replace(`{${property}}`, bounty[property]);
       p.textContent = propertyText;
     });
 
-    snippet.querySelector('button').addEventListener('click', () => this.onMap = false);
+    snippet.querySelector('button').addEventListener('click', () => (this.onMap = false));
     snippet.querySelector('small').style.display = Settings.isDebugEnabled ? '' : 'none';
 
     return snippet;
@@ -86,13 +90,11 @@ class Bounty {
   set onMap(state) {
     if (state) {
       BountyCollection.layer.addLayer(this.marker);
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo.${this._shownKey}`, 'true');
+      if (!MapBase.isPreviewMode) localStorage.setItem(`rdo.${this._shownKey}`, 'true');
       this.element.classList.remove('disabled');
     } else {
       BountyCollection.layer.removeLayer(this.marker);
-      if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo.${this._shownKey}`);
+      if (!MapBase.isPreviewMode) localStorage.removeItem(`rdo.${this._shownKey}`);
       this.element.classList.add('disabled');
     }
   }
@@ -117,11 +119,11 @@ class BountyCollection {
     pane.style.pointerEvents = 'none';
 
     this.layer.addTo(MapBase.map);
-    const bounties = Loader.promises['bounties'].consumeJson(data => this.collectionsData = data);
+    const bounties = Loader.promises['bounties'].consumeJson((data) => (this.collectionsData = data));
 
     return Promise.all([bounties]).then(() => {
       console.info('%c[Bounties] Loaded!', 'color: #bada55; background: #242424');
-      this.collectionsData.forEach(collection => {
+      this.collectionsData.forEach((collection) => {
         this.collection[collection.key] = new BountyCollection(collection);
       });
     });
@@ -131,20 +133,19 @@ class BountyCollection {
     Object.assign(this, preliminary);
 
     this.bounties = [];
-    this.locations.forEach(bounty => {
+    this.locations.forEach((bounty) => {
       this.bounties.push(new Bounty(bounty, this.key));
       BountyCollection.quickParams.push(`${this.key}_${bounty.text}`);
     });
 
     Menu.reorderMenu(document.querySelector(`.menu-hidden[data-type=${this.key}]`));
 
-    document.querySelectorAll(`.menu-hidden[data-type=${this.key}] .bounty-btn`)
-      .forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const showAll = e.target.getAttribute('data-text') === 'menu.show_all';
-          this.bounties.forEach((bounty) => (bounty.onMap = showAll));
-        })
-      })
+    document.querySelectorAll(`.menu-hidden[data-type=${this.key}] .bounty-btn`).forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const showAll = e.target.getAttribute('data-text') === 'menu.show_all';
+        this.bounties.forEach((bounty) => (bounty.onMap = showAll));
+      });
+    });
   }
 }

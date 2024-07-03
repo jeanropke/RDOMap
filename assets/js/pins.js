@@ -54,7 +54,7 @@ class Pin {
         option.setAttribute('data-text', `map.user_pins.icon.${icon}`);
         option.textContent = Language.get(`map.user_pins.icon.${icon}`);
         markerIconSelect.appendChild(option);
-        
+
         if (icon === this.icon)
           option.setAttribute('selected', 'selected');
       });

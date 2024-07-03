@@ -11,9 +11,9 @@ class Plants {
         <p class="collectible" data-text="map.plants.${this.key}.name" style="color: ${this.key === 'harrietum' ? '#fdc607' : 'inherit'}"></p>
       </span>
     `;
-    
+
     this.element.addEventListener('click', () => {
-      this.onMap = !this.onMap; 
+      this.onMap = !this.onMap;
       setTimeout(() => PlantsCollection.layer.redraw(), 40);
     });
     Language.translateDom(this.element);
@@ -30,7 +30,7 @@ class Plants {
   reinitMarker() {
     this.markers = [];
     const markerSize = Settings.markerSize;
-    this.locations.forEach(_marker => {
+    this.locations.forEach((_marker) => {
       const tempMarker = L.marker([_marker.x, _marker.y], {
         opacity: Settings.markerOpacity,
         icon: L.divIcon({
@@ -50,7 +50,7 @@ class Plants {
 
   popupContent(_marker) {
     const description = Language.get('map.plants.desc').replace(/{plant}/, Language.get(`map.plants.${this.key}.name`).toLowerCase());
-    
+
     const popup = document.createElement('div');
     popup.innerHTML = `
           <h1 data-text="map.plants.${this.key}.name"></h1>
@@ -62,9 +62,8 @@ class Plants {
     `;
     Language.translateDom(popup);
 
-    if (!Settings.isDebugEnabled)
-      popup.querySelector('small').style.display = 'none';
-    popup.querySelector('button').addEventListener('click', () => this.onMap = false);
+    if (!Settings.isDebugEnabled) popup.querySelector('small').style.display = 'none';
+    popup.querySelector('button').addEventListener('click', () => (this.onMap = false));
 
     return popup;
   }
@@ -77,21 +76,17 @@ class Plants {
         PlantsCollection.enabledCategories.push(this.key);
       }
       PlantsCollection.layer.clearLayers();
-      if (PlantsCollection.markers.length > 0)
-        PlantsCollection.layer.addLayers(PlantsCollection.markers);
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo.${this.key}`, 'true');
+      if (PlantsCollection.markers.length > 0) PlantsCollection.layer.addLayers(PlantsCollection.markers);
+      if (!MapBase.isPreviewMode) localStorage.setItem(`rdo.${this.key}`, 'true');
       this.element.querySelector('span').classList.remove('disabled');
     } else {
-      PlantsCollection.markers = PlantsCollection.markers.filter(el => !this.markers.includes(el));
-      PlantsCollection.enabledCategories = PlantsCollection.enabledCategories.filter(el => el !== this.key);
+      PlantsCollection.markers = PlantsCollection.markers.filter((el) => !this.markers.includes(el));
+      PlantsCollection.enabledCategories = PlantsCollection.enabledCategories.filter((el) => el !== this.key);
 
       PlantsCollection.layer.clearLayers();
-      if (PlantsCollection.markers.length > 0)
-        PlantsCollection.layer.addLayers(PlantsCollection.markers);
+      if (PlantsCollection.markers.length > 0) PlantsCollection.layer.addLayers(PlantsCollection.markers);
 
-      if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo.${this.key}`);
+      if (!MapBase.isPreviewMode) localStorage.removeItem(`rdo.${this.key}`);
       this.element.querySelector('span').classList.add('disabled');
       MapBase.map.closePopup();
     }
@@ -109,18 +104,14 @@ class PlantsCollection {
     this.markers = [];
     this.quickParams = [];
 
-    this.element = document.querySelector('.menu-option.clickable[data-type=plants]');
-    this.element.classList.toggle('disabled', !PlantsCollection.onMap);
-    this.element.addEventListener('click', () => PlantsCollection.onMap = !PlantsCollection.onMap);
-    Language.translateDom(this.element);
 
     PlantsCollection.layer.addTo(MapBase.map);
 
     this.locations = [];
     this.context = document.querySelector('.menu-hidden[data-type=plants]');
 
-    return Loader.promises['plants'].consumeJson(data => {
-      data.forEach(item => {
+    return Loader.promises['plants'].consumeJson((data) => {
+      data.forEach((item) => {
         this.locations.push(new Plants(item));
         this.quickParams.push(item.key);
       });
@@ -132,18 +123,15 @@ class PlantsCollection {
 
   static set onMap(state) {
     if (state) {
-      if (this.markers.length > 0)
-        this.layer.addTo(MapBase.map);
+      if (this.markers.length > 0) this.layer.addTo(MapBase.map);
     } else {
       this.layer.remove();
     }
-    this.element.classList.toggle('disabled', !state);
     this.context.classList.toggle('disabled', !state);
 
-    if (!MapBase.isPreviewMode)
-      localStorage.setItem('rdo.plants', JSON.stringify(state));
+    if (!MapBase.isPreviewMode) localStorage.setItem('rdo.plants', JSON.stringify(state));
 
-    PlantsCollection.locations.forEach(_plants => {
+    PlantsCollection.locations.forEach((_plants) => {
       if (_plants.onMap) _plants.onMap = state;
     });
   }
@@ -156,20 +144,18 @@ class PlantsCollection {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  
+
   static onSettingsChanged() {
     this.refresh();
   }
 
   static refresh() {
     this.markers = [];
-    this.locations.forEach(plants => {
+    this.locations.forEach((plants) => {
       plants.reinitMarker();
-      if (plants.onMap)
-        this.markers = this.markers.concat(plants.markers);
+      if (plants.onMap) this.markers = this.markers.concat(plants.markers);
     });
     this.layer.clearLayers();
-    if (this.markers.length > 0)
-      this.layer.addLayers(this.markers);
+    if (this.markers.length > 0) this.layer.addLayers(this.markers);
   }
 }

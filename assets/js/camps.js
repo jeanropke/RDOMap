@@ -11,7 +11,7 @@ class Camp {
       </span>
     `;
     this.element.addEventListener('click', () => {
-      this.onMap = !this.onMap; 
+      this.onMap = !this.onMap;
       setTimeout(() => CampCollection.layer.redraw(), 40);
     });
     Language.translateDom(this.element);
@@ -28,7 +28,7 @@ class Camp {
   reinitMarker() {
     this.markers = [];
     const markerSize = Settings.markerSize;
-    this.locations.forEach(_marker => {
+    this.locations.forEach((_marker) => {
       if (!CampCollection.isLarge && _marker.type === 'large') return;
       if (!CampCollection.isSmall && _marker.type === 'small') return;
       if (!CampCollection.isWilderness && _marker.type === 'wild') return;
@@ -64,9 +64,8 @@ class Camp {
     `;
     Language.translateDom(popup);
 
-    if (!Settings.isDebugEnabled)
-      popup.querySelector('small').style.display = 'none';
-    popup.querySelector('button').addEventListener('click', () => this.onMap = false);
+    if (!Settings.isDebugEnabled) popup.querySelector('small').style.display = 'none';
+    popup.querySelector('button').addEventListener('click', () => (this.onMap = false));
 
     return popup;
   }
@@ -79,22 +78,18 @@ class Camp {
         CampCollection.enabledCategories.push(this.key);
       }
       CampCollection.layer.clearLayers();
-      if (CampCollection.markers.length > 0)
-        CampCollection.layer.addLayers(CampCollection.markers);
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem(`rdo.${this.key}`, 'true');
+      if (CampCollection.markers.length > 0) CampCollection.layer.addLayers(CampCollection.markers);
+      if (!MapBase.isPreviewMode) localStorage.setItem(`rdo.${this.key}`, 'true');
       this.element.querySelector('span').classList.remove('disabled');
     } else {
       CampCollection.markers = CampCollection.markers.filter((el) => !this.markers.includes(el));
-      CampCollection.enabledCategories = CampCollection.enabledCategories.filter(el => el !== this.key);
+      CampCollection.enabledCategories = CampCollection.enabledCategories.filter((el) => el !== this.key);
 
       CampCollection.layer.clearLayers();
 
-      if (CampCollection.markers.length > 0)
-        CampCollection.layer.addLayers(CampCollection.markers);
+      if (CampCollection.markers.length > 0) CampCollection.layer.addLayers(CampCollection.markers);
 
-      if (!MapBase.isPreviewMode)
-        localStorage.removeItem(`rdo.${this.key}`);
+      if (!MapBase.isPreviewMode) localStorage.removeItem(`rdo.${this.key}`);
       this.element.querySelector('span').classList.add('disabled');
       MapBase.map.closePopup();
     }
@@ -110,24 +105,19 @@ class CampCollection {
     this.isLarge = true;
     this.isSmall = true;
     this.isWilderness = true;
-    
     this.layer = L.canvasIconLayer({ zoomAnimation: true });
     this.enabledCategories = [];
     this.markers = [];
     this.quickParams = [];
 
-    this.element = document.querySelector('.menu-option.submenu-only[data-type=camps]');
-    this.element.classList.toggle('disabled', !CampCollection.onMap);
-    this.element.addEventListener('click', () => CampCollection.onMap = !CampCollection.onMap);
-    Language.translateDom(this.element);
 
     CampCollection.layer.addTo(MapBase.map);
 
     this.locations = [];
     this.context = document.querySelector('.menu-hidden[data-type=camps]');
 
-    return Loader.promises['camps'].consumeJson(data => {
-      data.forEach(item => {
+    return Loader.promises['camps'].consumeJson((data) => {
+      data.forEach((item) => {
         this.locations.push(new Camp(item));
         this.quickParams.push(item.key);
       });
@@ -139,18 +129,15 @@ class CampCollection {
 
   static set onMap(state) {
     if (state) {
-      if (this.markers.length > 0)
-        this.layer.addTo(MapBase.map);
+      if (this.markers.length > 0) this.layer.addTo(MapBase.map);
     } else {
       this.layer.remove();
     }
-    this.element.classList.toggle('disabled', !state);
     this.context.classList.toggle('disabled', !state);
 
-    if (!MapBase.isPreviewMode)
-      localStorage.setItem('rdo.camps', JSON.stringify(state));
+    if (!MapBase.isPreviewMode) localStorage.setItem('rdo.camps', JSON.stringify(state));
 
-    CampCollection.locations.forEach(_camps => {
+    CampCollection.locations.forEach((_camps) => {
       if (_camps.onMap) _camps.onMap = state;
     });
   }
@@ -170,13 +157,11 @@ class CampCollection {
 
   static refresh() {
     this.markers = [];
-    this.locations.forEach(camp => {
+    this.locations.forEach((camp) => {
       camp.reinitMarker();
-      if (camp.onMap)
-        this.markers = this.markers.concat(camp.markers);
+      if (camp.onMap) this.markers = this.markers.concat(camp.markers);
     });
     this.layer.clearLayers();
-    if (this.markers.length > 0)
-      this.layer.addLayers(this.markers);
+    if (this.markers.length > 0) this.layer.addLayers(this.markers);
   }
 }

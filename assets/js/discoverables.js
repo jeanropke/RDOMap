@@ -69,7 +69,7 @@ class Discoverable {
       const offset = 130;
       const tempMarker = L.imageOverlay(overlay, [
         [item.lat - item.height / offset, item.lng - item.width / offset],
-        [item.lat + item.height / offset, item.lng + item.width / offset]
+        [item.lat + item.height / offset, item.lng + item.width / offset],
       ], {
         opacity: Settings.markerOpacity,
       });

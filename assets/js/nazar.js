@@ -12,7 +12,7 @@ class MadamNazar {
       { key: 'MPSW_LOCATION_08', x: -90.0802, y: 135.6969, id: 'scm' },
       { key: 'MPSW_LOCATION_09', x: -65.9688, y: 150.4468, id: 'blu' },
       { key: 'MPSW_LOCATION_10', x: -40.7817, y: 109.4863, id: 'der' },
-      { key: 'MPSW_LOCATION_11', x: -36.5097, y: 154.1859, id: 'bbr' }
+      { key: 'MPSW_LOCATION_11', x: -36.5097, y: 154.1859, id: 'bbr' },
     ];
 
     this.currentLocation = null;

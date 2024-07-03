@@ -101,7 +101,7 @@ class Legendary {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
       this.marker.addLayer(L.imageOverlay(overlay, [
         [this.x - this.radius, this.y - this.radius * 2],
-        [this.x + this.radius, this.y + this.radius * 2]
+        [this.x + this.radius, this.y + this.radius * 2],
       ], {
         opacity: linear(Settings.overlayOpacity, 0, 1, 0.5, 1),
       }));
@@ -153,7 +153,7 @@ class Legendary {
             .toLocaleString(Settings.language, {
               weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit',
             });
-      });
+        });
     }
 
     snippet.querySelector('.legendary-cooldown-timer').style.display = this.isGreyedOut ? '' : 'none';
