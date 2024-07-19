@@ -214,6 +214,12 @@ class Menu {
         if (!_singleplayer.onMap) _singleplayer.onMap = !_singleplayer.onMap;
       });
     });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.key === ' ') {
+        document.querySelector('.menu-toggle').click();
+      }
+    });
   }
 
   static updateTippy() {
