@@ -43,7 +43,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (100%):
+### Chinese Simplified (99%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -335,7 +335,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (31%):
   - **UluMulu** (217 words)
 
-### Spanish (95%):
+### Spanish (94%):
   - **23.jonathantadeoleiva** (13 words)
   - **Arisgo** (1,009 words)
   - **avillamizar71** (5,456 words)
