@@ -224,6 +224,9 @@ function clockTick() {
 }
 
 const sideMenu = document.querySelector('.side-menu');
+const backToTop = document.getElementById('back-to-top');
+const draggableBackToTop = draggify(backToTop, { storageKey: 'rdo.backToTopPosition' });
+let lastScrollY = sideMenu.scrollTop;
 
 sideMenu.addEventListener('scroll', function () {
   // These are not equality checks because of mobile weirdness.
@@ -233,6 +236,19 @@ sideMenu.addEventListener('scroll', function () {
   document.querySelector('.scroller-arrow-tp').style.display = atTop ? 'none' : '';
   document.querySelector('.scroller-line-bt').style.display = atBottom ? '' : 'none';
   document.querySelector('.scroller-arrow-bt').style.display = atBottom ? 'none' : '';
+
+  if (this.scrollTop !== 0 && this.scrollTop < lastScrollY) {
+    backToTop.classList.add('is-visible');
+  } else if (this.scrollTop === 0 || this.scrollTop > lastScrollY) {
+    backToTop.classList.remove('is-visible');
+  }
+  lastScrollY = this.scrollTop;
+});
+
+backToTop.addEventListener('click', () => {
+  if (draggableBackToTop.getDistanceMoved() < 5) {
+    sideMenu.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 });
 
 sideMenu.addEventListener('touchend', e => {
@@ -690,4 +706,91 @@ function loadFont(name, urls = {}) {
     document.fonts.add(fontFace);
     return fontFace;
   });
+}
+
+/**
+ * Makes an element draggable.
+ *
+ * @param {HTMLElement} el - The element to make draggable.
+ * @param {Object} options - Configuration options for the draggable functionality.
+ * @param {string} options.storageKey - The key used to save the element's position in localStorage.
+ * @returns {Object} An object containing:
+ *  - `isDragging`: A function that returns a boolean indicating if the element is being dragged.
+ *  - `getDistanceMoved`: A function that returns the distance moved since the drag started.
+ */
+function draggify(el, { storageKey }) {
+  if (!el) {
+    console.error('Element not found');
+    return;
+  }
+
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+  let currentX = 0, currentY = 0;
+
+  const savePosition = () => {
+    const position = { x: currentX, y: currentY };
+    localStorage.setItem(storageKey, JSON.stringify(position));
+  };
+
+  const restorePosition = () => {
+    const savedPosition = localStorage.getItem(storageKey);
+    if (savedPosition) {
+      const { x, y } = JSON.parse(savedPosition);
+      currentX = x;
+      currentY = y;
+      el.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  };
+
+  const onDragStart = (e) => {
+    isDragging = true;
+    startX = e.clientX || e.touches[0].clientX;
+    startY = e.clientY || e.touches[0].clientY;
+    initialX = currentX;
+    initialY = currentY;
+    el.style.transition = 'none';
+    el.style.cursor = 'grabbing';
+    requestAnimationFrame(updatePosition);
+  };
+
+  const onDragMove = (e) => {
+    if (!isDragging) return;
+    const clientX = e.clientX || e.touches[0].clientX;
+    const clientY = e.clientY || e.touches[0].clientY;
+    currentX = initialX + (clientX - startX);
+    currentY = initialY + (clientY - startY);
+  };
+
+  const onDragEnd = () => {
+    isDragging = false;
+    el.style.transition = '0.2s all';
+    el.style.cursor = 'grab';
+    savePosition();
+  };
+
+  const updatePosition = () => {
+    if (isDragging) {
+      el.style.transform = `translate(${currentX}px, ${currentY}px)`;
+      requestAnimationFrame(updatePosition);
+    }
+  };
+
+  el.addEventListener('pointerdown', onDragStart);
+  document.addEventListener('pointermove', onDragMove);
+  document.addEventListener('pointerup', onDragEnd);
+  document.addEventListener('pointercancel', onDragEnd);
+
+  el.addEventListener('touchstart', onDragStart);
+  document.addEventListener('touchmove', onDragMove);
+  document.addEventListener('touchend', onDragEnd);
+  document.addEventListener('touchcancel', onDragEnd);
+
+  restorePosition();
+
+  return {
+    isDragging: () => isDragging,
+    getDistanceMoved: () =>
+      Math.sqrt((currentX - initialX) ** 2 + (currentY - initialY) ** 2)
+  };
 }
