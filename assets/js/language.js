@@ -145,6 +145,8 @@ const Language = {
 
     this.translateDom();
 
+    document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
+
     FME.update();
     this.updateProgress();
   },
