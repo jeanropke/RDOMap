@@ -88,6 +88,7 @@
   "menu.sightseeing": "可以坐下的观景台",
   "menu.dailies": "每日挑战",
   "menu.condor_egg": "神鹫蛋",
+  "menu.back_to_top": "滚动至顶部（可拖拽）",
   "help.clear_important_items": "清除所有重要标记的高亮。",
   "help.collector_map": "在新标签页中打开 Jean 的另一个地图，您可以找到更多与收藏家职业相关的内容。",
   "help.cookie_export": "导出您的设置为文件。",
