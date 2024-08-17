@@ -192,6 +192,16 @@ const MapBase = {
     }
   },
 
+  setColoris: function () {
+    Coloris({
+      el: '.coloris',
+      themeMode: 'dark',
+      swatchesOnly: true,
+      swatches: Object.keys(colorNameMap),
+      alpha: false,
+    });
+  },
+
   setFallbackFonts: async function () {
     const fontsData = {
       ja: {
@@ -276,6 +286,8 @@ const MapBase = {
   },
 
   afterLoad: function () {
+    MapBase.setColoris();
+    
     // Preview mode parameter.
     const quickParam = getParameterByName('q');
     if (quickParam) {
