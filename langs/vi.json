@@ -117,6 +117,8 @@
   "map.user_pins.icon.nazar": "Madam Nazar",
   "map.user_pins.icon.treasure": "Kho báu",
   "map.user_pins.icon.camp": "Trại",
+  "map.user_pins.icon.camps": "Trại",
+  "map.user_pins.icon.sightseeing": "Ngắm cảnh",
   "map.user_pins.placeholder_desc": "Mô tả",
   "map.user_pins.placeholder_title": "Tên",
   "map.user_pins.remove": "Loại bỏ",
