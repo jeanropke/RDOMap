@@ -3,6 +3,13 @@
     --default-title-font: RDRLino;
     --content-font: var(--default-content-font), serif;
     --title-font: var(--default-title-font), serif;
+
+    --fsb-color: #f0f0f0;
+    --fsb-background: transparent;
+    --fsb-radius: 3px;
+    --fsb-hover-color: #fff;
+    --fsb-hover-background: rgba(255, 255, 255, .15);
+    --fsb-arrow-size: .5em;
 }
 
 @font-face {
@@ -134,11 +141,11 @@ select {
 
 #main-header-left,
 #main-header-right {
-    user-select: none;
     -webkit-user-select: none;
-    /* Safari */
+    -moz-user-select: none;
     -ms-user-select: none;
-    /* IE 10+ and Edge */
+    -khtml-user-select: none;
+    user-select: none;
     height: 75px;
 }
 
@@ -265,6 +272,10 @@ select {
     padding: 5px 15px 5px 10px;
     color: #fff;
     text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
     transition: all 200ms ease-out;
 }
@@ -312,23 +323,33 @@ select {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
-    user-select: none;
     -webkit-user-select: none;
-    /* Safari */
+    -moz-user-select: none;
     -ms-user-select: none;
-    /* IE 10+ and Edge */
+    -khtml-user-select: none;
+    user-select: none;
     margin-top: 8px;
 }
 
 .marker-popup-links {
     text-align: center;
     margin: 6px 0 !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 
 .marker-popup-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 
 .marker-popup-buttons small {
@@ -412,6 +433,10 @@ select {
 
 .input-container {
     position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
     display: flex;
     justify-content: space-between;
@@ -509,6 +534,10 @@ select {
 }
 
 .input-container-noflex {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
     margin: 5px 0;
     text-align: center;
@@ -526,6 +555,107 @@ select {
 .narrow-select-menu {
     min-width: 75px;
     width: 75px;
+}
+
+/* Override FancySelect styling */
+
+.fsb-button {
+    background-color: transparent;
+    background: url('../images/drop_down.png') no-repeat center center;
+    background-size: 100% 100%;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+.fsb-button:after, 
+.fsb-button[aria-expanded=true]:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    background: url('../images/select_caret.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+}
+
+.fsb-button[aria-expanded=true]:after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.fsb-button:focus-visible, 
+.fsb-button[aria-expanded=true]:focus-visible {
+    outline: none;
+    border: none;
+}
+
+.fsb-list {
+    left: auto;
+    right: 0;
+    width: auto;
+    min-width: 100%;
+    background-color: transparent;
+    background-image: url('../images/bgTextDark_2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.fsb-resize {
+    width: auto;
+    padding-right: 14px;
+    padding-right: calc(var(--fsb-arrow-padding)* 2 + var(--fsb-arrow-size) - var(--fsb-padding-right) + 24px);
+}
+
+.fsb-select {
+    height: 26.563px;
+    margin-left: 6px;
+    font-size: 13px;
+    border: none;
+}
+
+.wide-select-menu.fsb-original-select + .fsb-select {
+    min-width: 125px;
+    max-width: 150px;
+}
+.narrow-select-menu.fsb-original-select + .fsb-select {
+    min-width: 75px;
+    max-width: 100px;
+}
+
+@media (max-width: 768px) {
+    .wide-select-menu.fsb-original-select + .fsb-select {
+        min-width: 30vw;
+        max-width: 70vw;
+    }
+
+    .narrow-select-menu.fsb-original-select + .fsb-select {
+        min-width: 75px;
+        width: 75px;
+    }
+}
+
+.fsb-select:has(#fsb_5_label) {
+    min-width: 60%;
+}
+
+.fsb-list,select[disabled]+.fsb-select .fsb-list {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.fsb-list::-webkit-scrollbar {
+    width: 3px;
+}
+
+#fsb_5_label + .fsb-button svg,
+#fsb_5_label ~ .fsb-list svg {
+    width: 24px;
+    height: 24px;
 }
 
 .btn-default {
@@ -580,8 +710,38 @@ select {
     color: #eee;
     text-align: center;
     line-height: 1.85;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
     cursor: pointer;
+}
+
+.menu-toggle img {
+    width: 16px;
+    height: 16px;
+}
+
+.menu-toggle .icon-collapse {
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    display: none;
+}
+
+.menu-toggle .icon-expand {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+  
+.menu-toggle[data-menu-opened="true"] .icon-expand {
+    display: none;
+}
+  
+.menu-toggle[data-menu-opened="true"] .icon-collapse {
+    display: block;
 }
 
 .side-menu {
@@ -596,6 +756,10 @@ select {
     height: 100%;
     color: #eee;
     z-index: 1000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
@@ -603,6 +767,7 @@ select {
     width: 6px;
 }
 
+.fsb-list::-webkit-scrollbar-thumb,
 .side-menu::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: #aaa;
@@ -628,6 +793,10 @@ select {
     justify-content: space-between;
     align-items: start;
     padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
     cursor: pointer;
     line-height: 42px;
@@ -686,6 +855,7 @@ select {
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0 auto 5px;
     padding: 0 5px 0 0;
+    transition: transform .2s ease-in-out;
 }
 
 .open-submenu.rotate {
@@ -725,6 +895,10 @@ select {
 #inventory-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
+}
+#customization-container.opened,
+#dailies-container.opened {
+    overflow: visible;
 }
 
 .side-menu .collection-value {
@@ -776,6 +950,10 @@ select {
 .collection-collect-all,
 .collection-reset {
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
@@ -783,6 +961,10 @@ select {
     position: relative;
     padding: 6px 12px;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
@@ -862,11 +1044,11 @@ select {
 }
 
 .help-button {
-    user-select: none;
     -webkit-user-select: none;
-    /* Safari */
+    -moz-user-select: none;
     -ms-user-select: none;
-    /* IE 10+ and Edge */
+    -khtml-user-select: none;
+    user-select: none;
     font-size: 14px;
 }
 
@@ -924,11 +1106,11 @@ a.wiki-page:visited {
     right: calc(-100% + 20px);
     top: 20px;
     text-align: center;
-    user-select: none;
     -webkit-user-select: none;
-    /* Safari */
+    -moz-user-select: none;
     -ms-user-select: none;
-    /* IE 10+ and Edge */
+    -khtml-user-select: none;
+    user-select: none;
     cursor: pointer;
 }
 
@@ -1114,6 +1296,7 @@ a.no-style:visited {
 }
 
 .leaflet-control-attribution {
+    border-radius: 2px;
     background: #333 !important;
     color: #fff !important;
 }
@@ -1138,6 +1321,10 @@ a.no-style:visited {
 /* Bootstrap modal styling */
 
 .modal {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
@@ -1513,16 +1700,6 @@ a.no-style:visited {
     text-rendering: optimizeLegibility;
 }
 
-/* Fix being able to select the overlays. */
-
-.leaflet-overlay-pane {
-    user-select: none;
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10+ and Edge */
-}
-
 /* Leaflet Marker styling */
 
 .leaflet-div-icon {
@@ -1608,6 +1785,10 @@ a.no-style:visited {
     left: 5px;
     bottom: 5px;
     z-index: 990;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
     transition: all 200ms ease-out;
 }
@@ -1957,14 +2138,19 @@ span.daily-checkbox {
 
 /* Fix being able to select the overlays. */
 
-.leaflet-overlay-pane {
+.leaflet-overlay-pane,
+.leaflet-control-layers {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
 .leaflet-control-layers {
     box-shadow: 0 1px 5px #111;
     background: #333;
-    user-select: none;
+    background: url(../images/bgTextDark_2.png);
 }
 
 .leaflet-control-layers label {
@@ -1973,15 +2159,18 @@ span.daily-checkbox {
 
 .leaflet-control-layers-toggle {
 	background-image: url(../images/layers.png);
+    background-size: 36px 36px;
 }
 
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(../images/layers-2x.png);
+    background-size: 36px 36px;
 }
 
 .leaflet-control-layers-expanded {
     color: #d4d4d4;
-    background: #333;
+    background: url(../images/bgTextDark_2.png) no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .leaflet-popup-tip {
@@ -1997,6 +2186,74 @@ span.daily-checkbox {
 
 .leaflet-control-layers-base label {
     cursor: pointer;
+}
+
+/* Leaflet Layers Control styling */
+
+.leaflet-control-layers-selector {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+  
+.leaflet-control-layers-selector + span {
+    position: relative;
+    line-height: 16px;
+    margin-top: 4px;
+    padding-left: 25px;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+}
+
+.leaflet-control-layers-selector + span::before {
+    opacity: .8;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/pager.png);
+    background-position: 0 0px,50%;
+    background-repeat: no-repeat;
+    background-size: 32px;
+}
+  
+.leaflet-control-layers-selector:checked + span::before {
+    background-image: url(../images/pager.png), url(../images/bullet.png);
+    background-position: center, center;
+    background-position: 0 0, 50%;
+    background-size: 32px, 8px;
+}
+
+.leaflet-control-layers-selector + span:hover::before {
+    opacity: 1;
+}
+
+.leaflet-control-layers-selector + span span:hover {
+    color: #fff;
+}
+
+.leaflet-control-layers-selector + span span:focus-visible {
+    outline: none;
+}
+
+.leaflet-control-layers-selector + span:visited,
+.leaflet-control-layers-selector + span:active,
+.leaflet-control-layers-selector + span span:visited,
+.leaflet-control-layers-selector + span span:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .leaflet-control-layers-selector + span {
+        margin-top: 18px;
+    }
 }
 
 /* end dark mode styling */
@@ -2054,6 +2311,10 @@ span.daily-checkbox {
     opacity: .7;
     margin: 0 -25%;
     pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
@@ -2095,16 +2356,16 @@ button.reload-nazar {
     box-shadow: rgba(0, 0, 0, .33) 0 .125rem .375rem;
     opacity: .5;
     transition: opacity .2s;
-    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -khtml-user-select: none;
-    text-size-adjust: none;
+    user-select: none;
     -webkit-text-size-adjust: none;
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
     -khtml-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 .leaflet-zoomex:hover {

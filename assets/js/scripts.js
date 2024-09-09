@@ -235,18 +235,31 @@ function clockTick() {
 }
 
 const sideMenu = document.querySelector('.side-menu');
+const scrollerLineTop = document.querySelector('.scroller-line-tp');
+const scrollerArrowTop = document.querySelector('.scroller-arrow-tp');
+const scrollerLineBottom = document.querySelector('.scroller-line-bt');
+const scrollerArrowBottom = document.querySelector('.scroller-arrow-bt');
 const backToTop = document.getElementById('back-to-top');
 const draggableBackToTop = draggify(backToTop, { storageKey: 'rdo.backToTopPosition' });
+let wasAtTop = true;
+let wasAtBottom = false;
 let lastScrollY = sideMenu.scrollTop;
 
 sideMenu.addEventListener('scroll', function () {
   // These are not equality checks because of mobile weirdness.
   const atTop = this.scrollTop <= 0;
-  const atBottom = this.scrollTop + this.clientHeight >= this.scrollHeight;
-  document.querySelector('.scroller-line-tp').style.display = atTop ? '' : 'none';
-  document.querySelector('.scroller-arrow-tp').style.display = atTop ? 'none' : '';
-  document.querySelector('.scroller-line-bt').style.display = atBottom ? '' : 'none';
-  document.querySelector('.scroller-arrow-bt').style.display = atBottom ? 'none' : '';
+  const atBottom = Math.abs(this.scrollHeight - this.scrollTop - this.clientHeight) < 1;
+
+  if (atTop !== wasAtTop) {
+    scrollerLineTop.style.display = atTop ? '' : 'none';
+    scrollerArrowTop.style.display = atTop ? 'none' : '';
+    wasAtTop = atTop;
+  }
+  if (atBottom !== wasAtBottom) {
+    scrollerLineBottom.style.display = atBottom ? '' : 'none';
+    scrollerArrowBottom.style.display = atBottom ? 'none' : '';
+    wasAtBottom = atBottom;
+  }
 
   if (this.scrollTop !== 0 && this.scrollTop < lastScrollY) {
     backToTop.classList.add('is-visible');
@@ -476,11 +489,11 @@ document.querySelectorAll('.submenu-only').forEach(el => {
 
 //Open & close side menu
 document.querySelector('.menu-toggle').addEventListener('click', function () {
-  sideMenu.classList.toggle('menu-opened');
-  Settings.isMenuOpened = sideMenu.classList.contains('menu-opened');
-  this.textContent = Settings.isMenuOpened ? 'X' : '>';
-  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', Settings.isMenuOpened);
-  document.getElementById('fme-container').classList.toggle('fme-menu-opened', Settings.isMenuOpened);
+  const isMenuOpened = sideMenu.classList.toggle('menu-opened');
+  this.setAttribute('data-menu-opened', isMenuOpened);
+  Settings.isMenuOpened = isMenuOpened;
+  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', isMenuOpened);
+  document.getElementById('fme-container').classList.toggle('fme-menu-opened', isMenuOpened);
 });
 
 document.addEventListener('contextmenu', function (e) {
