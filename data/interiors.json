@@ -6,7 +6,7 @@
     "items": [
       [2, "bitters"],
       [1, "assorted_biscuits"],
-      [2, "canned_vegetable"]
+      [2, "canned_vegetable"],
       [1, "canned_fruit"],
       [1, "miracle_tonic"],
       [1, "kentucky_bourbon"],
@@ -1534,7 +1534,7 @@
     "x": "-54.8990",
     "y": "156.8296",
     "items": [
-      [1, "salted_meat"],
+      [1, "salted_meat"]
     ]
   },
   {
@@ -1593,7 +1593,7 @@
     "y": "56.1398",
     "items": [
       [3, "canned_vegetable"],
-      [2, "premium_cig"]
+      [2, "premium_cig"],
       [1, "ground_coffee"],
       [1, "kentucky_bourbon"],
       [1, "cocaine_gum"],
@@ -1610,7 +1610,7 @@
     "items": [
       [1, "predator_bait"],
       [1, "herbivore_bait"],
-      [2, "gun_oil"]
+      [2, "gun_oil"],
       [1, "cover_scent_lotion"],
       [1, "money_clip"],
       [1, "gold_pocket_watch"],
