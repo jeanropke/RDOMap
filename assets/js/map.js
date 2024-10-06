@@ -112,10 +112,10 @@ const MapBase = {
       zoomControl: false,
       crs: L.CRS.Simple,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
-      zoomSnap: 0,
-      zoomDelta: 0.5,
-      wheelPxPerZoomLevel: 70,
-      wheelDebounceTime: 150,
+      zoomSnap: Settings.zoomSnap,
+      zoomDelta: Settings.zoomDelta,
+      wheelPxPerZoomLevel: Settings.wheelPxPerZoomLevel,
+      wheelDebounceTime: Settings.wheelDebounceTime,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
 
     MapBase.map.addControl(
@@ -382,6 +382,7 @@ const MapBase = {
     }
 
     Menu.updateTippy();
+    Menu.updateRangeTippy();
     MapBase.updateTippy('afterLoad');
 
     // Puppeteer hack and utility for other extensions.
