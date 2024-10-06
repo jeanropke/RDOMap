@@ -285,11 +285,17 @@ backToTop.addEventListener('click', () => {
   }
 });
 
-sideMenu.addEventListener('touchend', e => {
-  if (e.target.classList.contains('btn-light'))
-    e.target.style.setProperty('--bs-btn-hover-bg', 'transparent');
-  e.stopImmediatePropagation();
-});
+sideMenu.addEventListener('touchend', event => {
+  const target = event.target;
+  const btnClasses = ['btn-light', 'btn-default'];
+  if (target.classList.contains('btn-light')) {
+    target.style.setProperty('border', '3px solid transparent');
+  }
+  if (btnClasses.some(cls => target.classList.contains(cls))) {
+    target.style.setProperty('filter', 'brightness(1)');
+  }
+  event.stopImmediatePropagation();
+}, true);
 
 //TODO: re-implement this function
 document.getElementById('show-all-markers').addEventListener('change', function () {

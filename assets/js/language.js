@@ -100,6 +100,8 @@ const Language = {
   setMenuLanguage: function () {
     'use strict';
 
+    document.documentElement.setAttribute('lang', Settings.language);
+
     if (Language.data[Settings.language] === undefined) {
       const xhr = new XMLHttpRequest();
       xhr.open(

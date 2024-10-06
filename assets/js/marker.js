@@ -53,7 +53,7 @@ class Marker {
         <p>${this.description}</p>
       </span>
       <p></p>
-      <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+      <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
       <small>Text: ${this.text} / Latitude: ${this.lat} / Longitude: ${this.lng}</small>
     `;
 

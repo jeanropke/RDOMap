@@ -59,7 +59,7 @@ class Camp {
       <span class="marker-content-wrapper">
         <p>${description}</p>
       </span>
-      <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+      <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
       <small>Latitude: ${_marker.x} / Longitude: ${_marker.y}</small>
     `;
     Language.translateDom(popup);

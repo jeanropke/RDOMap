@@ -44,6 +44,9 @@ class MadamNazar {
       return;
 
     MadamNazar.layer.clearLayers();
+
+    document.querySelector('.nazar-error').classList.toggle('hidden', MadamNazar.currentLocation !== -1);
+
     const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
 
     const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
@@ -82,7 +85,7 @@ class MadamNazar {
           <p style="text-align: center;">
             ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
           </p>
-          <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
+          <button class="btn btn-success reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
     `;
     Language.translateDom(popup);
     const buttonEl = popup.querySelector('button');

@@ -76,7 +76,7 @@ class CondorEgg {
     popup.classList.add('handover-wrapper-with-no-influence');
     popup.innerHTML = `
         <h1 data-text="map.${this.text}.name"></h1>
-        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+        <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
     `;
     Language.translateDom(popup);
     popup.querySelector('button').addEventListener('click', () => CondorEgg.condorEggOnMap = false);
@@ -213,7 +213,7 @@ class Salvage {
     popup.innerHTML = `
         <h1 data-text="map.${this.text}.name"></h1>
         ${type ? `<p data-text="map.salvage.${type}.desc"></p>` : ''}
-        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+        <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
     `;
     Language.translateDom(popup);
     popup.querySelector('button').addEventListener('click', () => Salvage.salvageOnMap = false);

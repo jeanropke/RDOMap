@@ -70,7 +70,7 @@ class GunForHire {
           <br>
           <p data-text="map.gfh.missions_header"></p>
           ${missionsEl.outerHTML}
-          <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+          <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
           ${Settings.isDebugEnabled ? debugDisplayLatLng.outerHTML : ''}
     `;
     Language.translateDom(snippet);
