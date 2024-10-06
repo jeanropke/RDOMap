@@ -133,23 +133,9 @@ const Language = {
       xhr.send();
     }
 
-    const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
-    const wikiPages = {
-      'en': 'RDO-Collectors-Map-User-Guide-(English)',
-      'de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
-      'fr': "RDO-Collectors-Map-Guide-d'Utilisateur-(French)",
-      'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
-    };
-    const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
-    document.querySelector('.wiki-page').setAttribute('href', wikiBase + wikiPages[wikiLang]);
-
     this.translateDom();
 
-    document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
-
-    FME.update();
-    this.updateProgress();
-    Menu.updateFancySelect();
+    this._postTranslation();
   },
 
   updateProgress: function () {
@@ -172,4 +158,17 @@ const Language = {
   hasTranslation: function (string) {
     return this.get(string) !== string;
   },
+
+  _postTranslation: function () {
+    const wikiPages = { 'de': '-de-DE', 'fr': '-fr-FR', 'pt-BR': '-pt-BR', 'ru': '-ru-RU' };
+    document.querySelector('.wiki-page').setAttribute('href',
+      `https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide${wikiPages[Settings.language] ?? ''}`
+    );
+
+    document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
+
+    FME.update();
+    this.updateProgress();
+    Menu.updateFancySelect();
+  }
 };
