@@ -37,6 +37,8 @@ const colorNameToHexMap = Object.fromEntries(
   Object.entries(colorNameMap).map(([hex, name]) => [name, hex])
 );
 
+let draggableLatLngCtn = null;
+
 document.addEventListener('DOMContentLoaded', function() {
   try {
     init();
@@ -163,10 +165,18 @@ function isLocalHost() {
 }
 
 function changeCursor() {
-  const cursorStyle = Settings.isCoordsOnClickEnabled ? 'pointer' : 'grab';
-  const displayStyle = (cursorStyle === 'pointer') ? '' : 'none';
-  document.querySelectorAll('.leaflet-grab').forEach(el => el.style.cursor = cursorStyle);
-  document.querySelectorAll('.lat-lng-container').forEach(ctn => ctn.style.display = displayStyle);
+  const isCoordsEnabled = Settings.isCoordsOnClickEnabled;
+  const pointer = 'url(assets/images/crosshair_thick.png) 12 12, pointer';
+  document.querySelector('.leaflet-grab').style.cursor = isCoordsEnabled ? pointer : 'grab';
+
+  const latLngCtn = document.querySelector('.lat-lng-container');
+  latLngCtn.style.display = isCoordsEnabled ? 'block' : 'none';
+  if (isCoordsEnabled) {
+    draggableLatLngCtn ||= new PlainDraggable(latLngCtn);
+  } else if (draggableLatLngCtn) {
+    draggableLatLngCtn.remove();
+    draggableLatLngCtn = null;
+  }
 }
 
 function getParameterByName(name, url) {

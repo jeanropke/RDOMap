@@ -1235,8 +1235,12 @@
 
   <div id="map"></div>
 
-  <div class="lat-lng-container">
-    <p></p><button id="lat-lng-container-close-button">×</button>
+  <div class="lat-lng-container" data-help="map_coordinates_container">
+    <div>
+      <div><span data-text="map.latitude">Latitude</span>:&nbsp;<span class="lat-lng-value lat-value">-.----</span></div>
+      <div><span data-text="map.longitude">Longitude</span>:&nbsp;<span class="lat-lng-value lng-value">-.----</span></div>
+    </div>
+    <button type="button" id="lat-lng-container-close-button" class="btn-close" aria-label="Close"></button>
   </div>
 
   <!-- Modals -->
@@ -1335,6 +1339,7 @@
   <script src="assets/js/lib/oms.min.js"></script>
   <script src="assets/js/lib/rbush.js"></script>
   <script src="assets/js/lib/pickr.min.js"></script>
+  <script src="assets/js/lib/plain-draggable.min.js"></script>
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
