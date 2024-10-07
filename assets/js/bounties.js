@@ -69,7 +69,7 @@ class Bounty {
           <p class="property" data-text="menu.${marker.type}.min" data-property="min"></p>
           <!-- <p class="property" data-text="menu.${marker.type}.config" data-property="config"></p> -->
         </span>
-        <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+        <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
         <small>Latitude: ${bounty.x} / Longitude: ${bounty.y} / Type: ${marker.type} / Text: ${marker.text}</small>
     `;
     Language.translateDom(snippet);

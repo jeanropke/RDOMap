@@ -112,10 +112,10 @@ const MapBase = {
       zoomControl: false,
       crs: L.CRS.Simple,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
-      zoomSnap: 0,
-      zoomDelta: 0.5,
-      wheelPxPerZoomLevel: 70,
-      wheelDebounceTime: 150,
+      zoomSnap: Settings.zoomSnap,
+      zoomDelta: Settings.zoomDelta,
+      wheelPxPerZoomLevel: Settings.wheelPxPerZoomLevel,
+      wheelDebounceTime: Settings.wheelDebounceTime,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
 
     MapBase.map.addControl(
@@ -190,16 +190,6 @@ const MapBase = {
     } else {
       mapEl.style.backgroundColor = '#d2b790';
     }
-  },
-
-  setColoris: function () {
-    Coloris({
-      el: '.coloris',
-      themeMode: 'dark',
-      swatchesOnly: true,
-      swatches: Object.keys(colorNameMap),
-      alpha: false,
-    });
   },
 
   setFallbackFonts: async function () {
@@ -286,8 +276,6 @@ const MapBase = {
   },
 
   afterLoad: function () {
-    MapBase.setColoris();
-    
     // Preview mode parameter.
     const quickParam = getParameterByName('q');
     if (quickParam) {
@@ -382,6 +370,7 @@ const MapBase = {
     }
 
     Menu.updateTippy();
+    Menu.updateRangeTippy();
     MapBase.updateTippy('afterLoad');
 
     // Puppeteer hack and utility for other extensions.
@@ -511,19 +500,27 @@ const MapBase = {
 
   testData: { data: [] },
   addCoordsOnMap: function (coords) {
-
     // Show clicked coordinates (like google maps)
+    const container = document.querySelector('.lat-lng-container');
+
     if (Settings.isCoordsOnClickEnabled) {
-      const container = document.querySelector('.lat-lng-container');
-      container.style.display = 'block';
+      if (container.style.display = 'none') container.style.display = 'block';
+      container.title ||= Language.get('map.draggable');
+      draggableLatLngCtn ||= new PlainDraggable(container);
 
-      container.querySelector('p').innerHTML = `
-        Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}
-        <br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}
-      `;
-
-      document.getElementById('lat-lng-container-close-button').addEventListener('click', function() {
-        container.style.display = 'none';
+      const lat = coords.latlng.lat.toFixed(4);
+      const lng = coords.latlng.lng.toFixed(4);
+      document.querySelector('.lat-value').textContent = lat;
+      document.querySelector('.lng-value').textContent = lng;
+      
+      ['click', 'touchend'].forEach((event) => {
+        document.getElementById('lat-lng-container-close-button').addEventListener((event), () =>{ 
+          container.style.display = 'none';
+          if (draggableLatLngCtn) {
+            draggableLatLngCtn.remove();
+            draggableLatLngCtn = null;
+          }
+        }, { once: true });
       });
     }
 

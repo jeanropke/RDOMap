@@ -68,7 +68,7 @@ class Animal {
           <span class="marker-content-wrapper">
             <p>${description}</p>
           </span>
-          <button class="btn btn-default full-popup-width" data-text="map.remove"></button>
+          <button class="btn btn-info remove-button full-popup-width" data-text="map.remove"></button>
           <small>Latitude: ${this.marker.x} / Longitude: ${this.marker.y} / Start: ${this.marker.start} / End: ${this.marker.end}</small>
     `;
     Language.translateDom(snippet);

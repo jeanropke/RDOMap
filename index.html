@@ -4,7 +4,7 @@
 <head>
   <title>Red Dead Online - RDO Map</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
   <meta name="description"
     content="Red Dead Online RDO Map. Find any useful items, locations or event around the map of RDO.">
   <meta name="keywords" content="Red Dead Online, RDO Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
@@ -48,13 +48,13 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/coloris.min.css"/>
+  <link rel="stylesheet" href="assets/css/nano.min.css"/>
   <link rel="stylesheet" href="assets/css/fancyselect.min.css"/>
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1550" />
-  <link rel="stylesheet" href="assets/css/tippy.css?nocache=1550" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1551" />
+  <link rel="stylesheet" href="assets/css/tippy.css?nocache=1551" />
 
   <script>
-    var nocache = 1550;
+    var nocache = 1551;
   </script>
 </head>
 
@@ -398,6 +398,7 @@
         <span>
           <img class="icon" src="./assets/images/icons/nazar.png" alt="Category icon" />
           <span class="menu-option-text" data-text="menu.madam_nazar">Madam Nazar</span>
+          <img class="nazar-error" src="./assets/images/error.png" alt="">
         </span>
       </div>
       <div class="menu-option clickable" data-type="fasttravel" data-help="item_category">
@@ -759,8 +760,15 @@
         </div>
       </div>
       <div class="input-container" data-help="fme_display_general_period">
+        <label for="fme-display-general-period" data-text="menu.fme_display_general_period">General Event display
+          period</label>
+        <input id="fme-display-general-period" class="input-text narrow-select-menu" type="number" min="10" max="45"
+          value="90">
       </div>
       <div class="input-container" data-help="fme_display_role_period">
+        <label for="fme-display-role-period" data-text="menu.fme_display_role_period">Role Event display period</label>
+        <input id="fme-display-role-period" class="input-text narrow-select-menu" type="number" min="10" max="90"
+          value="90">
       </div>
       <div class="input-container" data-help="fme_notification">
         <label for="fme-notification" data-text="menu.fme_notification">Enable event notifications</label>
@@ -770,6 +778,9 @@
         </div>
       </div>
       <div class="input-container" data-help="fme_notification_period">
+        <label for="fme-notification-period" data-text="menu.fme_notification_period">Event notification period</label>
+        <input id="fme-notification-period" class="input-text narrow-select-menu" type="number" min="1" max="30"
+          value="10">
       </div>
       <div id="open-fme-enabled-events-modal" class="input-container clickable" data-help="fme_enabled_events">
         <label data-text="menu.fme_enabled_events">Select enabled events</label>
@@ -962,6 +973,27 @@
             <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
             <label class="input-checkbox-label" for="show-coordinates"></label>
           </div>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container" data-help="map_zoom_snap">
+          <label for="map-zoom-snap" data-text="menu.map_zoom_snap">Map zoom snap</label>
+          <input id="map-zoom-snap" class="input-text narrow-select-menu" type="number" min="0" max="3" value="1"/>
+        </div>
+        <div class="input-container" data-help="map_zoom_delta">
+          <label for="map-zoom-delta" data-text="menu.map_zoom_delta">Map zoom delta</label>
+          <input id="map-zoom-delta" class="input-text narrow-select-menu" type="number" min="0.1" max="2" value="1"/>
+        </div>
+        <div class="input-container" data-help="map_wheel_debounce_time">
+          <label for="map-wheel-debounce-time" data-text="menu.map_wheel_debounce_time">Map wheel debounce time</label>
+          <input id="map-wheel-debounce-time" class="input-text narrow-select-menu" type="number" min="40" max="200" value="40"/>
+        </div>
+        <div class="input-container" data-help="map_wheel_px_per_zoom_level">
+          <label for="map-wheel-pixel-per-zoom-level" data-text="menu.map_wheel_px_per_zoom_level">Map Wheel pixels per zoom level</label>
+          <input id="map-wheel-pixel-per-zoom-level" class="input-text narrow-select-menu" type="number" min="20" max="150" value="60"/>
+        </div>
+        <div id="reset-map-zoom" class="input-container clickable" data-help="map_reset_zoom_wheel_settings">
+          <label data-text="menu.map_reset_zoom_wheel_settings">Reset zoom and wheel settings</label>
+          <div class="input-action"></div>
         </div>
         <hr class="menu-divider">
         <div class="input-container" data-help="timestamps_24">
@@ -1170,7 +1202,7 @@
     </div>
 
     <button id="back-to-top" title="Scroll back to top (Draggable)">
-      <img src="./assets/images/selection_arrow_up.png" alt="">
+      <img src="./assets/images/direction_up_pointer.png" alt="">
     </button>
   </aside>
   <div class="menu-toggle" data-menu-opened="false">
@@ -1204,8 +1236,12 @@
 
   <div id="map"></div>
 
-  <div class="lat-lng-container">
-    <p></p><button id="lat-lng-container-close-button">×</button>
+  <div class="lat-lng-container" data-help="map_coordinates_container">
+    <div>
+      <div><span data-text="map.latitude">Latitude</span>:&nbsp;<span class="lat-lng-value lat-value">-.----</span></div>
+      <div><span data-text="map.longitude">Longitude</span>:&nbsp;<span class="lat-lng-value lng-value">-.----</span></div>
+    </div>
+    <button type="button" id="lat-lng-container-close-button" class="btn-close" aria-label="Close"></button>
   </div>
 
   <!-- Modals -->
@@ -1294,7 +1330,7 @@
   <script src='https://js.sentry-cdn.com/a130f51c41c747c5b3ff6d39a6a31e41.min.js' crossorigin="anonymous" data-lazy="no"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/fancyselect.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1550"></script>
+  <script src="assets/js/loader.js?nocache=1551"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy-bundle.umd.min.js"></script>
   <script src="assets/js/lib/leaflet.js"></script>
@@ -1303,35 +1339,36 @@
   <script src="assets/js/lib/leaflet-heatmap.js"></script>
   <script src="assets/js/lib/oms.min.js"></script>
   <script src="assets/js/lib/rbush.js"></script>
-  <script src="assets/js/lib/coloris.min.js"></script>
+  <script src="assets/js/lib/pickr.min.js"></script>
+  <script src="assets/js/lib/plain-draggable.min.js"></script>
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1550"></script>
-  <script src="assets/js/settings.js?nocache=1550"></script>
-  <script src="assets/js/nazar.js?nocache=1550"></script>
-  <script src="assets/js/marker.js?nocache=1550"></script>
-  <script src="assets/js/treasures.js?nocache=1550"></script>
-  <script src="assets/js/bounties.js?nocache=1550"></script>
-  <script src="assets/js/legendary.js?nocache=1550"></script>
-  <script src="assets/js/encounters.js?nocache=1550"></script>
-  <script src="assets/js/locations.js?nocache=1550"></script>
-  <script src="assets/js/plants.js?nocache=1550"></script>
-  <script src="assets/js/camps.js?nocache=1550"></script>
-  <script src="assets/js/shops.js?nocache=1550"></script>
-  <script src="assets/js/singleplayer.js?nocache=1550"></script>
-  <script src="assets/js/gfh.js?nocache=1550"></script>
-  <script src="assets/js/events.js?nocache=1550"></script>
-  <script src="assets/js/animals.js?nocache=1550"></script>
-  <script src="assets/js/discoverables.js?nocache=1550"></script>
-  <script src="assets/js/overlays.js?nocache=1550"></script>
-  <script src="assets/js/pins.js?nocache=1550"></script>
-  <script src="assets/js/map.js?nocache=1550"></script>
-  <script src="assets/js/language.js?nocache=1550"></script>
-  <script src="assets/js/menu.js?nocache=1550"></script>
-  <script src="assets/js/dailies.js?nocache=1550"></script>
-  <script src="assets/js/scripts.js?nocache=1550"></script>
-  <script src="assets/js/fme.js?nocache=1550"></script>
+  <script src="assets/js/layers.js?nocache=1551"></script>
+  <script src="assets/js/settings.js?nocache=1551"></script>
+  <script src="assets/js/nazar.js?nocache=1551"></script>
+  <script src="assets/js/marker.js?nocache=1551"></script>
+  <script src="assets/js/treasures.js?nocache=1551"></script>
+  <script src="assets/js/bounties.js?nocache=1551"></script>
+  <script src="assets/js/legendary.js?nocache=1551"></script>
+  <script src="assets/js/encounters.js?nocache=1551"></script>
+  <script src="assets/js/locations.js?nocache=1551"></script>
+  <script src="assets/js/plants.js?nocache=1551"></script>
+  <script src="assets/js/camps.js?nocache=1551"></script>
+  <script src="assets/js/shops.js?nocache=1551"></script>
+  <script src="assets/js/singleplayer.js?nocache=1551"></script>
+  <script src="assets/js/gfh.js?nocache=1551"></script>
+  <script src="assets/js/events.js?nocache=1551"></script>
+  <script src="assets/js/animals.js?nocache=1551"></script>
+  <script src="assets/js/discoverables.js?nocache=1551"></script>
+  <script src="assets/js/overlays.js?nocache=1551"></script>
+  <script src="assets/js/pins.js?nocache=1551"></script>
+  <script src="assets/js/map.js?nocache=1551"></script>
+  <script src="assets/js/language.js?nocache=1551"></script>
+  <script src="assets/js/menu.js?nocache=1551"></script>
+  <script src="assets/js/dailies.js?nocache=1551"></script>
+  <script src="assets/js/scripts.js?nocache=1551"></script>
+  <script src="assets/js/fme.js?nocache=1551"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>

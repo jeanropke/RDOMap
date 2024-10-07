@@ -276,7 +276,7 @@
     {"name": "Train clerk missions completed", "key": "mpgc_gfh_train_clerk_wins", "category": ["gfh", "wallace_train_clerk"]},
     {"name": "Treasure Maps or treasures found", "key": "mpgc_dynamic_found_treasure_or_map", "category": ["menu", "tree_map"]},
     {"name": "Turkeys skinned", "key": "mpgc_turkeys_skinned", "category": ["animal", "turkey_eastern"]},
-    {"name": "Turtles skinned", "key": "mpgc_turtle_skinned", "category": ["animal", "turtle"]},
+    {"name": "Turtles skinned", "key": "mpgc_turtle_skinned", "category": ["animal", "turtle_snapping"]},
     {"name": "Types of fish caught", "key": "mpgc_fish_caught_variety", "category": ["shops", "tackle"]},
     {"name": "Used an emote on a local", "key": "mpgc_emote_npc"},
     {"name": "Used an emote on a player in Free Roam", "key": "mpgc_emote_player"},
