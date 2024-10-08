@@ -143,6 +143,7 @@
   "map.user_pins.color.white": "Branco",
   "map.user_pins.color.yellow": "Amarelo",
   "map.user_pins.icon": "Ícone",
+  "map.user_pins.shape.default": "Padrão",
   "map.user_pins.icon.pin": "Pin",
   "map.user_pins.icon.random": "Aleatório",
   "map.user_pins.icon.magnet": "Detector de Metais",

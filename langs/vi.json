@@ -123,6 +123,7 @@
   "map.user_pins.placeholder_title": "Tên",
   "map.user_pins.remove": "Loại bỏ",
   "map.user_pins.save": "Lưu lại",
+  "map.color_picker.save": "Lưu lại",
   "alerts.file_not_valid": "Tập tin bạn đã chọn không hợp lệ. Vui lòng chọn tập tin khác.",
   "alerts.file_not_found": "Vui lòng chọn tập tin trong trường phía trên nút nhập, sau đó thử lại.",
   "map.hideouts.kamassa_river.name": "Sông Kamassa",
