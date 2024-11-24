@@ -312,7 +312,7 @@
     {"name": "Western Ravens plucked", "key": "mpgc_ravens_skinned", "category": ["animal", "raven"]},
     {"name": "Western Toads collected", "key": "mpgc_toads_skinned", "category": ["animal", "toad"]},
     {"name": "Whole animal carcasses sold", "key": "mpgc_shop_animal_whole_sell", "category": ["shops", "butcher"]},
-    {"name": "Whooping Cranes plucked", "key": "mpgc_cranewhooping_skinned", "category": ["animal", "woodpecker_redbellied"]},
+    {"name": "Whooping Cranes plucked", "key": "mpgc_cranewhooping_skinned", "category": ["animal", "cranewhooping_whooping"]},
     {"name": "Wild Carrots picked", "key": "mpgc_wild_carrots_picked", "category": ["plants", "wild_carrots"]},
     {"name": "Wild Feverfew picked", "key": "mpgc_wild_feverfew_picked", "category": ["plants", "wild_feverfew"]},
     {"name": "Wild Mint picked", "key": "mpgc_wild_mint_picked", "category": ["plants", "wild_mint"]},
