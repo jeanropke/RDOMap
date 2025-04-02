@@ -71,7 +71,7 @@ class Discoverable {
         [item.lat - item.height / offset, item.lng - item.width / offset],
         [item.lat + item.height / offset, item.lng + item.width / offset],
       ], {
-        opacity: Settings.markerOpacity,
+        opacity: Math.max(Settings.overlayOpacity, 0.25),
       });
       this.layer.addLayer(tempMarker);
     });

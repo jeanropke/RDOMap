@@ -395,6 +395,7 @@ document.getElementById('overlay-opacity').addEventListener('change', function (
   Overlay.onSettingsChanged();
   CondorEgg.onSettingsChanged();
   Salvage.onSettingsChanged();
+  Discoverable.updateLayers();
 });
 
 document.getElementById('tooltip').addEventListener('change', function () {
@@ -831,6 +832,6 @@ function draggify(el, { storageKey }) {
   return {
     isDragging: () => isDragging,
     getDistanceMoved: () =>
-      Math.sqrt((currentX - initialX) ** 2 + (currentY - initialY) ** 2)
+      Math.sqrt((currentX - initialX) ** 2 + (currentY - initialY) ** 2),
   };
 }
