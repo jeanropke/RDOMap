@@ -163,10 +163,7 @@ class Legendary {
 
     snippet.querySelectorAll('span > p').forEach(p => {
       const propertyText = Language.get(p.getAttribute('data-text'))
-        .replace(
-          /{([a-z_]+)}/,
-          (full, key) => Language.get(String(this[key]))
-        );
+        .replace(/{([a-z_]+)}/, (full, key) => Language.get(String(this[key])));
       p.textContent = propertyText;
     });
 
