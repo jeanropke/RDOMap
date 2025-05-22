@@ -249,7 +249,7 @@ class Legendary {
   get onMap() {
     return !!localStorage.getItem(`rdo.${this._shownKey}`);
   }
-  
+
   static onCategoryToggle() {
     Legendary.animals.forEach(animal => animal.onMap = animal.onMap);
   }

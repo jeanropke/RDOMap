@@ -12,18 +12,21 @@ class Marker {
         case 'singleplayer':
           return Language.get(`${this.category}.${this.text}.name`);
         case 'rescue':
-          return Language.get(`map.${this.category}.${this.subdata}.name`);
         case 'shops':
         case 'gfh':
           return Language.get(`map.${this.category}.${this.subdata}.name`);
-        case 'hideouts':
-          return `${Language.get(`map.${this.category}.${this.text}.name`)} - [${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
         case 'camps':
         case 'daily_locations':
-        case 'dynamic_bounties':
         case 'outlaw_dynamic_homestead':
         case 'outlaw_dynamic_camp':
-          return Language.get(`map.${this.category}.${this.text}.name`);
+        case 'dynamic_bounties':
+        case 'hideouts': {
+          const title = Language.get(`map.${this.category}.${this.text}.name`);
+          if (Array.isArray(this.subdata) && this.subdata.length !== 0) {
+            return `${title} - [${convertToTime(this.subdata[0])} - ${convertToTime(this.subdata[1])}]`;
+          }
+          return title;
+        }
         case 'harrietum_animals':
           return `${Language.get('map.harrietum_animals.name')} - ${Language.get(`menu.cmpndm.${this.text}`)}`;
         case 'sightseeing':
@@ -58,8 +61,7 @@ class Marker {
     `;
 
     container.querySelector('button').addEventListener('click', removeFromMapCallback);
-    if (!Settings.isDebugEnabled)
-      container.querySelector('small').style.display = 'none';
+    if (!Settings.isDebugEnabled) container.querySelector('small').style.display = 'none';
     Language.translateDom(container);
 
     return container;
