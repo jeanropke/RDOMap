@@ -89,6 +89,8 @@
   "menu.dailies": "Tägliche Herausforderungen",
   "menu.condor_egg": "Kondorei",
   "map.tips": "Tipps",
+  "map.latitude": "Breitengrad",
+  "map.longitude": "Längengrad",
   "help.clear_important_items": "Entferne alle Hervorhebungen der als wichtig markierten Gegenstände von der Karte.",
   "help.collector_map": "Öffnet eine neue Registerkarte mit der anderen Karte von Jean, in der du Markierungen suchen kannst, die sich auf die Rolle \"Sammler\" beziehen.",
   "help.cookie_export": "Exportiere deine Einstellungen in eine Datei.",
