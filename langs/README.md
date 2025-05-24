@@ -46,7 +46,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (100%):
+### Chinese Simplified (99%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -223,7 +223,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **masterflash222** (268 words)
   - **MattSini912** (629 words)
   - **misticjoker** (3,718 words)
-  - **noodneek** (23 words)
+  - **noodneek** (1,732 words)
   - **Raffox97** (33 words)
   - **REMOVED_USER** (1,189 words)
   - **TheSgrash** (282 words)
@@ -320,7 +320,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **proximacentaurib** (24,201 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (96%):
+### Russian (97%):
   - **adwaitaman3** (25 words)
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
@@ -331,6 +331,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **maxdavinci** (40 words)
   - **Megitsune** (5,543 words)
   - **noiracero693** (27 words)
+  - **noodneek** (1,732 words)
   - **Overnoes** (1,860 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
