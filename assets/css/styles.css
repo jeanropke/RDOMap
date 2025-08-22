@@ -2881,3 +2881,13 @@ button.reload-nazar {
 .leaflet-zoomex-rightbottom .leaflet-zoomex-in {
     transform: rotate(90deg);
 }
+
+.menu-ad {
+    display: none;
+}
+
+@media (min-width: 768px) {
+  .menu-ad {
+    display: block;
+  }
+}
