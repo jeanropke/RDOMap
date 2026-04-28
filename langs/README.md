@@ -247,6 +247,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **IronJeff80** (60 words)
   - **iTzGhemon** (91 words)
   - **Jarsha1311** (500 words)
+  - **JumpFrost_ITA** (54 words)
   - **kyek** (569 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
