@@ -5,7 +5,7 @@ class MadamNazar {
       { key: 'MPSW_LOCATION_01', x: -100.0742, y: 49.0765, id: 'cho' },
       { key: 'MPSW_LOCATION_02', x: -104.7679, y: 85.7222, id: 'hen' },
       { key: 'MPSW_LOCATION_03', x: -84.2973, y: 82.4512, id: 'tal' },
-      { key: 'MPSW_LOCATION_04', x: -56.1619, y: 78.5000, id: 'bgv' },
+      { key: 'MPSW_LOCATION_04', x: -56.1619, y: 78.5, id: 'bgv' },
       { key: 'MPSW_LOCATION_05', x: -60.9622, y: 130.6067, id: 'hrt_e' },
       { key: 'MPSW_LOCATION_06', x: -63.8927, y: 105.3496, id: 'hrt_w' },
       { key: 'MPSW_LOCATION_07', x: -43.1046, y: 132.8263, id: 'grz' },
@@ -23,25 +23,34 @@ class MadamNazar {
     this.context = document.querySelector('.menu-option[data-type=nazar]');
 
     this.context.classList.toggle('disabled', !MadamNazar.onMap);
-    this.context.addEventListener('click', () => MadamNazar.onMap = !MadamNazar.onMap);
+    this.context.addEventListener('click', () => (MadamNazar.onMap = !MadamNazar.onMap));
     Language.translateDom(this.context);
 
-    return Loader.promises['nazar'].consumeJson(data => {
-      const _nazarParam = getParameterByName('nazar');
-      if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam)
-        this.currentLocation = _nazarParam;
-      else
-        this.currentLocation = this.possibleLocations.findIndex(({ key }) => key === data.nazar);
-
-      this.currentDate = data.date;
-      MadamNazar.addMadamNazar();
-      console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
-    });
+    const _nazarParam = getParameterByName('nazar');
+    if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam) {
+      this.currentLocation = _nazarParam;
+      return Promise.resolve();
+    } else {
+      return Promise.allSettled([
+        Loader.promises['nazar'].consumeJson(),
+        Loader.promises['nazar_location'].consumeJson(),
+      ])
+        .then((results) => results.filter((result) => result.status === 'fulfilled'))
+        .then((results) => {
+          const betterResult = results.map(result => result.value).find(data => data.date && data.date === MadamNazar.freshDate && data.nazar);
+          this.currentLocation = MadamNazar.possibleLocations.findIndex(({ key }) => key === betterResult.nazar);
+          this.currentDate = betterResult.date;
+          this.addMadamNazar();
+          console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
+        })
+        .catch((e) => {
+          console.info('%c[Nazar] Unable to load!', 'color: #FF6969; background: #242424');
+        });
+    }
   }
 
   static addMadamNazar() {
-    if (this.currentLocation == null)
-      return;
+    if (this.currentLocation == null) return;
 
     MadamNazar.layer.clearLayers();
 
@@ -49,7 +58,9 @@ class MadamNazar {
 
     const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
 
-    const shadow = Settings.isShadowsEnabled ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">` : '';
+    const shadow = Settings.isShadowsEnabled
+      ? `<img class="shadow" width="${35 * Settings.markerSize}" height="${16 * Settings.markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">`
+      : '';
     const tempMarker = L.marker([cl.x, cl.y], {
       opacity: Settings.markerOpacity,
       icon: new L.DivIcon.DataMarkup({
@@ -69,28 +80,30 @@ class MadamNazar {
     // Fix occasional race condition with preview mode.
     if (!MapBase.isPreviewMode || getParameterByName('q') === 'nazar') {
       MadamNazar.layer.addLayer(tempMarker);
-      if (Settings.isMarkerClusterEnabled)
-        Layers.oms.addMarker(tempMarker);
+      if (Settings.isMarkerClusterEnabled) Layers.oms.addMarker(tempMarker);
     }
 
     this.onMap = this.onMap;
   }
   static popupContent() {
     const nazarDate = new Date(this.currentDate).toLocaleString(Settings.language, {
-      day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
     });
     const popup = document.createElement('div');
     popup.innerHTML = `
           <h1>${Language.get('menu.madam_nazar')} - ${nazarDate}</h1>
           <p style="text-align: center;">
-            ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}
+            ${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://rdo-dailies.com/#nazar" target="_blank">rdo-dailies.com</a>')}
           </p>
           <button class="btn btn-success reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
     `;
     Language.translateDom(popup);
     const buttonEl = popup.querySelector('button');
     buttonEl.addEventListener('click', this.reloadNazar.bind(this));
-    buttonEl.style.display = this.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString() ? '' : 'none';
+    buttonEl.style.display = this.currentDate !== this.freshDate ? '' : 'none';
 
     return popup;
   }
@@ -99,13 +112,11 @@ class MadamNazar {
     if (state) {
       MadamNazar.layer.addTo(MapBase.map);
       this.context.classList.remove('disabled');
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo.nazar', 'true');
+      if (!MapBase.isPreviewMode) localStorage.setItem('rdo.nazar', 'true');
     } else {
       MadamNazar.layer.remove();
       this.context.classList.add('disabled');
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdo.nazar', 'false');
+      if (!MapBase.isPreviewMode) localStorage.setItem('rdo.nazar', 'false');
     }
     MapBase.updateTippy('nazar');
   }
@@ -113,6 +124,10 @@ class MadamNazar {
   static get onMap() {
     const value = JSON.parse(localStorage.getItem('rdo.nazar'));
     return value || value == null;
+  }
+
+  static get freshDate() {
+    return new Date(Date.now() - 21600000).toISOUTCDateString();
   }
 
   static reloadNazar() {

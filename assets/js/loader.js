@@ -82,5 +82,7 @@ const urls = [
   'https://pepegapi.jeanropke.net/v2/rdo/nazar',
   'https://api.rdo.gg/fme/',
   'data/fme_keys.json',
+  'https://rdo-dailies.com/api/RDO/collector/nazar_location',
+  'https://rdo-dailies.com/api/RDO/general/daily_challenges',
 ];
 Loader.init(urls);

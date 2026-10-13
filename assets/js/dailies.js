@@ -18,15 +18,21 @@ class Dailies {
       localStorage.setItem('rdo.lastDailiesDate', currentDate);
     }
 
-    return Promise.all([Loader.promises['dailies'].consumeJson(), Loader.promises['possible_dailies'].consumeJson()])
-      .then(([currentDailies, allDailies]) => {
+    return Promise.allSettled([
+      Loader.promises['dailies'].consumeJson(),
+      Loader.promises['daily_challenges'].consumeJson(),
+      Loader.promises['possible_dailies'].consumeJson(),
+    ])
+      .then(([dailies, dailiesBackup, allDailies]) => {
+        const currentDailies = (dailies.status === 'fulfilled' && dailies.value.data && Object.values(dailies.value.data).length > 0) ? dailies.value : dailiesBackup.value;
+
         if (!currentDailies.date.includes(currentDate)) {
-          return Promise.reject(`Incorrect date [${currentDailies.date}, ${currentDate}]`);
+          throw Promise.reject(new Error(`Incorrect date [${currentDailies.date}, ${currentDate}]`));
         }
 
         this.dailiesLoaded();
 
-        this.categories = allDailies.category_order;
+        this.categories = allDailies.value.category_order;
         this.categories.forEach((category, index) => {
           const div = document.createElement('div');
           div.id = category;
@@ -44,8 +50,8 @@ class Dailies {
             challenges.forEach(({ desiredGoal, id, displayType, description: { label, localized } }) => {
               label = label.toLowerCase();
 
-              const daily = allDailies[role].find(({ key }) => key === label);
-              if (daily && daily.category) {
+              const daily = allDailies.value[role].find(({ key }) => key === label);
+              if (daily?.category) {
                 this.markersCategories.push([role, id, daily.category, categoryType]);
               }
 
@@ -78,7 +84,7 @@ class Dailies {
         this.sortDailies();
       })
       .then(this.activateHandlers.bind(this))
-      .catch(this.dailiesNotUpdated);
+      .catch(console.error);
   }
 
   appendToMenu() {
@@ -233,12 +239,8 @@ class SynchronizeDailies {
 
     try {
       const syncedItem = document.querySelector(`[data-text="${this.key}"]`);
-      if (!syncedItem)
-        throw new Error(`Item with data-text="${this.key}" not found.`);
-      if (
-        syncedItem.parentElement.classList.contains('disabled') ||
-        syncedItem.parentElement.parentElement.classList.contains('disabled')
-      ) {
+      if (!syncedItem) throw new Error(`Item with data-text="${this.key}" not found.`);
+      if (syncedItem.parentElement.classList.contains('disabled') || syncedItem.parentElement.parentElement.classList.contains('disabled')) {
         syncedItem.click();
       }
     } catch (error) {
