@@ -84,7 +84,7 @@ class Dailies {
         this.sortDailies();
       })
       .then(this.activateHandlers.bind(this))
-      .catch(console.error);
+      .catch(this.dailiesNotUpdated);
   }
 
   appendToMenu() {
