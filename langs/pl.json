@@ -136,7 +136,6 @@
   "map.layers.detailed": "Szczegółowy",
   "map.layers.black": "Czarny",
   "map.mark_important": "Oznacz jako ważne",
-  "map.madam_nazar.desc": "Zła lokacja? Zajrzyj tutaj: {link}.",
   "map.remove_add": "Usuń z / dodaj do mapy",
   "map.user_pins.default_desc": "To jest Twój niestandardowy znacznik, możesz edytować jego nazwę i opis. Nie zapomnij zapisać!",
   "map.user_pins.default_title": "Znaczniki użytkownika",

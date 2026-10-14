@@ -131,7 +131,6 @@
   "map.layers.detailed": "Докладно",
   "map.layers.black": "Чорний",
   "map.mark_important": "Відмітити як важливе",
-  "map.madam_nazar.desc": "Невірне розташування? Слідкуйте за {link}.",
   "map.remove_add": "Вилучити/додати з карти",
   "map.user_pins.default_desc": "Це Ваша користувацька відмітка. Можна змінити її ім'я та опис. Не забудьте зберегти її!",
   "map.user_pins.default_title": "Ваша відмітка",

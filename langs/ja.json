@@ -128,7 +128,6 @@
   "map.layers.detailed": "詳細",
   "map.layers.black": "ブラック",
   "map.mark_important": "重要としてマーク",
-  "map.madam_nazar.desc": "場所が間違っていますか ? {link} をフォローします。",
   "map.remove_add": "削除 / マップからの追加",
   "map.user_pins.default_desc": "これはカスタム・ユーザー・ピンで、名前と説明を編集することができます。保存するのを忘れないようにしてください。",
   "map.user_pins.default_title": "ユーザー・ピン",

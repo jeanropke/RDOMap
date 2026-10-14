@@ -136,7 +136,6 @@
   "map.layers.detailed": "Detalhado",
   "map.layers.black": "Preto",
   "map.mark_important": "Marcar como importante",
-  "map.madam_nazar.desc": "Local errado? Siga {link}.",
   "map.remove_add": "Remover/Adicionar ao mapa",
   "map.user_pins.default_desc": "Esse é o seu pin personalizado, você pode editar o nome e descrição, só não se esqueça de salvar!",
   "map.user_pins.default_title": "Marcador do usuário",

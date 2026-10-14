@@ -131,7 +131,6 @@
   "map.layers.detailed": "詳細",
   "map.layers.black": "暗色",
   "map.mark_important": "標示為重要",
-  "map.madam_nazar.desc": "位置錯誤？打開 {link}。",
   "map.remove_add": "移除/添加至地圖",
   "map.user_pins.default_desc": "這是您的自定義用戶標點，您可以編輯名稱和描述，只是不要忘記保存！（可修改，勾選“修改自定義標點描述後”）",
   "map.user_pins.default_title": "標點名(可修改，勾選“修改自定義標點描述後”)",

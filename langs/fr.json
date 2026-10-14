@@ -131,7 +131,6 @@
   "map.layers.detailed": "Détaillé",
   "map.layers.black": "Noir",
   "map.mark_important": "Marquer comme important",
-  "map.madam_nazar.desc": "Mauvaise localisation ? Suivez {link}.",
   "map.remove_add": "Supprimer/Ajouter de la carte",
   "map.user_pins.default_desc": "Voici votre épingle personnelle. Vous pouvez changer son nom et sa description, mais n'oubliez pas de sauvegarder !",
   "map.user_pins.default_title": "Épingles d'utilisateur",

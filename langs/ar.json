@@ -136,7 +136,6 @@
   "map.layers.detailed": "مفصّل",
   "map.layers.black": "أسود",
   "map.mark_important": "علامة مهمة",
-  "map.madam_nazar.desc": "موقع خاطئ؟ اتبع {link}.",
   "map.remove_add": "إزالة/إضافة على الخريطة",
   "map.user_pins.default_desc": "هذا هو دبوس المستخدم المخصص الخاص بك، يمكنك تعديل الاسم والوصف، لا تنسى الحفظ!",
   "map.user_pins.default_title": "دبوس المستخدم",

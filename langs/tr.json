@@ -131,7 +131,6 @@
   "map.layers.detailed": "Ayrıntılı",
   "map.layers.black": "Siyah",
   "map.mark_important": "Önemli olarak işaretle",
-  "map.madam_nazar.desc": "-Yanlış yer mi? {link} 'i takip edin.",
   "map.remove_add": "Eşlemden Kaldır/Ekle",
   "map.user_pins.default_desc": "Bu sizin özel kullanıcı iğneniz, adı ve tanımı düzenleyebilir, yalnızca kaydetmeyi unutmayın!",
   "map.user_pins.default_title": "Kullanıcı pimi",

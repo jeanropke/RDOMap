@@ -131,7 +131,6 @@
   "map.layers.detailed": "Λεπτομερείς",
   "map.layers.black": "Μαύρο",
   "map.mark_important": "Σήμανση ως σημαντικό",
-  "map.madam_nazar.desc": "Λάθος τοποθεσία; Ακολουθήστε {link}.",
   "map.remove_add": "Αφαίρεση/Προσθήκη από το χάρτη",
   "map.user_pins.default_desc": "Αυτό είναι pin χρήστη, μπορείτε να επεξεργαστείτε το όνομα και την περιγραφή, απλά μην ξεχάσετε να το αποθηκεύσετε!",
   "map.user_pins.default_title": "Pin χρήστη",

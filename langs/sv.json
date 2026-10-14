@@ -131,7 +131,6 @@
   "map.layers.detailed": "Detaljerad",
   "map.layers.black": "Svart",
   "map.mark_important": "Markera som viktig",
-  "map.madam_nazar.desc": "Felaktig plats? Följ {link}.",
   "map.remove_add": "Ta bort/Lägg till från kartan",
   "map.user_pins.default_desc": "Detta är din anpassade användarmarkering, du kan redigera namn och beskrivning, glöm bara inte att spara!",
   "map.user_pins.default_title": "Användarens markeringar",

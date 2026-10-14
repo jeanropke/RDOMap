@@ -136,7 +136,6 @@
   "map.layers.detailed": "Dettagliata",
   "map.layers.black": "Nero",
   "map.mark_important": "Contrassegna come importante",
-  "map.madam_nazar.desc": "Posizione sbagliata? Segui {link}.",
   "map.remove_add": "Rimuovi/Aggiungi sulla mappa",
   "map.user_pins.default_desc": "Questo è un tuo segnalino personalizzato, puoi modificarne il nome e la descrizione, solo non dimenticarti di salvare!",
   "map.user_pins.default_title": "Segnalino utente",

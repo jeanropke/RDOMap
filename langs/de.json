@@ -136,7 +136,6 @@
   "map.layers.detailed": "Detailiert",
   "map.layers.black": "Schwarz",
   "map.mark_important": "Als wichtig markieren",
-  "map.madam_nazar.desc": "Falsche Position? Folge {link}.",
   "map.remove_add": "Von Karte entfernen/hinzufügen",
   "map.user_pins.default_desc": "Das ist deine eigene Markierung. Du kannst den Namen und die Beschreibung anpassen. Speichern nicht vergessen!",
   "map.user_pins.default_title": "Eigene Makierung",

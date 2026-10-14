@@ -136,7 +136,6 @@
   "map.layers.detailed": "상세한",
   "map.layers.black": "블랙",
   "map.mark_important": "중요한 마커로 표시",
-  "map.madam_nazar.desc": "잘못된 위치? {link}를 따르십시오.",
   "map.remove_add": "지도로부터 지우기/추가하기",
   "map.user_pins.default_desc": "사용자 정의 사용자 핀이며 이름 및 설명을 편집할 수 있습니다. 저장하는 것을 잊지 마십시오.",
   "map.user_pins.default_title": "사용자 핀",

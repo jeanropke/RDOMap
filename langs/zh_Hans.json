@@ -136,7 +136,6 @@
   "map.layers.detailed": "详细",
   "map.layers.black": "黑色",
   "map.mark_important": "标记为重要",
-  "map.madam_nazar.desc": "位置错误？打开 {link}。",
   "map.remove_add": "从地图中移除/添加",
   "map.user_pins.default_desc": "这是您的自定义用户图钉，您可以编辑名称和描述，只是不要忘记保存！",
   "map.user_pins.default_title": "用户图钉",

@@ -136,7 +136,6 @@
   "map.layers.detailed": "Детальная",
   "map.layers.black": "Черный",
   "map.mark_important": "Отметить важной",
-  "map.madam_nazar.desc": "Неверное местоположение? Проверьте тут: {link}.",
   "map.remove_add": "Показать/Скрыть",
   "map.user_pins.default_desc": "Это ваша пользовательская метка. На ней можно изменить имя и описание. Не забудьте сохранить её.",
   "map.user_pins.default_title": "Ваша метка",

@@ -130,7 +130,6 @@
   "map.layers.detailed": "Yksityiskohtaiset",
   "map.layers.black": "Musta",
   "map.mark_important": "Merkitse tärkeäksi",
-  "map.madam_nazar.desc": "Väärä sijainti? Seuraa {link}.",
   "map.remove_add": "Poista/Lisää kartasta",
   "map.user_pins.default_desc": "Tämä on mukautettu käyttäjätunnuksesi, voit muokata nimeä ja kuvausta, mutta älä unohda tallentaa!",
   "map.user_pins.default_title": "Käyttäjän keila",

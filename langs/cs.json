@@ -136,7 +136,6 @@
   "map.layers.detailed": "Podrobný",
   "map.layers.black": "Černá",
   "map.mark_important": "Označit jako důležité",
-  "map.madam_nazar.desc": "Špatné umístění? Viz {link}.",
   "map.remove_add": "Odebrat/Přidat z mapy",
   "map.user_pins.default_desc": "Toto je váš vlastní uživatelský pin, můžete editovat jméno a popis, prostě nezapomeň uložit!",
   "map.user_pins.default_title": "PIN uživatele",
