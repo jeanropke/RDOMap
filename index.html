@@ -50,9 +50,9 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/nano.min.css"/>
   <link rel="stylesheet" href="assets/css/fancyselect.min.css"/>
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1552" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1553" />
   <link rel="stylesheet" href="assets/css/tippy.css?nocache=1552" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8337816533364971" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8337816533364971" crossorigin="anonymous"></script>
 
   <script>
     var nocache = 1552;
@@ -83,17 +83,6 @@
           <img src="./assets/images/scroller/scroller_right_top.png" alt="">
         </div>
       </div>
-    </div>
-    <div class="menu-ad">
-      <ins class="adsbygoogle"
-        style="display:inline-block;width:380px;height:280px"
-        data-ad-client="ca-pub-8337816533364971"
-        data-ad-slot="3475533274"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
     </div>
 
     <div class="links-container">
@@ -1211,6 +1200,19 @@
           <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
         </div>
       </div>
+      <section id="menu-ad" class="menu-ad" aria-label="Advertisement">
+        <button id="menu-ad-close" class="menu-ad-close" type="button" aria-label="Close advertisement">&#215;</button>
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8337816533364971"
+          data-ad-slot="3475533274"></ins>
+        <script>
+          document.getElementById('menu-ad-close').addEventListener('click', () => {
+            document.getElementById('menu-ad').hidden = true;
+          });
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
     </div>
 
     <button id="back-to-top" title="Scroll back to top (Draggable)">
